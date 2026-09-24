@@ -18,3 +18,8 @@ The first five projects with `featured: true` fill the home grid
 python3 -m http.server 8000
 ```
 then open http://localhost:8000.
+
+## Swiss version
+`swiss/` is an alternative Swiss-style (International Typographic Style) design:
+Helvetica only, strict 12-column grid, black/white with one red accent.
+Open `swiss/index.html`. It reads the same `js/data.js` and `images/`.
