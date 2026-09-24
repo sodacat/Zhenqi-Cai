@@ -10,6 +10,7 @@
  */
 window.SITE = {
   name: "Zhenqi Cai",
+  mark: "ZC.",
   role: "Product Designer",
   signature: "Quiet Intelligence",
   email: "hello@zhenqicai.com",
@@ -18,7 +19,8 @@ window.SITE = {
     { label: "Read.cv", url: "https://read.cv/" }
   ],
 
-  // Home — first screen
+  // Home — first screen (mission + vision)
+  tagline: ["Humanize complexity.", "Augment humanity."],
   mission: "Humanize Complexity.",
   intro:
     "Product designer working on AI and complex enterprise systems. I design the rules, states and relationships underneath the interface — so complexity stays in the system, not in people’s heads.",
@@ -46,10 +48,30 @@ window.SITE = {
   ],
 
   // About
+  portrait: "images/portrait.jpg",
   statement: ["Modernist in form.", "Systematic in thinking.", "Human in purpose."],
   bio: [
     "I’m a product designer who works where complexity is highest — enterprise tools, compliance, marketplaces, and now AI and agentic systems.",
     "My background is Bauhaus and Swiss modernism: the belief that clear structure is a form of respect for the people who use it. I bring the same discipline to product work — map the system first, then design the surface."
+  ],
+  // "What I do." — practice areas
+  services: [
+    {
+      title: "AI & Agentic Systems",
+      text: "How people delegate to, supervise and trust intelligent systems — designing for judgement and control, not blind automation."
+    },
+    {
+      title: "Enterprise & Compliance",
+      text: "High-stakes, rule-heavy tools. I map the policies, states and edge cases first, so the interface can stay calm and legible."
+    },
+    {
+      title: "Marketplaces",
+      text: "Many-sided systems with competing needs. Making relationships, incentives and operations visible to the people who run them."
+    },
+    {
+      title: "Design Systems",
+      text: "Shared grammar — tokens, components and rules — that lets teams build complex products with consistency and speed."
+    }
   ],
   pillars: [
     { word: "Clarity", note: "What I create" },
@@ -67,7 +89,8 @@ window.SITE = {
   ],
 
   /*
-   * Projects. The first four with `featured: true` fill the home page.
+   * Projects. The first five with `featured: true` fill the home page
+   * (one tall + two small, then two side by side).
    * `sections` become the numbered chapters of the case-study page.
    */
   projects: [
@@ -150,6 +173,7 @@ window.SITE = {
       domain: "Enterprise",
       year: "2023",
       role: "Product Designer",
+      featured: true,
       cover: "images/enterprise-tooling.jpg",
       summary: "Internal tools for high-stakes, high-volume operational work.",
       sections: [

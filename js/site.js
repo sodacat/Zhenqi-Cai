@@ -21,20 +21,10 @@
     return `<a class="card reveal" href="${projectUrl(p)}" data-cat="${esc(p.domain)}"${place ? ` style="${place}"` : ""}>
       ${media(p.cover, p.title, num(p))}
       <span class="cap">
-        <span class="n">${num(p)}</span>
         <span class="t">${esc(p.title)}</span>
-        <span class="m">${esc(p.domain)}</span>
-        <span class="s">${esc(p.summary)}</span>
+        <span class="m label">${esc(p.domain)}</span>
       </span>
     </a>`;
-  }
-
-  function sectionHead(n, title, aside = "") {
-    return `<div class="sec-head grid">
-      <span class="sec-n">(${pad(n)})</span>
-      <h2 class="sec-t">${title}</h2>
-      <span class="sec-a">${aside}</span>
-    </div>`;
   }
 
   function indexTable(list) {
@@ -56,90 +46,96 @@
   function header() {
     const nav = [
       ["Work", "work.html", "work"],
-      ["Principles", "index.html#principles", ""],
       ["About", "index.html#about", ""],
-      ["Contact", "index.html#contact", ""]
+      ["Expertise", "index.html#expertise", ""]
     ];
     return `<header class="top grid">
-      <a class="h-name" href="index.html">${esc(S.name)}</a>
-      <span class="h-role">${esc(S.role)}</span>
-      <nav class="h-nav" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
+      <nav class="h-nav label" aria-label="Primary">
         ${nav.map(([t, h, k]) => `<a href="${h}"${k && page === k ? ' aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
-      <span class="h-meta">${esc(S.signature)}</span>
+      <a class="btn" href="mailto:${esc(S.email)}">Contact</a>
     </header>`;
   }
 
   function footer() {
     return `<footer class="foot">
-      <p class="motto grid">${S.principles.map((p) => `<span>${esc(p.title)}</span>`).join("")}</p>
-      <div class="foot-row grid">
-        <span class="f1">&copy; ${year} ${esc(S.name)}</span>
-        <ul class="f2">${S.social.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul>
-        <ul class="f3">
-          <li><a href="work.html">Work</a></li><li><a href="index.html#principles">Principles</a></li>
-          <li><a href="index.html#about">About</a></li><li><a href="mailto:${esc(S.email)}">Contact</a></li>
-        </ul>
-        <a class="f4" href="#top">Back to top &uarr;</a>
+      <div class="foot-cols grid">
+        <div class="fc1"><h4 class="label muted">Navigation</h4><ul class="label">
+          <li><a href="work.html">Work</a></li><li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#expertise">Expertise</a></li><li><a href="mailto:${esc(S.email)}">Contact</a></li>
+        </ul></div>
+        <div class="fc2"><h4 class="label muted">Social</h4><ul class="label">
+          ${S.social.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
+        </ul></div>
+        <div class="fc3"><h4 class="label muted">Principles</h4><ul class="label">
+          ${S.principles.map((p) => `<li>${esc(p.title)}</li>`).join("")}
+          <li><a href="mailto:${esc(S.email)}">${esc(S.email)}</a></li>
+        </ul></div>
+      </div>
+      <div class="foot-bottom">
+        <a class="foot-mark" href="#top" aria-label="Back to top">${esc(S.mark.replace(/\.$/, ""))}</a>
+        <p class="label muted">${esc(S.signature)} &mdash; Design by ${esc(S.name)}<br>&copy; ${year} ${esc(S.name)}. All rights reserved.</p>
       </div>
     </footer>`;
   }
 
   /* ---------- Pages ---------- */
-  // Featured work: one lead project full width, then a calm asymmetric rhythm.
-  const FEATURE_LAYOUT = [
-    "--c:1 / -1; --r:16/9",
-    "--c:1 / span 6; --r:4/3",
-    "--c:7 / span 6; --r:4/3",
-    "--c:5 / span 8; --r:16/10"
-  ];
-
   function home() {
-    const f = S.projects.filter((p) => p.featured).slice(0, FEATURE_LAYOUT.length);
+    const f = S.projects.filter((p) => p.featured);
+    const r1 = f.slice(0, 3);
+    const r2 = f.slice(3, 5);
     return `<main>
-      <section class="hero">
-        <h1 class="mark">${esc(S.name)}<i>.</i></h1>
-        <div class="hero-row grid">
-          <span class="hr-l">${esc(S.role)}<br>AI &amp; Complex Systems</span>
-          <p class="hr-c">${esc(S.mission)}</p>
-          <p class="hr-r">${esc(S.intro)}</p>
-        </div>
+      <section class="intro grid">
+        <h1 class="display reveal">${lines(S.tagline)}</h1>
       </section>
 
-      <section class="sec" id="work">
-        ${sectionHead(1, "Selected Work", `<a class="u" href="work.html">Index (${S.projects.length}) &rarr;</a>`)}
-        <div class="feature grid">${f.map((p, i) => card(p, FEATURE_LAYOUT[i])).join("")}</div>
-      </section>
-
-      <section class="sec" id="principles">
-        ${sectionHead(2, "Principles", "Visual &rarr; Product &rarr; AI")}
-        <ol class="principles grid">
-          ${S.principles
-            .map(
-              (p, i) => `<li class="reveal"><span class="n">${pad(i + 1)}</span><span class="d">${esc(p.domain)}</span>
-              <h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></li>`
-            )
-            .join("")}
-        </ol>
+      <section class="works" id="work">
+        <a class="label works-label" href="work.html">All work</a>
+        <div class="row r1">${r1.map((p) => card(p)).join("")}</div>
+        ${r2.length ? `<div class="row r2${r2.length === 1 ? " single" : ""}">${r2.map((p) => card(p)).join("")}</div>` : ""}
       </section>
 
       <section class="sec" id="about">
-        ${sectionHead(3, "About")}
+        <div class="statement grid"><h2 class="display reveal">${lines(S.statement)}</h2></div>
         <div class="about grid">
-          <p class="statement reveal">${lines(S.statement)}</p>
-          <div class="about-bio">${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}</div>
-          <dl class="dna">
-            ${S.dna.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}
-          </dl>
+          <div class="about-media reveal">${media(S.portrait, S.name)}</div>
+          <div class="about-body reveal">
+            <p class="name">${esc(S.name)}</p>
+            <p class="label muted">${esc(S.role)} &mdash; ${esc(S.signature)}</p>
+            ${S.bio.map((b) => `<p class="bio">${esc(b)}</p>`).join("")}
+            <a class="label more" href="work.html">More work</a>
+          </div>
         </div>
-        <ol class="pillars grid">
-          ${S.pillars.map((p) => `<li class="reveal"><b>${esc(p.word)}</b><span>${esc(p.note)}</span></li>`).join("")}
-        </ol>
       </section>
 
-      <section class="sec" id="contact">
-        ${sectionHead(4, "Contact", "Open to conversations about AI, systems and design")}
-        <a class="big-mail" href="mailto:${esc(S.email)}">${esc(S.email)}</a>
+      <section class="sec offer grid" id="expertise">
+        <div class="offer-head">
+          <h2 class="display reveal">What I do.</h2>
+          <a class="label" href="mailto:${esc(S.email)}">Contact me</a>
+        </div>
+        <ul class="offer-list">
+          ${S.services.map((s) => `<li class="reveal"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join("")}
+        </ul>
+      </section>
+
+      <section class="sec offer grid" id="principles">
+        <div class="offer-head">
+          <h2 class="display reveal">How I think.</h2>
+          <span class="label muted">Visual &rarr; Product &rarr; AI</span>
+        </div>
+        <ul class="offer-list">
+          ${S.principles.map((p) => `<li class="reveal"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></li>`).join("")}
+        </ul>
+      </section>
+
+      <section class="sec dna-sec grid">
+        <ol class="pillars">
+          ${S.pillars.map((p) => `<li class="reveal"><b>${esc(p.word)}</b><span class="label muted">${esc(p.note)}</span></li>`).join("")}
+        </ol>
+        <dl class="dna">
+          ${S.dna.map(([k, v]) => `<dt class="label muted">${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}
+        </dl>
       </section>
     </main>`;
   }
@@ -148,21 +144,21 @@
     const cats = [...new Set(S.projects.map((p) => p.domain))];
     const count = (c) => S.projects.filter((p) => p.domain === c).length;
     return `<main>
-      <section class="page-head">
-        <h1 class="mark">Work<sup>${pad(S.projects.length)}</sup></h1>
+      <section class="intro grid">
+        <h1 class="display reveal">Selected work.<br>${pad(S.projects.length)} projects.</h1>
       </section>
-      <div class="toolbar grid">
-        <span class="sec-n">Filter</span>
+      <div class="toolbar grid label">
+        <span class="muted">Filter</span>
         <div class="filters">
           <button class="on" data-filter="*">All <sup>${S.projects.length}</sup></button>
           ${cats.map((c) => `<button data-filter="${esc(c)}">${esc(c)} <sup>${count(c)}</sup></button>`).join("")}
         </div>
         <div class="views">
-          <button class="on" data-view="list">List</button><button data-view="grid">Grid</button>
+          <button class="on" data-view="grid">Grid</button><button data-view="list">List</button>
         </div>
       </div>
-      <section data-view-pane="list">${indexTable(S.projects)}</section>
-      <section class="works-grid grid" data-view-pane="grid" hidden>${S.projects.map((p) => card(p)).join("")}</section>
+      <section class="works-grid" data-view-pane="grid">${S.projects.map((p) => card(p)).join("")}</section>
+      <section data-view-pane="list" hidden>${indexTable(S.projects)}</section>
     </main>`;
   }
 
@@ -180,7 +176,7 @@
       .map((s, n) => {
         const img = rest[n];
         return `<section class="chapter grid reveal">
-          <span class="sec-n">(${pad(n + 1)})</span>
+          <span class="label muted ch-n">(${pad(n + 1)})</span>
           <h2 class="ch-t">${esc(s.label)}</h2>
           <p class="ch-p">${esc(s.text)}</p>
         </section>
@@ -189,9 +185,9 @@
       .join("");
 
     return `<main>
-      <section class="page-head">
-        <span class="sec-n">(${num(p)}/${pad(S.projects.length)})</span>
-        <h1 class="mark">${esc(p.title)}</h1>
+      <section class="intro grid">
+        <span class="label muted p-count">(${num(p)}/${pad(S.projects.length)})</span>
+        <h1 class="display reveal">${esc(p.title)}</h1>
       </section>
       <div class="p-lede grid"><p>${esc(p.summary)}</p></div>
       <dl class="p-meta grid">
@@ -203,7 +199,7 @@
       <figure class="p-fig">${media(lead, p.title, "01")}</figure>
       ${chapters}
       <a class="next grid" href="${projectUrl(next)}">
-        <span class="sec-n">Next (${num(next)})</span>
+        <span class="label muted ch-n">Next (${num(next)})</span>
         <span class="next-t">${esc(next.title)} &rarr;</span>
       </a>
     </main>`;
