@@ -2,117 +2,161 @@
  * Site content — edit this file to update the portfolio.
  *
  * Images: put files in /images and reference them as "images/your-file.jpg".
- * If an image is missing, a neutral placeholder with the project title is shown.
+ * If an image is missing, a neutral placeholder is shown instead.
+ *
+ * TODO: project titles, summaries and case-study text below are drafts that
+ * describe the kind of work only. Replace them with the real projects before
+ * publishing (no metrics or client claims have been invented here).
  */
 window.SITE = {
   name: "Zhenqi Cai",
-  mark: "ZC.",
-  role: "Photographer & Visual Director",
-  tagline: ["Light chases.", "Moments stay."],
-  statement: ["Photographer.", "Visual storyteller.", "Based in —."],
-  bio:
-    "I shoot fashion, portraits, and campaigns. Available for editorial, brand, and exhibition work.",
-  portrait: "images/portrait.jpg",
+  role: "Product Designer",
+  signature: "Quiet Intelligence",
   email: "hello@zhenqicai.com",
-  phone: "",
-  address: ["City, Country"],
   social: [
-    { label: "Instagram", url: "https://instagram.com/" },
-    { label: "LinkedIn", url: "https://linkedin.com/" },
-    { label: "Twitter/X", url: "https://x.com/" }
+    { label: "LinkedIn", url: "https://www.linkedin.com/" },
+    { label: "Read.cv", url: "https://read.cv/" }
   ],
-  services: [
+
+  // Home — first screen
+  mission: "Humanize Complexity.",
+  intro:
+    "Product designer working on AI and complex enterprise systems. I design the rules, states and relationships underneath the interface — so complexity stays in the system, not in people’s heads.",
+
+  // The three lines that run from visual → product → AI
+  principles: [
     {
-      title: "Fashion & Editorial",
+      title: "Form follows function.",
+      domain: "Visual",
       text:
-        "Studio or location, controlled or found — I shoot fashion that has something to say. Collections, lookbooks, editorials for independent labels and international publications."
+        "Every element earns its place. Grid creates order, typography creates hierarchy, whitespace creates focus. Nothing is there to decorate."
     },
     {
-      title: "Portrait",
+      title: "Systems create clarity.",
+      domain: "Product",
       text:
-        "Faces, bodies, presence. I work with artists, creatives, and private clients on portrait sessions that feel like a conversation rather than a sitting."
+        "I don’t only optimise screens. I untangle the rules, states, relationships and behaviours behind them, and rebuild them so the interface can stay simple."
     },
     {
-      title: "Commercial & Brand",
+      title: "Technology serves people.",
+      domain: "AI",
       text:
-        "Campaigns, lookbooks, and product shoots for brands that want imagery with a point of view. Shot with intention, delivered ready to publish."
-    },
-    {
-      title: "Art Direction",
-      text:
-        "Beyond the shutter — I concept and direct shoots from mood board to final frame. Set design, casting direction, styling guidance, and post-production supervision."
+        "Intelligent systems should help people understand, judge, choose and stay in control — extending human capability rather than replacing human judgement."
     }
   ],
 
+  // About
+  statement: ["Modernist in form.", "Systematic in thinking.", "Human in purpose."],
+  bio: [
+    "I’m a product designer who works where complexity is highest — enterprise tools, compliance, marketplaces, and now AI and agentic systems.",
+    "My background is Bauhaus and Swiss modernism: the belief that clear structure is a form of respect for the people who use it. I bring the same discipline to product work — map the system first, then design the surface."
+  ],
+  pillars: [
+    { word: "Clarity", note: "What I create" },
+    { word: "Systems", note: "How I design" },
+    { word: "Humanity", note: "Why I design" }
+  ],
+  dna: [
+    ["Aesthetic", "Bauhaus × Swiss Style × Editorial Modernism"],
+    ["Type", "Helvetica / Neo-grotesk"],
+    ["Style", "Quiet Intelligence"],
+    ["Philosophy", "Systems create clarity."],
+    ["Value", "Human Agency"],
+    ["Mission", "Humanize Complexity"],
+    ["Vision", "Augment Humanity"]
+  ],
+
   /*
-   * Projects. The first five marked `featured` fill the home-page grid
-   * (1 large + 2 small, then 2 wide). All projects appear on works.html.
+   * Projects. The first four with `featured: true` fill the home page.
+   * `sections` become the numbered chapters of the case-study page.
    */
   projects: [
     {
-      id: "project-01",
-      title: "Project One",
-      category: "Portrait",
+      id: "agentic-workflows",
+      title: "Agentic Workflows",
+      org: "Amazon",
+      domain: "AI / Agentic Systems",
       year: "2026",
-      client: "Personal",
+      role: "Lead Product Designer",
       featured: true,
-      cover: "images/project-01.jpg",
-      description: "A short paragraph about the project: the idea, the light, the people involved.",
-      images: ["images/project-01.jpg", "images/project-01-2.jpg", "images/project-01-3.jpg"]
+      cover: "images/agentic-workflows.jpg",
+      summary: "Designing how people delegate to, supervise and trust AI agents.",
+      sections: [
+        { label: "Context", text: "Replace with the context: who the users are, what the agents do, and why it matters now." },
+        { label: "Problem", text: "Replace with the core problem — where people lost visibility or control over what the system was doing." },
+        { label: "System", text: "Replace with the model you designed: states, hand-offs, review points and how the agent explains itself." },
+        { label: "Outcome", text: "Replace with what changed for people and for the business." }
+      ],
+      images: ["images/agentic-workflows.jpg", "images/agentic-workflows-2.jpg", "images/agentic-workflows-3.jpg"]
     },
     {
-      id: "project-02",
-      title: "Project Two",
-      category: "Architecture",
-      year: "2026",
-      client: "Personal",
-      featured: true,
-      cover: "images/project-02.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-02.jpg", "images/project-02-2.jpg"]
-    },
-    {
-      id: "project-03",
-      title: "Project Three",
-      category: "Commercial",
+      id: "compliance-platform",
+      title: "Compliance Platform",
+      org: "Amazon",
+      domain: "Enterprise / Compliance",
       year: "2025",
-      client: "Brand name",
+      role: "Product Designer",
       featured: true,
-      cover: "images/project-03.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-03.jpg", "images/project-03-2.jpg"]
+      cover: "images/compliance-platform.jpg",
+      summary: "Turning regulatory rules into a system people can act on with confidence.",
+      sections: [
+        { label: "Context", text: "Replace with the context." },
+        { label: "Problem", text: "Replace with the problem." },
+        { label: "System", text: "Replace with the system you designed." },
+        { label: "Outcome", text: "Replace with the outcome." }
+      ],
+      images: ["images/compliance-platform.jpg", "images/compliance-platform-2.jpg", "images/compliance-platform-3.jpg"]
     },
     {
-      id: "project-04",
-      title: "Project Four",
-      category: "Fashion",
-      year: "2025",
-      client: "Magazine",
-      featured: true,
-      cover: "images/project-04.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-04.jpg", "images/project-04-2.jpg"]
-    },
-    {
-      id: "project-05",
-      title: "Project Five",
-      category: "Fashion",
-      year: "2025",
-      client: "Label",
-      featured: true,
-      cover: "images/project-05.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-05.jpg", "images/project-05-2.jpg"]
-    },
-    {
-      id: "project-06",
-      title: "Project Six",
-      category: "Portrait",
+      id: "marketplace-operations",
+      title: "Marketplace Operations",
+      org: "Amazon",
+      domain: "Marketplace",
       year: "2024",
-      client: "Personal",
-      cover: "images/project-06.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-06.jpg"]
+      role: "Product Designer",
+      featured: true,
+      cover: "images/marketplace-operations.jpg",
+      summary: "Making a many-sided marketplace legible to the people who run it.",
+      sections: [
+        { label: "Context", text: "Replace with the context." },
+        { label: "Problem", text: "Replace with the problem." },
+        { label: "System", text: "Replace with the system you designed." },
+        { label: "Outcome", text: "Replace with the outcome." }
+      ],
+      images: ["images/marketplace-operations.jpg", "images/marketplace-operations-2.jpg"]
+    },
+    {
+      id: "design-system",
+      title: "Design System",
+      org: "Independent",
+      domain: "Systems",
+      year: "2024",
+      role: "Designer",
+      featured: true,
+      cover: "images/design-system.jpg",
+      summary: "A shared grammar of components, tokens and rules for complex tools.",
+      sections: [
+        { label: "Context", text: "Replace with the context." },
+        { label: "Problem", text: "Replace with the problem." },
+        { label: "System", text: "Replace with the system you designed." },
+        { label: "Outcome", text: "Replace with the outcome." }
+      ],
+      images: ["images/design-system.jpg", "images/design-system-2.jpg"]
+    },
+    {
+      id: "enterprise-tooling",
+      title: "Enterprise Tooling",
+      org: "—",
+      domain: "Enterprise",
+      year: "2023",
+      role: "Product Designer",
+      cover: "images/enterprise-tooling.jpg",
+      summary: "Internal tools for high-stakes, high-volume operational work.",
+      sections: [
+        { label: "Context", text: "Replace with the context." },
+        { label: "Outcome", text: "Replace with the outcome." }
+      ],
+      images: ["images/enterprise-tooling.jpg"]
     }
   ]
 };

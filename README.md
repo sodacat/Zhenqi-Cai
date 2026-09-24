@@ -1,25 +1,22 @@
 # Zhenqi Cai — Portfolio
 
-Minimal, editorial photography portfolio (static HTML/CSS/JS, no build step).
+**Clarity · Systems · Humanity** — Modernist in form. Systematic in thinking. Human in purpose.
+
+Static HTML/CSS/JS, no build step. Helvetica, 12-column Swiss grid, black and white,
+generous whitespace, functional motion only.
 
 ## Pages
-- `index.html` — hero mark, tagline, featured works grid, about, services, footer
-- `works.html` — all projects with category filters
-- `project.html?id=<project-id>` — project detail with gallery and next-project link
+- `index.html` — wordmark, mission, selected work, principles, about / design DNA, contact
+- `work.html` — full project index (list / grid, filter by domain)
+- `project.html?id=<project-id>` — case study: summary, meta, numbered chapters with images
 
 ## Editing content
-All text, links and projects live in **`js/data.js`**.
-Put images in `images/` and reference them as `images/<file>.jpg`.
-The first five projects with `featured: true` fill the home grid
-(1 large + 2 small, then 2 wide). Missing images show a neutral placeholder.
+All copy and projects live in **`js/data.js`**. Project entries are drafts —
+replace titles, summaries and `sections` with real case-study content.
+Put images in `images/` and reference them as `images/<file>.jpg`
+(16:9 or 4:3 work best). Missing images show a neutral numbered placeholder.
 
 ## Local preview
 ```
 python3 -m http.server 8000
 ```
-then open http://localhost:8000.
-
-## Swiss version
-`swiss/` is an alternative Swiss-style (International Typographic Style) design:
-Helvetica only, strict 12-column grid, black/white with one red accent.
-Open `swiss/index.html`. It reads the same `js/data.js` and `images/`.
