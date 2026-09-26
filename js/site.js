@@ -44,8 +44,8 @@
     </${tag}>`;
   }
 
-  function secHead(title, aside = "") {
-    return `<div class="sec-head label"><span class="sh-t">${title}</span><span class="sh-a">${aside}</span></div>`;
+  function secHead(n, title, aside = "") {
+    return `<div class="sec-head label">${n ? `<span class="sh-n">${pad(n)}</span>` : ""}<span class="sh-t">${title}</span><span class="sh-a">${aside}</span></div>`;
   }
 
   function indexTable(items) {
@@ -81,14 +81,14 @@
     </header>`;
   }
 
-  function finalCta(label = true) {
+  // n: section number on the home page; omitted elsewhere (no section head).
+  function finalCta(n = 0) {
     const c = S.cta;
     return `<section class="sec" id="contact">
-      ${label ? secHead("Let’s talk") : ""}
+      ${n ? secHead(n, "Let’s talk") : ""}
       <div class="cta grid">
         <h2 class="big reveal">${lines(c.statement)}</h2>
         <div class="cta-go vr">
-          <p>${esc(c.text)}</p>
           <a class="btn btn-solid" href="${esc(S.book.url)}">${esc(S.book.label)} ${arrow}</a>
         </div>
       </div>
@@ -113,26 +113,34 @@
 
     return `<main>
       <section class="hero grid">
-        <h1 class="hero-t reveal"><b>${esc(H.strong)}</b><br>${lines(H.rest)}</h1>
+        <h1 class="hero-t reveal"><b>${lines(H.strong)}</b><br>${lines(H.rest)}</h1>
         <div class="hero-side vr reveal">
+          <p class="label muted">Previously at</p>
+          <div class="logos">
+            ${H.previously.map((l) => `<img src="${esc(l.logo)}" alt="${esc(l.name)}">`).join("")}
+            <span class="scale"><b>${esc(H.scale[0])}</b><span class="label">${esc(H.scale[1])}</span></span>
+          </div>
           <p class="hero-services">${lines(H.services)}</p>
-          <p class="label">${esc(H.credentials)}</p>
-          <a class="btn btn-solid btn-wide" href="${esc(S.book.url)}">${esc(S.book.label)} ${arrow}</a>
+          <a class="btn btn-solid btn-wide" href="${esc(S.book.url)}">${esc(H.cta)} ${arrow}</a>
+          <p class="label muted hero-note">${esc(H.note)}</p>
         </div>
       </section>
 
       <section class="sec" id="work">
-        ${secHead("Selected work", `<a class="arrow-link" href="work.html">View all work ${arrow}</a>`)}
+        ${secHead(1, "Selected work", `<a class="arrow-link" href="work.html">View all work ${arrow}</a>`)}
         <div class="works-grid two">${f.map(card).join("")}</div>
       </section>
 
       <section class="sec" id="services">
-        ${secHead("What I offer")}
+        ${secHead(2, "What I help you solve")}
         <div class="offers grid">
           ${S.offers
             .map(
               (o, i) => `<a class="offer${i ? " vr" : ""} reveal" href="${esc(S.book.url)}">
-            <h3>${lines(o.title)}</h3>
+            <span class="label muted">${pad(i + 1)}</span>
+            <h3>${esc(o.question)}</h3>
+            <p class="o-name">${esc(o.name)}</p>
+            <p class="o-text">${esc(o.text)}</p>
             <span class="o-go" aria-hidden="true">${arrow}</span>
             <p class="label muted">${o.tags.map(esc).join(" · ")}</p>
           </a>`
@@ -142,23 +150,23 @@
       </section>
 
       <section class="sec">
-        ${secHead("Ways to work together")}
+        ${secHead(3, "Ways to work together")}
         <div class="ways grid">
           ${S.engagements
             .map(
-              (e, i) => `<div class="way${i ? " vr" : ""} reveal">
+              (e, i) => `<a class="way${i ? " vr" : ""} reveal" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name)}" aria-label="${esc(e.cta)}">
             <h3 class="way-t">${esc(e.name)}</h3>
             <p class="way-s">${lines(e.text)}</p>
             <p class="way-price"><b>${esc(e.price)}</b><span class="muted"> · ${esc(e.term)}</span></p>
-            <a class="label arrow-link" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name)}">${esc(e.cta)} ${arrow}</a>
-          </div>`
+            <span class="o-go" aria-hidden="true">${arrow}</span>
+          </a>`
             )
             .join("")}
         </div>
       </section>
 
       <section class="sec" id="about">
-        ${secHead("About")}
+        ${secHead(4, "About")}
         <div class="about grid">
           ${A.portrait ? `<div class="about-img reveal">${media(A.portrait, S.name)}</div>` : ""}
           <h2 class="about-t reveal">${lines(A.statement)}</h2>
@@ -170,15 +178,15 @@
       </section>
 
       <section class="sec">
-        ${secHead("Design philosophy")}
+        ${secHead(5, "Design philosophy")}
         <div class="phil grid">
           ${S.philosophy
-            .map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p>${esc(p.line)}</p></div>`)
+            .map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p class="label muted">${esc(p.line)}</p></div>`)
             .join("")}
         </div>
       </section>
 
-      ${finalCta()}
+      ${finalCta(6)}
     </main>`;
   }
 
@@ -266,7 +274,7 @@
 
   /* ---------- Render ---------- */
   const views = { home, work, project };
-  document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta(false)) + footer();
+  document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta()) + footer();
   document.body.id = "top";
 
   document.querySelectorAll(".media img").forEach((img) => {

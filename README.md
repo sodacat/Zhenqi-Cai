@@ -1,6 +1,6 @@
 # ZC. — Independent product design studio by Zhenqi Cai
 
-**Senior product design. Without building a design team.**
+**Enterprise product design. Without building a design team.**
 Senior product strategy & alignment · AI & complex systems design · 0→1.
 
 Static HTML/CSS/JS, no build step. Helvetica, 12-column Swiss grid,
@@ -8,7 +8,7 @@ near-black on warm paper, thin rules, black-and-white covers that regain
 colour on hover, restrained motion.
 
 ## Pages
-- `index.html` — hero · selected work (2×2) · what I offer · ways to work together (with starting prices) · about · design philosophy · let’s talk · footer
+- `index.html` — hero (previously at Amazon · IBM · SAP) · 01 selected work (2×2) · 02 what I help you solve · 03 ways to work together (prices) · 04 about · 05 design philosophy · 06 let’s talk · footer
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 

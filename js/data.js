@@ -22,17 +22,39 @@ window.SITE = {
   ],
 
   hero: {
-    strong: "Senior product design.",
+    strong: ["Enterprise", "product design."],
     rest: ["Without building", "a design team."],
+    previously: [
+      { name: "Amazon", logo: "images/logo-amazon.png" },
+      { name: "IBM", logo: "images/logo-ibm.png" },
+      { name: "SAP", logo: "images/logo-sap.png" }
+    ],
+    scale: ["100M+", "Scale"],
     services: ["Senior Product Strategy & Alignment", "AI & Complex Systems Design"],
-    credentials: "Amazon · IBM · SAP · 100M+ scale"
+    cta: "Work with ZC.",
+    note: "Free consultation · No commitment"
   },
 
-  // What I offer — three practice areas
+  // What I help you solve — the client's question first, the practice second
   offers: [
-    { title: ["Product Clarity", "& Alignment"], tags: ["Workshops", "Product strategy", "Facilitation"] },
-    { title: ["AI & Complex", "Systems Design"], tags: ["AI experiences", "Workflows", "Systems"] },
-    { title: ["0→1", "Product Design"], tags: ["Product direction", "Interaction", "Prototyping"] }
+    {
+      question: "What should we build?",
+      name: "Product Direction & 0→1",
+      text: "Turn your idea, technology, or early product into a clear direction — grounded in real user needs and designed to move from ambiguity to build.",
+      tags: ["User research", "Product strategy", "Roadmap", "Prototyping"]
+    },
+    {
+      question: "How should the AI work?",
+      name: "AI Experience & Human Control",
+      text: "Turn AI capabilities into experiences people can understand, trust, and control — from agent behavior and uncertainty to feedback and human intervention.",
+      tags: ["AI UX", "Interaction design", "Trust", "Human oversight"]
+    },
+    {
+      question: "How do we keep this from becoming a mess?",
+      name: "Complex Systems & Scale",
+      text: "Untangle fast-growing products before complexity takes over — simplifying workflows, system behavior, and interaction patterns into a coherent experience.",
+      tags: ["Systems thinking", "Design systems", "UX debt", "Scale"]
+    }
   ],
 
   // Ways to work together. Prices are starting points — edit freely.
@@ -40,22 +62,22 @@ window.SITE = {
     {
       name: "Workshop",
       text: ["Align the team. Find the real problem.", "Leave with a clear direction."],
-      price: "From $6,000",
+      price: "$6,000+",
       term: "1–2 days",
       cta: "Book a workshop"
     },
     {
       name: "Focused Engagement",
       text: ["Turn direction into a product.", "From strategy to prototype."],
-      price: "From $15,000",
+      price: "$15,000+",
       term: "4–8 weeks",
       cta: "Start a project"
     },
     {
       name: "Embedded Design Partner",
       text: ["Ongoing senior design support", "as your product evolves."],
-      price: "From $5,000 / month", // TODO: confirm — see note in README
-      term: "Monthly",
+      price: "From $5,000/month", // TODO: confirm pricing
+      term: "Cancel anytime",
       cta: "Explore a partnership"
     }
   ],
@@ -70,14 +92,13 @@ window.SITE = {
   },
 
   philosophy: [
-    { word: "Clarity", line: "Complexity should become understandable." },
-    { word: "Systems", line: "Great experiences come from fixing the system underneath." },
-    { word: "Humanity", line: "Technology should expand human agency — not replace it." }
+    { word: "Clarity", line: "Clear problems. Better decisions." },
+    { word: "Systems", line: "From parts to a working whole." },
+    { word: "Humanity", line: "Technology for real people." }
   ],
 
   cta: {
-    statement: ["You can build it.", "But will anyone", "want it?"],
-    text: "Let’s talk about your product, your users, and what to build next."
+    statement: ["You can build it.", "But will anyone", "want it?"]
   },
 
   /*
