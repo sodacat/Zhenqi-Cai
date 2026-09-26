@@ -1,15 +1,14 @@
-# ZC. — Zhenqi Cai, Independent Product Designer
+# ZC. — Independent product design studio by Zhenqi Cai
 
-**Clarity at AI speed.** AI · Complex Systems · 0→1.
-Senior product designer + independent design practice (focused engagements,
-embedded design partner).
+**Senior product design. Without building a design team.**
+Senior product strategy & alignment · AI & complex systems design · 0→1.
 
-Static HTML/CSS/JS, no build step. REC-style editorial layout: Helvetica,
-12-column Swiss grid, near-black on warm paper, thin rules, black-and-white
-covers that regain colour on hover, restrained motion. No gradients, no glow, no floating cards.
+Static HTML/CSS/JS, no build step. Helvetica, 12-column Swiss grid,
+near-black on warm paper, thin rules, black-and-white covers that regain
+colour on hover, restrained motion.
 
 ## Pages
-- `index.html` — hero · 01 selected work (2×2, proof on every card) · 02 perspective · 03 what I offer (arrow rows) · 04 ways to work together · 05 about · 06 philosophy · 07 let’s talk · footer
+- `index.html` — hero · selected work (2×2) · what I offer · ways to work together (with starting prices) · about · design philosophy · let’s talk · footer
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 
@@ -18,8 +17,9 @@ All copy and projects live in **`js/data.js`**. Case studies (Amazon, SAP,
 Stonk Tech, Smart Mirror) are condensed from the published case studies and
 presentation decks; images in `images/` were extracted from those PDFs.
 Projects without `chapters` (IBM Amelia, Weee!) are listed in the index only.
-Still to fill in (marked `TODO`): real email and LinkedIn, years for
-IBM / Weee! / Amazon Global Product Compliance, and 2–3 testimonials.
+Still to fill in (marked `TODO`): booking link for “Book a free consultation”,
+real email and LinkedIn, years for IBM / Weee! / Amazon Global Product
+Compliance. Prices live in `engagements` in `js/data.js`.
 
 ## Local preview
 ```

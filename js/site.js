@@ -39,16 +39,13 @@
       <span class="cap">
         <span class="cap-top label muted"><span>${esc(p.org)}</span><span>${num(p)}</span></span>
         <span class="t">${esc(p.title)}</span>
-        ${p.proofs?.length ? `<span class="proofs label">${p.proofs.map(esc).join(" &nbsp;·&nbsp; ")}</span>` : ""}
         <span class="label muted">${esc(p.tags || p.domain)}${hasPage(p) ? "" : " — Case study on request"}</span>
       </span>
     </${tag}>`;
   }
 
-  function secHead(n, title, aside = "") {
-    return `<div class="sec-head label">
-      <span class="sh-n">${pad(n)}</span><span class="sh-t">${title}</span><span class="sh-a">${aside}</span>
-    </div>`;
+  function secHead(title, aside = "") {
+    return `<div class="sec-head label"><span class="sh-t">${title}</span><span class="sh-a">${aside}</span></div>`;
   }
 
   function indexTable(items) {
@@ -76,30 +73,23 @@
       ["Contact", "index.html#contact", ""]
     ];
     return `<header class="top grid">
-      <div class="brand-wrap">
-        <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
-        <p class="label brand-sub">${esc(S.role)}<br>${esc(S.focus)}</p>
-      </div>
+      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
       <nav class="h-nav label" aria-label="Primary">
         ${nav.map(([t, h, k]) => `<a href="${h}"${k && page === k ? ' aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
-      <div class="h-right">
-        <a class="btn" href="index.html#contact">Let’s talk</a>
-        <p class="label muted">${esc(S.location).replace(" · ", "<br>")}<br>${esc(S.availability)}</p>
-      </div>
+      <a class="btn h-btn" href="${esc(S.book.url)}">${esc(S.book.label)} ${arrow}</a>
     </header>`;
   }
 
-  function finalCta(n) {
+  function finalCta(label = true) {
     const c = S.cta;
     return `<section class="sec" id="contact">
-      ${n ? secHead(n, "Let’s talk") : ""}
+      ${label ? secHead("Let’s talk") : ""}
       <div class="cta grid">
         <h2 class="big reveal">${lines(c.statement)}</h2>
         <div class="cta-go vr">
-          <p>${esc(c.for)}</p>
-          <a class="btn btn-solid" href="mailto:${esc(S.email)}">${esc(c.button)} ${arrow}</a>
-          <p class="label muted">${c.openTo.map(esc).join(" · ")}</p>
+          <p>${esc(c.text)}</p>
+          <a class="btn btn-solid" href="${esc(S.book.url)}">${esc(S.book.label)} ${arrow}</a>
         </div>
       </div>
     </section>`;
@@ -108,71 +98,59 @@
   function footer() {
     return `<footer class="foot grid">
       <a class="foot-mark" href="#top" aria-label="Back to top">${esc(S.mark)}</a>
-      <p class="label fc0">Independent design practice<br>by ${esc(S.name)}</p>
       <nav class="label fc1">
         <a href="work.html">Work</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#contact">Contact</a>
         ${S.social.map((s) => `<a href="${esc(s.url)}"${s.url.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(s.label)}</a>`).join("")}
       </nav>
-      <p class="label fc2">${esc(S.location.split(" · ")[0])}<br>${esc(S.promise)}</p>
+      <p class="label fc2">${esc(S.studio)}<br>by ${esc(S.name)} · ${esc(S.location.split(" · ")[0])}<br><span class="muted">&copy; ${year}</span></p>
     </footer>`;
   }
 
   /* ---------- Home ---------- */
   function home() {
     const f = S.projects.filter((p) => p.featured).slice(0, 4);
-    const H = S.hero, P = S.pov, A = S.about;
+    const H = S.hero, A = S.about;
 
     return `<main>
       <section class="hero grid">
-        <h1 class="hero-t reveal">${lines(H.statement)}</h1>
-        <div class="hero-side reveal">
-          <p class="hero-lede">${esc(H.lede)}</p>
-          <a class="label arrow-link" href="#work">View selected work ${arrow}</a>
+        <h1 class="hero-t reveal"><b>${esc(H.strong)}</b><br>${lines(H.rest)}</h1>
+        <div class="hero-side vr reveal">
+          <p class="hero-services">${lines(H.services)}</p>
+          <p class="label">${esc(H.credentials)}</p>
+          <a class="btn btn-solid btn-wide" href="${esc(S.book.url)}">${esc(S.book.label)} ${arrow}</a>
         </div>
       </section>
 
       <section class="sec" id="work">
-        ${secHead(1, "Selected work", `<a class="arrow-link" href="work.html">View all work ${arrow}</a>`)}
+        ${secHead("Selected work", `<a class="arrow-link" href="work.html">View all work ${arrow}</a>`)}
         <div class="works-grid two">${f.map(card).join("")}</div>
       </section>
 
-      <section class="sec">
-        ${secHead(2, "Perspective")}
-        <div class="pov grid">
-          <h2 class="big reveal">${lines(P.statement)}</h2>
-          <div class="pov-body vr reveal">
-            <p>${esc(P.opening)}</p>
-            <p>The harder questions remain:<br>${P.questions.map(esc).join("<br>")}</p>
-            <p class="strong">${esc(P.close)}</p>
-          </div>
+      <section class="sec" id="services">
+        ${secHead("What I offer")}
+        <div class="offers grid">
+          ${S.offers
+            .map(
+              (o, i) => `<a class="offer${i ? " vr" : ""} reveal" href="${esc(S.book.url)}">
+            <h3>${lines(o.title)}</h3>
+            <span class="o-go" aria-hidden="true">${arrow}</span>
+            <p class="label muted">${o.tags.map(esc).join(" · ")}</p>
+          </a>`
+            )
+            .join("")}
         </div>
       </section>
 
-      <section class="sec" id="services">
-        ${secHead(3, "What I offer")}
-        <ol class="offers">
-          ${S.offers
-            .map(
-              (o, i) => `<li class="reveal"><a class="offer grid" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(o.name)}">
-            <span class="o-n">${pad(i + 1)}</span>
-            <h3 class="o-from">${lines(o.from)}</h3>
-            <div class="o-body vr"><p class="label">${esc(o.name)}</p><p>${esc(o.short)}</p></div>
-            <span class="o-go" aria-hidden="true">${arrow}</span>
-          </a></li>`
-            )
-            .join("")}
-        </ol>
-      </section>
-
       <section class="sec">
-        ${secHead(4, "Ways to work together")}
+        ${secHead("Ways to work together")}
         <div class="ways grid">
           ${S.engagements
             .map(
               (e, i) => `<div class="way${i ? " vr" : ""} reveal">
-            <h3 class="way-t">${esc(e.name.join(" "))}</h3>
-            <p class="way-s">${esc(e.short)}</p>
-            <a class="label arrow-link" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name.join(" "))}">${esc(e.cta)} ${arrow}</a>
+            <h3 class="way-t">${esc(e.name)}</h3>
+            <p class="way-s">${lines(e.text)}</p>
+            <p class="way-price"><b>${esc(e.price)}</b><span class="muted"> · ${esc(e.term)}</span></p>
+            <a class="label arrow-link" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name)}">${esc(e.cta)} ${arrow}</a>
           </div>`
             )
             .join("")}
@@ -180,28 +158,27 @@
       </section>
 
       <section class="sec" id="about">
-        ${secHead(5, "About")}
+        ${secHead("About")}
         <div class="about grid">
           ${A.portrait ? `<div class="about-img reveal">${media(A.portrait, S.name)}</div>` : ""}
           <h2 class="about-t reveal">${lines(A.statement)}</h2>
           <div class="about-body vr reveal">
-            <p>${esc(A.bio[0])}</p>
-            <p class="strong">${lines(S.rangeClose)}</p>
+            ${A.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
             <a class="label arrow-link" href="${esc(S.social[0].url)}" target="_blank" rel="noopener">More about me ${arrow}</a>
           </div>
         </div>
       </section>
 
       <section class="sec">
-        ${secHead(6, "Philosophy")}
-        <div class="phil">
+        ${secHead("Design philosophy")}
+        <div class="phil grid">
           ${S.philosophy
-            .map((p) => `<div class="phil-r grid reveal"><h3>${esc(p.word)}</h3><span class="phil-dash"></span><p>${esc(p.line)}</p></div>`)
+            .map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p>${esc(p.line)}</p></div>`)
             .join("")}
         </div>
       </section>
 
-      ${finalCta(7)}
+      ${finalCta()}
     </main>`;
   }
 
@@ -289,7 +266,7 @@
 
   /* ---------- Render ---------- */
   const views = { home, work, project };
-  document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta()) + footer();
+  document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta(false)) + footer();
   document.body.id = "top";
 
   document.querySelectorAll(".media img").forEach((img) => {

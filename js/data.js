@@ -1,8 +1,8 @@
 /*
- * Site content — edit this file to update the portfolio.
+ * Site content — edit this file to update the studio site.
  *
- * ZC. — Independent Product Designer. AI · Complex Systems · 0→1.
- * Brand promise: Clarity at AI speed.
+ * ZC. — independent product design studio by Zhenqi Cai.
+ * Senior product design, without building a design team.
  *
  * Case-study copy is condensed from the published case studies on
  * zhenqicai.com. Images live in /images; a missing image shows a
@@ -11,122 +11,73 @@
 window.SITE = {
   name: "Zhenqi Cai",
   mark: "ZC.",
-  role: "Independent Product Designer",
-  focus: "AI · Complex Systems · 0→1",
-  promise: "Clarity at AI speed.",
+  studio: "Independent product design studio",
   location: "Austin, TX · Working globally",
-  availability: "Available for select roles & design partnerships",
   email: "hello@zhenqicai.com", // TODO: replace with your real address
+  // Primary action used across the page. TODO: point to a booking link (Calendly, Cal.com…).
+  book: { label: "Book a free consultation", url: "mailto:hello@zhenqicai.com?subject=Free%20consultation" },
   social: [
     { label: "LinkedIn", url: "https://www.linkedin.com/" }, // TODO: profile URL
     { label: "Email", url: "mailto:hello@zhenqicai.com" }
   ],
 
-  // 01 Hero
   hero: {
-    statement: ["Clarity", "at AI speed."],
-    lede:
-      "I help fast-moving teams turn ambitious ideas, AI capabilities, and complex systems into products people can understand, trust, and use."
+    strong: "Senior product design.",
+    rest: ["Without building", "a design team."],
+    services: ["Senior Product Strategy & Alignment", "AI & Complex Systems Design"],
+    credentials: "Amazon · IBM · SAP · 100M+ scale"
   },
 
-  // 03 Point of view
-  pov: {
-    statement: ["Building faster", "isn’t the same", "as building better."],
-    opening: "AI has made execution dramatically faster.",
-    questions: [
-      "What should we build?",
-      "How should the system work?",
-      "How should people understand and control it?",
-      "And how do we scale without losing coherence?"
-    ],
-    close: "That’s where I work."
-  },
-
-  // 04 What I offer
+  // What I offer — three practice areas
   offers: [
-    {
-      from: ["From idea", "to product"],
-      name: "0→1 Product Direction",
-      short: "Turn an idea, technology, or early product into a clear direction and a shippable experience.",
-      text: "Turn an idea, technology, or early product into a clear direction — grounded in real user needs and shaped into something worth building.",
-      skills: ["Problem framing", "User understanding", "Product strategy", "MVP definition", "Interaction models", "Prototyping"]
-    },
-    {
-      from: ["From AI", "to experience"],
-      name: "AI Experience Design",
-      short: "Turn AI capabilities into experiences people can understand, trust, and control.",
-      text: "Turn AI capabilities into experiences people can understand, trust, and control.",
-      skills: ["Human–AI interaction", "Agent behavior", "Trust & transparency", "Human control", "Uncertainty & feedback", "Error recovery"]
-    },
-    {
-      from: ["From fast", "to coherent"],
-      name: "Complex Systems & Scale",
-      short: "Untangle fast-growing products into coherent systems built to scale.",
-      text: "Untangle fast-growing products before complexity takes over — turning workflows, rules, data, and edge cases into coherent systems built to scale.",
-      skills: ["System modeling", "Complex workflows", "Information architecture", "Interaction patterns", "Design systems", "UX debt"]
-    }
+    { title: ["Product Clarity", "& Alignment"], tags: ["Workshops", "Product strategy", "Facilitation"] },
+    { title: ["AI & Complex", "Systems Design"], tags: ["AI experiences", "Workflows", "Systems"] },
+    { title: ["0→1", "Product Design"], tags: ["Product direction", "Interaction", "Prototyping"] }
   ],
 
-  // 05 Ways to work together
+  // Ways to work together. Prices are starting points — edit freely.
   engagements: [
     {
-      name: ["Focused", "engagement"],
-      short: "2–4 weeks. A clear direction for your product.",
-      for: "For a specific product challenge.",
-      text: "A focused 2–4 week engagement to clarify a product direction, rethink a complex workflow, or shape an AI experience.",
-      points: ["Clear scope.", "Senior attention.", "Tangible direction."],
-      cta: "Discuss a project"
+      name: "Workshop",
+      text: ["Align the team. Find the real problem.", "Leave with a clear direction."],
+      price: "From $6,000",
+      term: "1–2 days",
+      cta: "Book a workshop"
     },
     {
-      name: ["Embedded", "design partner"],
-      short: "Ongoing senior support. Flexible and asynchronous.",
-      for: "Ongoing senior product design support without hiring a full-time design lead.",
-      text: "I work alongside founders, product, and engineering to continuously shape product direction, solve complex UX problems, and keep the experience coherent as you ship.",
-      points: ["Monthly · Flexible · Asynchronous"],
+      name: "Focused Engagement",
+      text: ["Turn direction into a product.", "From strategy to prototype."],
+      price: "From $15,000",
+      term: "4–8 weeks",
+      cta: "Start a project"
+    },
+    {
+      name: "Embedded Design Partner",
+      text: ["Ongoing senior design support", "as your product evolves."],
+      price: "From $5,000 / month", // TODO: confirm — see note in README
+      term: "Monthly",
       cta: "Explore a partnership"
     }
   ],
 
-  // 06 About
   about: {
     statement: ["Product designer.", "Systems thinker.", "Humanist."],
     bio: [
       "I’m Zhenqi Cai, a product designer with 7+ years of experience designing complex digital products at Amazon, IBM, SAP, and startups.",
-      "My work sits where product strategy, systems thinking, interaction design, and emerging technology meet.",
-      "I’ve redesigned systems used at global scale, worked on AI transparency and enterprise tools, and helped early-stage teams turn ideas into products from the ground up."
+      "I care about making technology more understandable, trustworthy, and human."
     ],
-    question: "How do we make powerful technology easier for people to understand, trust, and control?",
     portrait: "images/portrait.jpg"
   },
 
-  // 07 Philosophy
   philosophy: [
     { word: "Clarity", line: "Complexity should become understandable." },
     { word: "Systems", line: "Great experiences come from fixing the system underneath." },
     { word: "Humanity", line: "Technology should expand human agency — not replace it." }
   ],
-  manifesto: ["Form follows function.", "Systems create clarity.", "Technology serves people."],
 
-  // 08 Design, with range
-  range: [
-    { name: "Strategy", line: "From ambiguity to product direction." },
-    { name: "Systems", line: "From complex logic to scalable experiences." },
-    { name: "Craft", line: "From interaction models to polished products and coherent visual systems." }
-  ],
-  rangeClose: ["Senior judgment.", "Hands-on execution.", "AI-native speed."],
-
-  // 09 Social proof — only real quotes. Add colleague / founder quotes that show judgement.
-  testimonials: [
-    // TODO: add 2–3 quotes from PMs, engineers, managers or founders.
-    { quote: "Inspiring and actionable.", who: "VP, Amazon — on the Seller Qualification strategic direction" }
-  ],
-
-  // 10 Final call to action
   cta: {
-    statement: ["Moving fast?", "Let’s make sure you’re", "moving in the right direction."],
-    for: "For AI products, complex systems, and ambitious 0→1 ideas.",
-    button: "Start a conversation",
-    openTo: ["Full-time opportunities", "Design partnerships", "Focused engagements"]
+    statement: ["You can build it.", "But will anyone", "want it?"],
+    text: "Let’s talk about your product, your users, and what to build next."
   },
 
   /*
@@ -155,7 +106,7 @@ window.SITE = {
       cardCover: "images/amazon-card.jpg",
       summary: "Re-architecting a compliance bottleneck into scalable seller infrastructure.",
       proofs: ["30 → 5 days", "+20% completion"],
-      tags: "Complex systems · Commerce",
+      tags: "Complex systems · Commerce · +20% completion",
       headline:
         "How I redesigned Amazon’s qualification system so that transparency and enforcement reinforce each other.",
       metrics: [
@@ -245,7 +196,7 @@ window.SITE = {
       summary: "Making complex regulation understandable across 100M+ product pages.",
       proofs: ["67% user preference", "100M+ pages"],
       tile: "67%",
-      tags: "Systems · Compliance · Scale"
+      tags: "Systems · Trust & safety · 100M+ products"
     },
     {
       id: "ibm-ai-governance",
@@ -258,7 +209,7 @@ window.SITE = {
       proofs: [],
       tile: "AI",
       cover: "images/ibm-cover.jpg",
-      tags: "AI · Trust · Enterprise"
+      tags: "AI · Enterprise · Design systems"
     },
     {
       id: "stonk-tech",
@@ -275,7 +226,7 @@ window.SITE = {
       cardCover: "images/stonk-laptop.jpg",
       summary: "Building a fintech product and brand from 0→1.",
       proofs: ["Founding designer"],
-      tags: "0→1 · Fintech · Brand",
+      tags: "0→1 · Fintech · Brand & experience",
       headline:
         "Brand and landing experience for a platform that gives retail investors the integrated infrastructure professionals take for granted.",
       metrics: [
