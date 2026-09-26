@@ -32,7 +32,7 @@ window.SITE = {
     scale: ["100M+", "Scale"],
     services: ["Senior Product Strategy & Alignment", "AI & Complex Systems Design"],
     cta: "Work with ZC.",
-    note: "Free consultation · No commitment"
+    note: "Cancel anytime."
   },
 
   // What I help you solve — the client's question first, the practice second
@@ -75,9 +75,9 @@ window.SITE = {
     },
     {
       name: "Embedded Design Partner",
-      text: ["Ongoing senior design support", "as your product evolves."],
+      text: ["Senior product judgment,", "embedded in your team."],
       price: "From $5,000/month", // TODO: confirm pricing
-      term: "Cancel anytime",
+      term: "Cancel anytime.",
       cta: "Explore a partnership"
     }
   ],
@@ -98,7 +98,7 @@ window.SITE = {
   ],
 
   cta: {
-    statement: ["You can build it.", "But will anyone", "want it?"]
+    statement: ["You can build it.", "But will anyone want it?"]
   },
 
   /*

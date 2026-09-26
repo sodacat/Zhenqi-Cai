@@ -45,7 +45,7 @@
   }
 
   function secHead(n, title, aside = "") {
-    return `<div class="sec-head label">${n ? `<span class="sh-n">${pad(n)}</span>` : ""}<span class="sh-t">${title}</span><span class="sh-a">${aside}</span></div>`;
+    return `<div class="sec-head label"><span class="sh-t">${title}</span><span class="sh-a">${aside}</span></div>`;
   }
 
   function indexTable(items) {
@@ -70,6 +70,7 @@
       ["Work", "work.html", "work"],
       ["About", "index.html#about", ""],
       ["Services", "index.html#services", ""],
+      ["Journal", "journal.html", "journal"],
       ["Contact", "index.html#contact", ""]
     ];
     return `<header class="top grid">
@@ -99,7 +100,7 @@
     return `<footer class="foot grid">
       <a class="foot-mark" href="#top" aria-label="Back to top">${esc(S.mark)}</a>
       <nav class="label fc1">
-        <a href="work.html">Work</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#contact">Contact</a>
+        <a href="work.html">Work</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="journal.html">Journal</a><a href="index.html#contact">Contact</a>
         ${S.social.map((s) => `<a href="${esc(s.url)}"${s.url.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(s.label)}</a>`).join("")}
       </nav>
       <p class="label fc2">${esc(S.studio)}<br>by ${esc(S.name)} · ${esc(S.location.split(" · ")[0])}<br><span class="muted">&copy; ${year}</span></p>
@@ -115,7 +116,6 @@
       <section class="hero grid">
         <h1 class="hero-t reveal"><b>${lines(H.strong)}</b><br>${lines(H.rest)}</h1>
         <div class="hero-side vr reveal">
-          <p class="label muted">Previously at</p>
           <div class="logos">
             ${H.previously.map((l) => `<img src="${esc(l.logo)}" alt="${esc(l.name)}">`).join("")}
             <span class="scale"><b>${esc(H.scale[0])}</b><span class="label">${esc(H.scale[1])}</span></span>
@@ -181,7 +181,7 @@
         ${secHead(5, "Design philosophy")}
         <div class="phil grid">
           ${S.philosophy
-            .map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p class="label muted">${esc(p.line)}</p></div>`)
+            .map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3 title="${esc(p.line)}">${esc(p.word)}</h3></div>`)
             .join("")}
         </div>
       </section>
@@ -209,6 +209,16 @@
       </div>
       <section class="works-grid two" data-view-pane="grid">${S.projects.map(card).join("")}</section>
       <section data-view-pane="list" hidden>${indexTable(S.projects)}</section>
+    </main>`;
+  }
+
+  /* ---------- Journal ---------- */
+  function journal() {
+    return `<main>
+      <section class="intro grid">
+        <h1 class="display reveal">Journal.</h1>
+        <p class="p-lede reveal">Notes on clarity, systems, and designing for AI. First entries coming soon.</p>
+      </section>
     </main>`;
   }
 
@@ -273,7 +283,7 @@
   }
 
   /* ---------- Render ---------- */
-  const views = { home, work, project };
+  const views = { home, work, project, journal };
   document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta()) + footer();
   document.body.id = "top";
 

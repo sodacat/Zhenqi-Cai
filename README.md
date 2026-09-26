@@ -8,7 +8,8 @@ near-black on warm paper, thin rules, black-and-white covers that regain
 colour on hover, restrained motion.
 
 ## Pages
-- `index.html` — hero (previously at Amazon · IBM · SAP) · 01 selected work (2×2) · 02 what I help you solve · 03 ways to work together (prices) · 04 about · 05 design philosophy · 06 let’s talk · footer
+- `index.html` — hero (Amazon · IBM · SAP · 100M+ scale) · selected work (2×2) · what I help you solve · ways to work together (prices) · about · design philosophy · let’s talk · footer
+- `journal.html` — journal placeholder (coming soon)
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 
