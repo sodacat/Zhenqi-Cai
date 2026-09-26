@@ -9,7 +9,7 @@ Static HTML/CSS/JS, no build step. REC-style editorial layout: Helvetica,
 covers that regain colour on hover, restrained motion. No gradients, no glow, no floating cards.
 
 ## Pages
-- `index.html` — hero · 01 selected work (2×2, proof on every card) · 02 perspective · 03 what I offer · 04 ways to work together · 05 about · 06 philosophy · 07 let’s talk · footer
+- `index.html` — hero · 01 selected work (2×2, proof on every card) · 02 perspective · 03 what I offer (arrow rows) · 04 ways to work together · 05 about · 06 philosophy · 07 let’s talk · footer
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 

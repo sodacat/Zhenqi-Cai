@@ -47,18 +47,21 @@ window.SITE = {
     {
       from: ["From idea", "to product"],
       name: "0→1 Product Direction",
+      short: "Turn an idea, technology, or early product into a clear direction and a shippable experience.",
       text: "Turn an idea, technology, or early product into a clear direction — grounded in real user needs and shaped into something worth building.",
       skills: ["Problem framing", "User understanding", "Product strategy", "MVP definition", "Interaction models", "Prototyping"]
     },
     {
       from: ["From AI", "to experience"],
       name: "AI Experience Design",
+      short: "Turn AI capabilities into experiences people can understand, trust, and control.",
       text: "Turn AI capabilities into experiences people can understand, trust, and control.",
       skills: ["Human–AI interaction", "Agent behavior", "Trust & transparency", "Human control", "Uncertainty & feedback", "Error recovery"]
     },
     {
       from: ["From fast", "to coherent"],
       name: "Complex Systems & Scale",
+      short: "Untangle fast-growing products into coherent systems built to scale.",
       text: "Untangle fast-growing products before complexity takes over — turning workflows, rules, data, and edge cases into coherent systems built to scale.",
       skills: ["System modeling", "Complex workflows", "Information architecture", "Interaction patterns", "Design systems", "UX debt"]
     }
@@ -120,7 +123,7 @@ window.SITE = {
 
   // 10 Final call to action
   cta: {
-    statement: ["Moving fast?", "Let’s make sure", "you’re moving", "in the right", "direction."],
+    statement: ["Moving fast?", "Let’s make sure you’re", "moving in the right direction."],
     for: "For AI products, complex systems, and ambitious 0→1 ideas.",
     button: "Start a conversation",
     openTo: ["Full-time opportunities", "Design partnerships", "Focused engagements"]

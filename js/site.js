@@ -83,7 +83,10 @@
       <nav class="h-nav label" aria-label="Primary">
         ${nav.map(([t, h, k]) => `<a href="${h}"${k && page === k ? ' aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
-      <a class="btn" href="index.html#contact">Let’s talk</a>
+      <div class="h-right">
+        <a class="btn" href="index.html#contact">Let’s talk</a>
+        <p class="label muted">${esc(S.location).replace(" · ", "<br>")}<br>${esc(S.availability)}</p>
+      </div>
     </header>`;
   }
 
@@ -92,12 +95,12 @@
     return `<section class="sec" id="contact">
       ${n ? secHead(n, "Let’s talk") : ""}
       <div class="cta grid">
-        <h2 class="big reveal">${esc(c.statement.join(" "))}</h2>
+        <h2 class="big reveal">${lines(c.statement)}</h2>
         <div class="cta-go vr">
           <p>${esc(c.for)}</p>
           <a class="btn btn-solid" href="mailto:${esc(S.email)}">${esc(c.button)} ${arrow}</a>
+          <p class="label muted">${c.openTo.map(esc).join(" · ")}</p>
         </div>
-        <ul class="label cta-open vr">${c.openTo.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
       </div>
     </section>`;
   }
@@ -126,7 +129,6 @@
           <p class="hero-lede">${esc(H.lede)}</p>
           <a class="label arrow-link" href="#work">View selected work ${arrow}</a>
         </div>
-        <p class="hero-meta label muted">${esc(S.location).replace(" · ", "<br>")}<br>${esc(S.availability)}</p>
       </section>
 
       <section class="sec" id="work">
@@ -151,12 +153,12 @@
         <ol class="offers">
           ${S.offers
             .map(
-              (o, i) => `<li class="offer grid reveal">
+              (o, i) => `<li class="reveal"><a class="offer grid" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(o.name)}">
             <span class="o-n">${pad(i + 1)}</span>
             <h3 class="o-from">${lines(o.from)}</h3>
-            <div class="o-body vr"><p class="label">${esc(o.name)}</p><p>${esc(o.text)}</p></div>
-            <ul class="o-skills vr">${o.skills.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
-          </li>`
+            <div class="o-body vr"><p class="label">${esc(o.name)}</p><p>${esc(o.short)}</p></div>
+            <span class="o-go" aria-hidden="true">${arrow}</span>
+          </a></li>`
             )
             .join("")}
         </ol>
@@ -192,8 +194,10 @@
 
       <section class="sec">
         ${secHead(6, "Philosophy")}
-        <div class="phil grid">
-          ${S.philosophy.map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p>${esc(p.line)}</p></div>`).join("")}
+        <div class="phil">
+          ${S.philosophy
+            .map((p) => `<div class="phil-r grid reveal"><h3>${esc(p.word)}</h3><span class="phil-dash"></span><p>${esc(p.line)}</p></div>`)
+            .join("")}
         </div>
       </section>
 

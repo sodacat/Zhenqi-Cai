@@ -97,12 +97,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   margin-left: -0.03em;
 }
 .brand-sub { margin-top: 18px; }
-.h-nav { grid-column: 7 / span 4; display: flex; gap: 22px; padding-top: 4px; }
+.h-nav { grid-column: 6 / span 3; display: flex; gap: 22px; padding-top: 4px; }
 .h-nav a[aria-current] { text-decoration: underline; text-underline-offset: 3px; }
+.h-right { grid-column: 9 / span 4; display: flex; flex-direction: column; align-items: flex-end; gap: 22px; text-align: right; }
 .btn {
-  grid-column: 11 / span 2;
-  justify-self: end;
-  align-self: start;
   display: inline-block;
   border: 1px solid var(--fg);
   padding: 7px 14px;
@@ -121,15 +119,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .hero { padding-top: clamp(40px, 5vw, 80px); row-gap: 40px; align-items: end; }
 .hero-t {
   grid-column: 1 / span 7;
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(52px, 7vw, 116px);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
   margin-left: -0.03em;
 }
 .hero-side { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 24px; padding-bottom: 0.6em; }
 .hero-lede { font-size: clamp(14px, 1.15vw, 17px); line-height: 1.45; }
-.hero-meta { grid-column: 1 / span 6; }
 
 /* ---------- Section head ---------- */
 .sec { margin-top: var(--sec); }
@@ -208,26 +205,29 @@ a.card:hover .t { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- What I offer ---------- */
 .offers { padding-inline: var(--m); }
+.offers li + li .offer { border-top: 1px solid var(--hair); }
 .offer {
-  padding: 18px 0 clamp(28px, 3vw, 44px);
-  border-top: 1px solid var(--hair);
+  padding: clamp(20px, 2.2vw, 32px) 0;
   padding-inline: 0;
   align-items: start;
-  row-gap: 16px;
+  row-gap: 12px;
 }
-.offer:first-child { border-top: 0; padding-top: 0; }
-.o-n { grid-column: 1 / span 1; font-size: 15px; }
+.offers li:first-child .offer { padding-top: 0; }
+a.offer:hover { opacity: 1; }
+.o-n { grid-column: 1 / span 1; font-size: clamp(22px, 2vw, 30px); letter-spacing: -0.03em; line-height: 1; }
 .o-from {
   grid-column: 2 / span 4;
-  font-size: clamp(20px, 1.9vw, 30px);
+  font-size: clamp(20px, 2vw, 30px);
   line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 400;
   text-transform: uppercase;
 }
-.o-body { grid-column: 6 / span 4; font-size: 13px; line-height: 1.5; }
-.o-body .label { font-weight: 700; color: var(--fg); margin-bottom: 4px; }
-.o-skills { grid-column: 10 / span 3; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.o-body { grid-column: 6 / span 6; font-size: 13px; line-height: 1.5; color: #3a3a38; }
+.o-body .label { font-weight: 700; color: var(--fg); margin-bottom: 6px; }
+.o-go { grid-column: 12; justify-self: end; font-size: 22px; line-height: 1; transition: transform 0.3s var(--ease); }
+a.offer:hover .o-go { transform: translateX(6px); }
+a.offer:hover .o-from { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
 /* ---------- Ways to work together ---------- */
 .ways { row-gap: 32px; }
@@ -252,16 +252,22 @@ a.card:hover .t { text-decoration: underline; text-underline-offset: 3px; }
 .about-body a { align-self: flex-start; }
 
 /* ---------- Philosophy ---------- */
-.phil { row-gap: 32px; }
-.phil-c { grid-column: span 4; }
-.phil-c h3 { font-size: clamp(24px, 2.4vw, 38px); letter-spacing: -0.035em; font-weight: 400; line-height: 1; margin-bottom: 10px; }
-.phil-c p { font-size: 13px; line-height: 1.5; color: #3a3a38; max-width: 30ch; }
+.phil-r { align-items: center; padding-block: clamp(4px, 0.6vw, 10px); }
+.phil-r h3 {
+  grid-column: 1 / span 5;
+  font-size: clamp(44px, 5.6vw, 92px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+  margin-left: -0.03em;
+}
+.phil-dash { grid-column: 6 / span 1; height: 1px; background: var(--hair); }
+.phil-r p { grid-column: 7 / span 4; font-size: 14px; line-height: 1.45; color: #3a3a38; max-width: 30ch; }
 
 /* ---------- Let's talk ---------- */
 .cta { align-items: center; row-gap: 32px; }
-.cta .big { grid-column: 1 / span 6; }
-.cta-go { grid-column: 7 / span 3; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; font-size: 13px; line-height: 1.5; }
-.cta-open { grid-column: 10 / span 3; display: flex; flex-direction: column; gap: 10px; color: #3a3a38; }
+.cta .big { grid-column: 1 / span 7; }
+.cta-go { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; font-size: 13px; line-height: 1.5; }
 main + .sec { margin-top: var(--sec); }
 
 /* ---------- Footer ---------- */
@@ -378,13 +384,14 @@ main + .sec { margin-top: var(--sec); }
   .hero-side, .pov-body, .p-lede { grid-column: 5 / -1; }
   .p-lede { grid-row: auto; }
   .o-from { grid-column: 2 / span 5; }
-  .o-body { grid-column: 7 / span 6; }
-  .o-skills { grid-column: 7 / span 6; border-left: 0; padding-left: calc(var(--g) + 1px); }
+  .o-body { grid-column: 7 / span 5; }
+  .phil-r h3 { grid-column: 1 / span 6; }
+  .phil-dash { display: none; }
+  .phil-r p { grid-column: 7 / span 6; }
   .about-img { grid-column: 1 / span 4; }
   .about-t { grid-column: 5 / span 8; }
   .about-body { grid-column: 5 / span 8; }
-  .cta-go { grid-column: 1 / span 6; border-left: 0; padding-left: 0; }
-  .cta-open { grid-column: 7 / span 6; }
+  .cta-go { grid-column: 1 / span 8; border-left: 0; padding-left: 0; }
   .ch-title { grid-column: 1 / span 5; }
   .ch-text { grid-column: 6 / span 7; }
   .p-meta > div, .metrics li { grid-column: span 6; }
@@ -398,12 +405,20 @@ main + .sec { margin-top: var(--sec); }
   .grid > * { grid-column: 1 / -1 !important; grid-row: auto !important; }
   .metrics > li, .p-meta > div { grid-column: span 6 !important; }
   .vr { border-left: 0; padding-left: 0; }
-  .ways .way.vr, .phil-c.vr, .cta-open { border-top: 1px solid var(--hair); padding-top: 20px; }
+  .ways .way.vr { border-top: 1px solid var(--hair); padding-top: 20px; }
+  .h-right { display: contents; }
+  .h-right .btn { grid-column: 2 !important; grid-row: 1; justify-self: end; align-self: start; }
+  .h-right p { grid-column: 1 / -1 !important; grid-row: 3; text-align: left; }
+  .offer { grid-template-columns: 2.4em 1fr auto; row-gap: 10px; }
+  .offer > .o-n { grid-column: 1 !important; grid-row: 1 !important; }
+  .offer > .o-from { grid-column: 2 !important; grid-row: 1 !important; }
+  .offer > .o-go { grid-column: 3 !important; grid-row: 1 !important; }
+  .offer > .o-body { grid-column: 2 / -1 !important; grid-row: 2 !important; }
+  .phil-r { row-gap: 4px; padding-block: 10px; }
 
   .top { grid-template-columns: 1fr auto; row-gap: 16px; }
   .brand-wrap { grid-column: 1 !important; }
   .brand { font-size: 56px; }
-  .btn { grid-column: 2 !important; }
   .h-nav { grid-row: 2 !important; gap: 16px; }
 
   .hero { row-gap: 28px; }
