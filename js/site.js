@@ -37,18 +37,17 @@
     return `<${tag} class="card reveal${hasPage(p) ? "" : " soon"}"${href} data-cat="${esc(p.domain)}">
       ${media(src, p.title, num(p), p.cardCover ? "" : p.coverPos, src ? "" : p.tile || p.org)}
       <span class="cap">
-        <span class="label muted">${esc(p.org)}</span>
+        <span class="cap-top label muted"><span>${esc(p.org)}</span><span>${num(p)}</span></span>
         <span class="t">${esc(p.title)}</span>
-        <span class="s">${esc(p.summary)}</span>
-        ${p.proofs?.length ? `<span class="proofs">${p.proofs.map((x) => `<b>${esc(x)}</b>`).join("")}</span>` : ""}
+        ${p.proofs?.length ? `<span class="proofs label">${p.proofs.map(esc).join(" &nbsp;·&nbsp; ")}</span>` : ""}
         <span class="label muted">${esc(p.tags || p.domain)}${hasPage(p) ? "" : " — Case study on request"}</span>
       </span>
     </${tag}>`;
   }
 
   function secHead(n, title, aside = "") {
-    return `<div class="sec-head grid label">
-      <span>${pad(n)}</span><span>${title}</span><span class="muted">${aside}</span>
+    return `<div class="sec-head label">
+      <span class="sh-n">${pad(n)}</span><span class="sh-t">${title}</span><span class="sh-a">${aside}</span>
     </div>`;
   }
 
@@ -73,180 +72,132 @@
     const nav = [
       ["Work", "work.html", "work"],
       ["About", "index.html#about", ""],
-      ["Services", "index.html#services", ""]
+      ["Services", "index.html#services", ""],
+      ["Contact", "index.html#contact", ""]
     ];
     return `<header class="top grid">
-      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
+      <div class="brand-wrap">
+        <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
+        <p class="label brand-sub">${esc(S.role)}<br>${esc(S.focus)}</p>
+      </div>
       <nav class="h-nav label" aria-label="Primary">
         ${nav.map(([t, h, k]) => `<a href="${h}"${k && page === k ? ' aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
-      <a class="btn" href="index.html#contact">Work with me</a>
+      <a class="btn" href="index.html#contact">Let’s talk</a>
     </header>`;
   }
 
-  function finalCta() {
+  function finalCta(n) {
     const c = S.cta;
-    return `<section class="cta sec" id="contact">
-      <h2 class="giant reveal">${lines(c.statement)}</h2>
-      <div class="cta-row grid">
-        <ul class="label cta-open">${c.openTo.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
-        <div class="cta-go">
+    return `<section class="sec" id="contact">
+      ${n ? secHead(n, "Let’s talk") : ""}
+      <div class="cta grid">
+        <h2 class="big reveal">${esc(c.statement.join(" "))}</h2>
+        <div class="cta-go vr">
           <p>${esc(c.for)}</p>
-          <a class="btn btn-lg" href="mailto:${esc(S.email)}">${esc(c.button)} ${arrow}</a>
+          <a class="btn btn-solid" href="mailto:${esc(S.email)}">${esc(c.button)} ${arrow}</a>
         </div>
+        <ul class="label cta-open vr">${c.openTo.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
       </div>
     </section>`;
   }
 
   function footer() {
-    return `<footer class="foot">
-      <div class="foot-cols grid">
-        <p class="fc0 label">Independent design practice<br>by ${esc(S.name)}</p>
-        <ul class="fc1 label">
-          <li><a href="work.html">Work</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li>
-        </ul>
-        <ul class="fc2 label">
-          ${S.social.map((s) => `<li><a href="${esc(s.url)}"${s.url.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(s.label)}</a></li>`).join("")}
-        </ul>
-      </div>
-      <div class="foot-bottom">
-        <a class="foot-mark" href="#top" aria-label="Back to top">${esc(S.mark)}</a>
-        <p class="label">${esc(S.location)}<br><span class="muted">${esc(S.promise)} &copy; ${year}</span></p>
-      </div>
+    return `<footer class="foot grid">
+      <a class="foot-mark" href="#top" aria-label="Back to top">${esc(S.mark)}</a>
+      <p class="label fc0">Independent design practice<br>by ${esc(S.name)}</p>
+      <nav class="label fc1">
+        <a href="work.html">Work</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="index.html#contact">Contact</a>
+        ${S.social.map((s) => `<a href="${esc(s.url)}"${s.url.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${esc(s.label)}</a>`).join("")}
+      </nav>
+      <p class="label fc2">${esc(S.location.split(" · ")[0])}<br>${esc(S.promise)}</p>
     </footer>`;
   }
 
   /* ---------- Home ---------- */
   function home() {
-    const f = S.projects.filter((p) => p.featured);
-    const r1 = f.slice(0, 3);
-    const r2 = f.slice(3, 5);
+    const f = S.projects.filter((p) => p.featured).slice(0, 4);
     const H = S.hero, P = S.pov, A = S.about;
 
     return `<main>
-      <!-- 01 Hero -->
       <section class="hero grid">
-        <p class="hero-id label">${esc(S.role)}<br>${esc(S.focus)}</p>
         <h1 class="hero-t reveal">${lines(H.statement)}</h1>
-        <p class="hero-lede reveal">${esc(H.lede)}</p>
-        <div class="hero-cta">
-          <a class="label u" href="#work">View selected work</a>
-          <a class="btn" href="#contact">Work with me ${arrow}</a>
+        <div class="hero-side reveal">
+          <p class="hero-lede">${esc(H.lede)}</p>
+          <a class="label arrow-link" href="#work">View selected work ${arrow}</a>
         </div>
-        <p class="hero-meta label muted">${esc(S.location)}<br>${esc(S.availability)}</p>
+        <p class="hero-meta label muted">${esc(S.location).replace(" · ", "<br>")}<br>${esc(S.availability)}</p>
       </section>
 
-      <!-- 02 Selected work -->
       <section class="sec" id="work">
-        ${secHead(2, "Selected work", "Proof before promises.")}
-        <div class="works">
-          <div class="row r1">${r1.map(card).join("")}</div>
-          ${r2.length ? `<div class="row r2">${r2.map(card).join("")}</div>` : ""}
-          <a class="label u all-work" href="work.html">All work (${S.projects.length}) ${arrow}</a>
-        </div>
+        ${secHead(1, "Selected work", `<a class="arrow-link" href="work.html">View all work ${arrow}</a>`)}
+        <div class="works-grid two">${f.map(card).join("")}</div>
       </section>
 
-      <!-- 03 Point of view -->
-      <section class="sec pov">
-        ${secHead(3, "Point of view")}
-        <h2 class="giant reveal">${lines(P.statement)}</h2>
-        <div class="pov-body grid">
-          <div class="reveal">
+      <section class="sec">
+        ${secHead(2, "Perspective")}
+        <div class="pov grid">
+          <h2 class="big reveal">${lines(P.statement)}</h2>
+          <div class="pov-body vr reveal">
             <p>${esc(P.opening)}</p>
-            <p class="muted">The harder questions remain:</p>
-            <ul>${P.questions.map((q) => `<li>${esc(q)}</li>`).join("")}</ul>
+            <p>The harder questions remain:<br>${P.questions.map(esc).join("<br>")}</p>
             <p class="strong">${esc(P.close)}</p>
           </div>
         </div>
       </section>
 
-      <!-- 04 What I offer -->
       <section class="sec" id="services">
-        ${secHead(4, "What I offer")}
+        ${secHead(3, "What I offer")}
         <ol class="offers">
           ${S.offers
             .map(
               (o, i) => `<li class="offer grid reveal">
-            <span class="o-n label">${pad(i + 1)}</span>
+            <span class="o-n">${pad(i + 1)}</span>
             <h3 class="o-from">${lines(o.from)}</h3>
-            <div class="o-body"><p class="label">${esc(o.name)}</p><p>${esc(o.text)}</p></div>
-            <ul class="o-skills">${o.skills.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
+            <div class="o-body vr"><p class="label">${esc(o.name)}</p><p>${esc(o.text)}</p></div>
+            <ul class="o-skills vr">${o.skills.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
           </li>`
             )
             .join("")}
         </ol>
       </section>
 
-      <!-- 05 Ways to work together -->
       <section class="sec">
-        ${secHead(5, "Ways to work together")}
+        ${secHead(4, "Ways to work together")}
         <div class="ways grid">
           ${S.engagements
             .map(
-              (e) => `<div class="way reveal">
-            <h3 class="way-t">${lines(e.name)}</h3>
-            <p class="way-for">${esc(e.for)}</p>
-            <p>${esc(e.text)}</p>
-            <p class="label muted way-pts">${e.points.map(esc).join("<br>")}</p>
-            <a class="label u" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name.join(" "))}">${esc(e.cta)} ${arrow}</a>
+              (e, i) => `<div class="way${i ? " vr" : ""} reveal">
+            <h3 class="way-t">${esc(e.name.join(" "))}</h3>
+            <p class="way-s">${esc(e.short)}</p>
+            <a class="label arrow-link" href="mailto:${esc(S.email)}?subject=${encodeURIComponent(e.name.join(" "))}">${esc(e.cta)} ${arrow}</a>
           </div>`
             )
             .join("")}
         </div>
       </section>
 
-      <!-- 06 About -->
       <section class="sec" id="about">
-        ${secHead(6, "About")}
+        ${secHead(5, "About")}
         <div class="about grid">
-          <h2 class="about-t reveal">${lines(A.statement)}</h2>
           ${A.portrait ? `<div class="about-img reveal">${media(A.portrait, S.name)}</div>` : ""}
-          <div class="about-body reveal">
-            ${A.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
-            <p class="muted">Across all of it, I keep coming back to the same question:</p>
-            <p class="about-q">${esc(A.question)}</p>
-            <p class="label muted">Based in ${esc(S.location.replace(/^([^,]+),[^·]+/, "$1 "))}</p>
-            <a class="label u" href="${esc(S.social[0].url)}" target="_blank" rel="noopener">More about me ${arrow}</a>
+          <h2 class="about-t reveal">${lines(A.statement)}</h2>
+          <div class="about-body vr reveal">
+            <p>${esc(A.bio[0])}</p>
+            <p class="strong">${lines(S.rangeClose)}</p>
+            <a class="label arrow-link" href="${esc(S.social[0].url)}" target="_blank" rel="noopener">More about me ${arrow}</a>
           </div>
         </div>
       </section>
 
-      <!-- 07 Philosophy -->
-      <section class="sec philosophy">
-        ${secHead(7, "Philosophy")}
-        ${S.philosophy
-          .map(
-            (p, i) => `<div class="ph-row grid reveal">
-          <h3 class="ph-w">${esc(p.word)}</h3>
-          <p class="ph-l">${esc(p.line)}</p>
-        </div>${i < S.philosophy.length - 1 ? `<p class="ph-arrow grid"><span>&darr;</span></p>` : ""}`
-          )
-          .join("")}
-        <p class="manifesto grid reveal"><span>${lines(S.manifesto)}</span></p>
-      </section>
-
-      <!-- 08 Design, with range -->
       <section class="sec">
-        ${secHead(8, "Design, with range.")}
-        <div class="range grid">
-          ${S.range.map((r) => `<div class="reveal"><h3>${esc(r.name)}</h3><p>${esc(r.line)}</p></div>`).join("")}
+        ${secHead(6, "Philosophy")}
+        <div class="phil grid">
+          ${S.philosophy.map((p, i) => `<div class="phil-c${i ? " vr" : ""} reveal"><h3>${esc(p.word)}</h3><p>${esc(p.line)}</p></div>`).join("")}
         </div>
-        <p class="range-close grid reveal"><span>${lines(S.rangeClose)}</span></p>
       </section>
 
-      <!-- 09 Social proof -->
-      ${
-        S.testimonials?.length
-          ? `<section class="sec">
-        ${secHead(9, "In their words")}
-        <div class="quotes grid">
-          ${S.testimonials
-            .map((t) => `<blockquote class="reveal"><p>&ldquo;${esc(t.quote)}&rdquo;</p><cite class="label muted">${esc(t.who)}</cite></blockquote>`)
-            .join("")}
-        </div>
-      </section>`
-          : ""
-      }
+      ${finalCta(7)}
     </main>`;
   }
 
@@ -267,7 +218,7 @@
           <button class="on" data-view="grid">Grid</button><button data-view="list">List</button>
         </div>
       </div>
-      <section class="works-grid" data-view-pane="grid">${S.projects.map(card).join("")}</section>
+      <section class="works-grid two" data-view-pane="grid">${S.projects.map(card).join("")}</section>
       <section data-view-pane="list" hidden>${indexTable(S.projects)}</section>
     </main>`;
   }
@@ -334,7 +285,7 @@
 
   /* ---------- Render ---------- */
   const views = { home, work, project };
-  document.getElementById("app").innerHTML = header() + (views[page] || home)() + finalCta() + footer();
+  document.getElementById("app").innerHTML = header() + (views[page] || home)() + (page === "home" ? "" : finalCta()) + footer();
   document.body.id = "top";
 
   document.querySelectorAll(".media img").forEach((img) => {

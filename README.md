@@ -5,11 +5,11 @@ Senior product designer + independent design practice (focused engagements,
 embedded design partner).
 
 Static HTML/CSS/JS, no build step. REC-style editorial layout: Helvetica,
-12-column Swiss grid, black and white, huge type, lots of whitespace,
-restrained motion. No gradients, no glow, no floating cards.
+12-column Swiss grid, near-black on warm paper, thin rules, black-and-white
+covers that regain colour on hover, restrained motion. No gradients, no glow, no floating cards.
 
 ## Pages
-- `index.html` — 01 hero · 02 selected work (proof on every card) · 03 point of view · 04 what I offer · 05 ways to work together · 06 about · 07 philosophy · 08 design, with range · 09 social proof · 10 CTA · 11 footer
+- `index.html` — hero · 01 selected work (2×2, proof on every card) · 02 perspective · 03 what I offer · 04 ways to work together · 05 about · 06 philosophy · 07 let’s talk · footer
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 
