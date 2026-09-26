@@ -1,92 +1,135 @@
 /*
  * Site content — edit this file to update the portfolio.
  *
+ * ZC. — Independent Product Designer. AI · Complex Systems · 0→1.
+ * Brand promise: Clarity at AI speed.
+ *
  * Case-study copy is condensed from the published case studies on
- * zhenqicai.com (Amazon, SAP, Stonk Tech, Smart Mirror).
- * Images live in /images. A missing image shows a neutral placeholder.
+ * zhenqicai.com. Images live in /images; a missing image shows a
+ * typographic tile instead.
  */
 window.SITE = {
   name: "Zhenqi Cai",
   mark: "ZC.",
-  role: "Senior Product Designer",
-  signature: "Quiet Intelligence",
+  role: "Independent Product Designer",
+  focus: "AI · Complex Systems · 0→1",
+  promise: "Clarity at AI speed.",
+  location: "Austin, TX · Working globally",
+  availability: "Available for select roles & design partnerships",
   email: "hello@zhenqicai.com", // TODO: replace with your real address
   social: [
     { label: "LinkedIn", url: "https://www.linkedin.com/" }, // TODO: profile URL
-    { label: "Resume", url: "#" } // TODO: link to résumé PDF
+    { label: "Email", url: "mailto:hello@zhenqicai.com" }
   ],
 
-  // Home — first screen (mission + vision)
-  tagline: ["Humanize complexity.", "Augment humanity."],
-  signoff: "Let’s make complexity feel human — together.",
-  hello: "Hi, I’m Zhenqi. I design systems where complexity becomes clarity — and drives decisions.",
-  intro:
-    "Senior Product Designer (7+ yrs) across Amazon, SAP, IBM and startups, building 0→1 products and scaling AI-driven systems — from product narratives supporting a seven-figure raise to infrastructure for 100M+ users at Amazon (+13.9% GMV).",
+  // 01 Hero
+  hero: {
+    statement: ["Clarity", "at AI speed."],
+    lede:
+      "I help fast-moving teams turn ambitious ideas, AI capabilities, and complex systems into products people can understand, trust, and use."
+  },
 
-  // About
-  statement: ["Modernist in form.", "Systematic in thinking.", "Human in purpose."],
-  bio: [
-    "I’m a senior product designer trained in Human Factors & Ergonomics, with 7+ years working where complexity is highest — marketplace compliance at Amazon, enterprise design systems at SAP, AI reasoning at IBM, and brand foundations for a fintech startup.",
-    "I don’t start with screens. I start with the rules, states and relationships underneath them, and redesign those — so complexity stays in the system, not in people’s heads."
-  ],
-  quote: "Great design doesn’t fix interfaces — it re-architects the system.",
-  pillars: [
-    { word: "Clarity", note: "What I create" },
-    { word: "Systems", note: "How I design" },
-    { word: "Humanity", note: "Why I design" }
-  ],
+  // 03 Point of view
+  pov: {
+    statement: ["Building faster", "isn’t the same", "as building better."],
+    opening: "AI has made execution dramatically faster.",
+    questions: [
+      "What should we build?",
+      "How should the system work?",
+      "How should people understand and control it?",
+      "And how do we scale without losing coherence?"
+    ],
+    close: "That’s where I work."
+  },
 
-  // "What I do." — practice areas, each grounded in shipped work
-  services: [
+  // 04 What I offer
+  offers: [
     {
-      title: "Compliance & Marketplaces",
-      text: "Re-architecting rule-heavy systems so enforcement and transparency reinforce each other. Amazon Seller Qualification: onboarding from 30 days to 5."
+      from: ["From idea", "to product"],
+      name: "0→1 Product Direction",
+      text: "Turn an idea, technology, or early product into a clear direction — grounded in real user needs and shaped into something worth building.",
+      skills: ["Problem framing", "User understanding", "Product strategy", "MVP definition", "Interaction models", "Prototyping"]
     },
     {
-      title: "Enterprise Design Systems",
-      text: "Components as interfaces to complex information. SAP Fiori for iOS: a data table that preserves context across iPhone and iPad."
+      from: ["From AI", "to experience"],
+      name: "AI Experience Design",
+      text: "Turn AI capabilities into experiences people can understand, trust, and control.",
+      skills: ["Human–AI interaction", "Agent behavior", "Trust & transparency", "Human control", "Uncertainty & feedback", "Error recovery"]
     },
     {
-      title: "AI & Complex Reasoning",
-      text: "Designing how people understand and steer intelligent systems — keeping judgement and control with the human."
-    },
-    {
-      title: "Brand & Product Foundations",
-      text: "Identity, design systems and responsive frameworks that make an unfamiliar domain feel credible and approachable."
+      from: ["From fast", "to coherent"],
+      name: "Complex Systems & Scale",
+      text: "Untangle fast-growing products before complexity takes over — turning workflows, rules, data, and edge cases into coherent systems built to scale.",
+      skills: ["System modeling", "Complex workflows", "Information architecture", "Interaction patterns", "Design systems", "UX debt"]
     }
   ],
 
-  // The three lines that run from visual → product → AI
-  principles: [
+  // 05 Ways to work together
+  engagements: [
     {
-      title: "Form follows function.",
-      domain: "Visual",
-      text: "Every element earns its place. Grid creates order, typography creates hierarchy, whitespace creates focus."
+      name: ["Focused", "engagement"],
+      for: "For a specific product challenge.",
+      text: "A focused 2–4 week engagement to clarify a product direction, rethink a complex workflow, or shape an AI experience.",
+      points: ["Clear scope.", "Senior attention.", "Tangible direction."],
+      cta: "Discuss a project"
     },
     {
-      title: "Systems create clarity.",
-      domain: "Product",
-      text: "Rules, states, relationships, behaviours. Redesign the system and the interface can stay simple."
-    },
-    {
-      title: "Technology serves people.",
-      domain: "AI",
-      text: "Intelligent systems should help people understand, judge, choose and stay in control — extending human capability, not replacing it."
+      name: ["Embedded", "design partner"],
+      for: "Ongoing senior product design support without hiring a full-time design lead.",
+      text: "I work alongside founders, product, and engineering to continuously shape product direction, solve complex UX problems, and keep the experience coherent as you ship.",
+      points: ["Monthly · Flexible · Asynchronous"],
+      cta: "Explore a partnership"
     }
   ],
-  dna: [
-    ["Aesthetic", "Bauhaus × Swiss Style × Editorial Modernism"],
-    ["Type", "Helvetica / Neo-grotesk"],
-    ["Style", "Quiet Intelligence"],
-    ["Philosophy", "Systems create clarity."],
-    ["Value", "Human Agency"],
-    ["Mission", "Humanize Complexity"],
-    ["Vision", "Augment Humanity"]
+
+  // 06 About
+  about: {
+    statement: ["Product designer.", "Systems thinker.", "Humanist."],
+    bio: [
+      "I’m Zhenqi Cai, a product designer with 7+ years of experience designing complex digital products at Amazon, IBM, SAP, and startups.",
+      "My work sits where product strategy, systems thinking, interaction design, and emerging technology meet.",
+      "I’ve redesigned systems used at global scale, worked on AI transparency and enterprise tools, and helped early-stage teams turn ideas into products from the ground up."
+    ],
+    question: "How do we make powerful technology easier for people to understand, trust, and control?"
+  },
+
+  // 07 Philosophy
+  philosophy: [
+    { word: "Clarity", line: "Complexity should become understandable." },
+    { word: "Systems", line: "Great experiences come from fixing the system underneath." },
+    { word: "Humanity", line: "Technology should expand human agency — not replace it." }
   ],
+  manifesto: ["Form follows function.", "Systems create clarity.", "Technology serves people."],
+
+  // 08 Design, with range
+  range: [
+    { name: "Strategy", line: "From ambiguity to product direction." },
+    { name: "Systems", line: "From complex logic to scalable experiences." },
+    { name: "Craft", line: "From interaction models to polished products and coherent visual systems." }
+  ],
+  rangeClose: ["Senior judgment.", "Hands-on execution.", "AI-native speed."],
+
+  // 09 Social proof — only real quotes. Add colleague / founder quotes that show judgement.
+  testimonials: [
+    // TODO: add 2–3 quotes from PMs, engineers, managers or founders.
+    { quote: "Inspiring and actionable.", who: "VP, Amazon — on the Seller Qualification strategic direction" }
+  ],
+
+  // 10 Final call to action
+  cta: {
+    statement: ["Moving fast?", "Let’s make sure", "you’re moving", "in the right", "direction."],
+    for: "For AI products, complex systems, and ambitious 0→1 ideas.",
+    button: "Start a conversation",
+    openTo: ["Full-time opportunities", "Design partnerships", "Focused engagements"]
+  },
 
   /*
-   * Projects, in display order. All `featured` ones appear on the home page.
-   * Projects without `chapters` are listed in the index only (no case-study page).
+   * Projects, in display order. `featured` ones fill Selected Work on the home
+   * page (1 tall + 2, then 2). Every card carries a proof point: `summary`,
+   * `proofs` (headline numbers) and `tags`. Projects without `chapters` have no
+   * case-study page yet; without `cover` they render as a typographic tile
+   * showing `tile` (a short word or number). `cardCover` overrides the cover
+   * image on cards only.
    * chapters[].images: [src, caption] pairs.
    */
   projects: [
@@ -103,7 +146,10 @@ window.SITE = {
       featured: true,
       cover: "images/amazon-cover.jpg",
       coverPos: "left center",
-      summary: "From compliance checkpoint to seller growth infrastructure.",
+      cardCover: "images/amazon-cover-tall.jpg",
+      summary: "Re-architecting a compliance bottleneck into scalable seller infrastructure.",
+      proofs: ["30 → 5 days", "+20% completion"],
+      tags: "Complex systems · Commerce",
       headline:
         "How I redesigned Amazon’s qualification system so that transparency and enforcement reinforce each other.",
       metrics: [
@@ -184,16 +230,32 @@ window.SITE = {
       ]
     },
     {
-      id: "ibm-amelia",
-      title: "Amelia Compliance Report",
-      org: "IBM",
-      domain: "AI / Compliance",
+      id: "amazon-global-product-compliance",
+      title: "Global Product Compliance",
+      org: "Amazon",
+      domain: "Compliance / Scale",
       year: "—", // TODO: year
-      summary: "Designed an AI system for reasoning about complex relationships."
+      featured: true,
+      summary: "Making complex regulation understandable across 100M+ product pages.",
+      proofs: ["67% user preference", "100M+ pages"],
+      tile: "67%",
+      tags: "Systems · Compliance · Scale"
+    },
+    {
+      id: "ibm-ai-governance",
+      title: "AI Governance",
+      org: "IBM",
+      domain: "AI / Enterprise",
+      year: "—", // TODO: year
+      featured: true,
+      summary: "Making AI reasoning relationships visible, traceable, and understandable.",
+      proofs: [],
+      tile: "AI",
+      tags: "AI · Trust · Enterprise"
     },
     {
       id: "stonk-tech",
-      title: "Brand & Landing Page",
+      title: "From Idea to Product",
       org: "Stonk Tech",
       domain: "Brand / Fintech",
       year: "2022",
@@ -203,7 +265,9 @@ window.SITE = {
       methods: ["Brand Identity Design", "Design Systems", "Responsive Web Design", "Visual Design"],
       featured: true,
       cover: "images/stonk-pattern.jpg",
-      summary: "Balancing system trust with cultural accessibility in retail trading.",
+      summary: "Building a fintech product and brand from 0→1.",
+      proofs: ["Founding designer"],
+      tags: "0→1 · Fintech · Brand",
       headline:
         "Brand and landing experience for a platform that gives retail investors the integrated infrastructure professionals take for granted.",
       metrics: [
@@ -260,14 +324,6 @@ window.SITE = {
       ]
     },
     {
-      id: "weee-on-demand",
-      title: "On-demand",
-      org: "Weee!",
-      domain: "Commerce / Fulfillment",
-      year: "—", // TODO: year
-      summary: "Designing how users make real-time decisions under fulfillment constraints."
-    },
-    {
       id: "sap-data-table",
       title: "Data Table",
       org: "SAP",
@@ -280,6 +336,8 @@ window.SITE = {
       featured: true,
       cover: "images/sap-cover.jpg",
       summary: "Designing how structured data remains understandable across contexts.",
+      proofs: ["Adopted across SAP apps"],
+      tags: "Design systems · Enterprise",
       headline:
         "Rebuilding the SAP Fiori for iOS data table as an interface to complex information — one that preserves meaning at any scale, on any device.",
       metrics: [
@@ -341,6 +399,17 @@ window.SITE = {
       ]
     },
     {
+      id: "weee-on-demand",
+      title: "On-demand",
+      org: "Weee!",
+      domain: "Commerce / Fulfillment",
+      year: "—", // TODO: year
+      summary: "Designing how users make real-time decisions under fulfillment constraints.",
+      proofs: [],
+      tile: "Weee!",
+      tags: "Commerce · Real-time"
+    },
+    {
       id: "smart-mirror",
       title: "Smart Mirror",
       org: "Graduate Thesis",
@@ -350,9 +419,10 @@ window.SITE = {
       role: "Researcher & Designer",
       team: ["Zhenqi Cai"],
       methods: ["Literature Review", "User Interviews", "Competitive Analysis", "Personas", "Storyboard", "Prototyping", "Usability Testing"],
-      featured: true,
       cover: "images/mirror-hero.jpg",
       summary: "Gamification for a better workout-at-home experience.",
+      proofs: ["8.3/10 motivation"],
+      tags: "Research · Human factors",
       headline:
         "An end-to-end, user-centred study of a smart home fitness device — and of how gamification affects motivation and performance when working out at home.",
       metrics: [

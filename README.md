@@ -1,13 +1,15 @@
-# Zhenqi Cai — Portfolio
+# ZC. — Zhenqi Cai, Independent Product Designer
 
-**Clarity · Systems · Humanity** — Modernist in form. Systematic in thinking. Human in purpose.
+**Clarity at AI speed.** AI · Complex Systems · 0→1.
+Senior product designer + independent design practice (focused engagements,
+embedded design partner).
 
-Static HTML/CSS/JS, no build step. Layout after the REC editorial template (rec.framer.photos);
-Helvetica, 12-column Swiss grid, black and white,
-generous whitespace, functional motion only.
+Static HTML/CSS/JS, no build step. REC-style editorial layout: Helvetica,
+12-column Swiss grid, black and white, huge type, lots of whitespace,
+restrained motion. No gradients, no glow, no floating cards.
 
 ## Pages
-- `index.html` — ZC. mark, tagline, featured work (1 tall + 2 small, then 2 wide), about, What I do, How I think, design DNA, footer
+- `index.html` — 01 hero · 02 selected work (proof on every card) · 03 point of view · 04 what I offer · 05 ways to work together · 06 about · 07 philosophy · 08 design, with range · 09 social proof · 10 CTA · 11 footer
 - `work.html` — full project index (list / grid, filter by domain)
 - `project.html?id=<project-id>` — case study: headline, cover, role/time/team/methods, metrics, numbered chapters with uncropped figures
 
@@ -16,7 +18,8 @@ All copy and projects live in **`js/data.js`**. Case studies (Amazon, SAP,
 Stonk Tech, Smart Mirror) are condensed from the published case studies and
 presentation decks; images in `images/` were extracted from those PDFs.
 Projects without `chapters` (IBM Amelia, Weee!) are listed in the index only.
-Still to fill in: real email, LinkedIn and résumé links (marked `TODO`).
+Still to fill in (marked `TODO`): real email and LinkedIn, years for
+IBM / Weee! / Amazon Global Product Compliance, and 2–3 testimonials.
 
 ## Local preview
 ```
