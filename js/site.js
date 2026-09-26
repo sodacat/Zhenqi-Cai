@@ -200,6 +200,7 @@
         ${secHead(6, "About")}
         <div class="about grid">
           <h2 class="about-t reveal">${lines(A.statement)}</h2>
+          ${A.portrait ? `<div class="about-img reveal">${media(A.portrait, S.name)}</div>` : ""}
           <div class="about-body reveal">
             ${A.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
             <p class="muted">Across all of it, I keep coming back to the same question:</p>

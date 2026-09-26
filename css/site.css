@@ -252,7 +252,10 @@ a.card:hover .t { text-decoration: underline; text-underline-offset: 3px; }
   letter-spacing: -0.045em;
   font-weight: 500;
 }
-.about-body { grid-column: 7 / span 5; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 1em; }
+.about-t { grid-row: 1; }
+.about-img { grid-column: 1 / span 3; grid-row: 2; }
+.about-img .media { --r: 4/5; }
+.about-body { grid-row: 1 / span 2; grid-column: 7 / span 5; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 1em; }
 .about-body > p { max-width: 54ch; }
 .about-q { font-size: clamp(18px, 1.6vw, 24px); line-height: 1.25; letter-spacing: -0.015em; }
 .about-body .label { margin-top: 1em; }
@@ -430,6 +433,8 @@ a.card:hover .t { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 1000px) {
   .hero-t, .hero-lede, .hero-cta, .intro .display, .p-lede, .pov-body > div, .about-body, .cta-go, .quotes blockquote, .range-close span, .manifesto span, .ch-text { grid-column: 5 / -1; }
   .about-t { grid-column: 1 / -1; }
+  .about-img { grid-column: 1 / span 4; }
+  .about-body { grid-row: auto; }
   .o-from { grid-column: 2 / -1; }
   .o-body { grid-column: 2 / span 6; }
   .o-skills { grid-column: 8 / span 5; }
@@ -455,6 +460,8 @@ a.card:hover .t { text-decoration: underline; text-underline-offset: 3px; }
   .h-nav { grid-row: 2; }
 
   .hero-t { grid-row: auto; margin-top: 24px; }
+  .about-t, .about-img, .about-body { grid-row: auto !important; }
+  .about-img { max-width: 60%; }
   .hero-id { grid-row: auto; }
   .hero-cta { flex-wrap: wrap; gap: 16px 24px; }
 

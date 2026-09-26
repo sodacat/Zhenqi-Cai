@@ -90,7 +90,8 @@ window.SITE = {
       "My work sits where product strategy, systems thinking, interaction design, and emerging technology meet.",
       "I’ve redesigned systems used at global scale, worked on AI transparency and enterprise tools, and helped early-stage teams turn ideas into products from the ground up."
     ],
-    question: "How do we make powerful technology easier for people to understand, trust, and control?"
+    question: "How do we make powerful technology easier for people to understand, trust, and control?",
+    portrait: "images/portrait.jpg"
   },
 
   // 07 Philosophy
@@ -146,7 +147,7 @@ window.SITE = {
       featured: true,
       cover: "images/amazon-cover.jpg",
       coverPos: "left center",
-      cardCover: "images/amazon-cover-tall.jpg",
+      cardCover: "images/amazon-card.jpg",
       summary: "Re-architecting a compliance bottleneck into scalable seller infrastructure.",
       proofs: ["30 → 5 days", "+20% completion"],
       tags: "Complex systems · Commerce",
@@ -230,18 +231,6 @@ window.SITE = {
       ]
     },
     {
-      id: "amazon-global-product-compliance",
-      title: "Global Product Compliance",
-      org: "Amazon",
-      domain: "Compliance / Scale",
-      year: "—", // TODO: year
-      featured: true,
-      summary: "Making complex regulation understandable across 100M+ product pages.",
-      proofs: ["67% user preference", "100M+ pages"],
-      tile: "67%",
-      tags: "Systems · Compliance · Scale"
-    },
-    {
       id: "ibm-ai-governance",
       title: "AI Governance",
       org: "IBM",
@@ -251,77 +240,8 @@ window.SITE = {
       summary: "Making AI reasoning relationships visible, traceable, and understandable.",
       proofs: [],
       tile: "AI",
+      cover: "images/ibm-cover.jpg",
       tags: "AI · Trust · Enterprise"
-    },
-    {
-      id: "stonk-tech",
-      title: "From Idea to Product",
-      org: "Stonk Tech",
-      domain: "Brand / Fintech",
-      year: "2022",
-      time: "Apr 2022 – Nov 2022",
-      role: "Founding Designer (Sr. Product Designer)",
-      team: ["Zhenqi Cai — Sr. Product Designer", "Dandi Wang — Sr. Product Designer", "Vince Deng — Product Designer", "Marc Chen — Product Manager"],
-      methods: ["Brand Identity Design", "Design Systems", "Responsive Web Design", "Visual Design"],
-      featured: true,
-      cover: "images/stonk-pattern.jpg",
-      summary: "Building a fintech product and brand from 0→1.",
-      proofs: ["Founding designer"],
-      tags: "0→1 · Fintech · Brand",
-      headline:
-        "Brand and landing experience for a platform that gives retail investors the integrated infrastructure professionals take for granted.",
-      metrics: [
-        ["5", "Moodboards"],
-        ["16", "Logo concepts"],
-        ["23", "Colour variations"],
-        ["4", "Responsive breakpoints"]
-      ],
-      chapters: [
-        {
-          label: "The Challenge",
-          title: "Translate a fragmented financial ecosystem into a system that feels understandable, trustworthy and actionable.",
-          body: [
-            "Retail investors face fragmented information, opaque processes and high barriers to entry. As founding designer, I defined how the system could be understood and trusted — by users new to trading, and by investors judging its credibility.",
-            "Too complex and users disengage. Too simplistic and they lose confidence."
-          ],
-          images: [
-            ["images/stonk-mood-mint.jpg", "Moodboard — Mint Infinity"],
-            ["images/stonk-mood-vital.jpg", "Moodboard — Vital Force"]
-          ]
-        },
-        {
-          label: "Identity System",
-          title: "A mark that encodes exchange, not decoration.",
-          body: [
-            "From 16 concepts we chose two mirrored dollar forms: trading activity, flow of value, connection between participants. 23 colour studies landed on growth green with a contrasting purple. Colour works as a signal layer, separating actionable information from ambient context in dense market views."
-          ],
-          images: [
-            ["images/stonk-sketches.jpg", "Logo sketches"],
-            ["images/stonk-logo-ideation.jpg", "16 refined concepts"],
-            ["images/stonk-color.jpg", "23 colour variations"],
-            ["images/stonk-logo-final.jpg", "Final mark"]
-          ]
-        },
-        {
-          label: "Landing Page",
-          title: "An information system that builds understanding progressively.",
-          body: [
-            "The page introduces the problem and value proposition, reduces cognitive load through hierarchy, and guides users toward action. A responsive grid across phone, tablet, laptop and desktop keeps the hierarchy consistent in every context."
-          ],
-          images: [
-            ["images/stonk-breakpoints.jpg", "Responsive grid across breakpoints"],
-            ["images/stonk-illustration.jpg", "Phone, tablet and desktop"]
-          ]
-        },
-        {
-          label: "Outcome",
-          title: "Lower cognitive and structural barriers to participating in financial systems.",
-          body: [
-            "A coherent brand and information system that built early trust and credibility, contributed to user sign-ups and investor interest, and created a foundation that extends across product, community and future platform experiences."
-          ],
-          images: []
-        }
-      ]
     },
     {
       id: "sap-data-table",
@@ -335,6 +255,7 @@ window.SITE = {
       methods: ["Comparative Analysis", "Design Review", "Interaction Design", "UX Writing"],
       featured: true,
       cover: "images/sap-cover.jpg",
+      cardCover: "images/sap-logo.jpg",
       summary: "Designing how structured data remains understandable across contexts.",
       proofs: ["Adopted across SAP apps"],
       tags: "Design systems · Enterprise",
@@ -399,6 +320,101 @@ window.SITE = {
       ]
     },
     {
+      id: "stonk-tech",
+      title: "From Idea to Product",
+      org: "Stonk Tech",
+      domain: "Brand / Fintech",
+      year: "2022",
+      time: "Apr 2022 – Nov 2022",
+      role: "Founding Designer (Sr. Product Designer)",
+      team: ["Zhenqi Cai — Sr. Product Designer", "Dandi Wang — Sr. Product Designer", "Vince Deng — Product Designer", "Marc Chen — Product Manager"],
+      methods: ["Brand Identity Design", "Design Systems", "Responsive Web Design", "Visual Design"],
+      featured: true,
+      cover: "images/stonk-pattern.jpg",
+      cardCover: "images/stonk-laptop.jpg",
+      summary: "Building a fintech product and brand from 0→1.",
+      proofs: ["Founding designer"],
+      tags: "0→1 · Fintech · Brand",
+      headline:
+        "Brand and landing experience for a platform that gives retail investors the integrated infrastructure professionals take for granted.",
+      metrics: [
+        ["5", "Moodboards"],
+        ["16", "Logo concepts"],
+        ["23", "Colour variations"],
+        ["4", "Responsive breakpoints"]
+      ],
+      chapters: [
+        {
+          label: "The Challenge",
+          title: "Translate a fragmented financial ecosystem into a system that feels understandable, trustworthy and actionable.",
+          body: [
+            "Retail investors face fragmented information, opaque processes and high barriers to entry. As founding designer, I defined how the system could be understood and trusted — by users new to trading, and by investors judging its credibility.",
+            "Too complex and users disengage. Too simplistic and they lose confidence."
+          ],
+          images: [
+            ["images/stonk-mood-mint.jpg", "Moodboard — Mint Infinity"],
+            ["images/stonk-mood-vital.jpg", "Moodboard — Vital Force"]
+          ]
+        },
+        {
+          label: "Identity System",
+          title: "A mark that encodes exchange, not decoration.",
+          body: [
+            "From 16 concepts we chose two mirrored dollar forms: trading activity, flow of value, connection between participants. 23 colour studies landed on growth green with a contrasting purple. Colour works as a signal layer, separating actionable information from ambient context in dense market views."
+          ],
+          images: [
+            ["images/stonk-sketches.jpg", "Logo sketches"],
+            ["images/stonk-logo-ideation.jpg", "16 refined concepts"],
+            ["images/stonk-color.jpg", "23 colour variations"],
+            ["images/stonk-logo-final.jpg", "Final mark"]
+          ]
+        },
+        {
+          label: "Landing Page",
+          title: "An information system that builds understanding progressively.",
+          body: [
+            "The page introduces the problem and value proposition, reduces cognitive load through hierarchy, and guides users toward action. A responsive grid across phone, tablet, laptop and desktop keeps the hierarchy consistent in every context."
+          ],
+          images: [
+            ["images/stonk-breakpoints.jpg", "Responsive grid across breakpoints"],
+            ["images/stonk-illustration.jpg", "Phone, tablet and desktop"]
+          ]
+        },
+        {
+          label: "Outcome",
+          title: "Lower cognitive and structural barriers to participating in financial systems.",
+          body: [
+            "A coherent brand and information system that built early trust and credibility, contributed to user sign-ups and investor interest, and created a foundation that extends across product, community and future platform experiences."
+          ],
+          images: []
+        }
+      ]
+    },
+    {
+      id: "tetrate-branding",
+      title: "Brand Identity",
+      org: "Tetrate",
+      domain: "Identity & Branding",
+      year: "—", // TODO: year
+      featured: true,
+      cover: "images/tetrate-cover.jpg",
+      summary: "Identity, brand guidelines and print collateral.",
+      proofs: [],
+      tile: "Tetrate",
+      tags: "Identity · Branding · Print"
+    },
+    {
+      id: "amazon-global-product-compliance",
+      title: "Global Product Compliance",
+      org: "Amazon",
+      domain: "Compliance / Scale",
+      year: "—", // TODO: year
+      summary: "Making complex regulation understandable across 100M+ product pages.",
+      proofs: ["67% user preference", "100M+ pages"],
+      tile: "67%",
+      tags: "Systems · Compliance · Scale"
+    },
+    {
       id: "weee-on-demand",
       title: "On-demand",
       org: "Weee!",
@@ -407,6 +423,7 @@ window.SITE = {
       summary: "Designing how users make real-time decisions under fulfillment constraints.",
       proofs: [],
       tile: "Weee!",
+      cover: "images/weee-cover.jpg",
       tags: "Commerce · Real-time"
     },
     {
