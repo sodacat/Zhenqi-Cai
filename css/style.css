@@ -224,7 +224,7 @@ a:hover .arrow {
   margin-left: -0.03em;
 }
 
-/* Nav boxes start on column 7, the hero image's left edge */
+/* Nav text starts on column 7, the hero image's left edge */
 .nav {
   grid-column: 7 / 12;
   display: flex;
@@ -234,6 +234,11 @@ a:hover .arrow {
 
 /* Nav links: a hairline box on hover and on the current page */
 @media (min-width: 681px) {
+  /* Pull back by the box padding + border so WORK starts on the image edge */
+  .nav {
+    margin-left: -11px;
+  }
+
   .nav a {
     padding: 6px 10px;
     border: 1px solid transparent;
@@ -348,7 +353,7 @@ a:hover .arrow {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px clamp(20px, 2.4vw, 40px);
+  gap: 20px var(--pad);
   margin-top: clamp(28px, 3vw, 48px);
 }
 
@@ -383,9 +388,10 @@ a:hover .arrow {
   margin: 0;
 }
 
+/* Same rule-to-text spacing as the other dividers: one gutter each side */
 .stats div {
   border-left: 1px solid var(--hair);
-  padding: 0 clamp(16px, 1.8vw, 28px);
+  padding: 0 0 0 var(--pad);
 }
 
 .stats dt {
@@ -708,14 +714,15 @@ a:hover .card-media img.is-loaded {
   margin: 0 0 1em;
 }
 
-/* Dividers live in the gutter so text stays on the column line */
+/* Dividers sit at the start of the gutter: one full gutter between the
+   rule and the text, and the text stays on its column line */
 .about-body::before,
 .principle + .principle::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(var(--pad) / -2);
+  left: calc(var(--pad) * -1);
   border-left: 1px solid var(--hair);
 }
 
@@ -769,9 +776,9 @@ a:hover .card-media img.is-loaded {
   font-size: clamp(32px, 4.6vw, 80px);
 }
 
-/* Contact links: one box spanning exactly cols 9–12 */
+/* Contact links: one box spanning exactly cols 10–12 */
 .contact-side {
-  grid-column: 9 / -1;
+  grid-column: 10 / -1;
   display: grid;
   gap: 14px;
 }
