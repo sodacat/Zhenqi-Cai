@@ -75,8 +75,8 @@
         <h2 class="display reveal">${esc(S.cta)}</h2>
         <div class="contact-side">
           <ul class="contact-box label">
-            ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
-            <li>${arrow}</li>
+            ${S.social.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
+            <li class="contact-arrow">${arrow}</li>
           </ul>
         </div>
       </div>
@@ -89,9 +89,9 @@
         <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></div>
         <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
         <ul class="label footer-col">
-          <li><a class="link-line" href="works.html">Work</a></li>
-          <li><a class="link-line" href="index.html#experiments">AI Experiments</a></li>
-          <li><a class="link-line" href="about.html">About</a></li>
+          <li><a href="works.html">Work</a></li>
+          <li><a href="index.html#experiments">AI Experiments</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>

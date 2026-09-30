@@ -792,13 +792,40 @@ a:hover .card-media img.is-loaded {
   justify-self: start;
 }
 
+/* Each link is a full-height cell of the box; the cell fills red on hover */
 .contact-box {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(16px, 2vw, 28px);
+  align-items: stretch;
   border: 1px solid var(--fg);
+}
+
+.contact-box li {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.contact-box a,
+.contact-arrow {
+  display: flex;
+  align-items: center;
+  width: 100%;
   padding: 12px 16px;
+}
+
+.contact-box a {
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.contact-box a:hover,
+.contact-box a:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  outline: none;
+}
+
+.contact-box .contact-arrow {
+  flex: 0 0 auto;
+  width: auto;
 }
 
 /* ---------- About page ---------- */
@@ -1078,6 +1105,29 @@ a:hover .card-media img.is-loaded {
 
 .footer-role {
   grid-column: 5 / 7;
+}
+
+/* Footer links: square box on hover, text kept on column 8 and on the
+   cap line (pulled back by the box's 8px padding + 1px border) */
+.footer-top .footer-col {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  margin-top: calc(var(--cap-top) - 4px) !important;
+  margin-left: -9px;
+}
+
+.footer-col a {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s var(--ease);
+}
+
+.footer-col a:hover,
+.footer-col a:focus-visible {
+  border-color: var(--fg);
+  outline: none;
 }
 
 .footer-col {
