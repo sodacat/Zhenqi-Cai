@@ -8,13 +8,19 @@ window.SITE = {
   name: "Zhenqi Cai",
   mark: "ZC.",
   role: "Senior Product Designer",
-  headline: ["I design systems", "where complexity", "becomes clarity."],
-  intro:
-    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0 → 1 to global scale.",
-  clients: ["Amazon", "IBM", "SAP", "Startups"],
-  hero: "images/hero.jpg",
-
+  location: "SF, CA",
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
+  tagline:
+    "I design systems where complexity becomes clarity — at the intersection of technology, people, and real-world impact.",
+  intro: "7+ years across Amazon, SAP, IBM, and startups, from 0 → 1 products to 100M+ users.",
+  clients: ["Amazon", "IBM", "SAP"],
+  stats: [
+    { value: "7+", label: "Years" },
+    { value: "100M+", label: "Users" }
+  ],
+  hero: "images/hero.jpg",
+  heroCaption: ["Complex", "Systems", "Human", "Impact"],
+
   bio: [
     "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",
     "I care about designing trustworthy experiences that help people navigate complexity and make better decisions."
@@ -57,7 +63,7 @@ window.SITE = {
       company: "Amazon",
       title: "Seller Qualification",
       summary: "Re-architecting a compliance system into seller growth infrastructure.",
-      tags: ["Complex systems", "Commerce", "+20% completion"],
+      tags: ["Complex systems", "Commerce", "Policy", "+20% completion"],
       cover: "images/seller-qualification.jpg",
       images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
     },
@@ -67,7 +73,7 @@ window.SITE = {
       company: "Amazon",
       title: "Global Product Compliance",
       summary: "Designing a global compliance system for 100M+ products across marketplaces.",
-      tags: ["Systems", "Trust & Safety", "100M+ products"],
+      tags: ["Systems", "Trust & Safety", "Scale", "100M+ products"],
       cover: "images/global-product-compliance.jpg",
       images: ["images/global-product-compliance.jpg", "images/global-product-compliance-2.jpg"]
     },
@@ -87,7 +93,7 @@ window.SITE = {
       company: "SAP",
       title: "Enterprise Experience",
       summary: "Unifying complex workflows across global teams.",
-      tags: ["Enterprise", "Workflow", "Global scale"],
+      tags: ["Enterprise", "Workflow", "Scale"],
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
     },

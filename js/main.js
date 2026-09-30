@@ -35,9 +35,10 @@
 
   function workCard(p, n) {
     return `<a class="work-card reveal" href="${projectUrl(p)}" data-type="${esc(p.type)}">
+      <span class="label work-num">${pad(n)}</span>
       ${media(p.cover, p.title)}
       <div class="work-meta">
-        <span class="label muted">${pad(n)} — ${esc(p.company)}</span>
+        <span class="label">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
         <div class="work-foot">${tags(p)}${arrow}</div>
@@ -50,7 +51,8 @@
     const nav = [
       ["Work", "works.html", "works"],
       ["AI Experiments", "index.html#experiments", "experiments"],
-      ["About", "about.html", "about"]
+      ["About", "about.html", "about"],
+      ["Resume", S.resume, "resume"]
     ];
     return `<header class="site-header grid-12 wrap">
       <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></a>
@@ -61,7 +63,7 @@
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
       </nav>
-      <div class="header-cta"><a class="btn" href="mailto:${esc(S.email)}">Contact ${arrow}</a></div>
+      <div class="header-cta label"><span class="muted">${esc(S.location)}</span><span class="status-dot" aria-hidden="true"></span></div>
     </header>`;
   }
 
@@ -119,23 +121,33 @@
 
     return `<main>
       <section class="hero grid-12 wrap">
-        <p class="label hero-role">(${esc(S.role)})</p>
-        <h1 class="display display-xl reveal">${lines(S.headline)}</h1>
-        <p class="hero-intro reveal">${esc(S.intro)}</p>
-        <div class="hero-clients reveal">
-          <span class="label muted">Selected clients</span>
-          <ul class="label">${S.clients.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
+        <div class="hero-text">
+          <p class="label idx">(01)</p>
+          <p class="label hero-role">${esc(S.role)}</p>
+          <h1 class="display display-xl reveal">${lines(S.statement)}</h1>
+          <p class="lead hero-tagline reveal">${esc(S.tagline)}</p>
+          <p class="hero-intro reveal">${esc(S.intro)}</p>
+          <div class="hero-proof reveal">
+            <ul class="clients">${S.clients.map((c) => `<li class="client client-${esc(c.toLowerCase())}">${esc(c)}</li>`).join("")}</ul>
+            <dl class="stats">
+              ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
+            </dl>
+          </div>
+          <a class="label link-line hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+        </div>
+        <div class="hero-media reveal">
+          ${media(S.hero, S.name)}
+          <p class="label hero-caption">${lines(S.heroCaption)}</p>
         </div>
       </section>
-      <div class="wrap hero-media reveal">${media(S.hero, "Hero image")}</div>
 
-      <section class="section wrap" id="work">
-        ${sectionHead(1, "Selected work", ["View all", "works.html"])}
+      <section class="section section-tight wrap" id="work">
+        ${sectionHead(2, "Selected work", ["View all work", "works.html"])}
         <div class="work-grid">${work.map((p, i) => workCard(p, i + 1)).join("")}</div>
       </section>
 
       ${feat ? `<section class="section wrap" id="experiments">
-        ${sectionHead(2, "AI experiments", ["View all", "works.html?type=experiment"])}
+        ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
         <div class="exp grid-12">
           <a class="exp-media reveal" href="${projectUrl(feat)}">${media(feat.cover, feat.title)}</a>
           <div class="exp-body reveal">
@@ -150,7 +162,7 @@
               .map(
                 (p) => `<li class="reveal"><a href="${projectUrl(p)}">
                   ${media(p.cover, p.title)}
-                  <span class="exp-side-title">${esc(p.title)}</span>
+                  <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
                   <span class="label muted">${esc(p.company)}</span>
                 </a></li>`
               )
@@ -158,15 +170,6 @@
           </ul>
         </div>
       </section>` : ""}
-
-      <section class="section wrap" id="about">
-        ${sectionHead(3, "About", ["More about me", "about.html"])}
-        <div class="about grid-12">
-          <h2 class="display reveal">${lines(S.statement)}</h2>
-          <div class="about-body reveal">${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}</div>
-          <div class="about-media reveal">${media(S.portrait, S.name)}</div>
-        </div>
-      </section>
 
       ${philosophy(4)}
       ${contactBlock(5)}

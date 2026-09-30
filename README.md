@@ -7,8 +7,8 @@ hairline rules and numbered sections `(01)…(05)`, black on white with a
 single red accent.
 
 ## Pages
-- `index.html` — hero, (01) Selected work, (02) AI experiments, (03) About,
-  (04) Philosophy, (05) Get in touch
+- `index.html` — (01) hero (statement, clients, stats, portrait), (02) Selected work,
+  (03) AI experiments, (04) Philosophy, (05) Get in touch
 - `about.html` — statement, portrait + bio, work index, capabilities, philosophy
 - `works.html` — all projects, filterable (`works.html?type=experiment` preselects)
 - `project.html?id=<project-id>` — project detail with gallery and next-project link
