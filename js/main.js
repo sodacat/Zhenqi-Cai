@@ -168,7 +168,7 @@
           <h2 class="display reveal">${lines(S.statement)}</h2>
           <div class="about-body reveal">
             ${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
-            <a class="btn" href="about.html">More about me ${arrow}</a>
+            <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
           </div>
           <div class="about-media reveal">${media(S.portrait, S.name)}</div>
         </div>
