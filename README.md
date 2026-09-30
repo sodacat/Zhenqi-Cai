@@ -1,17 +1,24 @@
 # Zhenqi Cai — Portfolio
 
-Minimal, editorial photography portfolio (static HTML/CSS/JS, no build step).
+Swiss-style (International Typographic Style) product-design portfolio,
+static HTML/CSS/JS, no build step. Layout language follows the Framer "Rec"
+template: oversized wordmark, strict 12-column grid, mono uppercase labels,
+hairline rules and numbered sections `(01)…(05)`, black on white with a
+single red accent.
 
 ## Pages
-- `index.html` — hero mark, tagline, featured works grid, about, services, footer
-- `works.html` — all projects with category filters
+- `index.html` — hero, (01) Selected work, (02) AI experiments, (03) About,
+  (04) Philosophy, (05) Get in touch
+- `about.html` — statement, portrait + bio, work index, capabilities, philosophy
+- `works.html` — all projects, filterable (`works.html?type=experiment` preselects)
 - `project.html?id=<project-id>` — project detail with gallery and next-project link
 
 ## Editing content
 All text, links and projects live in **`js/data.js`**.
-Put images in `images/` and reference them as `images/<file>.jpg`.
-The first five projects with `featured: true` fill the home grid
-(1 large + 2 small, then 2 wide). Missing images show a neutral placeholder.
+Projects have `type: "work"` (case study) or `"experiment"` (AI experiment);
+`year`, `role` and `description` are optional and appear on the project page when set.
+Put images in `images/` (`hero.jpg`, `portrait.jpg`, `<project-id>.jpg`, …)
+and the résumé at `resume.pdf`. Missing images show a neutral placeholder.
 
 ## Local preview
 ```

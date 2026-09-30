@@ -7,8 +7,13 @@
     String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   const lines = (arr) => arr.map(esc).join("<br>");
+  const pad = (n) => String(n).padStart(2, "0");
+  const arrow = `<span class="arrow" aria-hidden="true">→</span>`;
 
   const projectUrl = (p) => `project.html?id=${encodeURIComponent(p.id)}`;
+  const work = S.projects.filter((p) => p.type === "work");
+  const experiments = S.projects.filter((p) => p.type === "experiment");
+  const typeLabel = { work: "Case study", experiment: "AI experiment" };
 
   function media(src, alt, extraClass = "") {
     return `<div class="card-media ${extraClass}">
@@ -17,12 +22,25 @@
     </div>`;
   }
 
-  function card(p, cls = "") {
-    return `<a class="card reveal ${cls}" href="${projectUrl(p)}" data-cat="${esc(p.category)}">
+  const tags = (p) => `<ul class="tags label">${(p.tags || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+
+  // Numbered Swiss section head: (01) ——— Title ——— View all →
+  function sectionHead(n, title, link) {
+    return `<div class="sec-head grid-12">
+      <span class="label idx">(${pad(n)})</span>
+      <h2 class="label sec-title">${esc(title)}</h2>
+      ${link ? `<a class="label link-line sec-link" href="${link[1]}">${esc(link[0])} ${arrow}</a>` : ""}
+    </div>`;
+  }
+
+  function workCard(p, n) {
+    return `<a class="work-card reveal" href="${projectUrl(p)}" data-type="${esc(p.type)}">
       ${media(p.cover, p.title)}
-      <div class="card-caption">
-        <span class="title">${esc(p.title)}</span>
-        <span class="cat">${esc(p.category)}</span>
+      <div class="work-meta">
+        <span class="label muted">${pad(n)} — ${esc(p.company)}</span>
+        <h3 class="work-title">${esc(p.title)}</h3>
+        <p class="work-sum">${esc(p.summary)}</p>
+        <div class="work-foot">${tags(p)}${arrow}</div>
       </div>
     </a>`;
   }
@@ -30,58 +48,66 @@
   /* ---------- Shared chrome ---------- */
   function header() {
     const nav = [
-      ["Works", "works.html", "works"],
-      ["About", "index.html#about", "about"],
-      ["Services", "index.html#services", "services"]
+      ["Work", "works.html", "works"],
+      ["AI Experiments", "index.html#experiments", "experiments"],
+      ["About", "about.html", "about"]
     ];
     return `<header class="site-header grid-12 wrap">
-      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark)}</a>
-      <nav class="nav label" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></a>
+      <button class="menu-btn label" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav label" id="nav" aria-label="Primary">
         ${nav
           .map(([t, href, key]) => `<a class="link-line${page === key ? " is-active" : ""}" href="${href}">${t}</a>`)
           .join("")}
+        <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
       </nav>
-      <div class="header-cta"><a class="btn" href="mailto:${esc(S.email)}">Contact</a></div>
+      <div class="header-cta"><a class="btn" href="mailto:${esc(S.email)}">Contact ${arrow}</a></div>
     </header>`;
+  }
+
+  function contactBlock(n) {
+    return `<section class="section wrap" id="contact">
+      ${sectionHead(n, "Get in touch")}
+      <div class="contact grid-12">
+        <h2 class="display reveal">${esc(S.cta)}</h2>
+        <div class="contact-side">
+          <a class="btn btn-lg" href="mailto:${esc(S.email)}">Get in touch ${arrow}</a>
+          <ul class="contact-links label">
+            ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
+          </ul>
+        </div>
+      </div>
+    </section>`;
   }
 
   function footer() {
     const year = new Date().getFullYear();
-    const contact = [...S.address, S.phone, S.email].filter(Boolean);
     return `<footer class="site-footer wrap">
       <div class="grid-12">
+        <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
         <div class="footer-cols">
           <div>
-            <h4 class="label">Navigation</h4>
+            <h4 class="label">Index</h4>
             <ul>
-              <li><a class="link-line" href="works.html">Works</a></li>
-              <li><a class="link-line" href="index.html#about">About</a></li>
-              <li><a class="link-line" href="index.html#services">Services</a></li>
-              <li><a class="link-line" href="mailto:${esc(S.email)}">Contact</a></li>
+              <li><a class="link-line" href="works.html">Work</a></li>
+              <li><a class="link-line" href="index.html#experiments">AI Experiments</a></li>
+              <li><a class="link-line" href="about.html">About</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="label">Social</h4>
+            <h4 class="label">Elsewhere</h4>
             <ul>
-              ${S.social
-                .map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`)
-                .join("")}
+              ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
             </ul>
           </div>
           <div>
             <h4 class="label">Contact</h4>
-            <ul>
-              ${contact
-                .map((c) =>
-                  c === S.email ? `<li><a class="link-line" href="mailto:${esc(c)}">${esc(c)}</a></li>` : `<li>${esc(c)}</li>`
-                )
-                .join("")}
-            </ul>
+            <ul><li><a class="link-line" href="mailto:${esc(S.email)}">${esc(S.email)}</a></li></ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}</div>
+        <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></div>
         <div class="credits label">© ${year} ${esc(S.name)}.<br>All rights reserved.</div>
       </div>
     </footer>`;
@@ -89,64 +115,155 @@
 
   /* ---------- Pages ---------- */
   function home() {
-    const f = S.projects.filter((p) => p.featured).slice(0, 5);
-    const r1 = f.slice(0, 3);
-    const r2 = f.slice(3, 5);
+    const [feat, ...side] = experiments;
 
     return `<main>
-      <section class="intro grid-12 wrap">
-        <h1 class="display reveal">${lines(S.tagline)}</h1>
+      <section class="hero grid-12 wrap">
+        <p class="label hero-role">(${esc(S.role)})</p>
+        <h1 class="display display-xl reveal">${lines(S.headline)}</h1>
+        <p class="hero-intro reveal">${esc(S.intro)}</p>
+        <div class="hero-clients reveal">
+          <span class="label muted">Selected clients</span>
+          <ul class="label">${S.clients.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
+        </div>
+      </section>
+      <div class="wrap hero-media reveal">${media(S.hero, "Hero image")}</div>
+
+      <section class="section wrap" id="work">
+        ${sectionHead(1, "Selected work", ["View all", "works.html"])}
+        <div class="work-grid">${work.map((p, i) => workCard(p, i + 1)).join("")}</div>
       </section>
 
-      <section class="wrap" id="works">
-        <div class="works-label label"><a class="link-line" href="works.html">All works</a></div>
-        <div class="feature-row r1">${r1.map((p) => card(p)).join("")}</div>
-        ${r2.length ? `<div class="feature-row r2">${r2.map((p) => card(p)).join("")}</div>` : ""}
-      </section>
+      ${feat ? `<section class="section wrap" id="experiments">
+        ${sectionHead(2, "AI experiments", ["View all", "works.html?type=experiment"])}
+        <div class="exp grid-12">
+          <a class="exp-media reveal" href="${projectUrl(feat)}">${media(feat.cover, feat.title)}</a>
+          <div class="exp-body reveal">
+            <h3 class="work-title">${esc(feat.title)}</h3>
+            <p class="label muted">${esc(feat.company)}</p>
+            <p class="work-sum">${esc(feat.summary)}</p>
+            <a class="btn btn-solid" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
+          </div>
+          <ul class="exp-side">
+            ${side
+              .slice(0, 2)
+              .map(
+                (p) => `<li class="reveal"><a href="${projectUrl(p)}">
+                  ${media(p.cover, p.title)}
+                  <span class="exp-side-title">${esc(p.title)}</span>
+                  <span class="label muted">${esc(p.company)}</span>
+                </a></li>`
+              )
+              .join("")}
+          </ul>
+        </div>
+      </section>` : ""}
 
       <section class="section wrap" id="about">
-        <div class="statement grid-12">
-          <h2 class="display reveal">${lines(S.statement)}</h2>
-        </div>
+        ${sectionHead(3, "About", ["More about me", "about.html"])}
         <div class="about grid-12">
+          <h2 class="display reveal">${lines(S.statement)}</h2>
+          <div class="about-body reveal">${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}</div>
           <div class="about-media reveal">${media(S.portrait, S.name)}</div>
-          <div class="about-body reveal">
-            <p class="name">${esc(S.name)}</p>
-            <p class="role label muted">${esc(S.role)}</p>
-            <p class="bio">${esc(S.bio)}</p>
-            <div class="about-more label"><a class="link-line" href="works.html">More infos</a></div>
-          </div>
         </div>
       </section>
 
-      <section class="section services grid-12 wrap" id="services">
-        <div class="services-head">
-          <h2 class="display reveal">What I offer.</h2>
-          <a class="contact-me label link-line" href="mailto:${esc(S.email)}">Contact me</a>
+      ${philosophy(4)}
+      ${contactBlock(5)}
+    </main>`;
+  }
+
+  function philosophy(n) {
+    return `<section class="section wrap" id="philosophy">
+      ${sectionHead(n, "My philosophy")}
+      <ol class="principles">
+        ${S.philosophy
+          .map(
+            (p, i) => `<li class="principle reveal">
+              <span class="label muted">${pad(i + 1)}</span>
+              <h3>${esc(p.title)}</h3>
+              <p>${esc(p.text)}</p>
+            </li>`
+          )
+          .join("")}
+      </ol>
+    </section>`;
+  }
+
+  function about() {
+    return `<main>
+      <section class="page-title grid-12 wrap">
+        <p class="label hero-role">(About)</p>
+        <h1 class="display display-xl reveal">${lines(S.statement)}</h1>
+      </section>
+
+      <section class="about-page grid-12 wrap">
+        <div class="about-page-media reveal">${media(S.portrait, S.name)}</div>
+        <div class="about-page-body reveal">
+          <p class="lead">${esc(S.bio[0])}</p>
+          ${S.bio.slice(1).map((b) => `<p>${esc(b)}</p>`).join("")}
+          <p>${esc(S.intro)}</p>
+          <dl class="facts">
+            <div><dt class="label muted">Role</dt><dd>${esc(S.role)}</dd></div>
+            <div><dt class="label muted">Clients</dt><dd>${S.clients.map(esc).join(", ")}</dd></div>
+            <div><dt class="label muted">Contact</dt><dd><a class="link-line" href="mailto:${esc(S.email)}">${esc(S.email)}</a></dd></div>
+          </dl>
         </div>
-        <ul class="services-list">
-          ${S.services
-            .map((s) => `<li class="service reveal"><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`)
+      </section>
+
+      <section class="section wrap">
+        ${sectionHead(1, "Selected work", ["All work", "works.html"])}
+        <ul class="index-list">
+          ${work
+            .map(
+              (p, i) => `<li><a class="index-row" href="${projectUrl(p)}">
+                <span class="label muted">${pad(i + 1)}</span>
+                <span class="label">${esc(p.company)}</span>
+                <span class="index-title">${esc(p.title)}</span>
+                <span class="index-sum">${esc(p.summary)}</span>
+                ${arrow}
+              </a></li>`
+            )
             .join("")}
         </ul>
       </section>
+
+      <section class="section wrap">
+        ${sectionHead(2, "Capabilities")}
+        <div class="services grid-12">
+          <div class="services-head"><h2 class="display reveal">What I do.</h2></div>
+          <ul class="services-list">
+            ${S.capabilities
+              .map((c) => `<li class="service reveal"><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></li>`)
+              .join("")}
+          </ul>
+        </div>
+      </section>
+
+      ${philosophy(3)}
+      ${contactBlock(4)}
     </main>`;
   }
 
   function works() {
-    const cats = [...new Set(S.projects.map((p) => p.category))];
-    const count = (c) => S.projects.filter((p) => p.category === c).length;
+    const initial = new URLSearchParams(location.search).get("type") || "*";
+    const count = (t) => S.projects.filter((p) => p.type === t).length;
+    const btn = (f, label, n) =>
+      `<button class="${initial === f ? "is-active" : ""}" data-filter="${f}">${label}<sup>${n}</sup></button>`;
     return `<main>
       <section class="page-title grid-12 wrap">
-        <h1 class="display reveal">Selected works.<br>${S.projects.length} projects.</h1>
+        <p class="label hero-role">(Index)</p>
+        <h1 class="display display-xl reveal">Selected work.<br>${pad(S.projects.length)} projects.</h1>
       </section>
       <section class="wrap">
         <div class="filters label" role="tablist">
-          <button class="is-active" data-filter="*">All<sup>${S.projects.length}</sup></button>
-          ${cats.map((c) => `<button data-filter="${esc(c)}">${esc(c)}<sup>${count(c)}</sup></button>`).join("")}
+          ${btn("*", "All", S.projects.length)}
+          ${btn("work", "Case studies", count("work"))}
+          ${btn("experiment", "AI experiments", count("experiment"))}
         </div>
-        <div class="works-grid">${S.projects.map((p) => card(p)).join("")}</div>
+        <div class="work-grid">${S.projects.map((p, i) => workCard(p, i + 1)).join("")}</div>
       </section>
+      ${contactBlock(1)}
     </main>`;
   }
 
@@ -156,28 +273,37 @@
     const p = S.projects[i];
     const next = S.projects[(i + 1) % S.projects.length];
     document.title = `${p.title} — ${S.name}`;
+    const meta = [
+      ["Company", p.company],
+      ["Type", typeLabel[p.type]],
+      ["Year", p.year],
+      ["Role", p.role],
+      ["Focus", (p.tags || []).join(", ")]
+    ].filter(([, v]) => v);
 
     return `<main>
       <section class="project-head grid-12 wrap">
-        <h1 class="display reveal">${esc(p.title)}</h1>
-        <dl class="project-meta reveal">
-          <div><dt class="label">Category</dt><dd>${esc(p.category)}</dd></div>
-          <div><dt class="label">Year</dt><dd>${esc(p.year)}</dd></div>
-          <div><dt class="label">Client</dt><dd>${esc(p.client)}</dd></div>
-        </dl>
+        <p class="label hero-role">(${pad(i + 1)}) ${esc(p.company)}</p>
+        <h1 class="display display-xl reveal">${esc(p.title)}</h1>
       </section>
-      ${p.description ? `<section class="project-desc grid-12 wrap"><p class="reveal">${esc(p.description)}</p></section>` : ""}
+      <section class="project-info grid-12 wrap">
+        <p class="lead reveal">${esc(p.summary)}</p>
+        <dl class="project-meta reveal">
+          ${meta.map(([k, v]) => `<div><dt class="label muted">${k}</dt><dd>${esc(v)}</dd></div>`).join("")}
+        </dl>
+        ${p.description ? `<p class="project-desc reveal">${esc(p.description)}</p>` : ""}
+      </section>
       <section class="gallery wrap">
         ${(p.images?.length ? p.images : [p.cover])
-          .map((src, n) => `<div class="card reveal">${media(src, `${p.title} — ${n + 1}`)}</div>`)
+          .map((src, n) => `<div class="reveal">${media(src, `${p.title} — ${n + 1}`)}</div>`)
           .join("")}
       </section>
       <section class="wrap">
         <div class="project-nav">
-          <a class="label link-line" href="works.html">← All works</a>
+          <a class="label link-line" href="works.html">← All work</a>
           <a class="next" href="${projectUrl(next)}">
             <span class="label muted">Next project</span>
-            <div class="display">${esc(next.title)}</div>
+            <div class="display">${esc(next.title)} ${arrow}</div>
           </a>
         </div>
       </section>
@@ -185,7 +311,7 @@
   }
 
   /* ---------- Render ---------- */
-  const views = { home, works, project };
+  const views = { home, works, project, about };
   $("#app").innerHTML = header() + (views[page] || home)() + footer();
 
   // Fade images in once loaded; keep placeholder if the file is missing.
@@ -198,16 +324,27 @@
     }
   });
 
-  // Category filters on works page
+  // Mobile menu
+  const menuBtn = $(".menu-btn");
+  menuBtn?.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.textContent = open ? "Close" : "Menu";
+  });
+
+  // Type filters on works page
+  const applyFilter = (f) =>
+    document.querySelectorAll(".work-grid .work-card").forEach((c) => {
+      c.classList.toggle("is-hidden", f !== "*" && c.dataset.type !== f);
+    });
   document.querySelectorAll(".filters button").forEach((btn) => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".filters button").forEach((b) => b.classList.toggle("is-active", b === btn));
-      const f = btn.dataset.filter;
-      document.querySelectorAll(".works-grid .card").forEach((c) => {
-        c.classList.toggle("is-hidden", f !== "*" && c.dataset.cat !== f);
-      });
+      applyFilter(btn.dataset.filter);
     });
   });
+  const active = $(".filters button.is-active");
+  if (active) applyFilter(active.dataset.filter);
 
   // Scroll reveal
   const els = document.querySelectorAll(".reveal");
@@ -227,6 +364,6 @@
     els.forEach((el) => el.classList.add("is-in"));
   }
 
-  // Deep links to #about / #services after render
+  // Deep links (#experiments, #about, #contact) after render
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 })();

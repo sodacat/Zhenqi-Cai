@@ -2,117 +2,125 @@
  * Site content — edit this file to update the portfolio.
  *
  * Images: put files in /images and reference them as "images/your-file.jpg".
- * If an image is missing, a neutral placeholder with the project title is shown.
+ * If an image is missing, a neutral placeholder with the title is shown.
  */
 window.SITE = {
   name: "Zhenqi Cai",
   mark: "ZC.",
-  role: "Photographer & Visual Director",
-  tagline: ["Light chases.", "Moments stay."],
-  statement: ["Photographer.", "Visual storyteller.", "Based in —."],
-  bio:
-    "I shoot fashion, portraits, and campaigns. Available for editorial, brand, and exhibition work.",
-  portrait: "images/portrait.jpg",
-  email: "hello@zhenqicai.com",
-  phone: "",
-  address: ["City, Country"],
-  social: [
-    { label: "Instagram", url: "https://instagram.com/" },
-    { label: "LinkedIn", url: "https://linkedin.com/" },
-    { label: "Twitter/X", url: "https://x.com/" }
+  role: "Senior Product Designer",
+  headline: ["I design systems", "where complexity", "becomes clarity."],
+  intro:
+    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0 → 1 to global scale.",
+  clients: ["Amazon", "IBM", "SAP", "Startups"],
+  hero: "images/hero.jpg",
+
+  statement: ["Product designer.", "Systems thinker.", "Humanist."],
+  bio: [
+    "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",
+    "I care about designing trustworthy experiences that help people navigate complexity and make better decisions."
   ],
-  services: [
-    {
-      title: "Fashion & Editorial",
-      text:
-        "Studio or location, controlled or found — I shoot fashion that has something to say. Collections, lookbooks, editorials for independent labels and international publications."
-    },
-    {
-      title: "Portrait",
-      text:
-        "Faces, bodies, presence. I work with artists, creatives, and private clients on portrait sessions that feel like a conversation rather than a sitting."
-    },
-    {
-      title: "Commercial & Brand",
-      text:
-        "Campaigns, lookbooks, and product shoots for brands that want imagery with a point of view. Shot with intention, delivered ready to publish."
-    },
-    {
-      title: "Art Direction",
-      text:
-        "Beyond the shutter — I concept and direct shoots from mood board to final frame. Set design, casting direction, styling guidance, and post-production supervision."
-    }
+  portrait: "images/portrait.jpg",
+
+  philosophy: [
+    { title: "Clarity", text: "Turn complexity into understanding." },
+    { title: "Systems", text: "Design for the bigger picture." },
+    { title: "Humanity", text: "Technology should empower people." }
+  ],
+
+  // About page — capabilities list
+  capabilities: [
+    { title: "Complex systems", text: "Compliance, trust & safety and enterprise workflows — restructured so people can act with confidence." },
+    { title: "AI experiences", text: "Interfaces for systems that reason, recommend and create, designed to be legible and trustworthy." },
+    { title: "Design systems", text: "Shared foundations that let large teams ship consistent products across surfaces and markets." },
+    { title: "0 → 1 prototyping", text: "Moving from product idea to working interface with AI-assisted prototyping." }
+  ],
+
+  cta: "Let's make complexity feel human — together.",
+  email: "hello@zhenqicai.com",
+  resume: "resume.pdf",
+  social: [
+    { label: "LinkedIn", url: "https://linkedin.com/" },
+    { label: "Email", url: "mailto:hello@zhenqicai.com" },
+    { label: "Resume", url: "resume.pdf" }
   ],
 
   /*
-   * Projects. The first five marked `featured` fill the home-page grid
-   * (1 large + 2 small, then 2 wide). All projects appear on works.html.
+   * Projects. type: "work" (case study) or "experiment" (AI experiments).
+   * On the home page, all "work" projects fill Selected Work; the first
+   * experiment is the large feature and the next two sit beside it.
+   * Optional fields: year, role, description, images.
    */
   projects: [
     {
-      id: "project-01",
-      title: "Project One",
-      category: "Portrait",
-      year: "2026",
-      client: "Personal",
-      featured: true,
-      cover: "images/project-01.jpg",
-      description: "A short paragraph about the project: the idea, the light, the people involved.",
-      images: ["images/project-01.jpg", "images/project-01-2.jpg", "images/project-01-3.jpg"]
+      id: "seller-qualification",
+      type: "work",
+      company: "Amazon",
+      title: "Seller Qualification",
+      summary: "Re-architecting a compliance system into seller growth infrastructure.",
+      tags: ["Complex systems", "Commerce", "+20% completion"],
+      cover: "images/seller-qualification.jpg",
+      images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
     },
     {
-      id: "project-02",
-      title: "Project Two",
-      category: "Architecture",
-      year: "2026",
-      client: "Personal",
-      featured: true,
-      cover: "images/project-02.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-02.jpg", "images/project-02-2.jpg"]
+      id: "global-product-compliance",
+      type: "work",
+      company: "Amazon",
+      title: "Global Product Compliance",
+      summary: "Designing a global compliance system for 100M+ products across marketplaces.",
+      tags: ["Systems", "Trust & Safety", "100M+ products"],
+      cover: "images/global-product-compliance.jpg",
+      images: ["images/global-product-compliance.jpg", "images/global-product-compliance-2.jpg"]
     },
     {
-      id: "project-03",
-      title: "Project Three",
-      category: "Commercial",
-      year: "2025",
-      client: "Brand name",
-      featured: true,
-      cover: "images/project-03.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-03.jpg", "images/project-03-2.jpg"]
+      id: "amelia",
+      type: "work",
+      company: "IBM",
+      title: "Amelia",
+      summary: "Designing an AI system for reasoning about complex relationships.",
+      tags: ["AI", "Enterprise", "Design systems"],
+      cover: "images/amelia.jpg",
+      images: ["images/amelia.jpg", "images/amelia-2.jpg"]
     },
     {
-      id: "project-04",
-      title: "Project Four",
-      category: "Fashion",
-      year: "2025",
-      client: "Magazine",
-      featured: true,
-      cover: "images/project-04.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-04.jpg", "images/project-04-2.jpg"]
+      id: "enterprise-experience",
+      type: "work",
+      company: "SAP",
+      title: "Enterprise Experience",
+      summary: "Unifying complex workflows across global teams.",
+      tags: ["Enterprise", "Workflow", "Global scale"],
+      cover: "images/enterprise-experience.jpg",
+      images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
     },
     {
-      id: "project-05",
-      title: "Project Five",
-      category: "Fashion",
-      year: "2025",
-      client: "Label",
-      featured: true,
-      cover: "images/project-05.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-05.jpg", "images/project-05-2.jpg"]
+      id: "sodacats-world",
+      type: "experiment",
+      company: "AI-native interactive prototype",
+      title: "Sodacat's World",
+      summary:
+        "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
+      tags: ["Experiment", "Prototype", "AI-assisted"],
+      cover: "images/sodacats-world.jpg",
+      images: ["images/sodacats-world.jpg", "images/sodacats-world-2.jpg"]
     },
     {
-      id: "project-06",
-      title: "Project Six",
-      category: "Portrait",
-      year: "2024",
-      client: "Personal",
-      cover: "images/project-06.jpg",
-      description: "A short paragraph about the project.",
-      images: ["images/project-06.jpg"]
+      id: "ai-storytelling",
+      type: "experiment",
+      company: "Experiment",
+      title: "AI Storytelling",
+      summary: "Exploring narrative interfaces generated with AI.",
+      tags: ["Experiment"],
+      cover: "images/ai-storytelling.jpg",
+      images: ["images/ai-storytelling.jpg"]
+    },
+    {
+      id: "design-with-ai",
+      type: "experiment",
+      company: "Notes · Explorations",
+      title: "Design with AI",
+      summary: "Notes and explorations on designing with AI as a material.",
+      tags: ["Notes", "Explorations"],
+      cover: "images/design-with-ai.jpg",
+      images: ["images/design-with-ai.jpg"]
     }
   ]
 };
