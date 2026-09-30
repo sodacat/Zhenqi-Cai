@@ -1080,7 +1080,7 @@ a:hover .card-media img.is-loaded {
   padding-bottom: var(--pad);
 }
 
-/* One row: mark | name + role (col 5) | links (col 8) | credits.
+/* One row: mark | name + role (col 5) | links (col 7) | credits.
    --cap-top nudges the text down so its first line starts at the
    top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
@@ -1116,7 +1116,7 @@ a:hover .card-media img.is-loaded {
   grid-column: 5 / 7;
 }
 
-/* Footer links: square box on hover, text kept on column 8 and on the
+/* Footer links: square box on hover, text kept on column 7 and on the
    cap line (pulled back by the box's 8px padding + 1px border) */
 .footer-top .footer-col {
   display: grid;
@@ -1140,7 +1140,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .footer-col {
-  grid-column: 8 / 10;
+  grid-column: 7 / 10;
 }
 
 .credits {
