@@ -224,9 +224,9 @@ a:hover .arrow {
   margin-left: -0.03em;
 }
 
-/* Nav boxes start on column 8, the hero image's left edge */
+/* Nav boxes start on column 7, the hero image's left edge */
 .nav {
-  grid-column: 8 / 12;
+  grid-column: 7 / 12;
   display: flex;
   flex-wrap: wrap;
   gap: 4px 6px;
@@ -404,9 +404,9 @@ a:hover .arrow {
   margin-top: clamp(32px, 4vw, 64px);
 }
 
-/* Portrait (cols 8–12) is taller than the intro; the intro centers on it */
+/* Portrait (cols 7–12) is taller than the intro; the intro centers on it */
 .hero-media {
-  grid-column: 8 / -1;
+  grid-column: 7 / -1;
   position: relative;
 }
 
@@ -639,6 +639,27 @@ a:hover .card-media img.is-loaded {
 
 .exp-side .card-media {
   grid-column: 1 / -1;
+}
+
+@media (min-width: 1025px) {
+  .exp-side,
+  .exp-side li,
+  .exp-side a {
+    grid-template-columns: subgrid;
+  }
+
+  .exp-side li,
+  .exp-side a {
+    grid-column: 1 / -1;
+    display: grid;
+  }
+
+  /* Subgrids take the page gutter, not the list's own 24px gap */
+  .exp-side,
+  .exp-side li,
+  .exp-side a {
+    column-gap: normal;
+  }
 }
 
 .exp-side .exp-num {
@@ -1010,7 +1031,7 @@ a:hover .card-media img.is-loaded {
   padding-bottom: var(--pad);
 }
 
-/* One row: mark | name + role (col 5) | links (col 8) | credits.
+/* One row: mark | name + role (col 5) | links (col 7) | credits.
    --cap-top nudges the text down so its first line starts at the
    top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
@@ -1043,11 +1064,11 @@ a:hover .card-media img.is-loaded {
 }
 
 .footer-role {
-  grid-column: 5 / 8;
+  grid-column: 5 / 7;
 }
 
 .footer-col {
-  grid-column: 8 / 10;
+  grid-column: 7 / 10;
 }
 
 .credits {
@@ -1088,11 +1109,11 @@ a:hover .card-media img.is-loaded {
   }
 
   .nav {
-    grid-column: 8 / -1;
+    grid-column: 7 / -1;
   }
 
   .header-cta {
-    grid-column: 8 / -1;
+    grid-column: 7 / -1;
     grid-row: 2;
     justify-self: start;
   }
@@ -1100,11 +1121,11 @@ a:hover .card-media img.is-loaded {
 
 @media (max-width: 1024px) {
   .hero-text {
-    grid-column: 1 / 8;
+    grid-column: 1 / 7;
   }
 
   .hero-media {
-    grid-column: 8 / -1;
+    grid-column: 7 / -1;
   }
 
   .exp-feature {
