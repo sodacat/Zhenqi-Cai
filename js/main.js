@@ -114,7 +114,9 @@
           <h1 class="display display-xl reveal">${esc(S.headline)}</h1>
           <p class="hero-intro reveal">${esc(S.intro)}</p>
           <div class="hero-proof reveal">
-            <ul class="clients">${S.clients.map((c) => `<li class="client client-${esc(c.toLowerCase())}">${esc(c)}</li>`).join("")}</ul>
+            <ul class="clients">${S.clients
+              .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
+              .join("")}</ul>
             <dl class="stats">
               ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
             </dl>
@@ -199,7 +201,7 @@
           <p>${esc(S.intro)}</p>
           <dl class="facts">
             <div><dt class="label muted">Role</dt><dd>${esc(S.role)}</dd></div>
-            <div><dt class="label muted">Clients</dt><dd>${S.clients.map(esc).join(", ")}</dd></div>
+            <div><dt class="label muted">Clients</dt><dd>${S.clients.map((c) => esc(c.name)).join(", ")}</dd></div>
             <div><dt class="label muted">Contact</dt><dd><a class="link-line" href="mailto:${esc(S.email)}">${esc(S.email)}</a></dd></div>
           </dl>
         </div>

@@ -13,7 +13,11 @@ window.SITE = {
   headline: "I design systems where complexity becomes clarity.",
   intro:
     "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
-  clients: ["Amazon", "IBM", "SAP"],
+  clients: [
+    { name: "Amazon", logo: "images/logo-amazon.png" },
+    { name: "IBM", logo: "images/logo-ibm.webp" },
+    { name: "SAP", logo: "images/logo-sap.png" }
+  ],
   stats: [{ value: "100M+", label: "Scale" }],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
@@ -76,7 +80,7 @@ window.SITE = {
       summary: "Designing a global compliance system for 100M+ products across marketplaces.",
       tags: ["Systems", "Trust & Safety"],
       highlight: "100M+ products",
-      alt: "Abstract geometric architecture",
+      alt: "Trading platform shown on a laptop",
       cover: "images/global-product-compliance.jpg",
       images: ["images/global-product-compliance.jpg", "images/global-product-compliance-2.jpg"]
     },
@@ -112,9 +116,9 @@ window.SITE = {
       summary:
         "A world traveler's go-to list — every go-to restaurant, bar, museum, and beach, from the Texas backyard to the other side of the planet. Designed and built with AI-assisted prototyping, moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
-      alt: "Sodacat's Taste of the World — interactive travel map",
-      cover: "images/sodacats-world.jpg",
-      images: ["images/sodacats-world.jpg", "images/sodacats-world-2.jpg"]
+      alt: "Sodacat's Taste of the World — world map of 1217 saved places",
+      cover: "images/sodacats-world.png",
+      images: ["images/sodacats-world.png"]
     },
     {
       id: "ai-storytelling",
