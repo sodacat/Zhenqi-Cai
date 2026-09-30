@@ -224,7 +224,7 @@ a:hover .arrow {
   margin-left: -0.03em;
 }
 
-/* Nav text starts on column 8, the hero image's left edge */
+/* Nav boxes start on column 8, the hero image's left edge */
 .nav {
   grid-column: 8 / 12;
   display: flex;
@@ -234,11 +234,6 @@ a:hover .arrow {
 
 /* Nav links: a hairline box on hover and on the current page */
 @media (min-width: 681px) {
-  /* Pull back by the box padding + border so the first word sits on the column */
-  .nav {
-    margin-left: -11px;
-  }
-
   .nav a {
     padding: 6px 10px;
     border: 1px solid transparent;
@@ -466,26 +461,30 @@ a:hover .card-media img.is-loaded {
 }
 
 /* ---------- Work cards ---------- */
+/* Work cards sit on the 12-column grid: each spans 6 columns, the number
+   takes the first and the image/text the other 5 (cols 2–6 and 8–12). */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(40px, 4vw, 72px) var(--pad);
 }
 
 .work-card {
+  grid-column: span 6;
   display: grid;
-  grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr);
+  grid-template-columns: subgrid;
   grid-template-rows: auto 1fr;
   min-width: 0;
 }
 
 .work-num {
+  grid-column: 1;
   grid-row: 1 / 3;
 }
 
 .work-card .card-media,
 .work-meta {
-  grid-column: 2;
+  grid-column: 2 / -1;
 }
 
 .work-card.is-hidden {
@@ -556,15 +555,15 @@ a:hover .card-media img.is-loaded {
 /* Feature (cols 1–9): image + caption together match the height of the
    two side cards; the image takes whatever height the caption leaves. */
 .exp-feature {
-  grid-column: 1 / 10;
-  margin-right: clamp(24px, 4vw, 64px);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(16px, 1.6vw, 24px);
+  grid-column: 1 / 9;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: 1fr auto;
+  row-gap: clamp(16px, 1.6vw, 24px);
 }
 
 .exp-media {
-  flex: 1;
+  grid-column: 1 / -1;
   display: flex;
   min-height: 220px;
 }
@@ -586,11 +585,24 @@ a:hover .card-media img.is-loaded {
 }
 
 /* Feature caption under the image: number | title | text + button */
+/* Caption: number col 1 | title cols 2–4 | text from col 5 */
 .exp-body {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr) minmax(0, 1.2fr);
-  column-gap: clamp(16px, 2vw, 32px);
+  grid-template-columns: subgrid;
   align-items: start;
+}
+
+.exp-body .exp-num {
+  grid-column: 1;
+}
+
+.exp-head {
+  grid-column: 2 / 5;
+}
+
+.exp-text {
+  grid-column: 5 / -1;
 }
 
 .exp-head p {
@@ -668,14 +680,24 @@ a:hover .card-media img.is-loaded {
 
 .about-body {
   grid-column: 5 / 9;
-  border-left: 1px solid var(--hair);
-  padding-left: clamp(20px, 2.4vw, 40px);
+  position: relative;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .about-body p {
   margin: 0 0 1em;
+}
+
+/* Dividers live in the gutter so text stays on the column line */
+.about-body::before,
+.principle + .principle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--pad) / -2);
+  border-left: 1px solid var(--hair);
 }
 
 .about-body .btn {
@@ -698,18 +720,11 @@ a:hover .card-media img.is-loaded {
 }
 
 .principle {
-  border-left: 1px solid var(--hair);
-  padding: 0 0 0 var(--gap);
-}
-
-.principle:first-child {
-  border-left: 0;
-  padding-left: 0;
+  position: relative;
 }
 
 .principle h3 {
   margin: 14px 0 12px;
-  padding-left: clamp(16px, 2.4vw, 40px);
   font-weight: 700;
   font-size: clamp(26px, 3vw, 48px);
   line-height: 1;
@@ -719,7 +734,6 @@ a:hover .card-media img.is-loaded {
 
 .principle p {
   margin: 0;
-  padding-left: clamp(16px, 2.4vw, 40px);
   max-width: 18em;
   font-size: 14px;
   color: #3a3a3a;
@@ -999,7 +1013,7 @@ a:hover .card-media img.is-loaded {
   padding-bottom: var(--pad);
 }
 
-/* One row: mark | name + role | links (col 8, under the nav) | credits.
+/* One row: mark | name + role (col 5) | links (col 8) | credits.
    --cap-top nudges the text down so its first line starts at the
    top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
@@ -1017,7 +1031,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .footer-mark {
-  grid-column: 1 / 6;
+  grid-column: 1 / 5;
   font-weight: 700;
   font-size: var(--mark-size);
   line-height: 0.8;
@@ -1032,7 +1046,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .footer-role {
-  grid-column: 6 / 8;
+  grid-column: 5 / 8;
 }
 
 .footer-col {
@@ -1162,19 +1176,22 @@ a:hover .card-media img.is-loaded {
     line-height: 0.9;
   }
 
-  .about-body {
-    border-left: 0;
-    padding-left: 0;
+  .about-body::before {
+    display: none;
+  }
+
+  /* One column: feature caption stacks */
+  .exp-feature,
+  .exp-body {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .exp-body {
-    grid-template-columns: minmax(0, 1fr);
     row-gap: 12px;
   }
 
-  .principle h3,
-  .principle p {
-    padding-left: 0;
+  .exp-body > * {
+    grid-column: 1 / -1;
   }
 
   .menu-btn {
@@ -1257,6 +1274,12 @@ a:hover .card-media img.is-loaded {
     gap: 40px;
   }
 
+  .work-card {
+    grid-column: 1 / -1;
+    grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr);
+    column-gap: 0;
+  }
+
   .exp-side {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -1264,11 +1287,7 @@ a:hover .card-media img.is-loaded {
 
   .principles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 12px;
-  }
-
-  .principle {
-    padding-left: 10px;
+    column-gap: var(--pad);
   }
 
   .principle h3 {
