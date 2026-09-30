@@ -15,8 +15,8 @@ window.SITE = {
     "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
   clients: ["Amazon", "IBM", "SAP"],
   stats: [{ value: "100M+", label: "Scale" }],
-  hero: "images/hero.jpg",
-  heroAlt: "Person walking through concrete architecture",
+  hero: "images/hero.webp",
+  heroAlt: "Zhenqi Cai standing beneath concrete columns",
 
   bio: [
     "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",
@@ -64,7 +64,7 @@ window.SITE = {
       summary: "Re-architecting a compliance system into seller growth infrastructure.",
       tags: ["Complex systems", "Commerce"],
       highlight: "+20% completion",
-      alt: "Amazon packaging",
+      alt: "Amazon boxes on a conveyor belt",
       cover: "images/seller-qualification.jpg",
       images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
     },
@@ -88,7 +88,7 @@ window.SITE = {
       summary: "Designing an AI system for reasoning about complex relationships.",
       tags: ["AI", "Enterprise"],
       highlight: "Design systems",
-      alt: "Technology circuit board",
+      alt: "Illuminated IBM logo on a dark facade",
       cover: "images/amelia.jpg",
       images: ["images/amelia.jpg", "images/amelia-2.jpg"]
     },
@@ -100,7 +100,7 @@ window.SITE = {
       summary: "Unifying complex workflows across global teams.",
       tags: ["Enterprise", "Workflow"],
       highlight: "Scale",
-      alt: "SAP dashboard analytics",
+      alt: "SAP logo on a concrete building",
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
     },
