@@ -623,14 +623,18 @@ a:hover .card-media img.is-loaded {
   justify-items: start;
 }
 
-.btn-dark {
-  background: var(--fg);
-  color: var(--bg);
+/* Primary actions: white box, black text; red fill on hover */
+.btn-accent {
+  background: var(--bg);
+  color: var(--fg);
 }
 
-.btn-dark:hover {
+.btn-accent:hover,
+.btn-accent:focus-visible {
   background: var(--accent);
   border-color: var(--accent);
+  color: #fff;
+  outline: none;
 }
 
 .exp-side {
@@ -1040,7 +1044,7 @@ a:hover .card-media img.is-loaded {
   padding-bottom: var(--pad);
 }
 
-/* One row: mark | name + role (col 5) | links (col 7) | credits.
+/* One row: mark | name + role (col 5) | links (col 8) | credits.
    --cap-top nudges the text down so its first line starts at the
    top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
@@ -1077,7 +1081,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .footer-col {
-  grid-column: 7 / 10;
+  grid-column: 8 / 10;
 }
 
 .credits {

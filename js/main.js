@@ -117,7 +117,7 @@
               ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
             </dl>
           </div>
-          <a class="label link-line hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+          <a class="btn btn-accent hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
         </div>
         <div class="hero-media reveal">
           ${media(S.hero, S.heroAlt)}
@@ -142,7 +142,7 @@
             </div>
             <div class="exp-text">
               <p class="work-sum">${esc(feat.summary)}</p>
-              <a class="btn btn-dark" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
+              <a class="btn btn-accent" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
             </div>
           </div>
           </div>
