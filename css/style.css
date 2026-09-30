@@ -535,9 +535,41 @@ a:hover .card-media img.is-loaded {
   color: #8a8175;
 }
 
+/* Feature caption under the image: number | title | text + button */
+.exp-body {
+  grid-column: 1 / 10;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr) minmax(0, 1.2fr);
+  column-gap: clamp(16px, 2vw, 32px);
+  align-items: start;
+}
+
+.exp-head p {
+  margin: 8px 0 0;
+}
+
+.exp-text {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+}
+
+.btn-dark {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.btn-dark:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 .exp-side {
   grid-column: 10 / -1;
+  grid-row: 1 / span 2;
   display: grid;
+  align-content: start;
   gap: 24px;
 }
 
@@ -982,8 +1014,13 @@ a:hover .card-media img.is-loaded {
     grid-column: 1 / -1;
   }
 
+  .exp-body {
+    grid-column: 1 / -1;
+  }
+
   .exp-side {
     grid-column: 1 / -1;
+    grid-row: auto;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1042,6 +1079,11 @@ a:hover .card-media img.is-loaded {
   .about-body {
     border-left: 0;
     padding-left: 0;
+  }
+
+  .exp-body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
   }
 
   .principle h3,

@@ -73,16 +73,15 @@ window.SITE = {
       images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
     },
     {
-      id: "global-product-compliance",
+      id: "stonk-tech",
       type: "work",
-      company: "Amazon",
-      title: "Global Product Compliance",
-      summary: "Designing a global compliance system for 100M+ products across marketplaces.",
-      tags: ["Systems", "Trust & Safety"],
-      highlight: "100M+ products",
-      alt: "Trading platform shown on a laptop",
-      cover: "images/global-product-compliance.jpg",
-      images: ["images/global-product-compliance.jpg", "images/global-product-compliance-2.jpg"]
+      company: "Stonk Tech",
+      title: "From Idea to Product",
+      summary: "Building a fintech platform from 0→1, brand and product design.",
+      tags: ["0→1", "Fintech", "Brand & Experience"],
+      alt: "Stonk Tech trading platform shown on a laptop",
+      cover: "images/stonk-tech.jpg",
+      images: ["images/stonk-tech.jpg"]
     },
     {
       id: "amelia",
@@ -114,7 +113,7 @@ window.SITE = {
       company: "AI-native interactive prototype",
       title: "Sodacat's Taste of the World",
       summary:
-        "A world traveler's go-to list — every go-to restaurant, bar, museum, and beach, from the Texas backyard to the other side of the planet. Designed and built with AI-assisted prototyping, moving directly from product idea and interaction design into a working interface.",
+        "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
       alt: "Sodacat's Taste of the World — world map of 1217 saved places",
       cover: "images/sodacats-world.webp",

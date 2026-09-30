@@ -133,6 +133,17 @@
         ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
         <div class="exp grid-12">
           <a class="exp-media reveal" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
+          <div class="exp-body reveal">
+            <span class="label exp-num">01</span>
+            <div class="exp-head">
+              <h3 class="work-title">${esc(feat.title)}</h3>
+              <p class="label muted">${esc(feat.company)}</p>
+            </div>
+            <div class="exp-text">
+              <p class="work-sum">${esc(feat.summary)}</p>
+              <a class="btn btn-dark" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
+            </div>
+          </div>
           <ul class="exp-side">
             ${side
               .slice(0, 2)
