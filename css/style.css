@@ -344,9 +344,14 @@ a:hover .arrow {
 }
 
 /* Client logos: set in one height and in greyscale so they read as one row */
+/* Logos match the stat block: figure (--stat) + gap + one label line */
+.hero-proof {
+  --stat: clamp(18px, 1.6vw, 24px);
+}
+
 .client img {
   display: block;
-  height: clamp(20px, 1.9vw, 28px);
+  height: calc(var(--stat) + 19px);
   width: auto;
   filter: grayscale(1) brightness(0.6) contrast(4);
 }
@@ -362,7 +367,7 @@ a:hover .arrow {
 }
 
 .stats dt {
-  font-size: clamp(18px, 1.6vw, 24px);
+  font-size: var(--stat);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -513,21 +518,33 @@ a:hover .card-media img.is-loaded {
 /* ---------- AI experiments ---------- */
 .exp {
   row-gap: 32px;
-  align-items: start;
+  align-items: stretch;
 }
 
-/* Feature: one wide product shot (cols 1–9) */
-.exp-media {
+/* Feature (cols 1–9): image + caption together match the height of the
+   two side cards; the image takes whatever height the caption leaves. */
+.exp-feature {
   grid-column: 1 / 10;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.6vw, 24px);
+}
+
+.exp-media {
+  flex: 1;
+  display: flex;
+  min-height: 220px;
 }
 
 .exp-media .card-media {
-  aspect-ratio: 2 / 1;
+  flex: 1;
   background: #2b2621;
 }
 
 .exp-media .card-media img {
-  object-position: center 35%;
+  position: absolute;
+  inset: 0;
+  object-position: center 22%;
   filter: none;
 }
 
@@ -537,8 +554,6 @@ a:hover .card-media img.is-loaded {
 
 /* Feature caption under the image: number | title | text + button */
 .exp-body {
-  grid-column: 1 / 10;
-  grid-row: 2;
   display: grid;
   grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr) minmax(0, 1.2fr);
   column-gap: clamp(16px, 2vw, 32px);
@@ -567,15 +582,29 @@ a:hover .card-media img.is-loaded {
 
 .exp-side {
   grid-column: 10 / -1;
-  grid-row: 1 / span 2;
   display: grid;
   align-content: start;
   gap: 24px;
 }
 
+/* Side cards: image across, then number | title + sub, as on the feature */
 .exp-side a {
   display: grid;
-  gap: 6px;
+  grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr);
+  column-gap: clamp(16px, 2vw, 32px);
+  row-gap: 6px;
+}
+
+.exp-side .card-media {
+  grid-column: 1 / -1;
+}
+
+.exp-side .exp-num {
+  grid-row: 2;
+}
+
+.exp-side-sub {
+  grid-column: 2;
 }
 
 .exp-side .card-media {
@@ -1010,17 +1039,16 @@ a:hover .card-media img.is-loaded {
     min-height: 0;
   }
 
-  .exp-media {
+  .exp-feature {
     grid-column: 1 / -1;
   }
 
-  .exp-body {
-    grid-column: 1 / -1;
+  .exp-media .card-media {
+    aspect-ratio: 2 / 1;
   }
 
   .exp-side {
     grid-column: 1 / -1;
-    grid-row: auto;
     grid-template-columns: 1fr 1fr;
   }
 

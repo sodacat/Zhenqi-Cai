@@ -132,8 +132,9 @@
       ${feat ? `<section class="section wrap" id="experiments">
         ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
         <div class="exp grid-12">
-          <a class="exp-media reveal" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
-          <div class="exp-body reveal">
+          <div class="exp-feature reveal">
+          <a class="exp-media" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
+          <div class="exp-body">
             <span class="label exp-num">01</span>
             <div class="exp-head">
               <h3 class="work-title">${esc(feat.title)}</h3>
@@ -144,14 +145,16 @@
               <a class="btn btn-dark" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
             </div>
           </div>
+          </div>
           <ul class="exp-side">
             ${side
               .slice(0, 2)
               .map(
-                (p) => `<li class="reveal"><a href="${projectUrl(p)}">
+                (p, i) => `<li class="reveal"><a href="${projectUrl(p)}">
                   ${media(p.cover, p.alt || p.title)}
+                  <span class="label exp-num">${pad(i + 2)}</span>
                   <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
-                  <span class="label muted">${esc(p.company)}</span>
+                  <span class="label muted exp-side-sub">${esc(p.company)}</span>
                 </a></li>`
               )
               .join("")}
