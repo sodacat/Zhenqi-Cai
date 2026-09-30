@@ -56,7 +56,7 @@
       ["Resume", S.resume, "resume"]
     ];
     return `<header class="site-header grid-12 wrap">
-      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></a>
+      <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="sq" aria-hidden="true"></span></a>
       <button class="menu-btn label" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav label" id="nav" aria-label="Primary">
         ${nav
@@ -78,7 +78,6 @@
             ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
             <li>${arrow}</li>
           </ul>
-          <p class="label muted">${esc(S.location)}</p>
         </div>
       </div>
     </section>`;
@@ -93,12 +92,9 @@
           <li><a class="link-line" href="index.html#experiments">AI Experiments</a></li>
           <li><a class="link-line" href="about.html">About</a></li>
         </ul>
-        <ul class="label footer-col">
-          ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
-        </ul>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>
-      <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></div>
+      <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></div>
     </footer>`;
   }
 

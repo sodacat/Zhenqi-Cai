@@ -43,7 +43,7 @@ window.SITE = {
   ],
 
   cta: "Let's make complexity feel human — together.",
-  copyright: "© 2025 Zhenqi Cai. All rights reserved.",
+  copyright: "© 2026 Zhenqi Cai. All rights reserved.",
   email: "hello@zhenqicai.com",
   resume: "resume.pdf",
   social: [
@@ -117,8 +117,8 @@ window.SITE = {
         "A world traveler's go-to list — every go-to restaurant, bar, museum, and beach, from the Texas backyard to the other side of the planet. Designed and built with AI-assisted prototyping, moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
       alt: "Sodacat's Taste of the World — world map of 1217 saved places",
-      cover: "images/sodacats-world.png",
-      images: ["images/sodacats-world.png"]
+      cover: "images/sodacats-world.webp",
+      images: ["images/sodacats-world.webp"]
     },
     {
       id: "ai-storytelling",
