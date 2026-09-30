@@ -280,10 +280,13 @@ a:hover .arrow {
   gap: 10px;
 }
 
-.status-mark {
-  width: 8px;
-  height: 8px;
-  background: var(--fg);
+/* Globe after the location: hairline strokes to match the type */
+.globe {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 1;
 }
 
 /* ---------- Hero ---------- */
@@ -381,6 +384,12 @@ a:hover .arrow {
   height: calc(var(--stat) + 19px);
   width: auto;
   filter: grayscale(1) brightness(0.6) contrast(4);
+  transition: filter 0.35s var(--ease);
+}
+
+/* Each logo shows its brand colours on hover */
+.client img:hover {
+  filter: none;
 }
 
 .stats {
@@ -555,7 +564,7 @@ a:hover .card-media img.is-loaded {
   align-items: stretch;
 }
 
-/* Feature (cols 1–9): image + caption together match the height of the
+/* Feature (cols 1–8; side cards cols 9–12): image + caption match the height of the
    two side cards; the image takes whatever height the caption leaves. */
 /* Feature: number, image, caption stacked (as Selected Work) */
 .exp-feature {
@@ -638,7 +647,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .exp-side {
-  grid-column: 10 / -1;
+  grid-column: 9 / -1;
   display: grid;
   align-content: start;
   gap: 24px;
