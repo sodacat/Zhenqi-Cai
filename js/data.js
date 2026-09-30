@@ -17,8 +17,6 @@ window.SITE = {
   stats: [{ value: "100M+", label: "Scale" }],
   hero: "images/hero.jpg",
   heroAlt: "Person walking through concrete architecture",
-  heroCaption: ["Complex", "Systems", "Human", "Decisions"],
-  heroStatement: ["Turning", "ambiguity", "into", "clear experiences."],
 
   bio: [
     "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",

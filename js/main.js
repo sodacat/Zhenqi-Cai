@@ -123,8 +123,6 @@
         </div>
         <div class="hero-media reveal">
           ${media(S.hero, S.heroAlt)}
-          <p class="label hero-caption">${lines(S.heroCaption)}</p>
-          <p class="label hero-statement">${lines(S.heroStatement)}</p>
         </div>
       </section>
 
