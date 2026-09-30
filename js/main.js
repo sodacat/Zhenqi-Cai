@@ -86,6 +86,7 @@
   function footer() {
     return `<footer class="site-footer wrap">
       <div class="footer-top grid-12">
+        <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></div>
         <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
         <ul class="label footer-col">
           <li><a class="link-line" href="works.html">Work</a></li>
@@ -94,7 +95,6 @@
         </ul>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>
-      <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></div>
     </footer>`;
   }
 

@@ -999,38 +999,49 @@ a:hover .card-media img.is-loaded {
   padding-bottom: var(--pad);
 }
 
+/* One row: mark | name + role | links (col 8, under the nav) | credits.
+   --cap-top nudges the text down so its first line starts at the
+   top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
+  --mark-size: clamp(56px, 7.5vw, 120px);
+  --cap-top: calc(var(--mark-size) * 0.064 - 4.2px);
   border-top: 1px solid var(--line);
-  padding-top: 12px;
+  padding-top: var(--pad);
   align-items: start;
   row-gap: 20px;
 }
 
-.footer-top p {
+.footer-top p,
+.footer-top ul {
   margin: 0;
 }
 
-.footer-role {
+.footer-mark {
   grid-column: 1 / 6;
+  font-weight: 700;
+  font-size: var(--mark-size);
+  line-height: 0.8;
+  letter-spacing: -0.035em;
+  margin-left: -0.03em;
+}
+
+.footer-role,
+.footer-col,
+.credits {
+  margin-top: var(--cap-top) !important;
+}
+
+.footer-role {
+  grid-column: 6 / 8;
 }
 
 .footer-col {
-  grid-column: span 2;
-  line-height: 1.9;
+  grid-column: 8 / 10;
 }
 
 .credits {
   grid-column: 10 / -1;
   text-align: right;
-}
-
-.footer-mark {
-  margin-top: clamp(24px, 3vw, 48px);
-  font-weight: 700;
-  font-size: clamp(56px, 7.5vw, 120px);
-  line-height: 0.8;
-  letter-spacing: -0.035em;
-  margin-left: -0.03em;
 }
 
 /* ---------- Reveal ---------- */
