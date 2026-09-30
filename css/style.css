@@ -204,7 +204,7 @@ a:hover .arrow {
 /* ---------- Header ---------- */
 .site-header {
   padding-top: var(--pad);
-  align-items: start;
+  align-items: center;
 }
 
 .brand {
@@ -220,7 +220,28 @@ a:hover .arrow {
   grid-column: 7 / 11;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 20px;
+  gap: 4px 6px;
+  margin-left: -11px;
+}
+
+/* Nav links: a hairline box on hover and on the current page */
+@media (min-width: 681px) {
+  .nav a {
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s var(--ease);
+  }
+
+  .nav a::after {
+    display: none;
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible,
+  .nav a.is-active {
+    border-color: var(--fg);
+    outline: none;
+  }
 }
 
 .nav-contact {
@@ -277,15 +298,8 @@ a:hover .arrow {
 
 /* Home hero: text left (1–6), portrait right (7–12) */
 .hero {
-  margin-top: clamp(32px, 3vw, 56px);
+  margin-top: clamp(56px, 6vw, 112px);
   align-items: stretch;
-}
-
-/* Portrait rises to sit just under the nav, beside the mark */
-@media (min-width: 681px) {
-  .hero-media {
-    margin-top: -5.5vw;
-  }
 }
 
 .hero-text {
@@ -293,7 +307,6 @@ a:hover .arrow {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: clamp(24px, 3vw, 56px);
 }
 
 .hero-text .idx {
@@ -382,15 +395,20 @@ a:hover .arrow {
   margin-top: clamp(48px, 5.5vw, 96px);
 }
 
+/* Portrait spans exactly the text column: from (01) to the resume link */
 .hero-media {
-  grid-column: 7 / -1;
+  grid-column: 8 / -1;
   position: relative;
 }
 
 .hero-media .card-media {
   height: 100%;
-  min-height: 560px;
-  aspect-ratio: 4 / 5;
+}
+
+.hero-media .card-media img {
+  position: absolute;
+  inset: 0;
+  object-position: 70% 55%;
 }
 
 /* ---------- Media ---------- */
@@ -525,6 +543,7 @@ a:hover .card-media img.is-loaded {
    two side cards; the image takes whatever height the caption leaves. */
 .exp-feature {
   grid-column: 1 / 10;
+  margin-right: clamp(24px, 4vw, 64px);
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 1.6vw, 24px);
@@ -1035,12 +1054,9 @@ a:hover .card-media img.is-loaded {
     grid-column: 8 / -1;
   }
 
-  .hero-media .card-media {
-    min-height: 0;
-  }
-
   .exp-feature {
     grid-column: 1 / -1;
+    margin-right: 0;
   }
 
   .exp-media .card-media {
