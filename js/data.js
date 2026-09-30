@@ -9,17 +9,18 @@ window.SITE = {
   mark: "ZC.",
   role: "Senior Product Designer",
   location: "SF, CA",
+  // Stacked label beside the ZC. mark in the header
+  descriptor: ["Product designer", "Systems thinker", "Humanist"],
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
-  tagline:
-    "I design systems where complexity becomes clarity — at the intersection of technology, people, and real-world impact.",
-  intro: "7+ years across Amazon, SAP, IBM, and startups, from 0 → 1 products to 100M+ users.",
+  headline: "I design systems where complexity becomes clarity.",
+  intro:
+    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
   clients: ["Amazon", "IBM", "SAP"],
-  stats: [
-    { value: "7+", label: "Years" },
-    { value: "100M+", label: "Users" }
-  ],
+  stats: [{ value: "100M+", label: "Scale" }],
   hero: "images/hero.jpg",
-  heroCaption: ["Complex", "Systems", "Human", "Impact"],
+  heroAlt: "Person walking through concrete architecture",
+  heroCaption: ["Complex", "Systems", "Human", "Decisions"],
+  heroStatement: ["Turning", "ambiguity", "into", "clear experiences."],
 
   bio: [
     "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",
@@ -42,11 +43,12 @@ window.SITE = {
   ],
 
   cta: "Let's make complexity feel human — together.",
+  copyright: "© 2025 by Zhenqi Cai. All rights reserved.",
   email: "hello@zhenqicai.com",
   resume: "resume.pdf",
   social: [
-    { label: "LinkedIn", url: "https://linkedin.com/" },
     { label: "Email", url: "mailto:hello@zhenqicai.com" },
+    { label: "LinkedIn", url: "https://linkedin.com/" },
     { label: "Resume", url: "resume.pdf" }
   ],
 
@@ -54,7 +56,8 @@ window.SITE = {
    * Projects. type: "work" (case study) or "experiment" (AI experiments).
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
-   * Optional fields: year, role, description, images.
+   * `highlight` is the second tag line on cards (a metric or focus).
+   * Optional fields: year, role, description, images, alt (cover image text).
    */
   projects: [
     {
@@ -63,7 +66,9 @@ window.SITE = {
       company: "Amazon",
       title: "Seller Qualification",
       summary: "Re-architecting a compliance system into seller growth infrastructure.",
-      tags: ["Complex systems", "Commerce", "Policy", "+20% completion"],
+      tags: ["Complex systems", "Commerce"],
+      highlight: "+20% completion",
+      alt: "Amazon packaging",
       cover: "images/seller-qualification.jpg",
       images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
     },
@@ -73,7 +78,9 @@ window.SITE = {
       company: "Amazon",
       title: "Global Product Compliance",
       summary: "Designing a global compliance system for 100M+ products across marketplaces.",
-      tags: ["Systems", "Trust & Safety", "Scale", "100M+ products"],
+      tags: ["Systems", "Trust & Safety"],
+      highlight: "100M+ products",
+      alt: "Abstract geometric architecture",
       cover: "images/global-product-compliance.jpg",
       images: ["images/global-product-compliance.jpg", "images/global-product-compliance-2.jpg"]
     },
@@ -83,7 +90,9 @@ window.SITE = {
       company: "IBM",
       title: "Amelia",
       summary: "Designing an AI system for reasoning about complex relationships.",
-      tags: ["AI", "Enterprise", "Design systems"],
+      tags: ["AI", "Enterprise"],
+      highlight: "Design systems",
+      alt: "Technology circuit board",
       cover: "images/amelia.jpg",
       images: ["images/amelia.jpg", "images/amelia-2.jpg"]
     },
@@ -93,7 +102,9 @@ window.SITE = {
       company: "SAP",
       title: "Enterprise Experience",
       summary: "Unifying complex workflows across global teams.",
-      tags: ["Enterprise", "Workflow", "Scale"],
+      tags: ["Enterprise", "Workflow"],
+      highlight: "Scale",
+      alt: "SAP dashboard analytics",
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
     },
@@ -105,6 +116,7 @@ window.SITE = {
       summary:
         "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
+      alt: "Sodacat's World AI prototype",
       cover: "images/sodacats-world.jpg",
       images: ["images/sodacats-world.jpg", "images/sodacats-world-2.jpg"]
     },
@@ -115,16 +127,18 @@ window.SITE = {
       title: "AI Storytelling",
       summary: "Exploring narrative interfaces generated with AI.",
       tags: ["Experiment"],
+      alt: "AI storytelling abstract",
       cover: "images/ai-storytelling.jpg",
       images: ["images/ai-storytelling.jpg"]
     },
     {
       id: "design-with-ai",
       type: "experiment",
-      company: "Notes · Explorations",
+      company: "Notes + Explorations",
       title: "Design with AI",
       summary: "Notes and explorations on designing with AI as a material.",
       tags: ["Notes", "Explorations"],
+      alt: "Abstract colorful bubbles",
       cover: "images/design-with-ai.jpg",
       images: ["images/design-with-ai.jpg"]
     }
