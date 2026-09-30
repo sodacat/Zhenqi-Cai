@@ -22,7 +22,8 @@
     </div>`;
   }
 
-  const tags = (p) => `<ul class="tags">${(p.tags || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+  const tags = (p) =>
+    `<ul class="tags label">${[...(p.tags || []), p.highlight].filter(Boolean).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
 
   // Numbered Swiss section head: (01) ——— Title ——— View all →
   function sectionHead(n, title, link) {
@@ -41,10 +42,7 @@
         <span class="label">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <div class="work-foot">
-          <div class="label">${tags(p)}${p.highlight ? `<span class="highlight">${esc(p.highlight)}</span>` : ""}</div>
-          ${arrow}
-        </div>
+        <div class="work-foot">${tags(p)}${arrow}</div>
       </div>
     </a>`;
   }
@@ -59,7 +57,6 @@
     ];
     return `<header class="site-header grid-12 wrap">
       <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></a>
-      <p class="label brand-tag">${S.descriptor.map(esc).join("<br>")}</p>
       <button class="menu-btn label" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav label" id="nav" aria-label="Primary">
         ${nav
@@ -76,23 +73,32 @@
       ${sectionHead(n, "Get in touch")}
       <div class="contact grid-12">
         <h2 class="display reveal">${esc(S.cta)}</h2>
-        <ul class="contact-links">
-          ${S.social
-            .map(
-              (s) => `<li><a class="contact-link" href="${esc(s.url)}" target="_blank" rel="noopener">
-                <span class="label">${esc(s.label)}</span>${arrow}
-              </a></li>`
-            )
-            .join("")}
-        </ul>
+        <div class="contact-side">
+          <ul class="contact-box label">
+            ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
+            <li>${arrow}</li>
+          </ul>
+          <p class="label muted">${esc(S.location)}</p>
+        </div>
       </div>
     </section>`;
   }
 
   function footer() {
     return `<footer class="site-footer wrap">
-      <p class="label">${esc(S.copyright)}</p>
-      <p class="label">${esc(S.location)}</p>
+      <div class="footer-top grid-12">
+        <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
+        <ul class="label footer-col">
+          <li><a class="link-line" href="works.html">Work</a></li>
+          <li><a class="link-line" href="index.html#experiments">AI Experiments</a></li>
+          <li><a class="link-line" href="about.html">About</a></li>
+        </ul>
+        <ul class="label footer-col">
+          ${S.social.map((s) => `<li><a class="link-line" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
+        </ul>
+        <p class="label muted credits">${esc(S.copyright)}</p>
+      </div>
+      <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="dot">.</span></div>
     </footer>`;
   }
 
@@ -113,11 +119,12 @@
               ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
             </dl>
           </div>
+          <a class="label link-line hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
         </div>
         <div class="hero-media reveal">
           ${media(S.hero, S.heroAlt)}
           <p class="label hero-caption">${lines(S.heroCaption)}</p>
-          <p class="hero-statement">${lines(S.heroStatement)}</p>
+          <p class="label hero-statement">${lines(S.heroStatement)}</p>
         </div>
       </section>
 
@@ -131,7 +138,6 @@
         <div class="exp grid-12">
           <a class="exp-media reveal" href="${projectUrl(feat)}">${media(feat.cover, feat.alt || feat.title)}</a>
           <div class="exp-body reveal">
-            <span class="label">01</span>
             <h3 class="work-title">${esc(feat.title)}</h3>
             <p class="label muted">${esc(feat.company)}</p>
             <p class="work-sum">${esc(feat.summary)}</p>
@@ -153,12 +159,12 @@
       </section>` : ""}
 
       <section class="section wrap" id="about">
-        ${sectionHead(4, "About", ["More about me", "about.html"])}
+        ${sectionHead(4, "About")}
         <div class="about grid-12">
           <h2 class="display reveal">${lines(S.statement)}</h2>
           <div class="about-body reveal">
             ${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
-            <a class="label link-line" href="about.html">More about me ${arrow}</a>
+            <a class="btn" href="about.html">More about me ${arrow}</a>
           </div>
           <div class="about-media reveal">${media(S.portrait, S.name)}</div>
         </div>

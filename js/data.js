@@ -9,8 +9,6 @@ window.SITE = {
   mark: "ZC.",
   role: "Senior Product Designer",
   location: "SF, CA",
-  // Stacked label beside the ZC. mark in the header
-  descriptor: ["Product designer", "Systems thinker", "Humanist"],
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
   headline: "I design systems where complexity becomes clarity.",
   intro:
@@ -43,7 +41,7 @@ window.SITE = {
   ],
 
   cta: "Let's make complexity feel human — together.",
-  copyright: "© 2025 by Zhenqi Cai. All rights reserved.",
+  copyright: "© 2025 Zhenqi Cai. All rights reserved.",
   email: "hello@zhenqicai.com",
   resume: "resume.pdf",
   social: [
@@ -56,7 +54,7 @@ window.SITE = {
    * Projects. type: "work" (case study) or "experiment" (AI experiments).
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
-   * `highlight` is the second tag line on cards (a metric or focus).
+   * `highlight` is the last tag on cards (a metric or focus).
    * Optional fields: year, role, description, images, alt (cover image text).
    */
   projects: [

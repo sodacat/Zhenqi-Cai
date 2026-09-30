@@ -209,18 +209,12 @@ a:hover .arrow {
 }
 
 .brand {
-  grid-column: 1 / 4;
+  grid-column: 1 / 6;
   font-weight: 600;
   font-size: clamp(64px, 12vw, 200px);
   line-height: 0.78;
   letter-spacing: -0.07em;
   margin-left: -0.04em;
-}
-
-.brand-tag {
-  grid-column: 4 / 7;
-  margin: 0;
-  line-height: 1.6;
 }
 
 .nav {
@@ -406,11 +400,7 @@ a:hover .arrow {
   bottom: clamp(20px, 2.4vw, 36px);
   margin: 0;
   color: #fff;
-  font-weight: 600;
-  font-size: clamp(22px, 2.4vw, 40px);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  line-height: 1.8;
   mix-blend-mode: difference;
 }
 
@@ -535,11 +525,6 @@ a:hover .card-media img.is-loaded {
   color: var(--fg);
 }
 
-.highlight {
-  display: block;
-  margin-top: 2px;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -606,12 +591,16 @@ a:hover .card-media img.is-loaded {
   row-gap: 32px;
 }
 
+.about {
+  align-items: center;
+}
+
 .about .display {
-  grid-column: 1 / 7;
+  grid-column: 1 / 5;
 }
 
 .about-body {
-  grid-column: 7 / 10;
+  grid-column: 5 / 9;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -620,12 +609,16 @@ a:hover .card-media img.is-loaded {
   margin: 0 0 1em;
 }
 
+.about-body .btn {
+  margin-top: 12px;
+}
+
 .about-media {
-  grid-column: 10 / -1;
+  grid-column: 9 / -1;
 }
 
 .about-media .card-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 6 / 5;
 }
 
 /* ---------- Philosophy ---------- */
@@ -668,29 +661,28 @@ a:hover .card-media img.is-loaded {
 }
 
 .contact .display {
-  grid-column: 1 / 10;
+  grid-column: 1 / 9;
   font-size: clamp(32px, 4.6vw, 80px);
 }
 
-.contact-links {
-  grid-column: 10 / -1;
+.contact-side {
+  grid-column: 9 / -1;
+  display: grid;
+  gap: 14px;
+  justify-items: end;
 }
 
-.contact-link {
+.contact-side p {
+  margin: 0;
+  justify-self: start;
+}
+
+.contact-box {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--hair);
-  padding: 10px 0;
-  transition: color 0.3s var(--ease);
-}
-
-.contact-links li:last-child .contact-link {
-  border-bottom: 1px solid var(--hair);
-}
-
-.contact-link:hover {
-  color: var(--accent);
+  gap: clamp(16px, 2vw, 28px);
+  border: 1px solid var(--fg);
+  padding: 12px 16px;
 }
 
 /* ---------- About page ---------- */
@@ -932,17 +924,42 @@ a:hover .card-media img.is-loaded {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  margin-top: clamp(96px, 10vw, 180px);
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
+  margin-top: clamp(64px, 7vw, 120px);
   padding-bottom: var(--pad);
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
 }
 
-.site-footer p {
+.footer-top {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  align-items: start;
+  row-gap: 20px;
+}
+
+.footer-top p {
   margin: 0;
+}
+
+.footer-role {
+  grid-column: 1 / 6;
+}
+
+.footer-col {
+  grid-column: span 2;
+  line-height: 1.9;
+}
+
+.credits {
+  grid-column: 10 / -1;
+  text-align: right;
+}
+
+.footer-mark {
+  margin-top: clamp(24px, 3vw, 48px);
+  font-weight: 600;
+  font-size: clamp(80px, 12vw, 200px);
+  line-height: 0.78;
+  letter-spacing: -0.07em;
+  margin-left: -0.04em;
 }
 
 /* ---------- Reveal ---------- */
@@ -1009,6 +1026,15 @@ a:hover .card-media img.is-loaded {
     grid-column: 8 / -1;
   }
 
+  .contact .display,
+  .contact-side {
+    grid-column: 1 / -1;
+  }
+
+  .contact-side {
+    justify-items: start;
+  }
+
   .index-sum {
     display: none;
   }
@@ -1038,10 +1064,6 @@ a:hover .card-media img.is-loaded {
     grid-column: 1 / 2 !important;
     font-size: 40px;
     line-height: 0.9;
-  }
-
-  .brand-tag {
-    display: none;
   }
 
   .menu-btn {
@@ -1176,8 +1198,12 @@ a:hover .card-media img.is-loaded {
     padding-bottom: 28px;
   }
 
-  .site-footer {
-    flex-direction: column;
+  .credits {
+    text-align: left;
+  }
+
+  .contact-box {
+    flex-wrap: wrap;
   }
 
   .gallery {
@@ -1192,5 +1218,5 @@ a:hover .card-media img.is-loaded {
 
 /* Hero placeholder label sits top-left, clear of the overlaid statement */
 .hero-media .card-media .ph {
-  align-items: flex-start;
+  justify-content: flex-end;
 }
