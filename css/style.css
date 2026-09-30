@@ -152,15 +152,9 @@ a:hover .arrow {
   transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-.btn:hover,
-.btn-solid {
+.btn:hover {
   background: var(--fg);
   color: var(--bg);
-}
-
-.btn-solid:hover {
-  background: var(--accent);
-  border-color: var(--accent);
 }
 
 /* ---------- Layout ---------- */
@@ -246,11 +240,10 @@ a:hover .arrow {
   gap: 10px;
 }
 
-.status-dot {
+.status-mark {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
-  background: var(--fg);
+  background: var(--accent);
 }
 
 /* ---------- Hero ---------- */
@@ -543,23 +536,18 @@ a:hover .card-media img.is-loaded {
   align-items: start;
 }
 
+/* Feature: one wide product shot (cols 1–9) */
 .exp-media {
-  grid-column: 1 / 7;
+  grid-column: 1 / 10;
 }
 
 .exp-media .card-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2 / 1;
+  background: #2b2621;
 }
 
-.exp-body {
-  grid-column: 7 / 10;
-  display: grid;
-  gap: 10px;
-  justify-items: start;
-}
-
-.exp-body .work-sum {
-  margin: 10px 0 18px;
+.exp-media .card-media .ph {
+  color: #8a8175;
 }
 
 .exp-side {
@@ -1002,11 +990,7 @@ a:hover .card-media img.is-loaded {
   }
 
   .exp-media {
-    grid-column: 1 / 8;
-  }
-
-  .exp-body {
-    grid-column: 8 / -1;
+    grid-column: 1 / -1;
   }
 
   .exp-side {

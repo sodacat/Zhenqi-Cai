@@ -64,7 +64,7 @@
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
       </nav>
-      <div class="header-cta label"><span class="muted">${esc(S.location)}</span><span class="status-dot" aria-hidden="true"></span></div>
+      <div class="header-cta label"><span class="muted">${esc(S.location)}</span><span class="status-mark" aria-hidden="true"></span></div>
     </header>`;
   }
 
@@ -136,13 +136,7 @@
       ${feat ? `<section class="section wrap" id="experiments">
         ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
         <div class="exp grid-12">
-          <a class="exp-media reveal" href="${projectUrl(feat)}">${media(feat.cover, feat.alt || feat.title)}</a>
-          <div class="exp-body reveal">
-            <h3 class="work-title">${esc(feat.title)}</h3>
-            <p class="label muted">${esc(feat.company)}</p>
-            <p class="work-sum">${esc(feat.summary)}</p>
-            <a class="btn btn-solid" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
-          </div>
+          <a class="exp-media reveal" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
           <ul class="exp-side">
             ${side
               .slice(0, 2)

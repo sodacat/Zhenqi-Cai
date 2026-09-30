@@ -8,7 +8,7 @@ window.SITE = {
   name: "Zhenqi Cai",
   mark: "ZC.",
   role: "Senior Product Designer",
-  location: "SF, CA",
+  location: "Austin, TX",
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
   headline: "I design systems where complexity becomes clarity.",
   intro:
@@ -110,11 +110,11 @@ window.SITE = {
       id: "sodacats-world",
       type: "experiment",
       company: "AI-native interactive prototype",
-      title: "Sodacat's World",
+      title: "Sodacat's Taste of the World",
       summary:
-        "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
+        "A world traveler's go-to list — every go-to restaurant, bar, museum, and beach, from the Texas backyard to the other side of the planet. Designed and built with AI-assisted prototyping, moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
-      alt: "Sodacat's World AI prototype",
+      alt: "Sodacat's Taste of the World — interactive travel map",
       cover: "images/sodacats-world.jpg",
       images: ["images/sodacats-world.jpg", "images/sodacats-world-2.jpg"]
     },
