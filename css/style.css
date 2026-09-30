@@ -224,16 +224,21 @@ a:hover .arrow {
   margin-left: -0.03em;
 }
 
+/* Nav text starts on column 8, the hero image's left edge */
 .nav {
-  grid-column: 7 / 11;
+  grid-column: 8 / 12;
   display: flex;
   flex-wrap: wrap;
   gap: 4px 6px;
-  margin-left: -11px;
 }
 
 /* Nav links: a hairline box on hover and on the current page */
 @media (min-width: 681px) {
+  /* Pull back by the box padding + border so the first word sits on the column */
+  .nav {
+    margin-left: -11px;
+  }
+
   .nav a {
     padding: 6px 10px;
     border: 1px solid transparent;
@@ -267,7 +272,8 @@ a:hover .arrow {
 }
 
 .header-cta {
-  grid-column: 11 / -1;
+  grid-column: 12 / -1;
+  white-space: nowrap;
   justify-self: end;
   display: flex;
   align-items: center;
@@ -307,7 +313,7 @@ a:hover .arrow {
 /* Home hero: text left (1–6), portrait right (7–12) */
 .hero {
   margin-top: clamp(40px, 4vw, 72px);
-  align-items: stretch;
+  align-items: center;
 }
 
 .hero-text {
@@ -403,14 +409,14 @@ a:hover .arrow {
   margin-top: clamp(32px, 4vw, 64px);
 }
 
-/* Portrait spans exactly the text column: from (01) to the resume link */
+/* Portrait (cols 8–12) is taller than the intro; the intro centers on it */
 .hero-media {
   grid-column: 8 / -1;
   position: relative;
 }
 
 .hero-media .card-media {
-  height: 100%;
+  aspect-ratio: 4 / 5;
 }
 
 .hero-media .card-media img {
@@ -1053,6 +1059,23 @@ a:hover .card-media img.is-loaded {
 }
 
 /* ---------- Responsive ---------- */
+/* Mid widths: location drops under the nav so the two never collide */
+@media (min-width: 681px) and (max-width: 1100px) {
+  .brand {
+    grid-row: 1 / span 2;
+  }
+
+  .nav {
+    grid-column: 8 / -1;
+  }
+
+  .header-cta {
+    grid-column: 8 / -1;
+    grid-row: 2;
+    justify-self: start;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-text {
     grid-column: 1 / 8;
