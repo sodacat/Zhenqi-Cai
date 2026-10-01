@@ -194,6 +194,18 @@ ol {
   box-decoration-break: clone;
 }
 
+/* The contact line is "deselected" under the pointer: back to black on
+   white */
+.contact .selected {
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.contact .selected:hover {
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: 0.12em 0 0 var(--bg), -0.12em 0 0 var(--bg);
+}
+
 /* ---------- Interaction ---------- */
 /* Text links: a small box that fills red on hover. Padding is pulled back
    with an equal negative margin so the text itself stays on the grid. */
