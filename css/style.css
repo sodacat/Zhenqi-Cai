@@ -491,10 +491,11 @@ ol {
    widened sideways with box-shadow so the digits stay on the grid */
 .stats dt {
   width: fit-content;
-  padding: 0.06em 0 0.02em;
+  /* the red block's left edge sits on the column line, flush with the
+     headline above; the padding is inside the block */
+  padding: 0.06em 0.1em 0.02em;
   background: var(--accent);
   color: #fff;
-  box-shadow: 0.1em 0 0 var(--accent), -0.1em 0 0 var(--accent);
   font-size: var(--fs-display);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -506,10 +507,9 @@ ol {
 .stats dd {
   width: fit-content;
   margin: 8px 0 0;
-  padding: 0;
+  padding: 0 4px;
   background: var(--accent);
   color: #fff;
-  box-shadow: 4px 0 0 var(--accent), -4px 0 0 var(--accent);
 }
 
 /* Intro, logos and the resume button form one block exactly as wide as
