@@ -159,7 +159,7 @@ window.SITE = {
                 pros: ["Sellers are guided earlier"],
                 cons: ["Notifications can no longer be tied to specific attribute", "Mental model breaks — feels like an error again"],
                 note: "Both explorations confirmed the same thing: the limitation wasn't interaction design. It was the underlying enforcement architecture. To truly enable parallel transparency, the restriction mechanism itself had to be redesigned." },
-              { type: "option", frame: true, title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png",
+              { type: "option", frame: true, title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png", intro: "Sellers can now:",
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel"],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
               { type: "p", title: "Standardized qualification states", text: "Standardized qualification states ensure every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },

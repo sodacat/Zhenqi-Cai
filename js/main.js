@@ -382,8 +382,9 @@
           <h3 class="case-sub">${esc(b.title)}</h3>
           <figure class="case-fig">${media(b.src, b.title, "case-media")}</figure>
           <div class="case-verdict">
-            ${b.pros ? bullets(b.pros, "is-pro") : ""}
-            ${b.cons ? bullets(b.cons, "is-con") : ""}
+            ${b.intro ? `<p class="case-verdict-intro">${esc(b.intro)}</p>` : ""}
+            ${b.pros ? bullets(b.pros, "is-check") : ""}
+            ${b.cons ? bullets(b.cons, "is-cross") : ""}
           </div>
           ${b.note ? `<p class="case-note">${esc(b.note)}</p>` : ""}
         </div>`;

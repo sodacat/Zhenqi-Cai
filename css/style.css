@@ -1815,6 +1815,32 @@ ol {
   box-shadow: inset 0 0 0 1px var(--accent);
 }
 
+/* the source's own marks: ✅ for what worked, 🚫 for what didn't */
+.case-list.is-check li,
+.case-list.is-cross li {
+  padding-left: 28px;
+}
+
+.case-list.is-check li::before,
+.case-list.is-cross li::before {
+  content: "✅";
+  top: 0;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  font-size: 15px;
+  line-height: var(--lh-body);
+}
+
+.case-list.is-cross li::before {
+  content: "🚫";
+}
+
+.case-verdict-intro {
+  margin: 0;
+}
+
 .case-fig {
   margin: 0;
 }
