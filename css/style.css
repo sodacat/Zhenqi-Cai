@@ -580,7 +580,9 @@ ol {
 .halftone .card-media img,
 .exp .card-media img,
 .exp .art,
-.hero-media .card-media img {
+.hero-media .card-media img,
+.about-media .card-media img,
+.about-page-media .card-media img {
   filter: grayscale(1);
   transition: filter var(--dur) var(--ease), opacity 0.4s var(--ease);
 }
@@ -592,7 +594,9 @@ ol {
 .exp-side a:hover .art,
 .exp-side a:focus-visible .art,
 .exp-side a:hover .card-media img,
-.hero-media:hover .card-media img {
+.hero-media:hover .card-media img,
+.about-media:hover .card-media img,
+.about-page-media:hover .card-media img {
   filter: none;
 }
 
@@ -929,19 +933,20 @@ ol {
   row-gap: 32px;
 }
 
-/* The About statement and "What I do." sit at title level */
-.about .display,
+/* "What I do." sits at title level */
 .services-head .display {
   font-size: var(--fs-title);
   line-height: 1.1;
 }
 
-.about .display {
-  grid-column: 1 / 5;
+/* The statement is set exactly like the hero headline: same size (fitted
+   to six columns) and the same left / right rhythm */
+.statement {
+  grid-column: 1 / 7;
 }
 
 .about-body {
-  grid-column: 5 / 9;
+  grid-column: 7 / 10;
   position: relative;
   display: grid;
   grid-template-columns: subgrid;
@@ -993,11 +998,11 @@ ol {
 }
 
 .about-media {
-  grid-column: 9 / -1;
+  grid-column: 10 / -1;
 }
 
 .about-media .card-media {
-  aspect-ratio: 6 / 5;
+  aspect-ratio: 4 / 5;
 }
 
 /* ---------- Philosophy ---------- */
@@ -1517,16 +1522,14 @@ ol {
     grid-template-columns: 1fr 1fr;
   }
 
-  .about .display {
-    grid-column: 1 / -1;
-  }
-
   .about-body {
     grid-column: 1 / 7;
+    grid-row: 2;
   }
 
   .about-media {
     grid-column: 8 / -1;
+    grid-row: 1 / span 2;
   }
 
   .contact .display,
@@ -1571,6 +1574,12 @@ ol {
 
   .about-body::before {
     display: none;
+  }
+
+  /* phones: statement, then text, then portrait */
+  .about-body,
+  .about-media {
+    grid-row: auto;
   }
 
   /* One column: feature caption stacks */

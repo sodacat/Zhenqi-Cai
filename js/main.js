@@ -15,6 +15,10 @@
   const experiments = S.projects.filter((p) => p.type === "experiment");
   const typeLabel = { work: "Case study", experiment: "AI experiment" };
 
+  // Poster lines: alternate flush left / flush right, like the hero headline
+  const posterLines = (arr) =>
+    arr.map((t, i) => `<span class="${i % 2 ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`).join("");
+
   // *phrase* in copy is set in red (one emphasis per paragraph at most)
   const emph = (s) => esc(s).replace(/\*([^*]+)\*/g, '<em class="hl">$1</em>');
 
@@ -179,7 +183,7 @@
       <section class="section wrap" id="about">
         ${sectionHead(4, "About")}
         <div class="about grid-12">
-          <h2 class="display reveal">${lines(S.statement)}</h2>
+          <h2 class="hero-title statement reveal" aria-label="${esc(S.statement.join(" "))}">${posterLines(S.statementLines)}</h2>
           <div class="about-body reveal">
             ${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}
             <ul class="about-tags">${S.facts.map(([, v]) => `<li>${esc(v)}</li>`).join("")}</ul>
@@ -215,7 +219,7 @@
     return `<main>
       <section class="page-title grid-12 wrap">
         <p class="label hero-role">(About)</p>
-        <h1 class="display display-xl reveal">${lines(S.statement)}</h1>
+        <h1 class="hero-title statement reveal" aria-label="${esc(S.statement.join(" "))}">${posterLines(S.statementLines)}</h1>
       </section>
 
       <section class="about-page grid-12 wrap">
