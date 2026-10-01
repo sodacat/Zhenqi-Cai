@@ -1120,6 +1120,17 @@ ol {
   margin: 0;
 }
 
+/* Desktop: the photo starts a quarter module into column 10, so the
+   space between the facts / button and the photo reads about the same as
+   the space between the hero headline and its image.
+   (100% + gutter) / 12 is a quarter of one column step of this 3-column
+   area */
+@media (min-width: 1025px) {
+  .about-media {
+    margin-left: calc((100% + var(--pad)) / 12);
+  }
+}
+
 .about-media .card-media {
   aspect-ratio: 4 / 5;
 }
