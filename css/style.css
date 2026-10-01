@@ -45,10 +45,10 @@
      sections --space-3xl; a section head sits --space-xl above its content */
   --u: 8px;
   --space-l: 32px;
-  --space-xl: 48px;
-  --space-2xl: 64px;
-  --space-3xl: 120px;
-  --space-4xl: 160px;
+  --space-xl: 40px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+  --space-4xl: 120px;
   /* shared by every outlined box of cells (nav, contact) so they match */
   --box-pad: 8px;
 }
@@ -813,8 +813,7 @@ ol {
 /* Card tags: one line, highlighted like selected text */
 
 .card-tags {
-  margin: 8px 0 0;
-  padding-top: 8px;
+  margin: 0;
   padding-right: 32px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
@@ -1540,10 +1539,10 @@ ol {
 @media (max-width: 1024px) {
   :root {
     --space-l: 24px;
-    --space-xl: 40px;
-    --space-2xl: 48px;
-    --space-3xl: 96px;
-    --space-4xl: 120px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 72px;
+    --space-4xl: 96px;
   }
 }
 
@@ -1552,8 +1551,8 @@ ol {
     --space-l: 24px;
     --space-xl: 32px;
     --space-2xl: 40px;
-    --space-3xl: 64px;
-    --space-4xl: 80px;
+    --space-3xl: 56px;
+    --space-4xl: 72px;
   }
 }
 
