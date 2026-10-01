@@ -1928,11 +1928,10 @@ ol {
   margin: 0;
 }
 
-/* screenshots and diagrams on a grey mat, so white UI doesn't bleed into
-   the page and big type reads smaller */
+/* screenshots and diagrams lift off the white page as a card: a soft
+   shadow, no border */
 .is-framed .card-media.case-media {
-  padding: clamp(16px, 3.2vw, 48px);
-  background: var(--placeholder);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .case-body > .case-fig.is-md {

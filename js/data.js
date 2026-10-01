@@ -120,7 +120,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings." },
               { type: "p", text: ["The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop: Create listing → Hit restriction → Leave tool → Apply → Return → Hit another restriction"] },
-              { type: "img", src: "images/seller-qualification/loop.png", frame: true, size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated. What should take 5 days stretches to 30+ days." },
+              { type: "img", src: "images/seller-qualification/loop.png", size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated. What should take 5 days stretches to 30+ days." },
               { type: "statement", text: "What should take 5 days stretched to 30+." },
               { type: "p", text: "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time." },
               { type: "statement", text: "The system optimized for compliance accuracy — not seller efficiency." },

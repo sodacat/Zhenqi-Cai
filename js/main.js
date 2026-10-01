@@ -444,7 +444,7 @@
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
           </dl>
-          ${c.timeline ? `<div class="case-timeline is-framed reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
+          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
         </div>
         ${c.overview ? `<div class="case-body case-more grid-12">${c.overview.map(caseBlock).join("")}</div>` : ""}
       </section>
