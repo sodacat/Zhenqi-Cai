@@ -1209,8 +1209,9 @@ ol {
   line-height: var(--lh-body);
 }
 
-/* each fact stays on one line wherever it clears the portrait */
-@media (min-width: 1340px) {
+/* each fact stays on one line; it sits below the round portrait's curve,
+   so it never touches it */
+@media (min-width: 1025px) {
   .about-tags li {
     white-space: nowrap;
   }
