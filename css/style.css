@@ -622,8 +622,16 @@ ol {
     aspect-ratio: auto;
   }
 
+  /* the button hangs one gap below the taller of the figures and the
+     logos: it sits in a zero-height last row, so it never adds height */
+  .hero-left {
+    row-gap: 0;
+    grid-template-rows: auto 0;
+  }
+
   .hero-left .hero-resume {
-    transform: translateY(calc(100% + var(--space-2xl)));
+    align-self: start;
+    transform: translateY(var(--space-2xl));
   }
 }
 
