@@ -294,6 +294,8 @@
       ["Focus", (p.tags || []).join(", ")]
     ].filter(([, v]) => v);
 
+    if (p.case) return caseStudy(p, i, next);
+
     return `<main>
       <section class="project-head grid-12 wrap">
         <p class="label idx">(${pad(i + 1)})</p>
@@ -321,6 +323,108 @@
           </a>
         </div>
       </section>
+    </main>`;
+  }
+
+  /* ---------- Case study ---------- */
+  const projectNav = (next) => `<section class="wrap">
+        <div class="project-nav">
+          <a class="label link-line" href="index.html#work">All work ${arrow}</a>
+          <a class="next" href="${projectUrl(next)}">
+            <span class="label cat">Next project</span>
+            <div class="display">${esc(next.title)} ${arrow}</div>
+          </a>
+        </div>
+      </section>`;
+
+  const fig = (src, alt) => `<figure class="case-fig reveal">${media(src, alt, "case-media")}</figure>`;
+  const figures = (items, cls = "") =>
+    `<dl class="case-figures ${cls} reveal">${items
+      .map(([v, l]) => `<div><dt>${esc(v)}</dt><dd class="label">${esc(l)}</dd></div>`)
+      .join("")}</dl>`;
+  const bullets = (items, cls = "") => `<ul class="case-list ${cls}">${items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+
+  function caseBlock(b) {
+    switch (b.type) {
+      case "statement":
+        return `<p class="case-statement reveal">${esc(b.text)}</p>`;
+      case "p":
+        return `<div class="case-text reveal">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}<p>${esc(b.text)}</p></div>`;
+      case "list":
+        return `<div class="case-text reveal">${b.label ? `<p>${esc(b.label)}</p>` : ""}${bullets(b.items)}</div>`;
+      case "img":
+        return fig(b.src, b.alt);
+      case "pair":
+        return `<div class="case-pair reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
+          .map(([src, alt]) => `<figure class="case-fig">${media(src, alt, "case-media")}</figure>`)
+          .join("")}</div>`;
+      case "quotes":
+        return `<div class="case-quotes reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
+          .map(([q, who]) => `<blockquote><p>“${esc(q)}”</p><cite class="label">— ${esc(who)}</cite></blockquote>`)
+          .join("")}</div>`;
+      case "shift":
+        return `<div class="case-shift reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}
+          <div><span class="label">From</span><p>${esc(b.from)}</p></div>
+          <div><span class="label">To</span><p>${esc(b.to)}</p></div>
+        </div>`;
+      case "option":
+        return `<div class="case-option reveal">
+          <h3 class="case-sub">${esc(b.title)}</h3>
+          <figure class="case-fig">${media(b.src, b.title, "case-media")}</figure>
+          <div class="case-verdict">
+            ${b.pros ? bullets(b.pros, "is-pro") : ""}
+            ${b.cons ? bullets(b.cons, "is-con") : ""}
+          </div>
+          ${b.note ? `<p class="case-note">${esc(b.note)}</p>` : ""}
+        </div>`;
+      case "figures":
+        return figures(b.items, "is-small");
+      case "trio":
+        return `<div class="case-trio reveal">${b.items
+          .map(([src, t, d]) => `<figure class="case-fig">${media(src, t, "case-media")}<figcaption><h3 class="case-sub">${esc(t)}</h3><p>${esc(d)}</p></figcaption></figure>`)
+          .join("")}</div>`;
+      default:
+        return "";
+    }
+  }
+
+  function caseStudy(p, i, next) {
+    const c = p.case;
+    return `<main class="case">
+      <section class="project-head grid-12 wrap">
+        <p class="label idx">(${pad(i + 1)})</p>
+        <p class="label hero-role">${esc(p.company)} — ${esc(p.title)}</p>
+        <h1 class="display case-title reveal">${esc(c.headline)}</h1>
+      </section>
+
+      <section class="case-intro grid-12 wrap">
+        <p class="lead case-lead reveal">${esc(c.lead)}</p>
+        ${figures(c.impact)}
+      </section>
+
+      <section class="case-cover wrap reveal">${cover(p)}</section>
+
+      <section class="section wrap">
+        ${sectionHead(1, "Overview")}
+        <div class="case-overview grid-12">
+          <div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>
+          <dl class="facts case-facts reveal">
+            ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
+          </dl>
+          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
+        </div>
+      </section>
+
+      ${c.sections
+        .map(
+          (sec, n) => `<section class="section wrap">
+        ${sectionHead(n + 2, sec.title)}
+        <div class="case-body grid-12">${sec.blocks.map(caseBlock).join("")}</div>
+      </section>`
+        )
+        .join("")}
+
+      ${projectNav(next)}
     </main>`;
   }
 
