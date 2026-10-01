@@ -102,6 +102,7 @@
           <li><a href="works.html"><span>Work</span><span>02</span></a></li>
           <li><a href="index.html#experiments"><span>AI Experiments</span><span>03</span></a></li>
           <li><a href="about.html"><span>About</span><span>04</span></a></li>
+          <li><a href="index.html#philosophy"><span>Design philosophy</span><span>05</span></a></li>
         </ul>
       </div>
       <div class="footer-base">
