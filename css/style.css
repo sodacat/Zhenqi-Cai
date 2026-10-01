@@ -700,7 +700,9 @@ ol {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 0 var(--pad);
+  /* negative space carries the grid: a full gutter between columns and a
+     large, constant interval between rows */
+  gap: var(--space-3xl) var(--pad);
 }
 
 .work-card {
@@ -838,16 +840,14 @@ ol {
 }
 
 /* ---------- Framed tables ---------- */
-/* Selected Work and Design Philosophy are drawn as tables: every cell is
-   framed by a 1px line that runs down the middle of the gutter, so cells
-   share their edges and the text inside still starts on a column line. */
-.work-card,
+/* Design Philosophy is drawn as a table: every cell is framed by a 1px
+   line that runs down the middle of the gutter, so cells share their
+   edges. (Selected Work has no frames: its grid shows through the space.) */
 .principle {
   position: relative;
   padding-block: 24px;
 }
 
-.work-card::after,
 .principle::after {
   content: "";
   position: absolute;
@@ -858,7 +858,6 @@ ol {
 
 /* neighbouring frames overlap by their 1px border, so shared edges are
    a single line */
-.work-card::after,
 .principle::after {
   margin: 0 -1px -1px 0;
 }
@@ -866,23 +865,19 @@ ol {
 /* The table's outer edges sit on the content edges (in line with the
    section rules); the outer cells take half a gutter of inner padding so
    every cell's text is the same distance from its left frame */
-.work-card:nth-child(odd)::after,
 .principle:first-child::after {
   left: 0;
 }
 
-.work-card:nth-child(even)::after,
 .principle:last-child::after {
   right: 0;
   margin-right: 0;
 }
 
-.work-card:nth-child(odd),
 .principle:first-child {
   padding-left: calc(var(--pad) / 2);
 }
 
-.work-card:nth-child(even),
 .principle:last-child {
   padding-right: calc(var(--pad) / 2);
 }
@@ -1751,14 +1746,12 @@ ol {
   }
 
   /* phones: every cell is a full-width row, framed on the content edges */
-  .work-card::after,
   .principle::after {
     left: 0 !important;
     right: 0 !important;
     margin-right: 0 !important;
   }
 
-  .work-card,
   .principle {
     padding-inline: 16px !important;
   }
