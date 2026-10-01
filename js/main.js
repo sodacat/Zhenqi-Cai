@@ -145,12 +145,12 @@
       </section>
 
       <section class="section section-tight wrap" id="work">
-        ${sectionHead(2, "Selected work", ["View all work", "works.html"])}
+        ${sectionHead(2, "Selected work")}
         <div class="work-grid">${work.map(workCard).join("")}</div>
       </section>
 
       ${experiments.length ? `<section class="section wrap" id="experiments">
-        ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
+        ${sectionHead(3, "AI experiments")}
         <ol class="exp-index">
           ${experiments
             .map(

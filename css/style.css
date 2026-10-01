@@ -497,12 +497,26 @@ ol {
   align-self: end;
 }
 
-/* Desktop: dropped out of the hero into the space below it, its top under
-   the bottom of the image and logos, its bottom 16px above the next
-   section's rule */
+/* Desktop: buttons that close a section hang below it and sit
+   --space-2xl above the next rule, the same gap as the contact box above
+   the footer rule.
+   Resume: dropped out of the hero, its top --space-l under the bottom of
+   the image and logos; the hero's padding makes room so the button still
+   ends --space-2xl above the Selected work rule. */
 @media (min-width: 681px) {
+  .hero {
+    --btn-h: calc(var(--lh-label) + 18px);
+    padding-bottom: calc(var(--space-l) + var(--btn-h) + var(--space-2xl) - var(--space-3xl));
+  }
+
   .hero-left .hero-resume {
-    transform: translateY(calc(var(--space-3xl) - 16px));
+    transform: translateY(calc(100% + var(--space-l)));
+  }
+
+  /* More about me: lowered to the same --space-2xl above the
+     Design philosophy rule */
+  .about-body .btn {
+    transform: translateY(calc(var(--space-3xl) - var(--space-2xl)));
   }
 }
 
@@ -1468,11 +1482,11 @@ ol {
   padding-bottom: 16px;
 }
 
-/* Imprint set as a highlight: red fill hugging the words, black type */
+/* Imprint set as a highlight: red fill hugging the words, white type */
 .credits span {
   padding: 0 4px;
   background: var(--accent);
-  color: var(--fg);
+  color: #fff;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
