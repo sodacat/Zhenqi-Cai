@@ -351,10 +351,12 @@
   // **text** marks the source's bold emphasis
   const rich = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   const bullets = (items, cls = "") => `<ul class="case-list ${cls}">${items.map((t) => `<li>${rich(t)}</li>`).join("")}</ul>`;
+  // numbered list, as the source numbers its snapshot and role lists
+  const numbered = (items) => `<ol class="case-list is-num">${items.map((t) => `<li>${rich(t)}</li>`).join("")}</ol>`;
 
   // text, then an optional list, then optional closing text
   const paras = (t) => [].concat(t || []).map((x) => `<p>${rich(x)}</p>`).join("");
-  const prose = (b) => paras(b.text) + (b.items ? bullets(b.items) : "") + paras(b.after);
+  const prose = (b) => paras(b.text) + (b.items ? (b.numbered ? numbered(b.items) : bullets(b.items, b.marks || "")) : "") + paras(b.after);
 
   function caseBlock(b) {
     switch (b.type) {
@@ -387,8 +389,8 @@
           <figure class="case-fig">${media(b.src, b.title, "case-media")}</figure>
           <div class="case-verdict">
             ${b.intro ? `<p class="case-verdict-intro">${esc(b.intro)}</p>` : ""}
-            ${b.pros ? bullets(b.pros, "is-check") : ""}
-            ${b.cons ? bullets(b.cons, "is-cross") : ""}
+            ${b.pros ? `${b.labels ? `<p class="label case-verdict-label">Pros</p>` : ""}${bullets(b.pros, "is-check")}` : ""}
+            ${b.cons ? `${b.labels ? `<p class="label case-verdict-label">Cons</p>` : ""}${bullets(b.cons, "is-cross")}` : ""}
           </div>
           ${b.note ? `<p class="case-note">${esc(b.note)}</p>` : ""}
         </div>`;
@@ -396,9 +398,13 @@
         return `<div class="case-row ${figCls(b)} reveal" style="--n:${b.items.length}">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
           .map(([src, cap]) => `<figure class="case-fig">${media(src, cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
           .join("")}</div>`;
+      case "map":
+        return `<div class="case-map reveal">${b.items
+          .map(([from, to]) => `<p><span>${esc(from)}</span><span>→</span><strong>${esc(to)}</strong></p>`)
+          .join("")}</div>`;
       case "cards":
         return `<div class="case-cards reveal" style="--n:${b.items.length}">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
-          .map((c) => `<div><h3 class="case-card-title">${esc(c.title)}</h3>${prose(c)}</div>`)
+          .map((c) => `<div>${c.label ? `<p class="label case-verdict-label">${esc(c.label)}</p>` : ""}<h3 class="case-card-title">${esc(c.title)}</h3>${prose(c)}</div>`)
           .join("")}</div>`;
       case "side":
         return `<div class="case-side${b.narrow ? " is-narrow" : ""} ${figCls(b)} reveal">
@@ -439,12 +445,17 @@
         ${c.impact ? figures(c.impact) : ""}
       </section>
 
-      <section class="section wrap">
-        ${sectionHead(1, "Overview")}
+      ${c.summary
+        ? `<section class="section wrap">
+        ${sectionHead(1, "Summary")}
+        <div class="case-body grid-12">${c.summary.map(caseBlock).join("")}</div>
+      </section>`
+        : `<section class="section wrap">
+        ${sectionHead(0, "Overview")}
         <div class="case-overview">
-          ${c.snapshot ? `<div class="case-ov reveal"><h3 class="case-h">Impact snapshot</h3>${bullets(c.snapshot)}</div>` : ""}
+          ${c.snapshot ? `<div class="case-ov reveal"><h3 class="case-h">Impact snapshot</h3>${numbered(c.snapshot)}</div>` : ""}
           ${c.role
-            ? `<div class="case-ov reveal"><h3 class="case-h">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "", "case-media")}</figure>` : ""}${bullets(c.role)}</div>`
+            ? `<div class="case-ov reveal"><h3 class="case-h">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "", "case-media")}</figure>` : ""}${numbered(c.role)}</div>`
             : `<div class="case-ov case-text reveal">${c.aboutTitle ? `<h3 class="case-h">${esc(c.aboutTitle)}</h3>` : ""}${paras(c.about)}</div>`}
           <dl class="case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="case-h">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
@@ -452,12 +463,12 @@
           ${c.timeline ? `<div class="case-ov case-timeline reveal"><h3 class="case-h">Timeline</h3>${media(c.timeline, "", "case-media")}</div>` : ""}
         </div>
         ${c.overview ? `<div class="case-body case-more grid-12">${c.overview.map(caseBlock).join("")}</div>` : ""}
-      </section>
+      </section>`}
 
       ${c.sections
         .map(
           (sec, n) => `<section class="section wrap">
-        ${sectionHead(n + 2, sec.title)}
+        ${sectionHead(n + (c.summary ? 2 : 1), sec.title)}
         <div class="case-body grid-12">${sec.blocks.map(caseBlock).join("")}</div>
       </section>`
         )

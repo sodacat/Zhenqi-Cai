@@ -1820,26 +1820,45 @@ ol {
   box-shadow: inset 0 0 0 1px var(--accent);
 }
 
-/* the source's own marks: ✅ for what worked, 🚫 for what didn't */
+/* pros and cons: a drawn check and cross in black, no emoji */
 .case-list.is-check li,
 .case-list.is-cross li {
-  padding-left: 28px;
+  padding-left: 24px;
 }
 
-.case-list.is-check li::before,
-.case-list.is-cross li::before {
-  content: "✅";
-  top: 0;
-  width: auto;
-  height: auto;
+.case .case-list.is-check li::before,
+.case .case-list.is-cross li::before {
+  content: "";
   background: none;
   box-shadow: none;
-  font-size: 15px;
-  line-height: var(--lh-body);
 }
 
-.case-list.is-cross li::before {
-  content: "🚫";
+/* check: the bottom and right edges of a narrow box, turned 45° */
+.case .case-list.is-check li::before {
+  left: 3px;
+  top: calc(var(--lh-body) / 2 - 7px);
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid var(--fg);
+  border-bottom: 2px solid var(--fg);
+  transform: rotate(45deg);
+}
+
+/* cross: two 2px bars */
+.case .case-list.is-cross li::before,
+.case .case-list.is-cross li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(var(--lh-body) / 2 - 1px);
+  width: 12px;
+  height: 2px;
+  background: var(--fg);
+  transform: rotate(45deg);
+}
+
+.case .case-list.is-cross li::after {
+  transform: rotate(-45deg);
 }
 
 .case-verdict-intro {
@@ -2782,4 +2801,54 @@ ol {
 .case-text > .case-h,
 .case-side-text > .case-h {
   margin: 0 0 16px;
+}
+
+/* numbered lists: the number takes the square's place */
+.case-list.is-num {
+  counter-reset: n;
+}
+
+.case-list.is-num li {
+  counter-increment: n;
+}
+
+.case .case-list.is-num li::before {
+  content: counter(n) ".";
+  top: 0;
+  width: auto;
+  height: auto;
+  background: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* from → to lines: the old state in regular weight, the new in bold */
+.case-map p {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) auto minmax(0, 7fr);
+  column-gap: var(--pad);
+  margin: 0;
+  padding: 12px 0;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.25;
+}
+
+.case-map strong { font-weight: 700; }
+
+.case-cards > div > .case-verdict-label { margin-top: 0 !important; }
+.case-cards .case-card-title {
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.case .case-verdict-label {
+  color: var(--fg);
+}
+
+.case-body > .case-pair.is-md {
+  grid-column: 1 / 9;
+}
+
+@media (max-width: 680px) {
+  .case-body > .case-pair.is-md { grid-column: 1 / -1; }
 }
