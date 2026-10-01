@@ -1644,11 +1644,11 @@ ol {
   margin-top: 8px;
 }
 
-/* Footer links: a numbered list (cols 7–9). Hover fills the
+/* Footer links: a numbered list (cols 7–8, numbers on the end of col 8). Hover fills the
    row red; the fill is extended sideways with box-shadow so the text and
    the rules stay on the grid. */
 .footer-top .footer-col {
-  grid-column: 7 / 10;
+  grid-column: 7 / 9;
   margin: 0;
 }
 
