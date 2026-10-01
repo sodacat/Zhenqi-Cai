@@ -6,9 +6,10 @@
  *          Labels: 13px bold. Pairs read bold line / regular line.
  * Labels   Category = red bold capitals; content beneath it = black.
  *          Grey is kept for the copyright line only. Arrows are red.
- * Colour   Black, white, red. One grey for secondary text, one hairline grey.
+ * Colour   Black, white, red. One grey for secondary text.
  * Grid     12 columns; everything starts on a column line.
- * Rules    1px black for structure, hairline grey inside lists.
+ * Rules    One kind of line only: 1px black, for structure (section heads,
+ *          header, footer, heading-rule-body). Everything else is space.
  * Motion   Short, flat fades. Nothing slides, scales or bounces.
  * Hover    Inverts against the ground: red fill + white text on white,
  *          white fill + red text on red. Current page: black outline box.
@@ -20,7 +21,6 @@
   --fg: #0a0a0a;
   --muted: #8a8a8a;
   --line: #0a0a0a;
-  --hair: #dcdcdc;
   --accent: #e30613;
   --placeholder: #efefed;
   --pad: clamp(16px, 2vw, 32px);
@@ -762,7 +762,6 @@ ol {
 .card-tags {
   margin: 8px 0 0;
   padding-top: 8px;
-  border-top: 1px solid var(--hair);
   padding-right: 32px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
@@ -798,14 +797,12 @@ ol {
 }
 
 /* ---------- AI experiments: an index ---------- */
-/* One row per experiment on hairlines:
+/* One row per experiment, rows separated by space:
    number (1) | thumbnail (2–3) | title + kind (4–7) | summary (8–11) | → (12) */
+/* rows separated by space, not lines */
 .exp-index {
-  border-top: 1px solid var(--line);
-}
-
-.exp-index li {
-  border-bottom: 1px solid var(--hair);
+  display: grid;
+  row-gap: var(--space-xl);
 }
 
 .exp-row {
@@ -813,7 +810,6 @@ ol {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--pad);
   align-items: start;
-  padding: 16px 0;
 }
 
 .exp-row .exp-num { grid-column: 1; }
@@ -837,49 +833,6 @@ ol {
 .exp-row:hover .exp-title,
 .exp-row:focus-visible .exp-title {
   color: var(--accent);
-}
-
-/* ---------- Framed tables ---------- */
-/* Design Philosophy is drawn as a table: every cell is framed by a 1px
-   line that runs down the middle of the gutter, so cells share their
-   edges. (Selected Work has no frames: its grid shows through the space.) */
-.principle {
-  position: relative;
-  padding-block: 24px;
-}
-
-.principle::after {
-  content: "";
-  position: absolute;
-  inset: 0 calc(var(--pad) / -2);
-  border: 1px solid var(--line);
-  pointer-events: none;
-}
-
-/* neighbouring frames overlap by their 1px border, so shared edges are
-   a single line */
-.principle::after {
-  margin: 0 -1px -1px 0;
-}
-
-/* The table's outer edges sit on the content edges (in line with the
-   section rules); the outer cells take half a gutter of inner padding so
-   every cell's text is the same distance from its left frame */
-.principle:first-child::after {
-  left: 0;
-}
-
-.principle:last-child::after {
-  right: 0;
-  margin-right: 0;
-}
-
-.principle:first-child {
-  padding-left: calc(var(--pad) / 2);
-}
-
-.principle:last-child {
-  padding-right: calc(var(--pad) / 2);
 }
 
 /* ---------- About (home) ---------- */
@@ -914,8 +867,6 @@ ol {
   display: grid;
   grid-template-columns: subgrid;
   grid-template-rows: auto 1fr;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
@@ -952,7 +903,6 @@ ol {
 }
 
 .about-tags li {
-  border-bottom: 1px solid var(--hair);
   padding: 0 0 8px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
@@ -1114,7 +1064,6 @@ ol {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--pad);
-  border-top: 1px solid var(--hair);
   padding: 8px 0;
 }
 
@@ -1130,7 +1079,6 @@ ol {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--pad);
   align-items: baseline;
-  border-bottom: 1px solid var(--hair);
   padding: 16px 0;
   transition: color 0.3s var(--ease);
 }
@@ -1185,7 +1133,6 @@ ol {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
   gap: var(--pad);
-  border-top: 1px solid var(--line);
   padding: 16px 0 var(--space-2xl);
 }
 
@@ -1273,7 +1220,6 @@ ol {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--pad);
-  border-top: 1px solid var(--hair);
   padding: 8px 0;
 }
 
@@ -1356,7 +1302,7 @@ ol {
   color: var(--fg);
 }
 
-/* Footer links: a numbered list on hairlines (cols 7–9). Hover fills the
+/* Footer links: a numbered list (cols 7–9). Hover fills the
    row red; the fill is extended sideways with box-shadow so the text and
    the rules stay on the grid. */
 .footer-top .footer-col {
@@ -1369,7 +1315,6 @@ ol {
   justify-content: space-between;
   gap: 16px;
   padding: 8px 0;
-  border-bottom: 1px solid var(--hair);
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 
@@ -1380,7 +1325,6 @@ ol {
 .footer-col a:hover,
 .footer-col a:focus-visible {
   background: var(--accent);
-  border-bottom-color: var(--accent);
   box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent);
   color: #fff;
   outline: none;
@@ -1740,20 +1684,10 @@ ol {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* phones: principles stack as framed cells */
+  /* phones: principles stack, separated by space */
   .principles {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* phones: every cell is a full-width row, framed on the content edges */
-  .principle::after {
-    left: 0 !important;
-    right: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .principle {
-    padding-inline: 16px !important;
+    row-gap: var(--space-xl);
   }
 
   .index-row {
