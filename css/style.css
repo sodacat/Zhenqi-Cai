@@ -534,7 +534,9 @@ ol {
   grid-row: 1;
   display: grid;
   gap: 24px;
-  justify-items: start;
+  /* the block's right edge lines up with the right-aligned "systems" /
+     "becomes" lines (the end of column 6); text inside stays flush left */
+  justify-items: end;
 }
 
 .hero-intro {
@@ -1754,6 +1756,10 @@ ol {
   .hero-bottom > * {
     grid-column: 1 / -1 !important;
     grid-row: auto !important;
+  }
+
+  .hero-info {
+    justify-items: start;
   }
 
   .stats {
