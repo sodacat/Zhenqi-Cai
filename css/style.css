@@ -50,7 +50,6 @@
   --space-xl: var(--space-2xl);
   --space-2xl: 48px;
   --space-3xl: var(--space-2xl);
-  --space-4xl: 120px;
   /* shared by every outlined box of cells (nav, contact) so they match */
   --box-pad: 8px;
   /* horizontal inset of text inside every outlined box: nav cells, contact
@@ -446,11 +445,7 @@ ol {
 }
 
 /* ---------- Hero ---------- */
-.hero,
-.page-title,
-.project-head {
-  margin-top: var(--space-4xl);
-  row-gap: var(--space-xl);
+.hero {
   align-items: start;
 }
 
@@ -459,23 +454,43 @@ ol {
   margin: 0;
 }
 
-/* Page labels: red bold capitals, with any number in black */
+/* Sub-page heads start like the home hero: the "(01) Name" row 8px under
+   the header rule (index cols 1–2, name from col 3, as in every section
+   head), then the title one gap below */
+.page-title,
+.project-head {
+  padding-top: 8px;
+  row-gap: 0;
+  align-items: start;
+}
+
+.page-title .idx,
+.project-head .idx {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  margin: 0;
+}
+
 .page-title .hero-role,
 .project-head .hero-role {
+  grid-column: 3 / -1;
+  grid-row: 1;
+  margin: 0 0 var(--space-2xl);
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   letter-spacing: 0;
   color: var(--accent);
 }
 
-.hero-role .num {
-  color: var(--fg);
-  margin-right: 0.5em;
+.page-title > h1,
+.project-head > h1 {
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
-.page-title .display-xl,
-.project-head .display-xl {
-  grid-column: 1 / -1;
+/* the About statement keeps the hero's six-column measure */
+.page-title > h1.statement {
+  grid-column: 1 / 7;
 }
 
 /* Home hero: text left (1–6), portrait right (7–12) */
@@ -1320,10 +1335,10 @@ ol {
   grid-column: 7 / -1;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  max-width: 40em;
 }
 
 .about-page-body p {
+  max-width: 40em;
   margin: 0 0 16px;
 }
 
@@ -1335,11 +1350,24 @@ ol {
   margin: 40px 0 0;
 }
 
-.facts div {
+/* label / value tables span the six columns 7–12 on the page grid:
+   label cols 7–8, value from col 9 */
+.facts div,
+.project-meta div {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--pad);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: var(--pad);
   padding: 8px 0;
+}
+
+.facts dt,
+.project-meta dt {
+  grid-column: 1 / 3;
+}
+
+.facts dd,
+.project-meta dd {
+  grid-column: 3 / -1;
 }
 
 .facts dd {
@@ -1363,11 +1391,7 @@ ol {
 }
 
 .index-row > :nth-child(1) {
-  grid-column: 1 / 3;
-}
-
-.index-row > :nth-child(2) {
-  grid-column: 3 / 5;
+  grid-column: 1 / 5;
 }
 
 .index-title {
@@ -1402,13 +1426,23 @@ ol {
 
 .services-list {
   grid-column: 5 / -1;
+  display: grid;
+  row-gap: var(--space-2xl);
 }
 
+/* on the page grid: title cols 5–7, text cols 8–12 */
 .service {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-  gap: var(--pad);
-  padding: 16px 0 var(--space-2xl);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  column-gap: var(--pad);
+}
+
+.service h3 {
+  grid-column: 1 / 4;
+}
+
+.service p {
+  grid-column: 4 / -1;
 }
 
 .service h3 {
@@ -1431,21 +1465,17 @@ ol {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: var(--space-3xl);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-2xl);
   padding-top: 8px;
   border-top: var(--rule);
 }
 
-/* first filter pulled back so its text, not its box, sits on the grid */
-.filters button:first-child {
-  margin-left: -11px;
-}
-
+/* boxes start on the column line, text inset like every other box */
 .filters button {
   appearance: none;
   background: none;
   border: 1px solid transparent;
-  padding: 8px 8px;
+  padding: var(--box-pad) var(--box-pad-x);
   cursor: pointer;
   font: inherit;
   letter-spacing: inherit;
@@ -1491,13 +1521,6 @@ ol {
   margin: 0;
 }
 
-.project-meta div {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--pad);
-  padding: 8px 0;
-}
-
 .project-meta dd {
   margin: 0;
   font-size: var(--fs-body);
@@ -1515,7 +1538,7 @@ ol {
   margin-top: var(--space-3xl);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--pad);
 }
 
 .gallery .card-media {
@@ -1531,12 +1554,12 @@ ol {
 }
 
 .project-nav {
-  margin-top: var(--space-4xl);
+  margin-top: var(--space-2xl);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   border-top: var(--rule);
-  padding-top: 16px;
+  padding-top: 8px;
 }
 
 .project-nav .next {
@@ -1754,7 +1777,6 @@ ol {
     --space-xl: var(--space-2xl);
     --space-2xl: 40px;
     --space-3xl: var(--space-2xl);
-    --space-4xl: 96px;
   }
 }
 
@@ -1764,7 +1786,6 @@ ol {
     --space-xl: var(--space-2xl);
     --space-2xl: 40px;
     --space-3xl: var(--space-2xl);
-    --space-4xl: 72px;
   }
 }
 
@@ -1972,11 +1993,6 @@ ol {
     display: flex;
   }
 
-  .hero,
-  .page-title,
-  .project-head {
-    margin-top: 40px;
-  }
 
   .hero-title {
     font-size: calc((100vw - 2 * var(--pad)) / 8.2);
@@ -2023,6 +2039,24 @@ ol {
     grid-column: auto !important;
   }
 
+  /* sub-page heads: (01) + name row like the phone section heads */
+  .page-title.grid-12,
+  .project-head.grid-12 {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 0;
+  }
+
+  .page-title > .idx,
+  .project-head > .idx {
+    grid-column: 1 !important;
+  }
+
+  .page-title > .hero-role,
+  .project-head > .hero-role {
+    grid-column: 2 !important;
+  }
+
   /* (01) + role row, set like the phone section heads */
   .hero-text {
     grid-template-columns: auto minmax(0, 1fr);
@@ -2054,33 +2088,33 @@ ol {
     row-gap: var(--space-xl);
   }
 
+  /* phones: company + square on top, then title and summary */
   .index-row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 8px;
   }
 
   .index-row > * {
-    grid-column: auto !important;
-  }
-
-  .index-row > :nth-child(2) {
-    grid-column: 2 / 3 !important;
-  }
-
-  .index-title {
     grid-column: 1 / -1 !important;
-    grid-row: 2;
+  }
+
+  .index-row > :nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1;
   }
 
   .index-row .arrow {
     grid-row: 1;
-    grid-column: 3 / 4 !important;
+    grid-column: 2 !important;
   }
 
   .service {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding-bottom: 32px;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+  }
+
+  .service > * {
+    grid-column: 1 / -1;
   }
 
   /* one column on phones: the mark takes the full content width */

@@ -208,7 +208,8 @@
   function about() {
     return `<main>
       <section class="page-title grid-12 wrap">
-        <p class="label hero-role">(About)</p>
+        <p class="label idx">(01)</p>
+        <p class="label hero-role">About</p>
         <h1 class="hero-title statement reveal" aria-label="${esc(S.statement.join(" "))}">${posterLines(S.statementLines)}</h1>
       </section>
 
@@ -227,12 +228,11 @@
       </section>
 
       <section class="section wrap">
-        ${sectionHead(1, "Selected work", ["All work", "works.html"])}
+        ${sectionHead(2, "Selected work")}
         <ul class="index-list">
           ${work
             .map(
-              (p, i) => `<li><a class="index-row" href="${projectUrl(p)}">
-                <span class="label">${pad(i + 1)}</span>
+              (p) => `<li><a class="index-row" href="${projectUrl(p)}">
                 <span class="label cat">${esc(p.company)}</span>
                 <span class="index-title">${esc(p.title)}</span>
                 <span class="index-sum">${esc(p.summary)}</span>
@@ -244,7 +244,7 @@
       </section>
 
       <section class="section wrap">
-        ${sectionHead(2, "Capabilities")}
+        ${sectionHead(3, "Capabilities")}
         <div class="services grid-12">
           <div class="services-head"><h2 class="display reveal">What I do.</h2></div>
           <ul class="services-list">
@@ -255,8 +255,8 @@
         </div>
       </section>
 
-      ${philosophy(3)}
-      ${contactBlock(4)}
+      ${philosophy(4)}
+      ${contactBlock(5)}
     </main>`;
   }
 
@@ -267,7 +267,8 @@
       `<button class="${initial === f ? "is-active" : ""}" data-filter="${f}">${label}<sup>${n}</sup></button>`;
     return `<main>
       <section class="page-title grid-12 wrap">
-        <p class="label hero-role">(Index)</p>
+        <p class="label idx">(01)</p>
+        <p class="label hero-role">Index</p>
         <h1 class="display display-xl reveal">Selected work.<br>${pad(S.projects.length)} projects.</h1>
       </section>
       <section class="wrap">
@@ -278,7 +279,7 @@
         </div>
         <div class="work-grid">${S.projects.map(workCard).join("")}</div>
       </section>
-      ${contactBlock(1)}
+      ${contactBlock(2)}
     </main>`;
   }
 
@@ -298,7 +299,8 @@
 
     return `<main>
       <section class="project-head grid-12 wrap">
-        <p class="label hero-role"><span class="num">(${pad(i + 1)})</span>${esc(p.company)}</p>
+        <p class="label idx">(${pad(i + 1)})</p>
+        <p class="label hero-role">${esc(p.company)}</p>
         <h1 class="display display-xl reveal">${esc(p.title)}</h1>
       </section>
       <section class="project-info grid-12 wrap">
@@ -315,7 +317,7 @@
       </section>
       <section class="wrap">
         <div class="project-nav">
-          <a class="label link-line" href="works.html">← All work</a>
+          <a class="label link-line" href="works.html">All work ${arrow}</a>
           <a class="next" href="${projectUrl(next)}">
             <span class="label cat">Next project</span>
             <div class="display">${esc(next.title)} ${arrow}</div>
