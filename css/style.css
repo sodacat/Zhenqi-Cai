@@ -40,7 +40,9 @@
   --fs-title: clamp(24px, 2.4vw, 36px);
   --fs-display: clamp(40px, 4.4vw, 72px);
 
-  /* Vertical rhythm: every space is a multiple of the 8px unit */
+  /* Vertical rhythm: every space is a multiple of the 8px unit, in three
+     tiers — inside a group 8–16, between items --space-2xl, between
+     sections --space-3xl; a section head sits --space-xl above its content */
   --u: 8px;
   --space-l: 32px;
   --space-xl: 48px;
@@ -703,9 +705,9 @@ ol {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  /* negative space carries the grid: a full gutter between columns and a
-     large, constant interval between rows */
-  gap: var(--space-3xl) var(--pad);
+  /* negative space carries the grid: a gutter between columns, the item
+     interval (64) between rows — clearly less than the section interval */
+  gap: var(--space-2xl) var(--pad);
 }
 
 .work-card {
@@ -805,7 +807,7 @@ ol {
 /* rows separated by space, not lines */
 .exp-index {
   display: grid;
-  row-gap: var(--space-xl);
+  row-gap: var(--space-2xl);
 }
 
 .exp-row {
@@ -845,7 +847,7 @@ ol {
    text block (1–9): bio in two columns, facts  | (10–12, both rows) */
 .about {
   align-items: start;
-  row-gap: var(--space-xl);
+  row-gap: var(--space-2xl);
 }
 
 /* "What I do." sits at title level */
