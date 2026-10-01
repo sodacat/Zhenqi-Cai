@@ -928,9 +928,12 @@ ol {
 
 /* ---------- About (home) ---------- */
 
+/* Magazine page on the 12-column grid:
+   statement (1–6)                              | portrait + caption
+   text block (1–9): bio in two columns, facts  | (10–12, both rows) */
 .about {
-  align-items: center;
-  row-gap: 32px;
+  align-items: start;
+  row-gap: var(--space-xl);
 }
 
 /* "What I do." sits at title level */
@@ -943,46 +946,93 @@ ol {
    to six columns) and the same left / right rhythm */
 .statement {
   grid-column: 1 / 7;
+  grid-row: 1;
 }
 
+/* Text block: one rectangle under a black rule. The bio runs in two
+   justified columns (3 grid columns each, cols 1–6); the highlights and
+   the button stack in the third (cols 7–9). */
 .about-body {
-  grid-column: 7 / 10;
-  position: relative;
+  grid-column: 1 / 10;
+  grid-row: 2;
   display: grid;
   grid-template-columns: subgrid;
-  align-content: start;
+  grid-template-rows: auto 1fr;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
 
-.about-body > * {
-  grid-column: 1 / -1;
+.about-text {
+  grid-column: 1 / 7;
+  grid-row: 1 / span 2;
+  align-self: start;
+  column-count: 2;
+  column-fill: balance;
+  column-gap: var(--pad);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
-.about-body p {
-  margin: 0 0 16px;
+.about-text p {
+  margin: 0;
+  orphans: 1;
+  widows: 1;
 }
 
-/* About highlights: one selected line each, on hairlines like card tags */
-.about-tags li {
-  border-top: 1px solid var(--hair);
-  padding: 8px 0;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-}
-
-.about-tags li:last-child {
-  border-bottom: 1px solid var(--hair);
-  margin-bottom: 8px;
+/* Paragraphs run on with a first-line indent (no gap), so the bio stays
+   one continuous block and the two columns balance */
+.about-text p + p {
+  text-indent: 24px;
 }
 
 .about-tags {
+  grid-column: 7 / 10;
+  grid-row: 1;
+  margin: 0;
   color: var(--accent);
+}
+
+.about-tags li {
+  border-bottom: 1px solid var(--hair);
+  padding: 0 0 8px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.about-tags li + li {
+  padding-top: 8px;
+}
+
+.about-body .btn {
+  grid-column: 7 / 10;
+  grid-row: 2;
+  align-self: end;
+  justify-self: start;
+  margin-top: 24px;
+}
+
+/* Portrait with a magazine caption under it */
+.about-media {
+  grid-column: 10 / -1;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.about-media .card-media {
+  aspect-ratio: 4 / 5;
+}
+
+.about-caption {
+  margin-top: 16px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 /* Dividers sit at the start of the gutter: one full gutter between the
    rule and the text, and the text stays on its column line */
-.about-body::before,
 .principle + .principle::before {
   content: "";
   position: absolute;
@@ -990,19 +1040,6 @@ ol {
   bottom: 0;
   left: calc(var(--pad) * -1);
   border-left: 1px solid var(--hair);
-}
-
-.about-body .btn {
-  margin-top: 16px;
-  justify-self: start;
-}
-
-.about-media {
-  grid-column: 10 / -1;
-}
-
-.about-media .card-media {
-  aspect-ratio: 4 / 5;
 }
 
 /* ---------- Philosophy ---------- */
@@ -1522,14 +1559,23 @@ ol {
     grid-template-columns: 1fr 1fr;
   }
 
-  .about-body {
-    grid-column: 1 / 7;
-    grid-row: 2;
-  }
-
+  /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
     grid-column: 8 / -1;
-    grid-row: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .about-body {
+    grid-column: 1 / -1;
+  }
+
+  .about-text {
+    grid-column: 1 / 9;
+  }
+
+  .about-tags,
+  .about-body .btn {
+    grid-column: 9 / -1;
   }
 
   .contact .display,
@@ -1572,14 +1618,30 @@ ol {
     line-height: 0.9;
   }
 
-  .about-body::before {
-    display: none;
+  /* phones: statement, text (one column), portrait, caption */
+  .about-body,
+  .about-media,
+  .about-text,
+  .about-tags,
+  .about-body .btn {
+    grid-row: auto;
   }
 
-  /* phones: statement, then text, then portrait */
-  .about-body,
-  .about-media {
-    grid-row: auto;
+  .about-body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .about-body > * {
+    grid-column: 1 / -1 !important;
+  }
+
+  .about-text {
+    column-count: 1;
+  }
+
+  .about-body .btn {
+    margin-top: 0;
   }
 
   /* One column: feature caption stacks */

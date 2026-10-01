@@ -15,9 +15,9 @@
   const experiments = S.projects.filter((p) => p.type === "experiment");
   const typeLabel = { work: "Case study", experiment: "AI experiment" };
 
-  // Poster lines: alternate flush left / flush right, like the hero headline
+  // Poster lines like the hero headline: [text, "l" | "r"] (flush left / right)
   const posterLines = (arr) =>
-    arr.map((t, i) => `<span class="${i % 2 ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`).join("");
+    arr.map(([t, a]) => `<span class="${a === "r" ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`).join("");
 
   // *phrase* in copy is set in red (one emphasis per paragraph at most)
   const emph = (s) => esc(s).replace(/\*([^*]+)\*/g, '<em class="hl">$1</em>');
@@ -185,11 +185,14 @@
         <div class="about grid-12">
           <h2 class="hero-title statement reveal" aria-label="${esc(S.statement.join(" "))}">${posterLines(S.statementLines)}</h2>
           <div class="about-body reveal">
-            ${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}
+            <div class="about-text">${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}</div>
             <ul class="about-tags">${S.facts.map(([, v]) => `<li>${esc(v)}</li>`).join("")}</ul>
             <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
           </div>
-          <div class="about-media reveal">${media(S.portrait, S.name)}</div>
+          <figure class="about-media reveal">
+            ${media(S.portrait, S.name)}
+            <figcaption class="about-caption"><span class="label">Fig. 01</span><br>${esc(S.name)}, ${esc(S.role)}</figcaption>
+          </figure>
         </div>
       </section>
 
