@@ -310,7 +310,7 @@
 
     return `<main>
       <section class="project-head grid-12 wrap">
-        <p class="label hero-role">(${pad(i + 1)}) ${esc(p.company)}</p>
+        <p class="label hero-role"><span class="num">(${pad(i + 1)})</span>${esc(p.company)}</p>
         <h1 class="display display-xl reveal">${esc(p.title)}</h1>
       </section>
       <section class="project-info grid-12 wrap">

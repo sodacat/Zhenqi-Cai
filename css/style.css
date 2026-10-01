@@ -1,7 +1,14 @@
 /*
- * Swiss / International Typographic Style
- * Strict 12-column grid, flush-left ragged-right type, one sans + one mono,
- * hairline rules, numbered sections, black on white with a single red accent.
+ * Swiss / International Typographic Style — one system for the whole site
+ *
+ * Type     Helvetica only. Bold for display, titles and labels; Regular for
+ *          reading text. Labels: 11px bold capitals.
+ * Colour   Black, white, red. One grey for secondary text, one hairline grey.
+ * Grid     12 columns; everything starts on a column line.
+ * Rules    1px black for structure, hairline grey inside lists.
+ * Motion   Short, flat fades. Nothing slides, scales or bounces.
+ * Hover    Inverts against the ground: red fill + white text on white,
+ *          white fill + red text on red. Current page: black outline box.
  */
 
 /* ---------- Tokens ---------- */
@@ -16,8 +23,8 @@
   --pad: clamp(16px, 2vw, 32px);
   --gap: clamp(12px, 1.2vw, 20px);
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 0.18s;
 }
 
 *,
@@ -66,11 +73,11 @@ ol {
 
 /* ---------- Type helpers ---------- */
 .label {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -118,54 +125,76 @@ ol {
 .arrow {
   display: inline-block;
   font-family: var(--sans);
-  transition: transform 0.4s var(--ease);
+  font-weight: 400;
 }
 
-a:hover .arrow {
-  transform: translateX(4px);
-}
-
+/* ---------- Interaction ---------- */
+/* Text links: a small box that fills red on hover. Padding is pulled back
+   with an equal negative margin so the text itself stays on the grid. */
 .link-line {
-  position: relative;
   display: inline-block;
+  padding: 3px 6px;
+  margin: -3px -6px;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
-.link-line::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s var(--ease);
+.link-line:hover,
+.link-line:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  outline: none;
 }
 
-.link-line:hover::after,
-.link-line.is-active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.link-line.is-active {
+  box-shadow: inset 0 0 0 1px var(--fg);
 }
 
+/* Buttons: black outline at rest, red fill on hover */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
+  gap: 12px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 7px 12px;
+  padding: 10px 14px;
   border: 1px solid var(--fg);
-  background: transparent;
-  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+  background: var(--bg);
+  color: var(--fg);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  outline: none;
+}
+
+/* Anything else focusable gets a red outline */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* The mark: letters turn red, the square turns black */
+.brand,
+.brand .sq {
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.brand:hover,
+.brand:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.brand:hover .sq,
+.brand:focus-visible .sq {
   background: var(--fg);
-  color: var(--bg);
 }
 
 /* ---------- Layout ---------- */
@@ -243,27 +272,31 @@ a:hover .arrow {
   gap: 4px 6px;
 }
 
-/* Nav links: a hairline box on hover and on the current page */
+/* Nav links: red fill on hover, black outline box on the current page */
 @media (min-width: 681px) {
   /* Pull back by the box padding + border so WORK starts on the image edge */
   .nav {
     margin-left: -11px;
   }
 
-  .nav a {
+  .nav a,
+  .nav a.link-line {
     padding: 6px 10px;
+    margin: 0;
     border: 1px solid transparent;
-    transition: border-color 0.3s var(--ease);
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
 
-  .nav a::after {
-    display: none;
+  .nav a.is-active {
+    box-shadow: none;
+    border-color: var(--fg);
   }
 
   .nav a:hover,
-  .nav a:focus-visible,
-  .nav a.is-active {
-    border-color: var(--fg);
+  .nav a:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
     outline: none;
   }
 }
@@ -314,9 +347,17 @@ a:hover .arrow {
   margin: 0;
 }
 
+/* Page labels: red bold capitals, with any number in black */
 .page-title .hero-role,
 .project-head .hero-role {
+  font-size: 13px;
+  letter-spacing: 0.04em;
   color: var(--accent);
+}
+
+.hero-role .num {
+  color: var(--fg);
+  margin-right: 0.5em;
 }
 
 .page-title .display-xl,
@@ -344,12 +385,15 @@ a:hover .arrow {
 }
 
 .hero-text .idx {
-  margin: 0 0 18px;
-  color: var(--accent);
+  margin: 0 0 12px;
 }
 
+/* Same treatment as section names: red bold capitals */
 .hero-text .hero-role {
   margin-bottom: clamp(18px, 2vw, 28px);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
 }
 
 /* Headline set like a poster: lines alternate flush left / flush right.
@@ -414,7 +458,7 @@ a:hover .arrow {
   margin: 0;
   font-size: 14px;
   line-height: 1.45;
-  color: #444;
+  color: var(--fg);
 }
 
 .clients {
@@ -466,24 +510,36 @@ a:hover .arrow {
   background: var(--placeholder);
 }
 
+/* Images are shown as they are: no tint, no zoom. Positioned so a loaded
+   image covers its placeholder caption. */
 .card-media img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: grayscale(0.15);
-  transform: scale(1.02);
-  transition: opacity 0.8s var(--ease), transform 1.2s var(--ease), filter 0.8s var(--ease);
+  transition: opacity 0.4s var(--ease);
 }
 
 .card-media img.is-loaded {
   opacity: 1;
-  transform: scale(1);
 }
 
-a:hover .card-media img.is-loaded {
-  transform: scale(1.03);
-  filter: none;
+/* Linked cards: title and arrow turn red */
+.work-title,
+.exp-side-title,
+.work-meta > .arrow,
+.project-nav .next .display {
+  transition: color var(--dur) var(--ease);
+}
+
+.work-card:hover .work-title,
+.work-card:hover .work-meta > .arrow,
+.work-card:focus-visible .work-title,
+.exp-side a:hover .exp-side-title,
+.exp-side a:focus-visible .exp-side-title,
+.project-nav .next:hover .display {
+  color: var(--accent);
 }
 
 .card-media .ph {
@@ -492,11 +548,12 @@ a:hover .card-media img.is-loaded {
   display: flex;
   align-items: flex-end;
   padding: 12px;
-  font-family: var(--mono);
-  font-size: 10px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #b0b0ab;
+  letter-spacing: 0.03em;
+  color: var(--muted);
 }
 
 /* ---------- Geometric covers (CSS) ---------- */
@@ -674,7 +731,7 @@ a:hover .card-media img.is-loaded {
   max-width: 34em;
   font-size: 14px;
   line-height: 1.4;
-  color: #3a3a3a;
+  color: var(--fg);
 }
 
 /* ---------- AI experiments ---------- */
@@ -717,7 +774,7 @@ a:hover .card-media img.is-loaded {
 }
 
 .exp-media .card-media .ph {
-  color: #8a8175;
+  color: var(--muted);
 }
 
 /* Feature caption under the image: number | title | text + button */
@@ -752,19 +809,6 @@ a:hover .card-media img.is-loaded {
 }
 
 /* Primary actions: white box, black text; red fill on hover */
-.btn-accent {
-  background: var(--bg);
-  color: var(--fg);
-}
-
-.btn-accent:hover,
-.btn-accent:focus-visible {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  outline: none;
-}
-
 .exp-side {
   grid-column: 9 / -1;
   display: grid;
@@ -906,7 +950,7 @@ a:hover .card-media img.is-loaded {
   margin: 0;
   max-width: 18em;
   font-size: 14px;
-  color: #3a3a3a;
+  color: var(--fg);
 }
 
 /* ---------- Contact ---------- */
@@ -1027,7 +1071,7 @@ a:hover .card-media img.is-loaded {
 
 .about-page-body {
   grid-column: 7 / -1;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   max-width: 40em;
 }
@@ -1087,7 +1131,7 @@ a:hover .card-media img.is-loaded {
 .index-sum {
   grid-column: 9 / 12;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--fg);
 }
 
 .index-row .arrow {
@@ -1140,29 +1184,41 @@ a:hover .card-media img.is-loaded {
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 4px;
   margin-top: clamp(48px, 5vw, 80px);
   margin-bottom: 20px;
   padding-top: 10px;
   border-top: 1px solid var(--line);
 }
 
+/* first filter pulled back so its text, not its box, sits on the grid */
+.filters button:first-child {
+  margin-left: -11px;
+}
+
 .filters button {
   appearance: none;
   background: none;
-  border: 0;
-  padding: 0;
+  border: 1px solid transparent;
+  padding: 6px 10px;
   cursor: pointer;
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  color: var(--muted);
-  transition: color 0.3s var(--ease);
+  color: var(--fg);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.filters button.is-active {
+  border-color: var(--fg);
 }
 
 .filters button:hover,
-.filters button.is-active {
-  color: var(--fg);
+.filters button:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  outline: none;
 }
 
 .filters sup {
@@ -1170,7 +1226,7 @@ a:hover .card-media img.is-loaded {
   margin-left: 2px;
 }
 
-.filters button.is-active sup {
+.filters button.is-active:not(:hover) sup {
   color: var(--accent);
 }
 
@@ -1206,7 +1262,7 @@ a:hover .card-media img.is-loaded {
 .project-desc {
   grid-column: 7 / 12;
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -1285,12 +1341,14 @@ a:hover .card-media img.is-loaded {
   display: inline-block;
   padding: 3px 8px;
   border: 1px solid transparent;
-  transition: border-color 0.25s var(--ease);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
 .footer-col a:hover,
 .footer-col a:focus-visible {
-  border-color: var(--fg);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
   outline: none;
 }
 
@@ -1321,13 +1379,11 @@ a:hover .card-media img.is-loaded {
 /* ---------- Reveal ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 1s var(--ease), transform 1s var(--ease);
+  transition: opacity 0.6s var(--ease);
 }
 
 .reveal.is-in {
   opacity: 1;
-  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1495,13 +1551,11 @@ a:hover .card-media img.is-loaded {
     text-transform: none;
   }
 
-  .nav a {
+  .nav a,
+  .nav a.link-line {
+    margin: 0;
     border-top: 1px solid var(--hair);
     padding: 10px 0;
-  }
-
-  .nav .link-line::after {
-    display: none;
   }
 
   .nav-contact {
