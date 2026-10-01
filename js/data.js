@@ -91,7 +91,7 @@ window.SITE = {
       // Full case study (rendered on the project page in place of the gallery)
       case: {
         headline: "From Compliance Checkpoint to Seller Growth Infrastructure",
-        lead: "How I redesigned Amazon's qualification system so that transparency and enforcement reinforce each other — reducing onboarding time from 30 days to 5 and increasing completion by 20%.",
+        lead: "How I redesigned Amazon's qualification system so that transparency and enforcement reinforce each other.",
         cover: "images/seller-qualification/cover.webp",
         snapshot: [
           "**+20%** qualification completion rate (usability testing)",
