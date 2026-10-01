@@ -1255,9 +1255,10 @@ ol {
 
 /* ---------- Contact ---------- */
 /* The links box steps down below the headline (row 2, cols 10–12) */
+/* the link box on its own row, half a gap under the line */
 .contact {
   align-items: start;
-  row-gap: var(--space-xl);
+  row-gap: calc(var(--space-2xl) / 2);
 }
 
 .contact .display {
@@ -1266,15 +1267,6 @@ ol {
 
 .contact-side {
   grid-row: 2;
-}
-
-/* Desktop: the link box sits beside the line, on its last baseline row,
-   instead of on a row of its own */
-@media (min-width: 1025px) {
-  .contact-side {
-    grid-row: 1;
-    align-self: end;
-  }
 }
 
 .contact .display {
