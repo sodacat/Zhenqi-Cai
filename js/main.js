@@ -122,7 +122,7 @@
           <p class="label idx">(01)</p>
           <p class="label hero-role">${esc(S.role)}</p>
           <h1 class="hero-title reveal" aria-label="${esc(S.headline)}">${S.headlineLines
-            .map(([t, a, accent]) => `<span class="${a === "r" ? "r" : "l"}${accent ? " hl" : ""}" aria-hidden="true">${esc(t)}</span>`)
+            .map(([t, a, accent]) => `<span class="${a === "r" ? "r" : a === "j3" ? "j3" : "l"}${accent ? " hl" : ""}" aria-hidden="true">${esc(t)}</span>`)
             .join("")}</h1>
           <div class="hero-bottom reveal">
             <div class="hero-left">
