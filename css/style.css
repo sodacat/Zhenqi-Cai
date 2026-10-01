@@ -1859,6 +1859,49 @@ ol {
 .case-option > .case-verdict { grid-column: 9 / -1; display: grid; gap: 16px; }
 .case-option > .case-note { grid-column: 1 / 7; margin: 0; }
 
+/* summary: three short columns (problem / solution / impact) */
+.case-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--pad);
+  margin: 0;
+}
+
+.case-summary dd {
+  margin: 0;
+}
+
+.case-ba-title {
+  margin: 0 0 4px;
+  font-size: var(--fs-title);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.case-ba .case-media {
+  margin: 16px 0;
+}
+
+.case-role-title {
+  margin: 0 0 var(--space-xl);
+  font-size: var(--fs-title);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.case-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--pad);
+}
+
+.case-credits {
+  grid-column: 1 / -1;
+  margin: 0;
+  max-width: calc(50% + var(--pad) / 2);
+}
+
 .case-trio {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1885,6 +1928,8 @@ ol {
   }
 
   .case-figures,
+  .case-summary,
+  .case-columns,
   .case-pair,
   .case-quotes,
   .case-shift,

@@ -355,7 +355,7 @@
       case "p":
         return `<div class="case-text reveal">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}<p>${esc(b.text)}</p></div>`;
       case "list":
-        return `<div class="case-text reveal">${b.label ? `<p>${esc(b.label)}</p>` : ""}${bullets(b.items)}</div>`;
+        return `<div class="case-text reveal">${b.label ? `<h3 class="case-sub">${esc(b.label)}</h3>` : ""}${bullets(b.items)}</div>`;
       case "img":
         return fig(b.src, b.alt);
       case "pair":
@@ -383,6 +383,10 @@
         </div>`;
       case "figures":
         return figures(b.items, "is-small");
+      case "columns":
+        return `<div class="case-columns reveal">${b.items
+          .map(([t, items]) => `<div><h3 class="case-sub">${esc(t)}</h3>${bullets(items)}</div>`)
+          .join("")}</div>`;
       case "trio":
         return `<div class="case-trio reveal">${b.items
           .map(([src, t, d]) => `<figure class="case-fig">${media(src, t, "case-media")}<figcaption><h3 class="case-sub">${esc(t)}</h3><p>${esc(d)}</p></figcaption></figure>`)
@@ -394,6 +398,8 @@
 
   function caseStudy(p, i, next) {
     const c = p.case;
+    let n = 0;
+    const head = (t) => sectionHead(++n, t);
     return `<main class="case">
       <section class="project-head grid-12 wrap">
         <p class="label idx">(${pad(i + 1)})</p>
@@ -409,24 +415,52 @@
       <section class="case-cover wrap reveal">${cover(p)}</section>
 
       <section class="section wrap">
-        ${sectionHead(1, "Overview")}
+        ${head("Summary")}
+        <div class="case-body grid-12">
+          ${c.quote ? `<p class="case-statement reveal">“${esc(c.quote)}”</p>` : ""}
+          <dl class="case-summary reveal">${c.summary
+            .map(([k, v]) => `<div><dt class="case-sub">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+            .join("")}</dl>
+          <div class="case-pair case-ba reveal">${c.beforeAfter
+            .map(([t, sub, src, items], k) => `<figure class="case-fig">
+              <h3 class="case-ba-title">${esc(t)}</h3><p class="case-sub">${esc(sub)}</p>
+              ${media(src, `${t}: ${sub}`, "case-media")}
+              ${bullets(items, k ? "is-pro" : "is-con")}
+            </figure>`)
+            .join("")}</div>
+        </div>
+      </section>
+
+      <section class="section wrap">
+        ${head("Project context")}
         <div class="case-overview grid-12">
-          <div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>
+          <div class="case-role reveal">
+            <h3 class="case-sub">My role</h3>
+            <p class="case-role-title">${esc(c.role)}</p>
+            <h3 class="case-sub">Led</h3>${bullets(c.led)}
+          </div>
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
           </dl>
-          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
+          ${c.timeline ? `<div class="case-timeline reveal">${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
         </div>
       </section>
 
       ${c.sections
         .map(
-          (sec, n) => `<section class="section wrap">
-        ${sectionHead(n + 2, sec.title)}
+          (sec) => `<section class="section wrap">
+        ${head(sec.title)}
         <div class="case-body grid-12">${sec.blocks.map(caseBlock).join("")}</div>
       </section>`
         )
         .join("")}
+
+      ${c.credits ? `<section class="section wrap">
+        ${head("Thank you")}
+        <dl class="facts case-credits reveal">${c.credits
+          .map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+          .join("")}</dl>
+      </section>` : ""}
 
       ${projectNav(next)}
     </main>`;
