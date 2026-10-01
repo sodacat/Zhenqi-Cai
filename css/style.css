@@ -1209,6 +1209,13 @@ ol {
   line-height: var(--lh-body);
 }
 
+/* each fact stays on one line wherever it clears the portrait */
+@media (min-width: 1340px) {
+  .about-tags li {
+    white-space: nowrap;
+  }
+}
+
 .about-tags li + li {
   padding-top: 8px;
 }
