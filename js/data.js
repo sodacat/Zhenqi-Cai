@@ -89,17 +89,6 @@ window.SITE = {
       images: ["images/seller-qualification.jpg"]
     },
     {
-      id: "stonk-tech",
-      type: "work",
-      company: "Stonk Tech",
-      title: "From Idea to Product",
-      summary: "Building a fintech platform from 0→1, brand and product design.",
-      tags: ["0→1", "Fintech", "Brand & Experience"],
-      alt: "Stonk Tech trading platform shown on a laptop",
-      cover: "images/stonk-tech.jpg",
-      images: ["images/stonk-tech.jpg"]
-    },
-    {
       id: "amelia",
       type: "work",
       company: "IBM",
@@ -120,6 +109,17 @@ window.SITE = {
       alt: "SAP logo on a concrete building",
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg"]
+    },
+    {
+      id: "stonk-tech",
+      type: "work",
+      company: "Stonk Tech",
+      title: "From Idea to Product",
+      summary: "Building a fintech platform from 0→1, brand and product design.",
+      tags: ["0→1", "Fintech", "Brand & Experience"],
+      alt: "Stonk Tech trading platform shown on a laptop",
+      cover: "images/stonk-tech.jpg",
+      images: ["images/stonk-tech.jpg"]
     },
     {
       id: "sodacats-world",
