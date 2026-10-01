@@ -131,7 +131,7 @@ window.SITE = {
       summary:
         "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
-      alt: "Sodacat's Taste of the World — world map of 1217 saved places",
+      alt: "Sodacat's Taste of the World — black world map with red places, 1217 kept",
       cover: "images/sodacats-world.webp",
       images: ["images/sodacats-world.webp"]
     },

@@ -466,7 +466,14 @@ ol {
   grid-column: 2 / -1;
 }
 
+/* Figures highlighted like selected text: red fill hugging the number,
+   widened sideways with box-shadow so the digits stay on the grid */
 .stats dt {
+  width: fit-content;
+  padding: 0.06em 0 0.02em;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0.1em 0 0 var(--accent), -0.1em 0 0 var(--accent);
   font-size: clamp(40px, 4.3vw, 72px);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -815,7 +822,6 @@ ol {
 
 .exp-media .card-media {
   flex: 1;
-  background: #2b2621;
 }
 
 .exp-media .card-media img {
