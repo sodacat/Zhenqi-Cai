@@ -156,9 +156,12 @@
             .map(
               (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
                 <span class="exp-thumb">${cover(p)}</span>
-                <span class="exp-id"><span class="exp-no">EXP—${pad(i + 1)} ${arrow}</span><span class="exp-date">${esc(p.date || "")}</span></span>
-                <span class="exp-title">${esc(p.title)}</span>
-                <span class="exp-log">${[p.medium, p.tools, p.status].filter((v) => v && v !== p.date).map(esc).join(" · ")}</span>
+                <span class="work-meta exp-meta">
+                  <span class="label cat">EXP—${pad(i + 1)} · ${esc(p.date || "")}</span>
+                  <span class="work-title exp-title">${esc(p.title)}</span>
+                  <span class="card-tags">${[p.medium, p.tools, p.status].filter((v) => v && v !== p.date).map(esc).join(" · ")}</span>
+                  ${arrow}
+                </span>
               </a></li>`
             )
             .join("")}

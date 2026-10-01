@@ -997,51 +997,36 @@ ol {
   row-gap: var(--space-2xl);
 }
 
-/* Each experiment reads like a catalogued lab record, a different system
-   from the case studies above: the thumbnail, the log number and year, a
-   large title, and a small catalog line at the foot */
+/* Experiment cards follow the work cards: image, then a red label (the
+   log number and year), the title, the catalog line in red, and the square
+   at the foot */
 .exp-index > li {
   display: grid;
 }
 
-/* the catalog labels of the three records sit on one bottom line */
 .exp-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto auto 1fr;
-  row-gap: 16px;
+  grid-template-rows: auto 1fr;
   align-items: start;
 }
 
-/* the catalog lines of the three records share one bottom line */
-.exp-row > .exp-log {
-  align-self: end;
-}
-
-.exp-id {
+.exp-meta {
   display: grid;
-  gap: 4px;
-  font-size: var(--fs-label);
-  line-height: var(--lh-label);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  grid-template-columns: minmax(0, 1fr);
+  /* label, title, then the catalog line on a shared bottom line */
+  grid-template-rows: auto auto 1fr;
+  height: 100%;
+  align-content: start;
+  padding-bottom: 0;
 }
 
-.exp-no {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent);
+.exp-meta > * {
+  grid-column: 1 / -1;
 }
 
-.exp-date {
-  color: var(--fg);
-}
-
-/* catalog line: medium · tools · status, small, no keys */
-.exp-log {
-  font-size: var(--fs-label);
-  line-height: var(--lh-label);
+.exp-meta .card-tags {
+  align-self: end;
 }
 
 .exp-thumb .card-media {
@@ -1049,11 +1034,6 @@ ol {
 }
 
 .exp-title {
-  font-weight: 700;
-  /* the lab record's large title */
-  font-size: var(--fs-title);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
   transition: color var(--dur) var(--ease);
 }
 
