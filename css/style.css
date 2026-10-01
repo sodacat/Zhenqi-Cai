@@ -125,9 +125,9 @@ ol {
   letter-spacing: 0.01em;
 }
 
-/* Category label and the plain line that follows a heading */
+/* Category label (red) and the plain line that follows a heading */
 .cat {
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .sub {
@@ -210,7 +210,7 @@ ol {
   width: var(--arrow);
   height: var(--arrow);
   vertical-align: middle;
-  color: var(--fg);
+  color: var(--accent);
   background: currentColor;
 }
 
@@ -956,7 +956,7 @@ ol {
   padding-right: 32px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  color: var(--fg);
+  color: var(--accent);
 }
 
 /* Every label / content table: label black, content red */
@@ -967,7 +967,7 @@ ol {
 
 .facts dd,
 .project-meta dd {
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .work-title,
@@ -1548,7 +1548,7 @@ ol {
 }
 
 .filters button.is-active:not(:hover) sup {
-  color: var(--fg);
+  color: var(--accent);
 }
 
 /* ---------- Project page ---------- */
@@ -1733,17 +1733,17 @@ ol {
   text-align: right;
 }
 
-/* Imprint: plain black type */
+/* Imprint set as a highlight: red fill, white type */
 .credits span {
   padding: 0 4px;
-  background: transparent;
-  color: var(--fg);
+  background: var(--accent);
+  color: #fff;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* Desktop: the imprint sits on cols 10–12 under the contact box, its text
-   inset like the box's cells */
+/* Desktop: the imprint is a red bar on cols 10–12 under the contact box,
+   its text inset like the box's cells */
 @media (min-width: 1025px) {
   .credits {
     grid-column: 10 / -1;
