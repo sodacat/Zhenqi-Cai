@@ -74,7 +74,8 @@
   }
 
   function contactBlock(n) {
-    return `<section class="section wrap" id="contact">
+    return `<section class="section wrap contact-section" id="contact">
+      <div class="grid-lines grid-12 wrap" aria-hidden="true">${"<span></span>".repeat(12)}</div>
       ${sectionHead(n, "Get in touch")}
       <div class="contact grid-12">
         <h2 class="display reveal">${esc(S.cta)}</h2>

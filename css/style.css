@@ -80,10 +80,10 @@ ol {
 
 .display {
   font-family: var(--sans);
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(28px, 3.4vw, 56px);
   line-height: 1.02;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin: 0;
 }
 
@@ -188,12 +188,17 @@ a:hover .arrow {
 
 .sec-head .idx {
   grid-column: 1 / 3;
-  color: var(--accent);
 }
 
+/* Section names: red Helvetica bold capitals, the page's structural colour */
 .sec-head .sec-title {
   grid-column: 3 / 7;
   margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
 }
 
 .sec-head .sec-link {
@@ -345,8 +350,8 @@ a:hover .arrow {
    Size follows the 6-column width so the longest line always fits. */
 .hero-title {
   margin: 0;
-  font-weight: 500;
-  font-size: min(calc((50vw - 1.5 * var(--pad)) / 7.4), 112px);
+  font-weight: 700;
+  font-size: min(calc((50vw - 1.5 * var(--pad)) / 8.2), 112px);
   line-height: 0.95;
   letter-spacing: -0.035em;
 }
@@ -381,7 +386,7 @@ a:hover .arrow {
 
 .stats dt {
   font-size: clamp(40px, 4.3vw, 72px);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.88;
   font-variant-numeric: tabular-nums;
@@ -543,7 +548,7 @@ a:hover .card-media img.is-loaded {
 .work-num,
 .exp-num {
   font-size: clamp(20px, 1.7vw, 28px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -581,7 +586,7 @@ a:hover .card-media img.is-loaded {
 .exp-side-title,
 .index-title {
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(20px, 1.7vw, 28px);
   line-height: 1.02;
   letter-spacing: -0.03em;
@@ -828,14 +833,56 @@ a:hover .card-media img.is-loaded {
 }
 
 /* ---------- Contact ---------- */
+/* Get in touch: a full-bleed red field with the 12-column grid drawn on it */
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(24px, 3vw, 48px) clamp(56px, 7vw, 120px);
+  background: var(--accent);
+  color: #fff;
+}
+
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.grid-lines span {
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.contact-section .sec-head {
+  border-top-color: #fff;
+}
+
+.contact-section .sec-title {
+  color: #fff;
+}
+
 .contact {
   align-items: end;
   row-gap: 32px;
 }
 
 .contact .display {
-  grid-column: 1 / 9;
-  font-size: clamp(32px, 4.6vw, 80px);
+  grid-column: 1 / 10;
+  font-size: clamp(36px, 6vw, 104px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.contact-section .contact-box {
+  border-color: #fff;
+}
+
+/* On red, the hovered cell inverts to white */
+.contact-section .contact-box a:hover,
+.contact-section .contact-box a:focus-visible {
+  background: #fff;
+  color: var(--accent);
 }
 
 /* Contact links: one box spanning exactly cols 10–12 */
@@ -999,7 +1046,7 @@ a:hover .card-media img.is-loaded {
 
 .service h3 {
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(18px, 1.6vw, 26px);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -1298,6 +1345,14 @@ a:hover .card-media img.is-loaded {
     row-gap: 20px;
   }
 
+  .grid-lines {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .grid-lines span {
+    grid-column: auto !important;
+  }
+
   .grid-12 > * {
     grid-column: 1 / -1 !important;
   }
@@ -1389,7 +1444,7 @@ a:hover .card-media img.is-loaded {
   }
 
   .hero-title {
-    font-size: calc((100vw - 2 * var(--pad)) / 7.4);
+    font-size: calc((100vw - 2 * var(--pad)) / 8.2);
   }
 
   .hero-bottom > * {
