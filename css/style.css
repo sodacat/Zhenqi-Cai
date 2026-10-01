@@ -323,18 +323,21 @@ ol {
 }
 
 .nav {
-  grid-column: 7 / 11;
+  grid-column: 7 / -1;
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Desktop nav: one outlined box from column 7 (the hero image's left edge)
-   to the end of column 10, one cell per link — the same object as the
-   contact box. Hover fills a cell red; the current page is filled black. */
+/* Desktop nav: one outlined box exactly over the hero image — from half a
+   module into column 7 to the right edge — one cell per link, the same
+   object as the contact box. Hover fills a cell red; the current page is
+   filled black. */
 @media (min-width: 681px) {
   .nav {
     flex-wrap: nowrap;
     border: 1px solid var(--fg);
+    /* same offset as the hero image */
+    margin-left: calc((100% + var(--pad)) / 12);
   }
 
   .nav a,
@@ -1617,12 +1620,8 @@ ol {
   }
 }
 
-/* Mid widths: the nav box runs from column 7 to the right edge */
+/* Mid widths: the contact box widens to columns 9–12 */
 @media (min-width: 681px) and (max-width: 1100px) {
-  .nav {
-    grid-column: 7 / -1;
-  }
-
   .contact-side {
     grid-column: 9 / -1;
   }
