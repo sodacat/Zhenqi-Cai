@@ -348,12 +348,16 @@
       .join("")}</dl>`;
   const bullets = (items, cls = "") => `<ul class="case-list ${cls}">${items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
 
+  // text, then an optional list, then optional closing text
+  const paras = (t) => [].concat(t || []).map((x) => `<p>${esc(x)}</p>`).join("");
+  const prose = (b) => paras(b.text) + (b.items ? bullets(b.items) : "") + paras(b.after);
+
   function caseBlock(b) {
     switch (b.type) {
       case "statement":
         return `<p class="case-statement reveal">${esc(b.text)}</p>`;
       case "p":
-        return `<div class="case-text reveal">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}<p>${esc(b.text)}</p></div>`;
+        return `<div class="case-text reveal">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}${prose(b)}</div>`;
       case "list":
         return `<div class="case-text reveal">${b.label ? `<h3 class="case-sub">${esc(b.label)}</h3>` : ""}${bullets(b.items)}</div>`;
       case "img":
@@ -364,7 +368,7 @@
           .join("")}</div>`;
       case "quotes":
         return `<div class="case-quotes reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
-          .map(([q, who]) => `<blockquote><p>“${esc(q)}”</p><cite class="label">— ${esc(who)}</cite></blockquote>`)
+          .map(([q, who]) => `<blockquote><p>“${esc(q)}”</p>${who ? `<cite class="label">— ${esc(who)}</cite>` : ""}</blockquote>`)
           .join("")}</div>`;
       case "shift":
         return `<div class="case-shift reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}
@@ -380,6 +384,22 @@
             ${b.cons ? bullets(b.cons, "is-con") : ""}
           </div>
           ${b.note ? `<p class="case-note">${esc(b.note)}</p>` : ""}
+        </div>`;
+      case "row":
+        return `<div class="case-row reveal" style="--n:${b.items.length}">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
+          .map(([src, cap]) => `<figure class="case-fig">${media(src, cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
+          .join("")}</div>`;
+      case "cards":
+        return `<div class="case-cards reveal" style="--n:${b.items.length}">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
+          .map((c) => `<div><h3 class="case-card-title">${esc(c.title)}</h3>${prose(c)}</div>`)
+          .join("")}</div>`;
+      case "side":
+        return `<div class="case-side${b.narrow ? " is-narrow" : ""} reveal">
+          <div class="case-side-text">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}${prose(b)}
+            ${b.pros ? `<p class="label case-verdict-label">Pros</p>${bullets(b.pros, "is-pro")}` : ""}
+            ${b.cons ? `<p class="label case-verdict-label">Cons</p>${bullets(b.cons, "is-con")}` : ""}
+          </div>
+          <figure class="case-fig">${media(b.src, b.alt || b.title || "", "case-media")}</figure>
         </div>`;
       case "figures":
         return figures(b.items, "is-small");
@@ -407,7 +427,7 @@
 
       <section class="case-intro grid-12 wrap">
         <p class="lead case-lead reveal">${esc(c.lead)}</p>
-        ${figures(c.impact)}
+        ${c.impact ? figures(c.impact) : ""}
       </section>
 
       <section class="case-cover wrap reveal">${cover(p)}</section>
@@ -415,12 +435,15 @@
       <section class="section wrap">
         ${sectionHead(1, "Overview")}
         <div class="case-overview grid-12">
-          <div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>
+          ${c.role
+            ? `<div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>`
+            : `<div class="case-role case-text reveal">${c.aboutTitle ? `<h3 class="case-sub">${esc(c.aboutTitle)}</h3>` : ""}${paras(c.about)}</div>`}
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
           </dl>
           ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
         </div>
+        ${c.overview ? `<div class="case-body case-more grid-12">${c.overview.map(caseBlock).join("")}</div>` : ""}
       </section>
 
       ${c.sections

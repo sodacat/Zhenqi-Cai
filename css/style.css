@@ -1916,7 +1916,92 @@ ol {
   margin: 0;
 }
 
+.case-more {
+  margin-top: var(--space-2xl);
+}
+
+/* a row of n images, each with an optional caption */
+.case-row,
+.case-cards {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  column-gap: var(--pad);
+  row-gap: 16px;
+  align-items: start;
+}
+
+.case-row figcaption {
+  margin-top: 8px;
+}
+
+/* text cards: a bold title over a short paragraph or list */
+.case-card-title {
+  margin: 0 0 8px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 700;
+}
+
+.case-cards p {
+  margin: 0;
+}
+
+.case-cards p + p,
+.case-cards p + .case-list,
+.case-text .case-list + p,
+.case-cards .case-list + p {
+  margin-top: 16px;
+}
+
+/* text on columns 1–6, image on 7–12 (narrow: 9–12) */
+.case-side {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--pad);
+  align-items: start;
+}
+
+.case-side-text { grid-column: 1 / 7; }
+.case-side > .case-fig { grid-column: 7 / -1; }
+.case-side.is-narrow > .case-fig { grid-column: 9 / -1; }
+
+.case-side-text p {
+  margin: 0;
+}
+
+.case-side-text p + p,
+.case-side-text p + .case-list,
+.case-side-text .case-list + p {
+  margin-top: 16px;
+}
+
+.case-verdict-label {
+  margin: 16px 0 8px !important;
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .case-row[style*="--n:4"],
+  .case-row[style*="--n:5"],
+  .case-cards[style*="--n:4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-cards[style*="--n:3"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 680px) {
+  .case-row,
+  .case-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: var(--space-xl);
+  }
+
+  .case-side { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
+  .case-side > * { grid-column: 1 / -1 !important; }
+
   .case-title,
   .case-lead,
   .case-role,
