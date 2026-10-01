@@ -547,6 +547,13 @@ ol {
   letter-spacing: -0.035em;
 }
 
+/* Home headline: sized so its longest line, "where complexity", runs the
+   full six columns — every line starts on col 1 or ends on col 6 and the
+   longest does both (50vw − 1.5 gutters is the width of cols 1–6) */
+.hero-text .hero-title {
+  font-size: calc((50vw - 1.5 * var(--pad)) / 7.83);
+}
+
 .hero-title span {
   display: block;
   white-space: nowrap;
@@ -2001,6 +2008,10 @@ ol {
 
   .hero-title {
     font-size: calc((100vw - 2 * var(--pad)) / 8.2);
+  }
+
+  .hero-text .hero-title {
+    font-size: calc((100vw - 2 * var(--pad)) / 7.83);
   }
 
   .hero-bottom > * {
