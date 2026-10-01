@@ -22,8 +22,12 @@
     </div>`;
   }
 
-  const tags = (p) =>
-    `<ul class="tags label">${[...(p.tags || []), p.highlight].filter(Boolean).map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+  // Label / content rows, set like the info block of a Swiss poster
+  const facts = (rows) =>
+    `<dl class="facts-list">${rows
+      .filter(([, v]) => v)
+      .map(([k, v]) => `<div><dt class="label muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+      .join("")}</dl>`;
 
   // Numbered Swiss section head: (01) ——— Title ——— View all →
   function sectionHead(n, title, link) {
@@ -36,13 +40,14 @@
 
   function workCard(p, n) {
     return `<a class="work-card reveal" href="${projectUrl(p)}" data-type="${esc(p.type)}">
-      <span class="label work-num">${pad(n)}</span>
+      <span class="work-num">${pad(n)}</span>
       ${media(p.cover, p.alt || p.title)}
       <div class="work-meta">
         <span class="label">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <div class="work-foot">${tags(p)}${arrow}</div>
+        ${facts([["Focus", (p.tags || []).join(", ")], ["Impact", p.impact]])}
+        ${arrow}
       </div>
     </a>`;
   }
@@ -107,17 +112,21 @@
         <div class="hero-text">
           <p class="label idx">(01)</p>
           <p class="label hero-role">${esc(S.role)}</p>
-          <h1 class="display display-xl reveal">${esc(S.headline)}</h1>
-          <p class="hero-intro reveal">${esc(S.intro)}</p>
-          <div class="hero-proof reveal">
-            <ul class="clients">${S.clients
-              .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
-              .join("")}</ul>
+          <h1 class="hero-title reveal" aria-label="${esc(S.headline)}">${S.headlineLines
+            .map(([t, a]) => `<span class="${a === "r" ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`)
+            .join("")}</h1>
+          <div class="hero-bottom reveal">
             <dl class="stats">
               ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
             </dl>
+            <div class="hero-info">
+              <p class="hero-intro">${esc(S.intro)}</p>
+              <ul class="clients">${S.clients
+                .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
+                .join("")}</ul>
+              <a class="btn btn-accent hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+            </div>
           </div>
-          <a class="btn btn-accent hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
         </div>
         <div class="hero-media reveal">
           ${media(S.hero, S.heroAlt)}
@@ -133,7 +142,7 @@
         ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
         <div class="exp grid-12">
           <div class="exp-feature reveal">
-          <span class="label exp-num">01</span>
+          <span class="exp-num">01</span>
           <a class="exp-media" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
           <div class="exp-body">
             <div class="exp-head">
@@ -151,7 +160,7 @@
               .slice(0, 2)
               .map(
                 (p, i) => `<li class="reveal"><a href="${projectUrl(p)}">
-                  <span class="label exp-num">${pad(i + 2)}</span>
+                  <span class="exp-num">${pad(i + 2)}</span>
                   ${media(p.cover, p.alt || p.title)}
                   <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
                   <span class="label muted exp-side-sub">${esc(p.company)}</span>
@@ -168,6 +177,7 @@
           <h2 class="display reveal">${lines(S.statement)}</h2>
           <div class="about-body reveal">
             ${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
+            ${facts(S.facts)}
             <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
           </div>
           <div class="about-media reveal">${media(S.portrait, S.name)}</div>

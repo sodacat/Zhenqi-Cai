@@ -11,6 +11,14 @@ window.SITE = {
   location: "Austin, TX",
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
   headline: "I design systems where complexity becomes clarity.",
+  // The same headline set as poster lines: "l" = flush left, "r" = flush right
+  headlineLines: [
+    ["I design", "l"],
+    ["systems", "r"],
+    ["where complexity", "l"],
+    ["becomes", "r"],
+    ["clarity.", "l"]
+  ],
   intro:
     "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
   clients: [
@@ -18,7 +26,10 @@ window.SITE = {
     { name: "IBM", logo: "images/logo-ibm.webp" },
     { name: "SAP", logo: "images/logo-sap.png" }
   ],
-  stats: [{ value: "100M+", label: "Scale" }],
+  stats: [
+    { value: "7+", label: "Years" },
+    { value: "100M+", label: "Scale" }
+  ],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
 
@@ -27,6 +38,12 @@ window.SITE = {
     "I care about designing trustworthy experiences that help people navigate complexity and make better decisions."
   ],
   portrait: "images/portrait.jpg",
+  // About: label / content pairs
+  facts: [
+    ["Based", "Austin, TX"],
+    ["Experience", "7+ years — Amazon, SAP, IBM, startups"],
+    ["Focus", "Complex systems, AI experiences"]
+  ],
 
   philosophy: [
     { title: "Clarity", text: "Turn complexity into understanding." },
@@ -56,7 +73,7 @@ window.SITE = {
    * Projects. type: "work" (case study) or "experiment" (AI experiments).
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
-   * `highlight` is the last tag on cards (a metric or focus).
+   * `tags` show as Focus on cards; `impact` (optional) shows as Impact.
    * Optional fields: year, role, description, images, alt (cover image text).
    */
   projects: [
@@ -67,7 +84,7 @@ window.SITE = {
       title: "Seller Qualification",
       summary: "Re-architecting a compliance system into seller growth infrastructure.",
       tags: ["Complex systems", "Commerce"],
-      highlight: "+20% completion",
+      impact: "+20% completion",
       alt: "Amazon boxes on a conveyor belt",
       cover: "images/seller-qualification.jpg",
       images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
@@ -89,8 +106,7 @@ window.SITE = {
       company: "IBM",
       title: "Amelia",
       summary: "Designing an AI system for reasoning about complex relationships.",
-      tags: ["AI", "Enterprise"],
-      highlight: "Design systems",
+      tags: ["AI", "Enterprise", "Design systems"],
       alt: "Illuminated IBM logo on a dark facade",
       cover: "images/amelia.jpg",
       images: ["images/amelia.jpg", "images/amelia-2.jpg"]
@@ -101,8 +117,7 @@ window.SITE = {
       company: "SAP",
       title: "Enterprise Experience",
       summary: "Unifying complex workflows across global teams.",
-      tags: ["Enterprise", "Workflow"],
-      highlight: "Scale",
+      tags: ["Enterprise", "Workflow", "Scale"],
       alt: "SAP logo on a concrete building",
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
