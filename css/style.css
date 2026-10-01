@@ -1089,12 +1089,14 @@ ol {
 .about-side {
   grid-column: 7 / 10;
   display: grid;
+  /* one track, as wide as the first fact line: the button stretches to it */
+  grid-template-columns: max-content;
   justify-items: start;
-  row-gap: var(--lh-body);
 }
 
+/* the facts join the column's grid so the first line sizes the track */
 .about-tags {
-  margin: 0;
+  display: contents;
   color: var(--accent);
 }
 
@@ -1103,12 +1105,17 @@ ol {
   line-height: var(--lh-body);
 }
 
+/* later lines keep their full length but don't widen the track */
 .about-tags li + li {
+  width: 0;
   padding-top: 8px;
+  white-space: nowrap;
 }
 
 .about-side .btn {
-  margin-top: 8px;
+  justify-self: stretch;
+  justify-content: space-between;
+  margin-top: calc(var(--lh-body) + 8px);
 }
 
 /* Portrait with a magazine caption under it */
