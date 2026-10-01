@@ -310,6 +310,7 @@ ol {
 
 /* ---------- Header ---------- */
 .site-header {
+  --brand-fs: clamp(56px, 7.5vw, 120px);
   padding-top: var(--space-l);
   align-items: center;
 }
@@ -325,7 +326,7 @@ ol {
 .brand {
   grid-column: 1 / 6;
   font-weight: 700;
-  font-size: clamp(56px, 7.5vw, 120px);
+  font-size: var(--brand-fs);
   line-height: 0.8;
   letter-spacing: -0.035em;
   margin-left: -0.03em;
@@ -347,6 +348,10 @@ ol {
     border: 1px solid var(--fg);
     /* same offset as the hero image */
     margin-left: calc((100% + var(--pad)) / 12);
+    /* bottom edge on the ZC baseline: the mark's line box ends ~0.058em
+       below its letters */
+    align-self: end;
+    margin-bottom: calc(var(--brand-fs) * 0.058);
   }
 
   .nav a,
