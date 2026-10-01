@@ -575,33 +575,15 @@ ol {
   opacity: 1;
 }
 
-/* Halftone: work covers print as black-and-white dots (an overlay of
-   paper-white with round holes), and show their own colour on hover */
+/* Work covers are shown in black and white, and in colour on hover */
 .halftone .card-media img {
-  filter: grayscale(1) contrast(1.35) brightness(1.05);
+  filter: grayscale(1);
   transition: filter var(--dur) var(--ease), opacity 0.4s var(--ease);
-}
-
-.halftone .card-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image: radial-gradient(circle at center, transparent 0 1.15px, #fff 1.65px);
-  background-size: 4px 4px;
-  opacity: 0.85;
-  transition: opacity var(--dur) var(--ease);
 }
 
 .halftone:hover .card-media img,
 .halftone:focus-visible .card-media img {
   filter: none;
-}
-
-.halftone:hover .card-media::after,
-.halftone:focus-visible .card-media::after {
-  opacity: 0;
 }
 
 /* Linked cards: title and arrow turn red */
