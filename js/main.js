@@ -177,7 +177,6 @@
           </div>
           <figure class="about-media reveal">
             ${media(S.portrait, S.name)}
-            <figcaption class="about-caption"><span class="label">Fig. 01</span><br>${esc(S.name)}, ${esc(S.role)}</figcaption>
           </figure>
         </div>
       </section>

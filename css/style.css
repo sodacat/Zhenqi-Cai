@@ -969,8 +969,8 @@ ol {
   grid-row: 1;
 }
 
-/* Text block: one rectangle under a black rule. The bio runs in two
-   justified columns (3 grid columns each, cols 1–6); the highlights and
+/* Text block: the bio runs in two flush-left
+   columns (3 grid columns each, cols 1–6); the highlights and
    the button stack in the third (cols 7–9). */
 .about-body {
   grid-column: 1 / 10;
@@ -989,9 +989,6 @@ ol {
   column-count: 2;
   column-fill: balance;
   column-gap: var(--pad);
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 .about-text p {
@@ -1040,12 +1037,6 @@ ol {
 
 .about-media .card-media {
   aspect-ratio: 4 / 5;
-}
-
-.about-caption {
-  margin-top: 16px;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
 }
 
 /* Dividers sit at the start of the gutter: one full gutter between the
