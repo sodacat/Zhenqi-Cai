@@ -1532,7 +1532,8 @@ ol {
 
 .footer-top {
   border-top: var(--rule);
-  padding-top: var(--space-2xl);
+  /* the footer is set tighter than the page: half the section gap */
+  padding-top: calc(var(--space-2xl) / 2);
   align-items: start;
   row-gap: 24px;
 }
@@ -1599,10 +1600,12 @@ ol {
   grid-column: 1 / 5;
 }
 
+/* flush right, on the right edge of the nav box above */
 .credits {
   grid-column: 10 / -1;
   margin: 0;
   padding-bottom: 16px;
+  text-align: right;
 }
 
 /* Imprint set as a highlight: red fill hugging the words, white type */
@@ -2005,10 +2008,6 @@ ol {
     grid-template-columns: 1fr;
     gap: 8px;
     padding-bottom: 32px;
-  }
-
-  .credits {
-    text-align: left;
   }
 
   /* one column on phones: the mark takes the full content width */
