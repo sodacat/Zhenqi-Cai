@@ -2860,3 +2860,18 @@ ol {
 .case-map strong {
   letter-spacing: -0.01em;
 }
+
+/* project page end: three cards across */
+.work-grid.is-three > .work-card {
+  grid-column: span 4;
+}
+
+@media (max-width: 1024px) {
+  .work-grid.is-three > .work-card { grid-column: span 6; }
+  .work-grid.is-three > .work-card:nth-child(3) { display: none; }
+}
+
+@media (max-width: 680px) {
+  .work-grid.is-three > .work-card { grid-column: 1 / -1; }
+  .work-grid.is-three > .work-card:nth-child(3) { display: grid; }
+}

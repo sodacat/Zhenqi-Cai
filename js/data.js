@@ -145,7 +145,7 @@ window.SITE = {
               { type: "p", text: ["The original qualification system was built around **sequential error surfacing** — revealing one restriction at a time to ensure compliance precision.", "This wasn't a UX failure. It was a deliberate architectural choice that externalized all complexity onto sellers."] },
               { type: "shift", quiet: true, label: "The question shifted", from: "How do we improve error messaging?", to: "How do we preserve compliance rigor while enabling seller growth?" },
               { type: "p", text: "This reframe moved the problem from a UI fix to an infrastructure design challenge — one that directly affected seller monetization velocity." },
-              { type: "img", src: "images/seller-qualification/reframe.webp", size: "md", alt: "After: parallel qualification unblocks sellers — requirements resolved side by side with live status" }
+              { type: "img", src: "images/seller-qualification/reframe.webp", alt: "Before: sequential enforcement creates a repeat loop. After: parallel qualification unblocks sellers." }
             ]
           },
           {

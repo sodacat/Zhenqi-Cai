@@ -331,15 +331,23 @@
   }
 
   /* ---------- Case study ---------- */
-  const projectNav = (next) => `<section class="wrap">
-        <div class="project-nav">
-          <a class="label link-line" href="index.html#work">All work ${arrow}</a>
-          <a class="next" href="${projectUrl(next)}">
-            <span class="label cat">Next project</span>
-            <div class="display">${esc(next.title)} ${arrow}</div>
-          </a>
+  // End of a project page: the other case studies as cards, next one
+  // first, with the link back to all work in the section head
+  const projectNav = (next) => {
+    const all = S.projects;
+    const current = all[(all.indexOf(next) - 1 + all.length) % all.length];
+    const work = all.filter((p) => p.type === "work" && p !== current);
+    const at = Math.max(0, work.indexOf(next));
+    const others = [...work.slice(at), ...work.slice(0, at)];
+    return `<section class="section wrap more-work">
+        <div class="sec-head grid-12">
+          <span class="label idx">Next</span>
+          <h2 class="label sec-title">More work</h2>
+          <a class="label link-line sec-link" href="index.html#work">All work ${arrow}</a>
         </div>
+        <div class="work-grid is-three">${others.slice(0, 3).map(workCard).join("")}</div>
       </section>`;
+  };
 
   const fig = (src, alt, cls = "") => `<figure class="case-fig ${cls} reveal">${media(src, alt, "case-media")}</figure>`;
   // frame: the image sits on a grey mat; size "md": columns 1–8 only
