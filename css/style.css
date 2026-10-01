@@ -1108,14 +1108,6 @@ ol {
   position: relative;
 }
 
-/* The list is padded by a frame's depth at both ends, so a hovered
-   piece's frame keeps the one gap to the section head above and to the
-   next rule below */
-.work-grid,
-.exp-index {
-  padding-top: var(--frame-y);
-  padding-bottom: var(--frame-y);
-}
 
 .work-card::after,
 .exp-row::after {
