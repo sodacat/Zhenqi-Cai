@@ -1038,8 +1038,8 @@ ol {
 /* ---------- About (home) ---------- */
 
 /* Magazine page on the 12-column grid:
-   statement (1–6)                              | portrait + caption
-   text block (1–9): bio in two columns, facts  | (10–12, both rows) */
+   statement (1–6)                                  | portrait
+   lead flush right (3–6) | rest flush left (7–9)   | (10–12, both rows) */
 .about {
   align-items: start;
   row-gap: var(--space-2xl);
@@ -1058,48 +1058,43 @@ ol {
   grid-row: 1;
 }
 
-/* Text block: the bio runs in two flush-left
-   columns (3 grid columns each, cols 1–6); the highlights and
-   the button stack in the third (cols 7–9). */
+/* Text block set like a Swiss poster: two columns meet at one axis (the
+   gutter between columns 6 and 7). The lead paragraph is flush right on
+   columns 3–6; the second paragraph, the facts and the button are flush
+   left on columns 7–9. Both start on the same top line. */
 .about-body {
   grid-column: 1 / 10;
   grid-row: 2;
   display: grid;
   grid-template-columns: subgrid;
-  grid-template-rows: auto 1fr;
+  align-items: start;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
 
-.about-text {
-  grid-column: 1 / 7;
-  grid-row: 1 / span 2;
-  align-self: start;
-  column-count: 2;
-  column-fill: balance;
-  column-gap: var(--pad);
-}
-
-.about-text p {
+.about-lead {
+  grid-column: 3 / 7;
   margin: 0;
-  orphans: 1;
-  widows: 1;
+  text-align: right;
 }
 
-/* Paragraphs set flush left with no indent, separated by one blank line */
-.about-text p + p {
-  margin-top: var(--lh-body);
+.about-side {
+  grid-column: 7 / 10;
+  display: grid;
+  justify-items: start;
+  row-gap: var(--lh-body);
+}
+
+.about-side p {
+  margin: 0;
 }
 
 .about-tags {
-  grid-column: 7 / 10;
-  grid-row: 1;
   margin: 0;
   color: var(--accent);
 }
 
 .about-tags li {
-  padding: 0 0 8px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
@@ -1108,12 +1103,8 @@ ol {
   padding-top: 8px;
 }
 
-.about-body .btn {
-  grid-column: 7 / 10;
-  grid-row: 2;
-  align-self: end;
-  justify-self: start;
-  margin-top: 24px;
+.about-side .btn {
+  margin-top: 8px;
 }
 
 /* Portrait with a magazine caption under it */
@@ -1123,16 +1114,6 @@ ol {
   margin: 0;
 }
 
-/* Desktop: the photo starts a quarter module into column 10, so the
-   space between the facts / button and the photo reads about the same as
-   the space between the hero headline and its image.
-   (100% + gutter) / 12 is a quarter of one column step of this 3-column
-   area */
-@media (min-width: 1025px) {
-  .about-media {
-    margin-left: calc((100% + var(--pad)) / 12);
-  }
-}
 
 /* Portrait cropped to a circle as wide as its columns: head and shoulders */
 .about-media .card-media {
@@ -1693,13 +1674,12 @@ ol {
     grid-column: 1 / -1;
   }
 
-  .about-text {
-    grid-column: 1 / 9;
+  .about-lead {
+    grid-column: 1 / 7;
   }
 
-  .about-tags,
-  .about-body .btn {
-    grid-column: 9 / -1;
+  .about-side {
+    grid-column: 7 / -1;
   }
 
   .contact .display,
@@ -1742,13 +1722,14 @@ ol {
     line-height: 0.9;
   }
 
-  /* phones: statement, text (one column), portrait, caption */
+  /* phones: statement, text (one column, flush left), portrait */
   .about-body,
-  .about-media,
-  .about-text,
-  .about-tags,
-  .about-body .btn {
+  .about-media {
     grid-row: auto;
+  }
+
+  .about-lead {
+    text-align: left;
   }
 
   .about-body {
@@ -1760,13 +1741,6 @@ ol {
     grid-column: 1 / -1 !important;
   }
 
-  .about-text {
-    column-count: 1;
-  }
-
-  .about-body .btn {
-    margin-top: 0;
-  }
 
   /* phones: thumbnail + arrow on top, then title, summary */
   .exp-row {

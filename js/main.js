@@ -170,9 +170,12 @@
         <div class="about grid-12">
           <h2 class="hero-title statement reveal" aria-label="${esc(S.statement.join(" "))}">${posterLines(S.statementLines)}</h2>
           <div class="about-body reveal">
-            <div class="about-text">${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}</div>
-            <ul class="about-tags">${S.facts.map((v) => `<li>${esc(v)}</li>`).join("")}</ul>
-            <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
+            <p class="about-lead">${emph(S.bio[0])}</p>
+            <div class="about-side">
+              ${S.bio.slice(1).map((b) => `<p>${emph(b)}</p>`).join("")}
+              <ul class="about-tags">${S.facts.map((v) => `<li>${esc(v)}</li>`).join("")}</ul>
+              <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
+            </div>
           </div>
           <figure class="about-media reveal">
             ${media(S.portrait, S.name)}
