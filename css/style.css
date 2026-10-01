@@ -638,9 +638,10 @@ ol {
 }
 
 /* Pictures (work covers, AI experiments, hero portrait) are shown in black
-   and white, and in colour on hover */
+   and white, and in colour on hover. Experiment thumbnails are filtered as a
+   whole, so the CSS geometric covers turn grey too */
 .halftone .card-media img,
-.exp-thumb .card-media img,
+.exp-thumb .card-media,
 .hero-media .card-media img,
 .about-media .card-media img,
 .about-page-media .card-media img {
@@ -650,8 +651,8 @@ ol {
 
 .halftone:hover .card-media img,
 .halftone:focus-visible .card-media img,
-.exp-row:hover .card-media img,
-.exp-row:focus-visible .card-media img,
+.exp-row:hover .exp-thumb .card-media,
+.exp-row:focus-visible .exp-thumb .card-media,
 .hero-media:hover .card-media img,
 .about-media:hover .card-media img,
 .about-page-media:hover .card-media img {
@@ -870,7 +871,7 @@ ol {
 .exp-row > .arrow { grid-column: 12; justify-self: end; font-size: var(--fs-title); line-height: 1; }
 
 .exp-thumb .card-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
 }
 
 .exp-title {
