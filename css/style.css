@@ -1,7 +1,17 @@
+/* Inter Tight (SIL Open Font License), self-hosted: one variable file, latin */
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-tight-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /*
  * Swiss / International Typographic Style — one system for the whole site
  *
- * Type     Helvetica only, mixed case throughout (no tracked capitals). Bold
+ * Type     Inter Tight (a grotesk; Helvetica as fallback), mixed case. Bold
  *          for display, titles and labels; Regular for reading text.
  *          Labels: 13px bold. Pairs read bold line / regular line.
  * Labels   Category = red bold capitals; content beneath it = black.
@@ -28,7 +38,8 @@
   --placeholder: #efefed;
   --pad: clamp(16px, 2vw, 32px);
   --gap: clamp(12px, 1.2vw, 20px);
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* a true grotesk, loaded for every visitor; Helvetica only as fallback */
+  --sans: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --dur: 0.18s;
 
@@ -77,6 +88,8 @@ body {
   font-family: var(--sans);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+  /* Inter Tight is drawn tight for display; reading sizes open up a touch */
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -109,12 +122,12 @@ ol {
   font-size: var(--fs-label);
   font-weight: 700;
   line-height: var(--lh-label);
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
 }
 
-/* Category label (red) and the plain line that follows a heading */
+/* Category label and the plain line that follows a heading */
 .cat {
-  color: var(--accent);
+  color: var(--fg);
 }
 
 .sub {
@@ -132,27 +145,32 @@ ol {
   font-weight: 700;
   font-size: var(--fs-display);
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
 .display-xl {
   font-size: var(--fs-display);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .lead {
   font-size: var(--fs-title);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin: 0;
 }
 
-/* Red emphasis inside copy: one word or phrase, never more */
+/* Emphasis: red only in the hero headline ("clarity."); in copy it reads
+   as plain text */
 .hl {
-  color: var(--accent);
+  color: inherit;
   font-style: normal;
+}
+
+.hero-title .hl {
+  color: var(--accent);
 }
 
 /* The mark's full stop is a square, not a round period */
@@ -197,7 +215,7 @@ ol {
   width: var(--arrow);
   height: var(--arrow);
   vertical-align: middle;
-  color: var(--accent);
+  color: var(--fg);
   background: currentColor;
 }
 
@@ -261,7 +279,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   padding: var(--box-pad) var(--box-pad-x);
   border: 1px solid var(--fg);
   background: var(--bg);
@@ -328,7 +346,7 @@ ol {
   grid-column: 1 / 3;
 }
 
-/* Section names: red Helvetica bold capitals, the page's structural colour */
+/* Section names: bold, black */
 .sec-head .sec-title {
   grid-column: 3 / 7;
   margin: 0;
@@ -336,8 +354,8 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  letter-spacing: 0;
-  color: var(--accent);
+  letter-spacing: 0.01em;
+  color: var(--fg);
 }
 
 .sec-head .sec-link {
@@ -353,11 +371,11 @@ ol {
 
 /* Rule under the header row, inside the page gutters: half the section
    gap below the nav box / ZC baseline — the same as the footer rule to the
-   footer text (the mark's line box ends ~0.058em under its baseline) */
+   footer text (the mark's line box ends ~0.04em under its baseline) */
 .site-header::after {
   content: "";
   grid-column: 1 / -1;
-  margin-top: calc(var(--space-2xl) / 2 - var(--brand-fs) * 0.058);
+  margin-top: calc(var(--space-2xl) / 2 - var(--brand-fs) * 0.04);
   border-top: var(--rule);
 }
 
@@ -366,7 +384,7 @@ ol {
   font-weight: 700;
   font-size: var(--brand-fs);
   line-height: 0.8;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   margin-left: -0.03em;
 }
 
@@ -383,10 +401,10 @@ ol {
   .nav {
     flex-wrap: nowrap;
     border: 1px solid var(--fg);
-    /* bottom edge on the ZC baseline: the mark's line box ends ~0.058em
+    /* bottom edge on the ZC baseline: the mark's line box ends ~0.04em
        below its letters */
     align-self: end;
-    margin-bottom: calc(var(--brand-fs) * 0.058);
+    margin-bottom: calc(var(--brand-fs) * 0.04);
   }
 
   .nav a,
@@ -475,8 +493,8 @@ ol {
   margin: 0 0 var(--space-2xl);
   font-size: var(--fs-label);
   line-height: var(--lh-label);
-  letter-spacing: 0;
-  color: var(--accent);
+  letter-spacing: 0.01em;
+  color: var(--fg);
 }
 
 .page-title > h1,
@@ -526,15 +544,15 @@ ol {
   margin: 0;
 }
 
-/* Same treatment as section names: red bold capitals */
+/* Same treatment as section names */
 .hero-text .hero-role {
   grid-column: 3 / -1;
   grid-row: 1;
   margin: 0 0 var(--space-xl);
   font-size: var(--fs-label);
   line-height: var(--lh-label);
-  letter-spacing: 0;
-  color: var(--accent);
+  letter-spacing: 0.01em;
+  color: var(--fg);
 }
 
 /* Headline set like a poster: lines alternate flush left / flush right.
@@ -544,14 +562,14 @@ ol {
   font-weight: 700;
   font-size: min(calc((50vw - 1.5 * var(--pad)) / 8.2), 112px);
   line-height: 0.95;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
 }
 
 /* Home headline: sized so its longest line, "where complexity", runs the
    full six columns — every line starts on col 1 or ends on col 6 and the
    longest does both (50vw − 1.5 gutters is the width of cols 1–6) */
 .hero-text .hero-title {
-  font-size: calc((50vw - 1.5 * var(--pad)) / 7.83);
+  font-size: calc((50vw - 1.5 * var(--pad)) / 7.933);
   /* each line is one row of the vertical grid: its height is snapped to a
      multiple of the 8px unit */
   line-height: round(nearest, 0.95em, 8px);
@@ -644,7 +662,7 @@ ol {
   color: #fff;
   font-size: var(--fs-display);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 0.88;
   font-variant-numeric: tabular-nums;
 }
@@ -652,6 +670,10 @@ ol {
 @media (min-width: 681px) {
   .stats dt {
     width: auto;
+    min-width: max-content;
+    /* sized so the "100M+" block fills exactly cols 2–3
+       ((100vw − 13 gutters) / 6 + 1 gutter); the block measures ~3.58em */
+    font-size: calc(((100vw - 13 * var(--pad)) / 6 + var(--pad)) / 3.6);
   }
 }
 
@@ -680,10 +702,8 @@ ol {
   display: grid;
 }
 
-/* justified: every full line runs the three columns 4–6 edge to edge */
 .hero-intro {
   margin: 0;
-  text-align: justify;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--fg);
@@ -700,7 +720,7 @@ ol {
 .client {
   font-size: var(--fs-title);
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   line-height: 1;
 }
 
@@ -806,7 +826,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   color: var(--muted);
 }
 
@@ -941,7 +961,7 @@ ol {
   padding-right: 32px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  color: var(--accent);
+  color: var(--fg);
 }
 
 /* Every label / content table: label black, content red */
@@ -952,7 +972,7 @@ ol {
 
 .facts dd,
 .project-meta dd {
-  color: var(--accent);
+  color: var(--fg);
 }
 
 .work-title,
@@ -961,7 +981,7 @@ ol {
   font-weight: 700;
   font-size: var(--fs-title);
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .work-sum {
@@ -1004,7 +1024,7 @@ ol {
   /* a step below the work-card titles, so each fits one line */
   font-size: calc(var(--fs-title) * 0.75);
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   transition: color var(--dur) var(--ease);
 }
 
@@ -1171,7 +1191,7 @@ ol {
 
 .about-tags {
   display: contents;
-  color: var(--accent);
+  color: var(--fg);
 }
 
 .about-tags li {
@@ -1253,7 +1273,7 @@ ol {
   font-weight: 700;
   font-size: var(--fs-display);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
 .principle p {
@@ -1292,15 +1312,15 @@ ol {
   grid-column: 1 / 10;
   font-size: var(--fs-display);
   line-height: 1.12;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 /* Desktop: sized so the red bar of the first line ends exactly on the end
    of column 8 — the same edge as the footer's link numbers. Cols 1–8 span
-   (2/3)(page width) − gutter/3; the line plus its bar measures ~15em */
+   (2/3)(page width) − gutter/3; the line plus its bar measures ~15.08em */
 @media (min-width: 681px) {
   .contact .display {
-    font-size: calc(((100vw - 2 * var(--pad)) * 2 / 3 - var(--pad) / 3) / 15.03);
+    font-size: calc(((100vw - 2 * var(--pad)) * 2 / 3 - var(--pad) / 3) / 15.08);
   }
 }
 
@@ -1481,7 +1501,7 @@ ol {
   font-weight: 700;
   font-size: var(--fs-title);
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
 .service p {
@@ -1533,7 +1553,7 @@ ol {
 }
 
 .filters button.is-active:not(:hover) sup {
-  color: var(--accent);
+  color: var(--fg);
 }
 
 /* ---------- Project page ---------- */
@@ -1636,7 +1656,7 @@ ol {
   }
 
   .footer-base .footer-mark {
-    margin-top: calc(var(--bleed) * -0.058);
+    margin-top: calc(var(--bleed) * -0.03);
   }
 }
 
@@ -1718,18 +1738,17 @@ ol {
   text-align: right;
 }
 
-/* Imprint set as a highlight: red fill hugging the words, white type */
+/* Imprint: plain black type */
 .credits span {
   padding: 0 4px;
-  background: var(--accent);
-  color: #fff;
+  background: transparent;
+  color: var(--fg);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* Desktop: the imprint is a red bar one column shorter than the contact
-   box above — cols 10–12, flush with the right edge — its text inset like
-   the box's cells */
+/* Desktop: the imprint sits on cols 10–12 under the contact box, its text
+   inset like the box's cells */
 @media (min-width: 1025px) {
   .credits {
     grid-column: 10 / -1;
@@ -1746,16 +1765,16 @@ ol {
 /* Bleed: the mark spans columns 1–4; its box is shorter than the letters,
    so the page edge cuts through the lower part and the red square */
 .footer-mark {
-  --bleed: calc(((100vw - 13 * var(--pad)) / 3 + 3 * var(--pad)) / 1.473);
-  /* 16px under the footer text; the line box starts ~0.058em above the
+  --bleed: calc(((100vw - 13 * var(--pad)) / 3 + 3 * var(--pad)) / 1.498);
+  /* 16px under the footer text; the line box starts ~0.03em above the
      capitals, so pull it up by that much */
-  margin-top: calc(16px - var(--bleed) * 0.058);
+  margin-top: calc(16px - var(--bleed) * 0.03);
   height: calc(var(--bleed) * 0.64);
   overflow: hidden;
   font-weight: 700;
   font-size: var(--bleed);
   line-height: 0.8;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   white-space: nowrap;
 }
 
@@ -2024,7 +2043,7 @@ ol {
   }
 
   .hero-text .hero-title {
-    font-size: calc((100vw - 2 * var(--pad)) / 7.83);
+    font-size: calc((100vw - 2 * var(--pad)) / 7.933);
   }
 
   .hero-bottom > * {
@@ -2144,7 +2163,7 @@ ol {
 
   /* one column on phones: the mark takes the full content width */
   .footer-mark {
-    --bleed: calc((100vw - 2 * var(--pad)) * 0.66 / 1.473);
+    --bleed: calc((100vw - 2 * var(--pad)) * 0.66 / 1.498);
   }
 
   /* phones: mark two-thirds, credits in the last third */
