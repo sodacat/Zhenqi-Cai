@@ -1555,9 +1555,8 @@ ol {
   overflow: hidden;
 }
 
-/* Desktop: the cut mark (cols 1–4) rises into the same rows as the footer
-   text (cols 5–9) — they never overlap — so the footer is only as tall as
-   the mark. The base row is laid over the text row; its empty area lets
+/* Desktop: the cut mark (cols 1–4) rises beside the footer text (cols
+   5–9) — they never overlap — its capitals starting on the last link row. The base row is laid over the text row; its empty area lets
    clicks through to the links. (Below 1101px the imprint shares columns
    with the links, so the mark stays on its own row there.) */
 @media (min-width: 1101px) {
@@ -1571,8 +1570,9 @@ ol {
   }
 
   .footer-base {
-    /* same top line as the footer text: rule + padding */
-    padding-top: calc(1px + var(--space-2xl) / 2);
+    /* the mark's capitals start on the last link row ("Design
+       philosophy"): rule + padding + three 24px rows */
+    padding-top: calc(1px + var(--space-2xl) / 2 + 3 * (var(--lh-label) + 8px));
     pointer-events: none;
   }
 
