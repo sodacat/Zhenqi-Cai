@@ -157,7 +157,6 @@ window.SITE = {
               { type: "option", title: "Final design: Parallel qualification infrastructure", src: "images/seller-qualification/final-design.jpg",
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel."],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
-              { type: "img", src: "images/seller-qualification/solution.webp", alt: "Before: one restriction at a time. After: all requirements up front with qualification progress, 5 days vs. 30+" },
               { type: "p", title: "Standardized qualification states", text: "Every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
               { type: "img", src: "images/seller-qualification/states.png", alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
             ]
@@ -165,7 +164,6 @@ window.SITE = {
           {
             title: "Validation & impact",
             blocks: [
-              { type: "img", src: "images/seller-qualification/impact.webp", alt: "From 30 days to 5 days: +20% completion, 4.33/5 ease of use, 100M+ product pages" },
               { type: "p", title: "Testing approach", text: "Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts. I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction." },
               { type: "figures", items: [["4.33/5", "Ease of use"], ["4/5", "Problem-solving effectiveness"]] },
               { type: "list", items: ["Sellers completed approval flows without abandoning listings", "Sequential discovery loops eliminated", "Inline approvals removed tool-switching friction"] },
