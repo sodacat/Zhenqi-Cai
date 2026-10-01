@@ -1396,7 +1396,7 @@ ol {
 /* Text row on the grid (name col 5, links col 7, credits col 10), then the
    ZC mark set across the full width and cut by the bottom of the page. */
 .site-footer {
-  margin-top: var(--space-3xl);
+  margin-top: var(--space-2xl);
   overflow: hidden;
 }
 
@@ -1414,6 +1414,13 @@ ol {
 
 .footer-role {
   grid-column: 5 / 7;
+}
+
+/* The role sits on the second row of the link list (one 32px row pitch:
+   16px line + 8px + 8px padding), level with "AI Experiments" */
+.footer-role .cat {
+  display: block;
+  margin-top: 16px;
 }
 
 /* Footer links: a numbered list (cols 7–9). Hover fills the

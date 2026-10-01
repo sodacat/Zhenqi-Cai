@@ -98,7 +98,7 @@
   function footer() {
     return `<footer class="site-footer wrap">
       <div class="footer-top grid-12">
-        <p class="label footer-role">${esc(S.name)}<br><span class="cat">${esc(S.role)}</span></p>
+        <p class="label footer-role">${esc(S.name)}<span class="cat">${esc(S.role)}</span></p>
         <ul class="label footer-col">
           <li><a href="works.html"><span>Work</span><span>01</span></a></li>
           <li><a href="index.html#experiments"><span>AI Experiments</span><span>02</span></a></li>
