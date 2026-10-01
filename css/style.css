@@ -761,6 +761,7 @@ ol {
 }
 
 /* Card tags: one line, highlighted like selected text */
+
 .card-tags {
   margin: 8px 0 0;
   padding-top: 8px;
@@ -768,35 +769,10 @@ ol {
   padding-right: 32px;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-}
-
-.card-tags {
   color: var(--accent);
 }
 
-/* Label / content rows (Beethoven-poster info block): the label takes one
-   grid column, the content the rest */
-.facts-list {
-  display: grid;
-  grid-template-columns: subgrid;
-  margin: 8px 0 0;
-}
-
-.facts-list div {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: subgrid;
-  align-items: baseline;
-  border-top: 1px solid var(--hair);
-  padding: 8px 0;
-}
-
-.facts-list dt {
-  grid-column: 1;
-}
-
 /* Every label / content table: label black, content red */
-.facts-list dt.cat,
 .facts dt.cat,
 .project-meta dt.cat {
   color: var(--fg);
@@ -805,14 +781,6 @@ ol {
 .facts dd,
 .project-meta dd {
   color: var(--accent);
-}
-
-.facts-list dd {
-  grid-column: 2 / -1;
-  margin: 0;
-  color: var(--accent);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
 }
 
 .work-title,
@@ -876,14 +844,12 @@ ol {
 
 /* Feature caption under the image: number | title | text + button */
 /* Caption: number col 1 | title cols 2–4 | text from col 5 */
+
 .exp-body {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: subgrid;
   align-items: start;
-}
-
-.exp-body {
   padding-top: 8px;
 }
 
@@ -891,15 +857,12 @@ ol {
   grid-column: 1 / 5;
 }
 
-.exp-text {
-  grid-column: 5 / -1;
-}
-
 .exp-head p {
   margin: 8px 0 0;
 }
 
 .exp-text {
+  grid-column: 5 / -1;
   display: grid;
   gap: 24px;
   justify-items: start;
@@ -919,10 +882,6 @@ ol {
   grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr);
   column-gap: clamp(16px, 2vw, 32px);
   row-gap: 8px;
-}
-
-.exp-side .card-media {
-  grid-column: 1 / -1;
 }
 
 @media (min-width: 1025px) {
@@ -951,6 +910,7 @@ ol {
 }
 
 .exp-side .card-media {
+  grid-column: 1 / -1;
   aspect-ratio: 16 / 7;
   margin-bottom: 8px;
 }
@@ -963,13 +923,10 @@ ol {
 }
 
 /* ---------- About (home) ---------- */
-.about {
-  align-items: start;
-  row-gap: 32px;
-}
 
 .about {
   align-items: center;
+  row-gap: 32px;
 }
 
 /* The About statement and "What I do." sit at title level */
@@ -1089,11 +1046,6 @@ ol {
   grid-column: 10 / -1;
   display: grid;
   gap: 16px;
-}
-
-.contact-side p {
-  margin: 0;
-  justify-self: start;
 }
 
 /* Each link is a full-height cell of the box; the cell fills red on hover */
@@ -1707,13 +1659,7 @@ ol {
     row-gap: 32px;
   }
 
-  .facts-list div {
-    grid-template-columns: 7em minmax(0, 1fr);
-    column-gap: 12px;
-  }
-
-  .display-xl,
-  .hero-text .display-xl {
+  .display-xl {
     font-size: var(--fs-display);
   }
 

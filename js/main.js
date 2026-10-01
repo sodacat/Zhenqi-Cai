@@ -32,12 +32,6 @@
     </div>`;
   }
 
-  // Label / content rows, set like the info block of a Swiss poster
-  const facts = (rows) =>
-    `<dl class="facts-list">${rows
-      .filter(([, v]) => v)
-      .map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
-      .join("")}</dl>`;
 
   // Numbered Swiss section head: (01) ——— Title ——— View all →
   function sectionHead(n, title, link) {
