@@ -46,9 +46,8 @@
     </div>`;
   }
 
-  function workCard(p, n) {
+  function workCard(p) {
     return `<a class="work-card reveal${p.art ? "" : " halftone"}" href="${projectUrl(p)}" data-type="${esc(p.type)}">
-      <span class="work-num">${pad(n)}</span>
       ${cover(p)}
       <div class="work-meta">
         <span class="label cat">${esc(p.company)}</span>
@@ -146,7 +145,7 @@
 
       <section class="section section-tight wrap" id="work">
         ${sectionHead(2, "Selected work", ["View all work", "works.html"])}
-        <div class="work-grid">${work.map((p, i) => workCard(p, i + 1)).join("")}</div>
+        <div class="work-grid">${work.map(workCard).join("")}</div>
       </section>
 
       ${experiments.length ? `<section class="section wrap" id="experiments">
@@ -155,7 +154,6 @@
           ${experiments
             .map(
               (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
-                <span class="exp-num">${pad(i + 1)}</span>
                 <span class="exp-thumb">${cover(p)}</span>
                 <span class="exp-name"><span class="exp-title">${esc(p.title)}</span><span class="sub">${esc(p.company)}</span></span>
                 <span class="exp-sum">${esc(p.summary)}</span>
@@ -274,7 +272,7 @@
           ${btn("work", "Case studies", count("work"))}
           ${btn("experiment", "AI experiments", count("experiment"))}
         </div>
-        <div class="work-grid">${S.projects.map((p, i) => workCard(p, i + 1)).join("")}</div>
+        <div class="work-grid">${S.projects.map(workCard).join("")}</div>
       </section>
       ${contactBlock(1)}
     </main>`;
