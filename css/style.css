@@ -1162,33 +1162,32 @@ ol {
   grid-column: 7 / 10;
   align-self: stretch;
   display: grid;
-  /* one track, as wide as the first fact line: the button stretches to it */
-  grid-template-columns: max-content;
+  /* on the page columns 7–9 */
+  grid-template-columns: subgrid;
   /* facts at the top; the button drops to the foot, level with the last
      line of the bio */
   grid-template-rows: auto auto 1fr;
-  justify-items: start;
 }
 
-/* the facts join the column's grid so the first line sizes the track */
 .about-tags {
   display: contents;
   color: var(--accent);
 }
 
 .about-tags li {
+  grid-column: 1 / -1;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-}
-
-/* later lines keep their full length but don't widen the track */
-.about-tags li + li {
-  width: 0;
-  padding-top: 8px;
   white-space: nowrap;
 }
 
+.about-tags li + li {
+  padding-top: 8px;
+}
+
+/* the resume button spans two columns (7–8) */
 .about-side .btn {
+  grid-column: 1 / 3;
   align-self: end;
   justify-self: stretch;
   justify-content: space-between;
@@ -1222,6 +1221,26 @@ ol {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: var(--pad);
+}
+
+/* Desktop: the middle principle sits flush right on columns 4–6, its
+   right edge on the same line as "Humanist." above */
+@media (min-width: 1025px) {
+  .principles {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .principle:nth-child(1) { grid-column: 1 / 4; }
+  .principle:nth-child(2) { grid-column: 4 / 7; text-align: right; }
+  .principle:nth-child(3) { grid-column: 9 / -1; }
+
+  .principle:nth-child(2) h3 {
+    margin-left: auto;
+  }
+
+  .principle:nth-child(2) p {
+    margin-left: auto;
+  }
 }
 
 .principle {
