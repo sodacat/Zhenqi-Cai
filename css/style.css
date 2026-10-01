@@ -1039,7 +1039,7 @@ ol {
 
 /* Magazine page on the 12-column grid:
    statement (1–6)                                  | portrait
-   lead flush right (3–6) | rest flush left (7–9)   | (10–12, both rows) */
+   bio flush right (3–6) | facts flush left (7–9)   | (10–12, both rows) */
 .about {
   align-items: start;
   row-gap: var(--space-2xl);
@@ -1059,9 +1059,9 @@ ol {
 }
 
 /* Text block set like a Swiss poster: two columns meet at one axis (the
-   gutter between columns 6 and 7). The lead paragraph is flush right on
-   columns 3–6; the second paragraph, the facts and the button are flush
-   left on columns 7–9. Both start on the same top line. */
+   gutter between columns 6 and 7). The bio is flush right on columns 3–6;
+   the facts and the button are flush left on columns 7–9. Both start on
+   the same top line. */
 .about-body {
   grid-column: 1 / 10;
   grid-row: 2;
@@ -1074,8 +1074,16 @@ ol {
 
 .about-lead {
   grid-column: 3 / 7;
-  margin: 0;
   text-align: right;
+}
+
+.about-lead p {
+  margin: 0;
+}
+
+/* paragraphs separated by one blank line */
+.about-lead p + p {
+  margin-top: var(--lh-body);
 }
 
 .about-side {
@@ -1083,10 +1091,6 @@ ol {
   display: grid;
   justify-items: start;
   row-gap: var(--lh-body);
-}
-
-.about-side p {
-  margin: 0;
 }
 
 .about-tags {
