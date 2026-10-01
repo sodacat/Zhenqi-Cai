@@ -1928,6 +1928,21 @@ ol {
   margin: 0;
 }
 
+/* screenshots and diagrams on a grey mat, so white UI doesn't bleed into
+   the page and big type reads smaller */
+.is-framed .card-media.case-media {
+  padding: clamp(16px, 3.2vw, 48px);
+  background: var(--placeholder);
+}
+
+.case-body > .case-fig.is-md {
+  grid-column: 1 / 9;
+}
+
+@media (max-width: 680px) {
+  .case-body > .case-fig.is-md { grid-column: 1 / -1; }
+}
+
 .case-more {
   margin-top: var(--space-2xl);
 }

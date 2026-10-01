@@ -120,7 +120,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings." },
               { type: "p", text: ["The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop: Create listing → Hit restriction → Leave tool → Apply → Return → Hit another restriction"] },
-              { type: "img", src: "images/seller-qualification/loop.png", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated. What should take 5 days stretches to 30+ days." },
+              { type: "img", src: "images/seller-qualification/loop.png", frame: true, size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated. What should take 5 days stretches to 30+ days." },
               { type: "statement", text: "What should take 5 days stretched to 30+." },
               { type: "p", text: "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time." },
               { type: "statement", text: "The system optimized for compliance accuracy — not seller efficiency." },
@@ -128,7 +128,7 @@ window.SITE = {
                 ["I've dedicated years of my life to this product. Running into countless roadblocks after the fact kills all of my momentum. If I need to go through a process tell me beforehand and make it clear because at this point I'm feeling betrayed.", "SOPO Dispenser"],
                 ["I went out of my way to submit documents and get approved for the category, but only now I'm being told I can't sell this product? I wish you had informed me before I went through the trouble.", "BitByBi"]
               ] },
-              { type: "row", label: "Pain points: Sellers must leave listing tool to apply separately", items: [
+              { type: "row", label: "Pain points: Sellers must leave listing tool to apply separately", frame: true, items: [
                 ["images/seller-qualification/pain-listing.png", "Listing restricted"],
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
                 ["images/seller-qualification/pain-support.png", "Back-and-forth with Seller Support"]
@@ -151,19 +151,19 @@ window.SITE = {
             blocks: [
               { type: "shift", label: "Core system shift", from: "Sequential Enforcement", to: "Parallel Qualification Infrastructure" },
               { type: "p", text: "I explored two incremental approaches before concluding the architecture itself had to change." },
-              { type: "option", title: "Exploration 1: Increasing visibility within sequential architecture", src: "images/seller-qualification/exploration-1.png",
+              { type: "option", frame: true, title: "Exploration 1: Increasing visibility within sequential architecture", src: "images/seller-qualification/exploration-1.png",
                 pros: ["Sellers are guided earlier.", "Feels like information, not an error."],
                 cons: ["Still can't show all restrictions at once."],
                 note: "Exploration 1 showed us the ceiling: we could surface more, but the loop remained." },
-              { type: "option", title: "Exploration 2: Exposing restrictions without redesigning enforcement", src: "images/seller-qualification/exploration-2.png",
+              { type: "option", frame: true, title: "Exploration 2: Exposing restrictions without redesigning enforcement", src: "images/seller-qualification/exploration-2.png",
                 pros: ["Sellers are guided earlier"],
                 cons: ["Notifications can no longer be tied to specific attribute", "Mental model breaks — feels like an error again"],
                 note: "Both explorations confirmed the same thing: the limitation wasn't interaction design. It was the underlying enforcement architecture. To truly enable parallel transparency, the restriction mechanism itself had to be redesigned." },
-              { type: "option", title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png",
+              { type: "option", frame: true, title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png",
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel"],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
               { type: "p", title: "Standardized qualification states", text: "Standardized qualification states ensure every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
-              { type: "img", src: "images/seller-qualification/states.png", alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
+              { type: "img", src: "images/seller-qualification/states.png", frame: true, alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
             ]
           },
           {
@@ -191,14 +191,14 @@ window.SITE = {
                 "The review reinforced three design principles that I carried into the final spec:"
               ], items: ["Surface all qualification requirements before sellers invest time in listing creation", "Allow approvals to be requested without leaving the listing tool", "Standardize approval states so sellers always know their next step"],
                 after: "Rather than treating this as an external critique, I used the Bar Raiser feedback to pressure-test the architecture decisions and strengthen the rationale for the parallel model." },
-              { type: "option", title: "Iterations", src: "images/seller-qualification/iterations.png",
+              { type: "option", frame: true, title: "Iterations", src: "images/seller-qualification/iterations.png",
                 pros: ["Refined the copy to explain why SP needs an approval encourage SPs to request approvals.", "Provide tooltips to guide SP to fix the restrictions.", "Update the button from “Request approval” to “Apply to sell”.", "New use cases added for UPCx auto rejected/approved, brand approval required."] }
             ]
           },
           {
             title: "Organizational impact",
             blocks: [
-              { type: "img", src: "images/seller-qualification/workshop.png", alt: "Seller Qualification Workshop — July 17-18 (Mon-Tue), Seattle office" },
+              { type: "img", src: "images/seller-qualification/workshop.png", size: "md", alt: "Seller Qualification Workshop — July 17-18 (Mon-Tue), Seattle office" },
               { type: "p", text: [
                 "Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.",
                 "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"
