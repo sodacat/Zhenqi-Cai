@@ -40,14 +40,14 @@
   --fs-title: clamp(24px, 2.4vw, 36px);
   --fs-display: clamp(40px, 4.4vw, 72px);
 
-  /* Vertical rhythm: every space is a multiple of the 8px unit — inside a
-     group 8–16, between items and between sections one gap (--space-2xl;
-     --space-3xl is kept equal to it), so a section ends the same distance
-     above the next rule as the contact box above the footer rule. A section
-     head sits --space-xl above its content */
+  /* Vertical rhythm: every space is a multiple of the 8px unit. Inside a
+     group 8–32; everything else is ONE gap, --space-2xl (--space-xl and
+     --space-3xl are kept equal to it): section head to content, between
+     items, section end to the next rule, box or frame to a rule, and the
+     nav box to the header rule */
   --u: 8px;
   --space-l: 32px;
-  --space-xl: 40px;
+  --space-xl: var(--space-2xl);
   --space-2xl: 48px;
   --space-3xl: var(--space-2xl);
   --space-4xl: 120px;
@@ -315,11 +315,12 @@ ol {
   align-items: center;
 }
 
-/* Rule under the header row, inside the page gutters */
+/* Rule under the header row, inside the page gutters: the one gap below
+   the nav box / ZC baseline (the mark's line box ends ~0.058em under it) */
 .site-header::after {
   content: "";
   grid-column: 1 / -1;
-  margin-top: var(--space-l);
+  margin-top: calc(var(--space-2xl) - var(--brand-fs) * 0.058);
   border-top: var(--rule);
 }
 
@@ -1027,10 +1028,12 @@ ol {
   position: relative;
 }
 
-/* The list ends a frame's depth lower, so a hovered last piece's frame
-   sits the section gap above the next rule */
+/* The list is padded by a frame's depth at both ends, so a hovered
+   piece's frame keeps the one gap to the section head above and to the
+   next rule below */
 .work-grid,
 .exp-index {
+  padding-top: var(--frame-y);
   padding-bottom: var(--frame-y);
 }
 
@@ -1517,7 +1520,7 @@ ol {
 
 .footer-top {
   border-top: var(--rule);
-  padding-top: var(--space-l);
+  padding-top: var(--space-2xl);
   align-items: start;
   row-gap: 24px;
 }
@@ -1661,7 +1664,7 @@ ol {
 @media (max-width: 1024px) {
   :root {
     --space-l: 24px;
-    --space-xl: 32px;
+    --space-xl: var(--space-2xl);
     --space-2xl: 40px;
     --space-3xl: var(--space-2xl);
     --space-4xl: 96px;
@@ -1671,7 +1674,7 @@ ol {
 @media (max-width: 680px) {
   :root {
     --space-l: 24px;
-    --space-xl: 32px;
+    --space-xl: var(--space-2xl);
     --space-2xl: 40px;
     --space-3xl: var(--space-2xl);
     --space-4xl: 72px;
@@ -1754,9 +1757,18 @@ ol {
     align-items: center;
   }
 
+  .site-header {
+    --brand-fs: 40px;
+    row-gap: 0;
+  }
+
+  /* phones: the one gap under the menu box */
+  .site-header::after {
+    margin-top: var(--space-2xl);
+  }
+
   .brand {
     grid-column: 1 / 2 !important;
-    font-size: 40px;
     line-height: 0.9;
   }
 
