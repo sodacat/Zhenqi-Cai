@@ -434,7 +434,15 @@ ol {
 }
 
 /* (01) and the role share one row, on the same columns as every section
-   head: index cols 1–2, name from col 3 */
+   head (index cols 1–2, name from col 3) and the same 8px under the rule */
+.hero {
+  margin-top: 0 !important;
+}
+
+.hero-text {
+  padding-top: 8px;
+}
+
 .hero-text .idx {
   grid-column: 1 / 3;
   grid-row: 1;
@@ -961,17 +969,28 @@ ol {
 /* ---------- Hover frame ---------- */
 /* Work cards and experiment rows have no frames at rest; on hover the
    piece's frame appears — 1px black, half a gutter outside the content
-   and 16px above and below, so nothing moves */
+   and --frame-y above and below, so nothing moves */
+:root {
+  --frame-y: 16px;
+}
+
 .work-card,
 .exp-row {
   position: relative;
+}
+
+/* The list ends a frame's depth lower, so a hovered last piece's frame
+   sits the section gap above the next rule */
+.work-grid,
+.exp-index {
+  padding-bottom: var(--frame-y);
 }
 
 .work-card::after,
 .exp-row::after {
   content: "";
   position: absolute;
-  inset: -16px calc(var(--pad) / -2);
+  inset: calc(var(--frame-y) * -1) calc(var(--pad) / -2);
   border: 1px solid var(--fg);
   opacity: 0;
   pointer-events: none;
@@ -1748,10 +1767,6 @@ ol {
     background: var(--fg);
     border-color: var(--fg);
     color: #fff;
-  }
-
-  .hero-text {
-    padding-top: 0;
   }
 
   .hero-media .card-media {
