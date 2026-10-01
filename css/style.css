@@ -1037,23 +1037,10 @@ ol {
   color: var(--fg);
 }
 
-/* catalog label: small, set like the site's other label / value pairs —
-   bold key, regular value — separated by space, not lines */
+/* catalog line: medium · tools · status, small, no keys */
 .exp-log {
-  display: grid;
-  row-gap: 4px;
   font-size: var(--fs-label);
   line-height: var(--lh-label);
-}
-
-.exp-log > span {
-  display: grid;
-  grid-template-columns: 4.5em minmax(0, 1fr);
-  column-gap: 16px;
-}
-
-.exp-log .k {
-  font-weight: 700;
 }
 
 .exp-thumb .card-media {
