@@ -398,8 +398,6 @@
 
   function caseStudy(p, i, next) {
     const c = p.case;
-    let n = 0;
-    const head = (t) => sectionHead(++n, t);
     return `<main class="case">
       <section class="project-head grid-12 wrap">
         <p class="label idx">(${pad(i + 1)})</p>
@@ -415,52 +413,24 @@
       <section class="case-cover wrap reveal">${cover(p)}</section>
 
       <section class="section wrap">
-        ${head("Summary")}
-        <div class="case-body grid-12">
-          ${c.quote ? `<p class="case-statement reveal">“${esc(c.quote)}”</p>` : ""}
-          <dl class="case-summary reveal">${c.summary
-            .map(([k, v]) => `<div><dt class="case-sub">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
-            .join("")}</dl>
-          <div class="case-pair case-ba reveal">${c.beforeAfter
-            .map(([t, sub, src, items], k) => `<figure class="case-fig">
-              <h3 class="case-ba-title">${esc(t)}</h3><p class="case-sub">${esc(sub)}</p>
-              ${media(src, `${t}: ${sub}`, "case-media")}
-              ${bullets(items, k ? "is-pro" : "is-con")}
-            </figure>`)
-            .join("")}</div>
-        </div>
-      </section>
-
-      <section class="section wrap">
-        ${head("Project context")}
+        ${sectionHead(1, "Overview")}
         <div class="case-overview grid-12">
-          <div class="case-role reveal">
-            <h3 class="case-sub">My role</h3>
-            <p class="case-role-title">${esc(c.role)}</p>
-            <h3 class="case-sub">Led</h3>${bullets(c.led)}
-          </div>
+          <div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
           </dl>
-          ${c.timeline ? `<div class="case-timeline reveal">${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
+          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
         </div>
       </section>
 
       ${c.sections
         .map(
-          (sec) => `<section class="section wrap">
-        ${head(sec.title)}
+          (sec, n) => `<section class="section wrap">
+        ${sectionHead(n + 2, sec.title)}
         <div class="case-body grid-12">${sec.blocks.map(caseBlock).join("")}</div>
       </section>`
         )
         .join("")}
-
-      ${c.credits ? `<section class="section wrap">
-        ${head("Thank you")}
-        <dl class="facts case-credits reveal">${c.credits
-          .map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
-          .join("")}</dl>
-      </section>` : ""}
 
       ${projectNav(next)}
     </main>`;
