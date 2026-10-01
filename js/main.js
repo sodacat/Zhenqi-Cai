@@ -100,14 +100,14 @@
       <div class="footer-top grid-12">
         <p class="label footer-role">${esc(S.name)}<span class="cat">${esc(S.role)}</span></p>
         <ul class="label footer-col">
-          <li><a href="works.html"><span>Work</span><span>01</span></a></li>
-          <li><a href="index.html#experiments"><span>AI Experiments</span><span>02</span></a></li>
-          <li><a href="about.html"><span>About</span><span>03</span></a></li>
+          <li><a href="works.html"><span>Work</span><span>02</span></a></li>
+          <li><a href="index.html#experiments"><span>AI Experiments</span><span>03</span></a></li>
+          <li><a href="about.html"><span>About</span><span>04</span></a></li>
         </ul>
       </div>
       <div class="footer-base">
         <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
-        <p class="label muted credits">${esc(S.copyright)}</p>
+        <p class="label credits"><span>${esc(S.copyright)}</span></p>
       </div>
     </footer>`;
   }

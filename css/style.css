@@ -1471,6 +1471,15 @@ ol {
   padding-bottom: 16px;
 }
 
+/* Imprint set as a highlight: black fill hugging the words, red type */
+.credits span {
+  padding: 0 4px;
+  background: var(--fg);
+  color: var(--accent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 /* Bleed: the mark spans columns 1–4; its box is shorter than the letters,
    so the page edge cuts through the lower part and the red square */
 .footer-mark {
