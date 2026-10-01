@@ -56,10 +56,7 @@
         <span class="label cat">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <p class="card-tags"><span class="selected">${[(p.tags || []).join(", "), p.impact]
-          .filter(Boolean)
-          .map(esc)
-          .join(" · ")}</span></p>
+        <p class="card-tags">${[(p.tags || []).join(", "), p.impact].filter(Boolean).map(esc).join(" · ")}</p>
         ${arrow}
       </div>
     </a>`;
@@ -189,7 +186,7 @@
           <h2 class="display reveal">${lines(S.statement)}</h2>
           <div class="about-body reveal">
             ${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}
-            <ul class="about-tags">${S.facts.map(([, v]) => `<li><span class="selected">${esc(v)}</span></li>`).join("")}</ul>
+            <ul class="about-tags">${S.facts.map(([, v]) => `<li>${esc(v)}</li>`).join("")}</ul>
             <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
           </div>
           <div class="about-media reveal">${media(S.portrait, S.name)}</div>
