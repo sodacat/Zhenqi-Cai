@@ -114,8 +114,6 @@
 
   /* ---------- Pages ---------- */
   function home() {
-    const [feat, ...side] = experiments;
-
     return `<main>
       <section class="hero grid-12 wrap">
         <div class="hero-text">
@@ -147,37 +145,21 @@
         <div class="work-grid">${work.map((p, i) => workCard(p, i + 1)).join("")}</div>
       </section>
 
-      ${feat ? `<section class="section wrap" id="experiments">
+      ${experiments.length ? `<section class="section wrap" id="experiments">
         ${sectionHead(3, "AI experiments", ["View all experiments", "works.html?type=experiment"])}
-        <div class="exp grid-12">
-          <div class="exp-feature reveal">
-          <span class="exp-num">01</span>
-          <a class="exp-media" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${cover(feat)}</a>
-          <div class="exp-body">
-            <div class="exp-head">
-              <h3 class="work-title">${esc(feat.title)}</h3>
-              <p class="sub">${esc(feat.company)}</p>
-            </div>
-            <div class="exp-text">
-              <p class="work-sum">${esc(feat.summary)}</p>
-              <a class="btn btn-accent" href="${projectUrl(feat)}">Explore experiment ${arrow}</a>
-            </div>
-          </div>
-          </div>
-          <ul class="exp-side">
-            ${side
-              .slice(0, 2)
-              .map(
-                (p, i) => `<li class="reveal"><a href="${projectUrl(p)}">
-                  <span class="exp-num">${pad(i + 2)}</span>
-                  ${cover(p)}
-                  <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
-                  <span class="sub exp-side-sub">${esc(p.company)}</span>
-                </a></li>`
-              )
-              .join("")}
-          </ul>
-        </div>
+        <ol class="exp-index">
+          ${experiments
+            .map(
+              (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
+                <span class="exp-num">${pad(i + 1)}</span>
+                <span class="exp-thumb">${cover(p)}</span>
+                <span class="exp-name"><span class="exp-title">${esc(p.title)}</span><span class="sub">${esc(p.company)}</span></span>
+                <span class="exp-sum">${esc(p.summary)}</span>
+                ${arrow}
+              </a></li>`
+            )
+            .join("")}
+        </ol>
       </section>` : ""}
 
       <section class="section wrap" id="about">

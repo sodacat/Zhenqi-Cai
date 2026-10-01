@@ -578,8 +578,7 @@ ol {
 /* Pictures (work covers, AI experiments, hero portrait) are shown in black
    and white, and in colour on hover */
 .halftone .card-media img,
-.exp .card-media img,
-.exp .art,
+.exp-thumb .card-media img,
 .hero-media .card-media img,
 .about-media .card-media img,
 .about-page-media .card-media img {
@@ -589,11 +588,8 @@ ol {
 
 .halftone:hover .card-media img,
 .halftone:focus-visible .card-media img,
-.exp-media:hover .card-media img,
-.exp-media:focus-visible .card-media img,
-.exp-side a:hover .art,
-.exp-side a:focus-visible .art,
-.exp-side a:hover .card-media img,
+.exp-row:hover .card-media img,
+.exp-row:focus-visible .card-media img,
 .hero-media:hover .card-media img,
 .about-media:hover .card-media img,
 .about-page-media:hover .card-media img {
@@ -602,7 +598,6 @@ ol {
 
 /* Linked cards: title and arrow turn red */
 .work-title,
-.exp-side-title,
 .work-meta > .arrow,
 .project-nav .next .display {
   transition: color var(--dur) var(--ease);
@@ -611,8 +606,6 @@ ol {
 .work-card:hover .work-title,
 .work-card:hover .work-meta > .arrow,
 .work-card:focus-visible .work-title,
-.exp-side a:hover .exp-side-title,
-.exp-side a:focus-visible .exp-side-title,
 .project-nav .next:hover .display {
   color: var(--accent);
 }
@@ -709,7 +702,7 @@ ol {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--space-2xl) var(--pad);
+  gap: 0 var(--pad);
 }
 
 .work-card {
@@ -788,7 +781,6 @@ ol {
 }
 
 .work-title,
-.exp-side-title,
 .index-title {
   margin: 0;
   font-weight: 700;
@@ -805,125 +797,96 @@ ol {
   color: var(--fg);
 }
 
-/* ---------- AI experiments ---------- */
-.exp {
-  row-gap: 32px;
-  align-items: stretch;
+/* ---------- AI experiments: an index ---------- */
+/* One row per experiment on hairlines:
+   number (1) | thumbnail (2–3) | title + kind (4–7) | summary (8–11) | → (12) */
+.exp-index {
+  border-top: 1px solid var(--line);
 }
 
-/* Feature (cols 1–8; side cards cols 9–12): image + caption match the height of the
-   two side cards; the image takes whatever height the caption leaves. */
-/* Feature: number, image, caption stacked (as Selected Work) */
-.exp-feature {
-  grid-column: 1 / 9;
+.exp-index li {
+  border-bottom: 1px solid var(--hair);
+}
+
+.exp-row {
   display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: auto 1fr auto;
-  row-gap: 8px;
-}
-
-.exp-feature > .exp-num {
-  grid-column: 1 / -1;
-}
-
-.exp-media {
-  grid-column: 1 / -1;
-  display: flex;
-  min-height: 220px;
-}
-
-.exp-media .card-media {
-  flex: 1;
-}
-
-.exp-media .card-media img {
-  position: absolute;
-  inset: 0;
-  object-position: center 22%;
-}
-
-.exp-media .card-media .ph {
-  color: var(--muted);
-}
-
-/* Feature caption under the image: number | title | text + button */
-/* Caption: number col 1 | title cols 2–4 | text from col 5 */
-
-.exp-body {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: subgrid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--pad);
   align-items: start;
-  padding-top: 8px;
+  padding: 16px 0;
 }
 
-.exp-head {
-  grid-column: 1 / 5;
+.exp-row .exp-num { grid-column: 1; }
+.exp-thumb { grid-column: 2 / 4; }
+.exp-name { grid-column: 4 / 8; display: grid; gap: 8px; }
+.exp-sum { grid-column: 8 / 12; font-size: var(--fs-body); line-height: var(--lh-body); }
+.exp-row > .arrow { grid-column: 12; justify-self: end; font-size: var(--fs-title); line-height: 1; }
+
+.exp-thumb .card-media {
+  aspect-ratio: 4 / 3;
 }
 
-.exp-head p {
-  margin: 8px 0 0;
-}
-
-.exp-text {
-  grid-column: 5 / -1;
-  display: grid;
-  gap: 24px;
-  justify-items: start;
-}
-
-/* Primary actions: white box, black text; red fill on hover */
-.exp-side {
-  grid-column: 9 / -1;
-  display: grid;
-  align-content: start;
-  gap: 24px;
-}
-
-/* Side cards: number, image, title, sub stacked (as the feature) */
-.exp-side a {
-  display: grid;
-  grid-template-columns: clamp(28px, 3vw, 48px) minmax(0, 1fr);
-  column-gap: clamp(16px, 2vw, 32px);
-  row-gap: 8px;
-}
-
-@media (min-width: 1025px) {
-  .exp-side,
-  .exp-side li,
-  .exp-side a {
-    grid-template-columns: subgrid;
-  }
-
-  .exp-side li,
-  .exp-side a {
-    grid-column: 1 / -1;
-    display: grid;
-  }
-
-  /* Subgrids take the page gutter, not the list's own 24px gap */
-  .exp-side,
-  .exp-side li,
-  .exp-side a {
-    column-gap: normal;
-  }
-}
-
-.exp-side a > * {
-  grid-column: 1 / -1;
-}
-
-.exp-side .card-media {
-  grid-column: 1 / -1;
-  aspect-ratio: 16 / 7;
-  margin-bottom: 8px;
-}
-
-.exp-side-title {
-  display: flex;
-  justify-content: space-between;
+.exp-title {
+  font-weight: 700;
   font-size: var(--fs-title);
-  letter-spacing: -0.01em;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  transition: color var(--dur) var(--ease);
+}
+
+.exp-row:hover .exp-title,
+.exp-row:focus-visible .exp-title {
+  color: var(--accent);
+}
+
+/* ---------- Framed tables ---------- */
+/* Selected Work and Design Philosophy are drawn as tables: every cell is
+   framed by a 1px line that runs down the middle of the gutter, so cells
+   share their edges and the text inside still starts on a column line. */
+.work-card,
+.principle {
+  position: relative;
+  padding-block: 24px;
+}
+
+.work-card::after,
+.principle::after {
+  content: "";
+  position: absolute;
+  inset: 0 calc(var(--pad) / -2);
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+/* neighbouring frames overlap by their 1px border, so shared edges are
+   a single line */
+.work-card::after,
+.principle::after {
+  margin: 0 -1px -1px 0;
+}
+
+/* The table's outer edges sit on the content edges (in line with the
+   section rules); the outer cells take half a gutter of inner padding so
+   every cell's text is the same distance from its left frame */
+.work-card:nth-child(odd)::after,
+.principle:first-child::after {
+  left: 0;
+}
+
+.work-card:nth-child(even)::after,
+.principle:last-child::after {
+  right: 0;
+  margin-right: 0;
+}
+
+.work-card:nth-child(odd),
+.principle:first-child {
+  padding-left: calc(var(--pad) / 2);
+}
+
+.work-card:nth-child(even),
+.principle:last-child {
+  padding-right: calc(var(--pad) / 2);
 }
 
 /* ---------- About (home) ---------- */
@@ -1033,14 +996,7 @@ ol {
 
 /* Dividers sit at the start of the gutter: one full gutter between the
    rule and the text, and the text stays on its column line */
-.principle + .principle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(var(--pad) * -1);
-  border-left: 1px solid var(--hair);
-}
+
 
 /* ---------- Philosophy ---------- */
 .principles {
@@ -1545,19 +1501,9 @@ ol {
     grid-column: 7 / -1;
   }
 
-  .exp-feature {
-    grid-column: 1 / -1;
-    margin-right: 0;
-  }
-
-  .exp-media .card-media {
-    aspect-ratio: 2 / 1;
-  }
-
-  .exp-side {
-    grid-column: 1 / -1;
-    grid-template-columns: 1fr 1fr;
-  }
+  /* tablet: summary drops under the title */
+  .exp-name { grid-column: 4 / 12; }
+  .exp-sum { grid-column: 4 / 12; grid-row: 2; }
 
   /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
@@ -1644,19 +1590,20 @@ ol {
     margin-top: 0;
   }
 
-  /* One column: feature caption stacks */
-  .exp-feature,
-  .exp-body {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .exp-body {
+  /* phones: number + arrow on top, then thumbnail, title, summary */
+  .exp-row {
+    grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 16px;
   }
 
-  .exp-body > * {
-    grid-column: 1 / -1;
+  .exp-row > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
   }
+
+  .exp-row .exp-num { grid-column: 1 !important; grid-row: 1 !important; }
+  .exp-thumb { width: 50%; }
+  .exp-row > .arrow { grid-column: 2 !important; grid-row: 1 !important; }
 
   /* Menu button: the same outlined box as the nav — red on hover,
      black while the menu is open */
@@ -1795,24 +1742,22 @@ ol {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .exp-side {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* phones: principles stack, divided by hairlines instead of rules */
+  /* phones: principles stack as framed cells */
   .principles {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: var(--space-l);
   }
 
-  .principle + .principle::before {
-    display: none;
+  /* phones: every cell is a full-width row, framed on the content edges */
+  .work-card::after,
+  .principle::after {
+    left: 0 !important;
+    right: 0 !important;
+    margin-right: 0 !important;
   }
 
-  .principle + .principle {
-    border-top: 1px solid var(--hair);
-    padding-top: var(--u);
+  .work-card,
+  .principle {
+    padding-inline: 16px !important;
   }
 
   .index-row {
