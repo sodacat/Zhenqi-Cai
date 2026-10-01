@@ -1654,6 +1654,10 @@ ol {
   row-gap: var(--space-2xl);
 }
 
+.case-intro > .case-label {
+  margin-bottom: calc(16px - var(--space-2xl));
+}
+
 .case-lead {
   grid-column: 1 / 7;
   margin: 0;
@@ -1719,6 +1723,10 @@ ol {
 
 .case-role {
   grid-column: 1 / 7;
+}
+
+.case-role-fig {
+  margin-bottom: var(--space-xl);
 }
 
 .case-facts {

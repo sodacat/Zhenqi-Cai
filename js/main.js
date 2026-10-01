@@ -427,6 +427,7 @@
 
       <section class="case-intro grid-12 wrap">
         <p class="lead case-lead reveal">${esc(c.lead)}</p>
+        ${c.impactLabel ? `<p class="label case-label">${esc(c.impactLabel)}</p>` : ""}
         ${c.impact ? figures(c.impact) : ""}
       </section>
 
@@ -436,7 +437,7 @@
         ${sectionHead(1, "Overview")}
         <div class="case-overview grid-12">
           ${c.role
-            ? `<div class="case-role reveal"><h3 class="case-sub">My role</h3>${bullets(c.role)}</div>`
+            ? `<div class="case-role reveal"><h3 class="case-sub">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "My role", "case-media")}</figure>` : ""}${bullets(c.role)}</div>`
             : `<div class="case-role case-text reveal">${c.aboutTitle ? `<h3 class="case-sub">${esc(c.aboutTitle)}</h3>` : ""}${paras(c.about)}</div>`}
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
