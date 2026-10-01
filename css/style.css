@@ -489,12 +489,21 @@ ol {
 }
 
 /* Resume button: outlined, on the column line, at the foot of the left
-   column so its bottom edge meets the bottom of the hero image */
+   column, as wide as the figures */
 .hero-left .hero-resume {
   grid-column: 1 / -1;
   justify-self: stretch;
   justify-content: space-between;
   align-self: end;
+}
+
+/* Desktop: dropped out of the hero into the space below it, its top under
+   the bottom of the image and logos, its bottom 16px above the next
+   section's rule */
+@media (min-width: 681px) {
+  .hero-left .hero-resume {
+    transform: translateY(calc(var(--space-3xl) - 16px));
+  }
 }
 
 /* Numbers as type: 7+ (col 1) and 100M+ (cols 2–3) at poster scale */
