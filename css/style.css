@@ -610,7 +610,8 @@ ol {
   line-height: 1;
 }
 
-/* Client logos: one height, greyscale; each shows its colours on hover */
+/* Client logos: one height, greyscale; hovering the row shows all three
+   in colour together */
 .client img {
   display: block;
   height: clamp(18px, 1.7vw, 26px);
@@ -619,7 +620,7 @@ ol {
   transition: filter 0.35s var(--ease);
 }
 
-.client img:hover {
+.clients:hover .client img {
   filter: none;
 }
 
@@ -633,10 +634,14 @@ ol {
   aspect-ratio: 4 / 5;
 }
 
+/* The figure stands near the photo's right edge: crop from the right and
+   enlarge slightly from that edge so she sits closer to the centre */
 .hero-media .card-media img {
   position: absolute;
   inset: 0;
-  object-position: 70% 55%;
+  object-position: 100% 55%;
+  transform: scale(1.1);
+  transform-origin: 100% 55%;
 }
 
 /* ---------- Media ---------- */
