@@ -2694,3 +2694,24 @@ ol {
     aspect-ratio: 4 / 5;
   }
 }
+
+/* Case pages keep red to the structure (section titles, the project label);
+   everything inside a case reads black */
+.case .case-sub,
+.case .case-label,
+.case .facts dd,
+.case .case-shift > div:last-child p {
+  color: var(--fg);
+}
+
+.case .case-list li::before {
+  background: var(--fg);
+}
+
+.case .case-figures dt {
+  background: var(--fg);
+}
+
+.case-snapshot {
+  margin-bottom: var(--space-2xl);
+}

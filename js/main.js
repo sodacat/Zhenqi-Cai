@@ -441,6 +441,7 @@
 
       <section class="section wrap">
         ${sectionHead(1, "Overview")}
+        ${c.snapshot ? `<div class="case-body case-snapshot grid-12"><div class="case-text reveal"><h3 class="case-h">Impact snapshot</h3>${bullets(c.snapshot)}</div></div>` : ""}
         <div class="case-overview grid-12">
           ${c.role
             ? `<div class="case-role reveal"><h3 class="case-h">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "My role", "case-media")}</figure>` : ""}${bullets(c.role)}</div>`

@@ -93,6 +93,12 @@ window.SITE = {
         headline: "From Compliance Checkpoint to Seller Growth Infrastructure",
         lead: "How I redesigned Amazon's qualification system so that transparency and enforcement reinforce each other — reducing onboarding time from 30 days to 5 and increasing completion by 20%.",
         cover: "images/seller-qualification/cover.webp",
+        snapshot: [
+          "**+20%** qualification completion rate (usability testing)",
+          "**4.33/5** ease-of-use score",
+          "Onboarding unblocked: **30-day → 5-day** resolution",
+          "Compliance clarity scaled across **100M+** product pages"
+        ],
         roleImage: "images/seller-qualification/role.png",
         role: [
           "I was the designer who identified and reframed the core problem — and drove the solution from architecture to shipped design.",
@@ -111,7 +117,7 @@ window.SITE = {
           {
             title: "The system failure",
             blocks: [
-              { type: "p", text: ["Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings.", "The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop:"] },
+              { type: "p", text: ["Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings.", "The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop: Create listing → Hit restriction → Leave tool → Apply → Return → Hit another restriction"] },
               { type: "img", src: "images/seller-qualification/loop.png", size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated" },
               { type: "p", text: ["What should take 5 days stretched to 30+.", "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time."] },
               { type: "statement", text: "The system optimized for compliance accuracy — not seller efficiency." },
@@ -121,9 +127,9 @@ window.SITE = {
                 ["I went out of my way to submit documents and get approved for the category, but only now I'm being told I can't sell this product? I wish you had informed me before I went through the trouble.", "BitByBi"]
               ] },
               { type: "row", frame: true, label: "Pain points: Sellers must leave listing tool to apply separately", items: [
-                ["images/seller-qualification/pain-listing.png", "Listing restricted"],
-                ["images/seller-qualification/pain-application.png", "Separate selling application"],
-                ["images/seller-qualification/pain-support.png", "Back-and-forth with Seller Support"]
+                ["images/seller-qualification/pain-listing.png"],
+                ["images/seller-qualification/pain-application.png"],
+                ["images/seller-qualification/pain-support.png"]
               ] }
             ]
           },
