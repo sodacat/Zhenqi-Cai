@@ -110,6 +110,7 @@ window.SITE = {
           ["Time", "Nov 2022 – Jul 2023"],
           ["Methods", "User-centered design, usability testing, design thinking workshop"]
         ],
+        cover: "images/seller-qualification/cover.webp",
         timeline: "images/seller-qualification/timeline.png",
         sections: [
           {
@@ -117,7 +118,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings." },
               { type: "p", text: "The system surfaced restrictions one at a time — which meant sellers never knew how many were coming. The result was a loop: create listing → hit restriction → leave tool → apply → return → hit another restriction." },
-              { type: "img", src: "images/seller-qualification/loop.png", alt: "The qualification loop: create listing, hit restriction, leave tool, apply, return — repeated" },
+              { type: "img", src: "images/seller-qualification/journey.webp", alt: "A fragmented journey: create listing, hit restriction, leave tool, apply, return, hit another restriction" },
               { type: "statement", text: "What should take 5 days stretched to 30+." },
               { type: "p", text: "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time. The system optimized for compliance accuracy — not seller efficiency." },
               { type: "quotes", items: [
@@ -136,6 +137,7 @@ window.SITE = {
               { type: "statement", text: "Every other team was optimizing the error message. I went upstream and questioned the architecture itself." },
               { type: "p", text: "The original qualification system was built around sequential error surfacing — revealing one restriction at a time to ensure compliance precision. This wasn't a UX failure. It was a deliberate architectural choice that externalized all complexity onto sellers. This wasn't a UI problem. It was a system architecture problem." },
               { type: "shift", from: "How do we improve error messaging?", to: "How do we preserve enforcement rigor while redesigning the compliance mechanism to support seller growth?" },
+              { type: "img", src: "images/seller-qualification/reframe.webp", alt: "From sequential enforcement to parallel qualification" },
               { type: "p", text: "This reframe moved the problem from a UI fix to an infrastructure design challenge — one that directly affected seller monetization velocity." }
             ]
           },
@@ -155,6 +157,7 @@ window.SITE = {
               { type: "option", title: "Final design: Parallel qualification infrastructure", src: "images/seller-qualification/final-design.jpg",
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel."],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
+              { type: "img", src: "images/seller-qualification/solution.webp", alt: "Before: one restriction at a time. After: all requirements up front with qualification progress, 5 days vs. 30+" },
               { type: "p", title: "Standardized qualification states", text: "Every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
               { type: "img", src: "images/seller-qualification/states.png", alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
             ]
@@ -162,6 +165,7 @@ window.SITE = {
           {
             title: "Validation & impact",
             blocks: [
+              { type: "img", src: "images/seller-qualification/impact.webp", alt: "From 30 days to 5 days: +20% completion, 4.33/5 ease of use, 100M+ product pages" },
               { type: "p", title: "Testing approach", text: "Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts. I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction." },
               { type: "figures", items: [["4.33/5", "Ease of use"], ["4/5", "Problem-solving effectiveness"]] },
               { type: "list", items: ["Sellers completed approval flows without abandoning listings", "Sequential discovery loops eliminated", "Inline approvals removed tool-switching friction"] },

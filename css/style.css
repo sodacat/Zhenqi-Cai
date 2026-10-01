@@ -1697,6 +1697,10 @@ ol {
   aspect-ratio: 16 / 7;
 }
 
+.case-cover .card-media.case-media {
+  aspect-ratio: auto;
+}
+
 /* case images keep their own proportions and colour */
 .card-media.case-media {
   background: none;

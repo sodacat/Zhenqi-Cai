@@ -430,7 +430,7 @@
         ${c.impact ? figures(c.impact) : ""}
       </section>
 
-      <section class="case-cover wrap reveal">${cover(p)}</section>
+      <section class="case-cover wrap reveal">${c.cover ? media(c.cover, p.title, "case-media") : cover(p)}</section>
 
       <section class="section wrap">
         ${sectionHead(1, "Overview")}
