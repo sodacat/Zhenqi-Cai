@@ -36,7 +36,7 @@
   const facts = (rows) =>
     `<dl class="facts-list">${rows
       .filter(([, v]) => v)
-      .map(([k, v]) => `<div><dt class="label muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+      .map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
       .join("")}</dl>`;
 
   // Numbered Swiss section head: (01) ——— Title ——— View all →
@@ -79,7 +79,7 @@
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
       </nav>
-      <div class="header-cta label"><span class="muted">${esc(S.location)}</span><svg class="globe" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5"/><path d="M1.5 8h13M2.6 4.6h10.8M2.6 11.4h10.8"/></svg></div>
+      <div class="header-cta label"><span>${esc(S.location)}</span><svg class="globe" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="2.8" ry="6.5"/><path d="M1.5 8h13M2.6 4.6h10.8M2.6 11.4h10.8"/></svg></div>
     </header>`;
   }
 
@@ -102,11 +102,11 @@
   function footer() {
     return `<footer class="site-footer wrap">
       <div class="footer-top grid-12">
-        <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
+        <p class="label footer-role">${esc(S.name)}<br><span class="cat">${esc(S.role)}</span></p>
         <ul class="label footer-col">
-          <li><a href="works.html">Work</a></li>
-          <li><a href="index.html#experiments">AI Experiments</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="works.html"><span>Work</span><span>01</span></a></li>
+          <li><a href="index.html#experiments"><span>AI Experiments</span><span>02</span></a></li>
+          <li><a href="about.html"><span>About</span><span>03</span></a></li>
         </ul>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>
@@ -158,7 +158,7 @@
           <div class="exp-body">
             <div class="exp-head">
               <h3 class="work-title">${esc(feat.title)}</h3>
-              <p class="label muted">${esc(feat.company)}</p>
+              <p class="sub">${esc(feat.company)}</p>
             </div>
             <div class="exp-text">
               <p class="work-sum">${esc(feat.summary)}</p>
@@ -174,7 +174,7 @@
                   <span class="exp-num">${pad(i + 2)}</span>
                   ${cover(p)}
                   <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
-                  <span class="label muted exp-side-sub">${esc(p.company)}</span>
+                  <span class="sub exp-side-sub">${esc(p.company)}</span>
                 </a></li>`
               )
               .join("")}
@@ -207,7 +207,7 @@
         ${S.philosophy
           .map(
             (p, i) => `<li class="principle reveal">
-              <span class="label muted">${pad(i + 1)}</span>
+              <span class="label">${pad(i + 1)}</span>
               <h3>${esc(p.title)}</h3>
               <p>${esc(p.text)}</p>
             </li>`
@@ -231,9 +231,9 @@
           ${S.bio.slice(1).map((b) => `<p>${emph(b)}</p>`).join("")}
           <p>${esc(S.intro)}</p>
           <dl class="facts">
-            <div><dt class="label muted">Role</dt><dd>${esc(S.role)}</dd></div>
-            <div><dt class="label muted">Clients</dt><dd>${S.clients.map((c) => esc(c.name)).join(", ")}</dd></div>
-            <div><dt class="label muted">Contact</dt><dd><a class="link-line" href="mailto:${esc(S.email)}">${esc(S.email)}</a></dd></div>
+            <div><dt class="label cat">Role</dt><dd>${esc(S.role)}</dd></div>
+            <div><dt class="label cat">Clients</dt><dd>${S.clients.map((c) => esc(c.name)).join(", ")}</dd></div>
+            <div><dt class="label cat">Contact</dt><dd><a class="link-line" href="mailto:${esc(S.email)}">${esc(S.email)}</a></dd></div>
           </dl>
         </div>
       </section>
@@ -244,7 +244,7 @@
           ${work
             .map(
               (p, i) => `<li><a class="index-row" href="${projectUrl(p)}">
-                <span class="label muted">${pad(i + 1)}</span>
+                <span class="label">${pad(i + 1)}</span>
                 <span class="label">${esc(p.company)}</span>
                 <span class="index-title">${esc(p.title)}</span>
                 <span class="index-sum">${esc(p.summary)}</span>
@@ -316,7 +316,7 @@
       <section class="project-info grid-12 wrap">
         <p class="lead reveal">${esc(p.summary)}</p>
         <dl class="project-meta reveal">
-          ${meta.map(([k, v]) => `<div><dt class="label muted">${k}</dt><dd>${esc(v)}</dd></div>`).join("")}
+          ${meta.map(([k, v]) => `<div><dt class="label cat">${k}</dt><dd>${esc(v)}</dd></div>`).join("")}
         </dl>
         ${p.description ? `<p class="project-desc reveal">${esc(p.description)}</p>` : ""}
       </section>
@@ -329,7 +329,7 @@
         <div class="project-nav">
           <a class="label link-line" href="works.html">← All work</a>
           <a class="next" href="${projectUrl(next)}">
-            <span class="label muted">Next project</span>
+            <span class="label cat">Next project</span>
             <div class="display">${esc(next.title)} ${arrow}</div>
           </a>
         </div>

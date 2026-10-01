@@ -2,7 +2,9 @@
  * Swiss / International Typographic Style — one system for the whole site
  *
  * Type     Helvetica only. Bold for display, titles and labels; Regular for
- *          reading text. Labels: 11px bold capitals.
+ *          reading text. Labels: 11px bold capitals, widely spaced.
+ * Labels   Category = red bold capitals; content beneath it = black.
+ *          Grey is kept for the copyright line only. Arrows are red.
  * Colour   Black, white, red. One grey for secondary text, one hairline grey.
  * Grid     12 columns; everything starts on a column line.
  * Rules    1px black for structure, hairline grey inside lists.
@@ -77,8 +79,19 @@ ol {
   font-size: 11px;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* Category label (red) and the plain line that follows a heading */
+.cat {
+  color: var(--accent);
+}
+
+.sub {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .muted {
@@ -126,6 +139,15 @@ ol {
   display: inline-block;
   font-family: var(--sans);
   font-weight: 400;
+  color: var(--accent);
+}
+
+.btn:hover .arrow,
+.btn:focus-visible .arrow,
+.link-line:hover .arrow,
+.link-line:focus-visible .arrow,
+.contact-section .arrow {
+  color: inherit;
 }
 
 /* ---------- Interaction ---------- */
@@ -232,7 +254,7 @@ ol {
   font-family: var(--sans);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
@@ -351,7 +373,7 @@ ol {
 .page-title .hero-role,
 .project-head .hero-role {
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
@@ -392,7 +414,7 @@ ol {
 .hero-text .hero-role {
   margin-bottom: clamp(18px, 2vw, 28px);
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
@@ -444,7 +466,7 @@ ol {
 
 .stats dd {
   margin: 8px 0 0;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .hero-info {
@@ -560,7 +582,7 @@ ol {
 /* Black / red / paper shapes in the Swiss poster manner, sized in % so they
    hold their composition at any card ratio */
 .art {
-  --paper: #ece8df;
+  --paper: #ffffff;
   position: relative;
   overflow: hidden;
   container-type: size;
@@ -1327,39 +1349,49 @@ ol {
   grid-column: 5 / 7;
 }
 
-/* Footer links: square box on hover; pulled back by the box's padding +
-   border so the text stays on column 7 and level with the name */
+/* Footer links: a numbered list on hairlines (cols 7–9). Hover fills the
+   row red; the fill is extended sideways with box-shadow so the text and
+   the rules stay on the grid. */
 .footer-top .footer-col {
   grid-column: 7 / 10;
-  display: grid;
-  justify-items: start;
-  gap: 2px;
-  margin: -4px 0 0 -9px;
+  margin: 0;
 }
 
 .footer-col a {
-  display: inline-block;
-  padding: 3px 8px;
-  border: 1px solid transparent;
-  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--hair);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.footer-col li:first-child a {
+  padding-top: 0;
 }
 
 .footer-col a:hover,
 .footer-col a:focus-visible {
   background: var(--accent);
-  border-color: var(--accent);
+  border-bottom-color: var(--accent);
+  box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent);
   color: #fff;
   outline: none;
+}
+
+.footer-col li:first-child a:hover,
+.footer-col li:first-child a:focus-visible {
+  box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent), 0 -6px 0 var(--accent), -8px -6px 0 var(--accent), 8px -6px 0 var(--accent);
 }
 
 .credits {
   grid-column: 10 / -1;
 }
 
-/* Bleed: the mark spans the content width; its box is shorter than the
-   letters, so the page edge cuts through the lower part and the red square */
+/* Bleed: the mark spans columns 1–6; its box is shorter than the letters,
+   so the page edge cuts through the lower part and the red square */
 .footer-mark {
-  --bleed: calc((100vw - 2 * var(--pad)) / 1.473);
+  --bleed: calc((50vw - 1.5 * var(--pad)) / 1.473);
   /* line box starts ~0.058em above the capitals: pull it up by that much */
   margin-top: calc(clamp(24px, 3vw, 48px) - var(--bleed) * 0.058);
   height: calc(var(--bleed) * 0.64);
@@ -1678,6 +1710,11 @@ ol {
 
   .credits {
     text-align: left;
+  }
+
+  /* one column on phones: the mark takes the full content width */
+  .footer-mark {
+    --bleed: calc((100vw - 2 * var(--pad)) / 1.473);
   }
 
   .contact-box {
