@@ -120,7 +120,7 @@ window.SITE = {
               { type: "h", text: "The 30-Day “Loop of Death”" },
               { type: "statement", text: "“The system hid complexity until it was too late.”" },
               { type: "p", text: "The loop:" },
-              { type: "img", src: "images/seller-qualification/loop.png", size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated" },
+              { type: "img", src: "images/seller-qualification/loop.webp", alt: "Submit information → wait for review → get rejected → provide additional info → still blocked, then repeat from the beginning" },
               { type: "h", text: "User Pain" },
               { type: "quotes", items: [
                 ["I've dedicated years of my life to this product. Running into countless roadblocks after the fact kills all of my momentum. If I need to go through a process tell me beforehand and make it clear because at this point **I'm feeling betrayed.**", "SOPO Dispenser"],
