@@ -1645,11 +1645,10 @@ ol {
   margin: 0;
 }
 
-/* flush left like the facts list above it: the number follows the name */
 .footer-col a {
   display: flex;
-  justify-content: flex-start;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 16px;
   padding: 4px 0;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
