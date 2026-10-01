@@ -1293,9 +1293,10 @@ ol {
   }
 }
 
-/* Contact links: one box spanning exactly cols 10–12 */
+/* Contact links: one box spanning exactly cols 9–12, from the left edge of
+   "Humanity" */
 .contact-side {
-  grid-column: 10 / -1;
+  grid-column: 9 / -1;
   display: grid;
   gap: 16px;
 }
@@ -1687,7 +1688,7 @@ ol {
 }
 
 /* Base row: the cut mark on columns 1–4, the credits in the bottom-right
-   corner on columns 10–12, sitting on the page edge like a poster's imprint */
+   corner on columns 9–12, sitting on the page edge like a poster's imprint */
 .footer-base {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1701,7 +1702,7 @@ ol {
 
 /* flush right, on the right edge of the nav box above */
 .credits {
-  grid-column: 10 / -1;
+  grid-column: 9 / -1;
   margin: 0;
   padding-bottom: 16px;
   text-align: right;
