@@ -1606,9 +1606,9 @@ ol {
   }
 
   .footer-base {
-    /* the mark's capitals start on the last link row ("Design
-       philosophy"): rule + padding + three 24px rows */
-    padding-top: calc(1px + var(--space-2xl) / 2 + 3 * (var(--lh-label) + 8px));
+    /* the mark's capitals start on the last link row ("About"): rule +
+       padding + two 24px rows */
+    padding-top: calc(1px + var(--space-2xl) / 2 + 2 * (var(--lh-label) + 8px));
     pointer-events: none;
   }
 
@@ -1645,7 +1645,7 @@ ol {
   margin-top: 8px;
 }
 
-/* Footer links: a numbered list (cols 7–8, numbers on the end of col 8). Hover fills the
+/* Footer links: a list on cols 7–8. Hover fills the
    row red; the fill is extended sideways with box-shadow so the text and
    the rules stay on the grid. */
 .footer-top .footer-col {
