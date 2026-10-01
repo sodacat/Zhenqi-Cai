@@ -376,16 +376,13 @@ ol {
   flex-wrap: wrap;
 }
 
-/* Desktop nav: one outlined box exactly over the hero image — from half a
-   module into column 7 to the right edge — one cell per link, the same
-   object as the contact box. Hover fills a cell red; the current page is
+/* Desktop nav: one outlined box exactly over the hero image — columns
+   7–12 — one cell per link, the same object as the contact box. Hover fills a cell red; the current page is
    filled black. */
 @media (min-width: 681px) {
   .nav {
     flex-wrap: nowrap;
     border: 1px solid var(--fg);
-    /* same offset as the hero image */
-    margin-left: calc((100% + var(--pad)) / 12);
     /* bottom edge on the ZC baseline: the mark's line box ends ~0.058em
        below its letters */
     align-self: end;
@@ -590,7 +587,7 @@ ol {
   align-self: end;
 }
 
-/* Desktop: the portrait (from the middle of column 7 to column 12) runs
+/* Desktop: the portrait (columns 7–12) runs
    from the header rule down to the Selected work rule. The text column starts on the same top line with (01); the headline, figures,
    intro and resume button follow in order beneath it. The resume button
    sits one gap under the logos, and the column's padding keeps it the
@@ -608,14 +605,6 @@ ol {
 
   .hero-text {
     padding-bottom: calc(var(--space-2xl) + var(--btn-h) + var(--space-2xl));
-  }
-
-  /* Portrait starts half a module into column 7 (half a column + half a
-     gutter): a wider gap to the headline than one gutter, narrower than a
-     whole empty column. (100% + gutter) / 12 is half of one column step of
-     the 6-column area */
-  .hero-media {
-    margin-left: calc((100% + var(--pad)) / 12);
   }
 
   /* fills the row if the text column is taller; width stays the column's */
