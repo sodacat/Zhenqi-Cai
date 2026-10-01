@@ -466,16 +466,6 @@ ol {
   grid-column: 2 / -1;
 }
 
-/* Each figure is set like a selection: red block, white type, sized to
-   its content; widened with box-shadow so the numbers stay on the grid */
-.stats div {
-  justify-self: start;
-  padding: 10px 0 8px;
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
-}
-
 .stats dt {
   font-size: clamp(40px, 4.3vw, 72px);
   font-weight: 700;
@@ -484,9 +474,16 @@ ol {
   font-variant-numeric: tabular-nums;
 }
 
+/* The label under each figure is highlighted like selected text: a red
+   fill just around the word, widened with box-shadow so it stays on the grid */
 .stats dd {
-  margin: 8px 0 0;
+  justify-self: start;
+  width: fit-content;
+  margin: 10px 0 0;
+  padding: 1px 0;
+  background: var(--accent);
   color: #fff;
+  box-shadow: 4px 0 0 var(--accent), -4px 0 0 var(--accent);
 }
 
 .hero-info {
