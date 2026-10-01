@@ -24,7 +24,7 @@ window.SITE = {
     ["clarity.", "l", "accent"]
   ],
   intro:
-    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
+    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and human-AI experiences from 0→1 to global scale.",
   clients: [
     { name: "Amazon", logo: "images/logo-amazon.png" },
     { name: "IBM", logo: "images/logo-ibm.webp" },
