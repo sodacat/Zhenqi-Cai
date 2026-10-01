@@ -162,15 +162,10 @@ ol {
   margin: 0;
 }
 
-/* Emphasis: red only in the hero headline ("clarity."); in copy it reads
-   as plain text */
+/* Emphasis: red — "clarity." in the headline, one key phrase in copy */
 .hl {
-  color: inherit;
-  font-style: normal;
-}
-
-.hero-title .hl {
   color: var(--accent);
+  font-style: normal;
 }
 
 /* The mark's full stop is a square, not a round period */
@@ -346,7 +341,7 @@ ol {
   grid-column: 1 / 3;
 }
 
-/* Section names: bold, black */
+/* Section names: bold, red — the page's structure */
 .sec-head .sec-title {
   grid-column: 3 / 7;
   margin: 0;
@@ -355,7 +350,7 @@ ol {
   line-height: var(--lh-label);
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .sec-head .sec-link {
@@ -494,7 +489,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   letter-spacing: 0.01em;
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .page-title > h1,
@@ -552,7 +547,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   letter-spacing: 0.01em;
-  color: var(--fg);
+  color: var(--accent);
 }
 
 /* Headline set like a poster: lines alternate flush left / flush right.
@@ -1191,7 +1186,7 @@ ol {
 
 .about-tags {
   display: contents;
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .about-tags li {
