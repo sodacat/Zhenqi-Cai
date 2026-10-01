@@ -40,14 +40,16 @@
   --fs-title: clamp(24px, 2.4vw, 36px);
   --fs-display: clamp(40px, 4.4vw, 72px);
 
-  /* Vertical rhythm: every space is a multiple of the 8px unit, in three
-     tiers — inside a group 8–16, between items --space-2xl, between
-     sections --space-3xl; a section head sits --space-xl above its content */
+  /* Vertical rhythm: every space is a multiple of the 8px unit — inside a
+     group 8–16, between items and between sections one gap (--space-2xl;
+     --space-3xl is kept equal to it), so a section ends the same distance
+     above the next rule as the contact box above the footer rule. A section
+     head sits --space-xl above its content */
   --u: 8px;
   --space-l: 32px;
   --space-xl: 40px;
   --space-2xl: 48px;
-  --space-3xl: 80px;
+  --space-3xl: var(--space-2xl);
   --space-4xl: 120px;
   /* shared by every outlined box of cells (nav, contact) so they match */
   --box-pad: 8px;
@@ -497,26 +499,18 @@ ol {
   align-self: end;
 }
 
-/* Desktop: buttons that close a section hang below it and sit
-   --space-2xl above the next rule, the same gap as the contact box above
-   the footer rule.
-   Resume: dropped out of the hero, its top --space-l under the bottom of
-   the image and logos; the hero's padding makes room so the button still
-   ends --space-2xl above the Selected work rule. */
+/* Desktop: the resume button drops out of the hero, its top --space-l
+   under the bottom of the image and logos; the hero's padding makes room,
+   so it ends the section gap above the Selected work rule like every other
+   section end */
 @media (min-width: 681px) {
   .hero {
     --btn-h: calc(var(--lh-label) + 18px);
-    padding-bottom: calc(var(--space-l) + var(--btn-h) + var(--space-2xl) - var(--space-3xl));
+    padding-bottom: calc(var(--space-l) + var(--btn-h));
   }
 
   .hero-left .hero-resume {
     transform: translateY(calc(100% + var(--space-l)));
-  }
-
-  /* More about me: lowered to the same --space-2xl above the
-     Design philosophy rule */
-  .about-body .btn {
-    transform: translateY(calc(var(--space-3xl) - var(--space-2xl)));
   }
 }
 
@@ -1555,7 +1549,7 @@ ol {
     --space-l: 24px;
     --space-xl: 32px;
     --space-2xl: 40px;
-    --space-3xl: 72px;
+    --space-3xl: var(--space-2xl);
     --space-4xl: 96px;
   }
 }
@@ -1565,7 +1559,7 @@ ol {
     --space-l: 24px;
     --space-xl: 32px;
     --space-2xl: 40px;
-    --space-3xl: 56px;
+    --space-3xl: var(--space-2xl);
     --space-4xl: 72px;
   }
 }
