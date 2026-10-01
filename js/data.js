@@ -183,9 +183,9 @@ window.SITE = {
               { type: "figures", items: [["18", "Long-term goals"], ["47", "How Might We's"], ["39", "Solution ideas"], ["4.8/5", "Value rating"]] },
               { type: "list", items: ["5 lightning talks — roadmap, research and demo insights", "4 themes: Simplify, Create trust, Clear communication, Expand your business", "Themes developed into practical UX concepts and designs; influenced roadmap discussions", "VP Mary Beth called the direction “Inspiring and actionable.”"] },
               { type: "trio", items: [
-                ["images/seller-qualification/hmw.png", "How might we…?", "18 long-term goals, 47 HMWs and 39 solutions, grouped into 4 themes."],
-                ["images/seller-qualification/journey-map.png", "Journey map", "Led by Zhenqi Cai — the journey of 4 user types, their expectations and emotions."],
-                ["images/seller-qualification/crazy-8s.png", "Crazy 8s and storyboards", "48 ideas in 8 minutes; the most-voted became 4 storyboards."]
+                ["images/seller-qualification/hmw.jpg", "How might we…?", "18 long-term goals, 47 HMWs and 39 solutions, grouped into 4 themes."],
+                ["images/seller-qualification/journey-map.jpg", "Journey map", "Led by Zhenqi Cai — the journey of 4 user types, their expectations and emotions."],
+                ["images/seller-qualification/crazy-8s.jpg", "Crazy 8s and storyboards", "48 ideas in 8 minutes; the most-voted became 4 storyboards."]
               ] }
             ]
           },
@@ -200,13 +200,6 @@ window.SITE = {
               { type: "statement", text: "“Great design doesn't fix interfaces — it re-architects the system.”" }
             ]
           }
-        ],
-        credits: [
-          ["UX design", "Diya Deb, Qin Zhang, Ashok Chockalingam, Sal Celis, Jingwen Cao, Ritika Bansal, Michelle Huynh"],
-          ["UX research", "Ariel McLean, Jodi Bollaert"],
-          ["Product", "Srishti Gupta, Kevin Pape, Taylor White, Padmini Govindarajan"],
-          ["SXBR", "Tricia Seery, Harish Dubey"],
-          ["Engineering", "Kunal Khanna, Lokesh Krishnarajpet"]
         ]
       }
     },
