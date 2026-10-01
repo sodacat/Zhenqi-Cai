@@ -155,8 +155,8 @@
           ${experiments
             .map(
               (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
-                <span class="exp-id"><span class="exp-no">EXP—${pad(i + 1)} ${arrow}</span><span class="exp-date">${esc(p.date || "")}</span></span>
                 <span class="exp-thumb">${cover(p)}</span>
+                <span class="exp-id"><span class="exp-no">EXP—${pad(i + 1)} ${arrow}</span><span class="exp-date">${esc(p.date || "")}</span></span>
                 <span class="exp-title">${esc(p.title)}</span>
                 <span class="exp-log">${[p.medium, p.tools, p.status].filter(Boolean).map(esc).join(" · ")}</span>
               </a></li>`
