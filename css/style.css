@@ -960,8 +960,21 @@ ol {
   margin: 0 0 1em;
 }
 
-.about-body .facts-list {
+/* About highlights: one selected line each, on hairlines like card tags */
+.about-tags li {
+  border-top: 1px solid var(--hair);
+  padding: 8px 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.about-tags li:last-child {
+  border-bottom: 1px solid var(--hair);
   margin-bottom: 8px;
+}
+
+.about-tags .selected {
+  box-shadow: 4px 0 0 var(--accent), -4px 0 0 var(--accent);
 }
 
 /* Dividers sit at the start of the gutter: one full gutter between the
