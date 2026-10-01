@@ -1116,22 +1116,17 @@ ol {
   margin-top: 24px;
 }
 
-/* Portrait with a magazine caption under it */
+/* Portrait: a large circle on columns 9–12. The facts on columns 7–9 run
+   into it — the text sits over the photo rather than keeping clear */
 .about-media {
-  grid-column: 10 / -1;
+  grid-column: 9 / -1;
   grid-row: 1 / span 2;
   margin: 0;
 }
 
-/* Desktop: the photo starts a quarter module into column 10, so the
-   space between the facts / button and the photo reads about the same as
-   the space between the hero headline and its image.
-   (100% + gutter) / 12 is a quarter of one column step of this 3-column
-   area */
-@media (min-width: 1025px) {
-  .about-media {
-    margin-left: calc((100% + var(--pad)) / 12);
-  }
+.about-body {
+  position: relative;
+  z-index: 1;
 }
 
 /* Portrait cropped to a circle as wide as its columns: head and shoulders */
