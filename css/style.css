@@ -498,12 +498,12 @@ ol {
   align-self: end;
 }
 
-/* Desktop: the portrait hangs from the header rule and the text column
-   starts on the same top line with (01); the headline, figures, intro and
-   resume button follow in order beneath it. The resume button sits
-   --space-l under the logos; the column's padding makes room for it, so
-   whichever is longer (text or portrait) ends the section gap above the
-   Selected work rule */
+/* Desktop: the portrait (cols 8–12, column 7 left empty between it and
+   the text) runs from the header rule down to the Selected work rule. The
+   text column starts on the same top line with (01); the headline, figures,
+   intro and resume button follow in order beneath it. The resume button
+   sits --space-l under the logos, and the column's padding keeps it the
+   section gap above the Selected work rule */
 @media (min-width: 681px) {
   .hero {
     --btn-h: calc(var(--lh-label) + 18px);
@@ -511,8 +511,12 @@ ol {
     align-items: stretch;
   }
 
+  .hero + .section {
+    margin-top: 0;
+  }
+
   .hero-text {
-    padding-bottom: calc(var(--space-l) + var(--btn-h));
+    padding-bottom: calc(var(--space-l) + var(--btn-h) + var(--space-2xl));
   }
 
   /* fills the row if the text column is taller; width stays the column's */
@@ -621,7 +625,7 @@ ol {
 
 /* Portrait (cols 7–12); its bottom edge is shared with the text column */
 .hero-media {
-  grid-column: 7 / -1;
+  grid-column: 8 / -1;
   position: relative;
 }
 
@@ -1597,7 +1601,7 @@ ol {
   }
 
   .hero-media {
-    grid-column: 7 / -1;
+    grid-column: 8 / -1;
   }
 
   /* tablet: summary drops under the title */
