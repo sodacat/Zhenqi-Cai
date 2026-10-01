@@ -40,7 +40,6 @@ window.SITE = {
   portrait: "images/portrait.jpg",
   // About: label / content pairs
   facts: [
-    ["Based", "Austin, TX"],
     ["Experience", "7+ years — Amazon, SAP, IBM, startups"],
     ["Focus", "Complex systems, AI experiences"]
   ],
@@ -73,7 +72,7 @@ window.SITE = {
    * Projects. type: "work" (case study) or "experiment" (AI experiments).
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
-   * Cards list `tags` (joined) and `impact` (optional) as red rows.
+   * Cards show `tags` (joined) and `impact` (optional) on one highlighted line.
    * Optional fields: year, role, description, images, alt (cover image text),
    * art ("arc" | "steps": a CSS geometric cover used instead of an image).
    */

@@ -56,10 +56,10 @@
         <span class="label">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <ul class="card-tags">${[(p.tags || []).join(", "), p.impact]
+        <p class="card-tags"><span class="selected">${[(p.tags || []).join(", "), p.impact]
           .filter(Boolean)
-          .map((t) => `<li>${esc(t)}</li>`)
-          .join("")}</ul>
+          .map(esc)
+          .join(" · ")}</span></p>
         ${arrow}
       </div>
     </a>`;

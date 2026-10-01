@@ -741,17 +741,18 @@ ol {
   font-variant-numeric: tabular-nums;
 }
 
-/* Card tags: red text on hairline rows, no labels */
+/* Card tags: one line, highlighted like selected text */
 .card-tags {
   margin: 4px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--hair);
+  padding-right: 28px;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-.card-tags li {
-  border-top: 1px solid var(--hair);
-  padding: 6px 0;
-  font-size: 13px;
-  line-height: 1.4;
-  color: var(--accent);
+.card-tags .selected {
+  box-shadow: 4px 0 0 var(--accent), -4px 0 0 var(--accent);
 }
 
 /* Label / content rows (Beethoven-poster info block): the label takes one
@@ -775,9 +776,15 @@ ol {
   grid-column: 1;
 }
 
+/* label black, content red */
+.facts-list dt.cat {
+  color: var(--fg);
+}
+
 .facts-list dd {
   grid-column: 2 / -1;
   margin: 0;
+  color: var(--accent);
   font-size: 13px;
   line-height: 1.4;
 }
