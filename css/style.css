@@ -145,9 +145,19 @@ ol {
 .btn:hover .arrow,
 .btn:focus-visible .arrow,
 .link-line:hover .arrow,
-.link-line:focus-visible .arrow,
-.contact-section .arrow {
+.link-line:focus-visible .arrow {
   color: inherit;
+}
+
+/* "Selected" highlight: red fill, white text, like a text selection. The
+   fill is widened with box-shadow so the text itself stays on the grid,
+   and repeats on every line of a wrapped phrase. */
+.selected {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0.12em 0 0 var(--accent), -0.12em 0 0 var(--accent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* ---------- Interaction ---------- */
@@ -456,6 +466,16 @@ ol {
   grid-column: 2 / -1;
 }
 
+/* Each figure is set like a selection: red block, white type, sized to
+   its content; widened with box-shadow so the numbers stay on the grid */
+.stats div {
+  justify-self: start;
+  padding: 10px 0 8px;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 10px 0 0 var(--accent), -10px 0 0 var(--accent);
+}
+
 .stats dt {
   font-size: clamp(40px, 4.3vw, 72px);
   font-weight: 700;
@@ -466,7 +486,7 @@ ol {
 
 .stats dd {
   margin: 8px 0 0;
-  color: var(--accent);
+  color: #fff;
 }
 
 .hero-info {
@@ -976,35 +996,6 @@ ol {
 }
 
 /* ---------- Contact ---------- */
-/* Get in touch: a full-bleed red field with the 12-column grid drawn on it */
-.contact-section {
-  position: relative;
-  isolation: isolate;
-  padding-block: clamp(24px, 3vw, 48px) clamp(56px, 7vw, 120px);
-  background: var(--accent);
-  color: #fff;
-}
-
-.grid-lines {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.grid-lines span {
-  border-left: 1px solid rgba(255, 255, 255, 0.28);
-  border-right: 1px solid rgba(255, 255, 255, 0.28);
-}
-
-.contact-section .sec-head {
-  border-top-color: #fff;
-}
-
-.contact-section .sec-title {
-  color: #fff;
-}
-
 .contact {
   align-items: end;
   row-gap: 32px;
@@ -1013,19 +1004,8 @@ ol {
 .contact .display {
   grid-column: 1 / 10;
   font-size: clamp(36px, 6vw, 104px);
-  line-height: 0.95;
+  line-height: 1.12;
   letter-spacing: -0.04em;
-}
-
-.contact-section .contact-box {
-  border-color: #fff;
-}
-
-/* On red, the hovered cell inverts to white */
-.contact-section .contact-box a:hover,
-.contact-section .contact-box a:focus-visible {
-  background: #fff;
-  color: var(--accent);
 }
 
 /* Contact links: one box spanning exactly cols 10–12 */
@@ -1506,14 +1486,6 @@ ol {
   .grid-12 {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 20px;
-  }
-
-  .grid-lines {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  }
-
-  .grid-lines span {
-    grid-column: auto !important;
   }
 
   .grid-12 > * {
