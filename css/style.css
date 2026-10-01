@@ -412,9 +412,11 @@ ol {
 }
 
 /* Home hero: text left (1–6), portrait right (7–12) */
+/* Text column and portrait share a bottom line: the resume button's
+   bottom edge meets the bottom of the image */
 .hero {
   margin-top: var(--space-2xl);
-  align-items: center;
+  align-items: end;
 }
 
 /* Hero text on its own subgrid (cols 1–6): label, poster headline, then
@@ -475,32 +477,19 @@ ol {
 .hero-left {
   grid-column: 1 / 4;
   grid-row: 1;
+  align-self: stretch;
   display: grid;
   grid-template-columns: subgrid;
-  align-content: start;
+  grid-template-rows: auto 1fr;
   row-gap: var(--space-l);
 }
 
-/* Resume link: text flush with 7+ at rest; the outline appears on hover
-   (pulled back by padding + border so the text stays on the column line) */
+/* Resume button: outlined, on the column line, at the foot of the left
+   column so its bottom edge meets the bottom of the hero image */
 .hero-left .hero-resume {
   grid-column: 1 / -1;
   justify-self: start;
-  margin-left: -17px;
-  border-color: transparent;
-  background: transparent;
-}
-
-.hero-left .hero-resume:hover,
-.hero-left .hero-resume:focus-visible {
-  border-color: var(--fg);
-  background: transparent;
-  color: var(--fg);
-}
-
-.hero-left .hero-resume:hover .arrow,
-.hero-left .hero-resume:focus-visible .arrow {
-  color: var(--accent);
+  align-self: end;
 }
 
 /* Numbers as type: 7+ (col 1) and 100M+ (cols 2–3) at poster scale */
@@ -596,7 +585,7 @@ ol {
   filter: none;
 }
 
-/* Portrait (cols 7–12) is taller than the intro; the intro centers on it */
+/* Portrait (cols 7–12); its bottom edge is shared with the text column */
 .hero-media {
   grid-column: 7 / -1;
   position: relative;
