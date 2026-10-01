@@ -296,38 +296,45 @@ ol {
   margin-left: -0.03em;
 }
 
-/* Nav text starts on column 7, the hero image's left edge */
 .nav {
-  grid-column: 7 / 12;
+  grid-column: 7 / 11;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 6px;
 }
 
-/* Nav links: red fill on hover, black outline box on the current page */
+/* Desktop nav: one outlined box from column 7 (the hero image's left edge)
+   to the end of column 10, one cell per link — the same object as the
+   contact box. Hover fills a cell red; the current page is filled black. */
 @media (min-width: 681px) {
-  /* Pull back by the box padding + border so WORK starts on the image edge */
   .nav {
-    margin-left: -11px;
+    flex-wrap: nowrap;
+    border: 1px solid var(--fg);
   }
 
   .nav a,
   .nav a.link-line {
-    padding: 6px 10px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
     margin: 0;
-    border: 1px solid transparent;
-    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    padding: 12px clamp(8px, 1vw, 16px);
+    white-space: nowrap;
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+
+  .nav a.nav-contact {
+    display: none;
   }
 
   .nav a.is-active {
     box-shadow: none;
-    border-color: var(--fg);
+    background: var(--fg);
+    color: #fff;
   }
 
   .nav a:hover,
   .nav a:focus-visible {
     background: var(--accent);
-    border-color: var(--accent);
     color: #fff;
     outline: none;
   }
@@ -1053,7 +1060,7 @@ ol {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px clamp(8px, 1vw, 16px);
 }
 
 .contact-box a {
@@ -1428,8 +1435,9 @@ ol {
 }
 
 /* ---------- Responsive ---------- */
-/* Mid widths: location drops under the nav so the two never collide */
-@media (min-width: 681px) and (max-width: 1100px) {
+/* Mid widths: location drops under the nav so the two never collide, and
+   the nav box runs from column 7 to the right edge */
+@media (min-width: 681px) and (max-width: 1280px) {
   .brand {
     grid-row: 1 / span 2;
   }
@@ -1438,10 +1446,19 @@ ol {
     grid-column: 7 / -1;
   }
 
+  .contact-side {
+    grid-column: 9 / -1;
+  }
+
+  .contact .display {
+    grid-column: 1 / 9;
+  }
+
   .header-cta {
     grid-column: 7 / -1;
     grid-row: 2;
     justify-self: start;
+    margin-top: 10px;
   }
 }
 
