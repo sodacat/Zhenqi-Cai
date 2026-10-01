@@ -8,8 +8,9 @@
  *          Grey is kept for the copyright line only. Arrows are red.
  * Colour   Black, white, red. One grey for secondary text.
  * Grid     12 columns; everything starts on a column line.
- * Rules    One kind of line only: 1px black, for structure (section heads,
- *          header, footer, heading-rule-body). Everything else is space.
+ * Rules    One kind of line only: a thick (4px) black horizontal rule, for
+ *          structure (section heads, header, footer). Everything else is
+ *          separated by space on the 8px rhythm.
  * Motion   Short, flat fades. Nothing slides, scales or bounces.
  * Hover    Inverts against the ground: red fill + white text on white,
  *          white fill + red text on red. Current page: black outline box.
@@ -21,6 +22,8 @@
   --fg: #0a0a0a;
   --muted: #8a8a8a;
   --line: #0a0a0a;
+  /* the only line in the layout: a thick horizontal rule */
+  --rule: 4px solid var(--line);
   --accent: #e30613;
   --placeholder: #efefed;
   --pad: clamp(16px, 2vw, 32px);
@@ -265,7 +268,7 @@ ol {
 
 /* Numbered section head: rule, index, title, link — all on the grid */
 .sec-head {
-  border-top: 1px solid var(--line);
+  border-top: var(--rule);
   padding-top: 8px;
   margin-bottom: var(--space-xl);
   align-items: baseline;
@@ -303,7 +306,7 @@ ol {
   content: "";
   grid-column: 1 / -1;
   margin-top: var(--space-l);
-  border-top: 1px solid var(--line);
+  border-top: var(--rule);
 }
 
 .brand {
@@ -954,8 +957,7 @@ ol {
 
 .principle h3 {
   margin: 16px 0 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 0;
   font-weight: 700;
   font-size: var(--fs-display);
   line-height: 1;
@@ -1158,7 +1160,7 @@ ol {
   margin-top: var(--space-3xl);
   margin-bottom: 24px;
   padding-top: 8px;
-  border-top: 1px solid var(--line);
+  border-top: var(--rule);
 }
 
 /* first filter pulled back so its text, not its box, sits on the grid */
@@ -1260,7 +1262,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-top: 1px solid var(--line);
+  border-top: var(--rule);
   padding-top: 16px;
 }
 
@@ -1282,7 +1284,7 @@ ol {
 }
 
 .footer-top {
-  border-top: 1px solid var(--line);
+  border-top: var(--rule);
   padding-top: var(--space-l);
   align-items: start;
   row-gap: 24px;
