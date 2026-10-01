@@ -1134,8 +1134,14 @@ ol {
   }
 }
 
+/* Portrait cropped to a circle as wide as its columns: head and shoulders */
 .about-media .card-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.about-media .card-media img {
+  object-position: 50% 30%;
 }
 
 /* Dividers sit at the start of the gutter: one full gutter between the
