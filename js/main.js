@@ -128,10 +128,12 @@
             </dl>
             <div class="hero-info">
               <p class="hero-intro">${esc(S.intro)}</p>
-              <ul class="clients">${S.clients
-                .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
-                .join("")}</ul>
-              <a class="btn btn-accent hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+              <div class="hero-proof">
+                <ul class="clients">${S.clients
+                  .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
+                  .join("")}</ul>
+                <a class="btn btn-accent hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+              </div>
             </div>
           </div>
         </div>
