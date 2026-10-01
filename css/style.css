@@ -1534,11 +1534,11 @@ ol {
   grid-column: 5 / 7;
 }
 
-/* The role sits on the second row of the link list (one 32px row pitch:
-   16px line + 8px + 8px padding), level with "AI Experiments" */
+/* The role sits on the second row of the link list (one 24px row pitch:
+   16px line + 4px + 4px padding), level with "AI Experiments" */
 .footer-role .cat {
   display: block;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 /* Footer links: a numbered list (cols 7–9). Hover fills the
@@ -1553,7 +1553,7 @@ ol {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 8px 0;
+  padding: 4px 0;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 
@@ -1571,7 +1571,7 @@ ol {
 
 .footer-col li:first-child a:hover,
 .footer-col li:first-child a:focus-visible {
-  box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent), 0 -6px 0 var(--accent), -8px -6px 0 var(--accent), 8px -6px 0 var(--accent);
+  box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent), 0 -4px 0 var(--accent), -8px -4px 0 var(--accent), 8px -4px 0 var(--accent);
 }
 
 /* Base row: the cut mark on columns 1–4, the credits in the bottom-right
@@ -1606,8 +1606,9 @@ ol {
    so the page edge cuts through the lower part and the red square */
 .footer-mark {
   --bleed: calc(((100vw - 13 * var(--pad)) / 3 + 3 * var(--pad)) / 1.473);
-  /* line box starts ~0.058em above the capitals: pull it up by that much */
-  margin-top: calc(clamp(24px, 3vw, 48px) - var(--bleed) * 0.058);
+  /* 16px under the footer text; the line box starts ~0.058em above the
+     capitals, so pull it up by that much */
+  margin-top: calc(16px - var(--bleed) * 0.058);
   height: calc(var(--bleed) * 0.64);
   overflow: hidden;
   font-weight: 700;
