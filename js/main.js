@@ -404,7 +404,7 @@
           <figure class="case-fig">${media(b.src, b.alt || b.title || "", "case-media")}</figure>
         </div>`;
       case "figures":
-        return figures(b.items, "is-small");
+        return `${b.label ? `<p class="label case-label reveal">${esc(b.label)}</p>` : ""}${figures(b.items, "is-small")}`;
       case "columns":
         return `<div class="case-columns reveal">${b.items
           .map(([t, items]) => `<div><h3 class="case-sub">${esc(t)}</h3>${bullets(items)}</div>`)

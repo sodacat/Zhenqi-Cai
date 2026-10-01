@@ -1654,6 +1654,7 @@ ol {
   row-gap: var(--space-2xl);
 }
 
+.case-body > .case-label,
 .case-intro > .case-label {
   margin-bottom: calc(16px - var(--space-2xl));
 }
@@ -1931,7 +1932,7 @@ ol {
 /* screenshots and diagrams lift off the white page as a card: a soft
    shadow, no border */
 .is-framed .card-media.case-media {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .case-body > .case-fig.is-md {

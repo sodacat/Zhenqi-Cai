@@ -209,6 +209,9 @@ window.SITE = {
                 "Participant ratings reflected high impact, with scores of 4.8/5 for value, 4.6/5 for engagement, and 4.6/5 for organizational influence.",
                 "All four themes were developed into concrete UX concepts and design directions."
               ] },
+              { type: "figures", items: [["18", "Long-term UX opportunities"], ["47", "Problem statements"], ["39", "Solution concepts"]] },
+              { type: "list", label: "Four themes", items: ["Simplify", "Create Trust", "Clear Communication", "Expand Your Business"] },
+              { type: "figures", label: "Participant ratings", items: [["4.8/5", "Value"], ["4.6/5", "Engagement"], ["4.6/5", "Organizational influence"]] },
               { type: "quotes", items: [["Inspiring and actionable.", "VP Mary Beth, on the strategic direction"]] },
               { type: "trio", items: [
                 ["images/seller-qualification/hmw.png", "Simplify, Create trust, Clear Communication, Expand your business", "Led by Sal Celis. 18 long-term goals, 47 HMWs and 39 solutions for Seller Qualification were created, grouped into 4 themes. “Expand your business” emerged as a new theme, offering opportunities to support sellers' growth."],
