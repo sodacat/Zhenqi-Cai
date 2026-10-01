@@ -27,6 +27,8 @@
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --dur: 0.18s;
+  /* shared by every outlined box of cells (nav, contact) so they match */
+  --box-pad: 9px;
 }
 
 *,
@@ -317,7 +319,7 @@ ol {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: 7px clamp(6px, 0.8vw, 12px);
+    padding: var(--box-pad) clamp(6px, 0.8vw, 12px);
     white-space: nowrap;
     transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
   }
@@ -758,9 +760,16 @@ ol {
   grid-column: 1;
 }
 
-/* label black, content red */
-.facts-list dt.cat {
+/* Every label / content table: label black, content red */
+.facts-list dt.cat,
+.facts dt.cat,
+.project-meta dt.cat {
   color: var(--fg);
+}
+
+.facts dd,
+.project-meta dd {
+  color: var(--accent);
 }
 
 .facts-list dd {
@@ -1049,7 +1058,7 @@ ol {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 12px clamp(8px, 1vw, 16px);
+  padding: var(--box-pad) clamp(6px, 0.8vw, 12px);
 }
 
 .contact-box a {

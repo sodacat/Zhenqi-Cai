@@ -87,7 +87,7 @@ window.SITE = {
       impact: "+20% completion",
       alt: "Amazon boxes on a conveyor belt",
       cover: "images/seller-qualification.jpg",
-      images: ["images/seller-qualification.jpg", "images/seller-qualification-2.jpg", "images/seller-qualification-3.jpg"]
+      images: ["images/seller-qualification.jpg"]
     },
     {
       id: "stonk-tech",
@@ -109,7 +109,7 @@ window.SITE = {
       tags: ["AI", "Enterprise", "Design systems"],
       alt: "Illuminated IBM logo on a dark facade",
       cover: "images/amelia.jpg",
-      images: ["images/amelia.jpg", "images/amelia-2.jpg"]
+      images: ["images/amelia.jpg"]
     },
     {
       id: "enterprise-experience",
@@ -120,7 +120,7 @@ window.SITE = {
       tags: ["Enterprise", "Workflow", "Scale"],
       alt: "SAP logo on a concrete building",
       cover: "images/enterprise-experience.jpg",
-      images: ["images/enterprise-experience.jpg", "images/enterprise-experience-2.jpg"]
+      images: ["images/enterprise-experience.jpg"]
     },
     {
       id: "sodacats-world",

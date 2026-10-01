@@ -53,7 +53,7 @@
       <span class="work-num">${pad(n)}</span>
       ${cover(p)}
       <div class="work-meta">
-        <span class="label">${esc(p.company)}</span>
+        <span class="label cat">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
         <p class="card-tags"><span class="selected">${[(p.tags || []).join(", "), p.impact]
@@ -208,7 +208,7 @@
         ${S.philosophy
           .map(
             (p, i) => `<li class="principle reveal">
-              <span class="label">${pad(i + 1)}</span>
+              <span class="label cat">${pad(i + 1)}</span>
               <h3>${esc(p.title)}</h3>
               <p>${esc(p.text)}</p>
             </li>`
@@ -246,7 +246,7 @@
             .map(
               (p, i) => `<li><a class="index-row" href="${projectUrl(p)}">
                 <span class="label">${pad(i + 1)}</span>
-                <span class="label">${esc(p.company)}</span>
+                <span class="label cat">${esc(p.company)}</span>
                 <span class="index-title">${esc(p.title)}</span>
                 <span class="index-sum">${esc(p.summary)}</span>
                 ${arrow}
