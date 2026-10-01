@@ -847,6 +847,38 @@ ol {
   color: var(--accent);
 }
 
+/* ---------- Hover frame ---------- */
+/* Work cards and experiment rows have no frames at rest; on hover the
+   piece's frame appears — 1px black, half a gutter outside the content
+   and 16px above and below, so nothing moves */
+.work-card,
+.exp-row {
+  position: relative;
+}
+
+.work-card::after,
+.exp-row::after {
+  content: "";
+  position: absolute;
+  inset: -16px calc(var(--pad) / -2);
+  border: 1px solid var(--fg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.work-card:hover::after,
+.work-card:focus-visible::after,
+.exp-row:hover::after,
+.exp-row:focus-visible::after {
+  opacity: 1;
+}
+
+.work-card:focus-visible,
+.exp-row:focus-visible {
+  outline: none;
+}
+
 /* ---------- About (home) ---------- */
 
 /* Magazine page on the 12-column grid:
