@@ -997,65 +997,72 @@ ol {
   row-gap: var(--space-2xl);
 }
 
+/* Each experiment reads like a catalogued lab record, a different system
+   from the case studies above: the log number and year at the top, the
+   thumbnail, a large title, and a tiny archive-style catalog label */
+.exp-index > li {
+  display: grid;
+}
+
+/* the catalog labels of the three records sit on one bottom line */
 .exp-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  column-gap: 16px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr auto;
   row-gap: 16px;
   align-items: start;
 }
 
-/* Each experiment reads like a numbered lab record: the log number on a
-   rule with its date, the thumbnail, the title and a one-line summary, then
-   a small medium / tools / status table */
+.exp-row > .exp-log {
+  align-self: end;
+}
+
 .exp-id {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 4px;
   padding-top: 8px;
   border-top: var(--rule);
-  color: var(--accent);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
-.exp-thumb { grid-column: 1 / -1; }
-.exp-name { grid-column: 1; display: grid; gap: 8px; }
-/* centred on the title's first line */
-.exp-row > .arrow { grid-column: 2; grid-row: 3; margin-top: calc((var(--fs-title) * 0.75 * 1.1 - var(--arrow)) / 2); }
+.exp-no {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+}
 
+.exp-date {
+  color: var(--fg);
+}
+
+/* catalog label: very small, uppercase keys, hairline rows */
 .exp-log {
-  grid-column: 1 / -1;
   display: grid;
   margin-top: 8px;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
 }
 
 .exp-log > span {
   display: grid;
-  grid-template-columns: 6em minmax(0, 1fr);
-  column-gap: 16px;
-  padding: 4px 0;
+  grid-template-columns: 5.5em minmax(0, 1fr);
+  column-gap: 12px;
+  padding: 3px 0;
   border-top: 1px solid var(--line);
 }
 
+.exp-log > span:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
 .exp-log .k {
-  color: var(--fg);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.exp-log .v {
-  font-weight: 400;
-}
-
-/* status: a small red square before the value */
-.exp-log .is-status::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-  background: var(--accent);
-  vertical-align: 0;
 }
 
 .exp-thumb .card-media {
@@ -1064,9 +1071,9 @@ ol {
 
 .exp-title {
   font-weight: 700;
-  /* a step below the work-card titles, so each fits one line */
-  font-size: calc(var(--fs-title) * 0.75);
-  line-height: 1.1;
+  /* the lab record's large title */
+  font-size: var(--fs-title);
+  line-height: 1.05;
   letter-spacing: -0.01em;
   transition: color var(--dur) var(--ease);
 }
