@@ -1268,6 +1268,15 @@ ol {
   grid-row: 2;
 }
 
+/* Desktop: the link box sits beside the line, on its last baseline row,
+   instead of on a row of its own */
+@media (min-width: 1025px) {
+  .contact-side {
+    grid-row: 1;
+    align-self: end;
+  }
+}
+
 .contact .display {
   grid-column: 1 / 10;
   font-size: var(--fs-display);
