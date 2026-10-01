@@ -863,6 +863,27 @@ ol {
   color: var(--accent);
 }
 
+/* ---------- Hover highlight on statement lines ---------- */
+/* Each line of the About statement and each philosophy word turns into a
+   red "selected" highlight under the pointer. Lines are sized to their
+   text (right-aligned lines keep their place with margin-left: auto). */
+.statement span,
+.principle h3 {
+  width: fit-content;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.statement .r {
+  margin-left: auto;
+}
+
+.statement span:hover,
+.principle h3:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0.08em 0 0 var(--accent), -0.08em 0 0 var(--accent);
+}
+
 /* ---------- Hover frame ---------- */
 /* Work cards and experiment rows have no frames at rest; on hover the
    piece's frame appears — 1px black, half a gutter outside the content
