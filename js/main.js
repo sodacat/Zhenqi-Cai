@@ -54,7 +54,7 @@
         <span class="label cat">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <p class="card-tags">${[(p.tags || []).join(", "), p.impact].filter(Boolean).map(esc).join(" · ")}</p>
+        <p class="card-tags">${[...(p.tags || []), p.impact].filter(Boolean).map(esc).join(" · ")}</p>
         ${arrow}
       </div>
     </a>`;
