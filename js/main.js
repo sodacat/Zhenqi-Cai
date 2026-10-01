@@ -18,7 +18,7 @@
 
   // Poster lines like the hero headline: [text, "l" | "r"] (flush left / right)
   const posterLines = (arr) =>
-    arr.map(([t, a]) => `<span class="${a === "r" ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`).join("");
+    arr.map(([t, a]) => `<span class="${a === "r" ? "r" : a === "j" ? "j" : "l"}" aria-hidden="true">${esc(t)}</span>`).join("");
 
   // *phrase* in copy is set in red (one emphasis per paragraph at most)
   const emph = (s) => esc(s).replace(/\*([^*]+)\*/g, '<em class="hl">$1</em>');
