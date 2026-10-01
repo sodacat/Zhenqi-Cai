@@ -348,16 +348,20 @@
     `<dl class="case-figures ${cls} reveal">${items
       .map(([v, l]) => `<div><dt>${esc(v)}</dt><dd class="label">${esc(l)}</dd></div>`)
       .join("")}</dl>`;
-  const bullets = (items, cls = "") => `<ul class="case-list ${cls}">${items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+  // **text** marks the source's bold emphasis
+  const rich = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const bullets = (items, cls = "") => `<ul class="case-list ${cls}">${items.map((t) => `<li>${rich(t)}</li>`).join("")}</ul>`;
 
   // text, then an optional list, then optional closing text
-  const paras = (t) => [].concat(t || []).map((x) => `<p>${esc(x)}</p>`).join("");
+  const paras = (t) => [].concat(t || []).map((x) => `<p>${rich(x)}</p>`).join("");
   const prose = (b) => paras(b.text) + (b.items ? bullets(b.items) : "") + paras(b.after);
 
   function caseBlock(b) {
     switch (b.type) {
       case "statement":
-        return `<p class="case-statement reveal">${esc(b.text)}</p>`;
+        return `<p class="case-statement reveal">${rich(b.text)}</p>`;
+      case "h":
+        return `<h3 class="case-h reveal">${rich(b.text)}</h3>`;
       case "p":
         return `<div class="case-text reveal">${b.title ? `<h3 class="case-sub">${esc(b.title)}</h3>` : ""}${prose(b)}</div>`;
       case "list":
@@ -370,16 +374,16 @@
           .join("")}</div>`;
       case "quotes":
         return `<div class="case-quotes reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}${b.items
-          .map(([q, who]) => `<blockquote><p>“${esc(q)}”</p>${who ? `<cite class="label">— ${esc(who)}</cite>` : ""}</blockquote>`)
+          .map(([q, who]) => `<blockquote><p>“${rich(q)}”</p>${who ? `<cite class="label">— ${esc(who)}</cite>` : ""}</blockquote>`)
           .join("")}</div>`;
       case "shift":
-        return `<div class="case-shift reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}
-          <div><span class="label">From</span><p>${esc(b.from)}</p></div>
-          <div><span class="label">To</span><p>${esc(b.to)}</p></div>
+        return `<div class="case-shift${b.quiet ? " is-quiet" : ""}${b.md ? " is-md" : ""} reveal">${b.label ? `<p class="label case-label">${esc(b.label)}</p>` : ""}
+          <div><span class="label">${esc(b.fromLabel || "From")}</span><p>${esc(b.from)}</p></div>
+          <div><span class="label">${esc(b.toLabel || "To")}</span><p>${esc(b.to)}</p></div>
         </div>`;
       case "option":
         return `<div class="case-option ${figCls(b)} reveal">
-          <h3 class="case-sub">${esc(b.title)}</h3>
+          <h3 class="case-h">${esc(b.title)}</h3>
           <figure class="case-fig">${media(b.src, b.title, "case-media")}</figure>
           <div class="case-verdict">
             ${b.intro ? `<p class="case-verdict-intro">${esc(b.intro)}</p>` : ""}
@@ -439,12 +443,12 @@
         ${sectionHead(1, "Overview")}
         <div class="case-overview grid-12">
           ${c.role
-            ? `<div class="case-role reveal"><h3 class="case-sub">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "My role", "case-media")}</figure>` : ""}${bullets(c.role)}</div>`
+            ? `<div class="case-role reveal"><h3 class="case-h">My role</h3>${c.roleImage ? `<figure class="case-fig case-role-fig">${media(c.roleImage, "My role", "case-media")}</figure>` : ""}${bullets(c.role)}</div>`
             : `<div class="case-role case-text reveal">${c.aboutTitle ? `<h3 class="case-sub">${esc(c.aboutTitle)}</h3>` : ""}${paras(c.about)}</div>`}
           <dl class="facts case-facts reveal">
             ${c.facts.map(([k, v]) => `<div><dt class="label cat">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}
           </dl>
-          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-sub">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
+          ${c.timeline ? `<div class="case-timeline reveal"><h3 class="case-h">Timeline</h3>${media(c.timeline, "Project timeline, Nov 2022 – Q3 2023", "case-media")}</div>` : ""}
         </div>
         ${c.overview ? `<div class="case-body case-more grid-12">${c.overview.map(caseBlock).join("")}</div>` : ""}
       </section>

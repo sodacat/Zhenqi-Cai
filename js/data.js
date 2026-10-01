@@ -91,13 +91,8 @@ window.SITE = {
       // Full case study (rendered on the project page in place of the gallery)
       case: {
         headline: "From Compliance Checkpoint to Seller Growth Infrastructure",
-        lead: "How I redesigned Amazon's qualification system so that transparency and enforcement reinforce each other.",
-        impact: [
-          ["+20%", "Qualification completion"],
-          ["4.33/5", "Ease of use"],
-          ["30 → 5", "Days to resolution"],
-          ["100M+", "Product pages"]
-        ],
+        lead: "How I redesigned Amazon's qualification system so that transparency and enforcement reinforce each other — reducing onboarding time from 30 days to 5 and increasing completion by 20%.",
+        cover: "images/seller-qualification/cover.webp",
         roleImage: "images/seller-qualification/role.png",
         role: [
           "I was the designer who identified and reframed the core problem — and drove the solution from architecture to shipped design.",
@@ -116,17 +111,16 @@ window.SITE = {
           {
             title: "The system failure",
             blocks: [
-              { type: "statement", text: "Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings." },
-              { type: "p", text: ["The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop:"] },
+              { type: "p", text: ["Nearly 50% of new Amazon sellers hit qualification restrictions only after creating their listings.", "The system surfaced restrictions one at a time — which meant sellers never knew how many were coming.", "The result was a loop:"] },
               { type: "img", src: "images/seller-qualification/loop.png", size: "md", alt: "Create listing → Hit restriction → Leave tool → Apply → Return, repeated" },
-              { type: "statement", text: "What should take 5 days stretched to 30+." },
-              { type: "p", text: "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time." },
+              { type: "p", text: ["What should take 5 days stretched to 30+.", "Sellers weren't failing because of bad products or missing documents. They were failing because the system was designed to reveal requirements reactively, one at a time."] },
               { type: "statement", text: "The system optimized for compliance accuracy — not seller efficiency." },
-              { type: "quotes", label: "Two sellers put it plainly:", items: [
-                ["I've dedicated years of my life to this product. Running into countless roadblocks after the fact kills all of my momentum. If I need to go through a process tell me beforehand and make it clear because at this point I'm feeling betrayed.", "SOPO Dispenser"],
+              { type: "h", text: "Two sellers put it plainly:" },
+              { type: "quotes", items: [
+                ["I've dedicated years of my life to this product. Running into countless roadblocks after the fact kills all of my momentum. If I need to go through a process tell me beforehand and make it clear because at this point **I'm feeling betrayed.**", "SOPO Dispenser"],
                 ["I went out of my way to submit documents and get approved for the category, but only now I'm being told I can't sell this product? I wish you had informed me before I went through the trouble.", "BitByBi"]
               ] },
-              { type: "row", label: "Pain points: Sellers must leave listing tool to apply separately", frame: true, items: [
+              { type: "row", frame: true, label: "Pain points: Sellers must leave listing tool to apply separately", items: [
                 ["images/seller-qualification/pain-listing.png", "Listing restricted"],
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
                 ["images/seller-qualification/pain-support.png", "Back-and-forth with Seller Support"]
@@ -136,18 +130,19 @@ window.SITE = {
           {
             title: "The strategic reframe",
             blocks: [
-              { type: "statement", text: "Every other team was optimizing the error message. I went upstream and questioned the architecture itself." },
-              { type: "p", text: "The original qualification system was built around sequential error surfacing — revealing one restriction at a time to ensure compliance precision. This wasn't a UX failure. It was a deliberate architectural choice that externalized all complexity onto sellers." },
+              { type: "p", text: "Every other team was optimizing the error message." },
+              { type: "statement", text: "I went upstream and questioned the architecture itself." },
+              { type: "p", text: "The original qualification system was built around **sequential error surfacing** — revealing one restriction at a time to ensure compliance precision. This wasn't a UX failure. It was a deliberate architectural choice that externalized all complexity onto sellers." },
               { type: "statement", text: "This wasn't a UI problem. It was a system architecture problem." },
-              { type: "shift", label: "The question shifted", from: "How do we improve error messaging?", to: "How do we preserve enforcement rigor while redesigning the compliance mechanism to support seller growth?" },
+              { type: "shift", quiet: true, label: "The question shifted", from: "How do we improve error messaging?", to: "How do we preserve enforcement rigor while redesigning the compliance mechanism to support seller growth?" },
               { type: "p", text: "This reframe moved the problem from a UI fix to an infrastructure design challenge — one that directly affected seller monetization velocity." },
-              { type: "img", src: "images/seller-qualification/reframe.webp", alt: "From sequential enforcement to parallel qualification" }
+              { type: "img", src: "images/seller-qualification/reframe.webp", alt: "Before: sequential enforcement. After: parallel qualification." }
             ]
           },
           {
             title: "System redesign",
             blocks: [
-              { type: "shift", label: "Core system shift", from: "Sequential Enforcement", to: "Parallel Qualification Infrastructure" },
+              { type: "shift", md: true, label: "Core system shift", from: "Sequential Enforcement", to: "Parallel Qualification Infrastructure" },
               { type: "p", text: "I explored two incremental approaches before concluding the architecture itself had to change." },
               { type: "option", frame: true, title: "Exploration 1: Increasing visibility within sequential architecture", src: "images/seller-qualification/exploration-1.png",
                 pros: ["Sellers are guided earlier.", "Feels like information, not an error."],
@@ -158,24 +153,23 @@ window.SITE = {
                 cons: ["Notifications can no longer be tied to specific attribute", "Mental model breaks — feels like an error again"],
                 note: "Both explorations confirmed the same thing: the limitation wasn't interaction design. It was the underlying enforcement architecture. To truly enable parallel transparency, the restriction mechanism itself had to be redesigned." },
               { type: "option", frame: true, title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png", intro: "Sellers can now:",
-                pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel"],
+                pros: ["See **all** qualification requirements immediately upon entering the listing flow.", "Apply for approvals **inline**, without leaving the tool.", "Resolve multiple restrictions **in parallel**"],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
-              { type: "p", title: "Standardized qualification states", text: "Standardized qualification states ensure every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
+              { type: "h", text: "Standardized qualification states" },
+              { type: "p", text: "**Standardized qualification states** ensure every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
               { type: "img", src: "images/seller-qualification/states.png", frame: true, alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
             ]
           },
           {
             title: "Validation & impact",
             blocks: [
-              { type: "p", title: "Testing approach", text: [
-                "Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts.",
-                "I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction."
-              ] },
-              { type: "p", title: "User testing result" },
-              { type: "figures", items: [["4.33/5", "Ease of use"], ["4/5", "Problem-solving effectiveness"]] },
-              { type: "list", items: ["Sellers completed approval flows without abandoning listings", "Sequential discovery loops eliminated", "Inline approvals removed tool-switching friction"] },
-              { type: "shift", label: "The emotional shift", from: "“I feel betrayed.”", to: "“For the first time, I felt Amazon was guiding me instead of blocking me.”" },
-              { type: "quotes", label: "What did the selling partners say?", items: [
+              { type: "p", text: ["**Testing approach:** Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts.", "I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction."] },
+              { type: "h", text: "User Testing Result" },
+              { type: "list", items: ["4.33/5 ease of use", "4/5 problem-solving effectiveness", "Sellers completed approval flows without abandoning listings", "Sequential discovery loops eliminated", "Inline approvals removed tool-switching friction"] },
+              { type: "h", text: "The emotional shift" },
+              { type: "shift", fromLabel: "Before", toLabel: "After", from: "“I feel betrayed.”", to: "“For the first time, I felt Amazon was guiding me instead of blocking me.”" },
+              { type: "h", text: "What did the selling partners say?" },
+              { type: "quotes", items: [
                 ["I found it helpful to be able to directly apply for a license to sell the products, and to be taken through that process by Amazon. I wouldn't say anything was not helpful, I think it was all really clear and functional.", "joanofsnark"],
                 ["I think having specific information about certain big brands would make the error listing experience better, if there is any. And being specific about why certain things aren't allowed, and what you can do to change this as a seller.", "joanofsnark"]
               ] }
@@ -196,21 +190,18 @@ window.SITE = {
           {
             title: "Organizational impact",
             blocks: [
-              { type: "img", src: "images/seller-qualification/alignment.webp", alt: "Cross-functional workshop: from enforcement-first to seller growth" },
-              { type: "p", text: [
-                "Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.",
-                "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"
-              ] },
+              { type: "img", src: "images/seller-qualification/alignment.webp", alt: "Seller Qualification Workshop — July 17-18, Seattle office" },
+              { type: "h", text: "Seller Qualification Workshop" },
+              { type: "p", text: ["July 17-18 (Mon-Tue), Seattle office", "Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.", "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"] },
               { type: "shift", from: "“How do we control sellers?”", to: "“How do we help sellers grow responsibly?”" },
-              { type: "p", title: "Outcome", text: [
+              { type: "h", text: "Outcome" },
+              { type: "p", text: [
                 "The workshop generated 18 long-term UX opportunities, 47 problem statements, and 39 solution concepts across four themes: Simplify, Create Trust, Clear Communication, and Expand Your Business.",
                 "Participant ratings reflected high impact, with scores of 4.8/5 for value, 4.6/5 for engagement, and 4.6/5 for organizational influence.",
-                "All four themes were developed into concrete UX concepts and design directions."
+                "All four themes were developed into concrete UX concepts and design directions.",
+                "VP Mary Beth called the strategic direction"
               ] },
-              { type: "figures", items: [["18", "Long-term UX opportunities"], ["47", "Problem statements"], ["39", "Solution concepts"]] },
-              { type: "list", label: "Four themes", items: ["Simplify", "Create Trust", "Clear Communication", "Expand Your Business"] },
-              { type: "figures", label: "Participant ratings", items: [["4.8/5", "Value"], ["4.6/5", "Engagement"], ["4.6/5", "Organizational influence"]] },
-              { type: "quotes", items: [["Inspiring and actionable.", "VP Mary Beth, on the strategic direction"]] },
+              { type: "statement", text: "“Inspiring and actionable.”" },
               { type: "trio", items: [
                 ["images/seller-qualification/hmw.png", "Simplify, Create trust, Clear Communication, Expand your business", "Led by Sal Celis. 18 long-term goals, 47 HMWs and 39 solutions for Seller Qualification were created, grouped into 4 themes. “Expand your business” emerged as a new theme, offering opportunities to support sellers' growth."],
                 ["images/seller-qualification/journey-map.jpg", "Journey Map", "Led by Zhenqi Cai. Participants created a journey map for 4 user types, empathizing with their experiences, expectations, and emotions throughout the journey."],
@@ -226,8 +217,8 @@ window.SITE = {
                 "The real unlock was designing the system so that transparency and rigor reinforce each other — not trade off against each other.",
                 "By replacing sequential enforcement with parallel transparency:"
               ], items: ["Repeated submission loops were eliminated", "Seller time-to-revenue was protected", "Qualification completion increased by 20%"],
-                after: "At Amazon scale, this directly improves seller onboarding velocity and marketplace growth." },
-              { type: "quotes", items: [["Great design doesn’t fix interfaces — it re-architects the system.", "Zhenqi"]] }
+                after: "At Amazon scale, this directly improves **seller onboarding velocity and marketplace growth**." },
+              { type: "statement", text: "“Great design doesn't fix interfaces — it re-architects the system.” — Zhenqi" }
             ]
           }
         ]

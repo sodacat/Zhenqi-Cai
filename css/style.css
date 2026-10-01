@@ -1898,7 +1898,8 @@ ol {
   align-items: start;
 }
 
-.case-option > .case-sub { grid-column: 1 / -1; margin: 0; }
+.case-option > .case-sub,
+.case-option > .case-h { grid-column: 1 / -1; margin: 0; }
 .case-option > .case-fig { grid-column: 1 / 9; }
 .case-option > .case-verdict { grid-column: 9 / -1; display: grid; gap: 16px; }
 .case-option > .case-note { grid-column: 1 / 7; margin: 0; }
@@ -1972,6 +1973,42 @@ ol {
 
 @media (max-width: 680px) {
   .case-body > .case-fig.is-md { grid-column: 1 / -1; }
+}
+
+/* the case study's three text levels: section rule, a mid heading
+   (.case-h), the big statement (.case-statement); bold stays inline */
+.case-h {
+  margin: 0;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.case-body > .case-h {
+  grid-column: 1 / 10;
+  margin-bottom: calc(16px - var(--space-2xl));
+}
+
+.case-role > .case-h,
+.case-timeline > .case-h {
+  margin-bottom: 16px;
+}
+
+.case-body strong,
+.case-overview strong {
+  font-weight: 700;
+}
+
+.case-shift.is-md > div p {
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.2;
+}
+
+.case-shift.is-quiet > div:first-of-type p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
 }
 
 .case-more {
