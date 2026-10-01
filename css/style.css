@@ -675,8 +675,8 @@ ol {
 /* Intro and logos form one block exactly as wide as the row of logos: the
    intro wraps to that width (width 0 / min-width 100% keeps it from
    widening the block) */
-/* Intro and logos fill columns 4–6: the intro flush left from col 4, the
-   logos spread so the first starts on col 4 and the last ends on col 6 */
+/* Intro and logos fill columns 4–6: the intro flush left from col 4, one
+   logo flush left on each of cols 4, 5 and 6 */
 .hero-proof {
   display: grid;
   gap: 24px;
@@ -695,11 +695,12 @@ ol {
   color: var(--fg);
 }
 
+/* one logo per column (4, 5, 6), each flush left on its column line */
 .clients {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
-  gap: var(--pad);
+  column-gap: var(--pad);
 }
 
 .client {
