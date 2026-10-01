@@ -730,6 +730,19 @@ ol {
   font-variant-numeric: tabular-nums;
 }
 
+/* Card tags: red text on hairline rows, no labels */
+.card-tags {
+  margin: 4px 0 0;
+}
+
+.card-tags li {
+  border-top: 1px solid var(--hair);
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--accent);
+}
+
 /* Label / content rows (Beethoven-poster info block): the label takes one
    grid column, the content the rest */
 .facts-list {

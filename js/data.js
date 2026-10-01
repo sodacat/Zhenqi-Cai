@@ -73,7 +73,7 @@ window.SITE = {
    * Projects. type: "work" (case study) or "experiment" (AI experiments).
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
-   * `tags` show as Focus on cards; `impact` (optional) shows as Impact.
+   * Cards list `tags` (joined) and `impact` (optional) as red rows.
    * Optional fields: year, role, description, images, alt (cover image text),
    * art ("arc" | "steps": a CSS geometric cover used instead of an image).
    */
