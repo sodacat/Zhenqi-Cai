@@ -8,7 +8,8 @@
 
   const lines = (arr) => arr.map(esc).join("<br>");
   const pad = (n) => String(n).padStart(2, "0");
-  const arrow = `<span class="arrow" aria-hidden="true">→</span>`;
+  // The site's arrow is a small red square (the same square as the mark's full stop)
+  const arrow = `<span class="arrow" aria-hidden="true"></span>`;
 
   const projectUrl = (p) => `project.html?id=${encodeURIComponent(p.id)}`;
   const work = S.projects.filter((p) => p.type === "work");
@@ -37,7 +38,7 @@
   }
 
 
-  // Numbered Swiss section head: (01) ——— Title ——— View all →
+  // Numbered Swiss section head: (01) ——— Title ——— optional link
   function sectionHead(n, title, link) {
     return `<div class="sec-head grid-12">
       <span class="label idx">(${pad(n)})</span>
@@ -75,6 +76,7 @@
           .map(([t, href, key]) => `<a class="link-line${page === key ? " is-active" : ""}" href="${href}">${t}</a>`)
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
+        <span class="nav-end" aria-hidden="true">${arrow}</span>
       </nav>
     </header>`;
   }

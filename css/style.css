@@ -163,11 +163,17 @@ ol {
   background: var(--accent);
 }
 
+/* Arrows are one red square, the same size everywhere (filled with
+   currentColor, so it turns white inside a red hover fill) */
 .arrow {
+  --arrow: 8px;
   display: inline-block;
-  font-family: var(--sans);
-  font-weight: 400;
+  flex: 0 0 auto;
+  width: var(--arrow);
+  height: var(--arrow);
+  vertical-align: middle;
   color: var(--accent);
+  background: currentColor;
 }
 
 .btn:hover .arrow,
@@ -358,6 +364,14 @@ ol {
     display: none;
   }
 
+  /* closing cell: the red square, like the contact box's last cell */
+  .nav .nav-end {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: var(--box-pad) var(--box-pad-x);
+  }
+
   .nav a.is-active {
     box-shadow: none;
     background: var(--fg);
@@ -372,7 +386,8 @@ ol {
   }
 }
 
-.nav-contact {
+.nav-contact,
+.nav-end {
   display: none;
 }
 
@@ -860,10 +875,11 @@ ol {
   grid-column: 1 / -1;
 }
 
+/* centred on the last (24px) line of the card */
 .work-meta > .arrow {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: calc((var(--lh-body) - var(--arrow)) / 2);
 }
 
 /* Card tags: one line, highlighted like selected text */
@@ -923,7 +939,8 @@ ol {
 .exp-thumb { grid-column: 1 / 4; }
 .exp-name { grid-column: 4 / 8; display: grid; gap: 8px; }
 .exp-sum { grid-column: 8 / 12; font-size: var(--fs-body); line-height: var(--lh-body); }
-.exp-row > .arrow { grid-column: 12; justify-self: end; font-size: var(--fs-title); line-height: 1; }
+/* centred on the title's first line */
+.exp-row > .arrow { grid-column: 12; justify-self: end; margin-top: calc((var(--fs-title) * 1.02 - var(--arrow)) / 2); }
 
 .exp-thumb .card-media {
   aspect-ratio: 16 / 9;
