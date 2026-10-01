@@ -960,6 +960,26 @@ ol {
   box-shadow: 0.08em 0 0 var(--accent), -0.08em 0 0 var(--accent);
 }
 
+/* Hero headline: each line swaps red and black under the pointer — black
+   lines turn red, the red "clarity." turns black. Lines are sized to their
+   text so only the line under the pointer reacts */
+.hero-text .hero-title span {
+  width: fit-content;
+  transition: color var(--dur) var(--ease);
+}
+
+.hero-text .hero-title .r {
+  margin-left: auto;
+}
+
+.hero-text .hero-title span:hover {
+  color: var(--accent);
+}
+
+.hero-text .hero-title span.hl:hover {
+  color: var(--fg);
+}
+
 /* the line under a philosophy word turns red with it */
 .principle p {
   transition: color var(--dur) var(--ease);
