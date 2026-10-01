@@ -111,7 +111,7 @@ window.SITE = {
           ["Methods", "User-centered design, usability testing, design thinking workshop"]
         ],
         cover: "images/seller-qualification/cover.webp",
-        timeline: "images/seller-qualification/timeline.png",
+        timeline: "images/seller-qualification/timeline.webp",
         sections: [
           {
             title: "The system failure",
@@ -158,7 +158,8 @@ window.SITE = {
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel."],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
               { type: "p", title: "Standardized qualification states", text: "Every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
-              { type: "img", src: "images/seller-qualification/states.png", alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
+              { type: "img", src: "images/seller-qualification/states.png", alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" },
+              { type: "img", src: "images/seller-qualification/final-experience.webp", alt: "A clear path to start selling: all qualification requirements up front, with progress and estimated time to completion" }
             ]
           },
           {
