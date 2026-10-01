@@ -11,7 +11,7 @@ window.SITE = {
   location: "Austin, TX",
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
   // The statement set as poster lines (alternating left / right, like the hero)
-  statementLines: [["Product designer.", "r"], ["Systems thinker.", "l"], ["Humanist.", "r"]],
+  statementLines: [["Product designer.", "l"], ["Systems thinker.", "l"], ["Humanist.", "r"]],
   headline: "I design systems where complexity becomes clarity.",
   // The same headline set as poster lines: "l" = flush left, "r" = flush right
   headlineLines: [
