@@ -1530,6 +1530,36 @@ ol {
   overflow: hidden;
 }
 
+/* Desktop: the cut mark (cols 1–4) rises into the same rows as the footer
+   text (cols 5–9) — they never overlap — so the footer is only as tall as
+   the mark. The base row is laid over the text row; its empty area lets
+   clicks through to the links. (Below 1101px the imprint shares columns
+   with the links, so the mark stays on its own row there.) */
+@media (min-width: 1101px) {
+  .site-footer {
+    display: grid;
+  }
+
+  .footer-top,
+  .footer-base {
+    grid-area: 1 / 1;
+  }
+
+  .footer-base {
+    /* same top line as the footer text: rule + padding */
+    padding-top: calc(1px + var(--space-2xl) / 2);
+    pointer-events: none;
+  }
+
+  .footer-base > * {
+    pointer-events: auto;
+  }
+
+  .footer-base .footer-mark {
+    margin-top: calc(var(--bleed) * -0.058);
+  }
+}
+
 .footer-top {
   border-top: var(--rule);
   /* the footer is set tighter than the page: half the section gap */
@@ -1617,6 +1647,21 @@ ol {
   box-decoration-break: clone;
 }
 
+/* Desktop: the imprint is a red bar exactly as wide as the contact box
+   above (cols 10–12), its text inset like the box's first cell (+1px for
+   the box's border). Narrower screens move the contact box to the left, so
+   the imprint stays a hugging highlight there */
+@media (min-width: 1025px) {
+  .credits {
+    text-align: left;
+  }
+
+  .credits span {
+    display: block;
+    padding: 0 calc(var(--box-pad-x) + 1px);
+  }
+}
+
 /* Bleed: the mark spans columns 1–4; its box is shorter than the letters,
    so the page edge cuts through the lower part and the red square */
 .footer-mark {
@@ -1697,9 +1742,11 @@ ol {
   }
 }
 
-/* Mid widths: the contact box widens to columns 9–12 */
+/* Mid widths: the contact box widens to columns 9–12, and the imprint
+   with it */
 @media (min-width: 681px) and (max-width: 1100px) {
-  .contact-side {
+  .contact-side,
+  .credits {
     grid-column: 9 / -1;
   }
 
