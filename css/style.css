@@ -688,8 +688,10 @@ ol {
   display: grid;
 }
 
+/* justified: every full line runs the three columns 4–6 edge to edge */
 .hero-intro {
   margin: 0;
+  text-align: justify;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--fg);
