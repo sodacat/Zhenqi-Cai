@@ -8,7 +8,7 @@
  *          Grey is kept for the copyright line only. Arrows are red.
  * Colour   Black, white, red. One grey for secondary text.
  * Grid     12 columns; everything starts on a column line.
- * Rules    One kind of line only: a thick (4px) black horizontal rule, for
+ * Rules    One kind of line only: a 1px black horizontal rule, for
  *          structure (section heads, header, footer). Everything else is
  *          separated by space on the 8px rhythm.
  * Motion   Short, flat fades. Nothing slides, scales or bounces.
@@ -23,7 +23,7 @@
   --muted: #8a8a8a;
   --line: #0a0a0a;
   /* the only line in the layout: a thick horizontal rule */
-  --rule: 4px solid var(--line);
+  --rule: 1px solid var(--line);
   --accent: #e30613;
   --placeholder: #efefed;
   --pad: clamp(16px, 2vw, 32px);
