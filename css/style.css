@@ -509,6 +509,28 @@ ol {
     padding-bottom: calc(var(--space-l) + var(--btn-h));
   }
 
+  /* The portrait hangs from the header rule; (01) sits on the same top
+     line, and the free height opens up under the role label so the
+     headline and figures keep their place at the foot of the column */
+  .hero {
+    margin-top: 0;
+    align-items: stretch;
+  }
+
+  .hero-text {
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .hero-text .hero-role {
+    align-self: start;
+  }
+
+  /* fills the row if the text column is taller; width stays the column's */
+  .hero-media .card-media {
+    width: 100%;
+    min-height: 100%;
+  }
+
   .hero-left .hero-resume {
     transform: translateY(calc(100% + var(--space-l)));
   }
