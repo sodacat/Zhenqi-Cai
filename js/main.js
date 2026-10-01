@@ -155,8 +155,13 @@
           ${experiments
             .map(
               (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
+                <span class="exp-id label"><span>EXP—${pad(i + 1)}</span><span>${esc(p.date || "")}</span></span>
                 <span class="exp-thumb">${cover(p)}</span>
                 <span class="exp-name"><span class="exp-title">${esc(p.title)}</span><span class="sub">${esc(p.company)}</span></span>
+                <span class="exp-log label">${[["Medium", p.medium], ["Tools", p.tools], ["Status", p.status]]
+                  .filter(([, v]) => v)
+                  .map(([k, v]) => `<span><span class="k">${k}</span><span class="v${k === "Status" ? " is-status" : ""}">${esc(v)}</span></span>`)
+                  .join("")}</span>
                 ${arrow}
               </a></li>`
             )

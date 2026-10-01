@@ -1005,10 +1005,58 @@ ol {
   align-items: start;
 }
 
+/* Each experiment reads like a numbered lab record: the log number on a
+   rule with its date, the thumbnail, the title and a one-line summary, then
+   a small medium / tools / status table */
+.exp-id {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: var(--rule);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
 .exp-thumb { grid-column: 1 / -1; }
 .exp-name { grid-column: 1; display: grid; gap: 8px; }
 /* centred on the title's first line */
-.exp-row > .arrow { grid-column: 2; grid-row: 2; margin-top: calc((var(--fs-title) * 0.75 * 1.1 - var(--arrow)) / 2); }
+.exp-row > .arrow { grid-column: 2; grid-row: 3; margin-top: calc((var(--fs-title) * 0.75 * 1.1 - var(--arrow)) / 2); }
+
+.exp-log {
+  grid-column: 1 / -1;
+  display: grid;
+  margin-top: 8px;
+}
+
+.exp-log > span {
+  display: grid;
+  grid-template-columns: 6em minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 4px 0;
+  border-top: 1px solid var(--line);
+}
+
+.exp-log .k {
+  color: var(--fg);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.exp-log .v {
+  font-weight: 400;
+}
+
+/* status: a small red square before the value */
+.exp-log .is-status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  background: var(--accent);
+  vertical-align: 0;
+}
 
 .exp-thumb .card-media {
   aspect-ratio: 2 / 1;
