@@ -584,36 +584,21 @@ ol {
   row-gap: var(--space-xl);
 }
 
-/* Left column (cols 1–3): the figures, then the resume link under them */
+/* Left column (cols 1–3): the figures, 7+ in col 1, 100M+ from col 2 */
 .hero-left {
   grid-column: 1 / 4;
   grid-row: 1;
-  align-self: stretch;
   display: grid;
-  /* on the page columns 1–3: 7+ in col 1, 100M+ from col 2, the resume
-     button across all three */
   grid-template-columns: subgrid;
-  grid-template-rows: auto 1fr;
-  row-gap: var(--space-l);
 }
 
-/* Resume button: outlined, at the foot of the left column, spanning
-   columns 1–3 */
-.hero-left .hero-resume {
-  grid-column: 1 / -1;
-  justify-self: stretch;
-  justify-content: space-between;
-  align-self: end;
-}
-
-/* Desktop: the portrait (columns 7–12) runs
-   from the header rule down to the Selected work rule. The text column starts on the same top line with (01); the headline, figures,
-   intro and resume button follow in order beneath it. The resume button
-   sits one gap under the logos, and the column's padding keeps it the
-   section gap above the Selected work rule */
+/* Desktop: the portrait (columns 7–12) runs from the header rule down to
+   the Selected work rule. The text column starts on the same top line
+   with (01); the headline, then the figures beside the intro and logos,
+   follow beneath it, and the column's padding keeps the section gap
+   above the Selected work rule */
 @media (min-width: 681px) {
   .hero {
-    --btn-h: calc(var(--lh-label) + 18px);
     margin-top: 0;
     align-items: stretch;
   }
@@ -623,27 +608,14 @@ ol {
   }
 
   .hero-text {
-    padding-bottom: calc(var(--space-2xl) + var(--btn-h) + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
   }
 
-  /* the text column sets the hero's height; the portrait fills it, so
-     the resume button keeps the one gap above the Selected work rule */
+  /* the text column sets the hero's height; the portrait fills it */
   .hero .hero-media .card-media {
     width: 100%;
     height: 100%;
     aspect-ratio: auto;
-  }
-
-  /* the button hangs one gap below the taller of the figures and the
-     logos: it sits in a zero-height last row, so it never adds height */
-  .hero-left {
-    row-gap: 0;
-    grid-template-rows: auto 0;
-  }
-
-  .hero-left .hero-resume {
-    align-self: start;
-    transform: translateY(var(--space-2xl));
   }
 }
 
@@ -1313,10 +1285,9 @@ ol {
   }
 }
 
-/* Contact links: one box spanning exactly cols 9–12, from the left edge of
-   "Humanity" */
+/* Contact links: one box spanning exactly cols 10–12 */
 .contact-side {
-  grid-column: 9 / -1;
+  grid-column: 10 / -1;
   display: grid;
   gap: 16px;
 }
@@ -1839,10 +1810,10 @@ ol {
   }
 }
 
-/* Mid widths: the contact box spans columns 9–12 */
+/* Mid widths: the contact box spans columns 10–12 */
 @media (min-width: 681px) and (max-width: 1100px) {
   .contact-side {
-    grid-column: 9 / -1;
+    grid-column: 10 / -1;
   }
 
   .contact .display {

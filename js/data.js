@@ -65,8 +65,7 @@ window.SITE = {
   resume: "resume.pdf",
   social: [
     { label: "Email", url: "mailto:hello@zhenqicai.com" },
-    { label: "LinkedIn", url: "https://linkedin.com/" },
-    { label: "Resume", url: "resume.pdf" }
+    { label: "LinkedIn", url: "https://linkedin.com/" }
   ],
 
   /*

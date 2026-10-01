@@ -129,7 +129,6 @@
               <dl class="stats">
                 ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
               </dl>
-              <a class="btn hero-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
             </div>
             <div class="hero-info">
               <div class="hero-proof">
@@ -174,7 +173,7 @@
             <div class="about-lead">${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}</div>
             <div class="about-side">
               <ul class="about-tags">${S.facts.map((v) => `<li>${esc(v)}</li>`).join("")}</ul>
-              <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
+              <a class="btn btn-accent" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
             </div>
           </div>
           <figure class="about-media reveal">
