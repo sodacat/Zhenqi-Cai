@@ -479,7 +479,11 @@ ol {
   grid-row: 1;
   align-self: stretch;
   display: grid;
-  grid-template-columns: subgrid;
+  /* col 1 is one grid column (7+); col 2 hugs 100M+, so the resume button
+     spanning both is exactly as wide as the two figures */
+  grid-template-columns: calc((100% - 2 * var(--pad)) / 3) max-content;
+  justify-content: start;
+  column-gap: var(--pad);
   grid-template-rows: auto 1fr;
   row-gap: var(--space-l);
 }
@@ -488,7 +492,8 @@ ol {
    column so its bottom edge meets the bottom of the hero image */
 .hero-left .hero-resume {
   grid-column: 1 / -1;
-  justify-self: start;
+  justify-self: stretch;
+  justify-content: space-between;
   align-self: end;
 }
 
