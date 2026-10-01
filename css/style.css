@@ -53,6 +53,9 @@
   --space-4xl: 120px;
   /* shared by every outlined box of cells (nav, contact) so they match */
   --box-pad: 8px;
+  /* horizontal inset of text inside every outlined box: nav cells, contact
+     cells, the menu button and all buttons */
+  --box-pad-x: clamp(6px, 0.8vw, 12px);
 }
 
 *,
@@ -216,7 +219,7 @@ ol {
   line-height: var(--lh-label);
   font-weight: 700;
   letter-spacing: 0;
-  padding: 8px 16px;
+  padding: var(--box-pad) var(--box-pad-x);
   border: 1px solid var(--fg);
   background: var(--bg);
   color: var(--fg);
@@ -346,7 +349,7 @@ ol {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: var(--box-pad) clamp(6px, 0.8vw, 12px);
+    padding: var(--box-pad) var(--box-pad-x);
     white-space: nowrap;
     transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
   }
@@ -1213,7 +1216,7 @@ ol {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: var(--box-pad) clamp(6px, 0.8vw, 12px);
+  padding: var(--box-pad) var(--box-pad-x);
 }
 
 .contact-box a {
@@ -1779,7 +1782,7 @@ ol {
     display: block;
     grid-column: 2 / 3 !important;
     grid-row: 1;
-    padding: var(--box-pad) 16px;
+    padding: var(--box-pad) var(--box-pad-x);
     border: 1px solid var(--fg);
     transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
