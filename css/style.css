@@ -1083,10 +1083,9 @@ ol {
   widows: 1;
 }
 
-/* Paragraphs run on with a first-line indent (no gap), so the bio stays
-   one continuous block and the two columns balance */
+/* Paragraphs set flush left with no indent, separated by one blank line */
 .about-text p + p {
-  text-indent: 24px;
+  margin-top: var(--lh-body);
 }
 
 .about-tags {

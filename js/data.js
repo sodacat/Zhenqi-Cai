@@ -37,14 +37,11 @@ window.SITE = {
 
   bio: [
     "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially *how AI changes the way we make decisions*, create, and interact with systems.",
-    "I care about designing trustworthy experiences that help people navigate complexity and make better decisions."
+    "I design for clarity, trust, and human agency in complex systems."
   ],
   portrait: "images/portrait.jpg",
-  // About: label / content pairs
-  facts: [
-    ["Experience", "7+ years — Amazon, SAP, IBM, startups"],
-    ["Focus", "Complex systems, AI experiences"]
-  ],
+  // About (home): short lines beside the bio
+  facts: ["7+ years — Amazon, SAP, IBM, startups", "Focus — Complex systems, AI experiences"],
 
   philosophy: [
     { title: "Clarity", text: "Turn complexity into understanding." },
