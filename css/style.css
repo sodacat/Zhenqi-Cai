@@ -1295,11 +1295,12 @@ ol {
   letter-spacing: -0.04em;
 }
 
-/* Desktop: sized so the first line, "Let's make complexity feel", runs
-   the six columns 1–6 (50vw − 1.5 gutters); it measures ~11.59em */
+/* Desktop: sized so the red bar of the first line ends exactly on the end
+   of column 8 — the same edge as the footer's link numbers. Cols 1–8 span
+   (2/3)(page width) − gutter/3; the line plus its bar measures ~15em */
 @media (min-width: 681px) {
   .contact .display {
-    font-size: calc((50vw - 1.5 * var(--pad)) / 11.59);
+    font-size: calc(((100vw - 2 * var(--pad)) * 2 / 3 - var(--pad) / 3) / 15.03);
   }
 }
 

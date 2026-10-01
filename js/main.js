@@ -85,7 +85,7 @@
     return `<section class="section wrap" id="contact">
       ${sectionHead(n, "Get in touch")}
       <div class="contact grid-12">
-        <h2 class="display reveal"><span class="selected">${esc(S.cta).replace(" human — ", "<br>human — ")}</span></h2>
+        <h2 class="display reveal"><span class="selected">${esc(S.cta).replace(" — ", "<br>— ")}</span></h2>
         <div class="contact-side">
           <ul class="contact-box label">
             ${S.social.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a></li>`).join("")}
