@@ -15,6 +15,16 @@
   const experiments = S.projects.filter((p) => p.type === "experiment");
   const typeLabel = { work: "Case study", experiment: "AI experiment" };
 
+  // *phrase* in copy is set in red (one emphasis per paragraph at most)
+  const emph = (s) => esc(s).replace(/\*([^*]+)\*/g, '<em class="hl">$1</em>');
+
+  // Swiss geometric covers, drawn in CSS, for projects without an image yet
+  function art(kind, alt) {
+    return `<div class="card-media art art-${esc(kind)}" role="img" aria-label="${esc(alt)}">${"<i></i>".repeat(3)}</div>`;
+  }
+
+  const cover = (p, alt = p.alt || p.title) => (p.art ? art(p.art, alt) : media(p.cover, alt));
+
   function media(src, alt, extraClass = "") {
     return `<div class="card-media ${extraClass}">
       <span class="ph">${esc(alt)}</span>
@@ -41,7 +51,7 @@
   function workCard(p, n) {
     return `<a class="work-card reveal" href="${projectUrl(p)}" data-type="${esc(p.type)}">
       <span class="work-num">${pad(n)}</span>
-      ${media(p.cover, p.alt || p.title)}
+      ${cover(p)}
       <div class="work-meta">
         <span class="label">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
@@ -92,7 +102,6 @@
   function footer() {
     return `<footer class="site-footer wrap">
       <div class="footer-top grid-12">
-        <div class="footer-mark" aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></div>
         <p class="label footer-role">${esc(S.name)}<br><span class="muted">${esc(S.role)}</span></p>
         <ul class="label footer-col">
           <li><a href="works.html">Work</a></li>
@@ -101,6 +110,7 @@
         </ul>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>
+      <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
     </footer>`;
   }
 
@@ -114,7 +124,7 @@
           <p class="label idx">(01)</p>
           <p class="label hero-role">${esc(S.role)}</p>
           <h1 class="hero-title reveal" aria-label="${esc(S.headline)}">${S.headlineLines
-            .map(([t, a]) => `<span class="${a === "r" ? "r" : "l"}" aria-hidden="true">${esc(t)}</span>`)
+            .map(([t, a, accent]) => `<span class="${a === "r" ? "r" : "l"}${accent ? " hl" : ""}" aria-hidden="true">${esc(t)}</span>`)
             .join("")}</h1>
           <div class="hero-bottom reveal">
             <dl class="stats">
@@ -144,7 +154,7 @@
         <div class="exp grid-12">
           <div class="exp-feature reveal">
           <span class="exp-num">01</span>
-          <a class="exp-media" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${media(feat.cover, feat.alt || feat.title)}</a>
+          <a class="exp-media" href="${projectUrl(feat)}" aria-label="${esc(feat.title)} — ${esc(feat.company)}">${cover(feat)}</a>
           <div class="exp-body">
             <div class="exp-head">
               <h3 class="work-title">${esc(feat.title)}</h3>
@@ -162,7 +172,7 @@
               .map(
                 (p, i) => `<li class="reveal"><a href="${projectUrl(p)}">
                   <span class="exp-num">${pad(i + 2)}</span>
-                  ${media(p.cover, p.alt || p.title)}
+                  ${cover(p)}
                   <span class="exp-side-title">${esc(p.title)} ${arrow}</span>
                   <span class="label muted exp-side-sub">${esc(p.company)}</span>
                 </a></li>`
@@ -177,7 +187,7 @@
         <div class="about grid-12">
           <h2 class="display reveal">${lines(S.statement)}</h2>
           <div class="about-body reveal">
-            ${S.bio.map((b) => `<p>${esc(b)}</p>`).join("")}
+            ${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}
             ${facts(S.facts)}
             <a class="btn btn-accent" href="about.html">More about me ${arrow}</a>
           </div>
@@ -217,8 +227,8 @@
       <section class="about-page grid-12 wrap">
         <div class="about-page-media reveal">${media(S.portrait, S.name)}</div>
         <div class="about-page-body reveal">
-          <p class="lead">${esc(S.bio[0])}</p>
-          ${S.bio.slice(1).map((b) => `<p>${esc(b)}</p>`).join("")}
+          <p class="lead">${emph(S.bio[0])}</p>
+          ${S.bio.slice(1).map((b) => `<p>${emph(b)}</p>`).join("")}
           <p>${esc(S.intro)}</p>
           <dl class="facts">
             <div><dt class="label muted">Role</dt><dd>${esc(S.role)}</dd></div>
@@ -311,9 +321,9 @@
         ${p.description ? `<p class="project-desc reveal">${esc(p.description)}</p>` : ""}
       </section>
       <section class="gallery wrap">
-        ${(p.images?.length ? p.images : [p.cover])
-          .map((src, n) => `<div class="reveal">${media(src, `${p.title} — ${n + 1}`)}</div>`)
-          .join("")}
+        ${p.images?.length
+          ? p.images.map((src, n) => `<div class="reveal">${media(src, `${p.title} — ${n + 1}`)}</div>`).join("")
+          : `<div class="reveal">${cover(p)}</div>`}
       </section>
       <section class="wrap">
         <div class="project-nav">

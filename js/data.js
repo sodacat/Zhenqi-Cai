@@ -17,7 +17,7 @@ window.SITE = {
     ["systems", "r"],
     ["where complexity", "l"],
     ["becomes", "r"],
-    ["clarity.", "l"]
+    ["clarity.", "l", "accent"]
   ],
   intro:
     "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and emerging AI experiences from 0→1 to global scale.",
@@ -34,7 +34,7 @@ window.SITE = {
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
 
   bio: [
-    "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially how AI changes the way we make decisions, create, and interact with systems.",
+    "I'm Zhenqi, a product designer interested in the space between complex technology and human understanding — especially *how AI changes the way we make decisions*, create, and interact with systems.",
     "I care about designing trustworthy experiences that help people navigate complexity and make better decisions."
   ],
   portrait: "images/portrait.jpg",
@@ -74,7 +74,8 @@ window.SITE = {
    * On the home page, all "work" projects fill Selected Work; the first
    * experiment is the large feature and the next two sit beside it.
    * `tags` show as Focus on cards; `impact` (optional) shows as Impact.
-   * Optional fields: year, role, description, images, alt (cover image text).
+   * Optional fields: year, role, description, images, alt (cover image text),
+   * art ("arc" | "steps": a CSS geometric cover used instead of an image).
    */
   projects: [
     {
@@ -142,8 +143,10 @@ window.SITE = {
       summary: "Exploring narrative interfaces generated with AI.",
       tags: ["Experiment"],
       alt: "AI storytelling abstract",
+      // Geometric artwork drawn in CSS until a real image is added (art: "arc" | "steps")
+      art: "arc",
       cover: "images/ai-storytelling.jpg",
-      images: ["images/ai-storytelling.jpg"]
+      images: []
     },
     {
       id: "design-with-ai",
@@ -153,8 +156,9 @@ window.SITE = {
       summary: "Notes and explorations on designing with AI as a material.",
       tags: ["Notes", "Explorations"],
       alt: "Abstract colorful bubbles",
+      art: "steps",
       cover: "images/design-with-ai.jpg",
-      images: ["images/design-with-ai.jpg"]
+      images: []
     }
   ]
 };

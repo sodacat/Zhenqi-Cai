@@ -100,6 +100,12 @@ ol {
   margin: 0;
 }
 
+/* Red emphasis inside copy: one word or phrase, never more */
+.hl {
+  color: var(--accent);
+  font-style: normal;
+}
+
 /* The mark's full stop is a square, not a round period */
 .sq {
   display: inline-block;
@@ -491,6 +497,77 @@ a:hover .card-media img.is-loaded {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #b0b0ab;
+}
+
+/* ---------- Geometric covers (CSS) ---------- */
+/* Black / red / paper shapes in the Swiss poster manner, sized in % so they
+   hold their composition at any card ratio */
+.art {
+  --paper: #ece8df;
+  position: relative;
+  overflow: hidden;
+  container-type: size;
+}
+
+.art i {
+  position: absolute;
+  display: block;
+}
+
+/* arc: black field, red disc crossing it, small black disc */
+.art-arc {
+  background: var(--paper);
+}
+
+.art-arc i:nth-child(1) {
+  inset: 0 52% 0 0;
+  background: var(--fg);
+}
+
+.art-arc i:nth-child(2) {
+  top: -30%;
+  left: 30%;
+  height: 160%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.art-arc i:nth-child(3) {
+  right: 7%;
+  bottom: 12%;
+  height: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--fg);
+}
+
+/* steps: red field, three black squares stepping down a diagonal */
+.art-steps {
+  background: var(--accent);
+}
+
+.art-steps i {
+  height: 38%;
+  aspect-ratio: 1;
+  background: var(--fg);
+}
+
+.art-steps i:nth-child(1) {
+  top: 0;
+  left: 18%;
+}
+
+/* steps are spaced by the frame's height (cqh) so they never overlap */
+.art-steps i:nth-child(2) {
+  top: 31%;
+  left: calc(18% + 40cqh);
+}
+
+.art-steps i:nth-child(3) {
+  top: 62%;
+  left: calc(18% + 80cqh);
+  background: var(--paper);
 }
 
 /* ---------- Work cards ---------- */
@@ -1171,17 +1248,14 @@ a:hover .card-media img.is-loaded {
 }
 
 /* ---------- Footer ---------- */
+/* Text row on the grid (name col 5, links col 7, credits col 10), then the
+   ZC mark set across the full width and cut by the bottom of the page. */
 .site-footer {
   margin-top: clamp(64px, 7vw, 120px);
-  padding-bottom: var(--pad);
+  overflow: hidden;
 }
 
-/* One row: mark | name + role (col 5) | links (col 7) | credits.
-   --cap-top nudges the text down so its first line starts at the
-   top of the ZC capitals rather than the top of the mark's line box. */
 .footer-top {
-  --mark-size: clamp(56px, 7.5vw, 120px);
-  --cap-top: calc(var(--mark-size) * 0.064 - 4.2px);
   border-top: 1px solid var(--line);
   padding-top: var(--pad);
   align-items: start;
@@ -1193,33 +1267,18 @@ a:hover .card-media img.is-loaded {
   margin: 0;
 }
 
-.footer-mark {
-  grid-column: 1 / 5;
-  font-weight: 700;
-  font-size: var(--mark-size);
-  line-height: 0.8;
-  letter-spacing: -0.035em;
-  margin-left: -0.03em;
-}
-
-.footer-role,
-.footer-col,
-.credits {
-  margin-top: var(--cap-top) !important;
-}
-
 .footer-role {
   grid-column: 5 / 7;
 }
 
-/* Footer links: square box on hover, text kept on column 7 and on the
-   cap line (pulled back by the box's 8px padding + 1px border) */
+/* Footer links: square box on hover; pulled back by the box's padding +
+   border so the text stays on column 7 and level with the name */
 .footer-top .footer-col {
+  grid-column: 7 / 10;
   display: grid;
   justify-items: start;
   gap: 2px;
-  margin-top: calc(var(--cap-top) - 4px) !important;
-  margin-left: -9px;
+  margin: -4px 0 0 -9px;
 }
 
 .footer-col a {
@@ -1235,12 +1294,28 @@ a:hover .card-media img.is-loaded {
   outline: none;
 }
 
-.footer-col {
-  grid-column: 7 / 10;
-}
-
 .credits {
   grid-column: 10 / -1;
+}
+
+/* Bleed: the mark spans the content width; its box is shorter than the
+   letters, so the page edge cuts through the lower part and the red square */
+.footer-mark {
+  --bleed: calc((100vw - 2 * var(--pad)) / 1.473);
+  /* line box starts ~0.058em above the capitals: pull it up by that much */
+  margin-top: calc(clamp(24px, 3vw, 48px) - var(--bleed) * 0.058);
+  height: calc(var(--bleed) * 0.64);
+  overflow: hidden;
+  font-weight: 700;
+  font-size: var(--bleed);
+  line-height: 0.8;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.footer-mark > span {
+  display: inline-block;
+  margin-left: -0.0324em;
 }
 
 /* ---------- Reveal ---------- */
