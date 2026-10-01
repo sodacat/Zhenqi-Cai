@@ -198,7 +198,7 @@ window.SITE = {
           {
             title: "Organizational impact",
             blocks: [
-              { type: "img", src: "images/seller-qualification/workshop.png", size: "md", alt: "Seller Qualification Workshop — July 17-18 (Mon-Tue), Seattle office" },
+              { type: "img", src: "images/seller-qualification/alignment.webp", alt: "Cross-functional workshop: from enforcement-first to seller growth" },
               { type: "p", text: [
                 "Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.",
                 "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"
