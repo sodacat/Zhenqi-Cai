@@ -317,7 +317,7 @@ ol {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: 12px clamp(8px, 1vw, 16px);
+    padding: 7px clamp(6px, 0.8vw, 12px);
     white-space: nowrap;
     transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
   }
@@ -352,24 +352,6 @@ ol {
   padding: 0;
   cursor: pointer;
   color: inherit;
-}
-
-.header-cta {
-  grid-column: 12 / -1;
-  white-space: nowrap;
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Globe after the location: hairline strokes to match the type */
-.globe {
-  width: 13px;
-  height: 13px;
-  fill: none;
-  stroke: var(--fg);
-  stroke-width: 1;
 }
 
 /* ---------- Hero ---------- */
@@ -1442,13 +1424,8 @@ ol {
 }
 
 /* ---------- Responsive ---------- */
-/* Mid widths: location drops under the nav so the two never collide, and
-   the nav box runs from column 7 to the right edge */
-@media (min-width: 681px) and (max-width: 1280px) {
-  .brand {
-    grid-row: 1 / span 2;
-  }
-
+/* Mid widths: the nav box runs from column 7 to the right edge */
+@media (min-width: 681px) and (max-width: 1100px) {
   .nav {
     grid-column: 7 / -1;
   }
@@ -1459,13 +1436,6 @@ ol {
 
   .contact .display {
     grid-column: 1 / 9;
-  }
-
-  .header-cta {
-    grid-column: 7 / -1;
-    grid-row: 2;
-    justify-self: start;
-    margin-top: 10px;
   }
 }
 
@@ -1566,10 +1536,6 @@ ol {
     display: block;
     grid-column: 2 / 3 !important;
     grid-row: 1;
-  }
-
-  .header-cta {
-    display: none;
   }
 
   .hero-text {
