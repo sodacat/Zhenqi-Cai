@@ -552,6 +552,9 @@ ol {
    longest does both (50vw − 1.5 gutters is the width of cols 1–6) */
 .hero-text .hero-title {
   font-size: calc((50vw - 1.5 * var(--pad)) / 7.83);
+  /* each line is one row of the vertical grid: its height is snapped to a
+     multiple of the 8px unit */
+  line-height: round(nearest, 0.95em, 8px);
 }
 
 .hero-title span {
