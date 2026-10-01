@@ -425,16 +425,15 @@
       <section class="project-head grid-12 wrap">
         <p class="label idx">(${pad(i + 1)})</p>
         <p class="label hero-role">${esc(p.company)} — ${esc(p.title)}</p>
-        <h1 class="display case-title reveal">${esc(c.headline)}</h1>
-      </section>
-
-      <section class="case-intro grid-12 wrap">
-        <p class="lead case-lead reveal">${esc(c.lead)}</p>
-        ${c.impactLabel ? `<p class="label case-label">${esc(c.impactLabel)}</p>` : ""}
-        ${c.impact ? figures(c.impact) : ""}
       </section>
 
       <section class="case-cover wrap reveal">${c.cover ? media(c.cover, p.title, "case-media") : cover(p)}</section>
+
+      <section class="case-intro grid-12 wrap">
+        <h1 class="display case-title reveal">${esc(c.headline)}</h1>
+        <p class="lead case-lead reveal">${esc(c.lead)}</p>
+        ${c.impact ? figures(c.impact) : ""}
+      </section>
 
       <section class="section wrap">
         ${sectionHead(1, "Overview")}
