@@ -979,31 +979,29 @@ ol {
   color: var(--fg);
 }
 
-/* ---------- AI experiments: an index ---------- */
-/* One row per experiment, rows separated by space:
-   thumbnail (1–3) | title + kind, summary under it (4–11) | ■ (12).
-   The summary sits under the title rather than in its own column, so a
-   short title never leaves a wide gap before it */
-/* rows separated by space, not lines */
+/* ---------- AI experiments: three in one row ---------- */
+/* A compact row of three (cols 1–4, 5–8, 9–12): thumbnail, then title +
+   kind with the square on the right, then the summary */
 .exp-index {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--pad);
   row-gap: var(--space-2xl);
 }
 
 .exp-row {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: auto 1fr;
-  column-gap: var(--pad);
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 16px;
   row-gap: 16px;
   align-items: start;
 }
 
-.exp-thumb { grid-column: 1 / 4; grid-row: 1 / span 2; }
-.exp-name { grid-column: 4 / 12; grid-row: 1; display: grid; gap: 8px; }
-.exp-sum { grid-column: 4 / 10; grid-row: 2; font-size: var(--fs-body); line-height: var(--lh-body); }
+.exp-thumb { grid-column: 1 / -1; }
+.exp-name { grid-column: 1; display: grid; gap: 8px; }
+.exp-sum { grid-column: 1 / -1; font-size: var(--fs-body); line-height: var(--lh-body); }
 /* centred on the title's first line */
-.exp-row > .arrow { grid-column: 12; justify-self: end; margin-top: calc((var(--fs-title) * 1.02 - var(--arrow)) / 2); }
+.exp-row > .arrow { grid-column: 2; grid-row: 2; margin-top: calc((var(--fs-title) * 1.02 - var(--arrow)) / 2); }
 
 .exp-thumb .card-media {
   aspect-ratio: 16 / 9;
@@ -1815,9 +1813,6 @@ ol {
     grid-column: 7 / -1;
   }
 
-  /* tablet: summary drops under the title */
-  .exp-sum { grid-column: 4 / 12; }
-
   /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
     grid-column: 8 / -1;
@@ -1905,19 +1900,10 @@ ol {
   }
 
 
-  /* phones: thumbnail + arrow on top, then title, summary */
-  .exp-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-    row-gap: 16px;
+  /* phones: the three experiments stack */
+  .exp-index {
+    grid-template-columns: minmax(0, 1fr);
   }
-
-  .exp-row > * {
-    grid-column: 1 / -1 !important;
-    grid-row: auto !important;
-  }
-
-  .exp-row .exp-thumb { grid-column: 1 !important; grid-row: 1 !important; width: 50%; }
-  .exp-row > .arrow { grid-column: 2 !important; grid-row: 1 !important; }
 
   /* Menu button: the same outlined box as the nav — red on hover,
      black while the menu is open */
