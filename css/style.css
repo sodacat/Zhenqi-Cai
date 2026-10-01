@@ -1,8 +1,9 @@
 /*
  * Swiss / International Typographic Style — one system for the whole site
  *
- * Type     Helvetica only. Bold for display, titles and labels; Regular for
- *          reading text. Labels: 11px bold capitals, widely spaced.
+ * Type     Helvetica only, mixed case throughout (no tracked capitals). Bold
+ *          for display, titles and labels; Regular for reading text.
+ *          Labels: 13px bold. Pairs read bold line / regular line.
  * Labels   Category = red bold capitals; content beneath it = black.
  *          Grey is kept for the copyright line only. Arrows are red.
  * Colour   Black, white, red. One grey for secondary text, one hairline grey.
@@ -29,7 +30,7 @@
   --dur: 0.18s;
 
   /* Type scale: four levels only */
-  --fs-label: 11px;
+  --fs-label: 13px;
   --lh-label: 16px;
   --fs-body: 15px;
   --lh-body: 24px;
@@ -97,8 +98,7 @@ ol {
   font-size: var(--fs-label);
   font-weight: 700;
   line-height: var(--lh-label);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0;
 }
 
 /* Category label (red) and the plain line that follows a heading */
@@ -208,8 +208,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   padding: 8px 16px;
   border: 1px solid var(--fg);
   background: var(--bg);
@@ -284,7 +283,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--accent);
 }
 
@@ -393,7 +392,7 @@ ol {
 .project-head .hero-role {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--accent);
 }
 
@@ -435,7 +434,7 @@ ol {
   margin-bottom: var(--space-l);
   font-size: var(--fs-label);
   line-height: var(--lh-label);
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--accent);
 }
 
@@ -620,8 +619,7 @@ ol {
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   color: var(--muted);
 }
 
@@ -1011,11 +1009,12 @@ ol {
 
 .principle h3 {
   margin: 16px 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
   font-weight: 700;
   font-size: var(--fs-display);
   line-height: 1;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 }
 
 .principle p {
@@ -1201,7 +1200,6 @@ ol {
   font-size: var(--fs-title);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 }
 
 .service p {
@@ -1356,6 +1354,11 @@ ol {
 
 .footer-role {
   grid-column: 5 / 7;
+}
+
+.footer-role .cat {
+  font-weight: 400;
+  color: var(--fg);
 }
 
 /* Footer links: a numbered list on hairlines (cols 7–9). Hover fills the
