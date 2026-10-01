@@ -512,8 +512,14 @@ ol {
   box-shadow: 4px 0 0 var(--accent), -4px 0 0 var(--accent);
 }
 
-/* Logos and the resume button form one block: the block is as wide as
-   the row of logos and the button stretches to that width */
+/* Intro, logos and the resume button form one block exactly as wide as
+   the row of logos: the intro wraps to that width (width 0 / min-width
+   100% keeps it from widening the block) and the button stretches to it */
+.hero-proof .hero-intro {
+  width: 0;
+  min-width: 100%;
+}
+
 .hero-proof {
   display: inline-grid;
   gap: 24px;
@@ -878,10 +884,19 @@ ol {
 }
 
 .statement span:hover,
-.principle h3:hover {
+.principle:hover h3 {
   background: var(--accent);
   color: #fff;
   box-shadow: 0.08em 0 0 var(--accent), -0.08em 0 0 var(--accent);
+}
+
+/* the line under a philosophy word turns red with it */
+.principle p {
+  transition: color var(--dur) var(--ease);
+}
+
+.principle:hover p {
+  color: var(--accent);
 }
 
 /* ---------- Hover frame ---------- */
@@ -1388,7 +1403,6 @@ ol {
 
 .footer-role .cat {
   font-weight: 400;
-  color: var(--fg);
 }
 
 /* Footer links: a numbered list (cols 7–9). Hover fills the
@@ -1456,6 +1470,20 @@ ol {
   line-height: 0.8;
   letter-spacing: -0.035em;
   white-space: nowrap;
+}
+
+/* Same hover as the header mark: letters red, square black */
+.footer-mark > span,
+.footer-mark .sq {
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.footer-mark:hover > span {
+  color: var(--accent);
+}
+
+.footer-mark:hover .sq {
+  background: var(--fg);
 }
 
 .footer-mark > span {

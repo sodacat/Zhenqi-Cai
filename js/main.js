@@ -127,8 +127,8 @@
               ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
             </dl>
             <div class="hero-info">
-              <p class="hero-intro">${esc(S.intro)}</p>
               <div class="hero-proof">
+                <p class="hero-intro">${esc(S.intro)}</p>
                 <ul class="clients">${S.clients
                   .map((c) => `<li class="client">${c.logo ? `<img src="${esc(c.logo)}" alt="${esc(c.name)}">` : esc(c.name)}</li>`)
                   .join("")}</ul>
