@@ -371,13 +371,13 @@ ol {
 }
 
 .nav {
-  grid-column: 7 / -1;
+  grid-column: 8 / -1;
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Desktop nav: one outlined box exactly over the hero image — columns
-   7–12 — one cell per link, the same object as the contact box. Hover fills a cell red; the current page is
+/* Desktop nav: one outlined box on columns 8–12, its right edge on the
+   hero image's — one cell per link, the same object as the contact box. Hover fills a cell red; the current page is
    filled black. */
 @media (min-width: 681px) {
   .nav {
@@ -1789,6 +1789,14 @@ ol {
     --space-xl: var(--space-2xl);
     --space-2xl: 40px;
     --space-3xl: var(--space-2xl);
+  }
+}
+
+/* Narrow desktop: the nav needs one more column to keep its links on one
+   line, so it spans the hero image again (cols 7–12) */
+@media (min-width: 681px) and (max-width: 799px) {
+  .nav {
+    grid-column: 7 / -1;
   }
 }
 
