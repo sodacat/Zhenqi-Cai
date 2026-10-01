@@ -129,7 +129,7 @@ window.SITE = {
                 ["I went out of my way to submit documents and get approved for the category, but only now I'm being told I can't sell this product? I wish you had informed me before I went through the trouble.", "BitByBi"]
               ] },
               { type: "row", label: "Pain points: Sellers must leave listing tool to apply separately", items: [
-                ["images/seller-qualification/pain-listing.jpg", "Listing restricted"],
+                ["images/seller-qualification/pain-listing.png", "Listing restricted"],
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
                 ["images/seller-qualification/pain-support.png", "Back-and-forth with Seller Support"]
               ] }
@@ -151,15 +151,15 @@ window.SITE = {
             blocks: [
               { type: "shift", label: "Core system shift", from: "Sequential Enforcement", to: "Parallel Qualification Infrastructure" },
               { type: "p", text: "I explored two incremental approaches before concluding the architecture itself had to change." },
-              { type: "option", title: "Exploration 1: Increasing visibility within sequential architecture", src: "images/seller-qualification/exploration-1.jpg",
+              { type: "option", title: "Exploration 1: Increasing visibility within sequential architecture", src: "images/seller-qualification/exploration-1.png",
                 pros: ["Sellers are guided earlier.", "Feels like information, not an error."],
                 cons: ["Still can't show all restrictions at once."],
                 note: "Exploration 1 showed us the ceiling: we could surface more, but the loop remained." },
-              { type: "option", title: "Exploration 2: Exposing restrictions without redesigning enforcement", src: "images/seller-qualification/exploration-2.jpg",
+              { type: "option", title: "Exploration 2: Exposing restrictions without redesigning enforcement", src: "images/seller-qualification/exploration-2.png",
                 pros: ["Sellers are guided earlier"],
                 cons: ["Notifications can no longer be tied to specific attribute", "Mental model breaks — feels like an error again"],
                 note: "Both explorations confirmed the same thing: the limitation wasn't interaction design. It was the underlying enforcement architecture. To truly enable parallel transparency, the restriction mechanism itself had to be redesigned." },
-              { type: "option", title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.jpg",
+              { type: "option", title: "Final Design: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png",
                 pros: ["See all qualification requirements immediately upon entering the listing flow.", "Apply for approvals inline, without leaving the tool.", "Resolve multiple restrictions in parallel"],
                 note: "Qualification transformed from reactive error correction into guided onboarding." },
               { type: "p", title: "Standardized qualification states", text: "Standardized qualification states ensure every outcome — multiple restrictions, auto-declined, waiting approval, auto-approved — is legible within a single consistent workflow." },
@@ -191,7 +191,7 @@ window.SITE = {
                 "The review reinforced three design principles that I carried into the final spec:"
               ], items: ["Surface all qualification requirements before sellers invest time in listing creation", "Allow approvals to be requested without leaving the listing tool", "Standardize approval states so sellers always know their next step"],
                 after: "Rather than treating this as an external critique, I used the Bar Raiser feedback to pressure-test the architecture decisions and strengthen the rationale for the parallel model." },
-              { type: "option", title: "Iterations", src: "images/seller-qualification/iterations.jpg",
+              { type: "option", title: "Iterations", src: "images/seller-qualification/iterations.png",
                 pros: ["Refined the copy to explain why SP needs an approval encourage SPs to request approvals.", "Provide tooltips to guide SP to fix the restrictions.", "Update the button from “Request approval” to “Apply to sell”.", "New use cases added for UPCx auto rejected/approved, brand approval required."] }
             ]
           },
