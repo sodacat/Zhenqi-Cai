@@ -49,7 +49,7 @@
   }
 
   function workCard(p, n) {
-    return `<a class="work-card reveal" href="${projectUrl(p)}" data-type="${esc(p.type)}">
+    return `<a class="work-card reveal${p.art ? "" : " halftone"}" href="${projectUrl(p)}" data-type="${esc(p.type)}">
       <span class="work-num">${pad(n)}</span>
       ${cover(p)}
       <div class="work-meta">
@@ -106,9 +106,11 @@
           <li><a href="index.html#experiments"><span>AI Experiments</span><span>02</span></a></li>
           <li><a href="about.html"><span>About</span><span>03</span></a></li>
         </ul>
+      </div>
+      <div class="footer-base">
+        <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
         <p class="label muted credits">${esc(S.copyright)}</p>
       </div>
-      <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
     </footer>`;
   }
 

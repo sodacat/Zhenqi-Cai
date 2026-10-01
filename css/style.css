@@ -575,6 +575,35 @@ ol {
   opacity: 1;
 }
 
+/* Halftone: work covers print as black-and-white dots (an overlay of
+   paper-white with round holes), and show their own colour on hover */
+.halftone .card-media img {
+  filter: grayscale(1) contrast(1.35) brightness(1.05);
+  transition: filter var(--dur) var(--ease), opacity 0.4s var(--ease);
+}
+
+.halftone .card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center, transparent 0 1.15px, #fff 1.65px);
+  background-size: 4px 4px;
+  opacity: 0.85;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.halftone:hover .card-media img,
+.halftone:focus-visible .card-media img {
+  filter: none;
+}
+
+.halftone:hover .card-media::after,
+.halftone:focus-visible .card-media::after {
+  opacity: 0;
+}
+
 /* Linked cards: title and arrow turn red */
 .work-title,
 .exp-side-title,
@@ -1423,8 +1452,23 @@ ol {
   box-shadow: -8px 0 0 var(--accent), 8px 0 0 var(--accent), 0 -6px 0 var(--accent), -8px -6px 0 var(--accent), 8px -6px 0 var(--accent);
 }
 
+/* Base row: the cut mark on columns 1–4, the credits in the bottom-right
+   corner on columns 10–12, sitting on the page edge like a poster's imprint */
+.footer-base {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--pad);
+  align-items: end;
+}
+
+.footer-base .footer-mark {
+  grid-column: 1 / 5;
+}
+
 .credits {
   grid-column: 10 / -1;
+  margin: 0;
+  padding-bottom: 16px;
 }
 
 /* Bleed: the mark spans columns 1–4; its box is shorter than the letters,
@@ -1762,6 +1806,16 @@ ol {
   /* one column on phones: the mark takes the full content width */
   .footer-mark {
     --bleed: calc((100vw - 2 * var(--pad)) * 0.66 / 1.473);
+  }
+
+  /* phones: mark two-thirds, credits in the last third */
+  .footer-base {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .footer-base .footer-mark,
+  .credits {
+    grid-column: auto;
   }
 
   .contact-box {
