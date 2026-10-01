@@ -352,12 +352,13 @@ ol {
   align-items: center;
 }
 
-/* Rule under the header row, inside the page gutters: the one gap below
-   the nav box / ZC baseline (the mark's line box ends ~0.058em under it) */
+/* Rule under the header row, inside the page gutters: half the section
+   gap below the nav box / ZC baseline — the same as the footer rule to the
+   footer text (the mark's line box ends ~0.058em under its baseline) */
 .site-header::after {
   content: "";
   grid-column: 1 / -1;
-  margin-top: calc(var(--space-2xl) - var(--brand-fs) * 0.058);
+  margin-top: calc(var(--space-2xl) / 2 - var(--brand-fs) * 0.058);
   border-top: var(--rule);
 }
 
@@ -1850,9 +1851,9 @@ ol {
     row-gap: 0;
   }
 
-  /* phones: the one gap under the menu box */
+  /* phones: the same half gap under the menu box */
   .site-header::after {
-    margin-top: var(--space-2xl);
+    margin-top: calc(var(--space-2xl) / 2);
   }
 
   .brand {
