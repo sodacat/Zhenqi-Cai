@@ -1401,10 +1401,6 @@ ol {
   grid-column: 5 / 7;
 }
 
-.footer-role .cat {
-  font-weight: 400;
-}
-
 /* Footer links: a numbered list (cols 7–9). Hover fills the
    row red; the fill is extended sideways with box-shadow so the text and
    the rules stay on the grid. */
