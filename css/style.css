@@ -1088,9 +1088,13 @@ ol {
 
 .about-side {
   grid-column: 7 / 10;
+  align-self: stretch;
   display: grid;
   /* one track, as wide as the first fact line: the button stretches to it */
   grid-template-columns: max-content;
+  /* facts at the top; the button drops to the foot, level with the last
+     line of the bio */
+  grid-template-rows: auto auto 1fr;
   justify-items: start;
 }
 
@@ -1113,6 +1117,7 @@ ol {
 }
 
 .about-side .btn {
+  align-self: end;
   justify-self: stretch;
   justify-content: space-between;
   margin-top: calc(var(--lh-body) + 8px);
