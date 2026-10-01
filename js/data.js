@@ -43,7 +43,7 @@ window.SITE = {
   ],
   portrait: "images/portrait.jpg",
   // About (home): short lines beside the bio
-  facts: ["7+ years — Amazon, SAP, IBM, startups", "Focus — Complex systems, AI experiences"],
+  facts: ["7+ years — Amazon, SAP, IBM, startups", "Focus — Complex systems, human-AI interaction"],
 
   philosophy: [
     { title: "Clarity", text: "Turn complexity into understanding." },

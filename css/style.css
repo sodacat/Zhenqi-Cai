@@ -1207,7 +1207,6 @@ ol {
   grid-column: 1 / -1;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  white-space: nowrap;
 }
 
 .about-tags li + li {
