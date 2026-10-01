@@ -379,6 +379,21 @@
     els.forEach((el) => el.classList.add("is-in"));
   }
 
+  // Cursor: a black square the size of the mark's square, centred on the
+  // pointer (mouse and trackpad only; touch keeps the system behaviour)
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const cursor = document.createElement("div");
+    cursor.className = "cursor";
+    cursor.setAttribute("aria-hidden", "true");
+    document.body.appendChild(cursor);
+    document.documentElement.classList.add("has-cursor");
+    window.addEventListener("pointermove", (e) => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      cursor.classList.add("is-on");
+    });
+    document.documentElement.addEventListener("pointerleave", () => cursor.classList.remove("is-on"));
+  }
+
   // Deep links (#experiments, #about, #contact) after render
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
 })();

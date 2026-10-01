@@ -56,6 +56,8 @@
   /* horizontal inset of text inside every outlined box: nav cells, contact
      cells, the menu button and all buttons */
   --box-pad-x: clamp(6px, 0.8vw, 12px);
+  /* size of the ZC mark; its square (and the cursor) is 0.2 of it */
+  --brand-fs: clamp(56px, 7.5vw, 120px);
 }
 
 *,
@@ -161,6 +163,30 @@ ol {
   height: 0.2em;
   margin-left: 0.04em;
   background: var(--accent);
+}
+
+/* Custom cursor: a black square exactly as big as the mark's square,
+   centred on the pointer. The system cursor is hidden only when it runs */
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: calc(var(--brand-fs) * 0.2);
+  height: calc(var(--brand-fs) * 0.2);
+  margin: calc(var(--brand-fs) * -0.1) 0 0 calc(var(--brand-fs) * -0.1);
+  background: var(--fg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cursor.is-on {
+  opacity: 1;
 }
 
 /* Arrows are one red square, the same size everywhere (filled with
@@ -322,7 +348,6 @@ ol {
 
 /* ---------- Header ---------- */
 .site-header {
-  --brand-fs: clamp(56px, 7.5vw, 120px);
   padding-top: var(--space-l);
   align-items: center;
 }
