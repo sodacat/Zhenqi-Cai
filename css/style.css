@@ -20,7 +20,7 @@
   --muted: #8a8a8a;
   --line: #0a0a0a;
   --hair: #dcdcdc;
-  --accent: #ff2d00;
+  --accent: #e30613;
   --placeholder: #efefed;
   --pad: clamp(16px, 2vw, 32px);
   --gap: clamp(12px, 1.2vw, 20px);
@@ -1587,10 +1587,29 @@ ol {
     grid-column: 1 / -1;
   }
 
+  /* Menu button: the same outlined box as the nav — red on hover,
+     black while the menu is open */
   .menu-btn {
     display: block;
     grid-column: 2 / 3 !important;
     grid-row: 1;
+    padding: var(--box-pad) 16px;
+    border: 1px solid var(--fg);
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  }
+
+  .menu-btn:hover,
+  .menu-btn:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    outline: none;
+  }
+
+  .menu-btn[aria-expanded="true"] {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: #fff;
   }
 
   .hero-text {
@@ -1606,21 +1625,39 @@ ol {
     border-left: 0;
   }
 
+  /* Open menu: one outlined box, a 48px cell per link (stacked version of
+     the desktop nav) */
   .nav {
     display: none;
     flex-direction: column;
-    gap: 0;
-    font-size: var(--fs-title);
-    font-family: var(--sans);
-    letter-spacing: -0.03em;
-    text-transform: none;
+    margin-top: 16px;
+    border: 1px solid var(--fg);
   }
 
   .nav a,
   .nav a.link-line {
+    display: flex;
+    align-items: center;
     margin: 0;
-    border-top: 1px solid var(--hair);
-    padding: 8px 0;
+    padding: 16px;
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+
+  .nav a + a {
+    border-top: 1px solid var(--fg);
+  }
+
+  .nav a.is-active {
+    box-shadow: none;
+    background: var(--fg);
+    color: #fff;
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible {
+    background: var(--accent);
+    color: #fff;
+    outline: none;
   }
 
   .nav-contact {
