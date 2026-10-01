@@ -159,7 +159,6 @@
               (p, i) => `<li class="reveal"><a class="exp-row" href="${projectUrl(p)}">
                 <span class="exp-thumb">${cover(p)}</span>
                 <span class="exp-name"><span class="exp-title">${esc(p.title)}</span><span class="sub">${esc(p.company)}</span></span>
-                <span class="exp-sum">${esc(p.summary)}</span>
                 ${arrow}
               </a></li>`
             )

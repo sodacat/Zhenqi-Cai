@@ -980,8 +980,8 @@ ol {
 }
 
 /* ---------- AI experiments: three in one row ---------- */
-/* A compact row of three (cols 1–4, 5–8, 9–12): thumbnail, then title +
-   kind with the square on the right, then the summary */
+/* A compact row of three (cols 1–4, 5–8, 9–12): a 2:1 thumbnail, then
+   the title + kind with the square on the right (no summary) */
 .exp-index {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -999,18 +999,18 @@ ol {
 
 .exp-thumb { grid-column: 1 / -1; }
 .exp-name { grid-column: 1; display: grid; gap: 8px; }
-.exp-sum { grid-column: 1 / -1; font-size: var(--fs-body); line-height: var(--lh-body); }
 /* centred on the title's first line */
-.exp-row > .arrow { grid-column: 2; grid-row: 2; margin-top: calc((var(--fs-title) * 1.02 - var(--arrow)) / 2); }
+.exp-row > .arrow { grid-column: 2; grid-row: 2; margin-top: calc((var(--fs-title) * 0.75 * 1.1 - var(--arrow)) / 2); }
 
 .exp-thumb .card-media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
 }
 
 .exp-title {
   font-weight: 700;
-  font-size: var(--fs-title);
-  line-height: 1.02;
+  /* a step below the work-card titles, so each fits one line */
+  font-size: calc(var(--fs-title) * 0.75);
+  line-height: 1.1;
   letter-spacing: -0.03em;
   transition: color var(--dur) var(--ease);
 }
