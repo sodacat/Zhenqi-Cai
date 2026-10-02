@@ -2258,11 +2258,11 @@ ol {
   box-decoration-break: clone;
 }
 
-/* Desktop: the imprint is a red bar on cols 10–12 under the contact box,
-   its text inset like the box's cells */
+/* Desktop: the imprint is a red bar on cols 9–12, as wide as the contact
+   box, its text inset like the box's cells */
 @media (min-width: 1025px) {
   .credits {
-    grid-column: 10 / -1;
+    grid-column: 9 / -1;
     text-align: left;
   }
 
@@ -2279,7 +2279,7 @@ ol {
   --bleed: calc(((100vw - 13 * var(--pad)) / 3 + 3 * var(--pad)) / 1.498);
   /* 16px under the footer text; the line box starts ~0.03em above the
      capitals, so pull it up by that much */
-  margin-top: calc(16px - var(--bleed) * 0.03);
+  margin-top: calc(var(--lh-body) - var(--bleed) * 0.03);
   height: calc(var(--bleed) * 0.64);
   overflow: hidden;
   font-weight: 700;
@@ -2981,5 +2981,13 @@ body[data-page="project"] .footer-top .footer-contact {
 @media (max-width: 680px) {
   .contact.grid-12 {
     row-gap: 0;
+  }
+}
+
+/* tablet: the role gets one more column (4–6) so it stays on one line and
+   keeps the 24px row rhythm of the links beside it */
+@media (min-width: 681px) and (max-width: 1100px) {
+  .footer-role {
+    grid-column: 4 / 7;
   }
 }
