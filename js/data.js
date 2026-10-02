@@ -788,13 +788,13 @@ window.SITE = {
       summary:
         "I turned the places I've saved on Google Maps over the years into Sodacat's world guide — wherever I am, I can see my picks for where to eat, drink, and play.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
-      alt: "Sodacat's Taste of the World — a world map of 1,217 kept places with search and filters",
-      cover: "images/sodacats-world/hero.jpg",
-      images: ["images/sodacats-world/hero.jpg"],
+      alt: "Sodacat's Taste of the World — black world map with red places, 1217 kept",
+      cover: "images/sodacats-world.webp",
+      images: ["images/sodacats-world.webp"],
       case: {
         headline: "A world traveler's go-to list, on one map",
         lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
-        cover: "images/sodacats-world/hero.jpg",
+        cover: "images/sodacats-world.webp",
         aboutTitle: "My Google Maps, turned into a world guide",
         about: [
           "Over the years I've saved a huge number of places on Google Maps — restaurants, bars, museums, beaches. I turned them into Sodacat's world recommendations: one site where, in any corner of the world, I can see my picks for what to eat, drink, and do nearby.",
