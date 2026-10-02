@@ -493,7 +493,7 @@ window.SITE = {
                 "Rules around spacing, alignment, column width, and hierarchy ensure that:"
               ], items: ["data remains scannable", "relationships between values are preserved", "layouts scale without breaking usability"] },
               { type: "cards", label: "Header — keep column meaning visible", items: [
-                { title: "Labels", text: "Name the content clearly. Use short, clear titles. Allow two lines when needed. Place numeric units in the header, such as “Price ($)”." },
+                { title: "Labels", text: "Name the content clearly. Use short, clear titles; allow two lines when needed, and avoid truncating titles that can’t be read in full. Put numeric units in the header, such as “Price ($)”, “Protein (g)” or “Time (hrs)”, rather than repeating them in every row — % can be an exception when it speeds reading." },
                 { title: "Spacing", text: "Adapt to the text size. Header height grows with the text, with 8 pt padding above and below." },
                 { title: "Scrolling", text: "Preserve the reference. Keep the header visible as rows move. Show a shadow when rows slide beneath it." }
               ] },
