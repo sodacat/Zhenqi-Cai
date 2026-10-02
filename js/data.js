@@ -111,7 +111,8 @@ window.SITE = {
             "**Team:** 2 UX Designers, 1 UX Researcher, 2 Product Managers, 2 Engineers, 1 SXBR (Bar Raiser).",
             "Led problem reframing, system architecture design, usability testing, and cross-functional alignment."
           ] },
-          { type: "img", src: "images/seller-qualification/timeline.png", alt: "Project timeline, Nov 2022 – Q3 2023" }
+          { type: "img", src: "images/seller-qualification/timeline.png", alt: "Project timeline, Nov 2022 – Q3 2023" },
+          { type: "img", src: "images/seller-qualification/diagram-role.webp", alt: "Drive the work from framing to delivery: reframe the problem, define the model, validate and refine, align stakeholders" }
         ],
         sections: [
           {
@@ -173,6 +174,7 @@ window.SITE = {
             title: "Validation & impact",
             blocks: [
               { type: "p", text: ["**Testing approach:** Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts.", "I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction."] },
+              { type: "img", src: "images/seller-qualification/diagram-validation.webp", alt: "Validate the full qualification experience: visibility, self-service and continuity; ease of use 4.33 of 5, problem-solving effectiveness 4 of 5" },
               { type: "p", title: "User Testing Result", text: "Evaluated through rigorous usability testing across diverse merchant cohorts, the parallel architecture completely rewired the onboarding experience:",
                 items: ["**Friction Removed:** Eliminated sequential discovery loops and erased tool-switching abandonment.", "**Quantitative Validation:** Earned a 4.33 / 5 Ease of Use score and a 4 / 5 for Problem-Solving Effectiveness."] },
               { type: "h", text: "The emotional shift" },
