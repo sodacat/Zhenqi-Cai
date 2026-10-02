@@ -839,7 +839,7 @@ window.SITE = {
         impact: [["6", "Projects on one system"], ["3", "Screen sizes, one grid"], ["4.9:1", "Red contrast, up from 3.7:1"], ["3", "Days"]],
         aboutTitle: "The brief I gave myself",
         about: [
-          "My portfolio has one job: show a hiring manager, in under a minute, how I make complex systems clear. The old site was a generic template. It held my work, but said nothing about how I think.",
+          "My portfolio has one job: show a hiring manager, in under a minute, how I make complex systems clear. This build started from a generic editorial template that said nothing about how I think.",
           "I rebuilt it with Claude Code, without writing a line of code myself. I set the direction and made every design call. Claude wrote and shipped the code, and sent back screenshots after each change."
         ],
         facts: [
@@ -893,15 +893,15 @@ window.SITE = {
               { type: "p", text: "Because undo cost nothing, I could try bold moves and judge them on the real page. These are three I tried and walked back:" },
               { type: "h", text: "Rejected: a staggered work grid" },
               { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
-              { type: "p", text: "It looked editorial, but it broke the reading order and pushed half the projects below the fold. **Kept:** an even grid where every project has the same weight." },
+              { type: "p", text: "Claude suggested breaking the symmetry. It looked editorial, but scattered, and projects 3 and 4 dropped below the fold. **Kept:** an even grid where every project has the same weight." },
               { type: "h", text: "Rejected: a rectangular portrait" },
               { type: "pair", frame: true, items: [
                 ["images/this-portfolio/about-rejected.webp", "Rejected — rectangular portrait"],
                 ["images/this-portfolio/about-kept.webp", "Kept — round portrait"]
               ] },
-              { type: "p", text: "The rectangle is the textbook Swiss move, but it made the page feel cold and the photo blended into the grid. **Kept:** a round portrait, the one soft shape on the page, which backs up “Humanist.”" },
+              { type: "p", text: "Claude's review called the circle decoration and recommended a rectangle, the textbook Swiss crop. I tried it, then went back to my original round portrait: on a page of hard edges, it's the one human shape, and it backs up “Humanist.”" },
               { type: "h", text: "Rejected: red in only three places" },
-              { type: "p", text: "A purist pass cut red down to three spots. The page got calmer but flatter: the key facts (years, scale, section titles) lost their hierarchy. **Kept:** red on the information that matters, in a deeper #e30613 that passes contrast for small labels, which an AI critique had flagged." }
+              { type: "p", text: "Another review suggested cutting red down to two or three spots. The page got calmer but flatter: the key facts (years, scale, section titles) lost their emphasis. **Kept:** red on the information that matters, in a deeper #e30613 that passes contrast for small labels, a fix an earlier review had flagged." }
             ]
           },
           {
@@ -920,8 +920,8 @@ window.SITE = {
                 "**Reusable rules.** A new project drops into the same grid without new design decisions."
               ] },
               { type: "p", title: "Where AI fell short", items: [
-                "**No taste of its own.** Asked to “make it more Swiss,” it overcorrected: less red, a rectangular photo, a staggered grid. Deciding what to keep was my job.",
-                "**It changed things I didn't ask for.** It swapped my check and cross icons for other symbols until I told it to stop.",
+                "**No taste of its own.** Its “more Swiss” suggestions often overshot: a halftone dot texture, red cut to three spots, a rectangular photo, a staggered grid. Deciding what to keep was my job.",
+                "**It changed things I didn't ask for.** It replaced the ✅ and 🚫 marks from my case study PDF with plain squares, and when I asked for some of the red back, it restored all of it.",
                 "**Precision took rounds.** Exact grid placement often took several passes; drawing the grid on the page was what fixed it.",
                 "**It couldn't judge content.** Which images tell the story, what to call a project, which claims to emphasize: those calls were mine."
               ] },
