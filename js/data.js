@@ -479,7 +479,7 @@ window.SITE = {
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-flow.webp", alt: "Keep editing in the flow of work: tap and hold, focus the cell, edit the value, continue or finish" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-inplace.webp", alt: "Edit without leaving the table: long-press a cell, focus it, edit the value, finish; tap another cell to continue" },
               { type: "img", size: "md", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
