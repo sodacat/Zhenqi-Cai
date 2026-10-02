@@ -304,6 +304,8 @@ window.SITE = {
               { type: "img", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "h", text: "4. Progress indicators that can’t be misread" },
               { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
+              { type: "row", frame: true, size: "md", items: [["images/compliance-report/progress-v1.webp", "V1 — numbers alone", "Progress V1: four plain metrics in a row"]] },
+              { type: "row", frame: true, size: "md", items: [["images/compliance-report/progress-v2.webp", "V2 — rings as visual anchors, with explicit labels", "Progress V2: progress rings with counts and labels"]] },
               { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
               { type: "row", frame: true, label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
@@ -320,6 +322,8 @@ window.SITE = {
                 { title: "Customizable", text: "How can users tailor views to their decisions?" }
               ] },
               { type: "p", text: "I tested with business analysts like Betty — first a low-fi concept (R1), then a high-fi prototype (R2) — focusing not on UI feedback but on what drives their decisions and how they weigh trade-offs." },
+              { type: "img", src: "images/compliance-report/r1-lofi.webp", frame: true, size: "md", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
+              { type: "row", frame: true, label: "R2 high-fi prototype", items: [["images/compliance-report/r2-progress.webp", "Progress: highlighted terms and glossary and data asset progress", "R2 prototype progress tab"], ["images/compliance-report/r2-insights.webp", "Insights: top terms, new regulations, what-if scenario and trends", "R2 prototype insights tab"]] },
               { type: "quotes", label: "What did the users say?", items: [
                 ["I would like to see the cost-to-benefit ratio, how exactly this gonna help us."],
                 ["Top 5 powerful terms makes a lot of sense since they are going to draw a huge impact on my business."],
