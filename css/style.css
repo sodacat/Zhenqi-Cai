@@ -436,7 +436,7 @@ ol {
 .nav-mark {
   display: inline-block;
   vertical-align: baseline;
-  margin-left: 2px;
+  margin-left: 4px;
   width: 8px;
   height: 8px;
   background: var(--accent);
