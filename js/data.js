@@ -12,7 +12,7 @@ window.SITE = {
   statement: ["Product designer.", "Systems thinker.", "Humanist."],
   // The statement set as poster lines: "l" flush left, "r" flush right,
   // "j" justified to both edges of the six-column measure
-  statementLines: [["Product designer.", "l"], ["Systems thinker.", "l"], ["Humanist.", "r"]],
+  statementLines: [["Product designer.", "l"], ["Systems thinker.", "l"], ["Humanist.", "l"]],
   headline: "I design systems where complexity becomes clarity.",
   // The same headline set as poster lines: "l" = flush left, "r" = flush right,
   // "j3" = justified across columns 1–3
@@ -44,6 +44,8 @@ window.SITE = {
   portrait: "images/portrait.jpg",
   // About (home): short lines beside the bio
   facts: ["7+ years — Amazon, SAP, IBM, startups", "Focus — Complex systems, human-AI interaction"],
+  // About: label / value pairs
+  aboutFacts: [["Experience", "7+ years — Amazon, SAP, IBM, startups"], ["Focus", "Complex systems, human-AI interaction"]],
 
   philosophy: [
     { title: "Clarity", text: "Turn complexity into understanding." },
