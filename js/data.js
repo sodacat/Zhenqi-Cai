@@ -503,6 +503,7 @@ window.SITE = {
                 "For the regular width, with horizontal scroll, the Left Accessory always sticks to the left side. If the sticky first column is enabled, when scrolling, the first column will start shrinking until reaching the sticky panel width (25% of the container). Only the first column can be set sticky, which is optional. If the Right Accessory is available, it will be shown with a fading background and stick to the right side."
               ] },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
+              { type: "row", items: [["images/enterprise-experience/width-fit.webp", "Horizontal fit — show the columns that fit; each defaults to a 50% maximum width", "Horizontal fit: the first column expands up to 50% of the container"], ["images/enterprise-experience/width-scroll.webp", "Horizontal scroll — reach more columns; the left accessory stays fixed", "Horizontal scroll: columns extend beyond the container, first column optionally sticky"]] },
               { type: "img", size: "md", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
@@ -526,8 +527,7 @@ window.SITE = {
                 ["images/enterprise-experience/spec-spacing.jpg", "Data table spacing (6.1)"]
               ] },
               { type: "row", items: [
-                ["images/enterprise-experience/spec-row.jpg", "Data table row & column (6.1)"],
-                ["images/enterprise-experience/spec-width.jpg", "Data table column width (6.1)"]
+                ["images/enterprise-experience/spec-row.jpg", "Data table row & column (6.1)"]
               ] }
             ]
           },
