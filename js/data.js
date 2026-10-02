@@ -593,10 +593,12 @@ window.SITE = {
                 { title: "Mission & vision", text: "Stonk Tech’s mission is to unite retail traders into a community where trading ideas are accessible, actionable, and inclusive. We wanted every user to feel involved, supported, and part of something bigger than themselves." },
                 { title: "Voice & tone", text: "The brand speaks in a way that’s empowering, engaging, and reliable, while keeping a touch of joy—reflecting the excitement of trading and the confidence we want our users to feel." }
               ] },
+              { type: "img", src: "images/stonk-tech/diagram-needs.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
               { type: "p", title: "Defining a system users can trust", text: [
                 "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
                 "The goal was to create a system that communicates:"
               ], items: ["transparency in a traditionally opaque domain", "approachability in a high-barrier environment", "credibility comparable to institutional platforms"] },
+              { type: "img", src: "images/stonk-tech/diagram-process.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
               { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
                 items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
                 after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
@@ -628,6 +630,7 @@ window.SITE = {
                 ["images/stonk-tech/color-variations.jpg", "23 color variations"],
                 ["images/stonk-tech/logo.jpg", "Final logo"]
               ] },
+              { type: "img", src: "images/stonk-tech/diagram-mark.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
               { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
                 "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
                 "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
