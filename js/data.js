@@ -396,6 +396,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
+              { type: "img", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
               { type: "img", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
@@ -430,12 +431,14 @@ window.SITE = {
                 text: "Applicable for a huge amount of data, various types of content. Ability to filter and sort the content with ease, divide the content into separate pages.",
                 pros: ["Useful with a huge amount of data and its size", "Ability to collapse and hide some data", "A versatile form of data presentation"],
                 cons: ["Repetitive column names", "Hard to compare particular data between rows"] },
+              { type: "img", src: "images/enterprise-experience/diagram-structure.webp", alt: "Choose structure over repetition: sticky headers and columns versus separate cards for each row" },
               { type: "p", title: "Summary", text: "In order to achieve the goals of consistency, accessibility, scalability, and provide content all the time, I decided to apply the sticky header and column to the data table redesign." }
             ]
           },
           {
             title: "Design decisions",
             blocks: [
+              { type: "img", src: "images/enterprise-experience/diagram-stages.webp", alt: "Evolve the component in stages: 6.0 keep headers visible, 6.1 anchor the reference, 6.2 edit directly in the table" },
               { type: "p", title: "Context preservation — Stick column headers in place (6.0 release)", text: [
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
@@ -446,7 +449,9 @@ window.SITE = {
                 "In the design of 6.1, the sticky left column is available. Sync icon is displayed in order to present status."
               ] },
               { type: "img", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
+              { type: "img", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
               { type: "p", title: "System consistency — Behavior and interaction (6.1 release)", text: "Supporting both compact and regular modes ensures users interact with the same information structure across devices, preserving mental models." },
+              { type: "img", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
@@ -463,9 +468,11 @@ window.SITE = {
                 ["images/enterprise-experience/option-2.jpg", "Option 2 — Quick actions", "If the user taps and holds any of the cells, the quick action menu will pop out. The user can choose from edit a cell, edit a row or delete a row."],
                 ["images/enterprise-experience/option-3.jpg", "Option 3 — Edit cells directly", "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically."]
               ] },
+              { type: "img", src: "images/enterprise-experience/diagram-editing.webp", alt: "Make editing deliberate and direct: three options, with option 3 edit cells directly selected" },
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
+              { type: "img", src: "images/enterprise-experience/diagram-flow.webp", alt: "Keep editing in the flow of work: tap and hold, focus the cell, edit the value, continue or finish" },
               { type: "img", src: "images/enterprise-experience/micro-interactions.jpg", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
@@ -485,6 +492,7 @@ window.SITE = {
                 "For Horizontal Fit, a limited number of columns can be shown. By default, in the column in which the content gets truncated, the minimum width of the column will be 25% of the container. Developers can override minimum width. Data Table will try to fit as many columns as possible. The columns that cannot fit into the container will be omitted; then the rest will re-adjust to fill the space. Image content always has a fixed width and does not shrink.",
                 "For the regular width, with horizontal scroll, the Left Accessory always sticks to the left side. If the sticky first column is enabled, when scrolling, the first column will start shrinking until reaching the sticky panel width (25% of the container). Only the first column can be set sticky, which is optional. If the Right Accessory is available, it will be shown with a fading background and stick to the right side."
               ] },
+              { type: "img", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
               { type: "img", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
