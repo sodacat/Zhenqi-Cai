@@ -1237,7 +1237,7 @@ ol {
 
 /* Portrait with a magazine caption under it */
 .about-media {
-  grid-column: 10 / -1;
+  grid-column: 11 / -1;
   grid-row: 1 / span 2;
   margin: 0;
 }
@@ -2388,7 +2388,7 @@ ol {
 
   /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
-    grid-column: 8 / -1;
+    grid-column: 9 / -1;
     grid-row: 1;
   }
 
