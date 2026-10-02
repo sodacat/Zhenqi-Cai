@@ -417,19 +417,6 @@ ol {
     display: none;
   }
 
-  /* closing cell: the red square, like the contact box's last cell */
-  .nav .nav-end {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    padding: var(--box-pad) var(--box-pad-x);
-  }
-
-  .nav a.is-active {
-    box-shadow: none;
-    background: var(--fg);
-    color: #fff;
-  }
 
   .nav a:hover,
   .nav a:focus-visible {
@@ -439,9 +426,36 @@ ol {
   }
 }
 
-.nav-contact,
-.nav-end {
+.nav-contact {
   display: none;
+}
+
+/* Current section: the nav's red square sits at the right end of its cell
+   (always there, only shown when current, so the cells never shift) */
+.nav a {
+  gap: 12px;
+}
+
+.nav a > span:first-child {
+  flex: 1 1 auto;
+}
+
+.nav-mark {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.nav a.is-current .nav-mark {
+  opacity: 1;
+}
+
+.nav a:hover .nav-mark,
+.nav a:focus-visible .nav-mark {
+  background: #fff;
 }
 
 .menu-btn {
@@ -2526,12 +2540,6 @@ ol {
 
   .nav a + a {
     border-top: 1px solid var(--fg);
-  }
-
-  .nav a.is-active {
-    box-shadow: none;
-    background: var(--fg);
-    color: #fff;
   }
 
   .nav a:hover,

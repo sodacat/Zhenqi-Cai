@@ -68,15 +68,20 @@
       ["About", "index.html#about", "about"],
       ["Resume", S.resume, "resume"]
     ];
+    // A project page marks the section it belongs to
+    let current = page;
+    if (page === "project") {
+      const p = S.projects.find((x) => x.id === new URLSearchParams(location.search).get("id"));
+      current = p && p.type === "experiment" ? "experiments" : "works";
+    }
     return `<header class="site-header grid-12 wrap">
       <a class="brand" href="index.html" aria-label="${esc(S.name)} — home">${esc(S.mark.replace(/\.$/, ""))}<span class="sq" aria-hidden="true"></span></a>
       <button class="menu-btn label" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav label" id="nav" aria-label="Primary">
         ${nav
-          .map(([t, href, key]) => `<a class="link-line${page === key ? " is-active" : ""}" href="${href}">${t}</a>`)
+          .map(([t, href, key]) => `<a class="link-line${current === key ? " is-current" : ""}" href="${href}" data-key="${key}"${current === key ? ' aria-current="page"' : ""}><span>${t}</span><span class="nav-mark" aria-hidden="true"></span></a>`)
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
-        <span class="nav-end" aria-hidden="true">${arrow}</span>
       </nav>
     </header>`;
   }
@@ -592,6 +597,36 @@
       cursor.classList.add("is-on");
     });
     document.documentElement.addEventListener("pointerleave", () => cursor.classList.remove("is-on"));
+  }
+
+  // Home: the nav's red square follows the section in view
+  // (Work, AI Experiments, About; none on the hero)
+  if (page === "home") {
+    const links = [...document.querySelectorAll(".nav a[data-key]")];
+    const spy = [
+      ["works", document.getElementById("work")],
+      ["experiments", document.getElementById("experiments")],
+      ["about", document.getElementById("about")]
+    ].filter(([, el]) => el);
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const line = window.innerHeight * 0.35;
+      let key = null;
+      spy.forEach(([k, el]) => {
+        if (el.getBoundingClientRect().top <= line) key = k;
+      });
+      links.forEach((a) => {
+        const on = a.dataset.key === key;
+        a.classList.toggle("is-current", on);
+        if (on) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      });
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   }
 
   // Deep links (#experiments, #about, #contact) after render
