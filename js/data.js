@@ -131,7 +131,7 @@ window.SITE = {
               ] },
               { type: "h", text: "Problem Space — Hidden Restrictions" },
               { type: "p", text: "**Pain Points:** Errors surface sequentially, preventing sellers from knowing when they’re done." },
-              { type: "img", src: "images/seller-qualification/pain-listing.png", frame: true, size: "md", alt: "Listing form with a restriction error" },
+              { type: "img", src: "images/seller-qualification/pain-listing.png", frame: true, alt: "Listing form with a restriction error" },
               { type: "p", text: "**Pain Points:** Sellers must leave listing tool to apply separately." },
               { type: "pair", size: "md", items: [
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
@@ -203,7 +203,7 @@ window.SITE = {
           {
             title: "Organizational impact",
             blocks: [
-              { type: "img", size: "sm", src: "images/seller-qualification/alignment.webp", alt: "Seller Qualification Workshop — July 17-18, Seattle office" },
+              { type: "img", size: "md", src: "images/seller-qualification/alignment.webp", alt: "Seller Qualification Workshop — July 17-18, Seattle office" },
               { type: "p", title: "Seller Qualification Workshop", text: "July 17-18 (Mon-Tue), Seattle office" },
               { type: "p", title: "Outcome - Team Mindset Shift", text: ["Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.", "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"] },
               { type: "shift", from: "“How do we control sellers?”", to: "“How do we help sellers grow responsibly?”" },
@@ -310,7 +310,7 @@ window.SITE = {
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/filter-v1.webp", "Filter V1 — sort, show and a date range", "Filter V1: sort by, show, start and end dates"]] },
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/filter-v2.webp", "Filter V2 — narrow to a section and limit visible terms", "Filter V2: only show a regulation section, sort by top 10, only show top 5 terms"]] },
               { type: "row", frame: true, items: [["images/compliance-report/label-v1.webp", "Label V1 — a color key far from the graph", "Label V1: a color legend beside the date filters"], ["images/compliance-report/label-v2.webp", "Label V2 — labels aligned under their columns", "Label V2: labels aligned beneath each column of the graph"]] },
-              { type: "img", size: "sm", src: "images/compliance-report/hover-state.webp", frame: true, alt: "Hover state: hovering the Data Asset label highlights related terms and fades the rest" },
+              { type: "img", size: "md", src: "images/compliance-report/hover-state.webp", frame: true, alt: "Hover state: hovering the Data Asset label highlights related terms and fades the rest" },
               { type: "img", size: "md", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "h", text: "4. Progress indicators that can’t be misread" },
               { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
@@ -332,7 +332,7 @@ window.SITE = {
                 { title: "Customizable", text: "How can users tailor views to their decisions?" }
               ] },
               { type: "p", text: "I tested with business analysts like Betty — first a low-fi concept (R1), then a high-fi prototype (R2) — focusing not on UI feedback but on what drives their decisions and how they weigh trade-offs." },
-              { type: "img", size: "sm", src: "images/compliance-report/r1-lofi.webp", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
+              { type: "img", size: "md", src: "images/compliance-report/r1-lofi.webp", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
               { type: "row", label: "R2 high-fi prototype", items: [["images/compliance-report/r2-progress.webp", "Progress: highlighted terms and glossary and data asset progress", "R2 prototype progress tab"], ["images/compliance-report/r2-insights.webp", "Insights: top terms, new regulations, what-if scenario and trends", "R2 prototype insights tab"]] },
               { type: "quotes", label: "What did the users say?", items: [
                 ["I would like to see the cost-to-benefit ratio, how exactly this gonna help us."],
@@ -403,7 +403,7 @@ window.SITE = {
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
-              { type: "img", size: "sm", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
                 { title: "Use cases", items: ["Select multiple rows of data for further actions", "Compare different rows of data", "Add, edit or delete a row of data"] },
@@ -449,16 +449,16 @@ window.SITE = {
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
               { type: "p", title: "Reference anchoring — Stick the left column in place (6.1 release)", text: [
                 "Fixing key columns allows users to compare data across rows without losing their frame of reference.",
                 "In the design of 6.1, the sticky left column is available. Sync icon is displayed in order to present status."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
               { type: "p", title: "System consistency — Behavior and interaction (6.1 release)", text: "Supporting both compact and regular modes ensures users interact with the same information structure across devices, preserving mental models." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-selection.webp", alt: "From selection to action: browse the table, enter selection, select rows, access actions; scrolling retains the selection" },
+              { type: "img", src: "images/enterprise-experience/diagram-selection.webp", alt: "From selection to action: browse the table, enter selection, select rows, access actions; scrolling retains the selection" },
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
@@ -468,7 +468,7 @@ window.SITE = {
                 "User story: As a Service and/or Maintenance Technician, I want to enter data into a table or edit data on a table so that I can quickly add/edit readings that are directly relevant to my job.",
                 "Feasibility: Since the in-place editing feature couldn’t be delivered from the Android side for the 6.1 release, and MDK doesn’t have the Tap and Hold gestures implemented right now. So this new design was saved for the 6.2 release."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
               { type: "p", title: "Behavior and interaction", text: "For the interaction of the in-place editable data table, I explored several patterns." },
               { type: "trio", items: [
                 ["images/enterprise-experience/option-1.jpg", "Option 1 — Select a row", "If the user taps any of the cells, the row of that cell will be highlighted. The user can tap any cell in the row again to edit the cell or tap the chevron to open the modal to edit the row."],
@@ -479,8 +479,8 @@ window.SITE = {
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-inplace.webp", alt: "Edit without leaving the table: long-press a cell, focus it, edit the value, finish; tap another cell to continue" },
-              { type: "img", size: "md", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
+              { type: "img", src: "images/enterprise-experience/diagram-inplace.webp", alt: "Edit without leaving the table: long-press a cell, focus it, edit the value, finish; tap another cell to continue" },
+              { type: "img", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
           },
@@ -496,7 +496,7 @@ window.SITE = {
                 { title: "Spacing", text: "Adapt to the text size. Header height grows with the text, with 8 pt padding above and below." },
                 { title: "Scrolling", text: "Preserve the reference. Keep the header visible as rows move. Show a shadow when rows slide beneath it." }
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
               { type: "p", title: "Column on regular width", text: "Text alignment:", items: ["Right-aligned numeric columns", "Left-aligned text columns"], after: [
                 "The height of the data row adapts to the text size, the padding of the top and bottom is 16 pt. By default, each data table cell allows only 1 line of data. But the developer can set to allow wrapping to 2 lines. Avoid using multiple lines within a row since it makes it more difficult to scan the data in the table.",
                 "For the regular width, without horizontal scroll, if there is more than 1 column, any columns can have a maximum width (include paddings) of 50% of the Data Table container width. The developer can override max-width. If the width of a column is not set, by default, the column width adapts to the width of the widest content in the column. When the width exceeds the maximum width, the content gets truncated. By default, the first column (Title) will expand to fill the space.",
@@ -505,12 +505,12 @@ window.SITE = {
               ] },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
               { type: "row", items: [["images/enterprise-experience/width-fit.webp", "Horizontal fit — show the columns that fit; each defaults to a 50% maximum width", "Horizontal fit: the first column expands up to 50% of the container"], ["images/enterprise-experience/width-scroll.webp", "Horizontal scroll — reach more columns; the left accessory stays fixed", "Horizontal scroll: columns extend beyond the container, first column optionally sticky"]] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
                 "If the content width is small, the column can shrink to fit. If the content width is truncated. The column can shrink to a minimum width. The minimum column width is 25% of the container; the maximum column width is 50% of the container."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/spec-compact.jpg", alt: "Column specification on compact width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-compact.jpg", alt: "Column specification on compact width" },
               { type: "img", size: "md", src: "images/enterprise-experience/scroll-behavior.webp", alt: "Scrolling behavior: diagonal scroll by default; an optional sticky first column shrinks to 25% of the container" },
               { type: "cards", label: "Scrolling — keep context in motion", items: [
                 { title: "Movement", text: "Scroll naturally. Diagonal scrolling supports movement across rows and columns." },
@@ -611,7 +611,7 @@ window.SITE = {
               { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
                 items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
                 after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
-              { type: "img", size: "md", src: "images/stonk-tech/moodboard-3.jpg", alt: "Moodboard: Glass Morphism" },
+              { type: "img", src: "images/stonk-tech/moodboard-3.jpg", alt: "Moodboard: Glass Morphism" },
               { type: "row", items: [
                 ["images/stonk-tech/moodboard-1.jpg", "", "Moodboard: Purple"], ["images/stonk-tech/moodboard-2.jpg"], ["images/stonk-tech/moodboard-4.jpg"], ["images/stonk-tech/moodboard-5.jpg"]
               ] },
@@ -645,11 +645,11 @@ window.SITE = {
               { type: "side", narrow: true, frame: true, title: "Typography", src: "images/stonk-tech/typography.jpg",
                 text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
               { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
-              { type: "img", size: "md", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
+              { type: "img", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
               { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
-              { type: "img", size: "md", src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
+              { type: "img", src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
               { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
-              { type: "img", size: "md", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
+              { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
               { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
             ]
           },
@@ -665,7 +665,7 @@ window.SITE = {
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
                 items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
-              { type: "img", size: "md", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
+              { type: "img", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
               { type: "cols", label: "Breakpoints", items: [
                 { src: "images/stonk-tech/phone.jpg", title: "Phone view", text: "On phone screens (device-width < 375px),",
                   items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
@@ -677,10 +677,10 @@ window.SITE = {
                   items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
               ] },
               { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
-              { type: "img", size: "md", src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
-              { type: "img", size: "md", src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
               { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
-              { type: "img", size: "md", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
+              { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
             ]
           },
           {
@@ -875,7 +875,7 @@ window.SITE = {
             blocks: [
               { type: "p", text: "Claude suggested about 55 changes. I tried 27 and cut 10 after seeing them on the real page. Two of them:" },
               { type: "h", text: "Cut: a staggered work grid" },
-              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
+              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, alt: "Rejected: Selected work as a staggered, magazine-style grid" },
               { type: "p", text: "Claude proposed a more expressive composition for the project cards. It looked interesting, and made the work harder to scan: projects 3 and 4 fell below the fold. The even grid was quieter, and better." },
               { type: "h", text: "Cut: a rectangular portrait" },
               { type: "pair", frame: true, items: [
