@@ -430,18 +430,13 @@ ol {
   display: none;
 }
 
-/* Current section: the nav's red square sits at the right end of its cell
-   (always there, only shown when current, so the cells never shift) */
-.nav a {
-  gap: 12px;
-}
-
-.nav a > span:first-child {
-  flex: 1 1 auto;
-}
-
+/* Current section: a red square right after the word, its bottom on the
+   baseline like the logo's full stop (always there, only shown when
+   current, so the cells never shift) */
 .nav-mark {
-  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 3px;
   width: 8px;
   height: 8px;
   background: var(--accent);
