@@ -912,6 +912,41 @@ window.SITE = {
             ]
           },
           {
+            title: "Who did what",
+            blocks: [
+              { type: "p", text: "The question that matters in AI-assisted work is where the designer's value sits. Going back through the whole conversation, the split was clear:" },
+              { type: "cards", items: [
+                { label: "Me", title: "Direction, ideas, decisions", items: [
+                  "**Direction and positioning.** Chose Swiss style, picked the reference sites and posters, wrote the copy and my three principles: Clarity, Systems, Humanity.",
+                  "**Signature visual ideas.** Most of what makes the site recognizable came from me (listed below).",
+                  "**Trade-offs.** Each round Claude offered options; I chose which to build (“do A and C”), and undid about ten changes, including several of its “more Swiss” suggestions.",
+                  "**Precision.** How many columns each element spans, which edges align, equal gaps between sections. Asking to draw the grid on the page to check was my idea too.",
+                  "**Content.** Which images to use and which to leave untouched, what to call each project, where the hierarchy needs emphasis.",
+                  "**Image rules.** Soft card shadows instead of borders, and no shadow on diagrams."
+                ] },
+                { label: "Claude", title: "Build, systematize, advise", items: [
+                  "**Code and shipping.** All the HTML, CSS and JavaScript; commits, pushes and publishing; a screenshot check after every change.",
+                  "**Turning requests into a system.** The 12-column grid math, tablet and phone layouts, exact spacing values, pixel-level alignment checks.",
+                  "**Reviews and options.** Whenever I asked “is this Swiss?”, it gave a critique and numbered options. Some held: a deeper red (#e30613) that passes contrast, a true grotesk typeface, no justified text. Some I rejected: a halftone texture, a rectangular photo, a staggered grid, red in only three places.",
+                  "**Content and assets.** Extracting text and HD images from PDFs and my old site, cropping, encoding video and cutting out the browser chrome, building the full-screen prototype.",
+                  "**Drafts.** Suggested project names, case study structure and first-draft English copy, for me to edit and approve."
+                ] }
+              ] },
+              { type: "p", title: "Signature ideas were mine", items: [
+                "The ZC wordmark ending in a square full stop.",
+                "Key numbers (7+, 100M+) in red blocks, like text selected on screen.",
+                "Outlined boxes for nav and buttons that fill red on hover.",
+                "Every arrow replaced by the same small red square.",
+                "A cursor that is a black square, the size of the logo's full stop.",
+                "Photos in black and white, turning to color on hover.",
+                "Negative space instead of boxes, with frames that appear only on hover.",
+                "A round portrait, and soft card shadows instead of borders on screenshots."
+              ] },
+              { type: "figures", label: "Claude's reviews, by the numbers", items: [["11", "Review rounds"], ["~55", "Changes suggested"], ["27", "Chosen to try"], ["10", "Undone after seeing them live"]] },
+              { type: "p", text: "Claude suggested the changes. I decided which to try, and about a third of the ones I tried didn't survive seeing them on the real page." }
+            ]
+          },
+          {
             title: "Outcome and limits",
             blocks: [
               { type: "p", title: "What shipped", numbered: true, items: [
