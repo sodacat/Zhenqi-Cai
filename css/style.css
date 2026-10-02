@@ -3000,11 +3000,11 @@ body[data-page="project"] .footer-top .footer-contact {
 
 /* ---------- About, Swiss pass ----------
    Two vertical axes only: column 1 (statement, bio) and column 7 (photo,
-   facts, button). Everything flush left; the photo is a rectangle on the
+   facts, button). Everything flush left; the photo is a circle on the
    grid; red is kept for the section title and the button's square. */
 .about-media .card-media {
-  aspect-ratio: 4 / 5;
-  border-radius: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 
 .about-media {
@@ -3053,7 +3053,7 @@ body[data-page="project"] .footer-top .footer-contact {
   }
 
   .about-lead {
-    grid-row: 2;
+    grid-row: 2 / span 3;
     grid-column: 1 / 7;
     margin-top: var(--space-l);
   }
