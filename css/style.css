@@ -2917,6 +2917,18 @@ ol {
   grid-column: 1 / 9;
 }
 
+/* small: cols 1–6, for screenshots whose source is too small to show
+   larger without blurring */
+.case-body > .case-fig.is-sm,
+.case-body > .case-row.is-sm {
+  grid-column: 1 / 7;
+}
+
+@media (max-width: 680px) {
+  .case-body > .case-fig.is-sm,
+  .case-body > .case-row.is-sm { grid-column: 1 / -1; }
+}
+
 .case-row.is-md[style*="--n:8"] {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
