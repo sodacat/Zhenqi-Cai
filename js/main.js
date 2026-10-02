@@ -406,6 +406,10 @@
         return `<div class="case-row ${figCls(b)} reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
           .map(([src, cap]) => `<figure class="case-fig">${media(src, cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
           .join("")}</div>`;
+      case "cols":
+        return `<div class="case-cols reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
+          .map((c) => `<div><figure class="case-fig">${media(c.src, c.title, "case-media")}</figure><h4 class="case-sub">${esc(c.title)}</h4>${prose(c)}</div>`)
+          .join("")}</div>`;
       case "map":
         return `<div class="case-map reveal">${b.items
           .map(([from, to]) => `<p><span>${esc(from)}</span><span>→</span><strong>${esc(to)}</strong></p>`)

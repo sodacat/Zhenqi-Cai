@@ -2884,3 +2884,49 @@ ol {
   grid-column: 1 / -1;
   margin: 0;
 }
+
+/* n columns, each an image on a common baseline, a label and its notes */
+.case-cols {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  column-gap: var(--pad);
+  row-gap: 16px;
+}
+
+.case-cols > .case-h {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.case-cols .case-fig .card-media {
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
+}
+
+.case-cols .case-fig .card-media img {
+  max-height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.case-cols .case-sub {
+  margin: 16px 0 8px;
+}
+
+.case-cols p {
+  margin: 0;
+}
+
+.case-cols p + .case-list {
+  margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  .case-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
+}
+
+@media (max-width: 680px) {
+  .case-cols { grid-template-columns: minmax(0, 1fr); }
+}
