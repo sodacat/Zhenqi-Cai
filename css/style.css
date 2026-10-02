@@ -816,16 +816,24 @@ ol {
   filter: none;
 }
 
-/* Linked cards: title and arrow turn red */
+/* Linked cards: the title turns red, and the square (black at rest)
+   turns red with it */
 .work-title,
-.work-meta > .arrow,
+.card-tags > .arrow,
 .project-nav .next .display {
   transition: color var(--dur) var(--ease);
 }
 
+.card-tags > .arrow {
+  color: var(--fg);
+}
+
 .work-card:hover .work-title,
-.work-card:hover .work-meta > .arrow,
+.work-card:hover .card-tags > .arrow,
 .work-card:focus-visible .work-title,
+.work-card:focus-visible .card-tags > .arrow,
+.exp-row:hover .card-tags > .arrow,
+.exp-row:focus-visible .card-tags > .arrow,
 .project-nav .next:hover .display {
   color: var(--accent);
 }
@@ -961,11 +969,16 @@ ol {
   grid-column: 1 / -1;
 }
 
-/* centred on the last (24px) line of the card */
-.work-meta > .arrow {
+/* the square sits at the right end of the tags line — the card's last
+   line — centred on it */
+.card-tags {
+  position: relative;
+}
+
+.card-tags > .arrow {
   position: absolute;
   right: 0;
-  bottom: calc((var(--lh-body) - var(--arrow)) / 2);
+  bottom: calc((1lh - var(--arrow)) / 2);
 }
 
 /* Card tags: one line, highlighted like selected text */

@@ -54,8 +54,7 @@
         <span class="label cat">${esc(p.company)}</span>
         <h3 class="work-title">${esc(p.title)}</h3>
         <p class="work-sum">${esc(p.summary)}</p>
-        <p class="card-tags">${[...(p.tags || []), p.impact].filter(Boolean).map(esc).join(" · ")}</p>
-        ${arrow}
+        <p class="card-tags">${[...(p.tags || []), p.impact].filter(Boolean).map(esc).join(" · ")}${arrow}</p>
       </div>
     </a>`;
   }
@@ -170,8 +169,7 @@
                 <span class="work-meta exp-meta">
                   <span class="label cat">EXP—${pad(i + 1)} · ${esc(p.date || "")}</span>
                   <span class="work-title exp-title">${esc(p.title)}</span>
-                  <span class="card-tags">${[p.medium, p.tools, p.status].filter((v) => v && v !== p.date).map(esc).join(" · ")}</span>
-                  ${arrow}
+                  <span class="card-tags">${[p.medium, p.tools, p.status].filter((v) => v && v !== p.date).map(esc).join(" · ")}${arrow}</span>
                 </span>
               </a></li>`
             )
