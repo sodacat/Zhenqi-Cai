@@ -827,7 +827,7 @@ window.SITE = {
       tools: "Claude Code",
       status: "Live",
       summary:
-        "I rebuilt this site in Swiss style just by talking to Claude Code — about 250 prompts, 220+ published versions in three days, and not one line of hand-written code.",
+        "I rebuilt this site in Swiss style by talking to Claude Code: every design call mine, every line of code written by AI, in three days.",
       tags: ["Experiment", "Vibe coding", "Design system"],
       alt: "This portfolio's home page — bold black type, red accents, 12-column grid",
       cover: "images/this-portfolio/card.webp",
@@ -836,11 +836,11 @@ window.SITE = {
         headline: "A Swiss-style portfolio, built by conversation",
         lead: "I made every design call. Claude Code wrote every line.",
         cover: "images/this-portfolio/grid.webp",
-        impact: [["250", "Prompts"], ["220+", "Published versions"], ["227", "Commits"], ["3", "Days"]],
-        aboutTitle: "Design direction in plain words",
+        impact: [["6", "Projects on one system"], ["3", "Screen sizes, one grid"], ["4.9:1", "Red contrast, up from 3.7:1"], ["3", "Days"]],
+        aboutTitle: "The brief I gave myself",
         about: [
-          "I started from a generic editorial template and one reference site. Over three days I talked the whole portfolio into shape with Claude Code: home page, four case studies, and two AI experiments.",
-          "I gave every instruction in plain words, often a single line: “Make the nav bar one column wider.” Claude edited the code, committed, pushed, republished the live page, and sent screenshots back. When something didn't work, I said “undo” and it was gone."
+          "My portfolio has one job: show a hiring manager, in under a minute, how I make complex systems clear. The old site was a generic template. It held my work, but said nothing about how I think.",
+          "I rebuilt it with Claude Code, without writing a line of code myself. I set the direction and made every design call. Claude wrote and shipped the code, and sent back screenshots after each change."
         ],
         facts: [
           ["Medium", "Vibe-coded web"],
@@ -849,8 +849,16 @@ window.SITE = {
         ],
         sections: [
           {
-            title: "Starting point",
+            title: "Why Swiss style",
             blocks: [
+              { type: "statement", text: "My design philosophy and Swiss style believe the same things. So the site's visual language is my philosophy, made visible." },
+              { type: "p", text: "Three principles guide my work, and the portfolio states them on the home page. The International Typographic Style was built on the same convictions: that design exists to make information clear, ordered, and open to everyone. Each principle maps to a Swiss idea, and each became a design decision:" },
+              { type: "cards", items: [
+                { label: "Clarity", title: "Turn complexity into understanding.", text: "Swiss design strips away decoration so content can speak. Here: objective sans-serif type, a strong hierarchy, and red only where meaning needs emphasis." },
+                { label: "Systems", title: "Design for the bigger picture.", text: "The grid is the original design system: one structure governs every page. Here: a 12-column grid and one vertical gap shared by every page and screen size." },
+                { label: "Humanity", title: "Technology should empower people.", text: "Swiss style aimed for communication anyone could read. Here: accessible contrast, plain language, and a round portrait as the one soft shape on the page." }
+              ] },
+              { type: "p", text: "That turns the style from a taste into an argument. My headline says “I design systems where complexity becomes clarity,” and the page itself is the proof." },
               { type: "shift", quiet: true, fromLabel: "Before", toLabel: "After", from: "A generic editorial template: thin type, empty grey boxes, no system.", to: "A Swiss-style system: 12-column grid, one vertical gap, red, black and white." },
               { type: "pair", frame: true, items: [
                 ["images/this-portfolio/before.webp", "Before — the editorial template I started from"],
@@ -859,78 +867,69 @@ window.SITE = {
             ]
           },
           {
-            title: "The loop",
+            title: "From references to rules",
             blocks: [
-              { type: "p", title: "One prompt, one change", numbered: true, items: [
-                "**Ask.** I describe the change in a sentence, sometimes with a screenshot or a reference.",
-                "**Build.** Claude Code edits the HTML, CSS and data, then commits and pushes.",
-                "**Check.** It republishes the live page and replies with screenshots at desktop and phone widths.",
-                "**Decide.** I keep it, push it further, or say “undo” to roll it back."
-              ] },
-              { type: "statement", text: "“Undo” made bold experiments cheap, so I could try a direction, look at it, and walk it back in seconds." }
-            ]
-          },
-          {
-            title: "Design process",
-            blocks: [
-              { type: "p", title: "Seven phases in three days", numbered: true, items: [
-                "**Set the direction.** One reference, my real content, a first Swiss layout.",
-                "**Study the style.** Posters and style guides in, critique and options out.",
-                "**Turn taste into rules.** A small set of rules the whole site follows.",
-                "**Audit the grid.** Every edge on a column, every gap the same.",
-                "**Decide the structure.** A one-page hub, with case studies on their own pages.",
-                "**Bring the work over.** Four case studies rebuilt in the new language.",
-                "**Polish and extend.** Final grid passes, plus vibe-coded experiments."
-              ] },
-
-              { type: "h", text: "01 Set the direction" },
-              { type: "p", text: ["Day 1, evening. I started from a generic template and one reference: a minimal Framer portfolio. I asked for a Swiss-style rebuild, then filled it with my real copy from an earlier Figma Make mockup and swapped in my own images.", "My first calls were about character: a looser, heavier ZC wordmark ending in a square full stop, Helvetica-style type, and the whitespace and structure of Swiss design instead of a dense layout."] },
-
-              { type: "h", text: "02 Study the style, ask for critique" },
-              { type: "p", text: ["Day 1, night. I fed in Swiss posters and style guides, and asked the same question every round: “If you learned from these, how would you change my site?” Each answer came back as a numbered list of changes. I chose subsets (“do A and C”), looked at them live, and said “undo” when a direction didn't hold."] },
+              { type: "p", text: "I fed Claude Swiss posters and style guides and asked the same question each round: “If you learned from these, how would you change my site?” Answers came back as numbered options. I picked subsets, looked at them live, and kept or dropped them." },
               { type: "row", size: "md", label: "References I fed in", items: [["images/this-portfolio/ref-1.webp"], ["images/this-portfolio/ref-2.webp"], ["images/this-portfolio/ref-3.webp"], ["images/this-portfolio/ref-4.webp"], ["images/this-portfolio/ref-5.webp"], ["images/this-portfolio/ref-6.webp"], ["images/this-portfolio/ref-7.webp"], ["images/this-portfolio/ref-8.webp"]] },
-              { type: "p", text: "Critique also caught real problems. The original red (#ff2d00) measured 3.7:1 against white, too low for small labels, so the whole site moved to a deeper Swiss red, #e30613, at 4.9:1." },
-
-              { type: "h", text: "03 Turn taste into rules" },
-              { type: "p", text: "Day 2, early. The first round of changes was piecemeal: one section had boxes, another had lines, a third had neither. I asked for a full consistency pass and set rules for the whole site:" },
+              { type: "p", text: "The first round of changes was piecemeal: one section had boxes, another had lines, a third had neither. So I turned what I liked into four rules, and checked every later decision against them:" },
               { type: "cards", items: [
                 { title: "12-column grid", text: "Every element starts and ends on a column, horizontally and vertically." },
                 { title: "One vertical gap", text: "A single spacing value between sections: 48px on desktop, 40px on tablet and phone." },
                 { title: "Negative space, not lines", text: "Boxes and dividers removed; whitespace carries the structure." },
                 { title: "Red, black, white", text: "Red is reserved for labels and emphasis. Hover is a solid red fill." }
               ] },
-              { type: "p", text: "Interaction follows the same logic. Every button is an outlined box that fills red on hover, every arrow became the same red square, and the cursor became a black square the size of the logo's full stop." },
-
-              { type: "h", text: "04 Audit the grid" },
-              { type: "p", text: "Day 2. I had Claude draw the horizontal and vertical grid over the page (the cover image above is one of these overlays), then moved elements one column at a time until every edge landed on a column and every vertical gap matched. Most prompts in this phase were small and exact:" },
-              { type: "quotes", items: [
-                ["Make the nav bar one column narrower; keep its right edge on the hero image."],
-                ["Make the I design line span three columns."],
-                ["View my resume should span the same columns as the photo."],
-                ["Show me the grid again, with the vertical spacing too."],
-                ["Undo."]
-              ] },
-
-              { type: "h", text: "05 Decide the structure" },
-              { type: "p", text: "Day 2, evening. I weighed a multi-page site against a one-pager. With a handful of projects, the home page became the hub: the nav scrolls to Work, AI Experiments and About; About lives on the home page; “View my resume” opens the PDF; each case study gets its own page." },
-
-              { type: "h", text: "06 Bring the work over" },
-              { type: "p", text: ["Day 2 into Day 3. I moved four case studies from my old site and PDFs (Amazon, IBM, SAP and a fintech startup) into the new language. I chose and cropped images, swapped in HD versions, and rebuilt each page's hierarchy so the key points stand out.", "Then I set content rules: one type scale, red only on section titles, soft card shadows on UI screenshots but none on diagrams, clearer project names, and image cards for the other projects at the end of every case."] },
-              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" },
-
-              { type: "h", text: "07 Polish and extend" },
-              { type: "p", text: "Day 3. Final passes put About, Contact and the footer on the grid, column by column. Then I added the vibe-coded experiments: Sodacat's Taste of the World, with a walkthrough video and a full-screen live prototype, and this case study itself." }
+              { type: "p", text: "The rules reach interaction too. Every button is an outlined box that fills red on hover, every arrow is the same red square, and the cursor is a black square the size of the logo's full stop. To check the grid, I had Claude draw it over the page; the cover image is one of those overlays." }
             ]
           },
           {
-            title: "What I learned",
+            title: "Iterating with AI",
             blocks: [
+              { type: "p", title: "One prompt, one change", numbered: true, items: [
+                "**Ask.** I describe the change in a sentence, often as exact as “one column narrower.”",
+                "**Build.** Claude edits the code, commits, and republishes the live page.",
+                "**Check.** It replies with screenshots at desktop and phone widths.",
+                "**Decide.** I keep it, push it further, or say “undo.”"
+              ] },
+              { type: "p", text: "Because undo cost nothing, I could try bold moves and judge them on the real page. These are three I tried and walked back:" },
+              { type: "h", text: "Rejected: a staggered work grid" },
+              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
+              { type: "p", text: "It looked editorial, but it broke the reading order and pushed half the projects below the fold. **Kept:** an even grid where every project has the same weight." },
+              { type: "h", text: "Rejected: a rectangular portrait" },
+              { type: "pair", frame: true, items: [
+                ["images/this-portfolio/about-rejected.webp", "Rejected — rectangular portrait"],
+                ["images/this-portfolio/about-kept.webp", "Kept — round portrait"]
+              ] },
+              { type: "p", text: "The rectangle is the textbook Swiss move, but it made the page feel cold and the photo blended into the grid. **Kept:** a round portrait, the one soft shape on the page, which backs up “Humanist.”" },
+              { type: "h", text: "Rejected: red in only three places" },
+              { type: "p", text: "A purist pass cut red down to three spots. The page got calmer but flatter: the key facts (years, scale, section titles) lost their hierarchy. **Kept:** red on the information that matters, in a deeper #e30613 that passes contrast for small labels, which an AI critique had flagged." }
+            ]
+          },
+          {
+            title: "Scaling to real content",
+            blocks: [
+              { type: "p", text: ["The rules faced a real test when I moved four case studies over from my old site and PDFs: Amazon, IBM, SAP and a fintech startup. I chose and cropped the images, swapped in HD versions, and rebuilt each page's hierarchy so the key points stand out.", "Real content raised questions the home page never did, so the rules grew: one type scale for every case, red only on section titles, soft shadows on UI screenshots but none on diagrams, clearer project names, and image cards for the other projects at the end of each case."] },
+              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" }
+            ]
+          },
+          {
+            title: "Outcome and limits",
+            blocks: [
+              { type: "p", title: "What shipped", numbered: true, items: [
+                "**One system.** Home, four case studies and two experiments share one grid, type scale and image treatment at desktop, tablet and phone sizes.",
+                "**Accessible red.** Every red label meets 4.5:1 contrast on white.",
+                "**Reusable rules.** A new project drops into the same grid without new design decisions."
+              ] },
+              { type: "p", title: "Where AI fell short", items: [
+                "**No taste of its own.** Asked to “make it more Swiss,” it overcorrected: less red, a rectangular photo, a staggered grid. Deciding what to keep was my job.",
+                "**It changed things I didn't ask for.** It swapped my check and cross icons for other symbols until I told it to stop.",
+                "**Precision took rounds.** Exact grid placement often took several passes; drawing the grid on the page was what fixed it.",
+                "**It couldn't judge content.** Which images tell the story, what to call a project, which claims to emphasize: those calls were mine."
+              ] },
               { type: "cards", items: [
                 { title: "Taste is the bottleneck", text: "AI builds fast. Knowing what to keep and what to undo is still the designer's job." },
-                { title: "Systems make prompts short", text: "Once the grid and spacing rules existed, one line like “move it one column” was enough." },
-                { title: "Ask for critique", text: "Asking the AI to review the page against Swiss style surfaced issues I missed, like red text failing contrast." }
-              ] },
-              { type: "p", text: "You're looking at the result: this page was built the same way." }
+                { title: "Rules make prompts short", text: "Once the grid and spacing rules existed, one line like “move it one column” was enough." },
+                { title: "Ask for critique, keep the verdict", text: "AI reviews caught real issues, like failing contrast. Whether to act on them stayed my call." }
+              ] }
             ]
           }
         ]
