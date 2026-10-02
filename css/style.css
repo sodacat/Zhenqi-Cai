@@ -3046,10 +3046,17 @@ body[data-page="project"] .footer-top .footer-contact {
     display: contents;
   }
 
-  .about .statement { grid-row: 1; }
+  /* the statement sits at the foot of the photo's row */
+  .about .statement {
+    grid-row: 1;
+    align-self: end;
+    /* the line box ends ~0.1em under the letters: pull it down so the
+       letters themselves sit on the photo's bottom edge */
+    margin-bottom: -0.1em;
+  }
 
   .about-media {
-    grid-row: 1 / span 2;
+    grid-row: 1;
   }
 
   /* the bio starts on the same row as the facts, under the photo */
