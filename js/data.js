@@ -314,7 +314,7 @@ window.SITE = {
                   "As complexity grows, the challenge is not just execution — but maintaining a coherent mental model of how the system behaves."
                 ] }
               ] },
-              { type: "row", label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
+              { type: "row", frame: true, label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
               { type: "p", title: "Main improvements of MVP prototype", items: ["Scalability", "Transparency", "Clarity of reasoning"] },
               { type: "p", title: "1. Visualizing relationships, not just data", text: "Most standard visualizations — tables, pie charts, bar charts — flatten relationships. But compliance mapping is inherently relational:",
                 items: ["one regulation term → multiple business concepts", "one business term → multiple data assets"],
@@ -370,7 +370,7 @@ window.SITE = {
               { type: "p", title: "Iterations", text: "In later iterations, I adjusted how key metrics are visually framed:",
                 items: ["reinforcing visual anchors to signal importance", "providing explicit context to guide interpretation", "and aligning structure with how users read and compare values"],
                 after: "Rather than adding more information, these changes focused on making existing information interpretable at a glance — ensuring users can reason about system status without ambiguity." },
-              { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
+              { type: "row", frame: true, label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "p", title: "Result", text: "The MVP shifted from a static mapping tool to a system that supports reasoning:",
                 items: ["users could trace relationships across systems", "identify high-impact areas more effectively", "and build confidence in AI-assisted outputs"] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
@@ -508,15 +508,15 @@ window.SITE = {
             title: "Comparative analysis",
             blocks: [
               { type: "p", text: "In order to find out the best interactions in grid table views, I first did some comparative analysis on the data table in mobile." },
-              { type: "side", title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy.jpg",
+              { type: "side", frame: true, title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy.jpg",
                 text: "BestBuy.com did not lock either column or row headings in place. It is easy to lose the context of what the table is displaying." },
-              { type: "side", title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
+              { type: "side", frame: true, title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
                 text: "Size guide table at massimodutti.com locked first column so we don’t lose the context of data." },
               { type: "side", narrow: true, title: "Clearly indicate if horizontal scrolling is needed", src: "images/enterprise-experience/scroll-indicator.jpg",
                 text: "Arrows or cut-off elements convey this information best. Dots are sometimes used, but are typically harder for users to notice and understand.",
                 pros: ["The column header is visible all the time so we don’t lose the context", "Consistency in both content and IA on iPad and iPhone can be easily achieved", "Scalability and accessibility can be easily achieved"],
                 cons: ["For short data only, should test for maximum data length, column numbers.", "Clearly indicate if horizontal scrolling is needed", "Not necessarily the first column is important to be locked. Should provide a guideline.", "Feasibility is not known yet, should ask SDK"] },
-              { type: "side", title: "Collapse the table rows into separate cards", src: "images/enterprise-experience/cards.jpg",
+              { type: "side", frame: true, title: "Collapse the table rows into separate cards", src: "images/enterprise-experience/cards.jpg",
                 text: "Applicable for a huge amount of data, various types of content. Ability to filter and sort the content with ease, divide the content into separate pages.",
                 pros: ["Useful with a huge amount of data and its size", "Ability to collapse and hide some data", "A versatile form of data presentation"],
                 cons: ["Repetitive column names", "Hard to compare particular data between rows"] },
@@ -687,7 +687,7 @@ window.SITE = {
                 "I explored multiple visual directions to identify which forms could best represent interaction, exchange, and system dynamics within a financial ecosystem.",
                 "Through sketching multiple options and gathering feedback via design critiques and stakeholder voting, we refined the ideas down to 16 strong concepts, ensuring the final logo would be both meaningful and resonant with the brand."
               ] },
-              { type: "pair", items: [
+              { type: "pair", frame: true, items: [
                 ["images/stonk-tech/sketches.jpg", "Logo sketches"],
                 ["images/stonk-tech/concepts.jpg", "16 logo concepts"]
               ] },
@@ -700,21 +700,21 @@ window.SITE = {
                 "From the 16 logo sketches, we selected a mark that resembles two mirrored dollar shapes — symbolizing both trading and connection — directly reflecting Stonk Tech’s mission to build a collaborative community of retail investors.",
                 "I then explored 23 color variations inspired by the moodboard, testing both flat and gradient styles. The final palette combined green (growth, market uptrend) with purple (a bold, contrasting accent drawn from the moodboard). Together, these colors express the brand’s voice and tone — empowering, engaging, reliable, and joyous — while making the identity both professional and approachable."
               ] },
-              { type: "pair", items: [
+              { type: "pair", frame: true, items: [
                 ["images/stonk-tech/color-variations.jpg", "23 color variations"],
                 ["images/stonk-tech/logo.jpg", "Final logo"]
               ] },
-              { type: "side", title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
+              { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
                 "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
                 "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
                 "Rather than serving as a stylistic choice, color functions as part of the system’s communication layer: highlighting activity, guiding attention, and making dynamic market conditions more immediately interpretable."
               ] },
-              { type: "side", title: "Typography", src: "images/stonk-tech/typography.jpg",
+              { type: "side", frame: true, title: "Typography", src: "images/stonk-tech/typography.jpg",
                 text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
               { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
-              { type: "img", src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
+              { type: "img", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
               { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
-              { type: "img", src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
+              { type: "img", frame: true, src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
               { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
               { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
               { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
@@ -731,7 +731,7 @@ window.SITE = {
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
                 items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
-              { type: "img", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
+              { type: "img", frame: true, src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
               { type: "cols", label: "Breakpoints", items: [
                 { src: "images/stonk-tech/phone.jpg", title: "Phone view", text: "On phone screens (device-width < 375px),",
                   items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
@@ -743,10 +743,10 @@ window.SITE = {
                   items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
               ] },
               { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
-              { type: "img", src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
-              { type: "img", src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", frame: true, src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", frame: true, src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
               { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
-              { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
+              { type: "img", frame: true, src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
             ]
           },
           {
