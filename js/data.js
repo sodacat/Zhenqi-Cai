@@ -829,13 +829,13 @@ window.SITE = {
       summary:
         "A portfolio built with AI, but not designed by AI: three days, one grid, no hand-written code.",
       tags: ["Experiment", "Vibe coding", "Design system"],
-      alt: "This portfolio's home page — bold black type, red accents, 12-column grid",
+      alt: "This portfolio's home page on a laptop, on a concrete desk beside a Swiss Design book",
       cover: "images/this-portfolio/card.webp",
       images: ["images/this-portfolio/card.webp"],
       case: {
         headline: "A Swiss-style portfolio, built by conversation",
         lead: "Three days. One grid. No hand-written code.",
-        cover: "images/this-portfolio/grid.webp",
+        cover: "images/this-portfolio/mockup.webp",
         impact: [["0", "Lines of code I wrote"], ["27", "AI suggestions I tried"], ["10", "I cut"], ["3", "Days"]],
         aboutTitle: "The brief I gave myself",
         about: [
@@ -882,7 +882,8 @@ window.SITE = {
                 { label: "02", title: "One vertical gap", text: "One spacing rule creates rhythm across the system." },
                 { label: "03", title: "Negative space", text: "Not every area needs content. Space creates hierarchy." },
                 { label: "04", title: "Red. Black. White.", text: "One accent. One hierarchy. Almost no decoration." }
-              ] }
+              ] },
+              { type: "img", src: "images/this-portfolio/grid.webp", frame: true, alt: "The home page with its 12-column grid drawn over it" }
             ]
           },
           {
