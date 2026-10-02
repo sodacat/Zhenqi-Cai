@@ -112,7 +112,7 @@ window.SITE = {
             "Led problem reframing, system architecture design, usability testing, and cross-functional alignment."
           ] },
           { type: "img", src: "images/seller-qualification/timeline.png", alt: "Project timeline, Nov 2022 – Q3 2023" },
-          { type: "img", src: "images/seller-qualification/diagram-role.webp", alt: "Drive the work from framing to delivery: reframe the problem, define the model, validate and refine, align stakeholders" }
+          { type: "img", size: "md", src: "images/seller-qualification/diagram-role.webp", alt: "Drive the work from framing to delivery: reframe the problem, define the model, validate and refine, align stakeholders" }
         ],
         sections: [
           {
@@ -133,7 +133,7 @@ window.SITE = {
               { type: "p", text: "**Pain Points:** Errors surface sequentially, preventing sellers from knowing when they’re done." },
               { type: "img", src: "images/seller-qualification/pain-listing.png", frame: true, size: "md", alt: "Listing form with a restriction error" },
               { type: "p", text: "**Pain Points:** Sellers must leave listing tool to apply separately." },
-              { type: "pair", frame: true, size: "md", items: [
+              { type: "pair", size: "md", items: [
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
                 ["images/seller-qualification/pain-support.png", "Seller Support email thread"]
               ] },
@@ -149,7 +149,7 @@ window.SITE = {
               { type: "shift", quiet: true, label: "The question shifted", from: "How do we improve error messaging?", to: "How do we preserve compliance rigor while enabling seller growth?" },
               { type: "p", text: "This reframe moved the problem from a UI fix to an infrastructure design challenge — one that directly affected seller monetization velocity." },
               { type: "img", src: "images/seller-qualification/reframe.webp", alt: "Before: sequential enforcement creates a repeat loop. After: parallel qualification unblocks sellers." },
-              { type: "img", src: "images/seller-qualification/diagram-needs.webp", alt: "Translate seller needs into system decisions: know requirements upfront, keep working in one place, avoid repeated discovery" }
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-needs.webp", alt: "Translate seller needs into system decisions: know requirements upfront, keep working in one place, avoid repeated discovery" }
             ]
           },
           {
@@ -165,7 +165,7 @@ window.SITE = {
                 cons: ["notifications disconnected from attributes", "mental model became confusing"] },
               { type: "option", frame: true, title: "The Solution: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png", intro: "Key Capabilities:",
                 pros: ["Upfront Visibility", "Inline, Self-Serve Approvals", "Parallel Resolution"] },
-              { type: "img", src: "images/seller-qualification/diagram-flow.webp", alt: "Keep qualification inside the listing flow: enter listing flow, see requirements, apply inline, resolve in parallel" },
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-flow.webp", alt: "Keep qualification inside the listing flow: enter listing flow, see requirements, apply inline, resolve in parallel" },
               { type: "h", text: "Standardized System States" },
               { type: "p", text: "To make enterprise-scale automation legible, I designed a unified matrix of qualification states that handle complex asynchronous outcomes gracefully:" },
               { type: "img", src: "images/seller-qualification/states.png", frame: true, alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
@@ -175,7 +175,7 @@ window.SITE = {
             title: "Validation & impact",
             blocks: [
               { type: "p", text: ["**Testing approach:** Given that nearly half of new sellers encountered qualification friction, even marginal improvements in resolution efficiency compound significantly across onboarding cohorts.", "I designed and led usability testing to validate three things: restriction visibility, inline self-serve application, and abandonment reduction."] },
-              { type: "img", src: "images/seller-qualification/diagram-validation.webp", alt: "Validate the full qualification experience: visibility, self-service and continuity; ease of use 4.33 of 5, problem-solving effectiveness 4 of 5" },
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-validation.webp", alt: "Validate the full qualification experience: visibility, self-service and continuity; ease of use 4.33 of 5, problem-solving effectiveness 4 of 5" },
               { type: "p", title: "User Testing Result", text: "Evaluated through rigorous usability testing across diverse merchant cohorts, the parallel architecture completely rewired the onboarding experience:",
                 items: ["**Friction Removed:** Eliminated sequential discovery loops and erased tool-switching abandonment.", "**Quantitative Validation:** Earned a 4.33 / 5 Ease of Use score and a 4 / 5 for Problem-Solving Effectiveness."] },
               { type: "h", text: "The emotional shift" },
@@ -195,7 +195,7 @@ window.SITE = {
                 "The review reinforced three design principles that I carried into the final spec:"
               ], items: ["Surface all qualification requirements before sellers invest time in listing creation", "Allow approvals to be requested without leaving the listing tool", "Standardize approval states so sellers always know their next step"],
                 after: "Rather than treating this as an external critique, I used the Bar Raiser feedback to pressure-test the architecture decisions and strengthen the rationale for the parallel model." },
-              { type: "img", src: "images/seller-qualification/diagram-approval.webp", alt: "Make the path to approval understandable: explain why approval is needed, guide sellers with tooltips, use Apply to sell, expand use cases" },
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-approval.webp", alt: "Make the path to approval understandable: explain why approval is needed, guide sellers with tooltips, use Apply to sell, expand use cases" },
               { type: "option", frame: true, title: "Iterations", src: "images/seller-qualification/iterations.png",
                 pros: ["Refined the copy to explain why SP needs an approval encourage SPs to request approvals.", "Provide tooltips to guide SP to fix the restrictions.", "Update the button from “Request approval” to “Apply to sell”.", "New use cases added for UPCx auto rejected/approved, brand approval required."] }
             ]
@@ -203,7 +203,7 @@ window.SITE = {
           {
             title: "Organizational impact",
             blocks: [
-              { type: "img", src: "images/seller-qualification/alignment.webp", alt: "Seller Qualification Workshop — July 17-18, Seattle office" },
+              { type: "img", size: "md", src: "images/seller-qualification/alignment.webp", alt: "Seller Qualification Workshop — July 17-18, Seattle office" },
               { type: "p", title: "Seller Qualification Workshop", text: "July 17-18 (Mon-Tue), Seattle office" },
               { type: "p", title: "Outcome - Team Mindset Shift", text: ["Qualification touched Product, Policy, Engineering, and Compliance — teams that rarely shared a design direction.", "I co-led a two-day cross-functional workshop in Seattle to align stakeholders around a new frame:"] },
               { type: "shift", from: "“How do we control sellers?”", to: "“How do we help sellers grow responsibly?”" },
@@ -259,7 +259,7 @@ window.SITE = {
         ],
         overview: [
           { type: "shift", quiet: true, label: "Reframing the problem", fromLabel: "Most compliance tools", toLabel: "What users struggled with", from: "Treat it as document processing: extract terms, tag them, generate reports.", to: "Understanding how relationships behave across systems, interpreting impact, and trusting AI-generated outputs." },
-          { type: "img", src: "images/compliance-report/diagram-relationships.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
+          { type: "img", size: "md", src: "images/compliance-report/diagram-relationships.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
         ],
         sections: [
           {
@@ -285,7 +285,7 @@ window.SITE = {
             blocks: [
               { type: "p", text: "Technical constraints made it clear that higher-level insights — forecasting, business impact — were not feasible for the MVP. Rather than forcing incomplete “intelligence” into the product, I reframed it:" },
               { type: "shift", from: "A “compliance insight tool”", to: "A system that helps users reason about relationships with clarity" },
-              { type: "img", src: "images/compliance-report/diagram-scope.webp", alt: "Scope around what is reliable: user need, feasibility review, then MVP term-level mapping now and decision support later" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-scope.webp", alt: "Scope around what is reliable: user need, feasibility review, then MVP term-level mapping now and decision support later" },
               { type: "p", text: "The MVP focused on term-level mapping for data stewards — what is reliable today — and deferred predictive insights to the 2020 vision. It was designed for exploration, and for transparency instead of overpromising intelligence." }
             ]
           },
@@ -294,9 +294,9 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "How do you make complex, many-to-many relationships understandable enough for users to reason about?" },
               { type: "p", text: "Data stewards like Dominik translate regulatory concepts into business and data structures. The work is interpretive and cognitively demanding — and as complexity grows, the challenge is maintaining a coherent mental model of how the system behaves." },
-              { type: "img", src: "images/compliance-report/diagram-journey.webp", alt: "User journey: read progress, narrow the view, trace connections, inspect context, assess mappings, then refine the view" },
-              { type: "row", frame: true, label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
-              { type: "img", src: "images/compliance-report/diagram-research.webp", alt: "Research findings mapped to design responses: relationships, progressive context, metric hierarchy" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-journey.webp", alt: "User journey: read progress, narrow the view, trace connections, inspect context, assess mappings, then refine the view" },
+              { type: "row", label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-research.webp", alt: "Research findings mapped to design responses: relationships, progressive context, metric hierarchy" },
               { type: "h", text: "1. Visualizing relationships, not just data" },
               { type: "p", text: "Tables, pie charts and bar charts flatten relationships — but one regulation term maps to many business concepts, and one business term to many data assets. I chose a Sankey-based system to show how impact flows, encode importance through visual weight, and preserve relationships instead of reducing them to aggregates." },
               { type: "row", frame: true, items: [["images/compliance-report/iter-initial.webp", "Initial thought from teammate — standard charts", "Initial concept: a pie chart with filters"], ["images/compliance-report/iter-sankey.webp", "My iteration — a Sankey of relationships", "My iteration: a Sankey graph linking regulation sections, terms, data assets and business terms"]] },
@@ -304,20 +304,20 @@ window.SITE = {
               { type: "h", text: "2. Making AI output trustworthy" },
               { type: "p", text: "Users hesitated to trust AI-generated mappings. The issue wasn’t accuracy — it was whether they could understand and challenge the system’s reasoning: Where did this come from? Who verified it? I designed for progressive transparency: hovering a term reveals its definition, mapping history, and who created or validated it — only when needed." },
               { type: "pair", frame: true, size: "md", items: [["images/compliance-report/popup-sources.webp", "Source panel: the regulation, business glossary and data assets behind the graph"], ["images/compliance-report/popup-term.webp", "Hovering a business term reveals its definition, what it maps to, and who mapped it"]] },
-              { type: "img", src: "images/compliance-report/diagram-context.webp", alt: "Reveal context at the right moment: hover a term to see its definition, mapping history and attribution" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-context.webp", alt: "Reveal context at the right moment: hover a term to see its definition, mapping history and attribution" },
               { type: "h", text: "3. Designing for scale and exploration" },
               { type: "p", text: "As terms multiplied, the graph risked becoming overwhelming. Instead of showing everything, I designed for controlled exploration: filters limit visible terms and narrow by regulation category, and labels sit next to their elements and highlight related terms on hover — so users can narrow their view without losing the broader context." },
               { type: "row", frame: true, size: "md", items: [["images/compliance-report/filter-v1.webp", "Filter V1 — sort, show and a date range", "Filter V1: sort by, show, start and end dates"]] },
               { type: "row", frame: true, size: "md", items: [["images/compliance-report/filter-v2.webp", "Filter V2 — narrow to a section and limit visible terms", "Filter V2: only show a regulation section, sort by top 10, only show top 5 terms"]] },
               { type: "row", frame: true, items: [["images/compliance-report/label-v1.webp", "Label V1 — a color key far from the graph", "Label V1: a color legend beside the date filters"], ["images/compliance-report/label-v2.webp", "Label V2 — labels aligned under their columns", "Label V2: labels aligned beneath each column of the graph"]] },
               { type: "img", src: "images/compliance-report/hover-state.webp", frame: true, size: "md", alt: "Hover state: hovering the Data Asset label highlights related terms and fades the rest" },
-              { type: "img", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "h", text: "4. Progress indicators that can’t be misread" },
               { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
               { type: "row", frame: true, size: "md", items: [["images/compliance-report/progress-v1.webp", "V1 — numbers alone", "Progress V1: four plain metrics in a row"]] },
               { type: "row", frame: true, size: "md", items: [["images/compliance-report/progress-v2.webp", "V2 — rings as visual anchors, with explicit labels", "Progress V2: progress rings with counts and labels"]] },
               { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
-              { type: "row", frame: true, label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
+              { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
             ]
           },
@@ -332,8 +332,8 @@ window.SITE = {
                 { title: "Customizable", text: "How can users tailor views to their decisions?" }
               ] },
               { type: "p", text: "I tested with business analysts like Betty — first a low-fi concept (R1), then a high-fi prototype (R2) — focusing not on UI feedback but on what drives their decisions and how they weigh trade-offs." },
-              { type: "img", src: "images/compliance-report/r1-lofi.webp", frame: true, size: "md", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
-              { type: "row", frame: true, label: "R2 high-fi prototype", items: [["images/compliance-report/r2-progress.webp", "Progress: highlighted terms and glossary and data asset progress", "R2 prototype progress tab"], ["images/compliance-report/r2-insights.webp", "Insights: top terms, new regulations, what-if scenario and trends", "R2 prototype insights tab"]] },
+              { type: "img", src: "images/compliance-report/r1-lofi.webp", size: "md", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
+              { type: "row", label: "R2 high-fi prototype", items: [["images/compliance-report/r2-progress.webp", "Progress: highlighted terms and glossary and data asset progress", "R2 prototype progress tab"], ["images/compliance-report/r2-insights.webp", "Insights: top terms, new regulations, what-if scenario and trends", "R2 prototype insights tab"]] },
               { type: "quotes", label: "What did the users say?", items: [
                 ["I would like to see the cost-to-benefit ratio, how exactly this gonna help us."],
                 ["Top 5 powerful terms makes a lot of sense since they are going to draw a huge impact on my business."],
@@ -346,7 +346,7 @@ window.SITE = {
             title: "Outcome",
             blocks: [
               { type: "statement", text: "This shifted the experience from presenting information to enabling users to reason about system-wide impact." },
-              { type: "img", src: "images/compliance-report/diagram-principles.webp", alt: "Three principles for complex systems: make structure visible, make context inspectable, make complexity navigable" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-principles.webp", alt: "Three principles for complex systems: make structure visible, make context inspectable, make complexity navigable" },
               { type: "p", text: "Users could identify critical regulatory impacts more quickly, reason about system-wide relationships with greater confidence, and make more informed decisions in AI-assisted workflows." }
             ]
           },
@@ -402,8 +402,8 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
-              { type: "img", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
-              { type: "img", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
+              { type: "img", size: "md", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
                 { title: "Use cases", items: ["Select multiple rows of data for further actions", "Compare different rows of data", "Add, edit or delete a row of data"] },
@@ -437,27 +437,27 @@ window.SITE = {
                 text: "Applicable for a huge amount of data, various types of content. Ability to filter and sort the content with ease, divide the content into separate pages.",
                 pros: ["Useful with a huge amount of data and its size", "Ability to collapse and hide some data", "A versatile form of data presentation"],
                 cons: ["Repetitive column names", "Hard to compare particular data between rows"] },
-              { type: "img", src: "images/enterprise-experience/diagram-structure.webp", alt: "Choose structure over repetition: sticky headers and columns versus separate cards for each row" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-structure.webp", alt: "Choose structure over repetition: sticky headers and columns versus separate cards for each row" },
               { type: "p", title: "Summary", text: "In order to achieve the goals of consistency, accessibility, scalability, and provide content all the time, I decided to apply the sticky header and column to the data table redesign." }
             ]
           },
           {
             title: "Design decisions",
             blocks: [
-              { type: "img", src: "images/enterprise-experience/diagram-stages.webp", alt: "Evolve the component in stages: 6.0 keep headers visible, 6.1 anchor the reference, 6.2 edit directly in the table" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-stages.webp", alt: "Evolve the component in stages: 6.0 keep headers visible, 6.1 anchor the reference, 6.2 edit directly in the table" },
               { type: "p", title: "Context preservation — Stick column headers in place (6.0 release)", text: [
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
               ] },
-              { type: "img", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
               { type: "p", title: "Reference anchoring — Stick the left column in place (6.1 release)", text: [
                 "Fixing key columns allows users to compare data across rows without losing their frame of reference.",
                 "In the design of 6.1, the sticky left column is available. Sync icon is displayed in order to present status."
               ] },
-              { type: "img", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
-              { type: "img", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
+              { type: "img", size: "md", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
               { type: "p", title: "System consistency — Behavior and interaction (6.1 release)", text: "Supporting both compact and regular modes ensures users interact with the same information structure across devices, preserving mental models." },
-              { type: "img", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
@@ -467,19 +467,19 @@ window.SITE = {
                 "User story: As a Service and/or Maintenance Technician, I want to enter data into a table or edit data on a table so that I can quickly add/edit readings that are directly relevant to my job.",
                 "Feasibility: Since the in-place editing feature couldn’t be delivered from the Android side for the 6.1 release, and MDK doesn’t have the Tap and Hold gestures implemented right now. So this new design was saved for the 6.2 release."
               ] },
-              { type: "img", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
               { type: "p", title: "Behavior and interaction", text: "For the interaction of the in-place editable data table, I explored several patterns." },
               { type: "trio", items: [
                 ["images/enterprise-experience/option-1.jpg", "Option 1 — Select a row", "If the user taps any of the cells, the row of that cell will be highlighted. The user can tap any cell in the row again to edit the cell or tap the chevron to open the modal to edit the row."],
                 ["images/enterprise-experience/option-2.jpg", "Option 2 — Quick actions", "If the user taps and holds any of the cells, the quick action menu will pop out. The user can choose from edit a cell, edit a row or delete a row."],
                 ["images/enterprise-experience/option-3.jpg", "Option 3 — Edit cells directly", "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically."]
               ] },
-              { type: "img", src: "images/enterprise-experience/diagram-editing.webp", alt: "Make editing deliberate and direct: three options, with option 3 edit cells directly selected" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-editing.webp", alt: "Make editing deliberate and direct: three options, with option 3 edit cells directly selected" },
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
-              { type: "img", src: "images/enterprise-experience/diagram-flow.webp", alt: "Keep editing in the flow of work: tap and hold, focus the cell, edit the value, continue or finish" },
-              { type: "img", src: "images/enterprise-experience/micro-interactions.jpg", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-flow.webp", alt: "Keep editing in the flow of work: tap and hold, focus the cell, edit the value, continue or finish" },
+              { type: "img", size: "md", src: "images/enterprise-experience/micro-interactions.jpg", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
           },
@@ -491,20 +491,20 @@ window.SITE = {
                 "Rules around spacing, alignment, column width, and hierarchy ensure that:"
               ], items: ["data remains scannable", "relationships between values are preserved", "layouts scale without breaking usability"] },
               { type: "p", title: "Header", text: "The height of the header row adapts to the text size, the padding of the top and bottom is 8 pt. When the data table scrolling and rows start sliding under, the shadow appears under the header. Avoid using long header titles. Keep the header title short and clear to communicate the content in the column. If there are no shorter alternatives, use two lines for longer header titles. Avoid truncating the titles when there’s no way to see the whole text. Indicate the units for numeric data in the header titles, such as “Price ($)”, “Protein (g)”, and “Time (hrs)”. Avoid repeating the units in each row. However, units like % can be an exception if they help the users read the data faster." },
-              { type: "img", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
               { type: "p", title: "Column on regular width", text: "Text alignment:", items: ["Right-aligned numeric columns", "Left-aligned text columns"], after: [
                 "The height of the data row adapts to the text size, the padding of the top and bottom is 16 pt. By default, each data table cell allows only 1 line of data. But the developer can set to allow wrapping to 2 lines. Avoid using multiple lines within a row since it makes it more difficult to scan the data in the table.",
                 "For the regular width, without horizontal scroll, if there is more than 1 column, any columns can have a maximum width (include paddings) of 50% of the Data Table container width. The developer can override max-width. If the width of a column is not set, by default, the column width adapts to the width of the widest content in the column. When the width exceeds the maximum width, the content gets truncated. By default, the first column (Title) will expand to fill the space.",
                 "For Horizontal Fit, a limited number of columns can be shown. By default, in the column in which the content gets truncated, the minimum width of the column will be 25% of the container. Developers can override minimum width. Data Table will try to fit as many columns as possible. The columns that cannot fit into the container will be omitted; then the rest will re-adjust to fill the space. Image content always has a fixed width and does not shrink.",
                 "For the regular width, with horizontal scroll, the Left Accessory always sticks to the left side. If the sticky first column is enabled, when scrolling, the first column will start shrinking until reaching the sticky panel width (25% of the container). Only the first column can be set sticky, which is optional. If the Right Accessory is available, it will be shown with a fading background and stick to the right side."
               ] },
-              { type: "img", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
-              { type: "img", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
                 "If the content width is small, the column can shrink to fit. If the content width is truncated. The column can shrink to a minimum width. The minimum column width is 25% of the container; the maximum column width is 50% of the container."
               ] },
-              { type: "img", src: "images/enterprise-experience/spec-compact.jpg", alt: "Column specification on compact width" }
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-compact.jpg", alt: "Column specification on compact width" }
             ]
           },
           {
@@ -583,7 +583,7 @@ window.SITE = {
           {
             title: "Brand design: from vision to visuals",
             blocks: [
-              { type: "img", src: "images/stonk-tech/diagram-scope.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-scope.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
               { type: "p", title: "The challenge", text: [
                 "The challenge was not just to create a visual identity, but to reduce the cognitive gap between how financial systems operate and how users are able to perceive and act within them.",
                 "Users needed to:"
@@ -594,12 +594,12 @@ window.SITE = {
                 { title: "Mission & vision", text: "Stonk Tech’s mission is to unite retail traders into a community where trading ideas are accessible, actionable, and inclusive. We wanted every user to feel involved, supported, and part of something bigger than themselves." },
                 { title: "Voice & tone", text: "The brand speaks in a way that’s empowering, engaging, and reliable, while keeping a touch of joy—reflecting the excitement of trading and the confidence we want our users to feel." }
               ] },
-              { type: "img", src: "images/stonk-tech/diagram-needs.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-needs.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
               { type: "p", title: "Defining a system users can trust", text: [
                 "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
                 "The goal was to create a system that communicates:"
               ], items: ["transparency in a traditionally opaque domain", "approachability in a high-barrier environment", "credibility comparable to institutional platforms"] },
-              { type: "img", src: "images/stonk-tech/diagram-process.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-process.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
               { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
                 items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
                 after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
@@ -631,7 +631,7 @@ window.SITE = {
                 ["images/stonk-tech/color-variations.jpg", "23 color variations"],
                 ["images/stonk-tech/logo.jpg", "Final logo"]
               ] },
-              { type: "img", src: "images/stonk-tech/diagram-mark.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-mark.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
               { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
                 "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
                 "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
@@ -640,9 +640,9 @@ window.SITE = {
               { type: "side", frame: true, title: "Typography", src: "images/stonk-tech/typography.jpg",
                 text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
               { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
-              { type: "img", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
+              { type: "img", size: "md", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
               { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
-              { type: "img", frame: true, src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
+              { type: "img", src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
               { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
               { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
               { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
@@ -655,12 +655,12 @@ window.SITE = {
                 "The landing page was designed as the first interface where users encounter the system. The goal was not just responsiveness, but information clarity and cognitive accessibility.",
                 "This is not just a layout system, but an information system that helps users build understanding progressively."
               ] },
-              { type: "img", src: "images/stonk-tech/diagram-model.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-model.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
               { type: "p", title: "The approach: responsive design", text: "I structured the page to:",
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
                 items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
-              { type: "img", frame: true, src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
+              { type: "img", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
               { type: "cols", label: "Breakpoints", items: [
                 { src: "images/stonk-tech/phone.jpg", title: "Phone view", text: "On phone screens (device-width < 375px),",
                   items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
@@ -672,10 +672,10 @@ window.SITE = {
                   items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
               ] },
               { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
-              { type: "img", frame: true, src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
-              { type: "img", frame: true, src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
               { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
-              { type: "img", frame: true, src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
+              { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
             ]
           },
           {
@@ -810,7 +810,7 @@ window.SITE = {
                 { label: "03", title: "Negative space", text: "Not every area needs content. Space creates hierarchy." },
                 { label: "04", title: "Red. Black. White.", text: "One accent. One hierarchy. Almost no decoration." }
               ] },
-              { type: "img", src: "images/this-portfolio/grid.webp", frame: true, alt: "The home page with its 12-column grid drawn over it" }
+              { type: "img", src: "images/this-portfolio/grid.webp", alt: "The home page with its 12-column grid drawn over it" }
             ]
           },
           {
