@@ -1345,9 +1345,9 @@ ol {
   }
 }
 
-/* Contact links: one box spanning exactly cols 9–12 */
+/* Contact links: one box spanning exactly cols 8–12 */
 .contact-side {
-  grid-column: 9 / -1;
+  grid-column: 8 / -1;
   display: grid;
   gap: 16px;
 }
@@ -2366,10 +2366,10 @@ ol {
   }
 }
 
-/* Mid widths: the contact box spans columns 9–12 */
+/* Mid widths: the contact box spans columns 8–12 */
 @media (min-width: 681px) and (max-width: 1100px) {
   .contact-side {
-    grid-column: 9 / -1;
+    grid-column: 8 / -1;
   }
 
   .contact .display {
@@ -2404,13 +2404,8 @@ ol {
     grid-column: 7 / -1;
   }
 
-  .contact .display,
-  .contact-side {
+  .contact .display {
     grid-column: 1 / -1;
-  }
-
-  .contact-side {
-    justify-items: start;
   }
 
   .index-sum {
@@ -2961,4 +2956,19 @@ body[data-page="project"] .footer-top .footer-contact {
 .footer-contact li:first-child a,
 .footer-contact a {
   padding-top: 0;
+}
+
+/* the links never wrap; on phones the box takes the full width */
+.contact-box a {
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .contact-side {
+    grid-column: 1 / -1;
+  }
+
+  .contact-box {
+    flex-wrap: nowrap;
+  }
 }
