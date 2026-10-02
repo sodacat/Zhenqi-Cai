@@ -1148,7 +1148,7 @@ ol {
    bio flush right (3–6) | facts flush left (7–9)   | (10–12, both rows) */
 .about {
   align-items: start;
-  row-gap: var(--space-2xl);
+  row-gap: var(--space-l);
 }
 
 /* "What I do." sits at title level */
@@ -1236,9 +1236,12 @@ ol {
 }
 
 /* Portrait with a magazine caption under it */
+/* the portrait sits beside the statement, on its last line, directly
+   above the facts it introduces (cols 7–8) */
 .about-media {
-  grid-column: 11 / -1;
-  grid-row: 1 / span 2;
+  grid-column: 7 / 9;
+  grid-row: 1;
+  align-self: end;
   margin: 0;
 }
 
@@ -2388,7 +2391,7 @@ ol {
 
   /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
-    grid-column: 9 / -1;
+    grid-column: 7 / 10;
     grid-row: 1;
   }
 
