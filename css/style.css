@@ -2930,3 +2930,17 @@ ol {
 @media (max-width: 680px) {
   .case-cols { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Footer contact: Email and LinkedIn on the last three columns */
+.footer-top .footer-contact {
+  grid-column: 10 / -1;
+}
+
+/* only where the page has no "Get in touch" box of its own */
+.footer-top .footer-contact {
+  display: none;
+}
+
+body[data-page="project"] .footer-top .footer-contact {
+  display: block;
+}

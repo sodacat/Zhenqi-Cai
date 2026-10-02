@@ -105,6 +105,9 @@
           <li><a href="index.html#experiments"><span>AI Experiments</span></a></li>
           <li><a href="index.html#about"><span>About</span></a></li>
         </ul>
+        <ul class="label footer-col footer-contact">
+          ${S.social.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener"><span>${esc(s.label)}</span></a></li>`).join("")}
+        </ul>
       </div>
       <div class="footer-base">
         <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
