@@ -2875,3 +2875,12 @@ ol {
   .work-grid.is-three > .work-card { grid-column: 1 / -1; }
   .work-grid.is-three > .work-card:nth-child(3) { display: grid; }
 }
+
+/* a block's title spans the block, 16px above its images or cards */
+.case-row > .case-h,
+.case-cards > .case-h,
+.case-pair > .case-h,
+.case-quotes > .case-h {
+  grid-column: 1 / -1;
+  margin: 0;
+}

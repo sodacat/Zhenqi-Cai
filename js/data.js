@@ -239,6 +239,7 @@ window.SITE = {
       case: {
         headline: "The problem wasn’t speed, it was enabling users to reason about the system.",
         lead: "Regulatory compliance is expected to provide clarity. In practice, it often does the opposite. Enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
+        cover: "images/compliance-report/overview.jpg",
         aboutTitle: "A ML infused tool to accelerate regulatory compliance",
         about: [
           "At IBM, I worked on an AI-powered platform designed to accelerate compliance by extracting and mapping regulatory terms to business and technical systems.",
@@ -251,7 +252,6 @@ window.SITE = {
           ["Methods", "As-is scenario, to-be scenario, hills, big idea vignettes, prototyping, usability testing, playbacks"]
         ],
         overview: [
-          { type: "img", src: "images/compliance-report/overview.jpg", alt: "Compliance report screens" },
           { type: "p", title: "Reframing the problem", text: "Most compliance tools treat the problem as document processing:", items: ["Extract terms", "Tag them", "Generate reports"],
             after: "But through research and workshops, I found that users weren’t struggling with documents. They were struggling with:" },
           { type: "list", items: ["Understanding how system behavior emerges across interconnected relationships", "Interpreting impact across business units", "Trusting AI-generated outputs"] },
@@ -457,6 +457,7 @@ window.SITE = {
       case: {
         headline: "Designing how structured data remains understandable across contexts",
         lead: "The SAP Fiori for iOS design system team works with other internal teams and external clients using SAP products to build components and maintain SAP UX principles across all design patterns.",
+        cover: "images/enterprise-experience/overview.jpg",
         aboutTitle: "SAP Fiori design system — data table",
         about: [
           "Data tables are not just UI components—they are the primary interface through which users navigate, compare, and act on structured information. In SAP products, data tables support critical workflows across devices, often under constraints of high data density, limited screen space, and complex user tasks. However, the existing table system broke down in compact environments: users lost column context, information hierarchy collapsed, and interactions became inconsistent across devices.",
@@ -468,9 +469,7 @@ window.SITE = {
           ["Time", "Oct 2020 – Jul 2021"],
           ["Methods", "Comparative analysis, design review, interaction design, UX writing"]
         ],
-        overview: [
-          { type: "img", src: "images/enterprise-experience/overview.jpg", alt: "SAP Fiori for iOS data table on iPad and iPhone" }
-        ],
+        overview: [],
         sections: [
           {
             title: "The challenge",
@@ -636,6 +635,7 @@ window.SITE = {
       case: {
         headline: "Balancing system trust with cultural accessibility in modern retail trading",
         lead: "Retail investors don’t just lack tools — they are excluded from the systems that make institutional trading effective.",
+        cover: "images/stonk-tech/overview.jpg",
         aboutTitle: "Stonk Tech — brand & landing page",
         about: [
           "While professional traders operate with integrated infrastructure—data, research, and risk management — individual investors face fragmented information, opaque processes, and high barriers to entry.",
@@ -649,7 +649,6 @@ window.SITE = {
           ["Methods", "Brand identity design, design systems, responsive web design, user-centered design, visual design"]
         ],
         overview: [
-          { type: "img", src: "images/stonk-tech/overview.jpg", alt: "Stonk Tech landing page on phone, tablet and desktop" },
           { type: "statement", text: "This is not just a tooling gap, but a system-level access problem." },
           { type: "p", text: [
             "This project explores how to balance system trust with cultural accessibility in modern retail trading.",
