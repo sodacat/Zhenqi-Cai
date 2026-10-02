@@ -2944,3 +2944,21 @@ ol {
 body[data-page="project"] .footer-top .footer-contact {
   display: block;
 }
+
+/* Email and LinkedIn on one line: Email on cols 9–10, LinkedIn on 11–12 */
+body[data-page="project"] .footer-top .footer-contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--pad);
+  align-content: start;
+}
+
+.footer-contact li,
+.footer-contact a {
+  white-space: nowrap;
+}
+
+.footer-contact li:first-child a,
+.footer-contact a {
+  padding-top: 0;
+}
