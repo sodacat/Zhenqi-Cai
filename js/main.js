@@ -670,6 +670,17 @@
   // last scroll position); deep links (#experiments, #about, #contact)
   // still jump to their section
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  const toTop = () => {
+    if (location.hash) return;
+    window.scrollTo(0, 0);
+    // when the site is shown inside a frame, bring the frame's top into
+    // view too, so the outer page doesn't keep the old position
+    document.documentElement.scrollIntoView({ block: "start", behavior: "instant" });
+  };
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-  else window.scrollTo(0, 0);
+  else toTop();
+  // also after late layout (fonts, images) and when coming back from the
+  // browser's back/forward cache, which restores the old position
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", (e) => { if (e.persisted) toTop(); });
 })();
