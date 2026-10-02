@@ -188,11 +188,7 @@
             <div class="about-side">
               <dl class="about-facts">${S.aboutFacts.map(([k, v]) => `<div><dt class="label">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
             </div>
-            <ul class="contact-box label about-resume">
-              <li><a href="${esc(S.resume)}" target="_blank" rel="noopener">View resume</a></li>
-              <li><a href="${esc(S.resume)}" download>Download</a></li>
-              <li class="contact-arrow">${arrow}</li>
-            </ul>
+            <a class="btn btn-accent about-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
           </div>
           <figure class="about-media reveal">
             ${media(S.portrait, S.name)}
