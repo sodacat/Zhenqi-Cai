@@ -1228,9 +1228,9 @@ ol {
 
 /* the resume button spans four columns (7–10) */
 /* the resume button takes the row right under the bio's last line, with
-   no gap (cols 7–10) */
+   no gap, as wide as the portrait (cols 7–9; tablet 7–10) */
 .about-resume {
-  grid-column: 7 / 11;
+  grid-column: 7 / 10;
   grid-row: 2;
   justify-self: stretch;
   justify-content: space-between;
@@ -2989,5 +2989,11 @@ body[data-page="project"] .footer-top .footer-contact {
 @media (min-width: 681px) and (max-width: 1100px) {
   .footer-role {
     grid-column: 4 / 7;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1024px) {
+  .about-resume {
+    grid-column: 7 / 11;
   }
 }
