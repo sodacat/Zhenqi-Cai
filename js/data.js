@@ -240,13 +240,12 @@ window.SITE = {
       images: ["images/compliance-report.jpg"],
       case: {
         headline: "The problem wasn’t speed, it was enabling users to reason about the system.",
-        lead: "Regulatory compliance is expected to provide clarity. In practice, it often does the opposite. Enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
+        lead: "Regulatory compliance is expected to provide clarity. In practice, enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
         cover: "images/compliance-report/cover-swiss.webp",
         aboutTitle: "A ML infused tool to accelerate regulatory compliance",
         about: [
-          "At IBM, I worked on an AI-powered platform designed to accelerate compliance by extracting and mapping regulatory terms to business and technical systems.",
-          "My focus was on designing the compliance reporting experience — the point where users need to make sense of how regulations actually impact their organization.",
-          "Very quickly, it became clear: this wasn’t just a reporting problem. It was a problem of enabling users to reason about how complex system relationships behave."
+          "At IBM, I worked on an AI-powered platform that extracts regulatory terms and maps them to business and technical systems. My focus was the compliance reporting experience — where users need to make sense of how regulations actually impact their organization.",
+          "Very quickly, it became clear: this wasn’t a reporting problem. It was a problem of enabling users to reason about how complex system relationships behave."
         ],
         facts: [
           ["Team", "Zhenqi Cai, Han Xia, Ashley Bock, Justin Park, Rachel Miles"],
@@ -254,10 +253,7 @@ window.SITE = {
           ["Methods", "As-is scenario, to-be scenario, hills, big idea vignettes, prototyping, usability testing, playbacks"]
         ],
         overview: [
-          { type: "p", title: "Reframing the problem", text: "Most compliance tools treat the problem as document processing:", items: ["Extract terms", "Tag them", "Generate reports"],
-            after: "But through research and workshops, I found that users weren’t struggling with documents. They were struggling with:" },
-          { type: "list", items: ["Understanding how system behavior emerges across interconnected relationships", "Interpreting impact across business units", "Trusting AI-generated outputs"] },
-          { type: "statement", text: "The problem wasn’t speed — it was enabling users to reason about system relationships with confidence." },
+          { type: "shift", quiet: true, label: "Reframing the problem", fromLabel: "Most compliance tools", toLabel: "What users struggled with", from: "Treat it as document processing: extract terms, tag them, generate reports.", to: "Understanding how relationships behave across systems, interpreting impact, and trusting AI-generated outputs." },
           { type: "img", src: "images/compliance-report/diagram-relationships.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
         ],
         sections: [
@@ -266,186 +262,79 @@ window.SITE = {
             blocks: [
               { type: "row", label: "AI design workshop", items: [["images/compliance-report/workshop-1.jpg"], ["images/compliance-report/workshop-2.jpg"], ["images/compliance-report/workshop-3.jpg"]] },
               { type: "p", text: [
-                "To understand the problem space, I worked with cross-functional teams to map out how compliance workflows actually operate — from manual processes to AI-assisted ones.",
-                "What became clear wasn’t just inefficiency, but a deeper issue: users didn’t lack data — they lacked a way to reason about how that data connects across systems.",
-                "Across personas — from data stewards to business analysts — the need was consistent:"
-              ], items: ["not just mapping terms", "but understanding how regulations propagate through business and data systems", "and what that means for decision-making"],
-                after: "This revealed a key gap: while AI could accelerate term extraction and mapping, it didn’t solve the harder problem of helping users reason about impact." },
+                "I worked with cross-functional teams to map how compliance workflows actually operate — from manual processes to AI-assisted ones, through as-is and to-be scenarios.",
+                "Users didn’t lack data — they lacked a way to reason about how that data connects across systems. AI could accelerate term extraction and mapping, but it didn’t solve the harder problem: helping users reason about impact."
+              ] },
               { type: "cards", label: "3 Hills", items: [
-                { title: "Data steward", text: "As a data steward, I can see how a regulation glossary is related to my business glossary and data assets in hours instead of months." },
-                { title: "Business analyst", text: "As a business analyst, I can see how regulation impacts the business so that I can foresee and plan my resources and strategy." },
-                { title: "CDO", text: "As a CDO, I can see at any moment how much money the platform has saved me, and I tweet about it." }
+                { title: "Data steward", text: "I can see how a regulation glossary is related to my business glossary and data assets in hours instead of months." },
+                { title: "Business analyst", text: "I can see how regulation impacts the business so that I can foresee and plan my resources and strategy." },
+                { title: "CDO", text: "I can see at any moment how much money the platform has saved me, and I tweet about it." }
               ] },
-              { type: "cards", label: "3 Themes", items: [
-                { title: "Transparency", text: "How might we be more transparent about the AI and other team members’ work within the platform?" },
-                { title: "Collaboration", text: "How might we enable seamless collaboration for teams within the platform?" },
-                { title: "Stickiness", text: "How might we immediately convey the value of the platform to the user and keep them coming back?" }
-              ] },
-              { type: "p", title: "As-is: what are the manual steps the user goes through (without ML or AI)?", text: [
-                "To strategic answer for why or why not AI/ML is involved in the product, why/why not it is involved at each step goals we set, we established as-is scenario map and to-be scenario map.",
-                "Opportunities: How can AI/ML help give better solutions, suggestions, to the user with higher confidence (insights are backed-up, valid) faster than humanly possible?"
-              ] },
-              { type: "row", label: "Wireframes", items: [["images/compliance-report/wireframe-1.jpg"], ["images/compliance-report/wireframe-2.jpg"], ["images/compliance-report/wireframe-3.jpg"]] },
-              { type: "p", title: "Product constraint → design decision", text: [
-                "At the same time, technical constraints made it clear that higher-level insights (e.g. forecasting, business impact) were not feasible for the MVP.",
-                "Rather than forcing incomplete “intelligence” into the product, I reframed the MVP:"
-              ] },
+              { type: "row", label: "Wireframes", items: [["images/compliance-report/wireframe-1.jpg"], ["images/compliance-report/wireframe-2.jpg"], ["images/compliance-report/wireframe-3.jpg"]] }
+            ]
+          },
+          {
+            title: "Scoping the MVP",
+            blocks: [
+              { type: "p", text: "Technical constraints made it clear that higher-level insights — forecasting, business impact — were not feasible for the MVP. Rather than forcing incomplete “intelligence” into the product, I reframed it:" },
               { type: "shift", from: "A “compliance insight tool”", to: "A system that helps users reason about relationships with clarity" },
-              { type: "p", text: "This shift allowed us to:", items: ["focus on term-level mapping (what is reliable today)", "defer predictive insights (what requires more data)", "and design for transparency instead of overpromising intelligence"] },
               { type: "img", src: "images/compliance-report/diagram-scope.webp", alt: "Scope around what is reliable: user need, feasibility review, then MVP term-level mapping now and decision support later" },
-              { type: "p", title: "Framing the MVP", text: ["The MVP was intentionally scoped as a mapping system, not a reporting system.", "This clarified:"],
-                items: ["who the primary user is (data stewards working at term level)", "what problem we are solving (understanding relationships, not forecasting outcomes)", "and what kind of experience we need to design (exploration, not static reporting)"],
-                after: "This decision became the foundation for all subsequent design work." },
-              { type: "cards", items: [
-                { title: "MVP — Mapping summary", text: "Persona: Super Dominick (project lead) is interested in term-level insights. The platform is not helping in compliance but only mapping. What the biz analyst wants is not feasible right now." },
-                { title: "2020 vision — Compliance report", text: "Persona: Betty (Biz analyst) is interested in regulation-level insight:", items: ["Performance, insights", "Gap analysis", "Entire ecosystem", "Powerful/impactful terms"] }
-              ] }
+              { type: "p", text: "The MVP focused on term-level mapping for data stewards — what is reliable today — and deferred predictive insights to the 2020 vision. It was designed for exploration, and for transparency instead of overpromising intelligence." }
             ]
           },
           {
             title: "Designing the MVP: making relationships legible",
             blocks: [
-              { type: "p", text: "With the MVP focused on term-level mapping, the core challenge became clear:" },
               { type: "statement", text: "How do you make complex, many-to-many relationships understandable enough for users to reason about?" },
+              { type: "p", text: "Data stewards like Dominik translate regulatory concepts into business and data structures. The work is interpretive and cognitively demanding — and as complexity grows, the challenge is maintaining a coherent mental model of how the system behaves." },
               { type: "img", src: "images/compliance-report/diagram-journey.webp", alt: "User journey: read progress, narrow the view, trace connections, inspect context, assess mappings, then refine the view" },
-              { type: "p", title: "Persona: Data steward", text: [
-                "Data stewards like Dominik operate at the intersection of business and data systems — acting as the layer that translates regulatory concepts into internal structures.",
-                "Their role is not just operational, but interpretive: they are responsible for defining how regulatory meaning maps onto business and data systems."
-              ] },
-              { type: "cards", items: [
-                { title: "Job roles", items: ["Build and maintain the business glossary", "Ensure alignment with enterprise data standards", "Establish relationships between regulatory terms and internal systems"] },
-                { title: "Pain points", text: [
-                  "This mapping process is time-consuming and cognitively demanding: it requires continuously interpreting regulatory language, coordinating across multiple stakeholders, and reasoning about how concepts connect across distributed systems.",
-                  "As complexity grows, the challenge is not just execution — but maintaining a coherent mental model of how the system behaves."
-                ] }
-              ] },
               { type: "row", frame: true, label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
               { type: "img", src: "images/compliance-report/diagram-research.webp", alt: "Research findings mapped to design responses: relationships, progressive context, metric hierarchy" },
-              { type: "p", title: "Main improvements of MVP prototype", items: ["Scalability", "Transparency", "Clarity of reasoning"] },
-              { type: "p", title: "1. Visualizing relationships, not just data", text: "Most standard visualizations — tables, pie charts, bar charts — flatten relationships. But compliance mapping is inherently relational:",
-                items: ["one regulation term → multiple business concepts", "one business term → multiple data assets"],
-                after: "Early explorations confirmed that conventional visualizations could not represent this relational complexity." },
+              { type: "h", text: "1. Visualizing relationships, not just data" },
+              { type: "p", text: "Tables, pie charts and bar charts flatten relationships — but one regulation term maps to many business concepts, and one business term to many data assets. I chose a Sankey-based system to show how impact flows, encode importance through visual weight, and preserve relationships instead of reducing them to aggregates." },
               { type: "statement", text: "I wasn’t just choosing a chart — I was defining how the system itself should be represented." },
-              { type: "p", text: ["I chose to design a Sankey-based visualization system to represent this structure.", "This allowed the interface to:"],
-                items: ["show how impact flows across systems", "encode importance through visual weight", "preserve relationships instead of reducing them to aggregates"],
-                after: ["The goal wasn’t to summarize data — it was to make system behavior visible.", "This made relationships not just visible, but traceable — allowing users to follow how impact propagates across systems."] },
-              { type: "p", title: "2. Making AI output trustworthy", text: [
-                "The system relied on AI-generated mappings, but users hesitated to trust them. The issue wasn’t accuracy — it was whether users could understand and challenge the system’s reasoning.",
-                "Users couldn’t answer:"
-              ], items: ["Where did this mapping come from?", "Who verified it?", "Can I rely on it?"] },
-              { type: "p", text: "To address this, I designed for progressive transparency:",
-                items: ["hover states revealing definitions and mapping history", "clear attribution of who created or validated mappings", "contextual details surfaced only when needed"],
-                after: ["This shifted the system from a black box to something users could inspect, question, and validate.", "This made the system’s reasoning inspectable, rather than something users had to blindly trust."] },
-              { type: "p", title: "Popup window: enhance transparency", text: [
-                "To support trust in AI-generated mappings, I introduced a contextual inspection layer within the interface.",
-                "When users hover over a term, the system reveals:"
-              ], items: ["definitions of the term", "mapping history", "and attribution of who created or validated the mapping"],
-                after: [
-                  "Rather than exposing all information upfront, this approach surfaces details progressively — allowing users to inspect the system’s reasoning at the moment they need it.",
-                  "This shifts the experience from passive consumption to active validation, helping users understand, question, and build confidence in AI-assisted outputs over time."
-                ] },
+              { type: "h", text: "2. Making AI output trustworthy" },
+              { type: "p", text: "Users hesitated to trust AI-generated mappings. The issue wasn’t accuracy — it was whether they could understand and challenge the system’s reasoning: Where did this come from? Who verified it? I designed for progressive transparency: hovering a term reveals its definition, mapping history, and who created or validated it — only when needed." },
               { type: "img", src: "images/compliance-report/diagram-context.webp", alt: "Reveal context at the right moment: hover a term to see its definition, mapping history and attribution" },
-              { type: "p", title: "3. Designing for scale and exploration", text: [
-                "As the number of terms increased, the visualization risked becoming overwhelming.",
-                "Instead of trying to show everything, I designed for controlled exploration:"
-              ], items: ["limiting visible nodes to maintain readability", "filtering by regulation category", "focus-based highlighting to isolate relationships"],
-                after: "This allowed users to navigate complexity without losing the overall structure." },
-              { type: "p", title: "Filters", text: "Design critiques raised questions around scalability and visibility:",
-                items: ["How many terms can the system meaningfully display?", "What happens when relationships exceed visual limits?", "How can users focus on relevant subsets of regulation?"] },
-              { type: "p", text: "To address this, I refined the filtering system to:",
-                items: ["limit the number of visible terms", "enable exploration by regulation category", "support focused analysis of specific sections"],
-                after: "This ensured the system remained usable even as data complexity increased." },
-              { type: "p", text: "These iterations established a filtering model that balances:",
-                items: ["visibility (what is shown)", "focus (what is relevant)", "and scalability (what the system can support)"],
-                after: "Rather than exposing all data at once, the system allows users to progressively narrow their view — enabling them to reason about specific subsets without losing the broader context." },
+              { type: "h", text: "3. Designing for scale and exploration" },
+              { type: "p", text: "As terms multiplied, the graph risked becoming overwhelming. Instead of showing everything, I designed for controlled exploration: filters limit visible terms and narrow by regulation category, and labels sit next to their elements and highlight related terms on hover — so users can narrow their view without losing the broader context." },
               { type: "img", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
-              { type: "p", title: "Labels", text: [
-                "Labeling introduced an additional challenge: maintaining clarity without increasing cognitive load.",
-                "Earlier approaches relied on color-coded grouping, but distance between labels and elements made associations difficult to perceive.",
-                "I redesigned labels to:"
-              ], items: ["align spatially with related elements", "reduce reliance on color memory", "and support interaction through highlighting and filtering"],
-                after: "This improved users’ ability to quickly interpret relationships without additional mental effort." },
-              { type: "p", title: "Design iteration", text: [
-                "In later iterations, I restructured labels to sit closer to their associated elements, reducing the need for users to mentally map color-coded relationships.",
-                "Labels also became interactive entry points: hovering over a label highlights related terms across the system, allowing users to explore relationships through direct manipulation.",
-                "Rather than acting as static annotations, labels function as part of the system’s navigation layer — helping users both interpret and explore complex relationships."
-              ] },
-              { type: "p", title: "Progress indicators: reducing misinterpretation", text: [
-                "Usability testing revealed that even simple metrics were being misinterpreted. The issue wasn’t lack of information — it was how that information was represented.",
-                "I refined the visual structure by:"
-              ], items: ["introducing clearer visual anchors", "adding contextual labeling", "and improving hierarchy"],
-                after: "This reduced ambiguity and helped users interpret system state more accurately." },
-              { type: "p", title: "Iterations", text: "In later iterations, I adjusted how key metrics are visually framed:",
-                items: ["reinforcing visual anchors to signal importance", "providing explicit context to guide interpretation", "and aligning structure with how users read and compare values"],
-                after: "Rather than adding more information, these changes focused on making existing information interpretable at a glance — ensuring users can reason about system status without ambiguity." },
+              { type: "h", text: "4. Progress indicators that can’t be misread" },
+              { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
               { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
               { type: "row", frame: true, label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
-              { type: "p", title: "Result", text: "The MVP shifted from a static mapping tool to a system that supports reasoning:",
-                items: ["users could trace relationships across systems", "identify high-impact areas more effectively", "and build confidence in AI-assisted outputs"] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
             ]
           },
           {
             title: "2020 Vision — Compliance report",
             blocks: [
-              { type: "p", text: [
-                "While the MVP focused on making relationships visible, the next challenge was enabling users to reason about how those relationships evolve over time.",
-                "This introduced a new layer of complexity: not just understanding the system, but anticipating how it changes and what actions to take."
-              ] },
-              { type: "p", title: "Framing the next step", text: "The vision for the compliance report was not just to present insights, but to support higher-level reasoning:",
-                items: ["forecasting how regulatory impact unfolds", "comparing changes across time and scenarios", "understanding cost, risk, and business implications"],
-                after: "This reframed the product from a mapping system into a decision-support system." },
+              { type: "p", text: "With relationships visible, the next step was helping users reason about how they evolve: forecasting how regulatory impact unfolds, comparing scenarios over time, and understanding cost, risk and business implications — turning a mapping system into a decision-support system." },
               { type: "cards", label: "2020 goals from AI workshop", items: [
-                { title: "Forecasting", items: ["How long will it take to map the entire glossary?", "What are the cost implications?", "What scenarios might emerge over time?"] },
-                { title: "Transparency", items: ["Where do these insights come from?", "How does the system arrive at its outputs?"] },
-                { title: "Comparison", items: ["How do regulations evolve?", "What is the impact over time?"] },
-                { title: "Customizable", items: ["How can users tailor views to their decision-making needs?"] }
+                { title: "Forecasting", text: "How long will mapping take? What are the cost implications?" },
+                { title: "Transparency", text: "Where do these insights come from?" },
+                { title: "Comparison", text: "How do regulations evolve, and with what impact?" },
+                { title: "Customizable", text: "How can users tailor views to their decisions?" }
               ] },
-              { type: "p", title: "Persona: Betty (business analyst)", text: "Business analysts like Betty operate at a higher level of abstraction — translating system outputs into decisions that impact the organization." },
-              { type: "p", title: "R1. Concept testing", text: [
-                "To validate early concepts, I conducted interviews with business analysts to understand how they interpret compliance data and what they need to make decisions.",
-                "Rather than focusing on UI feedback, the goal was to uncover:"
-              ], items: ["What information drives decision-making", "How users evaluate trade-offs", "What makes insights actionable"] },
-              { type: "p", title: "High-level takeaways", text: [
-                "Across interviews, a consistent pattern emerged: users weren’t just looking for data — they were trying to understand implications and trade-offs.",
-                "Key needs included:"
-              ], items: ["clear signals for action (what requires attention)", "visibility into timelines and deadlines", "understanding business impact across units", "the ability to explore and customize views", "access to deeper context through progressive disclosure"],
-                after: "These insights reinforced that the challenge was not presenting more data, but enabling users to reason about impact and make decisions with confidence." },
-              { type: "p", title: "R2. Usability testing", text: [
-                "To further evaluate the high-fidelity prototype, I conducted usability testing with participants matching the business analyst persona.",
-                "The goal was not just to assess usability, but to understand how users interpret information and make decisions based on it.",
-                "Participants were asked to interact with the prototype, articulate their thought process, and identify what information they rely on to evaluate compliance impact."
-              ] },
+              { type: "p", text: "I tested with business analysts like Betty — first a low-fi concept (R1), then a high-fi prototype (R2) — focusing not on UI feedback but on what drives their decisions and how they weigh trade-offs." },
               { type: "quotes", label: "What did the users say?", items: [
-                ["Knowing what comparisons or scenarios I would have to utilize to cross-reference to make accurate assumptions."],
-                ["Gap analysis — what could be an issue if it was not."],
-                ["Top 5 powerful terms makes a lot of sense since they are going to draw a huge impact on my business."],
                 ["I would like to see the cost-to-benefit ratio, how exactly this gonna help us."],
-                ["I would like to see the costs – what’s driving the cost?"],
-                ["What does this mean as far as our ongoing business. Will charge a lot more (or find a way to mitigate those costs) if we know the upcoming business will cause a huge increase in our compliance cost."],
+                ["Top 5 powerful terms makes a lot of sense since they are going to draw a huge impact on my business."],
                 ["How much ever we are spending, at what point do we breakeven, and at what point do we start seeing a profit."]
               ] },
-              { type: "cards", items: [
-                { title: "Emerging patterns", text: "Across interviews, several consistent needs emerged:",
-                  items: ["the ability to compare scenarios and evaluate alternatives", "visibility into cost, risk, and trade-offs", "understanding impact across business units", "identifying high-impact drivers within the system"],
-                  after: "These patterns suggest that users are not simply consuming information — they are actively constructing mental models to make decisions." },
-                { title: "What users are really asking for", text: "At a deeper level, users were trying to:",
-                  items: ["understand how the system evolves over time", "evaluate “what-if” scenarios", "connect regulatory changes to business outcomes", "assess the consequences of action vs inaction"],
-                  after: "This goes beyond reporting. It reflects a need for a system that supports reasoning under uncertainty." }
-              ] }
+              { type: "p", text: "Users weren’t consuming information — they were constructing mental models: evaluating “what-if” scenarios, connecting regulatory changes to business outcomes, and weighing action against inaction. That goes beyond reporting; it calls for a system that supports reasoning under uncertainty." }
             ]
           },
           {
             title: "Outcome",
             blocks: [
               { type: "statement", text: "This shifted the experience from presenting information to enabling users to reason about system-wide impact." },
-              { type: "p", text: "Users were able to:", items: ["identify critical regulatory impacts more quickly", "reason about system-wide relationships with greater confidence", "and make more informed decisions in AI-assisted workflows"] }
+              { type: "p", text: "Users could identify critical regulatory impacts more quickly, reason about system-wide relationships with greater confidence, and make more informed decisions in AI-assisted workflows." }
             ]
           },
           {
             title: "Reflection",
             blocks: [
-              { type: "p", text: "This project fundamentally changed how I approach design." },
               { type: "statement", text: "The hardest problems aren’t interface problems. They’re problems of understanding complex systems." },
               { type: "p", text: "Design’s role is not to remove complexity — but to determine how that complexity is exposed, understood, and acted upon." }
             ]
