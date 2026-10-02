@@ -992,12 +992,12 @@ ol {
   color: var(--fg);
 }
 
-/* ---------- AI experiments: four in one row ---------- */
-/* A compact row of four (cols 1–3, 4–6, 7–9, 10–12): a 2:1 thumbnail, then
+/* ---------- AI experiments: two in one row ---------- */
+/* A compact row of two (cols 1–6, 7–12): a 2:1 thumbnail, then
    the title + kind with the square on the right (no summary) */
 .exp-index {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--pad);
   row-gap: var(--space-2xl);
 }
@@ -1007,13 +1007,6 @@ ol {
    at the foot */
 .exp-index > li {
   display: grid;
-}
-
-/* tablets: two by two (cols 1–6, 7–12) */
-@media (max-width: 1024px) and (min-width: 681px) {
-  .exp-index {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .exp-row {

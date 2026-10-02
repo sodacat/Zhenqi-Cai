@@ -830,8 +830,8 @@ window.SITE = {
         "I rebuilt this site in Swiss style just by talking to Claude Code — about 250 prompts, 220+ published versions in three days, and not one line of hand-written code.",
       tags: ["Experiment", "Vibe coding", "Design system"],
       alt: "This portfolio's home page — bold black type, red accents, 12-column grid",
-      cover: "images/this-portfolio/cover.webp",
-      images: ["images/this-portfolio/cover.webp"],
+      cover: "images/this-portfolio/card.webp",
+      images: ["images/this-portfolio/card.webp"],
       case: {
         headline: "A Swiss-style portfolio, built by conversation",
         lead: "I made every design call. Claude Code wrote every line.",
@@ -840,7 +840,7 @@ window.SITE = {
         aboutTitle: "Design direction in plain words",
         about: [
           "I started from a generic editorial template and one reference site. Over three days I talked the whole portfolio into shape with Claude Code: home page, four case studies, and two AI experiments.",
-          "I gave every instruction in plain Chinese, often a single line: “nav bar 改宽一个 grid.” Claude edited the code, committed, pushed, republished the live page, and sent screenshots back. When something didn't work, I said “撤销” (undo) and it was gone."
+          "I gave every instruction in plain words, often a single line: “Make the nav bar one column wider.” Claude edited the code, committed, pushed, republished the live page, and sent screenshots back. When something didn't work, I said “undo” and it was gone."
         ],
         facts: [
           ["Medium", "Vibe-coded web"],
@@ -865,7 +865,7 @@ window.SITE = {
                 "**Ask.** I describe the change in a sentence, sometimes with a screenshot or a reference.",
                 "**Build.** Claude Code edits the HTML, CSS and data, then commits and pushes.",
                 "**Check.** It republishes the live page and replies with screenshots at desktop and phone widths.",
-                "**Decide.** I keep it, push it further, or say “撤销” to roll it back."
+                "**Decide.** I keep it, push it further, or say “undo” to roll it back."
               ] },
               { type: "statement", text: "“Undo” made bold experiments cheap, so I could try a direction, look at it, and walk it back in seconds." }
             ]
@@ -880,7 +880,7 @@ window.SITE = {
                 { title: "Negative space, not lines", text: "Boxes and dividers removed; whitespace carries the structure." },
                 { title: "Red, black, white", text: "Red is reserved for labels and emphasis. Hover is a solid red fill." }
               ] },
-              { type: "p", text: "I often asked Claude to draw the grid over the page (“把横竖 grid 画出来给我看看”) to check every block against the columns, as in the cover image above." }
+              { type: "p", text: "I often asked Claude to draw the grid over the page to check every block against the columns, as in the cover image above." }
             ]
           },
           {
@@ -888,11 +888,11 @@ window.SITE = {
             blocks: [
               { type: "p", text: "Most prompts were small, exact moves. Design judgment stayed with me; the AI handled measuring, aligning and rebuilding at every breakpoint." },
               { type: "quotes", items: [
-                ["Make the nav bar one column wider.", "nav bar 改宽一个 grid"],
-                ["View my resume should span the same columns as the photo.", "view my resume 和照片一样的 grid"],
-                ["Make the cursor a black square, the same size as the square in the ZC logo.", "把鼠标变成黑色方块 和 ZC logo 的方块一样大"],
-                ["Show me the grid, horizontal and vertical.", "把横竖 grid 画出来给我看看"],
-                ["Undo.", "撤销"]
+                ["Make the nav bar one column wider."],
+                ["View my resume should span the same columns as the photo."],
+                ["Make the cursor a black square, the same size as the square in the ZC logo."],
+                ["Show me the grid, horizontal and vertical."],
+                ["Undo."]
               ] }
             ]
           },
@@ -916,39 +916,6 @@ window.SITE = {
           }
         ]
       }
-    },
-    {
-      id: "ai-storytelling",
-      type: "experiment",
-      company: "Exploring narrative interfaces with generative AI",
-      title: "AI Storytelling",
-      date: "2026",
-      medium: "Prototype",
-      tools: "Claude · Figma",
-      status: "Exploring",
-      summary: "Exploring narrative interfaces generated with AI.",
-      tags: ["Experiment"],
-      alt: "AI storytelling abstract",
-      // Geometric artwork drawn in CSS until a real image is added (art: "arc" | "steps")
-      art: "arc",
-      cover: "images/ai-storytelling.jpg",
-      images: []
-    },
-    {
-      id: "design-with-ai",
-      type: "experiment",
-      company: "Notes and experiments on AI-native design practice",
-      title: "Design with AI",
-      date: "Ongoing",
-      medium: "Notes + experiments",
-      tools: "Various",
-      status: "Ongoing",
-      summary: "Notes and explorations on designing with AI as a material.",
-      tags: ["Notes", "Explorations"],
-      alt: "Abstract colorful bubbles",
-      art: "steps",
-      cover: "images/design-with-ai.jpg",
-      images: []
     }
   ]
 };
