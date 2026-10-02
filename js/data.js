@@ -81,9 +81,9 @@ window.SITE = {
       id: "seller-qualification",
       type: "work",
       company: "Amazon",
-      title: "Seller Qualification",
+      title: "Seller Central: Seller Qualification",
       summary: "Re-architecting a compliance system into seller growth infrastructure.",
-      tags: ["Complex systems", "Commerce"],
+      tags: ["Product Design", "Complex systems"],
       impact: "+20% completion",
       alt: "Amazon boxes on a conveyor belt",
       cover: "images/seller-qualification.jpg",
@@ -227,21 +227,21 @@ window.SITE = {
       }
     },
     {
-      id: "amelia",
+      id: "compliance-report",
       type: "work",
       company: "IBM",
-      title: "Amelia Compliance Report",
+      title: "Regulatory Compliance Accelerator: Compliance Report",
       summary: "Designed an AI system for reasoning about complex relationships.",
-      tags: ["AI", "Enterprise", "Design systems"],
+      tags: ["Product Design", "AI", "Enterprise"],
       alt: "Illuminated IBM logo on a dark facade",
-      cover: "images/amelia.jpg",
-      images: ["images/amelia.jpg"],
+      cover: "images/compliance-report.jpg",
+      images: ["images/compliance-report.jpg"],
       case: {
         headline: "The problem wasn’t speed, it was enabling users to reason about the system.",
         lead: "Regulatory compliance is expected to provide clarity. In practice, it often does the opposite. Enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
         aboutTitle: "A ML infused tool to accelerate regulatory compliance",
         about: [
-          "At IBM, I worked on Amelia — an AI-powered platform designed to accelerate compliance by extracting and mapping regulatory terms to business and technical systems.",
+          "At IBM, I worked on an AI-powered platform designed to accelerate compliance by extracting and mapping regulatory terms to business and technical systems.",
           "My focus was on designing the compliance reporting experience — the point where users need to make sense of how regulations actually impact their organization.",
           "Very quickly, it became clear: this wasn’t just a reporting problem. It was a problem of enabling users to reason about how complex system relationships behave."
         ],
@@ -251,7 +251,7 @@ window.SITE = {
           ["Methods", "As-is scenario, to-be scenario, hills, big idea vignettes, prototyping, usability testing, playbacks"]
         ],
         overview: [
-          { type: "img", src: "images/amelia/overview.jpg", alt: "Amelia compliance report screens" },
+          { type: "img", src: "images/compliance-report/overview.jpg", alt: "Compliance report screens" },
           { type: "p", title: "Reframing the problem", text: "Most compliance tools treat the problem as document processing:", items: ["Extract terms", "Tag them", "Generate reports"],
             after: "But through research and workshops, I found that users weren’t struggling with documents. They were struggling with:" },
           { type: "list", items: ["Understanding how system behavior emerges across interconnected relationships", "Interpreting impact across business units", "Trusting AI-generated outputs"] },
@@ -261,7 +261,7 @@ window.SITE = {
           {
             title: "From alignment to insight",
             blocks: [
-              { type: "row", label: "AI design workshop", items: [["images/amelia/workshop-1.jpg"], ["images/amelia/workshop-2.jpg"], ["images/amelia/workshop-3.jpg"]] },
+              { type: "row", label: "AI design workshop", items: [["images/compliance-report/workshop-1.jpg"], ["images/compliance-report/workshop-2.jpg"], ["images/compliance-report/workshop-3.jpg"]] },
               { type: "p", text: [
                 "To understand the problem space, I worked with cross-functional teams to map out how compliance workflows actually operate — from manual processes to AI-assisted ones.",
                 "What became clear wasn’t just inefficiency, but a deeper issue: users didn’t lack data — they lacked a way to reason about how that data connects across systems.",
@@ -271,18 +271,18 @@ window.SITE = {
               { type: "cards", label: "3 Hills", items: [
                 { title: "Data steward", text: "As a data steward, I can see how a regulation glossary is related to my business glossary and data assets in hours instead of months." },
                 { title: "Business analyst", text: "As a business analyst, I can see how regulation impacts the business so that I can foresee and plan my resources and strategy." },
-                { title: "CDO", text: "As a CDO, I can see at any moment how much money Amelia has saved me, and I tweet about it." }
+                { title: "CDO", text: "As a CDO, I can see at any moment how much money the platform has saved me, and I tweet about it." }
               ] },
               { type: "cards", label: "3 Themes", items: [
-                { title: "Transparency", text: "How might we be more transparent about the AI and other team members’ work within Amelia?" },
-                { title: "Collaboration", text: "How might we enable seamless collaboration for teams within Amelia?" },
-                { title: "Stickiness", text: "How might we immediately convey the value of Amelia to the user and keep them coming back?" }
+                { title: "Transparency", text: "How might we be more transparent about the AI and other team members’ work within the platform?" },
+                { title: "Collaboration", text: "How might we enable seamless collaboration for teams within the platform?" },
+                { title: "Stickiness", text: "How might we immediately convey the value of the platform to the user and keep them coming back?" }
               ] },
               { type: "p", title: "As-is: what are the manual steps the user goes through (without ML or AI)?", text: [
                 "To strategic answer for why or why not AI/ML is involved in the product, why/why not it is involved at each step goals we set, we established as-is scenario map and to-be scenario map.",
                 "Opportunities: How can AI/ML help give better solutions, suggestions, to the user with higher confidence (insights are backed-up, valid) faster than humanly possible?"
               ] },
-              { type: "row", label: "Wireframes", items: [["images/amelia/wireframe-1.jpg"], ["images/amelia/wireframe-2.jpg"], ["images/amelia/wireframe-3.jpg"]] },
+              { type: "row", label: "Wireframes", items: [["images/compliance-report/wireframe-1.jpg"], ["images/compliance-report/wireframe-2.jpg"], ["images/compliance-report/wireframe-3.jpg"]] },
               { type: "p", title: "Product constraint → design decision", text: [
                 "At the same time, technical constraints made it clear that higher-level insights (e.g. forecasting, business impact) were not feasible for the MVP.",
                 "Rather than forcing incomplete “intelligence” into the product, I reframed the MVP:"
@@ -293,7 +293,7 @@ window.SITE = {
                 items: ["who the primary user is (data stewards working at term level)", "what problem we are solving (understanding relationships, not forecasting outcomes)", "and what kind of experience we need to design (exploration, not static reporting)"],
                 after: "This decision became the foundation for all subsequent design work." },
               { type: "cards", items: [
-                { title: "MVP — Mapping summary", text: "Persona: Super Dominick (project lead) is interested in term-level insights. Amelia is not helping in compliance but only mapping. What the biz analyst wants is not feasible right now." },
+                { title: "MVP — Mapping summary", text: "Persona: Super Dominick (project lead) is interested in term-level insights. The platform is not helping in compliance but only mapping. What the biz analyst wants is not feasible right now." },
                 { title: "2020 vision — Compliance report", text: "Persona: Betty (Biz analyst) is interested in regulation-level insight:", items: ["Performance, insights", "Gap analysis", "Entire ecosystem", "Powerful/impactful terms"] }
               ] }
             ]
@@ -314,7 +314,7 @@ window.SITE = {
                   "As complexity grows, the challenge is not just execution — but maintaining a coherent mental model of how the system behaves."
                 ] }
               ] },
-              { type: "row", label: "Evolution of MVP prototypes", items: [["images/amelia/mvp-v1.jpg", "V1"], ["images/amelia/mvp-v2.jpg", "V2"], ["images/amelia/mvp-v3.jpg", "V3"]] },
+              { type: "row", label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
               { type: "p", title: "Main improvements of MVP prototype", items: ["Scalability", "Transparency", "Clarity of reasoning"] },
               { type: "p", title: "1. Visualizing relationships, not just data", text: "Most standard visualizations — tables, pie charts, bar charts — flatten relationships. But compliance mapping is inherently relational:",
                 items: ["one regulation term → multiple business concepts", "one business term → multiple data assets"],
@@ -370,7 +370,7 @@ window.SITE = {
               { type: "p", title: "Iterations", text: "In later iterations, I adjusted how key metrics are visually framed:",
                 items: ["reinforcing visual anchors to signal importance", "providing explicit context to guide interpretation", "and aligning structure with how users read and compare values"],
                 after: "Rather than adding more information, these changes focused on making existing information interpretable at a glance — ensuring users can reason about system status without ambiguity." },
-              { type: "row", label: "MVP deliverable", items: [["images/amelia/mvp-1.jpg"], ["images/amelia/mvp-2.jpg"], ["images/amelia/mvp-3.jpg"], ["images/amelia/mvp-4.jpg"]] },
+              { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "p", title: "Result", text: "The MVP shifted from a static mapping tool to a system that supports reasoning:",
                 items: ["users could trace relationships across systems", "identify high-impact areas more effectively", "and build confidence in AI-assisted outputs"] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
@@ -450,7 +450,7 @@ window.SITE = {
       company: "SAP",
       title: "Fiori Design System: Data Table",
       summary: "Designing how structured data remains understandable across contexts.",
-      tags: ["Enterprise", "Workflow", "Scale"],
+      tags: ["Design System", "Enterprise", "iOS"],
       alt: "SAP logo on a concrete building",
       cover: "images/enterprise-experience.jpg",
       images: ["images/enterprise-experience.jpg"],
@@ -627,9 +627,9 @@ window.SITE = {
       id: "stonk-tech",
       type: "work",
       company: "Stonk Tech",
-      title: "Brand & Landing Page",
+      title: "Retail Trading Platform: Brand & Landing Page",
       summary: "Making complex financial systems accessible to retail investors.",
-      tags: ["0→1", "Fintech", "Brand & Experience"],
+      tags: ["Brand Identity", "Responsive Web", "Fintech"],
       alt: "Stonk Tech trading platform shown on a laptop",
       cover: "images/stonk-tech.jpg",
       images: ["images/stonk-tech.jpg"],
