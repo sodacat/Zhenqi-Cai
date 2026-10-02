@@ -786,7 +786,7 @@ window.SITE = {
       tools: "Figma Make · Claude",
       status: "Shipped",
       summary:
-        "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
+        "I turned the places I've saved on Google Maps over the years into Sodacat's world guide — wherever I am, I can see my picks for where to eat, drink, and play.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
       alt: "Sodacat's Taste of the World — a world map of 1,217 kept places with search and filters",
       cover: "images/sodacats-world/hero.jpg",
@@ -795,9 +795,9 @@ window.SITE = {
         headline: "A world traveler's go-to list, on one map",
         lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
         cover: "images/sodacats-world/hero.jpg",
-        aboutTitle: "From idea to working interface",
+        aboutTitle: "My Google Maps, turned into a world guide",
         about: [
-          "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
+          "Over the years I've saved a huge number of places on Google Maps — restaurants, bars, museums, beaches. I turned them into Sodacat's world recommendations: one site where, in any corner of the world, I can see my picks for what to eat, drink, and do nearby.",
           "1,217 places across 53 cities and 29 countries sit on one zoomable world map. Filter by country and city, switch between Eat, Drink and Do, or search by name; every card opens the place in Google Maps."
         ],
         facts: [
