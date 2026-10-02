@@ -407,7 +407,7 @@
         </div>`;
       case "row":
         return `<div class="case-row ${figCls(b)} reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
-          .map(([src, cap]) => `<figure class="case-fig">${media(src, cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
+          .map(([src, cap, alt]) => `<figure class="case-fig">${media(src, alt || cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
           .join("")}</div>`;
       case "cols":
         return `<div class="case-cols reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items

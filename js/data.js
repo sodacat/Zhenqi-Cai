@@ -834,13 +834,13 @@ window.SITE = {
       images: ["images/this-portfolio/card.webp"],
       case: {
         headline: "A Swiss-style portfolio, built by conversation",
-        lead: "I made every design call. Claude Code wrote every line.",
+        lead: "I made the calls. Claude wrote the code.",
         cover: "images/this-portfolio/grid.webp",
         impact: [["6", "Projects on one system"], ["3", "Screen sizes, one grid"], ["4.9:1", "Red contrast, up from 3.7:1"], ["3", "Days"]],
         aboutTitle: "The brief I gave myself",
         about: [
           "My portfolio has one job: show a hiring manager, in under a minute, how I make complex systems clear. This build started from a generic editorial template that said nothing about how I think.",
-          "I rebuilt it with Claude Code, without writing a line of code myself. I set the direction and made every design call. Claude wrote and shipped the code, and sent back screenshots after each change."
+          "I rebuilt it with Claude Code, without writing a line of code myself. I set the direction and made the design calls; Claude wrote and shipped the code, and sent back screenshots after each change."
         ],
         facts: [
           ["Medium", "Vibe-coded web"],
@@ -852,14 +852,12 @@ window.SITE = {
             title: "Why Swiss style",
             blocks: [
               { type: "statement", text: "My design philosophy and Swiss style believe the same things. So the site's visual language is my philosophy, made visible." },
-              { type: "p", text: "Three principles guide my work, and the portfolio states them on the home page. The International Typographic Style was built on the same convictions: that design exists to make information clear, ordered, and open to everyone. Each principle maps to a Swiss idea, and each became a design decision:" },
+              { type: "p", text: "The International Typographic Style was built to make information clear, ordered, and open to everyone. Each of my three principles maps to one of its ideas, and each became a design decision:" },
               { type: "cards", items: [
                 { label: "Clarity", title: "Turn complexity into understanding.", text: "Swiss design strips away decoration so content can speak. Here: objective sans-serif type, a strong hierarchy, and red only where meaning needs emphasis." },
-                { label: "Systems", title: "Design for the bigger picture.", text: "The grid is the original design system: one structure governs every page. Here: a 12-column grid and one vertical gap shared by every page and screen size." },
+                { label: "Systems", title: "Design for the bigger picture.", text: "The grid is the original design system. Here: a 12-column grid and one vertical gap shared by every page and screen size." },
                 { label: "Humanity", title: "Technology should empower people.", text: "Swiss style aimed for communication anyone could read. Here: accessible contrast, plain language, and a round portrait as the one soft shape on the page." }
               ] },
-              { type: "p", text: "That turns the style from a taste into an argument. My headline says “I design systems where complexity becomes clarity,” and the page itself is the proof." },
-              { type: "shift", quiet: true, fromLabel: "Before", toLabel: "After", from: "A generic editorial template: thin type, empty grey boxes, no system.", to: "A Swiss-style system: 12-column grid, one vertical gap, red, black and white." },
               { type: "pair", frame: true, items: [
                 ["images/this-portfolio/before.webp", "Before — the editorial template I started from"],
                 ["images/this-portfolio/cover.webp", "After — the Swiss-style home page"]
@@ -869,101 +867,102 @@ window.SITE = {
           {
             title: "From references to rules",
             blocks: [
-              { type: "p", text: "I fed Claude Swiss posters and style guides and asked the same question each round: “If you learned from these, how would you change my site?” Answers came back as numbered options. I picked subsets, looked at them live, and kept or dropped them." },
-              { type: "row", size: "md", label: "References I fed in", items: [["images/this-portfolio/ref-1.webp"], ["images/this-portfolio/ref-2.webp"], ["images/this-portfolio/ref-3.webp"], ["images/this-portfolio/ref-4.webp"], ["images/this-portfolio/ref-5.webp"], ["images/this-portfolio/ref-6.webp"], ["images/this-portfolio/ref-7.webp"], ["images/this-portfolio/ref-8.webp"]] },
-              { type: "p", text: "The first round of changes was piecemeal: one section had boxes, another had lines, a third had neither. So I turned what I liked into four rules, and checked every later decision against them:" },
+              { type: "p", text: "I fed Claude Swiss posters and style guides and asked each round: “If you learned from these, how would you change my site?” Then I turned what I liked into four rules and checked every later decision against them." },
+              { type: "row", size: "md", label: "References I fed in", items: [
+                ["images/this-portfolio/ref-1.webp", "", "Kunsthalle Basel exhibition poster, red with stacked black type"],
+                ["images/this-portfolio/ref-2.webp", "", "Beethoven concert poster with black concentric arcs"],
+                ["images/this-portfolio/ref-3.webp", "", "Bauhaus exhibition poster with a red circle and a building photo"],
+                ["images/this-portfolio/ref-4.webp", "", "Die Neue Haas Grotesk type specimen with a red circle"],
+                ["images/this-portfolio/ref-5.webp", "", "Swiss Style 1950 poster with a red circle and black bar"],
+                ["images/this-portfolio/ref-6.webp", "", "Swiss style guide page on grids, clarity and order"],
+                ["images/this-portfolio/ref-7.webp", "", "Swiss International Style poster built from a grid of boxes"],
+                ["images/this-portfolio/ref-8.webp", "", "ifdm poster with large red diagonal type"]
+              ] },
               { type: "cards", items: [
                 { title: "12-column grid", text: "Every element starts and ends on a column, horizontally and vertically." },
                 { title: "One vertical gap", text: "A single spacing value between sections: 48px on desktop, 40px on tablet and phone." },
                 { title: "Negative space, not lines", text: "Boxes and dividers removed; whitespace carries the structure." },
                 { title: "Red, black, white", text: "Red is reserved for labels and emphasis. Hover is a solid red fill." }
-              ] },
-              { type: "p", text: "The rules reach interaction too. Every button is an outlined box that fills red on hover, every arrow is the same red square, and the cursor is a black square the size of the logo's full stop. To check the grid, I had Claude draw it over the page; the cover image is one of those overlays." }
-            ]
-          },
-          {
-            title: "Iterating with AI",
-            blocks: [
-              { type: "p", title: "One prompt, one change", numbered: true, items: [
-                "**Ask.** I describe the change in a sentence, often as exact as “one column narrower.”",
-                "**Build.** Claude edits the code, commits, and republishes the live page.",
-                "**Check.** It replies with screenshots at desktop and phone widths.",
-                "**Decide.** I keep it, push it further, or say “undo.”"
-              ] },
-              { type: "p", text: "Because undo cost nothing, I could try bold moves and judge them on the real page. These are three I tried and walked back:" },
-              { type: "h", text: "Rejected: a staggered work grid" },
-              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
-              { type: "p", text: "Claude suggested breaking the symmetry. It looked editorial, but scattered, and projects 3 and 4 dropped below the fold. **Kept:** an even grid where every project has the same weight." },
-              { type: "h", text: "Rejected: a rectangular portrait" },
-              { type: "pair", frame: true, items: [
-                ["images/this-portfolio/about-rejected.webp", "Rejected — rectangular portrait"],
-                ["images/this-portfolio/about-kept.webp", "Kept — round portrait"]
-              ] },
-              { type: "p", text: "Claude's review called the circle decoration and recommended a rectangle, the textbook Swiss crop. I tried it, then went back to my original round portrait: on a page of hard edges, it's the one human shape, and it backs up “Humanist.”" },
-              { type: "h", text: "Rejected: red in only three places" },
-              { type: "p", text: "Another review suggested cutting red down to two or three spots. The page got calmer but flatter: the key facts (years, scale, section titles) lost their emphasis. **Kept:** red on the information that matters, in a deeper #e30613 that passes contrast for small labels, a fix an earlier review had flagged." }
-            ]
-          },
-          {
-            title: "Scaling to real content",
-            blocks: [
-              { type: "p", text: ["The rules faced a real test when I moved four case studies over from my old site and PDFs: Amazon, IBM, SAP and a fintech startup. I chose and cropped the images, swapped in HD versions, and rebuilt each page's hierarchy so the key points stand out.", "Real content raised questions the home page never did, so the rules grew: one type scale for every case, red only on section titles, soft shadows on UI screenshots but none on diagrams, clearer project names, and image cards for the other projects at the end of each case."] },
-              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" }
+              ] }
             ]
           },
           {
             title: "Who did what",
             blocks: [
-              { type: "p", text: "The question that matters in AI-assisted work is where the designer's value sits. Going back through the whole conversation, the split was clear:" },
               { type: "cards", items: [
                 { label: "Me", title: "Direction, ideas, decisions", items: [
-                  "**Direction and positioning.** Chose Swiss style, picked the reference sites and posters, wrote the copy and my three principles: Clarity, Systems, Humanity.",
-                  "**Signature visual ideas.** Most of what makes the site recognizable came from me (listed below).",
-                  "**Trade-offs.** Each round Claude offered options; I chose which to build (“do A and C”), and undid about ten changes, including several of its “more Swiss” suggestions.",
-                  "**Precision.** How many columns each element spans, which edges align, equal gaps between sections. Asking to draw the grid on the page to check was my idea too.",
-                  "**Content.** Which images to use and which to leave untouched, what to call each project, where the hierarchy needs emphasis.",
-                  "**Image rules.** Soft card shadows instead of borders, and no shadow on diagrams."
+                  "**Direction.** Swiss style, the references, the copy, my three principles.",
+                  "**Ideas.** The site's signature visual details (next section).",
+                  "**Trade-offs.** Which suggestions to try, and which to undo.",
+                  "**Precision.** Which columns, which edges, which gaps.",
+                  "**Content.** Which images, what to call each project, what to emphasize.",
+                  "**Image rules.** Soft shadows instead of borders; none on diagrams."
                 ] },
                 { label: "Claude", title: "Build, systematize, advise", items: [
-                  "**Code and shipping.** All the HTML, CSS and JavaScript; commits, pushes and publishing; a screenshot check after every change.",
-                  "**Turning requests into a system.** The 12-column grid math, tablet and phone layouts, exact spacing values, pixel-level alignment checks.",
-                  "**Reviews and options.** Whenever I asked “is this Swiss?”, it gave a critique and numbered options. Some held: a deeper red (#e30613) that passes contrast, a true grotesk typeface, no justified text. Some I rejected: a halftone texture, a rectangular photo, a staggered grid, red in only three places.",
-                  "**Content and assets.** Extracting text and HD images from PDFs and my old site, cropping, encoding video and cutting out the browser chrome, building the full-screen prototype.",
-                  "**Drafts.** Suggested project names, case study structure and first-draft English copy, for me to edit and approve."
+                  "**Code.** All the HTML, CSS and JavaScript, shipped and screenshot-checked.",
+                  "**System.** Grid math, spacing values, tablet and phone layouts.",
+                  "**Reviews.** Critique and numbered options, like a true grotesk typeface.",
+                  "**Assets.** Text and HD images from PDFs, crops, video encoding.",
+                  "**Drafts.** Project names and first-draft copy for me to edit."
                 ] }
-              ] },
-              { type: "p", title: "Signature ideas were mine", items: [
-                "The ZC wordmark ending in a square full stop.",
-                "Key numbers (7+, 100M+) in red blocks, like text selected on screen.",
-                "Outlined boxes for nav and buttons that fill red on hover.",
-                "Every arrow replaced by the same small red square.",
-                "A cursor that is a black square, the size of the logo's full stop.",
-                "Photos in black and white, turning to color on hover.",
-                "Negative space instead of boxes, with frames that appear only on hover.",
-                "A round portrait, and soft card shadows instead of borders on screenshots."
-              ] },
-              { type: "figures", label: "Claude's reviews, by the numbers", items: [["11", "Review rounds"], ["~55", "Changes suggested"], ["27", "Chosen to try"], ["10", "Undone after seeing them live"]] },
-              { type: "p", text: "Claude suggested the changes. I decided which to try, and about a third of the ones I tried didn't survive seeing them on the real page." }
+              ] }
             ]
           },
           {
-            title: "Outcome and limits",
+            title: "Ideas I brought",
             blocks: [
-              { type: "p", title: "What shipped", numbered: true, items: [
-                "**One system.** Home, four case studies and two experiments share one grid, type scale and image treatment at desktop, tablet and phone sizes.",
-                "**Accessible red.** Every red label meets 4.5:1 contrast on white.",
-                "**Reusable rules.** A new project drops into the same grid without new design decisions."
+              { type: "p", text: "The details that make the site recognizable came from me, not from the AI:" },
+              { type: "row", frame: true, items: [
+                ["images/this-portfolio/sig-mark.webp", "A square full stop, and a cursor the same size", "The ZC wordmark with a red square full stop, next to the black square cursor"],
+                ["images/this-portfolio/sig-stats.webp", "Key numbers in red, like selected text", "7+ and 100M+ in red blocks with white type"],
+                ["images/this-portfolio/sig-nav.webp", "Outlined nav that fills red on hover", "Navigation bar with one item filled red on hover"]
               ] },
+              { type: "row", frame: true, items: [
+                ["images/this-portfolio/sig-button.webp", "Every arrow is one small red square", "View my resume button ending in a small red square"],
+                ["images/this-portfolio/sig-hover.webp", "Black and white until hover; frames appear on hover", "A project card in black and white, and the same card in color with a frame on hover"],
+                ["images/this-portfolio/sig-portrait.webp", "A round portrait, the one soft shape", "About section with a round black-and-white portrait"]
+              ] }
+            ]
+          },
+          {
+            title: "What I kept, what I cut",
+            blocks: [
+              { type: "figures", items: [["~55", "Changes Claude suggested"], ["27", "I chose to try"], ["10", "I cut after seeing them live"]] },
+              { type: "p", text: "Undo cost nothing, so I judged ideas on the real page instead of in my head. Three of the cuts:" },
+              { type: "h", text: "Cut: a staggered work grid" },
+              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
+              { type: "p", text: "Claude suggested breaking the symmetry. It looked editorial, but scattered, and projects 3 and 4 dropped below the fold. **Kept:** an even grid where every project has the same weight." },
+              { type: "h", text: "Cut: a rectangular portrait" },
+              { type: "pair", frame: true, items: [
+                ["images/this-portfolio/about-rejected.webp", "Cut — rectangular portrait"],
+                ["images/this-portfolio/about-kept.webp", "Kept — round portrait"]
+              ] },
+              { type: "p", text: "Claude's review called the circle decoration and recommended the textbook Swiss rectangle. I tried it, then went back to my original round portrait: on a page of hard edges, it's the one human shape, and it backs up “Humanist.”" },
+              { type: "h", text: "Cut: red in only three places" },
+              { type: "p", text: "Another review suggested cutting red to two or three spots. The page got calmer but flatter, and the key facts lost their emphasis. **Kept:** red on the information that matters, in a deeper red that passes contrast." }
+            ]
+          },
+          {
+            title: "Reflection",
+            blocks: [
+              { type: "p", text: "The rules held up when I brought over four case studies from my old site and PDFs. Real content added a few more: one type scale for every case, red only on section titles, and shadows on UI screenshots but not on diagrams." },
               { type: "p", title: "Where AI fell short", items: [
-                "**No taste of its own.** Its “more Swiss” suggestions often overshot: a halftone dot texture, red cut to three spots, a rectangular photo, a staggered grid. Deciding what to keep was my job.",
-                "**It changed things I didn't ask for.** It replaced the ✅ and 🚫 marks from my case study PDF with plain squares, and when I asked for some of the red back, it restored all of it.",
-                "**Precision took rounds.** Exact grid placement often took several passes; drawing the grid on the page was what fixed it.",
-                "**It couldn't judge content.** Which images tell the story, what to call a project, which claims to emphasize: those calls were mine."
+                "**It changed things I didn't ask for.** It replaced the ✅ and 🚫 marks from my case study PDF with plain squares.",
+                "**It overdid requests.** When I asked for some of the red back, it restored all of it."
+              ] },
+              { type: "p", title: "What I'd do differently", numbered: true, items: [
+                "**Write the rules first.** My four rules took shape on day 2, so earlier rounds kept reworking the same things: framed boxes added at 2:00 were removed at 2:13. Next time: a one-page style guide (goal, audience, grid, type scale, spacing, color) before any page.",
+                "**One moodboard, not six batches.** Each new batch of references pulled the direction somewhere else, across 11 review rounds. Better to collect once, distill 3–5 principles, and check against those.",
+                "**Batch the small moves.** Many of my ~250 prompts were “one column down” or “undo”; About, Contact and the footer took about 25 prompts in 45 minutes. Marking up one screenshot with every change, or mocking the target in Figma, would be faster.",
+                "**Real content first.** Layouts tuned on placeholders had to be retuned when the case studies arrived.",
+                "**Give the AI constraints, not adjectives.** “Make it more Swiss” produced the halftone, the rectangle, the staggered grid and the three reds. “More Swiss, but keep the warmth and red on key facts” would have saved rounds.",
+                "**Log why I undo.** I undid about ten changes, mostly without saying why. A one-line decision log would have made this case study easier to write.",
+                "**Check phone at every step.** Desktop got most of the attention; the mobile menu lagged behind for a day.",
+                "**Test with real people.** Every judgment came from me and the AI. A 5-second test with a few designers or recruiters (what do you remember?) is worth more than ten more rounds."
               ] },
               { type: "cards", items: [
-                { title: "Taste is the bottleneck", text: "AI builds fast. Knowing what to keep and what to undo is still the designer's job." },
-                { title: "Rules make prompts short", text: "Once the grid and spacing rules existed, one line like “move it one column” was enough." },
-                { title: "Ask for critique, keep the verdict", text: "AI reviews caught real issues, like failing contrast. Whether to act on them stayed my call." }
+                { title: "Taste is the bottleneck", text: "AI builds fast. Knowing what to keep and what to cut is still the designer's job." },
+                { title: "Rules make prompts short", text: "Once the grid and spacing rules existed, one line like “move it one column” was enough." }
               ] }
             ]
           }
