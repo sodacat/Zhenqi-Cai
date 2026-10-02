@@ -3065,9 +3065,10 @@ body[data-page="project"] .footer-top .footer-contact {
     margin-top: var(--space-l);
   }
 
+  /* one 24px row below the facts' usual 16px step */
   .about-resume {
     grid-row: 4;
-    margin-top: 16px;
+    margin-top: calc(16px + var(--lh-body));
   }
 }
 
