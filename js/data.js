@@ -834,9 +834,9 @@ window.SITE = {
       images: ["images/this-portfolio/card.webp"],
       case: {
         headline: "A Swiss-style portfolio, built by conversation",
-        lead: "I made the calls. Claude wrote the code.",
+        lead: "Three days, one grid, no hand-written code.",
         cover: "images/this-portfolio/grid.webp",
-        impact: [["6", "Projects on one system"], ["3", "Screen sizes, one grid"], ["4.9:1", "Red contrast, up from 3.7:1"], ["3", "Days"]],
+        impact: [["0", "Lines of code I wrote"], ["27", "Ideas I tried"], ["10", "Ideas I cut"], ["3", "Days"]],
         aboutTitle: "The brief I gave myself",
         about: [
           "Show a hiring manager, in under a minute, how I make complex systems clear. I rebuilt the site with Claude Code without writing code myself: I set the direction and made the design calls; Claude wrote and shipped the code."
@@ -906,21 +906,21 @@ window.SITE = {
             title: "Ideas I brought",
             blocks: [
               { type: "row", frame: true, items: [
-                ["images/this-portfolio/sig-mark.webp", "A square full stop, and a cursor the same size", "The ZC wordmark with a red square full stop, next to the black square cursor"],
-                ["images/this-portfolio/sig-stats.webp", "Key numbers in red, like selected text", "7+ and 100M+ in red blocks with white type"],
-                ["images/this-portfolio/sig-nav.webp", "Outlined nav that fills red on hover", "Navigation bar with one item filled red on hover"]
+                ["images/this-portfolio/sig-mark.webp", "“Make the cursor a black square, the size of the logo's dot.”", "The ZC wordmark with a red square full stop, next to the black square cursor"],
+                ["images/this-portfolio/sig-stats.webp", "“Make 7+ and 100M+ white on red, as if selected.”", "7+ and 100M+ in red blocks with white type"],
+                ["images/this-portfolio/sig-nav.webp", "“Make the nav a box that fills red on hover.”", "Navigation bar with one item filled red on hover"]
               ] },
               { type: "row", frame: true, items: [
-                ["images/this-portfolio/sig-button.webp", "Every arrow is one small red square", "View my resume button ending in a small red square"],
-                ["images/this-portfolio/sig-hover.webp", "Black and white until hover", "A project card in black and white, and the same card in color with a frame on hover"],
-                ["images/this-portfolio/sig-portrait.webp", "A round portrait, the one soft shape", "About section with a round black-and-white portrait"]
+                ["images/this-portfolio/sig-button.webp", "“Make every arrow the same small red square.”", "View my resume button ending in a small red square"],
+                ["images/this-portfolio/sig-hover.webp", "“Just black and white; color on hover.”", "A project card in black and white, and the same card in color with a frame on hover"],
+                ["images/this-portfolio/sig-portrait.webp", "“Crop the photo into a large circle.”", "About section with a round black-and-white portrait"]
               ] }
             ]
           },
           {
             title: "What I kept, what I cut",
             blocks: [
-              { type: "figures", items: [["~55", "Changes Claude suggested"], ["27", "I chose to try"], ["10", "I cut after seeing them live"]] },
+              { type: "p", text: "Claude suggested about 55 changes. I tried 27 and cut 10 after seeing them on the real page. Two of the cuts:" },
               { type: "h", text: "Cut: a staggered work grid" },
               { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
               { type: "p", text: "Editorial, but scattered: projects 3 and 4 fell below the fold. **Kept:** an even grid." },
