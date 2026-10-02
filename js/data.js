@@ -583,6 +583,7 @@ window.SITE = {
           {
             title: "Brand design: from vision to visuals",
             blocks: [
+              { type: "img", src: "images/stonk-tech/diagram-scope.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
               { type: "p", title: "The challenge", text: [
                 "The challenge was not just to create a visual identity, but to reduce the cognitive gap between how financial systems operate and how users are able to perceive and act within them.",
                 "Users needed to:"
@@ -654,6 +655,7 @@ window.SITE = {
                 "The landing page was designed as the first interface where users encounter the system. The goal was not just responsiveness, but information clarity and cognitive accessibility.",
                 "This is not just a layout system, but an information system that helps users build understanding progressively."
               ] },
+              { type: "img", src: "images/stonk-tech/diagram-model.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
               { type: "p", title: "The approach: responsive design", text: "I structured the page to:",
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
