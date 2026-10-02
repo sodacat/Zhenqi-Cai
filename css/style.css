@@ -3069,3 +3069,15 @@ body[data-page="project"] .footer-top .footer-contact {
     margin-top: 16px;
   }
 }
+
+/* Desktop and tablet: the statement and the bio are set flush right on
+   columns 1–6, against the axis at column 7 where the photo starts */
+@media (min-width: 681px) {
+  .about .statement span {
+    margin-left: auto;
+  }
+
+  .about-lead {
+    text-align: right;
+  }
+}
