@@ -81,6 +81,7 @@
           .map(([t, href, key]) => `<a class="link-line${current === key ? " is-current" : ""}" href="${href}" data-key="${key}"${current === key ? ' aria-current="page"' : ""}><span>${t}<span class="nav-mark" aria-hidden="true"></span></span></a>`)
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
+        <span class="nav-end" aria-hidden="true">${arrow}</span>
       </nav>
     </header>`;
   }

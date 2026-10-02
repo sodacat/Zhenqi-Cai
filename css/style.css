@@ -417,6 +417,14 @@ ol {
     display: none;
   }
 
+  /* closing cell: the red square, like the contact box's last cell */
+  .nav .nav-end {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding: var(--box-pad) var(--box-pad-x);
+  }
+
 
   .nav a:hover,
   .nav a:focus-visible {
@@ -426,7 +434,8 @@ ol {
   }
 }
 
-.nav-contact {
+.nav-contact,
+.nav-end {
   display: none;
 }
 
