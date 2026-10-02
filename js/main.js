@@ -666,6 +666,10 @@
     requestAnimationFrame(() => slider && slider.classList.add("is-ready"));
   }
 
-  // Deep links (#experiments, #about, #contact) after render
+  // Every page opens at the top (the browser would otherwise restore the
+  // last scroll position); deep links (#experiments, #about, #contact)
+  // still jump to their section
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+  else window.scrollTo(0, 0);
 })();
