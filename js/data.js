@@ -874,6 +874,8 @@ window.SITE = {
             title: "Learning Swiss style",
             blocks: [
               { type: "p", text: ["I fed in references (a Framer portfolio, Swiss style guides, International Typographic posters) and kept asking the same question: “Does this follow Swiss style? Is it consistent?” Each answer became a short list of options; I picked which ones to build."] },
+              { type: "row", label: "References I fed in", items: [["images/this-portfolio/ref-1.webp"], ["images/this-portfolio/ref-2.webp"], ["images/this-portfolio/ref-3.webp"], ["images/this-portfolio/ref-4.webp"]] },
+              { type: "row", items: [["images/this-portfolio/ref-5.webp"], ["images/this-portfolio/ref-6.webp"], ["images/this-portfolio/ref-7.webp"], ["images/this-portfolio/ref-8.webp"]] },
               { type: "cards", items: [
                 { title: "12-column grid", text: "Every element starts and ends on a column, horizontally and vertically." },
                 { title: "One vertical gap", text: "A single spacing value between sections: 48px on desktop, 40px on tablet and phone." },

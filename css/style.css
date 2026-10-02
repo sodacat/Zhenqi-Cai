@@ -2100,6 +2100,12 @@ ol {
     row-gap: var(--space-xl);
   }
 
+  /* four-up rows (the reference posters) stay two across */
+  .case-row[style*="--n:4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    row-gap: 16px;
+  }
+
   .case-side { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
   .case-side > * { grid-column: 1 / -1 !important; }
 
