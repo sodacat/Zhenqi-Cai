@@ -818,6 +818,106 @@ window.SITE = {
       }
     },
     {
+      id: "this-portfolio",
+      type: "experiment",
+      company: "Vibe-coded portfolio",
+      title: "This Portfolio",
+      date: "2026",
+      medium: "Vibe-coded web",
+      tools: "Claude Code",
+      status: "Live",
+      summary:
+        "I rebuilt this site in Swiss style just by talking to Claude Code — about 250 prompts, 220+ published versions in three days, and not one line of hand-written code.",
+      tags: ["Experiment", "Vibe coding", "Design system"],
+      alt: "This portfolio's home page — bold black type, red accents, 12-column grid",
+      cover: "images/this-portfolio/cover.webp",
+      images: ["images/this-portfolio/cover.webp"],
+      case: {
+        headline: "A Swiss-style portfolio, built by conversation",
+        lead: "I made every design call. Claude Code wrote every line.",
+        cover: "images/this-portfolio/grid.webp",
+        impact: [["250", "Prompts"], ["220+", "Published versions"], ["227", "Commits"], ["3", "Days"]],
+        aboutTitle: "Design direction in plain words",
+        about: [
+          "I started from a generic editorial template and one reference site. Over three days I talked the whole portfolio into shape with Claude Code: home page, four case studies, and two AI experiments.",
+          "I gave every instruction in plain Chinese, often a single line: “nav bar 改宽一个 grid.” Claude edited the code, committed, pushed, republished the live page, and sent screenshots back. When something didn't work, I said “撤销” (undo) and it was gone."
+        ],
+        facts: [
+          ["Medium", "Vibe-coded web"],
+          ["Tools", "Claude Code"],
+          ["Timeline", "Sep 30 – Oct 2, 2026"]
+        ],
+        sections: [
+          {
+            title: "Starting point",
+            blocks: [
+              { type: "shift", quiet: true, fromLabel: "Before", toLabel: "After", from: "A generic editorial template: thin type, empty grey boxes, no system.", to: "A Swiss-style system: 12-column grid, one vertical gap, red, black and white." },
+              { type: "pair", frame: true, items: [
+                ["images/this-portfolio/before.webp", "Before — the editorial template I started from"],
+                ["images/this-portfolio/cover.webp", "After — the Swiss-style home page"]
+              ] }
+            ]
+          },
+          {
+            title: "The loop",
+            blocks: [
+              { type: "p", title: "One prompt, one change", numbered: true, items: [
+                "**Ask.** I describe the change in a sentence, sometimes with a screenshot or a reference.",
+                "**Build.** Claude Code edits the HTML, CSS and data, then commits and pushes.",
+                "**Check.** It republishes the live page and replies with screenshots at desktop and phone widths.",
+                "**Decide.** I keep it, push it further, or say “撤销” to roll it back."
+              ] },
+              { type: "statement", text: "“Undo” made bold experiments cheap, so I could try a direction, look at it, and walk it back in seconds." }
+            ]
+          },
+          {
+            title: "Learning Swiss style",
+            blocks: [
+              { type: "p", text: ["I fed in references (a Framer portfolio, Swiss style guides, International Typographic posters) and kept asking the same question: “Does this follow Swiss style? Is it consistent?” Each answer became a short list of options; I picked which ones to build."] },
+              { type: "cards", items: [
+                { title: "12-column grid", text: "Every element starts and ends on a column, horizontally and vertically." },
+                { title: "One vertical gap", text: "A single spacing value between sections: 48px on desktop, 40px on tablet and phone." },
+                { title: "Negative space, not lines", text: "Boxes and dividers removed; whitespace carries the structure." },
+                { title: "Red, black, white", text: "Red is reserved for labels and emphasis. Hover is a solid red fill." }
+              ] },
+              { type: "p", text: "I often asked Claude to draw the grid over the page (“把横竖 grid 画出来给我看看”) to check every block against the columns, as in the cover image above." }
+            ]
+          },
+          {
+            title: "Directing by the column",
+            blocks: [
+              { type: "p", text: "Most prompts were small, exact moves. Design judgment stayed with me; the AI handled measuring, aligning and rebuilding at every breakpoint." },
+              { type: "quotes", items: [
+                ["Make the nav bar one column wider.", "nav bar 改宽一个 grid"],
+                ["View my resume should span the same columns as the photo.", "view my resume 和照片一样的 grid"],
+                ["Make the cursor a black square, the same size as the square in the ZC logo.", "把鼠标变成黑色方块 和 ZC logo 的方块一样大"],
+                ["Show me the grid, horizontal and vertical.", "把横竖 grid 画出来给我看看"],
+                ["Undo.", "撤销"]
+              ] }
+            ]
+          },
+          {
+            title: "Moving the case studies",
+            blocks: [
+              { type: "p", text: ["Next I brought over four case studies from my old site and PDFs: Amazon, IBM, SAP and a fintech startup. Claude rebuilt each one in the new visual language. I chose the images, cropped covers, and set the hierarchy.", "Then came consistency passes: the same type scale, red only on section titles, soft card shadows on screenshots but not on diagrams, clearer project names, and “More work” cards at the end of every case."] },
+              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" }
+            ]
+          },
+          {
+            title: "What I learned",
+            blocks: [
+              { type: "cards", items: [
+                { title: "Taste is the bottleneck", text: "AI builds fast. Knowing what to keep and what to undo is still the designer's job." },
+                { title: "Systems make prompts short", text: "Once the grid and spacing rules existed, one line like “move it one column” was enough." },
+                { title: "Ask for critique", text: "Asking the AI to review the page against Swiss style surfaced issues I missed, like red text failing contrast." }
+              ] },
+              { type: "p", text: "You're looking at the result: this page was built the same way." }
+            ]
+          }
+        ]
+      }
+    },
+    {
       id: "ai-storytelling",
       type: "experiment",
       company: "Exploring narrative interfaces with generative AI",
