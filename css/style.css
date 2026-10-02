@@ -3167,11 +3167,11 @@ body[data-page="project"] .footer-top .footer-contact {
   background: #1c1712;
 }
 
+/* the video spans the full grid width, at its own proportions */
 .case-cover-video video {
   display: block;
-  max-width: 100%;
-  height: min(96vh, 1100px);
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 680px) {
