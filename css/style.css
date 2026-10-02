@@ -2100,8 +2100,8 @@ ol {
     row-gap: var(--space-xl);
   }
 
-  /* four-up rows (the reference posters) stay two across */
-  .case-row[style*="--n:4"] {
+  /* the eight reference posters stay two across */
+  .case-row[style*="--n:8"] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     row-gap: 16px;
   }
@@ -2840,6 +2840,20 @@ ol {
 
 @media (max-width: 680px) {
   .case-body > .case-pair.is-md { grid-column: 1 / -1; }
+}
+
+/* small rows (the reference posters): cols 1–8, four across, so each
+   image spans two columns */
+.case-body > .case-row.is-md {
+  grid-column: 1 / 9;
+}
+
+.case-row.is-md[style*="--n:8"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 680px) {
+  .case-body > .case-row.is-md { grid-column: 1 / -1; }
 }
 
 /* tracking follows the scale: labels and title-size lines carry their own */

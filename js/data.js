@@ -871,38 +871,55 @@ window.SITE = {
             ]
           },
           {
-            title: "Learning Swiss style",
+            title: "Design process",
             blocks: [
-              { type: "p", text: ["I fed in references (a Framer portfolio, Swiss style guides, International Typographic posters) and kept asking the same question: “Does this follow Swiss style? Is it consistent?” Each answer became a short list of options; I picked which ones to build."] },
-              { type: "row", label: "References I fed in", items: [["images/this-portfolio/ref-1.webp"], ["images/this-portfolio/ref-2.webp"], ["images/this-portfolio/ref-3.webp"], ["images/this-portfolio/ref-4.webp"]] },
-              { type: "row", items: [["images/this-portfolio/ref-5.webp"], ["images/this-portfolio/ref-6.webp"], ["images/this-portfolio/ref-7.webp"], ["images/this-portfolio/ref-8.webp"]] },
+              { type: "p", title: "Seven phases in three days", numbered: true, items: [
+                "**Set the direction.** One reference, my real content, a first Swiss layout.",
+                "**Study the style.** Posters and style guides in, critique and options out.",
+                "**Turn taste into rules.** A small set of rules the whole site follows.",
+                "**Audit the grid.** Every edge on a column, every gap the same.",
+                "**Decide the structure.** A one-page hub, with case studies on their own pages.",
+                "**Bring the work over.** Four case studies rebuilt in the new language.",
+                "**Polish and extend.** Final grid passes, plus vibe-coded experiments."
+              ] },
+
+              { type: "h", text: "01 Set the direction" },
+              { type: "p", text: ["Day 1, evening. I started from a generic template and one reference: a minimal Framer portfolio. I asked for a Swiss-style rebuild, then filled it with my real copy from an earlier Figma Make mockup and swapped in my own images.", "My first calls were about character: a looser, heavier ZC wordmark ending in a square full stop, Helvetica-style type, and the whitespace and structure of Swiss design instead of a dense layout."] },
+
+              { type: "h", text: "02 Study the style, ask for critique" },
+              { type: "p", text: ["Day 1, night. I fed in Swiss posters and style guides, and asked the same question every round: “If you learned from these, how would you change my site?” Each answer came back as a numbered list of changes. I chose subsets (“do A and C”), looked at them live, and said “undo” when a direction didn't hold."] },
+              { type: "row", size: "md", label: "References I fed in", items: [["images/this-portfolio/ref-1.webp"], ["images/this-portfolio/ref-2.webp"], ["images/this-portfolio/ref-3.webp"], ["images/this-portfolio/ref-4.webp"], ["images/this-portfolio/ref-5.webp"], ["images/this-portfolio/ref-6.webp"], ["images/this-portfolio/ref-7.webp"], ["images/this-portfolio/ref-8.webp"]] },
+              { type: "p", text: "Critique also caught real problems. The original red (#ff2d00) measured 3.7:1 against white, too low for small labels, so the whole site moved to a deeper Swiss red, #e30613, at 4.9:1." },
+
+              { type: "h", text: "03 Turn taste into rules" },
+              { type: "p", text: "Day 2, early. The first round of changes was piecemeal: one section had boxes, another had lines, a third had neither. I asked for a full consistency pass and set rules for the whole site:" },
               { type: "cards", items: [
                 { title: "12-column grid", text: "Every element starts and ends on a column, horizontally and vertically." },
                 { title: "One vertical gap", text: "A single spacing value between sections: 48px on desktop, 40px on tablet and phone." },
                 { title: "Negative space, not lines", text: "Boxes and dividers removed; whitespace carries the structure." },
                 { title: "Red, black, white", text: "Red is reserved for labels and emphasis. Hover is a solid red fill." }
               ] },
-              { type: "p", text: "I often asked Claude to draw the grid over the page to check every block against the columns, as in the cover image above." }
-            ]
-          },
-          {
-            title: "Directing by the column",
-            blocks: [
-              { type: "p", text: "Most prompts were small, exact moves. Design judgment stayed with me; the AI handled measuring, aligning and rebuilding at every breakpoint." },
+              { type: "p", text: "Interaction follows the same logic. Every button is an outlined box that fills red on hover, every arrow became the same red square, and the cursor became a black square the size of the logo's full stop." },
+
+              { type: "h", text: "04 Audit the grid" },
+              { type: "p", text: "Day 2. I had Claude draw the horizontal and vertical grid over the page (the cover image above is one of these overlays), then moved elements one column at a time until every edge landed on a column and every vertical gap matched. Most prompts in this phase were small and exact:" },
               { type: "quotes", items: [
-                ["Make the nav bar one column wider."],
+                ["Make the nav bar one column narrower; keep its right edge on the hero image."],
+                ["Make the I design line span three columns."],
                 ["View my resume should span the same columns as the photo."],
-                ["Make the cursor a black square, the same size as the square in the ZC logo."],
-                ["Show me the grid, horizontal and vertical."],
+                ["Show me the grid again, with the vertical spacing too."],
                 ["Undo."]
-              ] }
-            ]
-          },
-          {
-            title: "Moving the case studies",
-            blocks: [
-              { type: "p", text: ["Next I brought over four case studies from my old site and PDFs: Amazon, IBM, SAP and a fintech startup. Claude rebuilt each one in the new visual language. I chose the images, cropped covers, and set the hierarchy.", "Then came consistency passes: the same type scale, red only on section titles, soft card shadows on screenshots but not on diagrams, clearer project names, and “More work” cards at the end of every case."] },
-              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" }
+              ] },
+
+              { type: "h", text: "05 Decide the structure" },
+              { type: "p", text: "Day 2, evening. I weighed a multi-page site against a one-pager. With a handful of projects, the home page became the hub: the nav scrolls to Work, AI Experiments and About; About lives on the home page; “View my resume” opens the PDF; each case study gets its own page." },
+
+              { type: "h", text: "06 Bring the work over" },
+              { type: "p", text: ["Day 2 into Day 3. I moved four case studies from my old site and PDFs (Amazon, IBM, SAP and a fintech startup) into the new language. I chose and cropped images, swapped in HD versions, and rebuilt each page's hierarchy so the key points stand out.", "Then I set content rules: one type scale, red only on section titles, soft card shadows on UI screenshots but none on diagrams, clearer project names, and image cards for the other projects at the end of every case."] },
+              { type: "img", src: "images/this-portfolio/case.webp", frame: true, alt: "Seller Central case study page in the new style" },
+
+              { type: "h", text: "07 Polish and extend" },
+              { type: "p", text: "Day 3. Final passes put About, Contact and the footer on the grid, column by column. Then I added the vibe-coded experiments: Sodacat's Taste of the World, with a walkthrough video and a full-screen live prototype, and this case study itself." }
             ]
           },
           {
