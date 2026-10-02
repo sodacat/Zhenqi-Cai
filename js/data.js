@@ -241,7 +241,7 @@ window.SITE = {
       case: {
         headline: "The problem wasn’t speed, it was enabling users to reason about the system.",
         lead: "Regulatory compliance is expected to provide clarity. In practice, it often does the opposite. Enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
-        cover: "images/compliance-report/overview.jpg",
+        cover: "images/compliance-report/cover-swiss.webp",
         aboutTitle: "A ML infused tool to accelerate regulatory compliance",
         about: [
           "At IBM, I worked on an AI-powered platform designed to accelerate compliance by extracting and mapping regulatory terms to business and technical systems.",
@@ -257,7 +257,8 @@ window.SITE = {
           { type: "p", title: "Reframing the problem", text: "Most compliance tools treat the problem as document processing:", items: ["Extract terms", "Tag them", "Generate reports"],
             after: "But through research and workshops, I found that users weren’t struggling with documents. They were struggling with:" },
           { type: "list", items: ["Understanding how system behavior emerges across interconnected relationships", "Interpreting impact across business units", "Trusting AI-generated outputs"] },
-          { type: "statement", text: "The problem wasn’t speed — it was enabling users to reason about system relationships with confidence." }
+          { type: "statement", text: "The problem wasn’t speed — it was enabling users to reason about system relationships with confidence." },
+          { type: "img", src: "images/compliance-report/diagram-relationships.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
         ],
         sections: [
           {
@@ -291,6 +292,7 @@ window.SITE = {
               ] },
               { type: "shift", from: "A “compliance insight tool”", to: "A system that helps users reason about relationships with clarity" },
               { type: "p", text: "This shift allowed us to:", items: ["focus on term-level mapping (what is reliable today)", "defer predictive insights (what requires more data)", "and design for transparency instead of overpromising intelligence"] },
+              { type: "img", src: "images/compliance-report/diagram-scope.webp", alt: "Scope around what is reliable: user need, feasibility review, then MVP term-level mapping now and decision support later" },
               { type: "p", title: "Framing the MVP", text: ["The MVP was intentionally scoped as a mapping system, not a reporting system.", "This clarified:"],
                 items: ["who the primary user is (data stewards working at term level)", "what problem we are solving (understanding relationships, not forecasting outcomes)", "and what kind of experience we need to design (exploration, not static reporting)"],
                 after: "This decision became the foundation for all subsequent design work." },
@@ -305,6 +307,7 @@ window.SITE = {
             blocks: [
               { type: "p", text: "With the MVP focused on term-level mapping, the core challenge became clear:" },
               { type: "statement", text: "How do you make complex, many-to-many relationships understandable enough for users to reason about?" },
+              { type: "img", src: "images/compliance-report/diagram-journey.webp", alt: "User journey: read progress, narrow the view, trace connections, inspect context, assess mappings, then refine the view" },
               { type: "p", title: "Persona: Data steward", text: [
                 "Data stewards like Dominik operate at the intersection of business and data systems — acting as the layer that translates regulatory concepts into internal structures.",
                 "Their role is not just operational, but interpretive: they are responsible for defining how regulatory meaning maps onto business and data systems."
@@ -317,6 +320,7 @@ window.SITE = {
                 ] }
               ] },
               { type: "row", frame: true, label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
+              { type: "img", src: "images/compliance-report/diagram-research.webp", alt: "Research findings mapped to design responses: relationships, progressive context, metric hierarchy" },
               { type: "p", title: "Main improvements of MVP prototype", items: ["Scalability", "Transparency", "Clarity of reasoning"] },
               { type: "p", title: "1. Visualizing relationships, not just data", text: "Most standard visualizations — tables, pie charts, bar charts — flatten relationships. But compliance mapping is inherently relational:",
                 items: ["one regulation term → multiple business concepts", "one business term → multiple data assets"],
@@ -340,6 +344,7 @@ window.SITE = {
                   "Rather than exposing all information upfront, this approach surfaces details progressively — allowing users to inspect the system’s reasoning at the moment they need it.",
                   "This shifts the experience from passive consumption to active validation, helping users understand, question, and build confidence in AI-assisted outputs over time."
                 ] },
+              { type: "img", src: "images/compliance-report/diagram-context.webp", alt: "Reveal context at the right moment: hover a term to see its definition, mapping history and attribution" },
               { type: "p", title: "3. Designing for scale and exploration", text: [
                 "As the number of terms increased, the visualization risked becoming overwhelming.",
                 "Instead of trying to show everything, I designed for controlled exploration:"
@@ -353,6 +358,7 @@ window.SITE = {
               { type: "p", text: "These iterations established a filtering model that balances:",
                 items: ["visibility (what is shown)", "focus (what is relevant)", "and scalability (what the system can support)"],
                 after: "Rather than exposing all data at once, the system allows users to progressively narrow their view — enabling them to reason about specific subsets without losing the broader context." },
+              { type: "img", src: "images/compliance-report/diagram-layers.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "p", title: "Labels", text: [
                 "Labeling introduced an additional challenge: maintaining clarity without increasing cognitive load.",
                 "Earlier approaches relied on color-coded grouping, but distance between labels and elements made associations difficult to perceive.",
@@ -372,6 +378,7 @@ window.SITE = {
               { type: "p", title: "Iterations", text: "In later iterations, I adjusted how key metrics are visually framed:",
                 items: ["reinforcing visual anchors to signal importance", "providing explicit context to guide interpretation", "and aligning structure with how users read and compare values"],
                 after: "Rather than adding more information, these changes focused on making existing information interpretable at a glance — ensuring users can reason about system status without ambiguity." },
+              { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
               { type: "row", frame: true, label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "p", title: "Result", text: "The MVP shifted from a static mapping tool to a system that supports reasoning:",
                 items: ["users could trace relationships across systems", "identify high-impact areas more effectively", "and build confidence in AI-assisted outputs"] },
