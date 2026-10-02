@@ -1309,7 +1309,7 @@ ol {
 /* The links box steps down below the headline (row 2, cols 10–12) */
 .contact {
   align-items: start;
-  row-gap: var(--space-xl);
+  row-gap: 0;
 }
 
 .contact .display {
@@ -1320,14 +1320,7 @@ ol {
   grid-row: 2;
 }
 
-/* Desktop: the link box sits beside the line, on its last baseline row,
-   instead of on a row of its own */
-@media (min-width: 1025px) {
-  .contact-side {
-    grid-row: 1;
-    align-self: end;
-  }
-}
+/* the link box takes the row right under the line, with no gap */
 
 .contact .display {
   grid-column: 1 / 10;
@@ -2982,5 +2975,11 @@ body[data-page="project"] .footer-top .footer-contact {
 
   .about-resume {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .contact.grid-12 {
+    row-gap: 0;
   }
 }
