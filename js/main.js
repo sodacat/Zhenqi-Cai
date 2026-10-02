@@ -119,7 +119,7 @@
         </div>
       </div>
       <div class="footer-base">
-        <div class="footer-mark" aria-hidden="true"><span>${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></div>
+        <a class="footer-mark" href="index.html" aria-label="${esc(S.name)} — home"><span aria-hidden="true">${esc(S.mark.replace(/\.$/, ""))}<span class="sq"></span></span></a>
         <p class="label credits"><span>${esc(S.copyright)}</span></p>
       </div>
     </footer>`;

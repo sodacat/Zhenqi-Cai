@@ -2344,6 +2344,9 @@ ol {
 /* Bleed: the mark spans columns 1–4; its box is shorter than the letters,
    so the page edge cuts through the lower part and the red square */
 .footer-mark {
+  display: block;
+  color: inherit;
+  text-decoration: none;
   --bleed: calc(((100vw - 13 * var(--pad)) / 3 + 3 * var(--pad)) / 1.498);
   /* 16px under the footer text; the line box starts ~0.03em above the
      capitals, so pull it up by that much */
