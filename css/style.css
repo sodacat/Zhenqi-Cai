@@ -2264,9 +2264,9 @@ ol {
   box-decoration-break: clone;
 }
 
-/* Desktop: the imprint is a red bar on cols 9–12, as wide as the contact
-   box, its text inset like the box's cells */
-@media (min-width: 1025px) {
+/* Desktop and tablet: the imprint is a red bar on cols 9–12, as wide as
+   the contact box, its text inset like the box's cells */
+@media (min-width: 681px) {
   .credits {
     grid-column: 9 / -1;
     text-align: left;
@@ -2939,36 +2939,15 @@ ol {
   .case-cols { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* Footer contact: Email and LinkedIn on the last three columns */
+/* Footer contact: the same Email / LinkedIn box as the home page's
+   "Get in touch", on cols 9–12 — only on pages without that section */
 .footer-top .footer-contact {
   grid-column: 9 / -1;
-}
-
-/* only where the page has no "Get in touch" box of its own */
-.footer-top .footer-contact {
   display: none;
 }
 
 body[data-page="project"] .footer-top .footer-contact {
   display: block;
-}
-
-/* Email and LinkedIn on one line: Email on cols 9–10, LinkedIn on 11–12 */
-body[data-page="project"] .footer-top .footer-contact {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: var(--pad);
-  align-content: start;
-}
-
-.footer-contact li,
-.footer-contact a {
-  white-space: nowrap;
-}
-
-.footer-contact li:first-child a,
-.footer-contact a {
-  padding-top: 0;
 }
 
 /* the links never wrap; on phones the box takes the full width */
@@ -2977,7 +2956,8 @@ body[data-page="project"] .footer-top .footer-contact {
 }
 
 @media (max-width: 680px) {
-  .contact-side {
+  .contact-side,
+  .footer-top .footer-contact {
     grid-column: 1 / -1;
   }
 
