@@ -414,7 +414,7 @@
           .map((c) => `<div><figure class="case-fig">${media(c.src, c.title, "case-media")}</figure><h4 class="case-sub">${esc(c.title)}</h4>${prose(c)}</div>`)
           .join("")}</div>`;
       case "embed":
-        return `<figure class="case-embed reveal"><iframe src="${esc(b.src)}" title="${esc(b.title || "")}" loading="lazy"></iframe>${b.link ? `<figcaption><a class="label link-line" href="${esc(b.src)}" target="_blank" rel="noopener">${esc(b.link)} ${arrow}</a></figcaption>` : ""}</figure>`;
+        return `<figure class="case-embed reveal"><iframe src="${esc(b.src)}" title="${esc(b.title || "")}" loading="lazy" allowfullscreen></iframe><figcaption><button class="btn embed-full" type="button"><span>Full screen</span> ${arrow}</button></figcaption></figure>`;
       case "video":
         return `<figure class="case-video reveal"><video${b.poster ? ` poster="${esc(b.poster)}"` : ""} controls muted loop playsinline preload="metadata" aria-label="${esc(b.alt || "")}">${b.webm ? `<source src="${esc(b.webm)}" type="video/webm">` : ""}<source src="${esc(b.src)}" type="video/mp4"></video></figure>`;
       case "map":
@@ -456,7 +456,9 @@
         <p class="label hero-role">${esc(p.company)} — ${esc(p.title)}</p>
       </section>
 
-      <section class="case-cover wrap reveal">${c.cover ? media(c.cover, p.title, "case-media") : cover(p)}</section>
+      <section class="case-cover wrap reveal">${c.coverVideo
+        ? `<div class="case-cover-video"><video${c.coverVideo.poster ? ` poster="${esc(c.coverVideo.poster)}"` : ""} autoplay muted loop playsinline controls preload="auto" aria-label="${esc(c.coverVideo.alt || p.title)}">${c.coverVideo.webm ? `<source src="${esc(c.coverVideo.webm)}" type="video/webm">` : ""}<source src="${esc(c.coverVideo.src)}" type="video/mp4"></video></div>`
+        : c.cover ? media(c.cover, p.title, "case-media") : cover(p)}</section>
 
       <section class="case-intro grid-12 wrap">
         <h1 class="display case-title reveal">${esc(c.headline)}</h1>
@@ -509,6 +511,29 @@
       img.addEventListener("load", done);
       img.addEventListener("error", () => img.remove());
     }
+  });
+
+  // Live prototype: one click to full screen, on the page itself. Native
+  // full screen where the browser allows it; otherwise (iPhone Safari) the
+  // frame fills the window. The same button exits.
+  document.querySelectorAll(".embed-full").forEach((btn) => {
+    const fig = btn.closest(".case-embed");
+    const label = btn.querySelector("span");
+    const sync = () => {
+      const on = document.fullscreenElement === fig || fig.classList.contains("is-full");
+      label.textContent = on ? "Exit full screen" : "Full screen";
+    };
+    btn.addEventListener("click", () => {
+      if (document.fullscreenElement === fig) document.exitFullscreen();
+      else if (fig.classList.contains("is-full")) fig.classList.remove("is-full");
+      else if (fig.requestFullscreen) fig.requestFullscreen().catch(() => fig.classList.add("is-full"));
+      else fig.classList.add("is-full");
+      setTimeout(sync, 50);
+    });
+    document.addEventListener("fullscreenchange", sync);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && fig.classList.contains("is-full")) { fig.classList.remove("is-full"); sync(); }
+    });
   });
 
   // Mobile menu

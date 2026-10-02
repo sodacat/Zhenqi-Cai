@@ -795,6 +795,7 @@ window.SITE = {
         headline: "A world traveler's go-to list, on one map",
         lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
         cover: "images/sodacats-world.webp",
+        coverVideo: { src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
         aboutTitle: "My Google Maps, turned into a world guide",
         about: [
           "Over the years I've saved a huge number of places on Google Maps — restaurants, bars, museums, beaches. I turned them into Sodacat's world recommendations: one site where, in any corner of the world, I can see my picks for what to eat, drink, and do nearby.",
@@ -809,13 +810,7 @@ window.SITE = {
           {
             title: "Live prototype",
             blocks: [
-              { type: "embed", src: "experiments/sodacats-world.html", title: "Sodacat's Taste of the World — live prototype", link: "Open full screen" }
-            ]
-          },
-          {
-            title: "Walkthrough",
-            blocks: [
-              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Screen recording: zooming the map, filtering by country, city and category" }
+              { type: "embed", src: "experiments/sodacats-world.html", title: "Sodacat's Taste of the World — live prototype" }
             ]
           }
         ]
