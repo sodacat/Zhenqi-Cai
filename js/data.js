@@ -490,7 +490,11 @@ window.SITE = {
                 "The detailed specifications were designed not just as visual guidelines, but as a way to ensure consistency in how information is structured and interpreted across implementations.",
                 "Rules around spacing, alignment, column width, and hierarchy ensure that:"
               ], items: ["data remains scannable", "relationships between values are preserved", "layouts scale without breaking usability"] },
-              { type: "p", title: "Header", text: "The height of the header row adapts to the text size, the padding of the top and bottom is 8 pt. When the data table scrolling and rows start sliding under, the shadow appears under the header. Avoid using long header titles. Keep the header title short and clear to communicate the content in the column. If there are no shorter alternatives, use two lines for longer header titles. Avoid truncating the titles when there’s no way to see the whole text. Indicate the units for numeric data in the header titles, such as “Price ($)”, “Protein (g)”, and “Time (hrs)”. Avoid repeating the units in each row. However, units like % can be an exception if they help the users read the data faster." },
+              { type: "cards", label: "Header — keep column meaning visible", items: [
+                { title: "Labels", text: "Name the content clearly. Use short, clear titles. Allow two lines when needed. Place numeric units in the header, such as “Price ($)”." },
+                { title: "Spacing", text: "Adapt to the text size. Header height grows with the text, with 8 pt padding above and below." },
+                { title: "Scrolling", text: "Preserve the reference. Keep the header visible as rows move. Show a shadow when rows slide beneath it." }
+              ] },
               { type: "img", size: "md", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
               { type: "p", title: "Column on regular width", text: "Text alignment:", items: ["Right-aligned numeric columns", "Left-aligned text columns"], after: [
                 "The height of the data row adapts to the text size, the padding of the top and bottom is 16 pt. By default, each data table cell allows only 1 line of data. But the developer can set to allow wrapping to 2 lines. Avoid using multiple lines within a row since it makes it more difficult to scan the data in the table.",
