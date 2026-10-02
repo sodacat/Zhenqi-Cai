@@ -417,12 +417,42 @@ ol {
     display: none;
   }
 
-  /* closing cell: the red square, like the contact box's last cell */
+  /* closing cell: holds the red square's resting place */
   .nav .nav-end {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
     padding: var(--box-pad) var(--box-pad-x);
+  }
+
+  .nav .nav-end .arrow,
+  .nav .nav-mark {
+    visibility: hidden;
+  }
+
+  /* the one red square: rests in the last cell, slides to the current item */
+  .nav {
+    position: relative;
+  }
+
+  .nav .nav-slider {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    pointer-events: none;
+    transition: background var(--dur) var(--ease);
+  }
+
+  .nav .nav-slider.is-ready {
+    transition: transform 0.45s var(--ease), background var(--dur) var(--ease);
+  }
+
+  .nav .nav-slider.is-inverse {
+    background: #fff;
   }
 
 
@@ -435,7 +465,8 @@ ol {
 }
 
 .nav-contact,
-.nav-end {
+.nav-end,
+.nav-slider {
   display: none;
 }
 

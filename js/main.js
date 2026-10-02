@@ -82,6 +82,7 @@
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
         <span class="nav-end" aria-hidden="true">${arrow}</span>
+        <span class="nav-slider" aria-hidden="true"></span>
       </nav>
     </header>`;
   }
@@ -598,34 +599,71 @@
     document.documentElement.addEventListener("pointerleave", () => cursor.classList.remove("is-on"));
   }
 
-  // Home: the nav's red square follows the section in view
-  // (Work, AI Experiments, About; none on the hero)
-  if (page === "home") {
+  // Nav: one red square marks where you are. At rest it closes the box
+  // (the last cell); on a section — or on a project page, its section — it
+  // slides to sit right after that word. On home it follows the scroll.
+  {
+    const nav = document.querySelector(".nav");
     const links = [...document.querySelectorAll(".nav a[data-key]")];
-    const spy = [
-      ["works", document.getElementById("work")],
-      ["experiments", document.getElementById("experiments")],
-      ["about", document.getElementById("about")]
-    ].filter(([, el]) => el);
+    const slider = document.querySelector(".nav-slider");
+    const rest = document.querySelector(".nav-end .arrow");
+    const place = () => {
+      if (!nav || !slider || !rest) return;
+      const cur = links.find((a) => a.classList.contains("is-current"));
+      const t = (cur ? cur.querySelector(".nav-mark") : rest).getBoundingClientRect();
+      const n = nav.getBoundingClientRect();
+      slider.style.transform = `translate(${t.left - n.left - nav.clientLeft}px, ${t.top - n.top - nav.clientTop}px)`;
+      slider.classList.toggle("is-on-link", !!cur);
+    };
+    const spy = page === "home"
+      ? [
+          ["works", document.getElementById("work")],
+          ["experiments", document.getElementById("experiments")],
+          ["about", document.getElementById("about")]
+        ].filter(([, el]) => el)
+      : [];
     let ticking = false;
+    let lockUntil = 0;
+    const mark = (key) => links.forEach((a) => {
+      const on = a.dataset.key === key;
+      a.classList.toggle("is-current", on);
+      if (on) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
+    });
     const update = () => {
       ticking = false;
-      const line = window.innerHeight * 0.35;
-      let key = null;
-      spy.forEach(([k, el]) => {
-        if (el.getBoundingClientRect().top <= line) key = k;
-      });
-      links.forEach((a) => {
-        const on = a.dataset.key === key;
-        a.classList.toggle("is-current", on);
-        if (on) a.setAttribute("aria-current", "location");
-        else a.removeAttribute("aria-current");
-      });
+      if (spy.length && Date.now() > lockUntil) {
+        const line = window.innerHeight * 0.35;
+        let key = null;
+        spy.forEach(([k, el]) => {
+          if (el.getBoundingClientRect().top <= line) key = k;
+        });
+        mark(key);
+      }
+      place();
     };
+    // selecting an item moves the square there at once; the scroll that
+    // follows doesn't pull it through the sections in between
+    links.forEach((a) => {
+      if (a.dataset.key === "resume") return;
+      a.addEventListener("click", () => {
+        lockUntil = Date.now() + 1200;
+        mark(a.dataset.key);
+        place();
+      });
+    });
     window.addEventListener("scroll", () => {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
+    window.addEventListener("resize", place);
+    // hovering the marked cell fills it red, so the square turns white
+    links.forEach((a) => {
+      a.addEventListener("mouseenter", () => slider && slider.classList.toggle("is-inverse", a.classList.contains("is-current")));
+      a.addEventListener("mouseleave", () => slider && slider.classList.remove("is-inverse"));
+    });
     update();
+    if (document.fonts) document.fonts.ready.then(place);
+    requestAnimationFrame(() => slider && slider.classList.add("is-ready"));
   }
 
   // Deep links (#experiments, #about, #contact) after render
