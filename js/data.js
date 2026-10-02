@@ -373,7 +373,7 @@ window.SITE = {
       case: {
         headline: "Designing how structured data remains understandable across contexts",
         lead: "The SAP Fiori for iOS design system team works with other internal teams and external clients using SAP products to build components and maintain SAP UX principles across all design patterns.",
-        cover: "images/enterprise-experience/overview.jpg",
+        cover: "images/enterprise-experience/cover-swiss.webp",
         aboutTitle: "SAP Fiori design system — data table",
         about: [
           "Data tables are not just UI components—they are the primary interface through which users navigate, compare, and act on structured information. In SAP products, data tables support critical workflows across devices, often under constraints of high data density, limited screen space, and complex user tasks. However, the existing table system broke down in compact environments: users lost column context, information hierarchy collapsed, and interactions became inconsistent across devices.",
@@ -479,7 +479,7 @@ window.SITE = {
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-flow.webp", alt: "Keep editing in the flow of work: tap and hold, focus the cell, edit the value, continue or finish" },
-              { type: "img", size: "md", src: "images/enterprise-experience/micro-interactions.jpg", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
+              { type: "img", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
           },
