@@ -464,6 +464,7 @@ window.SITE = {
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
                 ["images/enterprise-experience/edit.jpg", "Edit a data row", "In the drill-down tables, the users can tap on the row to view the data in the modal sheet and tap the edit button in the navigation bar to start editing."]
               ] },
+              { type: "img", src: "images/enterprise-experience/diagram-detail.webp", alt: "Move from overview to detail: browse the table, open an item, read the details, then go back to the table" },
               { type: "p", title: "System status visibility — In-place editable data table (6.2 release)", text: [
                 "User story: As a Service and/or Maintenance Technician, I want to enter data into a table or edit data on a table so that I can quickly add/edit readings that are directly relevant to my job.",
                 "Feasibility: Since the in-place editing feature couldn’t be delivered from the Android side for the 6.1 release, and MDK doesn’t have the Tap and Hold gestures implemented right now. So this new design was saved for the 6.2 release."
