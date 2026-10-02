@@ -1243,10 +1243,10 @@ ol {
 }
 
 /* Portrait with a magazine caption under it */
-/* the portrait sits beside the statement, on its last line, directly
-   above the facts it introduces (cols 7–8) */
+/* the portrait sits beside the statement, directly above the facts it
+   introduces (cols 7–9) */
 .about-media {
-  grid-column: 7 / 9;
+  grid-column: 7 / 10;
   grid-row: 1;
   align-self: end;
   margin: 0;
@@ -2381,7 +2381,7 @@ ol {
 
   /* tablet: statement + portrait on top, the text block full width below */
   .about-media {
-    grid-column: 7 / 10;
+    grid-column: 7 / 11;
     grid-row: 1;
   }
 
