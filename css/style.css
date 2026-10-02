@@ -1227,14 +1227,14 @@ ol {
 }
 
 /* the resume button spans four columns (7–10) */
-/* the resume button sits on its own row under the text block, below the
-   bio's last line (cols 7–10) */
+/* the resume button takes the row right under the bio's last line, with
+   no gap (cols 7–10) */
 .about-resume {
   grid-column: 7 / 11;
   grid-row: 2;
   justify-self: stretch;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .about-lead,
