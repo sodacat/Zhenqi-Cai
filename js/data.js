@@ -163,6 +163,7 @@ window.SITE = {
                 cons: ["notifications disconnected from attributes", "mental model became confusing"] },
               { type: "option", frame: true, title: "The Solution: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png", intro: "Key Capabilities:",
                 pros: ["Upfront Visibility", "Inline, Self-Serve Approvals", "Parallel Resolution"] },
+              { type: "img", src: "images/seller-qualification/diagram-flow.webp", alt: "Keep qualification inside the listing flow: enter listing flow, see requirements, apply inline, resolve in parallel" },
               { type: "h", text: "Standardized System States" },
               { type: "p", text: "To make enterprise-scale automation legible, I designed a unified matrix of qualification states that handle complex asynchronous outcomes gracefully:" },
               { type: "img", src: "images/seller-qualification/states.png", frame: true, alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
@@ -191,6 +192,7 @@ window.SITE = {
                 "The review reinforced three design principles that I carried into the final spec:"
               ], items: ["Surface all qualification requirements before sellers invest time in listing creation", "Allow approvals to be requested without leaving the listing tool", "Standardize approval states so sellers always know their next step"],
                 after: "Rather than treating this as an external critique, I used the Bar Raiser feedback to pressure-test the architecture decisions and strengthen the rationale for the parallel model." },
+              { type: "img", src: "images/seller-qualification/diagram-approval.webp", alt: "Make the path to approval understandable: explain why approval is needed, guide sellers with tooltips, use Apply to sell, expand use cases" },
               { type: "option", frame: true, title: "Iterations", src: "images/seller-qualification/iterations.png",
                 pros: ["Refined the copy to explain why SP needs an approval encourage SPs to request approvals.", "Provide tooltips to guide SP to fix the restrictions.", "Update the button from “Request approval” to “Apply to sell”.", "New use cases added for UPCx auto rejected/approved, brand approval required."] }
             ]
@@ -341,6 +343,7 @@ window.SITE = {
             title: "Outcome",
             blocks: [
               { type: "statement", text: "This shifted the experience from presenting information to enabling users to reason about system-wide impact." },
+              { type: "img", src: "images/compliance-report/diagram-principles.webp", alt: "Three principles for complex systems: make structure visible, make context inspectable, make complexity navigable" },
               { type: "p", text: "Users could identify critical regulatory impacts more quickly, reason about system-wide relationships with greater confidence, and make more informed decisions in AI-assisted workflows." }
             ]
           },
