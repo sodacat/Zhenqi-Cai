@@ -788,9 +788,38 @@ window.SITE = {
       summary:
         "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
       tags: ["Experiment", "Prototype", "AI-assisted"],
-      alt: "Sodacat's Taste of the World — black world map with red places, 1217 kept",
-      cover: "images/sodacats-world.webp",
-      images: ["images/sodacats-world.webp"]
+      alt: "Sodacat's Taste of the World — a world map of 1,217 kept places with search and filters",
+      cover: "images/sodacats-world/hero.jpg",
+      images: ["images/sodacats-world/hero.jpg"],
+      case: {
+        headline: "A world traveler's go-to list, on one map",
+        lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
+        cover: "images/sodacats-world/hero.jpg",
+        aboutTitle: "From idea to working interface",
+        about: [
+          "Designed and built an interactive web experience using AI-assisted prototyping — moving directly from product idea and interaction design into a working interface.",
+          "1,217 places across 53 cities and 29 countries sit on one zoomable world map. Filter by country and city, switch between Eat, Drink and Do, or search by name; every card opens the place in Google Maps."
+        ],
+        facts: [
+          ["Medium", "Interactive web"],
+          ["Tools", "Figma Make · Claude"],
+          ["Status", "Shipped, 2026"]
+        ],
+        sections: [
+          {
+            title: "Live prototype",
+            blocks: [
+              { type: "embed", src: "experiments/sodacats-world.html", title: "Sodacat's Taste of the World — live prototype", link: "Open full screen" }
+            ]
+          },
+          {
+            title: "Walkthrough",
+            blocks: [
+              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Screen recording: zooming the map, filtering by country, city and category" }
+            ]
+          }
+        ]
+      }
     },
     {
       id: "ai-storytelling",

@@ -413,6 +413,10 @@
         return `<div class="case-cols reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
           .map((c) => `<div><figure class="case-fig">${media(c.src, c.title, "case-media")}</figure><h4 class="case-sub">${esc(c.title)}</h4>${prose(c)}</div>`)
           .join("")}</div>`;
+      case "embed":
+        return `<figure class="case-embed reveal"><iframe src="${esc(b.src)}" title="${esc(b.title || "")}" loading="lazy"></iframe>${b.link ? `<figcaption><a class="label link-line" href="${esc(b.src)}" target="_blank" rel="noopener">${esc(b.link)} ${arrow}</a></figcaption>` : ""}</figure>`;
+      case "video":
+        return `<figure class="case-video reveal"><video${b.poster ? ` poster="${esc(b.poster)}"` : ""} controls muted loop playsinline preload="metadata" aria-label="${esc(b.alt || "")}">${b.webm ? `<source src="${esc(b.webm)}" type="video/webm">` : ""}<source src="${esc(b.src)}" type="video/mp4"></video></figure>`;
       case "map":
         return `<div class="case-map reveal">${b.items
           .map(([from, to]) => `<p><span>${esc(from)}</span><span>→</span><strong>${esc(to)}</strong></p>`)

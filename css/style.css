@@ -3083,3 +3083,35 @@ body[data-page="project"] .footer-top .footer-contact {
     text-align: right;
   }
 }
+
+/* A live prototype in a frame on the full grid width, and a screen
+   recording at its own proportions */
+.case-embed,
+.case-video {
+  margin: 0;
+}
+
+.case-embed iframe {
+  display: block;
+  width: 100%;
+  height: min(80vh, 820px);
+  border: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.case-embed figcaption {
+  margin-top: 16px;
+}
+
+.case-video video {
+  display: block;
+  width: 100%;
+  max-width: calc((100% - 11 * var(--pad)) / 12 * 8 + 7 * var(--pad));
+  height: auto;
+  background: #1c1712;
+}
+
+@media (max-width: 680px) {
+  .case-video video { max-width: none; }
+  .case-embed iframe { height: 75vh; }
+}
