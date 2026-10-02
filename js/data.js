@@ -458,6 +458,7 @@ window.SITE = {
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
               { type: "p", title: "System consistency — Behavior and interaction (6.1 release)", text: "Supporting both compact and regular modes ensures users interact with the same information structure across devices, preserving mental models." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-selection.webp", alt: "From selection to action: browse the table, enter selection, select rows, access actions; scrolling retains the selection" },
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
