@@ -1275,18 +1275,13 @@ ol {
 }
 
 /* Desktop: three equal blocks of four columns (1–4, 5–8, 9–12), all flush
-   left, each numbered like the section heads */
+   left */
 @media (min-width: 1025px) {
   .principles {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .principle { grid-column: span 4; }
-}
-
-.principle .idx {
-  display: block;
-  margin-bottom: 16px;
 }
 
 .principle {
