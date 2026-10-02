@@ -179,8 +179,8 @@
             <div class="about-lead">${S.bio.map((b) => `<p>${emph(b)}</p>`).join("")}</div>
             <div class="about-side">
               <ul class="about-tags">${S.facts.map((v) => `<li>${esc(v)}</li>`).join("")}</ul>
-              <a class="btn btn-accent" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
             </div>
+            <a class="btn btn-accent about-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
           </div>
           <figure class="about-media reveal">
             ${media(S.portrait, S.name)}

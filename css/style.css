@@ -1227,12 +1227,19 @@ ol {
 }
 
 /* the resume button spans four columns (7–10) */
-.about-side .btn {
-  grid-column: 1 / 5;
-  align-self: end;
+/* the resume button sits on its own row under the text block, below the
+   bio's last line (cols 7–10) */
+.about-resume {
+  grid-column: 7 / 11;
+  grid-row: 2;
   justify-self: stretch;
   justify-content: space-between;
-  margin-top: calc(var(--lh-body) + 8px);
+  margin-top: 16px;
+}
+
+.about-lead,
+.about-side {
+  grid-row: 1;
 }
 
 /* Portrait with a magazine caption under it */
@@ -2973,5 +2980,17 @@ body[data-page="project"] .footer-top .footer-contact {
 
   .contact-box {
     flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-lead,
+  .about-side,
+  .about-resume {
+    grid-row: auto;
+  }
+
+  .about-resume {
+    margin-top: 0;
   }
 }
