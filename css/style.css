@@ -436,9 +436,11 @@ ol {
 .nav-mark {
   display: inline-block;
   vertical-align: baseline;
-  margin-left: 3px;
-  width: 8px;
-  height: 8px;
+  position: relative;
+  top: 1px;
+  margin-left: 2px;
+  width: 6px;
+  height: 6px;
   background: var(--accent);
   opacity: 0;
   transition: opacity var(--dur) var(--ease), background var(--dur) var(--ease);
