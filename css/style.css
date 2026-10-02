@@ -3055,7 +3055,8 @@ body[data-page="project"] .footer-top .footer-contact {
   .about-lead {
     grid-row: 2 / span 3;
     grid-column: 1 / 7;
-    margin-top: var(--space-l);
+    /* two 24px rows lower than the standard 32px gap */
+    margin-top: calc(var(--space-l) + 2 * var(--lh-body));
   }
 
   .about-side {
