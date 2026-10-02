@@ -265,6 +265,8 @@ window.SITE = {
                 "I worked with cross-functional teams to map how compliance workflows actually operate — from manual processes to AI-assisted ones, through as-is and to-be scenarios.",
                 "Users didn’t lack data — they lacked a way to reason about how that data connects across systems. AI could accelerate term extraction and mapping, but it didn’t solve the harder problem: helping users reason about impact."
               ] },
+              { type: "img", src: "images/compliance-report/as-is-map.webp", frame: true, alt: "As-is scenario map: CDO, data steward and business analyst across getting started, term mapping and executing compliance, with doing, pain points and opportunities" },
+              { type: "img", src: "images/compliance-report/to-be-map.webp", frame: true, alt: "To-be scenario map: the same phases with opportunity hypotheses for where AI/ML can help" },
               { type: "cards", label: "3 Hills", items: [
                 { title: "Data steward", text: "I can see how a regulation glossary is related to my business glossary and data assets in hours instead of months." },
                 { title: "Business analyst", text: "I can see how regulation impacts the business so that I can foresee and plan my resources and strategy." },
@@ -295,6 +297,7 @@ window.SITE = {
               { type: "statement", text: "I wasn’t just choosing a chart — I was defining how the system itself should be represented." },
               { type: "h", text: "2. Making AI output trustworthy" },
               { type: "p", text: "Users hesitated to trust AI-generated mappings. The issue wasn’t accuracy — it was whether they could understand and challenge the system’s reasoning: Where did this come from? Who verified it? I designed for progressive transparency: hovering a term reveals its definition, mapping history, and who created or validated it — only when needed." },
+              { type: "pair", frame: true, size: "md", items: [["images/compliance-report/popup-sources.webp", "Source panel: the regulation, business glossary and data assets behind the graph"], ["images/compliance-report/popup-term.webp", "Hovering a business term reveals its definition, what it maps to, and who mapped it"]] },
               { type: "img", src: "images/compliance-report/diagram-context.webp", alt: "Reveal context at the right moment: hover a term to see its definition, mapping history and attribution" },
               { type: "h", text: "3. Designing for scale and exploration" },
               { type: "p", text: "As terms multiplied, the graph risked becoming overwhelming. Instead of showing everything, I designed for controlled exploration: filters limit visible terms and narrow by regulation category, and labels sit next to their elements and highlight related terms on hover — so users can narrow their view without losing the broader context." },
