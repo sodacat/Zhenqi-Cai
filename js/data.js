@@ -778,16 +778,16 @@ window.SITE = {
     {
       id: "sodacats-world",
       type: "experiment",
-      company: "AI-native interactive prototype",
+      company: "Vibe-coded prototype",
       title: "Sodacat's Taste of the World",
       // Experiment log fields (edit freely)
       date: "2026",
-      medium: "Interactive web",
+      medium: "Vibe-coded web",
       tools: "Figma Make · Claude",
       status: "Shipped",
       summary:
         "I turned the places I've saved on Google Maps over the years into Sodacat's world guide — wherever I am, I can see my picks for where to eat, drink, and play.",
-      tags: ["Experiment", "Prototype", "AI-assisted"],
+      tags: ["Experiment", "Prototype", "Vibe coding"],
       alt: "Sodacat's Taste of the World — black world map with red places, 1217 kept",
       cover: "images/sodacats-world.webp",
       images: ["images/sodacats-world.webp"],
@@ -799,10 +799,11 @@ window.SITE = {
         aboutTitle: "My Google Maps, turned into a world guide",
         about: [
           "Over the years I've saved a huge number of places on Google Maps — restaurants, bars, museums, beaches. I turned them into Sodacat's world recommendations: one site where, in any corner of the world, I can see my picks for what to eat, drink, and do nearby.",
-          "1,217 places across 53 cities and 29 countries sit on one zoomable world map. Filter by country and city, switch between Eat, Drink and Do, or search by name; every card opens the place in Google Maps."
+          "1,217 places across 53 cities and 29 countries sit on one zoomable world map. Filter by country and city, switch between Eat, Drink and Do, or search by name; every card opens the place in Google Maps.",
+          "Built end-to-end through vibe coding — no hand-written code, from my saved places to a live, searchable world map."
         ],
         facts: [
-          ["Medium", "Interactive web"],
+          ["Medium", "Vibe-coded web"],
           ["Tools", "Figma Make · Claude"],
           ["Status", "Shipped, 2026"]
         ],
