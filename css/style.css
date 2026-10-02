@@ -2678,14 +2678,27 @@ ol {
     --bleed: calc((100vw - 2 * var(--pad)) * 0.66 / 1.498);
   }
 
-  /* phones: mark two-thirds, credits in the last third */
+  /* phones: the imprint is a full-width red bar right under the contact
+   box, as wide as it; the mark (two-thirds wide) sits below */
   .footer-base {
     grid-template-columns: 2fr 1fr;
   }
 
-  .footer-base .footer-mark,
+  .footer-base .footer-mark {
+    grid-column: 1 / 2;
+  }
+
   .credits {
-    grid-column: auto;
+    order: -1;
+    grid-column: 1 / -1;
+    margin-top: 16px;
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  .credits span {
+    display: block;
+    padding: 0 var(--box-pad-x);
   }
 
   .contact-box {
