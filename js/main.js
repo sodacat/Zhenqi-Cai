@@ -78,7 +78,7 @@
       <button class="menu-btn label" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav label" id="nav" aria-label="Primary">
         ${nav
-          .map(([t, href, key]) => `<a class="link-line${current === key ? " is-current" : ""}" href="${href}" data-key="${key}"${current === key ? ' aria-current="page"' : ""}><span>${t}<span class="nav-mark" aria-hidden="true"></span></span></a>`)
+          .map(([t, href, key]) => `<a class="link-line${current === key ? " is-current" : ""}" href="${href}" data-key="${key}"${key === "resume" ? ' target="_blank" rel="noopener"' : ""}${current === key ? ' aria-current="page"' : ""}><span>${t}<span class="nav-mark" aria-hidden="true"></span></span></a>`)
           .join("")}
         <a class="link-line nav-contact" href="mailto:${esc(S.email)}">Contact</a>
         <span class="nav-end" aria-hidden="true">${arrow}</span>
@@ -188,7 +188,11 @@
             <div class="about-side">
               <dl class="about-facts">${S.aboutFacts.map(([k, v]) => `<div><dt class="label">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
             </div>
-            <a class="btn btn-accent about-resume" href="${esc(S.resume)}" target="_blank" rel="noopener">View my resume ${arrow}</a>
+            <ul class="contact-box label about-resume">
+              <li><a href="${esc(S.resume)}" target="_blank" rel="noopener">View resume</a></li>
+              <li><a href="${esc(S.resume)}" download>Download</a></li>
+              <li class="contact-arrow">${arrow}</li>
+            </ul>
           </div>
           <figure class="about-media reveal">
             ${media(S.portrait, S.name)}
