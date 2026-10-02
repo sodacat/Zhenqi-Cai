@@ -199,7 +199,8 @@
       <ol class="principles">
         ${S.philosophy
           .map(
-            (p) => `<li class="principle reveal">
+            (p, i) => `<li class="principle reveal">
+              <span class="label idx">${pad(i + 1)}</span>
               <h3>${esc(p.title)}</h3>
               <p>${esc(p.text)}</p>
             </li>`
