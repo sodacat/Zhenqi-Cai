@@ -827,22 +827,23 @@ window.SITE = {
       tools: "Claude Code",
       status: "Live",
       summary:
-        "I rebuilt this site in Swiss style by talking to Claude Code: every design call mine, every line of code written by AI, in three days.",
+        "A portfolio built with AI, but not designed by AI: three days, one grid, no hand-written code.",
       tags: ["Experiment", "Vibe coding", "Design system"],
       alt: "This portfolio's home page — bold black type, red accents, 12-column grid",
       cover: "images/this-portfolio/card.webp",
       images: ["images/this-portfolio/card.webp"],
       case: {
         headline: "A Swiss-style portfolio, built by conversation",
-        lead: "Three days, one grid, no hand-written code.",
+        lead: "Three days. One grid. No hand-written code.",
         cover: "images/this-portfolio/grid.webp",
-        impact: [["0", "Lines of code I wrote"], ["27", "Ideas I tried"], ["10", "Ideas I cut"], ["3", "Days"]],
+        impact: [["0", "Lines of code I wrote"], ["27", "AI suggestions I tried"], ["10", "I cut"], ["3", "Days"]],
         aboutTitle: "The brief I gave myself",
         about: [
-          "Show a hiring manager, in under a minute, how I make complex systems clear. I rebuilt the site with Claude Code without writing code myself: I set the direction and made the design calls; Claude wrote and shipped the code."
+          "I wanted my portfolio to feel like my work: structured, opinionated, and clear. It should make my design philosophy visible before anyone reads a case study, and feel precise without feeling sterile, systematic without becoming rigid, minimal without losing personality.",
+          "And if AI was going to help build it, I wanted to understand what should, and shouldn't, be delegated."
         ],
         facts: [
-          ["Medium", "Vibe-coded web"],
+          ["Medium", "Website"],
           ["Tools", "Claude Code"],
           ["Timeline", "Sep 30 – Oct 2, 2026"]
         ],
@@ -850,11 +851,11 @@ window.SITE = {
           {
             title: "Why Swiss style",
             blocks: [
-              { type: "statement", text: "My design philosophy and Swiss style believe the same things. So the site's visual language is my philosophy, made visible." },
+              { type: "statement", text: "My design philosophy and Swiss design believe the same things. So I made the site's visual language an expression of how I design." },
               { type: "cards", items: [
-                { label: "Clarity", title: "Turn complexity into understanding.", text: "Objective sans-serif type, a strong hierarchy, red only where meaning needs emphasis." },
-                { label: "Systems", title: "Design for the bigger picture.", text: "One 12-column grid and one vertical gap across every page and screen size." },
-                { label: "Humanity", title: "Technology should empower people.", text: "Accessible contrast, plain language, and a round portrait as the one soft shape." }
+                { label: "01", title: "Turn complexity into understanding.", text: "Complex systems aren't hard because they're complex. They're hard when their structure is invisible. My job is to make that structure clear." },
+                { label: "02", title: "Design for the bigger picture.", text: "I don't design isolated screens. I think in systems, dependencies, states, and what happens before and after the interface." },
+                { label: "03", title: "Technology should empower people.", text: "The best technology doesn't ask people to understand the system. It helps them understand what matters, make decisions, and stay in control." }
               ] },
               { type: "pair", frame: true, items: [
                 ["images/this-portfolio/before.webp", "Before — the template I started from"],
@@ -863,8 +864,9 @@ window.SITE = {
             ]
           },
           {
-            title: "From references to rules",
+            title: "References to rules",
             blocks: [
+              { type: "p", text: "Swiss design gave me the visual grammar: Josef Müller-Brockmann, Neue Haas Grotesk, the International Typographic Style. I wasn't interested in copying the aesthetic. I wanted to understand the rules underneath it." },
               { type: "row", size: "md", label: "References I fed in", items: [
                 ["images/this-portfolio/ref-1.webp", "", "Kunsthalle Basel exhibition poster, red with stacked black type"],
                 ["images/this-portfolio/ref-2.webp", "", "Beethoven concert poster with black concentric arcs"],
@@ -876,35 +878,38 @@ window.SITE = {
                 ["images/this-portfolio/ref-8.webp", "", "ifdm poster with large red diagonal type"]
               ] },
               { type: "cards", label: "Four rules I checked every decision against", items: [
-                { title: "12-column grid", text: "Every element starts and ends on a column." },
-                { title: "One vertical gap", text: "One spacing value between sections." },
-                { title: "Negative space", text: "No boxes or dividers; whitespace carries the structure." },
-                { title: "Red, black, white", text: "Red for emphasis only. Hover is a solid red fill." }
+                { label: "01", title: "12-column grid", text: "Every element should have a reason for where it sits." },
+                { label: "02", title: "One vertical gap", text: "One spacing rule creates rhythm across the system." },
+                { label: "03", title: "Negative space", text: "Not every area needs content. Space creates hierarchy." },
+                { label: "04", title: "Red. Black. White.", text: "One accent. One hierarchy. Almost no decoration." }
               ] }
             ]
           },
           {
-            title: "Who did what",
+            title: "How we worked",
             blocks: [
+              { type: "statement", text: "The interesting part wasn't generating the site. It was deciding what AI should do, and what I should keep." },
               { type: "cards", items: [
-                { label: "Me", title: "Direction, ideas, decisions", items: [
-                  "Swiss style, the references, the copy and principles.",
-                  "The signature visual details below.",
-                  "Which suggestions to try, and which to cut.",
-                  "Which images, names and points to emphasize."
+                { label: "Me", title: "Direction, ideas, decisions.", items: [
+                  "Defined the visual system and its four rules.",
+                  "Came up with the signature details below.",
+                  "Decided what deserves attention: images, names, hierarchy.",
+                  "Evaluated every iteration: keep, change, or cut."
                 ] },
-                { label: "Claude", title: "Build, systematize, advise", items: [
-                  "All the code, shipped and screenshot-checked.",
-                  "Grid math, spacing, tablet and phone layouts.",
-                  "Critique and options, like a contrast fix.",
-                  "Assets from PDFs, and first-draft copy."
+                { label: "AI", title: "Build, systematize, accelerate.", items: [
+                  "Wrote and shipped all of the code.",
+                  "Turned repeated decisions into reusable patterns.",
+                  "Proposed alternatives and critiques, like a contrast fix.",
+                  "Applied each change across desktop, tablet and phone."
                 ] }
-              ] }
+              ] },
+              { type: "p", text: "AI expanded how quickly I could explore. I remained responsible for what was worth building." }
             ]
           },
           {
             title: "Ideas I brought",
             blocks: [
+              { type: "p", text: "The details that make the site recognizable each started as one line from me:" },
               { type: "row", frame: true, items: [
                 ["images/this-portfolio/sig-mark.webp", "“Make the cursor a black square, the size of the logo's dot.”", "The ZC wordmark with a red square full stop, next to the black square cursor"],
                 ["images/this-portfolio/sig-stats.webp", "“Make 7+ and 100M+ white on red, as if selected.”", "7+ and 100M+ in red blocks with white type"],
@@ -918,30 +923,51 @@ window.SITE = {
             ]
           },
           {
-            title: "What I kept, what I cut",
+            title: "Designing through conversation",
             blocks: [
-              { type: "p", text: "Claude suggested about 55 changes. I tried 27 and cut 10 after seeing them on the real page. Two of the cuts:" },
+              { type: "p", text: "I described intent, looked at the result, and responded. The surprise was which prompts worked." },
+              { type: "shift", quiet: true, fromLabel: "What overshot", toLabel: "What worked", from: "“Make it more Swiss.”", to: "“Make the nav one column narrower; keep its right edge on the photo.”" },
+              { type: "p", text: "Vague direction made the AI overshoot: a halftone texture, a rectangular photo, a staggered grid, red cut to three places. Precise constraints, in the language of the grid, landed." },
+              { type: "statement", text: "Prompting wasn't the skill. Judgment was." },
+              { type: "p", text: "A prompt can produce an interface. It can't decide whether it belongs. Looking back, every keep-or-cut came down to four questions:", items: [
+                "Does it strengthen the hierarchy?",
+                "Does it make the system clearer?",
+                "Does it belong to the visual language?",
+                "Does it earn the space it takes?"
+              ] }
+            ]
+          },
+          {
+            title: "What I cut",
+            blocks: [
+              { type: "p", text: "Claude suggested about 55 changes. I tried 27 and cut 10 after seeing them on the real page. Two of them:" },
               { type: "h", text: "Cut: a staggered work grid" },
               { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, size: "md", alt: "Rejected: Selected work as a staggered, magazine-style grid" },
-              { type: "p", text: "Editorial, but scattered: projects 3 and 4 fell below the fold. **Kept:** an even grid." },
+              { type: "p", text: "Claude proposed a more expressive composition for the project cards. It looked interesting, and made the work harder to scan: projects 3 and 4 fell below the fold. The even grid was quieter, and better." },
               { type: "h", text: "Cut: a rectangular portrait" },
               { type: "pair", frame: true, items: [
                 ["images/this-portfolio/about-rejected.webp", "Cut — rectangular portrait"],
                 ["images/this-portfolio/about-kept.webp", "Kept — round portrait"]
               ] },
-              { type: "p", text: "Claude called the circle decoration. I kept it: on a page of hard edges, it's the one human shape." }
+              { type: "p", text: "Claude's review called the circle decoration and recommended the textbook Swiss rectangle. I tried it, and it read like a template. The circle is the one human shape in a system of hard edges, so it stayed." }
             ]
           },
           {
-            title: "Reflection",
+            title: "What I learned",
             blocks: [
               { type: "statement", text: "AI builds fast. Knowing what to keep and what to cut is still the designer's job." },
-              { type: "p", title: "Next time", numbered: true, items: [
-                "**Rules first.** Write a one-page style guide before any page; my rules came on day 2, after rounds of rework.",
-                "**Constraints, not adjectives.** “More Swiss” made the AI overshoot; “more Swiss, but keep red on key facts” wouldn't.",
-                "**Batch the small moves.** Mark up one screenshot with every change instead of 25 one-line prompts.",
-                "**Test with people.** A 5-second test with a few recruiters beats ten more rounds."
+              { type: "cards", items: [
+                { label: "01", title: "Define constraints before generating.", text: "My rules arrived on day 2, after rounds of rework. The better I defined grid, type, spacing and interaction, the less I had to correct later." },
+                { label: "02", title: "Explore broadly. Judge consistently.", text: "AI is good at producing possibilities. A stable design philosophy is what makes them comparable." },
+                { label: "03", title: "Design the system, not every output.", text: "Once the rules were right, individual screens got easier. The same holds for product design and for AI collaboration." }
               ] }
+            ]
+          },
+          {
+            title: "The result",
+            blocks: [
+              { type: "statement", text: "A portfolio built with AI, but not designed by AI." },
+              { type: "p", text: "The grid came from Swiss modernism. The content came from seven years of designing complex systems. The implementation came through conversation. And the final decisions came from the same place they always do: judgment." }
             ]
           }
         ]
