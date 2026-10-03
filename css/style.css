@@ -3261,3 +3261,15 @@ body[data-page="project"] .footer-top .footer-contact {
 @media (max-width: 680px) {
   .case-cover-video video { height: auto; width: 100%; }
 }
+
+/* Phones: the portrait sits between the statement and the bio */
+@media (max-width: 680px) {
+  .about .statement { order: 1; }
+  .about-media { order: 2; }
+  .about-body { order: 3; }
+}
+
+/* Get in touch: one 24px row between the line and the contact box */
+.contact-side {
+  margin-top: var(--lh-body);
+}
