@@ -437,7 +437,7 @@ window.SITE = {
                 text: "Applicable for a huge amount of data, various types of content. Ability to filter and sort the content with ease, divide the content into separate pages.",
                 pros: ["Useful with a huge amount of data and its size", "Ability to collapse and hide some data", "A versatile form of data presentation"],
                 cons: ["Repetitive column names", "Hard to compare particular data between rows"] },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-structure.webp", alt: "Choose structure over repetition: sticky headers and columns versus separate cards for each row" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-structure-hd.webp", alt: "Choose structure over repetition: sticky headers and columns versus separate cards for each row" },
               { type: "p", title: "Summary", text: "In order to achieve the goals of consistency, accessibility, scalability, and provide content all the time, I decided to apply the sticky header and column to the data table redesign." }
             ]
           },
