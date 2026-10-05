@@ -215,9 +215,9 @@ window.SITE = {
               ] },
               { type: "statement", text: "“Inspiring and actionable.”" },
               { type: "trio", items: [
-                ["images/seller-qualification/hmw.png", "Simplify, Create trust, Clear Communication, Expand your business", "Led by Sal Celis. 18 long-term goals, 47 HMWs and 39 solutions for Seller Qualification were created, grouped into 4 themes. “Expand your business” emerged as a new theme, offering opportunities to support sellers' growth."],
-                ["images/seller-qualification/journey-map.jpg", "Journey Map", "Led by Zhenqi Cai. Participants created a journey map for 4 user types, empathizing with their experiences, expectations, and emotions throughout the journey."],
-                ["images/seller-qualification/crazy-8s.jpg", "Crazy 8s, Storyboard", "Jul 17, 2023 led by Jingwen Cao, Zhenqi Cai. Participants sketched 48 ideas in 8 minutes. To address the HMW questions, we formed groups and turned the most voted ideas into 4 storyboards."]
+                ["images/seller-qualification/hmw-hd.webp", "Simplify, Create trust, Clear Communication, Expand your business", "Led by Sal Celis. 18 long-term goals, 47 HMWs and 39 solutions for Seller Qualification were created, grouped into 4 themes. “Expand your business” emerged as a new theme, offering opportunities to support sellers' growth."],
+                ["images/seller-qualification/journey-map-v2.jpg", "Journey Map", "Led by Zhenqi Cai. Participants created a journey map for 4 user types, empathizing with their experiences, expectations, and emotions throughout the journey."],
+                ["images/seller-qualification/crazy-8s-v2.jpg", "Crazy 8s, Storyboard", "Jul 17, 2023 led by Jingwen Cao, Zhenqi Cai. Participants sketched 48 ideas in 8 minutes. To address the HMW questions, we formed groups and turned the most voted ideas into 4 storyboards."]
               ] }
             ]
           },
