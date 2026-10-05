@@ -314,7 +314,7 @@ window.SITE = {
               { type: "img", size: "md", src: "images/compliance-report/diagram-layers-hd.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "h", text: "4. Progress indicators that can’t be misread" },
               { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
-              { type: "row", frame: true, size: "sm", items: [["images/compliance-report/progress-v1.webp", "V1 — numbers alone", "Progress V1: four plain metrics in a row"]] },
+              { type: "row", frame: true, size: "sm", items: [["images/compliance-report/progress-v1-hd.webp", "V1 — numbers alone", "Progress V1: four plain metrics in a row"]] },
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/progress-v2.webp", "V2 — rings as visual anchors, with explicit labels", "Progress V2: progress rings with counts and labels"]] },
               { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
               { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1.jpg"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
