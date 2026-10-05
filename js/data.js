@@ -346,7 +346,7 @@ window.SITE = {
             title: "Outcome",
             blocks: [
               { type: "statement", text: "This shifted the experience from presenting information to enabling users to reason about system-wide impact." },
-              { type: "img", size: "md", src: "images/compliance-report/diagram-principles.webp", alt: "Three principles for complex systems: make structure visible, make context inspectable, make complexity navigable" },
+              { type: "img", size: "md", src: "images/compliance-report/diagram-principles-hd.webp", alt: "Three principles for complex systems: make structure visible, make context inspectable, make complexity navigable" },
               { type: "p", text: "Users could identify critical regulatory impacts more quickly, reason about system-wide relationships with greater confidence, and make more informed decisions in AI-assisted workflows." }
             ]
           },
