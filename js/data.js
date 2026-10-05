@@ -165,7 +165,7 @@ window.SITE = {
                 cons: ["notifications disconnected from attributes", "mental model became confusing"] },
               { type: "option", frame: true, title: "The Solution: Parallel Qualification Infrastructure", src: "images/seller-qualification/final-design.png", intro: "Key Capabilities:",
                 pros: ["Upfront Visibility", "Inline, Self-Serve Approvals", "Parallel Resolution"] },
-              { type: "img", size: "md", src: "images/seller-qualification/diagram-flow.webp", alt: "Keep qualification inside the listing flow: enter listing flow, see requirements, apply inline, resolve in parallel" },
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-flow-hd.webp", alt: "Keep qualification inside the listing flow: enter listing flow, see requirements, apply inline, resolve in parallel" },
               { type: "h", text: "Standardized System States" },
               { type: "p", text: "To make enterprise-scale automation legible, I designed a unified matrix of qualification states that handle complex asynchronous outcomes gracefully:" },
               { type: "img", src: "images/seller-qualification/states.png", frame: true, alt: "Qualification states: multiple restrictions, auto-declined, waiting approval, auto-approved (no notification)" }
