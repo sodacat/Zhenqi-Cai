@@ -429,7 +429,7 @@ window.SITE = {
                 text: "BestBuy.com did not lock either column or row headings in place. It is easy to lose the context of what the table is displaying." },
               { type: "side", frame: true, title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
                 text: "Size guide table at massimodutti.com locked first column so we don’t lose the context of data." },
-              { type: "side", narrow: true, left: true, title: "Clearly indicate if horizontal scrolling is needed", src: "images/enterprise-experience/scroll-indicator.jpg",
+              { type: "side", narrow: true, left: true, title: "Clearly indicate if horizontal scrolling is needed", src: "images/enterprise-experience/scroll-indicator-hd.webp",
                 text: "Arrows or cut-off elements convey this information best. Dots are sometimes used, but are typically harder for users to notice and understand.",
                 pros: ["The column header is visible all the time so we don’t lose the context", "Consistency in both content and IA on iPad and iPhone can be easily achieved", "Scalability and accessibility can be easily achieved"],
                 cons: ["For short data only, should test for maximum data length, column numbers.", "Clearly indicate if horizontal scrolling is needed", "Not necessarily the first column is important to be locked. Should provide a guideline.", "Feasibility is not known yet, should ask SDK"] },
