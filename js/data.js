@@ -527,7 +527,7 @@ window.SITE = {
               { type: "row", spans: [6, 4, 2], items: [
                 ["images/enterprise-experience/spec-flows.jpg", "Data table flows (6.1)"],
                 ["images/enterprise-experience/spec-spacing-hd.webp", "Data table spacing (6.1)"],
-                ["images/enterprise-experience/spec-row-v2.png", "Data table row & column (6.1)"]
+                ["images/enterprise-experience/spec-row-hd.webp", "Data table row & column (6.1)"]
               ] }
             ]
           },
