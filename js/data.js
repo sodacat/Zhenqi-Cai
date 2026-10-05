@@ -112,7 +112,7 @@ window.SITE = {
             "Led problem reframing, system architecture design, usability testing, and cross-functional alignment."
           ] },
           { type: "img", src: "images/seller-qualification/timeline.png", alt: "Project timeline, Nov 2022 – Q3 2023" },
-          { type: "img", size: "md", src: "images/seller-qualification/diagram-role.webp", alt: "Drive the work from framing to delivery: reframe the problem, define the model, validate and refine, align stakeholders" }
+          { type: "img", size: "md", src: "images/seller-qualification/diagram-role-hd.webp", alt: "Drive the work from framing to delivery: reframe the problem, define the model, validate and refine, align stakeholders" }
         ],
         sections: [
           {
