@@ -403,7 +403,7 @@ window.SITE = {
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-context-hd.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
-              { type: "img", size: "sm", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/list-report-hd.webp", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
                 { title: "Use cases", items: ["Select multiple rows of data for further actions", "Compare different rows of data", "Add, edit or delete a row of data"] },
@@ -449,7 +449,7 @@ window.SITE = {
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/list-report-hd.webp", alt: "6.0: list report in compact width, data table in regular width" },
               { type: "p", title: "Reference anchoring — Stick the left column in place (6.1 release)", text: [
                 "Fixing key columns allows users to compare data across rows without losing their frame of reference.",
                 "In the design of 6.1, the sticky left column is available. Sync icon is displayed in order to present status."
