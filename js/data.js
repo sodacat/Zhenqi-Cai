@@ -135,7 +135,7 @@ window.SITE = {
               { type: "p", text: "**Pain Points:** Sellers must leave listing tool to apply separately." },
               { type: "pair", size: "md", items: [
                 ["images/seller-qualification/pain-application.png", "Separate selling application"],
-                ["images/seller-qualification/pain-support.png", "Seller Support email thread"]
+                ["images/seller-qualification/pain-support-hd.webp", "Seller Support email thread"]
               ] },
               { type: "statement", text: "“The system optimized for compliance accuracy — not seller efficiency.”" }
             ]
