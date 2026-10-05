@@ -317,7 +317,7 @@ window.SITE = {
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/progress-v1-hd.webp", "V1 — numbers alone", "Progress V1: four plain metrics in a row"]] },
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/progress-v2-hd.webp", "V2 — rings as visual anchors, with explicit labels", "Progress V2: progress rings with counts and labels"]] },
               { type: "img", src: "images/compliance-report/overview.jpg", alt: "MVP screens: mapping progress and the relationship graph" },
-              { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1-hd.webp"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3.jpg"], ["images/compliance-report/mvp-4.jpg"]] },
+              { type: "row", label: "MVP deliverable", items: [["images/compliance-report/mvp-1-hd.webp"], ["images/compliance-report/mvp-2.jpg"], ["images/compliance-report/mvp-3-hd.webp"], ["images/compliance-report/mvp-4.jpg"]] },
               { type: "quotes", items: [["This diagram seems a natural fit for this problem…", "Director, Emerging Technologies, IBM"]] }
             ]
           },
