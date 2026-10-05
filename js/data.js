@@ -373,7 +373,7 @@ window.SITE = {
       case: {
         headline: "Designing how structured data remains understandable across contexts",
         lead: "The SAP Fiori for iOS design system team works with other internal teams and external clients using SAP products to build components and maintain SAP UX principles across all design patterns.",
-        cover: "images/enterprise-experience/cover-swiss.webp",
+        cover: "images/enterprise-experience/cover-device.webp",
         aboutTitle: "SAP Fiori design system — data table",
         about: [
           "Data tables are not just UI components—they are the primary interface through which users navigate, compare, and act on structured information. In SAP products, data tables support critical workflows across devices, often under constraints of high data density, limited screen space, and complex user tasks. However, the existing table system broke down in compact environments: users lost column context, information hierarchy collapsed, and interactions became inconsistent across devices.",
