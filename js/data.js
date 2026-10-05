@@ -469,7 +469,7 @@ window.SITE = {
                 "User story: As a Service and/or Maintenance Technician, I want to enter data into a table or edit data on a table so that I can quickly add/edit readings that are directly relevant to my job.",
                 "Feasibility: Since the in-place editing feature couldn’t be delivered from the Android side for the 6.1 release, and MDK doesn’t have the Tap and Hold gestures implemented right now. So this new design was saved for the 6.2 release."
               ] },
-              { type: "img", size: "sm", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/in-place-hd.webp", alt: "In-place editable data table in compact and regular width" },
               { type: "p", title: "Behavior and interaction", text: "For the interaction of the in-place editable data table, I explored several patterns." },
               { type: "trio", items: [
                 ["images/enterprise-experience/option-1.jpg", "Option 1 — Select a row", "If the user taps any of the cells, the row of that cell will be highlighted. The user can tap any cell in the row again to edit the cell or tap the chevron to open the modal to edit the row."],
