@@ -402,7 +402,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-context-hd.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
               { type: "img", size: "sm", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
