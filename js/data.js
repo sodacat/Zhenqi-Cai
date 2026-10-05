@@ -511,7 +511,7 @@ window.SITE = {
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
                 "If the content width is small, the column can shrink to fit. If the content width is truncated. The column can shrink to a minimum width. The minimum column width is 25% of the container; the maximum column width is 50% of the container."
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/spec-compact.jpg", alt: "Column specification on compact width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-compact-hd.webp", alt: "Column specification on compact width" },
               { type: "img", size: "md", src: "images/enterprise-experience/scroll-behavior.webp", alt: "Scrolling behavior: diagonal scroll by default; an optional sticky first column shrinks to 25% of the container" },
               { type: "cards", label: "Scrolling — keep context in motion", items: [
                 { title: "Movement", text: "Scroll naturally. Diagonal scrolling supports movement across rows and columns." },
