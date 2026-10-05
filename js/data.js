@@ -149,7 +149,7 @@ window.SITE = {
               { type: "shift", quiet: true, label: "The question shifted", from: "How do we improve error messaging?", to: "How do we preserve compliance rigor while enabling seller growth?" },
               { type: "p", text: "This reframe moved the problem from a UI fix to an infrastructure design challenge — one that directly affected seller monetization velocity." },
               { type: "img", src: "images/seller-qualification/reframe.webp", alt: "Before: sequential enforcement creates a repeat loop. After: parallel qualification unblocks sellers." },
-              { type: "img", size: "md", src: "images/seller-qualification/diagram-needs.webp", alt: "Translate seller needs into system decisions: know requirements upfront, keep working in one place, avoid repeated discovery" }
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-needs-hd.webp", alt: "Translate seller needs into system decisions: know requirements upfront, keep working in one place, avoid repeated discovery" }
             ]
           },
           {
