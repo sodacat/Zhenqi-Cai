@@ -425,7 +425,7 @@ window.SITE = {
             title: "Comparative analysis",
             blocks: [
               { type: "p", text: "In order to find out the best interactions in grid table views, I first did some comparative analysis on the data table in mobile." },
-              { type: "side", frame: true, title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy.jpg",
+              { type: "side", frame: true, title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy-hd.webp",
                 text: "BestBuy.com did not lock either column or row headings in place. It is easy to lose the context of what the table is displaying." },
               { type: "side", frame: true, title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
                 text: "Size guide table at massimodutti.com locked first column so we don’t lose the context of data." },
