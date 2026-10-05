@@ -259,7 +259,7 @@ window.SITE = {
         ],
         overview: [
           { type: "shift", quiet: true, label: "Reframing the problem", fromLabel: "Most compliance tools", toLabel: "What users struggled with", from: "Treat it as document processing: extract terms, tag them, generate reports.", to: "Understanding how relationships behave across systems, interpreting impact, and trusting AI-generated outputs." },
-          { type: "img", size: "md", src: "images/compliance-report/diagram-relationships.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
+          { type: "img", size: "md", src: "images/compliance-report/diagram-relationships-hd.webp", alt: "From regulation to relationships: regulatory source, AI-assisted mapping, business glossary, data assets" }
         ],
         sections: [
           {
