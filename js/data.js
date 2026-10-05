@@ -195,7 +195,7 @@ window.SITE = {
                 "The review reinforced three design principles that I carried into the final spec:"
               ], items: ["Surface all qualification requirements before sellers invest time in listing creation", "Allow approvals to be requested without leaving the listing tool", "Standardize approval states so sellers always know their next step"],
                 after: "Rather than treating this as an external critique, I used the Bar Raiser feedback to pressure-test the architecture decisions and strengthen the rationale for the parallel model." },
-              { type: "img", size: "md", src: "images/seller-qualification/diagram-approval.webp", alt: "Make the path to approval understandable: explain why approval is needed, guide sellers with tooltips, use Apply to sell, expand use cases" },
+              { type: "img", size: "md", src: "images/seller-qualification/diagram-approval-hd.webp", alt: "Make the path to approval understandable: explain why approval is needed, guide sellers with tooltips, use Apply to sell, expand use cases" },
               { type: "option", frame: true, title: "Iterations", src: "images/seller-qualification/iterations.png",
                 pros: ["Refined the copy to explain why SP needs an approval encourage SPs to request approvals.", "Provide tooltips to guide SP to fix the restrictions.", "Update the button from “Request approval” to “Apply to sell”.", "New use cases added for UPCx auto rejected/approved, brand approval required."] }
             ]
