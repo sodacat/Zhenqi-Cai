@@ -295,7 +295,7 @@ window.SITE = {
               { type: "statement", text: "How do you make complex, many-to-many relationships understandable enough for users to reason about?" },
               { type: "p", text: "Data stewards like Dominik translate regulatory concepts into business and data structures. The work is interpretive and cognitively demanding — and as complexity grows, the challenge is maintaining a coherent mental model of how the system behaves." },
               { type: "img", size: "md", src: "images/compliance-report/diagram-journey.webp", alt: "User journey: read progress, narrow the view, trace connections, inspect context, assess mappings, then refine the view" },
-              { type: "row", label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2.jpg", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
+              { type: "row", label: "Evolution of MVP prototypes", items: [["images/compliance-report/mvp-v1.jpg", "V1"], ["images/compliance-report/mvp-v2-hd.webp", "V2"], ["images/compliance-report/mvp-v3.jpg", "V3"]] },
               { type: "img", size: "md", src: "images/compliance-report/diagram-research-v2.png", alt: "Research findings mapped to design responses: relationships, progressive context, metric hierarchy" },
               { type: "h", text: "1. Visualizing relationships, not just data" },
               { type: "p", text: "Tables, pie charts and bar charts flatten relationships — but one regulation term maps to many business concepts, and one business term to many data assets. I chose a Sankey-based system to show how impact flows, encode importance through visual weight, and preserve relationships instead of reducing them to aggregates." },
