@@ -310,7 +310,7 @@ window.SITE = {
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/filter-v1.webp", "Filter V1 — sort, show and a date range", "Filter V1: sort by, show, start and end dates"]] },
               { type: "row", frame: true, size: "sm", items: [["images/compliance-report/filter-v2.webp", "Filter V2 — narrow to a section and limit visible terms", "Filter V2: only show a regulation section, sort by top 10, only show top 5 terms"]] },
               { type: "row", frame: true, items: [["images/compliance-report/label-v1.webp", "Label V1 — a color key far from the graph", "Label V1: a color legend beside the date filters"], ["images/compliance-report/label-v2.webp", "Label V2 — labels aligned under their columns", "Label V2: labels aligned beneath each column of the graph"]] },
-              { type: "img", size: "md", src: "images/compliance-report/hover-state.webp", frame: true, alt: "Hover state: hovering the Data Asset label highlights related terms and fades the rest" },
+              { type: "img", size: "md", src: "images/compliance-report/hover-state-hd.webp", frame: true, alt: "Hover state: hovering the Data Asset label highlights related terms and fades the rest" },
               { type: "img", size: "md", src: "images/compliance-report/diagram-layers-hd.webp", alt: "Navigate complexity in layers: choose a section, limit visible terms, read the structure, focus by category" },
               { type: "h", text: "4. Progress indicators that can’t be misread" },
               { type: "p", text: "Usability testing showed even simple metrics were being misinterpreted. Clearer visual anchors, explicit labels and a stronger hierarchy made system state readable at a glance — without adding more information." },
