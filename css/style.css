@@ -2127,6 +2127,7 @@ ol {
 .case-side-text { grid-column: 1 / 7; }
 .case-side > .case-fig { grid-column: 7 / -1; }
 .case-side.is-narrow > .case-fig { grid-column: 9 / -1; }
+.case-side.is-narrow.is-left > .case-fig { grid-column: 7 / 11; }
 
 .case-side-text p {
   margin: 0;

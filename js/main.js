@@ -435,7 +435,7 @@
           .map((c) => `<div>${c.label ? `<p class="label case-verdict-label">${esc(c.label)}</p>` : ""}<h3 class="case-card-title">${esc(c.title)}</h3>${prose(c)}</div>`)
           .join("")}</div>`;
       case "side":
-        return `<div class="case-side${b.narrow ? " is-narrow" : ""} ${figCls(b)} reveal">
+        return `<div class="case-side${b.narrow ? " is-narrow" : ""}${b.left ? " is-left" : ""} ${figCls(b)} reveal">
           <div class="case-side-text">${b.title ? `<h3 class="case-h">${esc(b.title)}</h3>` : ""}${prose(b)}
             ${b.pros ? `<p class="label case-verdict-label">Pros</p>${bullets(b.pros, "is-check")}` : ""}
             ${b.cons ? `<p class="label case-verdict-label">Cons</p>${bullets(b.cons, "is-cross")}` : ""}
