@@ -444,7 +444,7 @@ window.SITE = {
           {
             title: "Design decisions",
             blocks: [
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-stages-v2.png", alt: "Evolve the component in stages: 6.0 keep headers visible, 6.1 anchor the reference, 6.2 edit directly in the table" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-stages-hd.webp", alt: "Evolve the component in stages: 6.0 keep headers visible, 6.1 anchor the reference, 6.2 edit directly in the table" },
               { type: "p", title: "Context preservation — Stick column headers in place (6.0 release)", text: [
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
