@@ -403,7 +403,7 @@ window.SITE = {
               { type: "statement", text: "Users don’t lose data—they lose context." },
               { type: "p", text: "When headers disappear or reference columns shift, users can no longer interpret what the data represents. Preserving context is not a visual decision, but a cognitive requirement." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-context.webp", alt: "Users lose context, not data: headers disappear and reference points shift, so keep reference points visible" },
-              { type: "img", size: "md", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/key-insight.jpg", alt: "Converted to list report in compact width; data table in regular width" },
               { type: "cards", items: [
                 { title: "User stories", text: "As a user, I want to view, edit and add data on both of my iPhone and iPad devices, and see the sync status of each row of data, so that I can access the data table and update data easily." },
                 { title: "Use cases", items: ["Select multiple rows of data for further actions", "Compare different rows of data", "Add, edit or delete a row of data"] },
@@ -425,15 +425,15 @@ window.SITE = {
             title: "Comparative analysis",
             blocks: [
               { type: "p", text: "In order to find out the best interactions in grid table views, I first did some comparative analysis on the data table in mobile." },
-              { type: "side", frame: true, title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy.jpg",
+              { type: "side", narrow: true, frame: true, title: "Stick column headers in place", src: "images/enterprise-experience/bestbuy.jpg",
                 text: "BestBuy.com did not lock either column or row headings in place. It is easy to lose the context of what the table is displaying." },
-              { type: "side", frame: true, title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
+              { type: "side", narrow: true, frame: true, title: "Stick the left column in place", src: "images/enterprise-experience/massimo-dutti.jpg",
                 text: "Size guide table at massimodutti.com locked first column so we don’t lose the context of data." },
               { type: "side", narrow: true, title: "Clearly indicate if horizontal scrolling is needed", src: "images/enterprise-experience/scroll-indicator.jpg",
                 text: "Arrows or cut-off elements convey this information best. Dots are sometimes used, but are typically harder for users to notice and understand.",
                 pros: ["The column header is visible all the time so we don’t lose the context", "Consistency in both content and IA on iPad and iPhone can be easily achieved", "Scalability and accessibility can be easily achieved"],
                 cons: ["For short data only, should test for maximum data length, column numbers.", "Clearly indicate if horizontal scrolling is needed", "Not necessarily the first column is important to be locked. Should provide a guideline.", "Feasibility is not known yet, should ask SDK"] },
-              { type: "side", frame: true, title: "Collapse the table rows into separate cards", src: "images/enterprise-experience/cards.jpg",
+              { type: "side", narrow: true, frame: true, title: "Collapse the table rows into separate cards", src: "images/enterprise-experience/cards.jpg",
                 text: "Applicable for a huge amount of data, various types of content. Ability to filter and sort the content with ease, divide the content into separate pages.",
                 pros: ["Useful with a huge amount of data and its size", "Ability to collapse and hide some data", "A versatile form of data presentation"],
                 cons: ["Repetitive column names", "Hard to compare particular data between rows"] },
@@ -449,27 +449,27 @@ window.SITE = {
                 "Sticky headers ensure that column meaning remains visible while users scroll vertically, preventing loss of context.",
                 "In the design of 6.0, I choose to use a sticky header in order to provide some context for users while scrolling vertically. Horizontal scrolling is available in both compact and regular width in order to provide a consistent layout."
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/sticky-header.jpg", alt: "6.0: list report in compact width, data table in regular width" },
               { type: "p", title: "Reference anchoring — Stick the left column in place (6.1 release)", text: [
                 "Fixing key columns allows users to compare data across rows without losing their frame of reference.",
                 "In the design of 6.1, the sticky left column is available. Sync icon is displayed in order to present status."
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/sticky-column.jpg", alt: "6.1: sticky left column in compact and regular width" },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-navigation.webp", alt: "Preserve meaning during navigation: sticky column headers vertically, optional sticky first column horizontally" },
               { type: "p", title: "System consistency — Behavior and interaction (6.1 release)", text: "Supporting both compact and regular modes ensures users interact with the same information structure across devices, preserving mental models." },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-actions.webp", alt: "Three ways to act on table data: select rows, add a row, edit a row" },
-              { type: "img", src: "images/enterprise-experience/diagram-selection.webp", alt: "From selection to action: browse the table, enter selection, select rows, access actions; scrolling retains the selection" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-selection.webp", alt: "From selection to action: browse the table, enter selection, select rows, access actions; scrolling retains the selection" },
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
                 ["images/enterprise-experience/edit.jpg", "Edit a data row", "In the drill-down tables, the users can tap on the row to view the data in the modal sheet and tap the edit button in the navigation bar to start editing."]
               ] },
-              { type: "img", src: "images/enterprise-experience/diagram-detail.webp", alt: "Move from overview to detail: browse the table, open an item, read the details, then go back to the table" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-detail.webp", alt: "Move from overview to detail: browse the table, open an item, read the details, then go back to the table" },
               { type: "p", title: "System status visibility — In-place editable data table (6.2 release)", text: [
                 "User story: As a Service and/or Maintenance Technician, I want to enter data into a table or edit data on a table so that I can quickly add/edit readings that are directly relevant to my job.",
                 "Feasibility: Since the in-place editing feature couldn’t be delivered from the Android side for the 6.1 release, and MDK doesn’t have the Tap and Hold gestures implemented right now. So this new design was saved for the 6.2 release."
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
+              { type: "img", size: "sm", src: "images/enterprise-experience/in-place.jpg", alt: "In-place editable data table in compact and regular width" },
               { type: "p", title: "Behavior and interaction", text: "For the interaction of the in-place editable data table, I explored several patterns." },
               { type: "trio", items: [
                 ["images/enterprise-experience/option-1.jpg", "Option 1 — Select a row", "If the user taps any of the cells, the row of that cell will be highlighted. The user can tap any cell in the row again to edit the cell or tap the chevron to open the modal to edit the row."],
@@ -480,8 +480,8 @@ window.SITE = {
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
-              { type: "img", src: "images/enterprise-experience/diagram-inplace.webp", alt: "Edit without leaving the table: long-press a cell, focus it, edit the value, finish; tap another cell to continue" },
-              { type: "img", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-inplace.webp", alt: "Edit without leaving the table: long-press a cell, focus it, edit the value, finish; tap another cell to continue" },
+              { type: "img", size: "md", src: "images/enterprise-experience/micro-interactions-hd.webp", alt: "Micro-interactions: tap and hold to edit in place, select to copy, tap other cells to continue" },
               { type: "p", text: "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically. The user can type, delete undo or redo on the keyboard or tap the cell again to select the content to copy, cut or paste. After finishing the edition, the user can tap other cells to continue editing or tap done to close the keyboard." }
             ]
           },
@@ -505,7 +505,7 @@ window.SITE = {
                 "For the regular width, with horizontal scroll, the Left Accessory always sticks to the left side. If the sticky first column is enabled, when scrolling, the first column will start shrinking until reaching the sticky panel width (25% of the container). Only the first column can be set sticky, which is optional. If the Right Accessory is available, it will be shown with a fading background and stick to the right side."
               ] },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-width.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
-              { type: "row", items: [["images/enterprise-experience/width-fit.webp", "Horizontal fit — show the columns that fit; each defaults to a 50% maximum width", "Horizontal fit: the first column expands up to 50% of the container"], ["images/enterprise-experience/width-scroll.webp", "Horizontal scroll — reach more columns; the left accessory stays fixed", "Horizontal scroll: columns extend beyond the container, first column optionally sticky"]] },
+              { type: "row", size: "md", items: [["images/enterprise-experience/width-fit.webp", "Horizontal fit — show the columns that fit; each defaults to a 50% maximum width", "Horizontal fit: the first column expands up to 50% of the container"], ["images/enterprise-experience/width-scroll.webp", "Horizontal scroll — reach more columns; the left accessory stays fixed", "Horizontal scroll: columns extend beyond the container, first column optionally sticky"]] },
               { type: "img", size: "md", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
@@ -524,7 +524,7 @@ window.SITE = {
             title: "Supporting engineers",
             blocks: [
               { type: "p", text: "In order to support engineers to implement the demo smoothly, the detailed specification is provided." },
-              { type: "row", items: [
+              { type: "row", spans: [6, 4, 2], items: [
                 ["images/enterprise-experience/spec-flows.jpg", "Data table flows (6.1)"],
                 ["images/enterprise-experience/spec-spacing.jpg", "Data table spacing (6.1)"],
                 ["images/enterprise-experience/spec-row.jpg", "Data table row & column (6.1)"]

@@ -3273,3 +3273,13 @@ body[data-page="project"] .footer-top .footer-contact {
 .contact-side {
   margin-top: var(--lh-body);
 }
+
+/* a row whose images take unequal spans of the 12 columns; captions share a baseline */
+.case-row.is-spans {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+}
+
+@media (max-width: 680px) {
+  .case-row.is-spans > .case-fig { grid-column: 1 / -1 !important; }
+}

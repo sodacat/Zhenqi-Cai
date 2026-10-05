@@ -414,8 +414,9 @@
           ${b.note ? `<p class="case-note">${esc(b.note)}</p>` : ""}
         </div>`;
       case "row":
-        return `<div class="case-row ${figCls(b)} reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
-          .map(([src, cap, alt]) => `<figure class="case-fig">${media(src, alt || cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
+        // spans: columns per item on the 12-column grid, for images of unequal shape
+        return `<div class="case-row ${figCls(b)}${b.spans ? " is-spans" : ""} reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
+          .map(([src, cap, alt], i) => `<figure class="case-fig"${b.spans ? ` style="grid-column: span ${b.spans[i]}"` : ""}>${media(src, alt || cap || b.label || "", "case-media")}${cap ? `<figcaption class="label">${esc(cap)}</figcaption>` : ""}</figure>`)
           .join("")}</div>`;
       case "cols":
         return `<div class="case-cols reveal" style="--n:${b.items.length}">${b.label ? `<h3 class="case-h">${esc(b.label)}</h3>` : ""}${b.items
