@@ -476,7 +476,7 @@ window.SITE = {
                 ["images/enterprise-experience/option-2.jpg", "Option 2 — Quick actions", "If the user taps and holds any of the cells, the quick action menu will pop out. The user can choose from edit a cell, edit a row or delete a row."],
                 ["images/enterprise-experience/option-3.jpg", "Option 3 — Edit cells directly", "The user can tap and hold any cell to trigger edit-in-place mode, the selected cell will be focused in the middle automatically."]
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/diagram-editing.webp", alt: "Make editing deliberate and direct: three options, with option 3 edit cells directly selected" },
+              { type: "img", size: "md", src: "images/enterprise-experience/diagram-editing-hd.webp", alt: "Make editing deliberate and direct: three options, with option 3 edit cells directly selected" },
               { type: "p", text: ["After the design review, I decided to go with option 3.", "The reasons are:"],
                 items: ["In the current SDK, the user taps any cell can open a model to edit the row by default, which will be a conflict with option 1.", "If the user taps and holds any cell, the gesture can avoid tapping by mistake itself.", "It’s redundant to use a quick menu to select from."],
                 after: "Some micro-interactions:" },
