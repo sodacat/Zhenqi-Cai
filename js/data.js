@@ -506,7 +506,7 @@ window.SITE = {
               ] },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-width-hd.webp", alt: "Adapt width without losing structure: horizontal fit versus horizontal scroll" },
               { type: "row", size: "md", items: [["images/enterprise-experience/width-fit-hd.webp", "Horizontal fit — show the columns that fit; each defaults to a 50% maximum width", "Horizontal fit: the first column expands up to 50% of the container"], ["images/enterprise-experience/width-scroll-hd.webp", "Horizontal scroll — reach more columns; the left accessory stays fixed", "Horizontal scroll: columns extend beyond the container, first column optionally sticky"]] },
-              { type: "img", size: "md", src: "images/enterprise-experience/spec-regular.jpg", alt: "Column specification on regular width" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-regular-hd.webp", alt: "Column specification on regular width" },
               { type: "p", title: "Column on compact width", text: [
                 "The text alignment and column height on the compact width is the same as the regular width. The compact data table also follows the rules of horizontal fit and horizontal scroll in regular width.",
                 "If the content width is small, the column can shrink to fit. If the content width is truncated. The column can shrink to a minimum width. The minimum column width is 25% of the container; the maximum column width is 50% of the container."
