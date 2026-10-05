@@ -246,7 +246,7 @@ window.SITE = {
       case: {
         headline: "The problem wasn’t speed, it was enabling users to reason about the system.",
         lead: "Regulatory compliance is expected to provide clarity. In practice, enterprises spend months interpreting regulations, mapping terms across fragmented systems, and still lack confidence in whether they are actually compliant.",
-        cover: "images/compliance-report/cover-swiss.webp",
+        cover: "images/compliance-report/cover-v2.webp",
         aboutTitle: "A ML infused tool to accelerate regulatory compliance",
         about: [
           "At IBM, I worked on an AI-powered platform that extracts regulatory terms and maps them to business and technical systems. My focus was the compliance reporting experience — where users need to make sense of how regulations actually impact their organization.",
