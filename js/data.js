@@ -497,7 +497,7 @@ window.SITE = {
                 { title: "Spacing", text: "Adapt to the text size. Header height grows with the text, with 8 pt padding above and below." },
                 { title: "Scrolling", text: "Preserve the reference. Keep the header visible as rows move. Show a shadow when rows slide beneath it." }
               ] },
-              { type: "img", size: "md", src: "images/enterprise-experience/spec-header.jpg", alt: "Header specification" },
+              { type: "img", size: "md", src: "images/enterprise-experience/spec-header-hd.webp", alt: "Header specification" },
               { type: "p", title: "Column on regular width", text: "Text alignment:", items: ["Right-aligned numeric columns", "Left-aligned text columns"], after: [
                 "The height of the data row adapts to the text size, the padding of the top and bottom is 16 pt. By default, each data table cell allows only 1 line of data. But the developer can set to allow wrapping to 2 lines. Avoid using multiple lines within a row since it makes it more difficult to scan the data in the table.",
                 "For the regular width, without horizontal scroll, if there is more than 1 column, any columns can have a maximum width (include paddings) of 50% of the Data Table container width. The developer can override max-width. If the width of a column is not set, by default, the column width adapts to the width of the widest content in the column. When the width exceeds the maximum width, the content gets truncated. By default, the first column (Title) will expand to fill the space.",
