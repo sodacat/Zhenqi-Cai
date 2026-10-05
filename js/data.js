@@ -462,7 +462,7 @@ window.SITE = {
               { type: "trio", items: [
                 ["images/enterprise-experience/select.jpg", "Select for actions", "After tapping the select button, the checkboxes in the left accessory column show up in each row allow users to select that row of data for further actions."],
                 ["images/enterprise-experience/add.jpg", "Add a data row", "The “+” button, which can appear on the navigation bar or in an inline cell button, allows the users to add a new data row to the current data table."],
-                ["images/enterprise-experience/edit.jpg", "Edit a data row", "In the drill-down tables, the users can tap on the row to view the data in the modal sheet and tap the edit button in the navigation bar to start editing."]
+                ["images/enterprise-experience/edit-hd.webp", "Edit a data row", "In the drill-down tables, the users can tap on the row to view the data in the modal sheet and tap the edit button in the navigation bar to start editing."]
               ] },
               { type: "img", size: "md", src: "images/enterprise-experience/diagram-detail.webp", alt: "Move from overview to detail: browse the table, open an item, read the details, then go back to the table" },
               { type: "p", title: "System status visibility — In-place editable data table (6.2 release)", text: [
