@@ -592,7 +592,7 @@ window.SITE = {
           {
             title: "Brand design: from vision to visuals",
             blocks: [
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-scope.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-scope-hd.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
               { type: "p", title: "The challenge", text: [
                 "The challenge was not just to create a visual identity, but to reduce the cognitive gap between how financial systems operate and how users are able to perceive and act within them.",
                 "Users needed to:"
