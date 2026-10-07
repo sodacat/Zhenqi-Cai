@@ -731,7 +731,7 @@ window.SITE = {
         coverVideo: { src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
         impact: [["1,217", "Places"], ["53", "Cities"], ["29", "Countries"]],
         aboutTitle: "My saved places, turned into a world guide",
-        about: ["Over the years, I’ve saved more than a thousand places across Google Maps — restaurants I’d return to, bars worth remembering, museums I loved, and places I still wanted to explore.", "The collection kept growing, but became increasingly difficult to navigate. When I arrived somewhere new, finding the places I actually cared about meant digging through years of scattered saves.", "So I built **Sodacat’s Taste of the World** — a personal world guide that turns those saves into one searchable, explorable map.", "1,217 places across 53 cities and 29 countries can be explored by location, searched by name, or filtered into Eat, Drink, and Do. Every recommendation connects back to Google Maps when it’s time to go.", "I designed and shipped the experience end-to-end through vibe coding, using AI to move from raw location data to a working web product without hand-writing code."],
+        about: ["Over the years, I’ve saved more than a thousand places across Google Maps — restaurants I’d return to, bars worth remembering, museums I loved, and places I still wanted to explore.", "The collection kept growing, but became increasingly difficult to navigate. When I arrived somewhere new, finding the places I actually cared about meant digging through years of scattered saves.", "So I built **Sodacat’s Taste of the World** — a personal world guide that turns 1,217 saved places across 53 cities and 29 countries into one searchable, explorable map.", "Filter by location, switch between Eat, Drink, and Do, search by name, or browse directly on the map. Every recommendation connects back to Google Maps when it’s time to go."],
         facts: [
           ["Role", "Designer · Builder"],
           ["Built with", "Figma Make · Claude"],
@@ -743,29 +743,29 @@ window.SITE = {
             title: "The problem",
             blocks: [
               { type: "h", text: "Saving places was easy. Finding them again wasn’t." },
-              { type: "p", text: ["Google Maps had become my external travel memory.", "After years of traveling, my saved places stretched across countries and continents. But the larger the collection became, the less useful it was as a collection."] },
-              { type: "statement", text: "The information was there. The structure wasn’t." },
-              { type: "p", text: ["A simple question like “Where should I eat around here?” could mean scrolling through unrelated saves, remembering which list something belonged to, or zooming around the map until something familiar appeared.", "I didn’t need another travel recommendation app. I needed a better interface for my own taste."] },
+              { type: "p", text: ["Google Maps had become my external travel memory.", "After years of traveling, my saved places stretched across countries and continents. But as the collection grew, it became harder to answer a simple question:"] },
+              { type: "statement", text: "Where should I go around here?" },
+              { type: "p", text: ["The information was there. The structure wasn’t.", "I didn’t need another travel recommendation app. I needed a better interface for my own taste."] },
               { type: "statement", text: "The challenge wasn’t collecting more places. It was making 1,217 existing choices retrievable." }
             ]
           },
           {
-            title: "Designing the system",
+            title: "Information architecture",
             blocks: [
               { type: "h", text: "Turn a collection into something explorable" },
-              { type: "p", text: ["The first design problem wasn’t visual. It was structural.", "I needed the same collection to support two different ways of thinking:"] },
-              { type: "cards", items: [{ label: "Where am I?", title: "World → Country → City → Place" }, { label: "What do I want?", title: "All → Eat → Drink → Do" }] },
-              { type: "p", text: ["Instead of forcing places into one navigation hierarchy, I designed geography and intent as two dimensions that can work independently.", "A traveler can start with a country, narrow into a city, switch from restaurants to things to do, search directly for a place — or simply explore the map."] },
+              { type: "p", text: ["The first design problem wasn’t visual. It was structural.", "I organized the same collection around two questions:"] },
+              { type: "cards", items: [{ label: "Where", title: "World → Country → City → Place" }, { label: "What", title: "All → Eat → Drink → Do" }] },
+              { type: "p", text: ["Instead of forcing places into one navigation hierarchy, geography and activity work as independent dimensions.", "A country can be narrowed into a city, then filtered by what I want to do. Or I can search directly, browse the map, or start with an activity instead."] },
               { type: "statement", text: "The interface adapts to the question instead of requiring the user to understand the database underneath it." }
             ]
           },
           {
-            title: "Visual language",
+            title: "Visual system",
             blocks: [
               { type: "h", text: "Color became navigation, not decoration" },
-              { type: "p", text: ["With more than a thousand places distributed around the world, I wanted location and intent to be recognizable without adding more labels or interface complexity.", "I created a lightweight color system with two layers of meaning."] },
-              { type: "cards", items: [{ label: "Where", title: "Continent", text: ["Each continent receives its own identifying color. That color travels through geographic filters and location indicators, making countries from the same part of the world feel related while preserving distinctions across the global collection.", "The result is a subtle geographic vocabulary: users begin to recognize where something belongs before reading every label."] }, { label: "What", title: "Eat, Drink, Do", text: "A separate semantic color system represents the type of experience:", items: ["**Eat** — restaurants and food", "**Drink** — bars, cafés, and drinks", "**Do** — museums, beaches, attractions, and experiences"], after: "These colors repeat across filters, icons, and place cards, creating a consistent shorthand for what each place offers." }] },
-              { type: "p", text: "Together, the two systems answer the two questions behind almost every interaction: where is it, and what can I do there?" },
+              { type: "p", text: ["With more than a thousand places spread around the world, I wanted users to recognize where something is and what kind of place it is without adding more interface complexity.", "I designed two complementary color systems."] },
+              { type: "cards", items: [{ label: "Where", title: "Continent", text: ["Each continent has its own identifying color, carried through country chips and geographic indicators.", "Countries remain individually selectable, while shared color creates a subtle visual relationship between places from the same part of the world.", "The system makes geography easier to scan without introducing another layer of navigation."] }, { label: "What", title: "Eat, Drink, Do", text: "A second semantic palette distinguishes the type of experience:", items: ["**Eat** — restaurants and food", "**Drink** — bars, cafés, and drinks", "**Do** — museums, beaches, attractions, and experiences"], after: "These colors repeat across filters, icons, and place cards, creating a consistent shorthand throughout the product." }] },
+              { type: "p", text: "Together, the two systems answer the two questions behind almost every interaction: where is it? What can I do there?" },
               { type: "statement", text: "Rather than using color as decoration, I used it as another layer of information architecture." }
             ]
           },
@@ -773,15 +773,10 @@ window.SITE = {
             title: "Designing for exploration",
             blocks: [
               { type: "h", text: "Search when you know. Browse when you don’t." },
-              { type: "p", text: ["Travel discovery isn’t always a search problem.", "Sometimes I know exactly what I’m looking for. Other times I’m standing in a new neighborhood wondering what I’ve saved nearby. So I designed multiple paths into the same dataset."], items: ["**Search** handles known destinations and names.", "**Country and city filters** progressively narrow the world.", "**Eat / Drink / Do filters** change the type of recommendation without resetting location.", "**The map** supports spatial exploration.", "**Place cards** expose enough information to make a decision before opening Google Maps."] },
-              { type: "statement", text: "The goal was to let the interface move naturally between retrieval and discovery." }
-            ]
-          },
-          {
-            title: "From map to place",
-            blocks: [
+              { type: "p", text: ["Travel discovery isn’t always a search problem.", "Sometimes I know the exact restaurant I’m looking for. Other times I’m in a new city wondering what I’ve saved nearby.", "The product supports both behaviors through multiple paths into the same dataset:"], items: ["**Search** when the destination is known.", "**Country and city filters** progressively narrow the world.", "**Eat / Drink / Do** changes intent without resetting location.", "**The map** supports spatial exploration.", "**Place cards** surface enough context to decide what to open next."] },
+              { type: "statement", text: "The goal was to let the interface move naturally between retrieval and discovery." },
               { type: "h", text: "Keep the guide lightweight" },
-              { type: "p", text: ["I didn’t want to rebuild Google Maps.", "The site’s job is to help me decide which of my places is relevant now. Once I choose one, Google Maps is already better at directions, hours, reviews, and navigation.", "So every place card acts as a bridge between the personal collection and the existing mapping ecosystem. This kept the product focused:"] },
+              { type: "p", text: ["I didn’t want to rebuild Google Maps.", "This product has one job: help me decide which of my saved places is relevant right now.", "Once I choose a destination, Google Maps already handles directions, hours, reviews, and navigation better. So every place card hands off directly to Google Maps."] },
               { type: "statement", text: "Discover here. Navigate there." }
             ]
           },
@@ -789,24 +784,19 @@ window.SITE = {
             title: "Building with AI",
             blocks: [
               { type: "h", text: "From designer to designer-builder" },
-              { type: "p", text: ["I built the product end-to-end using Figma Make and Claude, treating AI not just as an ideation tool, but as part of the production workflow.", "I used AI to help transform the concept into a functioning responsive product: structuring data, generating and iterating implementation, debugging interactions, refining responsive behavior, and moving rapidly between design decisions and working software.", "That changed the way I worked. Instead of handing static screens to engineering, I could evaluate decisions in the actual product: resize it, search it, filter hundreds of places, discover edge cases, change the system, and immediately test again.", "But generating code wasn’t the same as designing the product.", "I still had to decide what the system should be: how 1,217 places should be organized, which interactions mattered, what information belonged on a card, how geography and activity should coexist, how color should encode meaning, and when the experience should hand off to Google Maps."] },
-              { type: "statement", text: "AI accelerated implementation. Product judgment still defined the experience." }
-            ]
-          },
-          {
-            title: "Iterating in the product",
-            blocks: [
+              { type: "p", text: ["I built the product end-to-end with Figma Make and Claude, using AI not just for ideation, but as part of the production workflow.", "AI helped me move from structured location data to a functioning responsive product: implementing interactions, working through responsive behavior, debugging edge cases, and rapidly testing changes in the actual experience.", "But generating software wasn’t the same as defining the product.", "I still had to decide how 1,217 places should be organized, which interactions mattered, what belonged on a place card, how geography and activity should work together, and when the experience should hand off to Google Maps."] },
+              { type: "statement", text: "AI accelerated implementation. Product judgment still defined the experience." },
               { type: "h", text: "Working software became the design medium" },
-              { type: "p", text: ["Building directly in a functional environment exposed problems that static mockups wouldn’t.", "Filters had to work together rather than independently. Long country names had to survive responsive layouts. A system that looked reasonable with ten places had to remain usable with more than a thousand.", "Instead of treating design and implementation as separate phases, I moved continuously between them:"] },
+              { type: "p", text: "Instead of treating design and implementation as separate phases, I could test decisions directly in the product." },
               { type: "statement", text: "Design → Build → Use → Find friction → Refine" },
-              { type: "p", text: "Vibe coding shortened that loop enough that the working product itself became part of the design process." }
+              { type: "p", text: ["Working software exposed problems static screens couldn’t: filters had to coexist, long country names had to survive responsive layouts, and a system that worked for ten places had to remain usable with more than a thousand.", "The shorter build loop made implementation part of the design process itself."] }
             ]
           },
           {
-            title: "The shipped experience",
+            title: "The shipped product",
             blocks: [
               { type: "h", text: "1,217 places. One personal map of the world." },
-              { type: "p", text: "The final product brings years of scattered saves into one coherent interface. It supports:", items: ["1,217 saved places", "53 cities", "29 countries", "Eat · Drink · Do filtering", "Country and city exploration", "Place search", "Interactive world map", "Responsive layouts", "Direct Google Maps handoff"], after: "More importantly, it transformed something passive — years of places I had once saved — into something I can actually use wherever I go." }
+              { type: "p", text: "The final product transformed years of scattered saves into one usable system.", items: ["1,217 saved places", "53 cities", "29 countries", "Eat · Drink · Do filtering", "Country and city exploration", "Search by place", "Interactive world map", "Responsive layouts", "Direct Google Maps handoff"], after: "More importantly, something passive — years of places I had once saved — became something I can actually use wherever I go." }
             ]
           },
           {
@@ -814,7 +804,7 @@ window.SITE = {
             blocks: [
               { type: "h", text: "The interesting part wasn’t that AI could build it." },
               { type: "statement", text: "It was how building became part of designing it." },
-              { type: "p", text: ["This project started as a small personal frustration: I had accumulated more recommendations than I could meaningfully navigate.", "AI made it possible for me to take that problem further than a prototype. I could define the system, design the interface, build it, encounter real constraints, revise my decisions, and ship the result myself.", "The biggest shift was not simply moving faster. It was reducing the distance between an idea, a design decision, and a working product.", "And somewhere along the way, years of pins on a map became a product I actually wanted to use."] }
+              { type: "p", text: ["This project started with a personal frustration: I had accumulated more recommendations than I could meaningfully navigate.", "AI made it possible to take the idea beyond a prototype. I could define the system, design the interface, build it, encounter real constraints, revise my decisions, and ship the result myself.", "The biggest shift wasn’t simply moving faster. It was reducing the distance between an idea, a design decision, and a working product.", "And somewhere along the way, years of pins on a map became a product I actually wanted to use."] }
             ]
           },
           {
