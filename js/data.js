@@ -637,7 +637,7 @@ window.SITE = {
                 ["images/stonk-tech/color-variations.jpg", "23 color variations"],
                 ["images/stonk-tech/logo.jpg", "Final logo"]
               ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-mark.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-mark-hd.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
               { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
                 "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
                 "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
