@@ -568,7 +568,7 @@ window.SITE = {
       case: {
         headline: "Balancing system trust with cultural accessibility in modern retail trading",
         lead: "Retail investors don’t just lack tools — they are excluded from the systems that make institutional trading effective.",
-        cover: "images/stonk-tech/cover-v2.webp",
+        cover: "images/stonk-tech/cover-v3.webp",
         aboutTitle: "Stonk Tech — brand & landing page",
         about: [
           "While professional traders operate with integrated infrastructure—data, research, and risk management — individual investors face fragmented information, opaque processes, and high barriers to entry.",
