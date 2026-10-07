@@ -648,7 +648,7 @@ window.SITE = {
               { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
               { type: "img", frame: true, src: "images/stonk-tech/logo-identity-hd.webp", alt: "Logo and wordmark spacing rules" },
               { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
-              { type: "img", src: "images/stonk-tech/marks.jpg", alt: "Marks and logos on light and dark backgrounds" },
+              { type: "img", src: "images/stonk-tech/marks-hd.webp", alt: "Marks and logos on light and dark backgrounds" },
               { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
               { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
               { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
