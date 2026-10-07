@@ -603,7 +603,7 @@ window.SITE = {
                 { title: "Mission & vision", text: "Stonk Tech’s mission is to unite retail traders into a community where trading ideas are accessible, actionable, and inclusive. We wanted every user to feel involved, supported, and part of something bigger than themselves." },
                 { title: "Voice & tone", text: "The brand speaks in a way that’s empowering, engaging, and reliable, while keeping a touch of joy—reflecting the excitement of trading and the confidence we want our users to feel." }
               ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-needs.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-needs-hd.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
               { type: "p", title: "Defining a system users can trust", text: [
                 "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
                 "The goal was to create a system that communicates:"
