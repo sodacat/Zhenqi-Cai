@@ -309,6 +309,7 @@
       ["Focus", (p.tags || []).join(", ")]
     ].filter(([, v]) => v);
 
+    if (p.locked && !unlocked()) return lockView(p, i);
     if (p.case) return caseStudy(p, i, next);
 
     return `<main>
@@ -457,6 +458,36 @@
     }
   }
 
+  // Password gate for NDA work: a soft lock, remembered for the browser session
+  const LOCK_KEY = "zc-unlocked";
+  function unlocked() {
+    try { return sessionStorage.getItem(LOCK_KEY) === S.lockHash; } catch (e) { return false; }
+  }
+
+  function lockView(p, i) {
+    return `<main class="lock">
+      <section class="project-head grid-12 wrap">
+        <p class="label idx">(${pad(i + 1)})</p>
+        <p class="label hero-role">${esc(p.company)} — ${esc(p.title)}</p>
+      </section>
+      <section class="lock-body grid-12 wrap">
+        <div class="lock-text">
+          <h1 class="lock-title">This case study is password protected.</h1>
+          <p class="lock-sub">${esc(p.summary || "")}</p>
+          <form class="lock-form" novalidate>
+            <label class="label" for="lock-pw">Password</label>
+            <div class="lock-row">
+              <input id="lock-pw" class="lock-input" type="password" autocomplete="current-password" required autofocus>
+              <button class="btn btn-accent" type="submit">View case study ${arrow}</button>
+            </div>
+            <p class="label lock-error" role="alert" hidden>That password isn't right. Try again, or <a href="mailto:${esc(S.email || "")}">ask me for access</a>.</p>
+          </form>
+        </div>
+        <div class="lock-media">${p.cover ? media(p.cover, p.title, "case-media") : cover(p)}</div>
+      </section>
+    </main>`;
+  }
+
   function caseStudy(p, i, next) {
     const c = p.case;
     return `<main class="case">
@@ -511,6 +542,28 @@
   /* ---------- Render ---------- */
   const views = { home, works, project, about };
   $("#app").innerHTML = header() + (views[page] || home)() + footer();
+
+  // Password gate: hash the entry and compare with the stored hash
+  const lockForm = document.querySelector(".lock-form");
+  if (lockForm) {
+    lockForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const pw = lockForm.querySelector("input").value.trim();
+      const err = lockForm.querySelector(".lock-error");
+      let hex = "";
+      try {
+        const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pw));
+        hex = [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+      } catch (x) { /* no WebCrypto: treat as wrong */ }
+      if (hex === S.lockHash) {
+        try { sessionStorage.setItem(LOCK_KEY, hex); } catch (x) { /* storage blocked: the gate stays */ }
+        location.reload();
+      } else {
+        err.hidden = false;
+        lockForm.querySelector("input").select();
+      }
+    });
+  }
 
   // Fade images in once loaded; keep placeholder if the file is missing.
   document.querySelectorAll(".card-media img").forEach((img) => {

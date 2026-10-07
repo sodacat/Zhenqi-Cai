@@ -3289,3 +3289,45 @@ body[data-page="project"] .footer-top .footer-contact {
 @media (max-width: 680px) {
   .case-row.is-spans > .case-fig { grid-column: 1 / -1 !important; }
 }
+
+/* Password gate for protected case studies */
+.lock-body {
+  row-gap: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+  align-items: start;
+}
+.lock-text { grid-column: 1 / 7; }
+.lock-media { grid-column: 7 / -1; }
+.lock-title {
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--lh-body);
+}
+.lock-sub { margin: 0 0 var(--space-xl); max-width: 36em; }
+.lock-form .label { display: block; margin-bottom: 8px; }
+.lock-row { display: flex; gap: 0; }
+.lock-input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: var(--box-pad) var(--box-pad-x);
+  border: 1px solid var(--fg);
+  border-right: 0;
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 0;
+}
+.lock-input:focus { outline: none; border-color: var(--accent); }
+.lock-input:focus + .btn { border-color: var(--accent); }
+.lock-error { margin-top: 12px; color: var(--accent); }
+.lock-error a { color: inherit; }
+@media (max-width: 680px) {
+  .lock-text, .lock-media { grid-column: 1 / -1; }
+  .lock-row { flex-direction: column; }
+  .lock-input { border-right: 1px solid var(--fg); border-bottom: 0; }
+}
+.lock-error[hidden] { display: none; }
+/* black and white, like the work cards */
+.lock-media img { filter: grayscale(1); }

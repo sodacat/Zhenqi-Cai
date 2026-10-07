@@ -5,6 +5,8 @@
  * If an image is missing, a neutral placeholder with the title is shown.
  */
 window.SITE = {
+  // SHA-256 of the case-study password; locked projects ask for it once per visit
+  lockHash: "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
   name: "Zhenqi Cai",
   mark: "ZC.",
   role: "Senior Product Designer",
@@ -81,6 +83,7 @@ window.SITE = {
   projects: [
     {
       id: "seller-qualification",
+      locked: true,
       type: "work",
       company: "Amazon",
       title: "Seller Central: Seller Qualification",
@@ -235,6 +238,7 @@ window.SITE = {
     },
     {
       id: "compliance-report",
+      locked: true,
       type: "work",
       company: "IBM",
       title: "Regulatory Compliance Accelerator: Compliance Report",
@@ -362,6 +366,7 @@ window.SITE = {
     },
     {
       id: "enterprise-experience",
+      locked: true,
       type: "work",
       company: "SAP",
       title: "Fiori Design System: Data Table",
