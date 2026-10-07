@@ -715,7 +715,7 @@ window.SITE = {
       title: "Sodacat's Taste of the World",
       // Experiment log fields (edit freely)
       date: "2026",
-      medium: "Vibe-coded web",
+      medium: "Live web product",
       tools: "Figma Make · Claude",
       status: "Shipped",
       summary:
@@ -726,24 +726,59 @@ window.SITE = {
       images: ["images/sodacats-world.webp"],
       case: {
         headline: "A world traveler's go-to list, on one map",
-        lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
+        lead: "I turned years of saved places into a personal world guide: 1,217 restaurants, bars, museums, beaches and more, organized into one searchable map.",
         cover: "images/sodacats-world.webp",
-        coverVideo: { src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
-        aboutTitle: "My Google Maps, turned into a world guide",
+        impact: [["1,217", "Places"], ["53", "Cities"], ["29", "Countries"]],
+        aboutTitle: "From scattered saves to a usable world guide",
         about: [
-          "Over the years I've saved a huge number of places on Google Maps — restaurants, bars, museums, beaches. I turned them into Sodacat's world recommendations: one site where, in any corner of the world, I can see my picks for what to eat, drink, and do nearby.",
-          "1,217 places across 53 cities and 29 countries sit on one zoomable world map. Filter by country and city, switch between Eat, Drink and Do, or search by name; every card opens the place in Google Maps.",
-          "Built end-to-end through vibe coding — no hand-written code, from my saved places to a live, searchable world map."
+          "Over the years, I'd saved more than a thousand places across Google Maps. The collection was useful, but increasingly hard to navigate: when I arrived in a new city, finding the places I actually cared about meant digging through years of scattered saves.",
+          "So I built **Sodacat's Taste of the World**, a personal recommendation system that turns those saves into an explorable world map. Explore by country and city, switch between Eat, Drink and Do, search by name, and open any place directly in Google Maps.",
+          "I designed and shipped it end-to-end with **Figma Make and Claude**, using AI to move from raw location data to a working web product without hand-writing code."
         ],
         facts: [
-          ["Medium", "Vibe-coded web"],
-          ["Tools", "Figma Make · Claude"],
-          ["Status", "Shipped, 2026"]
+          ["Role", "Designer · Builder"],
+          ["Built with", "Figma Make · Claude"],
+          ["Output", "Live web product"],
+          ["Status", "Shipped · 2026"]
         ],
         sections: [
           {
-            title: "Live prototype",
+            title: "The problem",
             blocks: [
+              { type: "statement", text: "Google Maps was good at saving places, but not at making my personal taste explorable." },
+              { type: "p", text: "My saves were organized by when I saved them, not by where I was or what I wanted to do.", items: [
+                "Places sat in long lists, not on a map of the city I was standing in.",
+                "There was no way to ask \u201cwhere should I eat here?\u201d versus \u201cwhat should I see?\u201d",
+                "The more I saved, the harder the collection became to use."
+              ] }
+            ]
+          },
+          {
+            title: "Designing the information model",
+            blocks: [
+              { type: "p", text: "Before building anything, I decided how a thousand places should be found. The structure follows how a traveler thinks: where am I, and what am I in the mood for." },
+              { type: "map", items: [["World", "29 countries"], ["Country", "53 cities"], ["City", "Eat · Drink · Do"], ["Category", "1,217 places"], ["Place", "Open in Google Maps"]] },
+              { type: "p", text: "Splitting places by intent (Eat, Drink, Do) instead of by type keeps every city short enough to scan, and search covers the moments when I already know the name." }
+            ]
+          },
+          {
+            title: "Building with AI",
+            blocks: [
+              { type: "p", text: "I treated AI as a production medium, not a shortcut.", numbered: true, items: [
+                "**Raw data:** exported years of saved places.",
+                "**Structure:** cleaned and sorted them into the country, city and category model.",
+                "**Prompt and iterate:** built the map and filters with Figma Make and Claude, one interaction at a time.",
+                "**Prototype:** tested it on real trips, in real cities.",
+                "**QA:** checked places, counts and links against the source data.",
+                "**Ship:** published it as a live web product."
+              ] },
+              { type: "statement", text: "AI accelerated implementation, but the information architecture, interaction model, visual direction, data cleanup and product decisions remained mine." }
+            ]
+          },
+          {
+            title: "Shipped experience",
+            blocks: [
+              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
               { type: "embed", src: "experiments/sodacats-world.html", title: "Sodacat's Taste of the World — live prototype" }
             ]
           }

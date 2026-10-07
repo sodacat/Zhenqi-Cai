@@ -2836,6 +2836,11 @@ ol {
 .case-overview .case-facts > div:nth-child(1) { grid-column: 1 / 7; }
 .case-overview .case-facts > div:nth-child(2) { grid-column: 7 / 10; }
 .case-overview .case-facts > div:nth-child(3) { grid-column: 10 / -1; }
+/* four facts: three columns each */
+.case-overview .case-facts:has(> div:nth-child(4)) > div:nth-child(1) { grid-column: 1 / 4; }
+.case-overview .case-facts:has(> div:nth-child(4)) > div:nth-child(2) { grid-column: 4 / 7; }
+.case-overview .case-facts:has(> div:nth-child(4)) > div:nth-child(3) { grid-column: 7 / 10; }
+.case-overview .case-facts:has(> div:nth-child(4)) > div:nth-child(4) { grid-column: 10 / -1; }
 
 .case-overview .case-facts dd {
   margin: 0;
