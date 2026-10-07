@@ -661,7 +661,7 @@ window.SITE = {
                 "The landing page was designed as the first interface where users encounter the system. The goal was not just responsiveness, but information clarity and cognitive accessibility.",
                 "This is not just a layout system, but an information system that helps users build understanding progressively."
               ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-model.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-model-hd.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
               { type: "p", title: "The approach: responsive design", text: "I structured the page to:",
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
