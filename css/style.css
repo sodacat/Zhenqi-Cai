@@ -3331,3 +3331,5 @@ body[data-page="project"] .footer-top .footer-contact {
 .lock-error[hidden] { display: none; }
 /* black and white, like the work cards */
 .lock-media img { filter: grayscale(1); }
+.lock-help { margin: var(--lh-body) 0 0; }
+.lock-help a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }

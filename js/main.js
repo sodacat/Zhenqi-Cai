@@ -485,7 +485,8 @@
               <input id="lock-pw" class="lock-input" type="password" autocomplete="current-password" required autofocus>
               <button class="btn btn-accent" type="submit">View case study ${arrow}</button>
             </div>
-            <p class="label lock-error" role="alert" hidden>That password isn't right. Try again, or <a href="mailto:${esc(S.email || "")}">ask me for access</a>.</p>
+            <p class="label lock-error" role="alert" hidden>That password isn't right. Try again.</p>
+            <p class="lock-help">Don't have the password? <a href="mailto:${esc(S.email || "")}?subject=${encodeURIComponent("Portfolio password: " + p.title)}">Email me for access</a>.</p>
           </form>
         </div>
         <div class="lock-media">${p.cover ? media(p.cover, p.title, "case-media") : cover(p)}</div>

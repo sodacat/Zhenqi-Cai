@@ -65,10 +65,10 @@ window.SITE = {
 
   cta: "Let's make complexity feel human — together.",
   copyright: "© 2026 Zhenqi Cai. All rights reserved.",
-  email: "hello@zhenqicai.com",
+  email: "zhenqicai0603@gmail.com",
   resume: "Resume_Zhenqi_Cai.pdf",
   social: [
-    { label: "Email", url: "mailto:hello@zhenqicai.com" },
+    { label: "Email", url: "mailto:zhenqicai0603@gmail.com" },
     { label: "LinkedIn", url: "https://linkedin.com/" }
   ],
 
