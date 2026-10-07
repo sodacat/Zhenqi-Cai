@@ -876,7 +876,7 @@ window.SITE = {
             blocks: [
               { type: "p", text: "Claude suggested about 55 changes. I tried 27 and cut 10 after seeing them on the real page. Two of them:" },
               { type: "h", text: "Cut: a staggered work grid" },
-              { type: "img", src: "images/this-portfolio/work-rejected.webp", frame: true, alt: "Rejected: Selected work as a staggered, magazine-style grid" },
+              { type: "img", src: "images/this-portfolio/work-rejected-v2.webp", frame: true, alt: "Rejected: Selected work as a staggered, magazine-style grid" },
               { type: "p", text: "Claude proposed a more expressive composition for the project cards. It looked interesting, and made the work harder to scan: projects 3 and 4 fell below the fold. The even grid was quieter, and better." },
               { type: "h", text: "Cut: a rectangular portrait" },
               { type: "pair", frame: true, items: [
