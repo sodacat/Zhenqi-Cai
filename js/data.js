@@ -755,7 +755,7 @@ window.SITE = {
             blocks: [
               { type: "h", text: "Turn a collection into something explorable" },
               { type: "p", text: ["The first design problem wasn’t visual. It was structural.", "I organized the same collection around two questions:"] },
-              { type: "cards", items: [{ label: "Where", title: "World → Country → City → Place" }, { label: "What", title: "All → Eat → Drink → Do" }] },
+              { type: "img", src: "images/sodacats-world/ia.webp", alt: "Where: World, Country, City, Place. What: All, Eat, Drink, Do" },
               { type: "p", text: ["Instead of forcing places into one navigation hierarchy, geography and activity work as independent dimensions.", "A country can be narrowed into a city, then filtered by what I want to do. Or I can search directly, browse the map, or start with an activity instead."] },
               { type: "statement", text: "The interface adapts to the question instead of requiring the user to understand the database underneath it." }
             ]
@@ -765,6 +765,7 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Color became navigation, not decoration." },
               { type: "p", text: ["With more than a thousand places spread around the world, I wanted users to recognize where something is and what kind of place it is without adding more interface complexity.", "I designed two complementary color systems."] },
+              { type: "img", src: "images/sodacats-world/colors.webp", alt: "Continent colors for where, and Eat, Drink, Do colors for what" },
               { type: "cards", items: [{ label: "Where", title: "Continent", text: ["Each continent has its own identifying color, carried through country chips and geographic indicators.", "Countries remain individually selectable, while shared color creates a subtle visual relationship between places from the same part of the world.", "The system makes geography easier to scan without introducing another layer of navigation."] }, { label: "What", title: "Eat, Drink, Do", text: "A second semantic palette distinguishes the type of experience:", items: ["**Eat** — restaurants and food", "**Drink** — bars, cafés, and drinks", "**Do** — museums, beaches, attractions, and experiences"], after: "These colors repeat across filters, icons, and place cards, creating a consistent shorthand throughout the product." }] },
               { type: "p", text: "Together, the two systems answer the two questions behind almost every interaction: where is it? What can I do there?" },
               { type: "p", text: "Rather than using color as decoration, I used it as another layer of information architecture." }
@@ -785,7 +786,9 @@ window.SITE = {
             title: "Building with AI",
             blocks: [
               { type: "h", text: "From designer to designer-builder" },
-              { type: "p", text: ["I built the product end-to-end with Figma Make and Claude, using AI not just for ideation, but as part of the production workflow.", "AI helped me move from structured location data to a functioning responsive product: implementing interactions, working through responsive behavior, debugging edge cases, and rapidly testing changes in the actual experience.", "But generating software wasn’t the same as defining the product.", "I still had to decide how 1,217 places should be organized, which interactions mattered, what belonged on a place card, how geography and activity should work together, and when the experience should hand off to Google Maps."] },
+              { type: "p", text: ["I built the product end-to-end with Figma Make and Claude, using AI not just for ideation, but as part of the production workflow.", "AI helped me move from structured location data to a functioning responsive product: implementing interactions, working through responsive behavior, debugging edge cases, and rapidly testing changes in the actual experience."] },
+              { type: "img", src: "images/sodacats-world/steps.webp", alt: "Data to product with AI: export saved places, structure and clean data, design the system, build with AI, test in product, refine and ship" },
+              { type: "p", text: ["But generating software wasn’t the same as defining the product.", "I still had to decide how 1,217 places should be organized, which interactions mattered, what belonged on a place card, how geography and activity should work together, and when the experience should hand off to Google Maps."] },
               { type: "statement", text: "AI accelerated implementation. Product judgment still defined the experience." },
               { type: "h", text: "Working software became the design medium" },
               { type: "p", text: "Instead of treating design and implementation as separate phases, I could test decisions directly in the product." },
