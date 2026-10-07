@@ -666,7 +666,7 @@ window.SITE = {
                 items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
               { type: "p", text: "The responsive grid system ensured that:",
                 items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
-              { type: "img", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
+              { type: "img", src: "images/stonk-tech/responsive-v2.webp", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
               { type: "cols", label: "Breakpoints", items: [
                 { src: "images/stonk-tech/phone-hd.webp", title: "Phone view", text: "On phone screens (device-width < 375px),",
                   items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
