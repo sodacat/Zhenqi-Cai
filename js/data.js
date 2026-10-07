@@ -728,6 +728,7 @@ window.SITE = {
         headline: "A world traveler’s go-to list, on one map",
         lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
         cover: "images/sodacats-world.webp",
+        coverVideo: { src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
         impact: [["1,217", "Places"], ["53", "Cities"], ["29", "Countries"]],
         aboutTitle: "My saved places, turned into a world guide",
         about: ["Over the years, I’ve saved more than a thousand places across Google Maps — restaurants I’d return to, bars worth remembering, museums I loved, and places I still wanted to explore.", "The collection kept growing, but became increasingly difficult to navigate. When I arrived somewhere new, finding the places I actually cared about meant digging through years of scattered saves.", "So I built **Sodacat’s Taste of the World** — a personal world guide that turns those saves into one searchable, explorable map.", "1,217 places across 53 cities and 29 countries can be explored by location, searched by name, or filtered into Eat, Drink, and Do. Every recommendation connects back to Google Maps when it’s time to go.", "I designed and shipped the experience end-to-end through vibe coding, using AI to move from raw location data to a working web product without hand-writing code."],
@@ -805,8 +806,7 @@ window.SITE = {
             title: "The shipped experience",
             blocks: [
               { type: "h", text: "1,217 places. One personal map of the world." },
-              { type: "p", text: "The final product brings years of scattered saves into one coherent interface. It supports:", items: ["1,217 saved places", "53 cities", "29 countries", "Eat · Drink · Do filtering", "Country and city exploration", "Place search", "Interactive world map", "Responsive layouts", "Direct Google Maps handoff"], after: "More importantly, it transformed something passive — years of places I had once saved — into something I can actually use wherever I go." },
-              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" }
+              { type: "p", text: "The final product brings years of scattered saves into one coherent interface. It supports:", items: ["1,217 saved places", "53 cities", "29 countries", "Eat · Drink · Do filtering", "Country and city exploration", "Place search", "Interactive world map", "Responsive layouts", "Direct Google Maps handoff"], after: "More importantly, it transformed something passive — years of places I had once saved — into something I can actually use wherever I go." }
             ]
           },
           {
