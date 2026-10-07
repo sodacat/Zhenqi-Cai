@@ -668,7 +668,7 @@ window.SITE = {
                 items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
               { type: "img", src: "images/stonk-tech/responsive.jpg", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
               { type: "cols", label: "Breakpoints", items: [
-                { src: "images/stonk-tech/phone.jpg", title: "Phone view", text: "On phone screens (device-width < 375px),",
+                { src: "images/stonk-tech/phone-hd.webp", title: "Phone view", text: "On phone screens (device-width < 375px),",
                   items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
                 { src: "images/stonk-tech/tablet.jpg", title: "Tablet view", text: "On tablet screens (375px < device-width < 768px),",
                   items: ["Grid scales from 335px to 648px depending on the screen size;", "Margin scales from 20px to 60px depending on the screen size;", "Use a full navigation bar in the tablet width;", "Use a horizontal layout in the tablet width."] },
