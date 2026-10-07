@@ -309,7 +309,7 @@
       ["Focus", (p.tags || []).join(", ")]
     ].filter(([, v]) => v);
 
-    if (p.locked && !unlocked()) return lockView(p, i);
+    if (p.locked && !unlocked(p.id)) return lockView(p, i);
     if (p.case) return caseStudy(p, i, next);
 
     return `<main>
@@ -458,10 +458,15 @@
     }
   }
 
-  // Password gate for NDA work: a soft lock, remembered for the browser session
-  const LOCK_KEY = "zc-unlocked";
-  function unlocked() {
-    try { return sessionStorage.getItem(LOCK_KEY) === S.lockHash; } catch (e) { return false; }
+  // Password gate for NDA work: a soft lock asked on every visit to every
+  // locked project. A correct entry is passed through one reload, then cleared.
+  const LOCK_KEY = "zc-unlock";
+  function unlocked(id) {
+    try {
+      const ok = sessionStorage.getItem(LOCK_KEY) === id;
+      sessionStorage.removeItem(LOCK_KEY);
+      return ok;
+    } catch (e) { return false; }
   }
 
   function lockView(p, i) {
@@ -556,7 +561,7 @@
         hex = [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
       } catch (x) { /* no WebCrypto: treat as wrong */ }
       if (hex === S.lockHash) {
-        try { sessionStorage.setItem(LOCK_KEY, hex); } catch (x) { /* storage blocked: the gate stays */ }
+        try { sessionStorage.setItem(LOCK_KEY, new URLSearchParams(location.search).get("id")); } catch (x) { /* storage blocked: the gate stays */ }
         location.reload();
       } else {
         err.hidden = false;
