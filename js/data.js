@@ -725,60 +725,103 @@ window.SITE = {
       cover: "images/sodacats-world.webp",
       images: ["images/sodacats-world.webp"],
       case: {
-        headline: "A world traveler's go-to list, on one map",
-        lead: "I turned years of saved places into a personal world guide: 1,217 restaurants, bars, museums, beaches and more, organized into one searchable map.",
+        headline: "A world traveler’s go-to list, on one map",
+        lead: "Every go-to restaurant, bar, museum, and beach — from the Texas backyard to the other side of the planet.",
         cover: "images/sodacats-world.webp",
         impact: [["1,217", "Places"], ["53", "Cities"], ["29", "Countries"]],
-        aboutTitle: "From scattered saves to a usable world guide",
-        about: [
-          "Over the years, I'd saved more than a thousand places across Google Maps. The collection was useful, but increasingly hard to navigate: when I arrived in a new city, finding the places I actually cared about meant digging through years of scattered saves.",
-          "So I built **Sodacat's Taste of the World**, a personal recommendation system that turns those saves into an explorable world map. Explore by country and city, switch between Eat, Drink and Do, search by name, and open any place directly in Google Maps.",
-          "I designed and shipped it end-to-end with **Figma Make and Claude**, using AI to move from raw location data to a working web product without hand-writing code."
-        ],
+        aboutTitle: "My saved places, turned into a world guide",
+        about: ["Over the years, I’ve saved more than a thousand places across Google Maps — restaurants I’d return to, bars worth remembering, museums I loved, and places I still wanted to explore.", "The collection kept growing, but became increasingly difficult to navigate. When I arrived somewhere new, finding the places I actually cared about meant digging through years of scattered saves.", "So I built **Sodacat’s Taste of the World** — a personal world guide that turns those saves into one searchable, explorable map.", "1,217 places across 53 cities and 29 countries can be explored by location, searched by name, or filtered into Eat, Drink, and Do. Every recommendation connects back to Google Maps when it’s time to go.", "I designed and shipped the experience end-to-end through vibe coding, using AI to move from raw location data to a working web product without hand-writing code."],
         facts: [
           ["Role", "Designer · Builder"],
           ["Built with", "Figma Make · Claude"],
-          ["Output", "Live web product"],
+          ["Output", "Responsive web product"],
           ["Status", "Shipped · 2026"]
         ],
         sections: [
           {
             title: "The problem",
             blocks: [
-              { type: "statement", text: "Google Maps was good at saving places, but not at making my personal taste explorable." },
-              { type: "p", text: "My saves were organized by when I saved them, not by where I was or what I wanted to do.", items: [
-                "Places sat in long lists, not on a map of the city I was standing in.",
-                "There was no way to ask \u201cwhere should I eat here?\u201d versus \u201cwhat should I see?\u201d",
-                "The more I saved, the harder the collection became to use."
-              ] }
+              { type: "h", text: "Saving places was easy. Finding them again wasn’t." },
+              { type: "p", text: ["Google Maps had become my external travel memory.", "After years of traveling, my saved places stretched across countries and continents. But the larger the collection became, the less useful it was as a collection."] },
+              { type: "statement", text: "The information was there. The structure wasn’t." },
+              { type: "p", text: ["A simple question like “Where should I eat around here?” could mean scrolling through unrelated saves, remembering which list something belonged to, or zooming around the map until something familiar appeared.", "I didn’t need another travel recommendation app. I needed a better interface for my own taste."] },
+              { type: "statement", text: "The challenge wasn’t collecting more places. It was making 1,217 existing choices retrievable." }
             ]
           },
           {
-            title: "Designing the information model",
+            title: "Designing the system",
             blocks: [
-              { type: "p", text: "Before building anything, I decided how a thousand places should be found. The structure follows how a traveler thinks: where am I, and what am I in the mood for." },
-              { type: "map", items: [["World", "29 countries"], ["Country", "53 cities"], ["City", "Eat · Drink · Do"], ["Category", "1,217 places"], ["Place", "Open in Google Maps"]] },
-              { type: "p", text: "Splitting places by intent (Eat, Drink, Do) instead of by type keeps every city short enough to scan, and search covers the moments when I already know the name." }
+              { type: "h", text: "Turn a collection into something explorable" },
+              { type: "p", text: ["The first design problem wasn’t visual. It was structural.", "I needed the same collection to support two different ways of thinking:"] },
+              { type: "cards", items: [{ label: "Where am I?", title: "World → Country → City → Place" }, { label: "What do I want?", title: "All → Eat → Drink → Do" }] },
+              { type: "p", text: ["Instead of forcing places into one navigation hierarchy, I designed geography and intent as two dimensions that can work independently.", "A traveler can start with a country, narrow into a city, switch from restaurants to things to do, search directly for a place — or simply explore the map."] },
+              { type: "statement", text: "The interface adapts to the question instead of requiring the user to understand the database underneath it." }
+            ]
+          },
+          {
+            title: "Visual language",
+            blocks: [
+              { type: "h", text: "Color became navigation, not decoration" },
+              { type: "p", text: ["With more than a thousand places distributed around the world, I wanted location and intent to be recognizable without adding more labels or interface complexity.", "I created a lightweight color system with two layers of meaning."] },
+              { type: "cards", items: [{ label: "Where", title: "Continent", text: ["Each continent receives its own identifying color. That color travels through geographic filters and location indicators, making countries from the same part of the world feel related while preserving distinctions across the global collection.", "The result is a subtle geographic vocabulary: users begin to recognize where something belongs before reading every label."] }, { label: "What", title: "Eat, Drink, Do", text: "A separate semantic color system represents the type of experience:", items: ["**Eat** — restaurants and food", "**Drink** — bars, cafés, and drinks", "**Do** — museums, beaches, attractions, and experiences"], after: "These colors repeat across filters, icons, and place cards, creating a consistent shorthand for what each place offers." }] },
+              { type: "p", text: "Together, the two systems answer the two questions behind almost every interaction: where is it, and what can I do there?" },
+              { type: "statement", text: "Rather than using color as decoration, I used it as another layer of information architecture." }
+            ]
+          },
+          {
+            title: "Designing for exploration",
+            blocks: [
+              { type: "h", text: "Search when you know. Browse when you don’t." },
+              { type: "p", text: ["Travel discovery isn’t always a search problem.", "Sometimes I know exactly what I’m looking for. Other times I’m standing in a new neighborhood wondering what I’ve saved nearby. So I designed multiple paths into the same dataset."], items: ["**Search** handles known destinations and names.", "**Country and city filters** progressively narrow the world.", "**Eat / Drink / Do filters** change the type of recommendation without resetting location.", "**The map** supports spatial exploration.", "**Place cards** expose enough information to make a decision before opening Google Maps."] },
+              { type: "statement", text: "The goal was to let the interface move naturally between retrieval and discovery." }
+            ]
+          },
+          {
+            title: "From map to place",
+            blocks: [
+              { type: "h", text: "Keep the guide lightweight" },
+              { type: "p", text: ["I didn’t want to rebuild Google Maps.", "The site’s job is to help me decide which of my places is relevant now. Once I choose one, Google Maps is already better at directions, hours, reviews, and navigation.", "So every place card acts as a bridge between the personal collection and the existing mapping ecosystem. This kept the product focused:"] },
+              { type: "statement", text: "Discover here. Navigate there." }
             ]
           },
           {
             title: "Building with AI",
             blocks: [
-              { type: "p", text: "I treated AI as a production medium, not a shortcut.", numbered: true, items: [
-                "**Raw data:** exported years of saved places.",
-                "**Structure:** cleaned and sorted them into the country, city and category model.",
-                "**Prompt and iterate:** built the map and filters with Figma Make and Claude, one interaction at a time.",
-                "**Prototype:** tested it on real trips, in real cities.",
-                "**QA:** checked places, counts and links against the source data.",
-                "**Ship:** published it as a live web product."
-              ] },
-              { type: "statement", text: "AI accelerated implementation, but the information architecture, interaction model, visual direction, data cleanup and product decisions remained mine." }
+              { type: "h", text: "From designer to designer-builder" },
+              { type: "p", text: ["I built the product end-to-end using Figma Make and Claude, treating AI not just as an ideation tool, but as part of the production workflow.", "I used AI to help transform the concept into a functioning responsive product: structuring data, generating and iterating implementation, debugging interactions, refining responsive behavior, and moving rapidly between design decisions and working software.", "That changed the way I worked. Instead of handing static screens to engineering, I could evaluate decisions in the actual product: resize it, search it, filter hundreds of places, discover edge cases, change the system, and immediately test again.", "But generating code wasn’t the same as designing the product.", "I still had to decide what the system should be: how 1,217 places should be organized, which interactions mattered, what information belonged on a card, how geography and activity should coexist, how color should encode meaning, and when the experience should hand off to Google Maps."] },
+              { type: "statement", text: "AI accelerated implementation. Product judgment still defined the experience." }
             ]
           },
           {
-            title: "Shipped experience",
+            title: "Iterating in the product",
             blocks: [
-              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" },
+              { type: "h", text: "Working software became the design medium" },
+              { type: "p", text: ["Building directly in a functional environment exposed problems that static mockups wouldn’t.", "Filters had to work together rather than independently. Long country names had to survive responsive layouts. A system that looked reasonable with ten places had to remain usable with more than a thousand.", "Instead of treating design and implementation as separate phases, I moved continuously between them:"] },
+              { type: "statement", text: "Design → Build → Use → Find friction → Refine" },
+              { type: "p", text: "Vibe coding shortened that loop enough that the working product itself became part of the design process." }
+            ]
+          },
+          {
+            title: "The shipped experience",
+            blocks: [
+              { type: "h", text: "1,217 places. One personal map of the world." },
+              { type: "p", text: "The final product brings years of scattered saves into one coherent interface. It supports:", items: ["1,217 saved places", "53 cities", "29 countries", "Eat · Drink · Do filtering", "Country and city exploration", "Place search", "Interactive world map", "Responsive layouts", "Direct Google Maps handoff"], after: "More importantly, it transformed something passive — years of places I had once saved — into something I can actually use wherever I go." },
+              { type: "video", src: "images/sodacats-world/demo.mp4", webm: "images/sodacats-world/demo.webm", poster: "images/sodacats-world/demo-poster.jpg", alt: "Walkthrough: zooming the map, filtering by country, city and category" }
+            ]
+          },
+          {
+            title: "Reflection",
+            blocks: [
+              { type: "h", text: "The interesting part wasn’t that AI could build it." },
+              { type: "statement", text: "It was how building became part of designing it." },
+              { type: "p", text: ["This project started as a small personal frustration: I had accumulated more recommendations than I could meaningfully navigate.", "AI made it possible for me to take that problem further than a prototype. I could define the system, design the interface, build it, encounter real constraints, revise my decisions, and ship the result myself.", "The biggest shift was not simply moving faster. It was reducing the distance between an idea, a design decision, and a working product.", "And somewhere along the way, years of pins on a map became a product I actually wanted to use."] }
+            ]
+          },
+          {
+            title: "Live prototype",
+            blocks: [
+              { type: "h", text: "Explore Sodacat’s Taste of the World" },
+              { type: "p", text: "Built with Figma Make + Claude · Shipped in 2026" },
               { type: "embed", src: "experiments/sodacats-world.html", title: "Sodacat's Taste of the World — live prototype" }
             ]
           }
