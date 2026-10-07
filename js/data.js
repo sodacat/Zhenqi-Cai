@@ -643,7 +643,7 @@ window.SITE = {
                 "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
                 "Rather than serving as a stylistic choice, color functions as part of the system’s communication layer: highlighting activity, guiding attention, and making dynamic market conditions more immediately interpretable."
               ] },
-              { type: "side", narrow: true, frame: true, title: "Typography", src: "images/stonk-tech/typography.jpg",
+              { type: "side", narrow: true, frame: true, title: "Typography", src: "images/stonk-tech/typography-hd.webp",
                 text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
               { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
               { type: "img", frame: true, src: "images/stonk-tech/logo-identity.jpg", alt: "Logo and wordmark spacing rules" },
