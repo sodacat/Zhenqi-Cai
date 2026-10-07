@@ -678,7 +678,7 @@ window.SITE = {
                   items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
               ] },
               { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
-              { type: "img", src: "images/stonk-tech/illustrations-1.jpg", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-1-hd.webp", alt: "3D illustrations on phone, tablet and desktop" },
               { type: "img", src: "images/stonk-tech/illustrations-2.jpg", alt: "3D illustrations on phone, tablet and desktop" },
               { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
               { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
