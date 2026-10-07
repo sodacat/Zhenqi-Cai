@@ -3333,3 +3333,6 @@ body[data-page="project"] .footer-top .footer-contact {
 .lock-media img { filter: grayscale(1); }
 .lock-help { margin: var(--lh-body) 0 0; }
 .lock-help a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+/* the button takes two of the form's six columns, arrow at the far edge */
+.lock-row .btn { flex: 0 0 calc((100% - 5 * var(--pad)) / 3 + var(--pad)); justify-content: space-between; }
+@media (max-width: 680px) { .lock-row .btn { flex-basis: auto; } }
