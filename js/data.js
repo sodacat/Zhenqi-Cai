@@ -608,7 +608,7 @@ window.SITE = {
                 "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
                 "The goal was to create a system that communicates:"
               ], items: ["transparency in a traditionally opaque domain", "approachability in a high-barrier environment", "credibility comparable to institutional platforms"] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-process.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-process-hd.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
               { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
                 items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
                 after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
