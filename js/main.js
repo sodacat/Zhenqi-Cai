@@ -483,7 +483,7 @@
             <label class="label" for="lock-pw">Password</label>
             <div class="lock-row">
               <input id="lock-pw" class="lock-input" type="password" autocomplete="current-password" required autofocus>
-              <button class="btn btn-accent" type="submit">View case study ${arrow}</button>
+              <button class="btn btn-accent" type="submit">View ${arrow}</button>
             </div>
             <p class="label lock-error" role="alert" hidden>That password isn't right. Try again.</p>
             <p class="lock-help">Don't have the password? <a href="mailto:${esc(S.email || "")}?subject=${encodeURIComponent("Portfolio password: " + p.title)}">Email me for access</a>.</p>
