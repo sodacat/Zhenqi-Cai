@@ -332,7 +332,7 @@ window.SITE = {
                 { title: "Customizable", text: "How can users tailor views to their decisions?" }
               ] },
               { type: "p", text: "I tested with business analysts like Betty — first a low-fi concept (R1), then a high-fi prototype (R2) — focusing not on UI feedback but on what drives their decisions and how they weigh trade-offs." },
-              { type: "img", size: "md", src: "images/compliance-report/r1-lofi.webp", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
+              { type: "img", size: "md", src: "images/compliance-report/r1-lofi-hd.webp", alt: "R1 low-fi concept: GDPR compliance report with data analysis, filtering, new limitations and opportunities" },
               { type: "row", label: "R2 high-fi prototype", items: [["images/compliance-report/r2-progress-hd.webp", "Progress: highlighted terms and glossary and data asset progress", "R2 prototype progress tab"], ["images/compliance-report/r2-insights-hd.webp", "Insights: top terms, new regulations, what-if scenario and trends", "R2 prototype insights tab"]] },
               { type: "quotes", label: "What did the users say?", items: [
                 ["I would like to see the cost-to-benefit ratio, how exactly this gonna help us."],
