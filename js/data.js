@@ -40,7 +40,7 @@ window.SITE = {
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
 
   bio: [
-    "I'm Zhenqi(Zenchi), a product designer interested in the space between complex technology and human understanding — especially *how AI changes the way we make decisions*, create, and interact with systems.",
+    "I'm Zhenqi (Zenchi) Cai, a product designer interested in the space between complex technology and human understanding — especially *how AI changes the way we make decisions*, create, and interact with systems.",
     "I design for clarity, trust, and human agency in complex systems."
   ],
   portrait: "images/portrait.jpg",
