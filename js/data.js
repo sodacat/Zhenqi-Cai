@@ -377,12 +377,12 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Product Designer · Brand Designer",
-      "cover": "tetrate/assets/cover-editorial.svg",
+      "cover": "tetrate/assets/cover-native.svg",
       "alt": "Original Tetrate Service Bridge topology design showing service dependencies and health signals",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Designing a 0-to-1 Enterprise Cloud Platform and Visual System",
-        "cover": "tetrate/assets/cover-editorial.svg",
+        "cover": "tetrate/assets/cover-native.svg",
         "aboutTitle": "A service-centric platform for the hybrid and multi-cloud world",
         "about": [
           "Tetrate Service Bridge set out to simplify service mesh management across hybrid and multi-cloud environments. The design challenge was to help teams understand services, ownership, and health without getting lost in infrastructure details.",
@@ -487,14 +487,14 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-7-0.png",
+                "src": "tetrate/assets/product-7-0-native.webp",
                 "alt": "Original Object–Action Matrix · Service Bridge PDF, p. 7",
                 "frame": true,
                 "size": "md"
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-7-2.png",
+                "src": "tetrate/assets/product-7-2-native.webp",
                 "alt": "Original object–attribute and prioritization work · Service Bridge PDF, p. 7",
                 "frame": true,
                 "size": "md"
@@ -522,7 +522,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-10-0.png",
+                "src": "tetrate/assets/product-10-0-native.webp",
                 "alt": "Original onboarding prototype · Service Bridge PDF, p. 10",
                 "frame": true
               },
@@ -544,7 +544,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-11-1.png",
+                "src": "tetrate/assets/product-11-1-native.webp",
                 "alt": "Original service inventory · Service Bridge PDF, p. 11",
                 "frame": true
               },
@@ -558,7 +558,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-11-0.png",
+                "src": "tetrate/assets/product-11-0-native.webp",
                 "alt": "Original dashboard exploration · Service Bridge PDF, p. 11",
                 "frame": true
               },
@@ -576,7 +576,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-12-0.png",
+                "src": "tetrate/assets/product-12-0-native.webp",
                 "alt": "Original topology design · Service Bridge PDF, p. 12",
                 "frame": true
               },
@@ -591,7 +591,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-12-1.png",
+                "src": "tetrate/assets/product-12-1-native.webp",
                 "alt": "Original contextual pop-up · Service Bridge PDF, p. 12",
                 "frame": true
               },
@@ -609,7 +609,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-13-0.png",
+                "src": "tetrate/assets/product-13-0-native.webp",
                 "alt": "Original UI style guide presentation · Service Bridge PDF, p. 13",
                 "frame": true
               }
@@ -627,7 +627,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-4-0.png",
+                "src": "tetrate/assets/brand-4-0-native.webp",
                 "alt": "Original logo exploration · Branding PDF, p. 4",
                 "frame": true,
                 "size": "md"
@@ -642,21 +642,21 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-4-1.png",
+                "src": "tetrate/assets/brand-4-1-native.webp",
                 "alt": "Original concept construction · Branding PDF, p. 4",
                 "frame": true,
                 "size": "md"
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-5-0.png",
+                "src": "tetrate/assets/brand-5-0-native.webp",
                 "alt": "Color and visual direction exploration · Branding PDF, p. 5",
                 "frame": true,
                 "size": "md"
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-6-0.png",
+                "src": "tetrate/assets/brand-6-0-native.webp",
                 "alt": "Brand style guide: logo variations, spacing, sizing, colors, and typography · Branding PDF, p. 6",
                 "frame": true
               },
@@ -664,11 +664,11 @@ window.SITE = {
                 "type": "row",
                 "items": [
                   [
-                    "tetrate/assets/brand-7-1.png",
+                    "tetrate/assets/brand-7-1-native.webp",
                     "Identity application: apparel · Branding PDF, p. 7"
                   ],
                   [
-                    "tetrate/assets/brand-7-2.png",
+                    "tetrate/assets/brand-7-2-native.webp",
                     "Identity application: bag · Branding PDF, p. 7"
                   ]
                 ]
