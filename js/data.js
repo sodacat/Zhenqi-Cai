@@ -725,7 +725,7 @@ window.SITE = {
         "UI Foundations"
       ],
       "year": "2018",
-      "role": "Founding Brand Designer · Visual & Product Design",
+      "role": "Founding Designer",
       "cover": "tetrate/assets/thumbnail-outdoor-smaller.webp",
       "alt": "Tetrate — Brand Identity & Visual System: original-inspired brand-guide cover",
       "case": {
@@ -744,7 +744,7 @@ window.SITE = {
           ],
           [
             "Collaboration",
-            "Brand identity: Zhenqi Cai. Service Bridge product design: Zhenqi Cai and Megha Damani."
+            "Zhenqi Cai: brand identity, all visual design, and product design. Megha Damani: interaction design for part of the onboarding experience."
           ],
           [
             "Timeline",
@@ -877,7 +877,7 @@ window.SITE = {
             "blocks": [
               {
                 "type": "p",
-                "text": "The Service Bridge interfaces show the visual language in an operational product. I collaborated with Megha Damani on product design, with a scope spanning onboarding, service inventory, and topology."
+                "text": "As Founding Designer, I led brand identity, all visual design, and product design across onboarding, service inventory, and topology. Megha Damani contributed interaction design for part of the onboarding experience."
               },
               {
                 "type": "row",
@@ -906,7 +906,7 @@ window.SITE = {
                 "type": "img",
                 "src": "tetrate/assets/product-12-0-native.webp",
                 "size": "sm",
-                "alt": "Collaborative topology exploration, based on Service Bridge PDF p. 12",
+                "alt": "Topology design by Zhenqi Cai, based on Service Bridge PDF p. 12",
                 "frame": true
               }
             ]
@@ -939,7 +939,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "Original work, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. Process images are original Tetrate project artifacts. The hero is an AI-assisted presentation based on the original brand-guide image.",
+                "text": "Original work, 2018. Founding Designer: Zhenqi Cai, responsible for brand identity, all visual design, and product design. Megha Damani contributed interaction design for part of onboarding. Process images are original Tetrate project artifacts. The hero is an AI-assisted presentation based on the original brand-guide image.",
                 "title": "Credits"
               }
             ]
