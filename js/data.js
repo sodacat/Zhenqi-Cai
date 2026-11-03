@@ -920,11 +920,6 @@ window.SITE = {
                 "type": "p",
                 "text": "The documented delivery was a brand identity and brand/UI style guides. Real-user testing of the product was still planned. A next iteration would test recognition, legibility, and color accessibility, then develop the UI foundations further.",
                 "title": "Scope and next steps"
-              },
-              {
-                "type": "p",
-                "text": "Original work, 2018. Founding Designer: Zhenqi Cai, responsible for brand identity, all visual design, and product design. Megha Damani contributed interaction design for part of onboarding. Process images are original Tetrate project artifacts. The hero is an AI-assisted presentation based on the original brand-guide image.",
-                "title": "Credits"
               }
             ]
           }
