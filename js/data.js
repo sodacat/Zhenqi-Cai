@@ -377,12 +377,12 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Brand Designer · Visual & Product Design",
-      "cover": "tetrate/assets/cover-brand-ai.webp",
-      "alt": "AI-reconstructed Tetrate brand identity and visual-system presentation",
+      "cover": "tetrate/assets/brand-6-0-original-hd.png",
+      "alt": "Original Tetrate brand style-guide presentation",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Building a Brand Identity, Visual Language & Design System",
-        "cover": "tetrate/assets/cover-brand-ai.webp",
+        "cover": "tetrate/assets/brand-6-0-original-hd.png",
         "aboutTitle": "Tetrate — a visual identity for invisible infrastructure",
         "about": [
           "Tetrate builds infrastructure for managing distributed services across hybrid and multi-cloud environments. My branding work explored how this technical company could develop a recognizable identity and a consistent visual presence.",
@@ -414,8 +414,8 @@ window.SITE = {
           },
           {
             "type": "p",
-            "text": "All Tetrate visuals shown here are AI-assisted reconstructions of the original 2018 artifacts, made for clearer presentation. They are not unchanged historical screenshots or photographs; fine lettering and rendering may differ. The original PDFs remain the source of record.",
-            "title": "Image presentation"
+            "title": "Original design artifacts",
+            "text": "Brand visuals use the original artwork and mockups shown in the Tetrate Branding PDF. Where available, the original full-resolution uploads have been restored instead of PDF screenshots or AI reconstructions. Product visuals come from the original Service Bridge PDF."
           }
         ],
         "sections": [
@@ -457,8 +457,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-4-0-ai.webp",
-                "alt": "AI reconstruction — Tetrate logo concept exploration, based on Branding PDF p. 4",
+                "src": "tetrate/assets/brand-4-0-original-hd.png",
+                "alt": "Tetrate logo concept exploration, based on Branding PDF p. 4",
                 "frame": true
               },
               {
@@ -471,8 +471,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-4-1-ai.webp",
-                "alt": "AI reconstruction — Infinity + cloud + tetration graph concept construction, based on Branding PDF p. 4",
+                "src": "tetrate/assets/brand-4-1-original-hd.png",
+                "alt": "Infinity + cloud + tetration graph concept construction, based on Branding PDF p. 4",
                 "frame": true
               },
               {
@@ -490,8 +490,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-5-0-ai.webp",
-                "alt": "AI reconstruction — Logo color and visual-direction explorations, based on Branding PDF p. 5",
+                "src": "tetrate/assets/brand-5-0-original-hd.png",
+                "alt": "Logo color and visual-direction explorations, based on Branding PDF p. 5",
                 "frame": true
               },
               {
@@ -513,8 +513,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/brand-6-0-ai.webp",
-                "alt": "AI reconstruction — Tetrate brand style guide and identity booklet, based on Branding PDF p. 6",
+                "src": "tetrate/assets/brand-6-0-original-hd.png",
+                "alt": "Tetrate brand style guide and identity booklet, based on Branding PDF p. 6",
                 "frame": true
               },
               {
@@ -550,8 +550,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-13-0-ai.webp",
-                "alt": "AI reconstruction — Tetrate UI style-guide presentation, based on Service Bridge PDF p. 13",
+                "src": "tetrate/assets/product-13-0-native.webp",
+                "alt": "Tetrate UI style-guide presentation, based on Service Bridge PDF p. 13",
                 "frame": true
               },
               {
@@ -571,20 +571,20 @@ window.SITE = {
                 "type": "row",
                 "items": [
                   [
-                    "tetrate/assets/brand-7-1-ai.webp",
-                    "AI reconstruction · Apparel application",
-                    "AI reconstruction of Tetrate navy T-shirt identity application"
+                    "tetrate/assets/brand-7-1-original-hd.jpeg",
+                    "Apparel application",
+                    "Tetrate navy T-shirt identity application"
                   ],
                   [
-                    "tetrate/assets/brand-7-2-ai.webp",
-                    "AI reconstruction · Signage application",
-                    "AI reconstruction of Tetrate identity on a projecting architectural sign"
+                    "tetrate/assets/brand-7-2-original-hd.png",
+                    "Signage application",
+                    "Tetrate identity on a projecting architectural sign"
                   ]
                 ]
               },
               {
                 "type": "p",
-                "text": "Applications based on Branding PDF p. 7. The images are visual reconstructions of the original presentation, rather than documentation of new physical production."
+                "text": "Original identity applications shown in the Branding PDF, p. 7. Restored from the original uploaded images."
               }
             ]
           },
@@ -599,14 +599,14 @@ window.SITE = {
                 "type": "row",
                 "items": [
                   [
-                    "tetrate/assets/product-11-0-ai.webp",
+                    "tetrate/assets/product-11-0-native.webp",
                     "Dashboard · Health overview and operational signals",
-                    "AI reconstruction of the original Service Bridge dashboard"
+                    "the original Service Bridge dashboard"
                   ],
                   [
-                    "tetrate/assets/product-11-1-ai.webp",
+                    "tetrate/assets/product-11-1-native.webp",
                     "Service inventory · Filters, metrics, and service status",
-                    "AI reconstruction of the original Service Bridge inventory"
+                    "the original Service Bridge inventory"
                   ]
                 ]
               },
@@ -620,8 +620,8 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-12-0-ai.webp",
-                "alt": "AI reconstruction — Collaborative topology exploration, based on Service Bridge PDF p. 12",
+                "src": "tetrate/assets/product-12-0-native.webp",
+                "alt": "Collaborative topology exploration, based on Service Bridge PDF p. 12",
                 "frame": true
               },
               {
@@ -665,7 +665,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "Source of record: Zhenqi Cai’s Tetrate Branding and Tetrate Service Bridge PDFs, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. All displayed Tetrate project images have been reconstructed with AI from the original artifacts. Original files are retained separately.",
+                "text": "Source of record: Zhenqi Cai’s Tetrate Branding and Tetrate Service Bridge PDFs, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. Branding images have been restored from the original uploaded assets corresponding to the PDF; product images are extracted from the original PDF. No AI-reconstructed imagery is used in this version.",
                 "title": "Sources and credits"
               }
             ]
