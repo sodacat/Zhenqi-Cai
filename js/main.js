@@ -11,7 +11,7 @@
   // The site's arrow is a small red square (the same square as the mark's full stop)
   const arrow = `<span class="arrow" aria-hidden="true"></span>`;
 
-  const projectUrl = (p) => `project.html?id=${encodeURIComponent(p.id)}`;
+  const projectUrl = (p) => p.url || `project.html?id=${encodeURIComponent(p.id)}`;
   const work = S.projects.filter((p) => p.type === "work");
   const experiments = S.projects.filter((p) => p.type === "experiment");
   const typeLabel = { work: "Case study", experiment: "AI experiment" };
@@ -299,6 +299,7 @@
     const id = new URLSearchParams(location.search).get("id");
     const i = Math.max(0, S.projects.findIndex((p) => p.id === id));
     const p = S.projects[i];
+    if (p.url) { location.replace(p.url); return ""; }
     const next = S.projects[(i + 1) % S.projects.length];
     document.title = `${p.title} — ${S.name}`;
     const meta = [

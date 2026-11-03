@@ -365,6 +365,19 @@ window.SITE = {
       }
     },
     {
+      id: "tetrate",
+      url: "tetrate/",
+      type: "work",
+      company: "Tetrate",
+      title: "From Complexity to Clarity",
+      summary: "Designing a 0-to-1 enterprise cloud platform and visual system.",
+      tags: ["Product Design", "Enterprise", "0 → 1"],
+      year: "2018",
+      role: "Founding Product Designer · Brand Designer",
+      cover: "tetrate/assets/product-12-0.png",
+      alt: "Original Tetrate Service Bridge topology design showing service dependencies and health signals"
+    },
+    {
       id: "enterprise-experience",
       locked: true,
       type: "work",
