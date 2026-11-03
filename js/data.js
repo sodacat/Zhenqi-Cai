@@ -884,21 +884,6 @@ window.SITE = {
                 "src": "tetrate/assets/product-overview-provided.webp",
                 "alt": "Original Service Bridge product design overview: onboarding, dashboard, inventory, topology, and teams",
                 "frame": true
-              },
-              {
-                "type": "h",
-                "text": "Topology as a visual application"
-              },
-              {
-                "type": "p",
-                "text": "Blue connections show service relationships; pink markers draw attention to unhealthy services and high latency. The example connects the interface’s visual hierarchy to the system information it needs to communicate."
-              },
-              {
-                "type": "img",
-                "src": "tetrate/assets/product-12-0-native.webp",
-                "size": "sm",
-                "alt": "Topology design by Zhenqi Cai, based on Service Bridge PDF p. 12",
-                "frame": true
               }
             ]
           },
