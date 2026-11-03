@@ -97,7 +97,7 @@ window.SITE = {
       case: {
         headline: "From Compliance Checkpoint to Growth Infrastructure",
         lead: "How I re-architected Amazon’s qualification system from reactive, sequential enforcement to a transparent parallel infrastructure.",
-        cover: "images/seller-qualification/cover-v4.webp",
+        cover: "images/seller-qualification/cover-v5.webp",
         summary: [
           { type: "cards", items: [
             { title: "Problem", text: "Hidden restrictions created repeated loops, delays, and seller frustration." },
