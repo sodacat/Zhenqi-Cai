@@ -925,10 +925,6 @@ window.SITE = {
                 "type": "p",
                 "text": "I delivered the brand identity, brand guidelines, UI style guide, and product design concepts. Real-user testing of the product was still planned, so I cannot claim validated usability improvements or business impact. Next, I would test the workflows with representative users, check legibility and color accessibility, and refine the UI foundations.",
                 "title": "Scope and next steps"
-              },
-              {
-                "type": "p",
-                "text": "The homepage headquarters image is an AI-generated brand application concept, not a photograph of a real installation. The case-study hero is an AI-assisted presentation; the process and UI images show the original project work."
               }
             ]
           }
