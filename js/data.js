@@ -565,7 +565,7 @@ window.SITE = {
       "type": "work",
       "company": "Tetrate",
       "title": "Brand Identity & UI Foundations",
-      "summary": "Creating a technology brand and carrying its visual language into print, physical applications, and product UI.",
+      "summary": "A unified visual language for brand and product.",
       "tags": [
         "Brand Identity",
         "Visual Design",
