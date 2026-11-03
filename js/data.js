@@ -573,7 +573,7 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Brand Designer · Visual & Product Design",
-      "cover": "tetrate/assets/thumbnail-outdoor-approved.webp",
+      "cover": "tetrate/assets/thumbnail-outdoor-smaller.webp",
       "alt": "Tetrate — Brand Identity & Visual System: original-inspired brand-guide cover",
       "case": {
         "headline": "From Complexity to Clarity",
