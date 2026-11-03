@@ -561,6 +561,159 @@ window.SITE = {
       }
     },
     {
+      id: "stonk-tech",
+      type: "work",
+      company: "Stonk Tech",
+      title: "Retail Trading Platform: Brand & Landing Page",
+      summary: "Making complex financial systems accessible to retail investors.",
+      tags: ["Brand Identity", "Responsive Web", "Fintech"],
+      alt: "Stonk Tech trading platform shown on a laptop",
+      cover: "images/stonk-tech.jpg",
+      images: ["images/stonk-tech.jpg"],
+      case: {
+        headline: "Balancing system trust with cultural accessibility in modern retail trading",
+        lead: "Retail investors don’t just lack tools — they are excluded from the systems that make institutional trading effective.",
+        cover: "images/stonk-tech/cover-v3.webp",
+        aboutTitle: "Stonk Tech — brand & landing page",
+        about: [
+          "While professional traders operate with integrated infrastructure—data, research, and risk management — individual investors face fragmented information, opaque processes, and high barriers to entry.",
+          "Stonk Tech was founded to bridge this gap: to make trading systems more transparent, connected, and accessible.",
+          "As the founding designer, I was responsible for defining how this system could be understood and trusted by users.",
+          "I designed the brand identity and landing experience not just as visual assets, but as a coherent interface for communicating complex financial systems — translating fragmented financial knowledge into a coherent system users can understand, navigate, and act on."
+        ],
+        facts: [
+          ["Team", "Zhenqi Cai (Sr. Product Designer), Dandi Wang (Sr. Product Designer), Vince Deng (Product Designer), Marc Chen (Product Manager)"],
+          ["Time", "Apr 2022 – Nov 2022"],
+          ["Methods", "Brand identity design, design systems, responsive web design, user-centered design, visual design"]
+        ],
+        overview: [
+          { type: "statement", text: "This is not just a tooling gap, but a system-level access problem." },
+          { type: "p", text: [
+            "This project explores how to balance system trust with cultural accessibility in modern retail trading.",
+            "The challenge was not only to make financial systems understandable, but to ensure they feel credible enough to trust and intuitive enough to act on—especially for users navigating a historically exclusive domain."
+          ] }
+        ],
+        sections: [
+          {
+            title: "Brand design: from vision to visuals",
+            blocks: [
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-scope-hd.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
+              { type: "p", title: "The challenge", text: [
+                "The challenge was not just to create a visual identity, but to reduce the cognitive gap between how financial systems operate and how users are able to perceive and act within them.",
+                "Users needed to:"
+              ], items: ["understand complex trading concepts without prior expertise", "feel confident navigating an unfamiliar and high-risk domain", "trust a platform that represents fairness and transparency"],
+                after: "At the same time, the product needed to communicate credibility to investors and stakeholders." },
+              { type: "statement", text: "How might we translate a fragmented, complex financial ecosystem into a system that feels understandable, trustworthy, and actionable?" },
+              { type: "cards", items: [
+                { title: "Mission & vision", text: "Stonk Tech’s mission is to unite retail traders into a community where trading ideas are accessible, actionable, and inclusive. We wanted every user to feel involved, supported, and part of something bigger than themselves." },
+                { title: "Voice & tone", text: "The brand speaks in a way that’s empowering, engaging, and reliable, while keeping a touch of joy—reflecting the excitement of trading and the confidence we want our users to feel." }
+              ] },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-needs-hd.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
+              { type: "p", title: "Defining a system users can trust", text: [
+                "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
+                "The goal was to create a system that communicates:"
+              ], items: ["transparency in a traditionally opaque domain", "approachability in a high-barrier environment", "credibility comparable to institutional platforms"] },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-process-hd.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
+              { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
+                items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
+                after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
+              { type: "img", src: "images/stonk-tech/moodboard-3.jpg", alt: "Moodboard: Glass Morphism" },
+              { type: "row", items: [
+                ["images/stonk-tech/moodboard-1.jpg", "", "Moodboard: Purple"], ["images/stonk-tech/moodboard-2.jpg"], ["images/stonk-tech/moodboard-4.jpg"], ["images/stonk-tech/moodboard-5.jpg"]
+              ] },
+              { type: "p", title: "Logo ideation", text: [
+                "I explored multiple visual directions to identify which forms could best represent interaction, exchange, and system dynamics within a financial ecosystem.",
+                "Through sketching multiple options and gathering feedback via design critiques and stakeholder voting, we refined the ideas down to 16 strong concepts, ensuring the final logo would be both meaningful and resonant with the brand."
+              ] },
+              { type: "pair", frame: true, items: [
+                ["images/stonk-tech/sketches.jpg", "Logo sketches"],
+                ["images/stonk-tech/concepts.jpg", "16 logo concepts"]
+              ] },
+              { type: "p", title: "Logo ideation — encoding meaning into the identity system", text: [
+                "The logo was designed as a representation of interaction and exchange within a financial system.",
+                "The mirrored “S” form suggests:"
+              ], items: ["trading activity", "flow of value", "connection between participants"],
+                after: "Rather than a decorative mark, it functions as a symbol of system dynamics—reinforcing the idea of collaboration and shared intelligence among users." },
+              { type: "p", text: [
+                "From the 16 logo sketches, we selected a mark that resembles two mirrored dollar shapes — symbolizing both trading and connection — directly reflecting Stonk Tech’s mission to build a collaborative community of retail investors.",
+                "I then explored 23 color variations inspired by the moodboard, testing both flat and gradient styles. The final palette combined green (growth, market uptrend) with purple (a bold, contrasting accent drawn from the moodboard). Together, these colors express the brand’s voice and tone — empowering, engaging, reliable, and joyous — while making the identity both professional and approachable."
+              ] },
+              { type: "pair", frame: true, size: "md", items: [
+                ["images/stonk-tech/color-variations.jpg", "23 color variations"],
+                ["images/stonk-tech/logo.jpg", "Final logo"]
+              ] },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-mark-hd.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
+              { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
+                "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
+                "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
+                "Rather than serving as a stylistic choice, color functions as part of the system’s communication layer: highlighting activity, guiding attention, and making dynamic market conditions more immediately interpretable."
+              ] },
+              { type: "side", narrow: true, frame: true, title: "Typography", src: "images/stonk-tech/typography-hd.webp",
+                text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
+              { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
+              { type: "img", frame: true, src: "images/stonk-tech/logo-identity-hd.webp", alt: "Logo and wordmark spacing rules" },
+              { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
+              { type: "img", src: "images/stonk-tech/marks-hd.webp", alt: "Marks and logos on light and dark backgrounds" },
+              { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
+              { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
+              { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
+            ]
+          },
+          {
+            title: "Landing page: structuring information for clarity and action",
+            blocks: [
+              { type: "p", text: [
+                "The landing page was designed as the first interface where users encounter the system. The goal was not just responsiveness, but information clarity and cognitive accessibility.",
+                "This is not just a layout system, but an information system that helps users build understanding progressively."
+              ] },
+              { type: "img", size: "md", src: "images/stonk-tech/diagram-model-hd.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
+              { type: "p", title: "The approach: responsive design", text: "I structured the page to:",
+                items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
+              { type: "p", text: "The responsive grid system ensured that:",
+                items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
+              { type: "img", src: "images/stonk-tech/responsive-v2.webp", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
+              { type: "cols", label: "Breakpoints", items: [
+                { src: "images/stonk-tech/phone-hd.webp", title: "Phone view", text: "On phone screens (device-width < 375px),",
+                  items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
+                { src: "images/stonk-tech/tablet.jpg", title: "Tablet view", text: "On tablet screens (375px < device-width < 768px),",
+                  items: ["Grid scales from 335px to 648px depending on the screen size;", "Margin scales from 20px to 60px depending on the screen size;", "Use a full navigation bar in the tablet width;", "Use a horizontal layout in the tablet width."] },
+                { src: "images/stonk-tech/laptop.jpg", title: "Laptop view", text: "On laptop screens (768px < device-width < 1440px),",
+                  items: ["Grid scales from 648px to 1200px depending on the screen size;", "Margin scales from 60px to 120px depending on the screen size."] },
+                { src: "images/stonk-tech/desktop.jpg", title: "Desktop view", text: "On desktop screens (device-width > 1440px),",
+                  items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
+              ] },
+              { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
+              { type: "img", src: "images/stonk-tech/illustrations-1-hd.webp", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "img", src: "images/stonk-tech/illustrations-2-hd.webp", alt: "3D illustrations on phone, tablet and desktop" },
+              { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
+              { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
+            ]
+          },
+          {
+            title: "Outcome & impact",
+            blocks: [
+              { type: "list", items: [
+                "Established a coherent brand and information system that lowers both cognitive and structural barriers, enabling retail investors to meaningfully participate in financial systems",
+                "Reduced the cognitive barrier for retail investors by structuring fragmented information into an understandable and actionable flow",
+                "Built early trust and credibility, contributing to increased user sign-ups and investor interest",
+                "Created a scalable design foundation that can extend across product, community, and future platform experiences"
+              ] }
+            ]
+          },
+          {
+            title: "Reflection",
+            blocks: [
+              { type: "p", text: [
+                "Designing for financial systems is not just about interface clarity, but about access and trust. If a system feels too complex, users disengage.",
+                "If it feels too simplistic, users lose confidence."
+              ] },
+              { type: "statement", text: "StonkTech exists in this balance—translating complexity into something users can understand, trust, and act on." }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "tetrate",
       "type": "work",
       "company": "Tetrate",
@@ -789,159 +942,6 @@ window.SITE = {
                 "text": "Original work, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. Process images are original Tetrate project artifacts. The hero is an AI-assisted presentation based on the original brand-guide image.",
                 "title": "Credits"
               }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      id: "stonk-tech",
-      type: "work",
-      company: "Stonk Tech",
-      title: "Retail Trading Platform: Brand & Landing Page",
-      summary: "Making complex financial systems accessible to retail investors.",
-      tags: ["Brand Identity", "Responsive Web", "Fintech"],
-      alt: "Stonk Tech trading platform shown on a laptop",
-      cover: "images/stonk-tech.jpg",
-      images: ["images/stonk-tech.jpg"],
-      case: {
-        headline: "Balancing system trust with cultural accessibility in modern retail trading",
-        lead: "Retail investors don’t just lack tools — they are excluded from the systems that make institutional trading effective.",
-        cover: "images/stonk-tech/cover-v3.webp",
-        aboutTitle: "Stonk Tech — brand & landing page",
-        about: [
-          "While professional traders operate with integrated infrastructure—data, research, and risk management — individual investors face fragmented information, opaque processes, and high barriers to entry.",
-          "Stonk Tech was founded to bridge this gap: to make trading systems more transparent, connected, and accessible.",
-          "As the founding designer, I was responsible for defining how this system could be understood and trusted by users.",
-          "I designed the brand identity and landing experience not just as visual assets, but as a coherent interface for communicating complex financial systems — translating fragmented financial knowledge into a coherent system users can understand, navigate, and act on."
-        ],
-        facts: [
-          ["Team", "Zhenqi Cai (Sr. Product Designer), Dandi Wang (Sr. Product Designer), Vince Deng (Product Designer), Marc Chen (Product Manager)"],
-          ["Time", "Apr 2022 – Nov 2022"],
-          ["Methods", "Brand identity design, design systems, responsive web design, user-centered design, visual design"]
-        ],
-        overview: [
-          { type: "statement", text: "This is not just a tooling gap, but a system-level access problem." },
-          { type: "p", text: [
-            "This project explores how to balance system trust with cultural accessibility in modern retail trading.",
-            "The challenge was not only to make financial systems understandable, but to ensure they feel credible enough to trust and intuitive enough to act on—especially for users navigating a historically exclusive domain."
-          ] }
-        ],
-        sections: [
-          {
-            title: "Brand design: from vision to visuals",
-            blocks: [
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-scope-hd.webp", alt: "Define a shared foundation for brand and web: build the visual system, structure the first encounter" },
-              { type: "p", title: "The challenge", text: [
-                "The challenge was not just to create a visual identity, but to reduce the cognitive gap between how financial systems operate and how users are able to perceive and act within them.",
-                "Users needed to:"
-              ], items: ["understand complex trading concepts without prior expertise", "feel confident navigating an unfamiliar and high-risk domain", "trust a platform that represents fairness and transparency"],
-                after: "At the same time, the product needed to communicate credibility to investors and stakeholders." },
-              { type: "statement", text: "How might we translate a fragmented, complex financial ecosystem into a system that feels understandable, trustworthy, and actionable?" },
-              { type: "cards", items: [
-                { title: "Mission & vision", text: "Stonk Tech’s mission is to unite retail traders into a community where trading ideas are accessible, actionable, and inclusive. We wanted every user to feel involved, supported, and part of something bigger than themselves." },
-                { title: "Voice & tone", text: "The brand speaks in a way that’s empowering, engaging, and reliable, while keeping a touch of joy—reflecting the excitement of trading and the confidence we want our users to feel." }
-              ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-needs-hd.webp", alt: "Connect user needs to the design direction: understand concepts, feel confident, feel involved" },
-              { type: "p", title: "Defining a system users can trust", text: [
-                "Instead of treating branding as a visual exercise, I approached it as a problem of perception and trust.",
-                "The goal was to create a system that communicates:"
-              ], items: ["transparency in a traditionally opaque domain", "approachability in a high-barrier environment", "credibility comparable to institutional platforms"] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-process-hd.webp", alt: "Refine the identity through exploration: personality, mark, color treatments, consistent use" },
-              { type: "p", title: "Moodboard", text: "Through moodboards and visual exploration, I identified key attributes the system needed to convey:",
-                items: ["trust (stability, professionalism)", "energy (market dynamics, opportunity)", "collaboration (community-driven intelligence)"],
-                after: "Created 5 moodboards to explore and define Stonk Tech’s visual personality—combining color, typography, and imagery that reflect trust, energy, and collaboration—and set a clear direction for the brand and design system." },
-              { type: "img", src: "images/stonk-tech/moodboard-3.jpg", alt: "Moodboard: Glass Morphism" },
-              { type: "row", items: [
-                ["images/stonk-tech/moodboard-1.jpg", "", "Moodboard: Purple"], ["images/stonk-tech/moodboard-2.jpg"], ["images/stonk-tech/moodboard-4.jpg"], ["images/stonk-tech/moodboard-5.jpg"]
-              ] },
-              { type: "p", title: "Logo ideation", text: [
-                "I explored multiple visual directions to identify which forms could best represent interaction, exchange, and system dynamics within a financial ecosystem.",
-                "Through sketching multiple options and gathering feedback via design critiques and stakeholder voting, we refined the ideas down to 16 strong concepts, ensuring the final logo would be both meaningful and resonant with the brand."
-              ] },
-              { type: "pair", frame: true, items: [
-                ["images/stonk-tech/sketches.jpg", "Logo sketches"],
-                ["images/stonk-tech/concepts.jpg", "16 logo concepts"]
-              ] },
-              { type: "p", title: "Logo ideation — encoding meaning into the identity system", text: [
-                "The logo was designed as a representation of interaction and exchange within a financial system.",
-                "The mirrored “S” form suggests:"
-              ], items: ["trading activity", "flow of value", "connection between participants"],
-                after: "Rather than a decorative mark, it functions as a symbol of system dynamics—reinforcing the idea of collaboration and shared intelligence among users." },
-              { type: "p", text: [
-                "From the 16 logo sketches, we selected a mark that resembles two mirrored dollar shapes — symbolizing both trading and connection — directly reflecting Stonk Tech’s mission to build a collaborative community of retail investors.",
-                "I then explored 23 color variations inspired by the moodboard, testing both flat and gradient styles. The final palette combined green (growth, market uptrend) with purple (a bold, contrasting accent drawn from the moodboard). Together, these colors express the brand’s voice and tone — empowering, engaging, reliable, and joyous — while making the identity both professional and approachable."
-              ] },
-              { type: "pair", frame: true, size: "md", items: [
-                ["images/stonk-tech/color-variations.jpg", "23 color variations"],
-                ["images/stonk-tech/logo.jpg", "Final logo"]
-              ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-mark-hd.webp", alt: "The mark expresses connection: trading activity, flow of value, collaboration" },
-              { type: "side", frame: true, title: "System signal — color palette", src: "images/stonk-tech/palette.jpg", text: [
-                "Color contrast is used to distinguish actionable information from ambient context, helping users quickly identify where to focus in high-density environments.",
-                "The primary palette—anchored in high-contrast greens and deep complementary tones—was designed to reinforce this signal.",
-                "Rather than serving as a stylistic choice, color functions as part of the system’s communication layer: highlighting activity, guiding attention, and making dynamic market conditions more immediately interpretable."
-              ] },
-              { type: "side", narrow: true, frame: true, title: "Typography", src: "images/stonk-tech/typography-hd.webp",
-                text: "Circular was chosen as Stonk Tech’s primary typeface for its clean, geometric shapes and rounded forms—friendly, approachable, yet professional—perfectly reflecting the brand’s mission to make trading accessible and its empowering, engaging, and reliable voice." },
-              { type: "p", title: "Logo identity", text: "By defining clear spacing and padding rules for both the standalone logo and the wordmark—horizontally and vertically—we ensure consistent visual balance and readability across all applications. No matter the size, these standards maintain brand integrity, prevent crowding, and make the logo adaptable to any layout, from digital screens to print materials." },
-              { type: "img", frame: true, src: "images/stonk-tech/logo-identity-hd.webp", alt: "Logo and wordmark spacing rules" },
-              { type: "p", title: "Marks & logos", text: "The style guide includes clear rules for marks and logos, defining spacing, padding, and usage standards. These guidelines ensure consistency, readability, and visual balance across all applications, no matter the size or medium—from digital screens to print materials." },
-              { type: "img", src: "images/stonk-tech/marks-hd.webp", alt: "Marks and logos on light and dark backgrounds" },
-              { type: "p", title: "Pattern", text: "The style guide includes brand patterns that extend the identity beyond the logo—flexible assets that build recognition, cohesion, and a dynamic brand presence across all touchpoints." },
-              { type: "img", src: "images/stonk-tech/pattern.jpg", alt: "Stonk brand pattern" },
-              { type: "p", title: "Outcome", text: "A cohesive brand identity that feels professional, approachable, and memorable—ready to bridge the gap between retail and institutional investors." }
-            ]
-          },
-          {
-            title: "Landing page: structuring information for clarity and action",
-            blocks: [
-              { type: "p", text: [
-                "The landing page was designed as the first interface where users encounter the system. The goal was not just responsiveness, but information clarity and cognitive accessibility.",
-                "This is not just a layout system, but an information system that helps users build understanding progressively."
-              ] },
-              { type: "img", size: "md", src: "images/stonk-tech/diagram-model-hd.webp", alt: "Connect identity, information and action: establish recognition, build understanding, provide a clear entry" },
-              { type: "p", title: "The approach: responsive design", text: "I structured the page to:",
-                items: ["introduce the problem and value proposition clearly", "reduce cognitive overload through hierarchy and layout", "guide users toward understanding and action"] },
-              { type: "p", text: "The responsive grid system ensured that:",
-                items: ["information hierarchy remains consistent across devices", "users can easily navigate and process content", "the experience feels coherent regardless of context"] },
-              { type: "img", src: "images/stonk-tech/responsive-v2.webp", alt: "Landing page on phone, tablet and laptop with the grid overlaid" },
-              { type: "cols", label: "Breakpoints", items: [
-                { src: "images/stonk-tech/phone-hd.webp", title: "Phone view", text: "On phone screens (device-width < 375px),",
-                  items: ["Apply a fixed margin of 20px;", "Grid size will differ depending on the screen size;", "Use a hamburger button instead of the full navigation bar;", "Use a vertical layout in the phone width."] },
-                { src: "images/stonk-tech/tablet.jpg", title: "Tablet view", text: "On tablet screens (375px < device-width < 768px),",
-                  items: ["Grid scales from 335px to 648px depending on the screen size;", "Margin scales from 20px to 60px depending on the screen size;", "Use a full navigation bar in the tablet width;", "Use a horizontal layout in the tablet width."] },
-                { src: "images/stonk-tech/laptop.jpg", title: "Laptop view", text: "On laptop screens (768px < device-width < 1440px),",
-                  items: ["Grid scales from 648px to 1200px depending on the screen size;", "Margin scales from 60px to 120px depending on the screen size."] },
-                { src: "images/stonk-tech/desktop.jpg", title: "Desktop view", text: "On desktop screens (device-width > 1440px),",
-                  items: ["Apply a fixed grid of 1200px;", "Margin size will differ depending on the screen size."] }
-              ] },
-              { type: "p", title: "Illustrations", text: "Created 3D illustrations to showcase key features and UI screens, reinforcing a consistent visual style across the product." },
-              { type: "img", src: "images/stonk-tech/illustrations-1-hd.webp", alt: "3D illustrations on phone, tablet and desktop" },
-              { type: "img", src: "images/stonk-tech/illustrations-2-hd.webp", alt: "3D illustrations on phone, tablet and desktop" },
-              { type: "p", title: "Video size adjustment", text: "Experimented with three sizes to ensure the intro video perfectly fit the hero section; landed on 680×432 for optimal impact." },
-              { type: "img", src: "images/stonk-tech/video-size.jpg", alt: "Three hero video sizes: 692×393, 680×432, 629×432" }
-            ]
-          },
-          {
-            title: "Outcome & impact",
-            blocks: [
-              { type: "list", items: [
-                "Established a coherent brand and information system that lowers both cognitive and structural barriers, enabling retail investors to meaningfully participate in financial systems",
-                "Reduced the cognitive barrier for retail investors by structuring fragmented information into an understandable and actionable flow",
-                "Built early trust and credibility, contributing to increased user sign-ups and investor interest",
-                "Created a scalable design foundation that can extend across product, community, and future platform experiences"
-              ] }
-            ]
-          },
-          {
-            title: "Reflection",
-            blocks: [
-              { type: "p", text: [
-                "Designing for financial systems is not just about interface clarity, but about access and trust. If a system feels too complex, users disengage.",
-                "If it feels too simplistic, users lose confidence."
-              ] },
-              { type: "statement", text: "StonkTech exists in this balance—translating complexity into something users can understand, trust, and act on." }
             ]
           }
         ]
