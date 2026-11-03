@@ -377,29 +377,21 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Product Designer · Brand Designer",
-      "cover": "tetrate/assets/product-12-0.png",
+      "cover": "tetrate/assets/cover-editorial.svg",
       "alt": "Original Tetrate Service Bridge topology design showing service dependencies and health signals",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Designing a 0-to-1 Enterprise Cloud Platform and Visual System",
-        "cover": "tetrate/assets/product-12-0.png",
-        "aboutTitle": "A service-centric platform for a distributed world",
+        "cover": "tetrate/assets/cover-editorial.svg",
+        "aboutTitle": "Tetrate — enterprise platform & visual system",
         "about": [
           "Tetrate Service Bridge set out to simplify service mesh management across hybrid and multi-cloud environments. The design challenge was to help teams understand services, ownership, and health without getting lost in infrastructure details.",
           "I designed onboarding, service inventory, and topology workflows from scratch, collaborating with Megha Damani on product design and working with the PM to define the MVP’s primary users. Alongside that work, I developed Tetrate’s brand identity."
         ],
         "facts": [
           [
-            "Role",
-            "Founding Product Designer · Brand Designer"
-          ],
-          [
-            "Product collaboration",
-            "Zhenqi Cai and Megha Damani"
-          ],
-          [
-            "Brand identity",
-            "Zhenqi Cai"
+            "Team",
+            "Zhenqi Cai and Megha Damani — Founding Product Designers. Brand identity: Zhenqi Cai."
           ],
           [
             "Time",
@@ -407,26 +399,18 @@ window.SITE = {
           ],
           [
             "Methods",
-            "Stakeholder interviews, personas, journey maps, object–action modeling, user flows, prototyping, UI and brand style guides"
+            "Stakeholder interviews, personas, journey maps, object–action modeling, user flows, prototyping, UI style guide, brand identity"
           ]
         ],
         "overview": [
           {
-            "type": "cards",
-            "items": [
-              {
-                "title": "The challenge",
-                "text": "Make services, dependencies, health, and ownership understandable across clouds and clusters."
-              },
-              {
-                "title": "The contribution",
-                "text": "A foundational product experience and visual identity, developed during an early-stage, three-month engagement."
-              }
-            ]
-          },
-          {
-            "type": "p",
-            "text": "The work shown documents design intent and deliverables. Real-user usability testing remained a next step in the original case study; no verified launch metrics are available."
+            "type": "shift",
+            "quiet": true,
+            "label": "Reframing the experience",
+            "fromLabel": "Infrastructure-centric",
+            "toLabel": "Service-centric",
+            "from": "Distributed workloads, fragmented system details, and unclear operational responsibility.",
+            "to": "A connected view of services, dependencies, health, and ownership."
           }
         ],
         "sections": [
@@ -443,10 +427,6 @@ window.SITE = {
                   "Users managing large IT environments still had to work through the details of distributed systems. Service Bridge aimed to connect workloads across clouds and clusters, bridge traditional and modern infrastructure, and give teams greater visibility.",
                   "The scope centered on three workflows: onboarding, service inventory, and topology. The goal was a service-centric experience that brought operational context and actions together."
                 ]
-              },
-              {
-                "type": "p",
-                "text": "The question above is the design framing for this case study, rather than a finding from completed user testing."
               }
             ]
           },
@@ -476,10 +456,6 @@ window.SITE = {
                     "text": "See the service landscape and clarify responsibility. Design focus: visibility and ownership."
                   }
                 ]
-              },
-              {
-                "type": "p",
-                "text": "These role summaries describe the design focus. The personas were stakeholder-informed; direct research with representative users remained a limitation."
               }
             ]
           },
@@ -514,24 +490,18 @@ window.SITE = {
                 ]
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-7-0.png",
-                    "Original Object–Action Matrix · Service Bridge PDF, p. 7",
-                    "Original Object–Action Matrix · Service Bridge PDF, p. 7"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/product-7-0.png",
+                "alt": "Original Object–Action Matrix · Service Bridge PDF, p. 7",
+                "frame": true,
+                "size": "md"
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-7-2.png",
-                    "Original object–attribute and prioritization work · Service Bridge PDF, p. 7",
-                    "Original object–attribute and prioritization work · Service Bridge PDF, p. 7"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/product-7-2.png",
+                "alt": "Original object–attribute and prioritization work · Service Bridge PDF, p. 7",
+                "frame": true,
+                "size": "md"
               },
               {
                 "type": "p",
@@ -543,8 +513,12 @@ window.SITE = {
             "title": "Onboarding: establish ownership",
             "blocks": [
               {
-                "type": "p",
-                "text": "Surface services without an owner, onboard them, and map ownership or an on-call team. The workflow makes responsibility part of setup."
+                "type": "side",
+                "title": "Establish ownership",
+                "text": "Surface services without an owner, onboard them, and map ownership or an on-call team. The workflow makes responsibility part of setup.",
+                "src": "tetrate/assets/product-10-0.png",
+                "alt": "Original onboarding prototype · Service Bridge PDF, p. 10",
+                "frame": true
               },
               {
                 "type": "list",
@@ -553,16 +527,6 @@ window.SITE = {
                   "Onboard services.",
                   "Map ownership and on-call responsibility."
                 ]
-              },
-              {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-10-0.png",
-                    "Original onboarding prototype · Service Bridge PDF, p. 10",
-                    "Original onboarding prototype · Service Bridge PDF, p. 10"
-                  ]
-                ]
               }
             ]
           },
@@ -570,22 +534,12 @@ window.SITE = {
             "title": "Service inventory: make the estate readable",
             "blocks": [
               {
-                "type": "p",
-                "text": "Bring service health, metrics, and filters into a structured inventory. The design supports finding and inspecting individual services while retaining the larger operational context."
-              },
-              {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-11-1.png",
-                    "Original service inventory · Service Bridge PDF, p. 11",
-                    "Original service inventory · Service Bridge PDF, p. 11"
-                  ]
-                ]
-              },
-              {
-                "type": "p",
-                "text": "Design intent: make services easier to find and inspect. This is a description of the proposed experience, rather than a measured efficiency gain."
+                "type": "side",
+                "title": "Make the estate readable",
+                "text": "Bring service health, metrics, and filters into a structured inventory. The design supports finding and inspecting individual services while retaining the larger operational context.",
+                "src": "tetrate/assets/product-11-1.png",
+                "alt": "Original service inventory · Service Bridge PDF, p. 11",
+                "frame": true
               }
             ]
           },
@@ -593,18 +547,12 @@ window.SITE = {
             "title": "Dashboard: bring exceptions into focus",
             "blocks": [
               {
-                "type": "p",
-                "text": "The dashboard brings together unhealthy services, alerts that need owners, and high-latency or high-traffic services. A D3.js streamgraph explores how those signals change over time."
-              },
-              {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-11-0.png",
-                    "Original dashboard exploration · Service Bridge PDF, p. 11",
-                    "Original dashboard exploration · Service Bridge PDF, p. 11"
-                  ]
-                ]
+                "type": "side",
+                "title": "Bring exceptions into focus",
+                "text": "The dashboard brings together unhealthy services, alerts that need owners, and high-latency or high-traffic services. A D3.js streamgraph explores how those signals change over time.",
+                "src": "tetrate/assets/product-11-0.png",
+                "alt": "Original dashboard exploration · Service Bridge PDF, p. 11",
+                "frame": true
               },
               {
                 "type": "p",
@@ -620,14 +568,10 @@ window.SITE = {
                 "text": "A force-directed D3.js graph explores service dependencies. Cloud and cluster groupings organize the network, while visual signals draw attention to exceptions."
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-12-0.png",
-                    "Original topology design · Service Bridge PDF, p. 12",
-                    "Original topology design · Service Bridge PDF, p. 12"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/product-12-0.png",
+                "alt": "Original topology design · Service Bridge PDF, p. 12",
+                "frame": true
               },
               {
                 "type": "list",
@@ -639,14 +583,10 @@ window.SITE = {
                 ]
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-12-1.png",
-                    "Original contextual pop-up · Service Bridge PDF, p. 12",
-                    "Original contextual pop-up · Service Bridge PDF, p. 12"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/product-12-1.png",
+                "alt": "Original contextual pop-up · Service Bridge PDF, p. 12",
+                "frame": true
               },
               {
                 "type": "p",
@@ -662,18 +602,10 @@ window.SITE = {
                 "text": "I created a UI style guide to support consistency and collaboration with other designers and front-end developers. Its visual foundation aligned with Tetrate’s branding."
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-13-0.png",
-                    "Original UI style guide presentation · Service Bridge PDF, p. 13",
-                    "Original UI style guide presentation · Service Bridge PDF, p. 13"
-                  ]
-                ]
-              },
-              {
-                "type": "p",
-                "text": "This work established a foundational style guide. The original material does not document a fully governed component library or measured adoption across teams."
+                "type": "img",
+                "src": "tetrate/assets/product-13-0.png",
+                "alt": "Original UI style guide presentation · Service Bridge PDF, p. 13",
+                "frame": true
               }
             ]
           },
@@ -688,14 +620,11 @@ window.SITE = {
                 ]
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/brand-4-0.png",
-                    "Original logo exploration · Branding PDF, p. 4",
-                    "Original logo exploration · Branding PDF, p. 4"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/brand-4-0.png",
+                "alt": "Original logo exploration · Branding PDF, p. 4",
+                "frame": true,
+                "size": "md"
               },
               {
                 "type": "h",
@@ -706,34 +635,24 @@ window.SITE = {
                 "text": "The identity explored continuity, cloud infrastructure, and exponential growth through an infinity symbol, a cloud, and a tetration graph. These concepts informed the mark; the work does not establish that viewers understood system behavior through the logo."
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/brand-4-1.png",
-                    "Original concept construction · Branding PDF, p. 4",
-                    "Original concept construction · Branding PDF, p. 4"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/brand-4-1.png",
+                "alt": "Original concept construction · Branding PDF, p. 4",
+                "frame": true,
+                "size": "md"
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/brand-5-0.png",
-                    "Color and visual direction exploration · Branding PDF, p. 5",
-                    "Color and visual direction exploration · Branding PDF, p. 5"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/brand-5-0.png",
+                "alt": "Color and visual direction exploration · Branding PDF, p. 5",
+                "frame": true,
+                "size": "md"
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/brand-6-0.png",
-                    "Brand style guide: logo variations, spacing, sizing, colors, and typography · Branding PDF, p. 6",
-                    "Brand style guide: logo variations, spacing, sizing, colors, and typography · Branding PDF, p. 6"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/brand-6-0.png",
+                "alt": "Brand style guide: logo variations, spacing, sizing, colors, and typography · Branding PDF, p. 6",
+                "frame": true
               },
               {
                 "type": "row",
@@ -747,10 +666,6 @@ window.SITE = {
                     "Identity application: bag · Branding PDF, p. 7"
                   ]
                 ]
-              },
-              {
-                "type": "p",
-                "text": "The identity is presented as a visual design contribution. No causal claim about fundraising or business growth is made."
               }
             ]
           },

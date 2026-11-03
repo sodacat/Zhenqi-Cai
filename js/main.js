@@ -70,7 +70,7 @@
     // A project page marks the section it belongs to
     let current = page;
     if (page === "project") {
-      const p = S.projects.find((x) => x.id === new URLSearchParams(location.search).get("id"));
+      const p = S.projects.find((x) => x.id === (new URLSearchParams(location.search).get("id") || document.body.dataset.projectId));
       current = p && p.type === "experiment" ? "experiments" : "works";
     }
     return `<header class="site-header grid-12 wrap">
@@ -296,7 +296,7 @@
   }
 
   function project() {
-    const id = new URLSearchParams(location.search).get("id");
+    const id = (new URLSearchParams(location.search).get("id") || document.body.dataset.projectId);
     const i = Math.max(0, S.projects.findIndex((p) => p.id === id));
     const p = S.projects[i];
     if (p.url) { location.replace(p.url); return ""; }
@@ -563,7 +563,7 @@
         hex = [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
       } catch (x) { /* no WebCrypto: treat as wrong */ }
       if (hex === S.lockHash) {
-        try { sessionStorage.setItem(LOCK_KEY, new URLSearchParams(location.search).get("id")); } catch (x) { /* storage blocked: the gate stays */ }
+        try { sessionStorage.setItem(LOCK_KEY, (new URLSearchParams(location.search).get("id") || document.body.dataset.projectId)); } catch (x) { /* storage blocked: the gate stays */ }
         location.reload();
       } else {
         err.hidden = false;
