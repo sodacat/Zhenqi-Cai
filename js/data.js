@@ -621,6 +621,7 @@ window.SITE = {
               {
                 "type": "img",
                 "src": "tetrate/assets/product-12-0-native.webp",
+              "size": "sm",
                 "alt": "Collaborative topology exploration, based on Service Bridge PDF p. 12",
                 "frame": true
               },
