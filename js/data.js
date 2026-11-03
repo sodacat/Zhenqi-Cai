@@ -578,7 +578,7 @@ window.SITE = {
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Building a Brand Identity and a Shared Visual Language",
-        "cover": "tetrate/assets/hero-editorial-approved.webp",
+        "cover": "tetrate/assets/hero-editorial-formula.webp",
         "aboutTitle": "A visual foundation for an early-stage technology company",
         "about": [
           "Tetrate’s service mesh platform connects distributed services across hybrid and multi-cloud environments. I developed a visual identity for the company, from logo exploration and color direction to brand guidelines and applications.",
