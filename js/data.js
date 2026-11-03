@@ -842,7 +842,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/interface-styleguide-original.png",
+                "src": "tetrate/assets/ui-foundations-provided.webp",
                 "alt": "Tetrate UI style-guide presentation, based on Service Bridge PDF p. 13",
                 "frame": true
               }
@@ -880,19 +880,10 @@ window.SITE = {
                 "text": "As Founding Designer, I led brand identity, all visual design, and product design across onboarding, service inventory, and topology. Megha Damani contributed interaction design for part of the onboarding experience."
               },
               {
-                "type": "row",
-                "items": [
-                  [
-                    "tetrate/assets/product-11-0-native.webp",
-                    "Dashboard · Health overview and operational signals",
-                    "the original Service Bridge dashboard"
-                  ],
-                  [
-                    "tetrate/assets/product-11-1-native.webp",
-                    "Service inventory · Filters, metrics, and service status",
-                    "the original Service Bridge inventory"
-                  ]
-                ]
+                "type": "img",
+                "src": "tetrate/assets/product-overview-provided.webp",
+                "alt": "Original Service Bridge product design overview: onboarding, dashboard, inventory, topology, and teams",
+                "frame": true
               },
               {
                 "type": "h",
