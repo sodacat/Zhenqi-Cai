@@ -550,7 +550,7 @@ window.SITE = {
               },
               {
                 "type": "img",
-                "src": "tetrate/assets/product-13-0-native.webp",
+                "src": "tetrate/assets/interface-styleguide-original.png",
                 "alt": "Tetrate UI style-guide presentation, based on Service Bridge PDF p. 13",
                 "frame": true
               },
