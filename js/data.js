@@ -573,12 +573,12 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Brand Designer · Visual & Product Design",
-      "cover": "tetrate/assets/hero-brand-ui-approved.webp",
+      "cover": "tetrate/assets/hero-brand-ui-light-approved.webp",
       "alt": "Tetrate — Brand Identity & Visual System: original-inspired brand-guide cover",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Building a Brand Identity and a Shared Visual Language",
-        "cover": "tetrate/assets/hero-brand-ui-approved.webp",
+        "cover": "tetrate/assets/hero-brand-ui-light-approved.webp",
         "aboutTitle": "A visual foundation for an early-stage technology company",
         "about": [
           "Tetrate’s service mesh platform connects distributed services across hybrid and multi-cloud environments. I developed a visual identity for the company, from logo exploration and color direction to brand guidelines and applications.",
