@@ -573,12 +573,12 @@ window.SITE = {
       ],
       "year": "2018",
       "role": "Founding Brand Designer · Visual & Product Design",
-      "cover": "tetrate/assets/brand-6-0-original-hd.png",
-      "alt": "Original Tetrate brand style-guide presentation",
+      "cover": "tetrate/assets/hero-titled-approved.webp",
+      "alt": "Tetrate — Brand Identity & Visual System: original-inspired brand-guide cover",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Building a Brand Identity and a Shared Visual Language",
-        "cover": "tetrate/assets/brand-6-0-original-hd.png",
+        "cover": "tetrate/assets/hero-titled-approved.webp",
         "aboutTitle": "A visual foundation for an early-stage technology company",
         "about": [
           "Tetrate’s service mesh platform connects distributed services across hybrid and multi-cloud environments. I developed a visual identity for the company, from logo exploration and color direction to brand guidelines and applications.",
@@ -786,7 +786,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "Original work, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. Visuals are the original artifacts from the Tetrate Branding and Service Bridge projects.",
+                "text": "Original work, 2018. Brand identity: Zhenqi Cai. Collaborative product design: Zhenqi Cai and Megha Damani. Process images are original Tetrate project artifacts. The hero is an AI-assisted presentation based on the original brand-guide image.",
                 "title": "Credits"
               }
             ]
