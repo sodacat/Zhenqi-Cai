@@ -383,7 +383,7 @@ window.SITE = {
         "headline": "From Complexity to Clarity",
         "lead": "Designing a 0-to-1 Enterprise Cloud Platform and Visual System",
         "cover": "tetrate/assets/cover-editorial.svg",
-        "aboutTitle": "Tetrate — enterprise platform & visual system",
+        "aboutTitle": "A service-centric platform for the hybrid and multi-cloud world",
         "about": [
           "Tetrate Service Bridge set out to simplify service mesh management across hybrid and multi-cloud environments. The design challenge was to help teams understand services, ownership, and health without getting lost in infrastructure details.",
           "I designed onboarding, service inventory, and topology workflows from scratch, collaborating with Megha Damani on product design and working with the PM to define the MVP’s primary users. Alongside that work, I developed Tetrate’s brand identity."
@@ -415,23 +415,7 @@ window.SITE = {
         ],
         "sections": [
           {
-            "title": "The challenge",
-            "blocks": [
-              {
-                "type": "statement",
-                "text": "How might we help teams move from “What is happening?” to “What can I do?”"
-              },
-              {
-                "type": "p",
-                "text": [
-                  "Users managing large IT environments still had to work through the details of distributed systems. Service Bridge aimed to connect workloads across clouds and clusters, bridge traditional and modern infrastructure, and give teams greater visibility.",
-                  "The scope centered on three workflows: onboarding, service inventory, and topology. The goal was a service-centric experience that brought operational context and actions together."
-                ]
-              }
-            ]
-          },
-          {
-            "title": "Three users, one platform",
+            "title": "From alignment to insight",
             "blocks": [
               {
                 "type": "p",
@@ -460,8 +444,20 @@ window.SITE = {
             ]
           },
           {
-            "title": "Object–action information architecture",
+            "title": "Scoping the MVP",
             "blocks": [
+              {
+                "type": "p",
+                "text": "My scope was to design onboarding, service inventory, and topology from scratch. Stakeholder meetings, user stories, and role-specific journey maps informed the MVP."
+              },
+              {
+                "type": "shift",
+                "quiet": true,
+                "fromLabel": "User stories",
+                "toLabel": "Information architecture",
+                "from": "Different roles, tasks, and operational needs across a distributed system.",
+                "to": "A consistent grammar of objects, actions, and attributes."
+              },
               {
                 "type": "p",
                 "text": "I broke user stories into objects, actions, and attributes to establish a consistent grammar for the service experience. Object–action and object–attribute matrices connected those stories to the information architecture."
@@ -510,12 +506,22 @@ window.SITE = {
             ]
           },
           {
-            "title": "Onboarding: establish ownership",
+            "title": "Designing the MVP: making services legible",
             "blocks": [
               {
-                "type": "side",
-                "title": "Establish ownership",
-                "text": "Surface services without an owner, onboard them, and map ownership or an on-call team. The workflow makes responsibility part of setup.",
+                "type": "statement",
+                "text": "Make services, relationships, and responsibility visible in one connected experience."
+              },
+              {
+                "type": "h",
+                "text": "Onboarding: establish ownership"
+              },
+              {
+                "type": "p",
+                "text": "Surface services without an owner, onboard them, and map ownership or an on-call team. The workflow makes responsibility part of setup."
+              },
+              {
+                "type": "img",
                 "src": "tetrate/assets/product-10-0.png",
                 "alt": "Original onboarding prototype · Service Bridge PDF, p. 10",
                 "frame": true
@@ -527,29 +533,31 @@ window.SITE = {
                   "Onboard services.",
                   "Map ownership and on-call responsibility."
                 ]
-              }
-            ]
-          },
-          {
-            "title": "Service inventory: make the estate readable",
-            "blocks": [
+              },
               {
-                "type": "side",
-                "title": "Make the estate readable",
-                "text": "Bring service health, metrics, and filters into a structured inventory. The design supports finding and inspecting individual services while retaining the larger operational context.",
+                "type": "h",
+                "text": "Service inventory: make the estate readable"
+              },
+              {
+                "type": "p",
+                "text": "Bring service health, metrics, and filters into a structured inventory. The design supports finding and inspecting individual services while retaining the larger operational context."
+              },
+              {
+                "type": "img",
                 "src": "tetrate/assets/product-11-1.png",
                 "alt": "Original service inventory · Service Bridge PDF, p. 11",
                 "frame": true
-              }
-            ]
-          },
-          {
-            "title": "Dashboard: bring exceptions into focus",
-            "blocks": [
+              },
               {
-                "type": "side",
-                "title": "Bring exceptions into focus",
-                "text": "The dashboard brings together unhealthy services, alerts that need owners, and high-latency or high-traffic services. A D3.js streamgraph explores how those signals change over time.",
+                "type": "h",
+                "text": "Dashboard: bring exceptions into focus"
+              },
+              {
+                "type": "p",
+                "text": "The dashboard brings together unhealthy services, alerts that need owners, and high-latency or high-traffic services. A D3.js streamgraph explores how those signals change over time."
+              },
+              {
+                "type": "img",
                 "src": "tetrate/assets/product-11-0.png",
                 "alt": "Original dashboard exploration · Service Bridge PDF, p. 11",
                 "frame": true
@@ -557,12 +565,11 @@ window.SITE = {
               {
                 "type": "p",
                 "text": "The intent was to help teams decide where to investigate by presenting service health and operational signals in one overview."
-              }
-            ]
-          },
-          {
-            "title": "Topology: connect context to action",
-            "blocks": [
+              },
+              {
+                "type": "h",
+                "text": "Topology: connect context to action"
+              },
               {
                 "type": "p",
                 "text": "A force-directed D3.js graph explores service dependencies. Cloud and cluster groupings organize the network, while visual signals draw attention to exceptions."
@@ -591,12 +598,11 @@ window.SITE = {
               {
                 "type": "p",
                 "text": "A contextual pop-up brings health, metrics, and ownership or on-call assignment into the same view, connecting system-level context to service-level action."
-              }
-            ]
-          },
-          {
-            "title": "A shared UI language",
-            "blocks": [
+              },
+              {
+                "type": "h",
+                "text": "A shared UI language"
+              },
               {
                 "type": "p",
                 "text": "I created a UI style guide to support consistency and collaboration with other designers and front-end developers. Its visual foundation aligned with Tetrate’s branding."
@@ -610,7 +616,7 @@ window.SITE = {
             ]
           },
           {
-            "title": "Brand identity: from idea to visual system",
+            "title": "Brand identity: extending the visual system",
             "blocks": [
               {
                 "type": "p",
@@ -670,8 +676,12 @@ window.SITE = {
             ]
           },
           {
-            "title": "Delivered foundations, open questions",
+            "title": "Outcome",
             "blocks": [
+              {
+                "type": "statement",
+                "text": "A product and visual foundation, designed from 0 to 1."
+              },
               {
                 "type": "cards",
                 "items": [
@@ -686,13 +696,18 @@ window.SITE = {
                 ]
               },
               {
-                "type": "statement",
-                "text": "A foundation delivered. A hypothesis to validate."
-              },
-              {
                 "type": "p",
-                "text": "Testing with representative users was still planned in the original case study. The source provides no completed usability results or verified launch metrics.",
-                "title": "What remained unvalidated"
+                "title": "Validation status",
+                "text": "The original Service Bridge PDF lists usability testing with real users as a next step. This case study documents design deliverables; it does not claim completed usability validation or verified launch metrics."
+              }
+            ]
+          },
+          {
+            "title": "Reflection",
+            "blocks": [
+              {
+                "type": "statement",
+                "text": "Domain knowledge is a foundation for designing enterprise products."
               },
               {
                 "type": "p",
@@ -703,8 +718,8 @@ window.SITE = {
                 "title": "What I would carry forward"
               },
               {
-                "type": "list",
-                "label": "Next questions",
+                "type": "p",
+                "title": "Next steps",
                 "items": [
                   "How should developers investigate the cause of latency?",
                   "How should warning thresholds and service metrics be customized?",
