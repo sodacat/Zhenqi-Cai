@@ -849,9 +849,7 @@ window.SITE = {
               {
                 "type": "p",
                 "text": "Typography establishes hierarchy between page titles, metrics, labels, and supporting details. Color separates brand expression from service status and alerts. Shared button, input, and chart treatments give designers and developers a common reference for extending the interface."
-              },
-              {"type":"img","size":"md","src":"tetrate/assets/component-detail.webp","alt":"Original UI style guide detail: button variants and disabled states, plus default, typing, and disabled input examples","frame":true},
-              {"type":"p","text":"The guide pairs filled and outlined button variants with disabled examples, and shows default, typing, and disabled input treatments. Documenting these states gave designers and developers a shared reference beyond the default screen."}
+              }
             ]
           },
           {
@@ -895,7 +893,6 @@ window.SITE = {
                 "alt": "Original Service Bridge product design overview: onboarding, dashboard, inventory, topology, and teams",
                 "frame": true
               },
-              {"type":"img","size":"md","src":"tetrate/assets/alert-detail.webp","alt":"Original Dashboard detail: service without an owner, with View All and Assign actions","frame":true},
               {
                 "type": "p",
                 "title": "From signal to action",
