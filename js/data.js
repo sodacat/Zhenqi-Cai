@@ -727,7 +727,7 @@ window.SITE = {
       "year": "2018",
       "role": "Founding Designer",
       "cover": "tetrate/assets/thumbnail-outdoor-smaller.webp",
-      "alt": "Tetrate — Brand Identity & Visual System: original-inspired brand-guide cover",
+      "alt": "AI-generated brand application concept: Tetrate logo on a technology headquarters exterior",
       "case": {
         "headline": "From Complexity to Clarity",
         "lead": "Building a Brand Identity and a Shared Visual Language",
@@ -772,7 +772,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "I chose this direction to connect the identity to Tetrate’s name and technical domain. Infinity suggests continuity and scaling; the cloud references the infrastructure layer; the tetration graph introduces the idea of exponential growth. These were intended associations, rather than evidence of how users interpreted the mark."
+                "text": "A cloud alone made the infrastructure category recognizable, but did not express the continuity and growth I wanted the identity to convey. I combined it with infinity and a tetration reference, trading a simpler familiar symbol for a more distinctive mark tied to Tetrate’s name. These were intended associations, not validated user interpretations."
               },
               {
                 "type": "img",
@@ -892,6 +892,11 @@ window.SITE = {
                 "src": "tetrate/assets/product-overview-provided.webp",
                 "alt": "Original Service Bridge product design overview: onboarding, dashboard, inventory, topology, and teams",
                 "frame": true
+              },
+              {
+                "type": "p",
+                "title": "From signal to action",
+                "text": "In the dashboard concept, an alert identifies a service without an assigned owner and places an Assign action beside the message. The inventory adds ownership filters alongside health and traffic metrics. The intent was to connect an operational signal to a concrete next step; whether this helped users act faster still needed testing."
               }
             ]
           },
@@ -918,8 +923,12 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "The documented delivery was a brand identity and brand/UI style guides. Real-user testing of the product was still planned. A next iteration would test recognition, legibility, and color accessibility, then develop the UI foundations further.",
+                "text": "I delivered the brand identity, brand guidelines, UI style guide, and product design concepts. Real-user testing of the product was still planned, so I cannot claim validated usability improvements or business impact. Next, I would test the workflows with representative users, check legibility and color accessibility, and refine the UI foundations.",
                 "title": "Scope and next steps"
+              },
+              {
+                "type": "p",
+                "text": "The homepage headquarters image is an AI-generated brand application concept, not a photograph of a real installation. The case-study hero is an AI-assisted presentation; the process and UI images show the original project work."
               }
             ]
           }
