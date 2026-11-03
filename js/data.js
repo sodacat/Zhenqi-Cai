@@ -740,7 +740,7 @@ window.SITE = {
         "facts": [
           [
             "My contribution",
-            "Brand identity, visual design, brand guidelines, and UI style guide."
+            "Brand identity, visual design, brand guidelines, product design, and UI foundations."
           ],
           [
             "Collaboration",
@@ -772,7 +772,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "The concept construction combines an infrastructure reference—the cloud—with forms suggesting continuity and growth. This gave the mark a specific rationale tied to Tetrate’s name and domain."
+                "text": "I chose this direction to connect the identity to Tetrate’s name and technical domain. Infinity suggests continuity and scaling; the cloud references the infrastructure layer; the tetration graph introduces the idea of exponential growth. These were intended associations, rather than evidence of how users interpreted the mark."
               },
               {
                 "type": "img",
@@ -786,7 +786,7 @@ window.SITE = {
               },
               {
                 "type": "p",
-                "text": "I explored contrasting color combinations, backgrounds, monochrome treatments, and outlines. The documented direction uses layered blues and teals, with dark-background and grayscale variants to support different contexts."
+                "text": "I explored contrasting color combinations, backgrounds, monochrome treatments, and outlines. I selected a blue-led direction to convey stability, with overlapping tones adding depth to the mark. Dark-background and grayscale variants let the identity work across different surfaces."
               },
               {
                 "type": "img",
@@ -845,6 +845,10 @@ window.SITE = {
                 "src": "tetrate/assets/ui-foundations-provided.webp",
                 "alt": "Tetrate UI style-guide presentation, based on Service Bridge PDF p. 13",
                 "frame": true
+              },
+              {
+                "type": "p",
+                "text": "Typography establishes hierarchy between page titles, metrics, labels, and supporting details. Color separates brand expression from service status and alerts. Shared button, input, and chart treatments give designers and developers a common reference for extending the interface."
               }
             ]
           },
@@ -878,6 +882,10 @@ window.SITE = {
               {
                 "type": "p",
                 "text": "As Founding Designer, I led brand identity, all visual design, and product design across onboarding, service inventory, and topology. Megha Damani contributed interaction design for part of the onboarding experience."
+              },
+              {
+                "type": "p",
+                "text": "Working with the PM and stakeholder input, I defined Developer, SRE, and IT Manager as the primary MVP roles. The workflows focused on service visibility, health status, and ownership. I broke user stories into objects, actions, and attributes to organize the information architecture around the services people needed to manage."
               },
               {
                 "type": "img",
