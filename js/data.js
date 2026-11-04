@@ -695,7 +695,7 @@ window.SITE = {
               { type: "list", items: [
                 "Established a coherent brand and information system that lowers both cognitive and structural barriers, enabling retail investors to meaningfully participate in financial systems",
                 "Reduced the cognitive barrier for retail investors by structuring fragmented information into an understandable and actionable flow",
-                "Built early trust and credibility, contributing to increased user sign-ups and investor interest",
+                "Strengthened the brand and landing page to build early credibility and help attract seven-figure investment",
                 "Created a scalable design foundation that can extend across product, community, and future platform experiences"
               ] }
             ]
