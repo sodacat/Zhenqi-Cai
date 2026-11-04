@@ -904,6 +904,10 @@ window.SITE = {
             "title": "Delivered foundations and reflection",
             "blocks": [
               {
+                "type": "statement",
+                "text": "Built Tetrate’s foundational brand identity and product visual language, supporting the company’s early growth through Series B."
+              },
+              {
                 "type": "cards",
                 "items": [
                   {
