@@ -34,7 +34,7 @@ window.SITE = {
   ],
   stats: [
     { value: "0→1", label: "Product" },
-    { value: "Global", label: "Scale" }
+    { value: "100M+", label: "Pages" }
   ],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
