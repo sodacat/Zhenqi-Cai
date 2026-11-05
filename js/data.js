@@ -34,7 +34,7 @@ window.SITE = {
   ],
   stats: [
     { value: "0→1" },
-    { value: "Global" }
+    { value: "Global", label: "Scale" }
   ],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
