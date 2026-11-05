@@ -761,6 +761,16 @@ ol {
   display: grid;
 }
 
+/* desktop: nudge the intro and logos right, off the red figure blocks */
+@media (min-width: 681px) {
+  .hero-info {
+    padding-left: clamp(14px, 1.7vw, 24px);
+  }
+  .hero-intro {
+    text-wrap: balance;
+  }
+}
+
 .hero-intro {
   margin: 0;
   font-size: var(--fs-body);
