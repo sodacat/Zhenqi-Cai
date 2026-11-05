@@ -138,7 +138,7 @@
           <div class="hero-bottom reveal">
             <div class="hero-left">
               <dl class="stats">
-                ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt><dd class="label">${esc(st.label)}</dd></div>`).join("")}
+                ${S.stats.map((st) => `<div><dt>${esc(st.value)}</dt>${st.label ? `<dd class="label">${esc(st.label)}</dd>` : ""}</div>`).join("")}
               </dl>
             </div>
             <div class="hero-info">

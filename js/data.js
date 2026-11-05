@@ -33,8 +33,8 @@ window.SITE = {
     { name: "SAP", logo: "images/logo-sap.png" }
   ],
   stats: [
-    { value: "0→1", label: "Zero to one" },
-    { value: "Global", label: "Scale" }
+    { value: "0→1" },
+    { value: "Global" }
   ],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
