@@ -230,7 +230,7 @@
         <div class="about-page-body reveal">
           <p class="lead">${emph(S.bio[0])}</p>
           ${S.bio.slice(1).map((b) => `<p>${emph(b)}</p>`).join("")}
-          <p>${esc(S.intro)}</p>
+          <p>${esc(S.aboutIntro || S.intro)}</p>
           <dl class="facts">
             <div><dt class="label cat">Role</dt><dd>${esc(S.role)}</dd></div>
             <div><dt class="label cat">Clients</dt><dd>${S.clients.map((c) => esc(c.name)).join(", ")}</dd></div>

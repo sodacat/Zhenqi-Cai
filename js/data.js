@@ -27,6 +27,9 @@ window.SITE = {
   ],
   intro:
     "7+ years across Amazon, IBM, SAP, and startups.",
+  // About page keeps the longer line; the home page uses the short one above
+  aboutIntro:
+    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and human-AI experiences from 0→1 to global scale.",
   clients: [
     { name: "Amazon", logo: "images/logo-amazon.png" },
     { name: "IBM", logo: "images/logo-ibm.webp" },
