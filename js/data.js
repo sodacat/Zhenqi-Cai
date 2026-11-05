@@ -43,14 +43,14 @@ window.SITE = {
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
 
   bio: [
-    "I'm Zhenqi (Zenchi) Cai, a product designer interested in the space between complex technology and human understanding — especially *how AI changes the way we make decisions*, create, and interact with systems.",
-    "I design for clarity, trust, and human agency in complex systems."
+    "I'm Zhenqi (Zenchi) Cai. I work at the intersection of complex technology and human decision-making, from enterprise platforms to AI-powered experiences.",
+    "I'm especially interested in how people understand complex system behavior, make informed decisions, and stay in control as AI becomes more autonomous."
   ],
   portrait: "images/portrait.jpg",
   // About (home): short lines beside the bio
-  facts: ["7+ years — Amazon, SAP, IBM, startups", "Focus — Complex systems, human-AI interaction"],
+  facts: ["7+ years — Amazon, IBM, SAP, startups", "Focus — Marketplace platforms, compliance, AI trust"],
   // About: label / value pairs
-  aboutFacts: [["Experience", "7+ years — Amazon, SAP, IBM, startups"], ["Focus", "Complex systems, human-AI interaction"]],
+  aboutFacts: [["Experience", "7+ years — Amazon, IBM, SAP, startups"], ["Focus", "Marketplace platforms, compliance, AI trust"]],
 
   philosophy: [
     { title: "Clarity", text: "Turn complexity into understanding." },
