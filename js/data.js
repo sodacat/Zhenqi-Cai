@@ -15,13 +15,13 @@ window.SITE = {
   // The statement set as poster lines: "l" flush left, "r" flush right,
   // "j" justified to both edges of the six-column measure
   statementLines: [["Product designer.", "l"], ["Systems thinker.", "l"], ["Humanist.", "l"]],
-  headline: "I design complex systems and human–AI experiences.",
+  headline: "I design complex systems & human–AI experiences.",
   // The same headline set as poster lines: "l" = flush left, "r" = flush right,
   // "j3" = justified across columns 1–3
   headlineLines: [
     ["I design", "l"],
     ["complex", "r"],
-    ["systems and", "l"],
+    ["systems &", "l"],
     ["human–AI", "r"],
     ["experiences.", "l", "accent"]
   ],
