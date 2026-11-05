@@ -9,7 +9,7 @@ single red accent.
 ## Pages
 - `index.html` — (01) hero (statement, clients, stats, portrait), (02) Selected work,
   (03) AI experiments, (04) Philosophy, (05) Get in touch
-- `about.html` — statement, portrait + bio, work index, capabilities, philosophy
+- `about.html` — temporarily disabled: redirects to the About section on the home page (the full page is in git history)
 - `works.html` — all projects, filterable (`works.html?type=experiment` preselects)
 - `project.html?id=<project-id>` — project detail with gallery and next-project link
 
