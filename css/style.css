@@ -717,6 +717,16 @@ ol {
 }
 
 @media (min-width: 681px) {
+  /* 0→1 and Global sit side by side with a small gap, widths following
+     their own text instead of the column grid */
+  .stats {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(((100vw - 13 * var(--pad)) / 6 + var(--pad)) / 24);
+  }
+  .stats div:last-child {
+    grid-column: auto;
+  }
   .stats dt {
     width: auto;
     min-width: max-content;

@@ -15,26 +15,26 @@ window.SITE = {
   // The statement set as poster lines: "l" flush left, "r" flush right,
   // "j" justified to both edges of the six-column measure
   statementLines: [["Product designer.", "l"], ["Systems thinker.", "l"], ["Humanist.", "l"]],
-  headline: "I design systems where complexity becomes clarity.",
+  headline: "I design complex systems and human–AI experiences.",
   // The same headline set as poster lines: "l" = flush left, "r" = flush right,
   // "j3" = justified across columns 1–3
   headlineLines: [
     ["I design", "l"],
-    ["systems", "r"],
-    ["where complexity", "l"],
-    ["becomes", "r"],
-    ["clarity.", "l", "accent"]
+    ["complex", "r"],
+    ["systems and", "l"],
+    ["human–AI", "r"],
+    ["experiences.", "l", "accent"]
   ],
   intro:
-    "7+ years across Amazon, SAP, IBM, and startups, designing complex systems and human-AI experiences from 0→1 to global scale.",
+    "7+ years across Amazon, IBM, SAP, and startups.",
   clients: [
     { name: "Amazon", logo: "images/logo-amazon.png" },
     { name: "IBM", logo: "images/logo-ibm.webp" },
     { name: "SAP", logo: "images/logo-sap.png" }
   ],
   stats: [
-    { value: "83%", label: "Faster" },
-    { value: "100M+", label: "Scale" }
+    { value: "0→1", label: "Zero to one" },
+    { value: "Global", label: "Scale" }
   ],
   hero: "images/hero.webp",
   heroAlt: "Zhenqi Cai standing beneath concrete columns",
