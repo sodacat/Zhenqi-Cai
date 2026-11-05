@@ -83,7 +83,6 @@ window.SITE = {
   projects: [
     {
       id: "seller-qualification",
-      locked: true,
       type: "work",
       company: "Amazon",
       title: "Seller Central: Seller Qualification",
@@ -238,7 +237,6 @@ window.SITE = {
     },
     {
       id: "compliance-report",
-      locked: true,
       type: "work",
       company: "IBM",
       title: "Regulatory Compliance Accelerator: Compliance Report",
@@ -366,7 +364,6 @@ window.SITE = {
     },
     {
       id: "enterprise-experience",
-      locked: true,
       type: "work",
       company: "SAP",
       title: "Fiori Design System: Data Table",
