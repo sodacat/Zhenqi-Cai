@@ -732,7 +732,7 @@ ol {
     min-width: max-content;
     /* sized so the "100M+" block fills exactly cols 2–3
        ((100vw − 13 gutters) / 6 + 1 gutter); the block measures ~3.58em */
-    font-size: calc(((100vw - 13 * var(--pad)) / 6 + var(--pad)) / 3.6);
+    font-size: calc(((100vw - 13 * var(--pad)) / 6 + var(--pad)) / 3.95);
   }
 }
 
