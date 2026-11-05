@@ -33,7 +33,7 @@ window.SITE = {
     { name: "SAP", logo: "images/logo-sap.png" }
   ],
   stats: [
-    { value: "7+", label: "Years" },
+    { value: "83%", label: "Faster" },
     { value: "100M+", label: "Scale" }
   ],
   hero: "images/hero.webp",
