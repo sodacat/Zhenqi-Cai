@@ -72,7 +72,7 @@ window.SITE = {
   resume: "Resume_Zhenqi_Cai.pdf",
   social: [
     { label: "Email", url: "mailto:zhenqicai0603@gmail.com" },
-    { label: "LinkedIn", url: "https://linkedin.com/" }
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/zhenqicai/" }
   ],
 
   /*
