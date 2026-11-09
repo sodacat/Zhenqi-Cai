@@ -379,7 +379,7 @@ window.SITE = {
       case: {
         headline: "Making on-demand delivery clear—without hiding restaurant choice",
         lead: "I designed how Weee! introduced on-demand delivery alongside scheduled delivery and pickup, helping customers understand their options while keeping the broader restaurant selection visible.",
-        cover: "images/weee/cover.webp?v=original-hd1",
+        cover: "images/weee/cover.webp?v=short-red-hero",
         aboutTitle: "A new delivery option. A new decision for customers.",
         about: [
           "Weee!’s Restaurant To-Go (RTG) experience originally required customers to schedule delivery or pickup at least one day in advance. Following Weee!’s acquisition of RICEPO, the team introduced on-demand delivery so customers could also order a meal for now.",
