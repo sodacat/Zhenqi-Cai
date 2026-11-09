@@ -366,6 +366,147 @@ window.SITE = {
       }
     },
     {
+      id: "weee-on-demand",
+      type: "work",
+      company: "Weee!",
+      title: "Restaurant To-Go: On-demand Delivery",
+      summary: "Making on-demand delivery clear without hiding restaurant choice.",
+      tags: ["Product Design", "Native mobile", "Marketplace"],
+      impact: "+13.86% on-demand GMV",
+      alt: "Weee! on-demand delivery screens",
+      cover: "images/weee-on-demand.jpg",
+      images: ["images/weee-on-demand.jpg"],
+      case: {
+        headline: "Making on-demand delivery clear—without hiding restaurant choice",
+        lead: "I designed how Weee! introduced on-demand delivery alongside scheduled delivery and pickup, helping customers understand their options while keeping the broader restaurant selection visible.",
+        cover: "images/weee/cover.webp",
+        aboutTitle: "A new delivery option. A new decision for customers.",
+        about: [
+          "Weee!’s Restaurant To-Go (RTG) experience originally required customers to schedule delivery or pickup at least one day in advance. Following Weee!’s acquisition of RICEPO, the team introduced on-demand delivery so customers could also order a meal for now.",
+          "The feature expanded what customers could do, but availability varied: only about 40% of restaurants supported on-demand fulfillment. The design challenge was to make immediate options easy to find without making the remaining restaurants disappear."
+        ],
+        facts: [
+          ["Team", "Zhenqi Cai (Product Designer), Benben Li (Sr. Product Manager), Karan Jain (UX Researcher)"],
+          ["Time", "Nov 22, 2021 – Jan 15, 2022"],
+          ["My contribution", "User research, design exploration, interaction design, prototyping, usability testing, and implementation QA"]
+        ],
+        overview: [
+          { type: "statement", text: "Should we show on-demand restaurants by default, or let customers browse everything before choosing how and when to eat?" },
+          { type: "p", text: "I explored both approaches and helped the team choose a browse-first experience, supported by clearer filter guidance and more flexible time selection." }
+        ],
+        sections: [
+          {
+            title: "The challenge",
+            blocks: [
+              { type: "statement", text: "Make “available now” clear without making “available later” invisible." },
+              { type: "p", text: "Customers arriving with an immediate need met a flow built around ordering ahead. But defaulting to on-demand would make about 60% of restaurants less visible. We needed to balance three needs:" },
+              { type: "cards", items: [
+                { title: "Customer intent", text: "Help people find a meal that fits when and how they want to eat." },
+                { title: "Fulfillment constraints", text: "Represent differences in restaurant availability, delivery windows, pickup, and location." },
+                { title: "Business goals", text: "Support adoption of on-demand delivery while preserving exposure for scheduled-order restaurants." }
+              ] },
+              { type: "statement", text: "How might we help customers find food for now while keeping other useful options easy to discover?" },
+              { type: "row", size: "sm", label: "Previous RTG flow: customers had to pick a date and time first", items: [
+                ["images/weee/previous-1.webp", "", "Restaurant To-Go list with a date strip and dining options"],
+                ["images/weee/previous-2.webp", "", "Dining options sheet: all, lunch delivery, dinner delivery, pickup"],
+                ["images/weee/previous-3.webp", "", "Checkout with delivery date and time"]
+              ] }
+            ]
+          },
+          {
+            title: "Key insight",
+            blocks: [
+              { type: "statement", text: "Users don’t decide based on availability — they decide based on perceived options." },
+              { type: "map", items: [
+                ["Show only “available now”", "Users lose awareness of the broader supply"],
+                ["Show everything", "Users lose clarity on what’s actionable"]
+              ] },
+              { type: "p", text: "The problem is not filtering data. It is shaping how customers perceive and act on the choices available under constraints. Without clear framing, constraints feel like limitations; with clarity, they become navigable choices." }
+            ]
+          },
+          {
+            title: "Understanding customers",
+            blocks: [
+              { type: "p", text: "Interviews with existing RTG customers showed that scheduled orders often supported planned occasions, such as parties and team lunches. Customers valued reasonable prices, and restaurant location mattered when choosing pickup. They also wanted a quicker option for everyday meals.",
+                after: "On-demand therefore needed to sit alongside scheduled delivery and pickup, with each option clearly explained." },
+              { type: "img", size: "md", frame: true, src: "images/weee/use-cases.webp", alt: "Use cases by when and how: now or later, delivery or pickup, with accuracy, frequency, fulfillment partner (RICEPO or RTG) and priority" },
+              { type: "img", src: "images/weee/product-map.webp", frame: true, alt: "Product map: browsing, order and fulfillment (on-demand) across list, menu, cart, checkout, confirmed, order detail, today’s order and track items" },
+              { type: "p", title: "What we wanted to learn", items: ["Do customers want to choose a delivery method and time before browsing?", "Can they understand what is available without losing visibility into other restaurants?"] },
+              { type: "cards", label: "What success would look like", items: [
+                { title: "Adoption", items: ["New customers whose first restaurant order is on-demand", "RTG buyers as a share of Weee! buyers"] },
+                { title: "Usage & stickiness", items: ["Average orders per RTG customer per month", "Weekly RTG buyers ÷ monthly RTG buyers"] },
+                { title: "Revenue", items: ["Incremental revenue from on-demand orders", "Overall RTG revenue, as a guardrail against cannibalizing scheduled orders"] }
+              ] }
+            ]
+          },
+          {
+            title: "Design explorations",
+            blocks: [
+              { type: "statement", text: "Two approaches, with different trade-offs." },
+              { type: "p", text: "I explored how default filters could shape both restaurant discovery and the clarity of delivery options. The goal was not to choose a layout, but to define how the system communicates availability." },
+              { type: "option", frame: true, labels: true, title: "Direction 1: Browse all restaurants first", src: "images/weee/option-1.webp",
+                intro: "No delivery filter was preselected. Customers could explore the full restaurant selection, then narrow their choices.",
+                pros: ["Preserved visibility across on-demand, scheduled delivery, and pickup."],
+                cons: ["Customers needed clearer guidance about the default state and what was available immediately.", "Dev: Three filters for time and method may be too complicated to learn."] },
+              { type: "option", frame: true, labels: true, title: "Direction 2: Default to on-demand", src: "images/weee/option-2.webp",
+                intro: "On-demand was preselected, so customers immediately saw restaurants offering that service.",
+                pros: ["A more direct starting point for customers who want food now."],
+                cons: ["PM: Restaurants without on-demand service (about 60%) become less visible, even when they might suit a later meal."] },
+              { type: "p", title: "Working within the release scope", text: "An earlier concept used icon-based category filters, but the PM confirmed it was not feasible for this release, so I focused the next round on the two filtering approaches." },
+              { type: "img", frame: true, src: "images/weee/option-0.webp", alt: "Earlier concept: iconographic category filters" }
+            ]
+          },
+          {
+            title: "Testing & decision",
+            blocks: [
+              { type: "statement", text: "Both approaches were usable. Browsing behavior helped guide the choice." },
+              { type: "p", text: "I tested the two prototypes in an unmoderated remote study with 8 participants on UserTesting. Half started with the browse-first approach, half with on-demand by default. Each participant completed tasks on both prototypes, including changing delivery to Tuesday dinner and finding an option for immediate delivery, then rated learnability and ease of use and gave their preference." },
+              { type: "figures", items: [["7/8", "Browse restaurants before considering delivery settings"], ["5/5", "Learnability, both approaches"], ["4.75/5", "Ease of use, both approaches"]] },
+              { type: "p", title: "What the results supported", text: ["Participants did not express a strong preference between the two approaches, and the ratings did not establish a clear usability winner.", "However, the browse-first behavior reported by 7 of 8 participants supported keeping the full restaurant selection visible. Combined with the limited on-demand coverage and the team’s restaurant-exposure goals, this informed our decision to move forward with non-preselected filters."] },
+              { type: "p", title: "What still needed improvement", items: ["First-time users did not always understand what the default filter state included.", "Pickup time selection was unclear.", "Customers needed visible feedback when selecting Pickup before finishing the date step."], after: "These findings shaped the final interaction details." }
+            ]
+          },
+          {
+            title: "Final design",
+            blocks: [
+              { type: "statement", text: "Browse broadly. Set constraints when ready." },
+              { type: "p", text: "The final experience showed all restaurants by default and let customers narrow their choices through delivery and pickup filters. Rather than asking the default to decide for everyone, I added guidance and feedback exactly where customers needed it." },
+              { type: "img", frame: true, src: "images/weee/iteration-tooltip.webp", alt: "Final filters: a tooltip explaining the default state, a delivery window sheet with Select Time Later, and Pickup highlighted while choosing a date" },
+              { type: "p", title: "Explain the default state", text: "A tooltip clarifies that customers can use the filters to find restaurants matching their delivery preferences. This addresses the uncertainty about the unfiltered view while preserving the full restaurant selection." },
+              { type: "p", title: "Let customers choose the time later", text: "“Select Time Later” lets customers keep exploring before committing to a lunch or dinner window. It is also clearer than showing a meal period that can’t be selected yet." },
+              { type: "p", title: "Keep selection feedback visible", text: "The Pickup tab now highlights when tapped, even while customers are still choosing a date in the pop-up, so they can see that their action registered." },
+              { type: "p", title: "Adapt to regional availability", text: "Some locations would not support on-demand delivery for several months. I designed a version of the flow without that option, so the interface reflects what customers can actually use. Scheduled delivery and pickup remain available without presenting an unsupported service." },
+              { type: "img", frame: true, src: "images/weee/edge-case.webp", alt: "Restaurant list and filters without the on-demand option" },
+              { type: "h", text: "Other flows" },
+              { type: "img", frame: true, src: "images/weee/flow-settings.webp", alt: "Change delivery settings while browsing a restaurant menu" },
+              { type: "pair", frame: true, items: [
+                ["images/weee/flow-checkout.webp", "Add to cart and check out"],
+                ["images/weee/flow-track.webp", "Track orders on the map"]
+              ] }
+            ]
+          },
+          {
+            title: "Launch & impact",
+            blocks: [
+              { type: "statement", text: "From tested prototypes to a shipped experience." },
+              { type: "p", text: "After design iterations, developer QA, and internal testing, on-demand delivery launched in January 2022." },
+              { type: "figures", items: [["+13.86%", "Gross merchandise volume of on-demand orders, over a week"], ["+7.81%", "First-time buyers"], ["+6.43%", "Active buyers"]] },
+              { type: "p", text: ["These results reflect the on-demand launch as a whole. The usability study informed our interaction decisions; it did not isolate the filtering design’s contribution to growth.", "We continued monitoring adoption, usage, retention, and overall RTG revenue to guide future iterations."] },
+              { type: "statement", text: "The system should not decide for users — it should make constraints understandable." }
+            ]
+          },
+          {
+            title: "Reflection",
+            blocks: [
+              { type: "p", text: ["Designing for real-time services is not just about speed. It is about decision clarity under constraints. A useful default does not have to make the decision for everyone.",
+                "The research did not produce a decisive winner. My role was to combine what we learned about browsing behavior with fulfillment constraints and business needs, then address the weaknesses of the chosen approach.",
+                "If I revisited the project, I would test the defaults with customers explicitly ordering for an immediate meal, and compare behavior across locations with different levels of on-demand coverage."] }
+            ]
+          }
+        ]
+      }
+    },
+    {
       id: "enterprise-experience",
       type: "work",
       company: "SAP",
@@ -930,147 +1071,6 @@ window.SITE = {
                 "text": "I delivered the brand identity, brand guidelines, UI style guide, and product design concepts. Real-user testing of the product was still planned, so I cannot claim validated usability improvements or business impact. Next, I would test the workflows with representative users, check legibility and color accessibility, and refine the UI foundations.",
                 "title": "Scope and next steps"
               }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      id: "weee-on-demand",
-      type: "work",
-      company: "Weee!",
-      title: "Restaurant To-Go: On-demand Delivery",
-      summary: "Making on-demand delivery clear without hiding restaurant choice.",
-      tags: ["Product Design", "Native mobile", "Marketplace"],
-      impact: "+13.86% on-demand GMV",
-      alt: "Weee! on-demand delivery screens",
-      cover: "images/weee-on-demand.jpg",
-      images: ["images/weee-on-demand.jpg"],
-      case: {
-        headline: "Making on-demand delivery clear—without hiding restaurant choice",
-        lead: "I designed how Weee! introduced on-demand delivery alongside scheduled delivery and pickup, helping customers understand their options while keeping the broader restaurant selection visible.",
-        cover: "images/weee/cover.webp",
-        aboutTitle: "A new delivery option. A new decision for customers.",
-        about: [
-          "Weee!’s Restaurant To-Go (RTG) experience originally required customers to schedule delivery or pickup at least one day in advance. Following Weee!’s acquisition of RICEPO, the team introduced on-demand delivery so customers could also order a meal for now.",
-          "The feature expanded what customers could do, but availability varied: only about 40% of restaurants supported on-demand fulfillment. The design challenge was to make immediate options easy to find without making the remaining restaurants disappear."
-        ],
-        facts: [
-          ["Team", "Zhenqi Cai (Product Designer), Benben Li (Sr. Product Manager), Karan Jain (UX Researcher)"],
-          ["Time", "Nov 22, 2021 – Jan 15, 2022"],
-          ["My contribution", "User research, design exploration, interaction design, prototyping, usability testing, and implementation QA"]
-        ],
-        overview: [
-          { type: "statement", text: "Should we show on-demand restaurants by default, or let customers browse everything before choosing how and when to eat?" },
-          { type: "p", text: "I explored both approaches and helped the team choose a browse-first experience, supported by clearer filter guidance and more flexible time selection." }
-        ],
-        sections: [
-          {
-            title: "The challenge",
-            blocks: [
-              { type: "statement", text: "Make “available now” clear without making “available later” invisible." },
-              { type: "p", text: "Customers arriving with an immediate need met a flow built around ordering ahead. But defaulting to on-demand would make about 60% of restaurants less visible. We needed to balance three needs:" },
-              { type: "cards", items: [
-                { title: "Customer intent", text: "Help people find a meal that fits when and how they want to eat." },
-                { title: "Fulfillment constraints", text: "Represent differences in restaurant availability, delivery windows, pickup, and location." },
-                { title: "Business goals", text: "Support adoption of on-demand delivery while preserving exposure for scheduled-order restaurants." }
-              ] },
-              { type: "statement", text: "How might we help customers find food for now while keeping other useful options easy to discover?" },
-              { type: "row", size: "sm", label: "Previous RTG flow: customers had to pick a date and time first", items: [
-                ["images/weee/previous-1.webp", "", "Restaurant To-Go list with a date strip and dining options"],
-                ["images/weee/previous-2.webp", "", "Dining options sheet: all, lunch delivery, dinner delivery, pickup"],
-                ["images/weee/previous-3.webp", "", "Checkout with delivery date and time"]
-              ] }
-            ]
-          },
-          {
-            title: "Key insight",
-            blocks: [
-              { type: "statement", text: "Users don’t decide based on availability — they decide based on perceived options." },
-              { type: "map", items: [
-                ["Show only “available now”", "Users lose awareness of the broader supply"],
-                ["Show everything", "Users lose clarity on what’s actionable"]
-              ] },
-              { type: "p", text: "The problem is not filtering data. It is shaping how customers perceive and act on the choices available under constraints. Without clear framing, constraints feel like limitations; with clarity, they become navigable choices." }
-            ]
-          },
-          {
-            title: "Understanding customers",
-            blocks: [
-              { type: "p", text: "Interviews with existing RTG customers showed that scheduled orders often supported planned occasions, such as parties and team lunches. Customers valued reasonable prices, and restaurant location mattered when choosing pickup. They also wanted a quicker option for everyday meals.",
-                after: "On-demand therefore needed to sit alongside scheduled delivery and pickup, with each option clearly explained." },
-              { type: "img", size: "md", frame: true, src: "images/weee/use-cases.webp", alt: "Use cases by when and how: now or later, delivery or pickup, with accuracy, frequency, fulfillment partner (RICEPO or RTG) and priority" },
-              { type: "img", src: "images/weee/product-map.webp", frame: true, alt: "Product map: browsing, order and fulfillment (on-demand) across list, menu, cart, checkout, confirmed, order detail, today’s order and track items" },
-              { type: "p", title: "What we wanted to learn", items: ["Do customers want to choose a delivery method and time before browsing?", "Can they understand what is available without losing visibility into other restaurants?"] },
-              { type: "cards", label: "What success would look like", items: [
-                { title: "Adoption", items: ["New customers whose first restaurant order is on-demand", "RTG buyers as a share of Weee! buyers"] },
-                { title: "Usage & stickiness", items: ["Average orders per RTG customer per month", "Weekly RTG buyers ÷ monthly RTG buyers"] },
-                { title: "Revenue", items: ["Incremental revenue from on-demand orders", "Overall RTG revenue, as a guardrail against cannibalizing scheduled orders"] }
-              ] }
-            ]
-          },
-          {
-            title: "Design explorations",
-            blocks: [
-              { type: "statement", text: "Two approaches, with different trade-offs." },
-              { type: "p", text: "I explored how default filters could shape both restaurant discovery and the clarity of delivery options. The goal was not to choose a layout, but to define how the system communicates availability." },
-              { type: "option", frame: true, labels: true, title: "Direction 1: Browse all restaurants first", src: "images/weee/option-1.webp",
-                intro: "No delivery filter was preselected. Customers could explore the full restaurant selection, then narrow their choices.",
-                pros: ["Preserved visibility across on-demand, scheduled delivery, and pickup."],
-                cons: ["Customers needed clearer guidance about the default state and what was available immediately.", "Dev: Three filters for time and method may be too complicated to learn."] },
-              { type: "option", frame: true, labels: true, title: "Direction 2: Default to on-demand", src: "images/weee/option-2.webp",
-                intro: "On-demand was preselected, so customers immediately saw restaurants offering that service.",
-                pros: ["A more direct starting point for customers who want food now."],
-                cons: ["PM: Restaurants without on-demand service (about 60%) become less visible, even when they might suit a later meal."] },
-              { type: "p", title: "Working within the release scope", text: "An earlier concept used icon-based category filters, but the PM confirmed it was not feasible for this release, so I focused the next round on the two filtering approaches." },
-              { type: "img", frame: true, src: "images/weee/option-0.webp", alt: "Earlier concept: iconographic category filters" }
-            ]
-          },
-          {
-            title: "Testing & decision",
-            blocks: [
-              { type: "statement", text: "Both approaches were usable. Browsing behavior helped guide the choice." },
-              { type: "p", text: "I tested the two prototypes in an unmoderated remote study with 8 participants on UserTesting. Half started with the browse-first approach, half with on-demand by default. Each participant completed tasks on both prototypes, including changing delivery to Tuesday dinner and finding an option for immediate delivery, then rated learnability and ease of use and gave their preference." },
-              { type: "figures", items: [["7/8", "Browse restaurants before considering delivery settings"], ["5/5", "Learnability, both approaches"], ["4.75/5", "Ease of use, both approaches"]] },
-              { type: "p", title: "What the results supported", text: ["Participants did not express a strong preference between the two approaches, and the ratings did not establish a clear usability winner.", "However, the browse-first behavior reported by 7 of 8 participants supported keeping the full restaurant selection visible. Combined with the limited on-demand coverage and the team’s restaurant-exposure goals, this informed our decision to move forward with non-preselected filters."] },
-              { type: "p", title: "What still needed improvement", items: ["First-time users did not always understand what the default filter state included.", "Pickup time selection was unclear.", "Customers needed visible feedback when selecting Pickup before finishing the date step."], after: "These findings shaped the final interaction details." }
-            ]
-          },
-          {
-            title: "Final design",
-            blocks: [
-              { type: "statement", text: "Browse broadly. Set constraints when ready." },
-              { type: "p", text: "The final experience showed all restaurants by default and let customers narrow their choices through delivery and pickup filters. Rather than asking the default to decide for everyone, I added guidance and feedback exactly where customers needed it." },
-              { type: "img", frame: true, src: "images/weee/iteration-tooltip.webp", alt: "Final filters: a tooltip explaining the default state, a delivery window sheet with Select Time Later, and Pickup highlighted while choosing a date" },
-              { type: "p", title: "Explain the default state", text: "A tooltip clarifies that customers can use the filters to find restaurants matching their delivery preferences. This addresses the uncertainty about the unfiltered view while preserving the full restaurant selection." },
-              { type: "p", title: "Let customers choose the time later", text: "“Select Time Later” lets customers keep exploring before committing to a lunch or dinner window. It is also clearer than showing a meal period that can’t be selected yet." },
-              { type: "p", title: "Keep selection feedback visible", text: "The Pickup tab now highlights when tapped, even while customers are still choosing a date in the pop-up, so they can see that their action registered." },
-              { type: "p", title: "Adapt to regional availability", text: "Some locations would not support on-demand delivery for several months. I designed a version of the flow without that option, so the interface reflects what customers can actually use. Scheduled delivery and pickup remain available without presenting an unsupported service." },
-              { type: "img", frame: true, src: "images/weee/edge-case.webp", alt: "Restaurant list and filters without the on-demand option" },
-              { type: "h", text: "Other flows" },
-              { type: "img", frame: true, src: "images/weee/flow-settings.webp", alt: "Change delivery settings while browsing a restaurant menu" },
-              { type: "pair", frame: true, items: [
-                ["images/weee/flow-checkout.webp", "Add to cart and check out"],
-                ["images/weee/flow-track.webp", "Track orders on the map"]
-              ] }
-            ]
-          },
-          {
-            title: "Launch & impact",
-            blocks: [
-              { type: "statement", text: "From tested prototypes to a shipped experience." },
-              { type: "p", text: "After design iterations, developer QA, and internal testing, on-demand delivery launched in January 2022." },
-              { type: "figures", items: [["+13.86%", "Gross merchandise volume of on-demand orders, over a week"], ["+7.81%", "First-time buyers"], ["+6.43%", "Active buyers"]] },
-              { type: "p", text: ["These results reflect the on-demand launch as a whole. The usability study informed our interaction decisions; it did not isolate the filtering design’s contribution to growth.", "We continued monitoring adoption, usage, retention, and overall RTG revenue to guide future iterations."] },
-              { type: "statement", text: "The system should not decide for users — it should make constraints understandable." }
-            ]
-          },
-          {
-            title: "Reflection",
-            blocks: [
-              { type: "p", text: ["Designing for real-time services is not just about speed. It is about decision clarity under constraints. A useful default does not have to make the decision for everyone.",
-                "The research did not produce a decisive winner. My role was to combine what we learned about browsing behavior with fulfillment constraints and business needs, then address the weaknesses of the chosen approach.",
-                "If I revisited the project, I would test the defaults with customers explicitly ordering for an immediate meal, and compare behavior across locations with different levels of on-demand coverage."] }
             ]
           }
         ]
