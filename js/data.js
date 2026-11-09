@@ -407,9 +407,9 @@ window.SITE = {
               ] },
               { type: "statement", text: "How might we help customers find food for now while keeping other useful options easy to discover?" },
               { type: "row", size: "sm", label: "Previous RTG flow: customers had to pick a date and time first", items: [
-                ["images/weee/previous-1.webp?v=original-hd1", "", "Restaurant To-Go list with a date strip and dining options"],
-                ["images/weee/previous-2.webp?v=original-hd1", "", "Dining options sheet: all, lunch delivery, dinner delivery, pickup"],
-                ["images/weee/previous-3.webp?v=original-hd1", "", "Checkout with delivery date and time"]
+                ["images/weee/previous-1.webp?v=redraw-hd4", "", "Restaurant To-Go list with a date strip and dining options"],
+                ["images/weee/previous-2.webp?v=redraw-hd4", "", "Dining options sheet: all, lunch delivery, dinner delivery, pickup"],
+                ["images/weee/previous-3.webp?v=redraw-hd4", "", "Checkout with delivery date and time"]
               ] }
             ]
           },
@@ -430,7 +430,7 @@ window.SITE = {
               { type: "p", text: "Interviews with existing RTG customers showed that scheduled orders often supported planned occasions, such as parties and team lunches. Customers valued reasonable prices, and restaurant location mattered when choosing pickup. They also wanted a quicker option for everyday meals.",
                 after: "On-demand therefore needed to sit alongside scheduled delivery and pickup, with each option clearly explained." },
               { type: "img", size: "md", frame: true, src: "images/weee/use-cases.webp?v=approved-hd2", alt: "Use cases by when and how: now or later, delivery or pickup, with accuracy, frequency, fulfillment partner (RICEPO or RTG) and priority" },
-              { type: "img", src: "images/weee/product-map.webp?v=original-hd1", frame: true, alt: "Product map: browsing, order and fulfillment (on-demand) across list, menu, cart, checkout, confirmed, order detail, today’s order and track items" },
+              { type: "img", src: "images/weee/product-map.webp?v=redraw-hd4", frame: true, alt: "Product map: browsing, order and fulfillment (on-demand) across list, menu, cart, checkout, confirmed, order detail, today’s order and track items" },
               { type: "p", title: "What we wanted to learn", items: ["Do customers want to choose a delivery method and time before browsing?", "Can they understand what is available without losing visibility into other restaurants?"] },
               { type: "cards", label: "What success would look like", items: [
                 { title: "Adoption", items: ["New customers whose first restaurant order is on-demand", "RTG buyers as a share of Weee! buyers"] },
@@ -444,11 +444,11 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Two approaches, with different trade-offs." },
               { type: "p", text: "I explored how default filters could shape both restaurant discovery and the clarity of delivery options. The goal was not to choose a layout, but to define how the system communicates availability." },
-              { type: "option", frame: true, labels: true, title: "Direction 1: Browse all restaurants first", src: "images/weee/option-1.webp?v=original-hd1",
+              { type: "option", frame: true, labels: true, title: "Direction 1: Browse all restaurants first", src: "images/weee/option-1.webp?v=redraw-hd4",
                 intro: "No delivery filter was preselected. Customers could explore the full restaurant selection, then narrow their choices.",
                 pros: ["Preserved visibility across on-demand, scheduled delivery, and pickup."],
                 cons: ["Customers needed clearer guidance about the default state and what was available immediately.", "Dev: Three filters for time and method may be too complicated to learn."] },
-              { type: "option", frame: true, labels: true, title: "Direction 2: Default to on-demand", src: "images/weee/option-2.webp?v=original-hd1",
+              { type: "option", frame: true, labels: true, title: "Direction 2: Default to on-demand", src: "images/weee/option-2.webp?v=redraw-hd4",
                 intro: "On-demand was preselected, so customers immediately saw restaurants offering that service.",
                 pros: ["A more direct starting point for customers who want food now."],
                 cons: ["PM: Restaurants without on-demand service (about 60%) become less visible, even when they might suit a later meal."] },
@@ -471,17 +471,17 @@ window.SITE = {
             blocks: [
               { type: "statement", text: "Browse broadly. Set constraints when ready." },
               { type: "p", text: "The final experience showed all restaurants by default and let customers narrow their choices through delivery and pickup filters. Rather than asking the default to decide for everyone, I added guidance and feedback exactly where customers needed it." },
-              { type: "img", frame: true, src: "images/weee/iteration-tooltip.webp?v=original-hd1", alt: "Final filters: a tooltip explaining the default state, a delivery window sheet with Select Time Later, and Pickup highlighted while choosing a date" },
+              { type: "img", frame: true, src: "images/weee/iteration-tooltip.webp?v=redraw-hd4", alt: "Final filters: a tooltip explaining the default state, a delivery window sheet with Select Time Later, and Pickup highlighted while choosing a date" },
               { type: "p", title: "Explain the default state", text: "A tooltip clarifies that customers can use the filters to find restaurants matching their delivery preferences. This addresses the uncertainty about the unfiltered view while preserving the full restaurant selection." },
               { type: "p", title: "Let customers choose the time later", text: "“Select Time Later” lets customers keep exploring before committing to a lunch or dinner window. It is also clearer than showing a meal period that can’t be selected yet." },
               { type: "p", title: "Keep selection feedback visible", text: "The Pickup tab now highlights when tapped, even while customers are still choosing a date in the pop-up, so they can see that their action registered." },
               { type: "p", title: "Adapt to regional availability", text: "Some locations would not support on-demand delivery for several months. I designed a version of the flow without that option, so the interface reflects what customers can actually use. Scheduled delivery and pickup remain available without presenting an unsupported service." },
-              { type: "img", frame: true, src: "images/weee/edge-case.webp?v=original-hd1", alt: "Restaurant list and filters without the on-demand option" },
+              { type: "img", frame: true, src: "images/weee/edge-case.webp?v=redraw-hd4", alt: "Restaurant list and filters without the on-demand option" },
               { type: "h", text: "Other flows" },
-              { type: "img", frame: true, src: "images/weee/flow-settings.webp?v=original-hd1", alt: "Change delivery settings while browsing a restaurant menu" },
+              { type: "img", frame: true, src: "images/weee/flow-settings.webp?v=redraw-hd4", alt: "Change delivery settings while browsing a restaurant menu" },
               { type: "pair", frame: true, items: [
-                ["images/weee/flow-checkout.webp?v=original-hd1", "Add to cart and check out"],
-                ["images/weee/flow-track.webp?v=original-hd1", "Track orders on the map"]
+                ["images/weee/flow-checkout.webp?v=redraw-hd4", "Add to cart and check out"],
+                ["images/weee/flow-track.webp?v=redraw-hd4", "Track orders on the map"]
               ] }
             ]
           },
