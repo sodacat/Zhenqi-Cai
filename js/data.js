@@ -429,7 +429,7 @@ window.SITE = {
             blocks: [
               { type: "p", text: "Interviews with existing RTG customers showed that scheduled orders often supported planned occasions, such as parties and team lunches. Customers valued reasonable prices, and restaurant location mattered when choosing pickup. They also wanted a quicker option for everyday meals.",
                 after: "On-demand therefore needed to sit alongside scheduled delivery and pickup, with each option clearly explained." },
-              { type: "img", size: "md", frame: true, src: "images/weee/use-cases.webp?v=original-hd1", alt: "Use cases by when and how: now or later, delivery or pickup, with accuracy, frequency, fulfillment partner (RICEPO or RTG) and priority" },
+              { type: "img", size: "md", frame: true, src: "images/weee/use-cases.webp?v=approved-hd2", alt: "Use cases by when and how: now or later, delivery or pickup, with accuracy, frequency, fulfillment partner (RICEPO or RTG) and priority" },
               { type: "img", src: "images/weee/product-map.webp?v=original-hd1", frame: true, alt: "Product map: browsing, order and fulfillment (on-demand) across list, menu, cart, checkout, confirmed, order detail, today’s order and track items" },
               { type: "p", title: "What we wanted to learn", items: ["Do customers want to choose a delivery method and time before browsing?", "Can they understand what is available without losing visibility into other restaurants?"] },
               { type: "cards", label: "What success would look like", items: [
@@ -453,7 +453,7 @@ window.SITE = {
                 pros: ["A more direct starting point for customers who want food now."],
                 cons: ["PM: Restaurants without on-demand service (about 60%) become less visible, even when they might suit a later meal."] },
               { type: "p", title: "Working within the release scope", text: "An earlier concept used icon-based category filters, but the PM confirmed it was not feasible for this release, so I focused the next round on the two filtering approaches." },
-              { type: "img", frame: true, src: "images/weee/option-0.webp?v=original-hd1", alt: "Earlier concept: iconographic category filters" }
+              { type: "img", frame: true, src: "images/weee/option-0.webp?v=approved-hd2", alt: "Earlier concept: iconographic category filters" }
             ]
           },
           {
